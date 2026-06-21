@@ -16,7 +16,7 @@ App-Store-quality.
   penalty. All of it via **Dynamic Type semantic styles** — `largeTitle` (amount), `headline` (payee),
   `body` (rows), `footnote` (helper/fees), `caption` (timestamps). No hardcoded point sizes.
 - **Branded display (the "Maduuka" wordmark in the nav title + the confirmation hero):** a deliberate
-  display face from an **approved group** — Editorial-Authoritative per
+  display face from an **approved category** — 02 Editorial / Literary per
   `doctrine/references/font-groups-and-usage.md` — bound with `.font(.custom("…", relativeTo: .largeTitle))`
   so it **scales with Dynamic Type**, not frozen. Not on the banned list; SF carries everything functional.
 - *Why:* trust-sensitive fintech surface — body must be maximally legible (SF), brand expressed only in
