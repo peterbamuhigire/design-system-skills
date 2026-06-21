@@ -72,6 +72,12 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - Use `references/consistency-audit.md` when drift between screens, components, or labels is a suspected issue.
 - `references/audit-rubric.md` — composes the AI-slop, WCAG 2.2, and Core Web Vitals gates into a
   scored 0–100 rubric with cap rules; use it whenever the audit needs a defensible number.
+- `references/triage-and-prioritization.md` — the triage stack (Travis red-route test +
+  effort-vs-impact + MoSCoW + tie-breakers) that turns scored findings into an **ordered fix
+  queue**; run it after scoring (Workflow Step 3).
+- `doctrine/references/interaction-anti-patterns.md` — the behavioural **interaction-detection
+  checklist** (A1–E3: navigation, forms, feedback, hierarchy, novelty/platform-fit). Walk the UI
+  against it during the systematic scan; any match is a finding, with severity set by triage.
 - `doctrine/references/wcag-2.2-criteria.md` and `doctrine/references/web-performance-budgets-2026.md`
   — the accessibility floor (WCAG 2.2 AA) and performance floor (CWV "good") the rubric enforces.
 
@@ -88,6 +94,8 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 | `visual-product-slop-audit` | Detailed visual/product AI slop checklist |
 | `practical-ui-design` | Visual system rules to audit against |
 | `motion-design` | Animation quality standards |
+| `ux-remediation-and-redesign` | **After** the audit — to triage, redesign, re-validate, and measure the fixes for the findings this audit produced (the fix side; this skill is the diagnose side) |
+| `ux-remediation-and-redesign` | **Downstream hand-off** — once findings are triaged into a fix queue, that skill redesigns, re-validates (5-user / A/B / tree test), and measures the uplift. This skill diagnoses + triages; that one executes the fix. |
 
 ---
 
@@ -105,11 +113,29 @@ Before auditing, understand:
 
 ### Step 2: Systematic Scan
 
-Evaluate across all 10 dimensions (Section 2). Score each dimension.
+Evaluate across all 10 dimensions (Section 2). Score each dimension. Run the
+**interaction-detection pass**: walk the UI against `doctrine/references/interaction-anti-patterns.md`
+(A1–E3) — any match is a finding feeding the list below.
 
-### Step 3: Produce Report
+### Step 3: Triage — sequence the findings into a fix order
 
-Follow the report structure (Section 3). Prioritise findings by severity.
+Scoring tells you *how bad*; it does not tell you *what to fix first*. After scoring, run every
+finding through the triage stack in **`references/triage-and-prioritization.md`**:
+
+1. **Red-route / Travis test** (red route? hard to overcome? persistent?) → sets the severity band.
+2. **Effort-vs-impact map** → sequences within a band (Quick wins → Major projects → Fill-ins; park Thankless).
+3. **MoSCoW** (Must/Should/Could/Won't) → the release commitment.
+4. Tie-break on **frequency** and **business alignment**.
+
+Gate failures (Slop / WCAG 2.2 AA / CWV) are always at least Critical/High and never demoted below
+their cap. The output is an **ordered fix queue** — the audit ends with a prioritised sequence, not
+just a number. This queue is the input contract to the `ux-remediation-and-redesign` skill (see
+Section 6 / Hand-off): **this skill diagnoses, scores, and triages; that skill executes the fix.**
+
+### Step 4: Produce Report
+
+Follow the report structure (Section 3). Order findings by the Step 3 triage queue, not just by
+raw severity.
 
 ---
 
@@ -328,14 +354,23 @@ for per-archetype asset budgets.
 [List patterns and decisions that are effective and should be maintained]
 ```
 
-### Recommendations
+### Triage Queue & Recommendations
+
+Include the triage worksheet from `references/triage-and-prioritization.md` §2, then derive the
+ordered recommendations from its **Order** column:
 
 ```
-## Prioritised Recommendations
-1. [Highest impact fix] — addresses [N] critical/high issues
-2. [Second priority] — addresses [N] issues
-3. [Third priority] — addresses [N] issues
+## Triage Queue
+[Triage worksheet: each finding scored red-route / hard / persistent → severity, impact×effort,
+MoSCoW, and a final Order integer.]
+
+## Prioritised Recommendations (from the triage Order)
+1. [Highest impact fix] — addresses [N] critical/high issues — [Must]
+2. [Second priority] — addresses [N] issues — [Should]
+3. [Third priority] — addresses [N] issues — [Could]
 ```
+
+Hand the ordered queue to `ux-remediation-and-redesign` to execute the fixes.
 
 ---
 
@@ -389,4 +424,24 @@ For rapid checks when a full audit isn't needed:
 
 ---
 
-*Sources: Impeccable audit and critique skills (Bakaus, 2025); WCAG 2.2 AA; Nielsen Norman Group heuristic evaluation framework.*
+---
+
+## 6. Hand-off — where the audit stops
+
+This skill ends at a **triaged, ordered fix queue** (Workflow Step 3 + the Triage Queue report
+section). It deliberately does **not** redesign, re-prototype, or re-test.
+
+| Stage | Owner |
+|---|---|
+| Detect (10 dimensions + `interaction-anti-patterns.md`) | **`design-audit`** (this skill) |
+| Score (rubric, gates, caps) | **`design-audit`** |
+| Triage → ordered fix queue (`triage-and-prioritization.md`) | **`design-audit`** |
+| Redesign lo-fi → hi-fi, validate (5-user / A/B / tree test), measure uplift | `ux-remediation-and-redesign` |
+| Ship go/no-go | `design-qa-and-pre-launch-review` |
+
+Pass the triage worksheet + Prioritised Recommendations to `ux-remediation-and-redesign` as its
+input contract. That closes the loop: **audit → fix → re-validate → ship.**
+
+---
+
+*Sources: Impeccable audit and critique skills (Bakaus, 2025); WCAG 2.2 AA; Nielsen Norman Group heuristic evaluation framework; triage method after Maioli, "Fixing Bad UX Designs" (2018).*

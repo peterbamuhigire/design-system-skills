@@ -46,6 +46,14 @@ then write copy a templating tool would never have produced.
   → `04-web-and-ui-design/empty-error-and-loading-states`. This skill writes the words that go
   in them.
 - You are writing **long-form** marketing or documentation prose, not in-interface strings.
+- You need to **detect generic, machine-written prose** (the em-dash tell, "delve"-class diction,
+  hedged transitions, list-of-three padding) → that **textual AI-slop detection lives in the
+  digital-research engine's writing-slop skills, not here.** This skill decides *what the words
+  should be* and whether they are on-voice; it does not judge whether a passage reads as
+  AI-generated. Cross-reference; never duplicate.
+- **Voice/tone routing:** once `voice-tone-and-content-style-guide` ships in group 10, route the
+  voice/tone *definition* there (the operational content voice/tone system). Until then, the voice
+  source is `02-color-brand-and-visual-identity/brand-style-guide`; this skill *consumes* it.
 
 ## Required Inputs
 - The **screen/flow and the moment**: what the user is trying to do, what they just did, what
@@ -68,6 +76,12 @@ then write copy a templating tool would never have produced.
    ("Create project", "Send invite", "Delete 3 files"), not "OK" / "Submit" / "Yes". The button
    text should complete the sentence "I want to ___". Make destructive verbs explicit
    ("Delete", "Discard", "Remove") — never soften them to "OK". One primary action per view.
+   When a label is a *reusable pattern* (not a one-off string), state it in the **`{}` / `[]`
+   notation** — `{curly}` = runtime variable, `[square]` = optional, plain text = literal, e.g.
+   `{verb} [{object}]` → `Create project` / `Save`. See
+   `references/text-patterns-and-editing-curve.md` §1.
+   Keep **title ↔ CTA continuity**: the view's action title and its primary button name the *same*
+   action, each making sense read alone ("Invite a teammate" → "Send invite", never "Submit").
 4. **Labels & fields — name the data in the user's language.** Label = noun phrase the user
    recognises ("Work email", not "Email address 2"). Helper text states format or *why* you ask,
    not the obvious. Never use placeholder text as the label (it vanishes on input and fails
@@ -88,9 +102,18 @@ then write copy a templating tool would never have produced.
 7. **Enforce one term per concept.** Build a tiny glossary: pick *one* word for each concept
    ("project" vs "workspace" vs "board" — choose one) and use it everywhere, including buttons,
    labels, menus, and confirmations. Inconsistent terminology is a top clarity killer.
-8. **Cut, then cut again.** Remove "please", "simply", "just", "click here", and any word that
-   survives deletion without loss. Front-load the meaningful word. Sentence case for almost
-   everything (more legible and less shouty than Title Case); reserve all-caps for nothing.
+8. **Edit along the four-phase curve, in order: Purposeful → Concise → Conversational → Clear.**
+   UX writing is mostly editing, and the phases are sequential — the word count balloons in phase 1,
+   then contracts. (1) *Purposeful*: get every needed message in, even if clumsy. (2) *Concise*:
+   make every word earn its real estate — remove "please", "simply", "just", "click here", and any
+   word that survives deletion without loss; front-load the meaningful word. **But "concise ≠
+   short", and "cutting words ≠ removing messaging"** — never let a length target strip a clause
+   that carried meaning (the consequence, the reason, the irreversibility); that is a content
+   decision, not an edit. (3) *Conversational*: read like a human taking a turn (turn-taking, not
+   buddy-casual). (4) *Clear*: a first-time, stressed, or non-native reader gets it in one pass.
+   Sentence case for almost everything; reserve all-caps for nothing. **Always propose up to three
+   ranked options** with a one-line rationale. See `references/text-patterns-and-editing-curve.md`
+   §2–3.
 9. **Voice-check, then clarity-check.** Read each string aloud: does it sound like the stated
    voice? Then strip it to its meaning: would a first-time, stressed, or non-native user
    understand it in one read? If voice and clarity fight, clarity wins.
@@ -135,6 +158,10 @@ then write copy a templating tool would never have produced.
   toggles/menus, success strings, and the terminology-glossary discipline.
 - `references/button-and-cta-copy.md` — the button/CTA copy system: verb+object formula, the
   primary/secondary/cancel/destructive hierarchy, and a good/bad catalogue by action type.
+- `references/text-patterns-and-editing-curve.md` — the **`{}` / `[]` pattern notation** (variable
+  vs optional vs literal), the **four-phase editing curve** (Purposeful → Concise → Conversational
+  → Clear), "concise ≠ short / cutting words ≠ removing messaging", **title ↔ CTA continuity**, and
+  the boundary note (AI-slop detection → research engine; voice/tone → the new group-10 skill).
 - Pairs with `10-content-design-and-ux-writing/error-empty-and-system-messaging` (error/empty/
   system copy), `02-color-brand-and-visual-identity/brand-style-guide` (the voice this consumes),
   and `04-web-and-ui-design/empty-error-and-loading-states` (the visual states copy fills).

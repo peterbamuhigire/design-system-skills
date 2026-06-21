@@ -126,13 +126,41 @@ Two non-negotiable gates (Slop, A11y) failed → **cap = ≤ 59**.
 - Spacing already on an 8pt scale — keep it.
 - Microcopy uses verb+noun CTAs and avoids corporate AI jargon.
 
-## Prioritised Recommendations
+## Triage Queue (per `references/triage-and-prioritization.md`)
+
+Each finding run through the red-route / Travis test → severity, then effort×impact → sequence,
+then MoSCoW. Gate failures bind at Critical/High regardless of the test.
+
+| # | Finding (short) | Red route? | Hard? | Persistent? | Severity | Impact×Effort | MoSCoW | Order |
+|---|---|---|---|---|---|---|---|---|
+| 1 | Headline/CTA contrast fails (gate) | Y | Y | Y | Critical | Quick win | Must | **1** |
+| 2 | Keyboard focus not visible (gate) | Y | Y | Y | Critical | Quick win | Must | **2** |
+| 3 | Touch targets < 24px (gate) | Y | Y | Y | Critical | Quick win | Must | **3** |
+| 4 | Hero slow + shifting / over budget (gate) | Y | Y | Y | Critical | Major project | Must | **4** |
+| 5 | Re-author type away from Inter (slop gate) | Y | N | Y | High | Major project | Must | **5** |
+| 6 | Replace warped-logo hero art (slop gate) | Y | N | Y | High | Major project | Must | **6** |
+| 7 | Missing interaction states (loading/error) | Y | N | Y | High | Quick win | Should | **7** |
+| 8 | Differentiate uniform feature cards | N | N | Y | Medium | Fill-in | Could | **8** |
+| 9 | `prefers-reduced-motion` alternative | N | N | N | Medium | Quick win | Should | **9** |
+| 10 | Dashboard-preview empty-state copy | N | N | N | Low | Fill-in | Could | **10** |
+| 11 | Tint pure-white surfaces | N | N | N | Low | Fill-in | Won't | — |
+
+> Notes: items 1–3 are gate failures **and** quick wins on the red route → run first. Item 4 is a
+> red-route gate failure but a Major project (asset pipeline work) → sequenced after the quick
+> wins that share its band. Item 11 is Low + Fill-in with no user harm → explicitly **Won't (this
+> release)**, recorded so it is not silently dropped. Frequency/business tie-breakers were not
+> needed — severity + effort×impact resolved the order.
+
+## Prioritised Recommendations (from the triage Order)
 1. **Clear the two non-negotiable gates** (contrast + keyboard focus + target size; re-author
-   type/hero away from slop) — unlocks the ≤ 59 cap. Addresses 3 critical + 2 high.
+   type/hero away from slop) — unlocks the ≤ 59 cap. Addresses 3 critical + 2 high. *[Must, Order 1–3,5–6]*
 2. **Fix the hero performance** (format, preload, dimensions, font-display) — clears the CWV
-   gate, lifts the cap to 75+. Addresses 1 critical.
+   gate, lifts the cap to 75+. Addresses 1 critical. *[Must, Order 4]*
 3. **Complete interaction states + differentiate cards** — moves from "good foundation" toward
-   production-ready. Addresses 1 high + 1 medium.
+   production-ready. Addresses 1 high + 1 medium. *[Should/Could, Order 7–8]*
+
+**Hand-off:** this ordered queue is passed to `ux-remediation-and-redesign`, which redesigns,
+re-validates (5-user / A/B / tree test), and measures the uplift. This audit stops at the queue.
 
 ---
 

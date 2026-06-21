@@ -230,6 +230,7 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 | `performance-as-ux-and-core-web-vitals` | The per-web-surface Core Web Vitals / budget gate — blocking |
 | `cross-platform-design-parity` | The parity lens across surfaces of one product |
 | `ios-ui-ux-design` / `android-ui-ux-design` / `webapp-gui-design` | The platform lenses' remediation owners |
+| `ux-remediation-and-redesign` | **Downstream of this audit** — takes the prioritized, skill-routed findings and runs the fix lifecycle (triage → redesign → re-validate → measure) per flow |
 
 ---
 

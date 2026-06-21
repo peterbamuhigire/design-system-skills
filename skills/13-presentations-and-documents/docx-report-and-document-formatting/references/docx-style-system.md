@@ -19,13 +19,32 @@ with manual bold/size runs.
 |---|---|---|
 | Trim | 8.5 × 11 in | 210 × 297 mm |
 | Margins (T/B/L/R) | 1.0 / 1.0 / 1.25 / 1.0 in | 25.4 / 25.4 / 31.7 / 25.4 mm |
-| Gutter | 0 (single-sided) · 0.25 in (bound) | 0 · 6 mm |
+| Gutter | 0 (single-sided) · 0.25 in (bound, with mirror margins — see below) | 0 · 6 mm |
 | Body measure | ~6.25 in (≈ 90–95 chars at 11 pt) | ~152 mm |
 | Header / footer from edge | 0.5 in | 12.7 mm |
 | Baseline grid | 14 pt leading lattice (body line height) | same |
 
 Front matter (title page, TOC) = its own section, page numbers in **lowercase roman (i, ii)** or
 suppressed. Body = a new section restarting at **arabic 1**.
+
+### Two-sided / bound documents (mirror margins + Even/Odd sections)
+
+For documents that print **double-sided** or are **bound** (perfect-bound report, tabbed manual,
+thesis), switch from fixed L/R margins to a symmetric, binding-aware layout:
+
+- **Mirror margins.** Set Page Setup → Margins → *Multiple pages: Mirror margins*. The inner
+  (binding-side) margin and outer (page-edge) margin then swap on left/right pages so the wider
+  edge always faces the spine. Inner = the bound margin; outer = the trimmed edge.
+- **Binding gutter.** Add a **gutter** of `0.25 in` (`6 mm`) — extra space reserved for the
+  binding/punch holes — *on top of* the inner margin, set to the **inside** position so it lands
+  at the spine. Single-sided documents keep gutter `0`.
+- **Even/Odd-page section breaks.** Use a **Section Break (Odd Page)** before each chapter/major
+  Heading 1 so chapters always open on a **right-hand (recto)** page, matching print convention
+  (Word inserts a blank verso where needed). Then enable Page Setup → Layout →
+  *Different odd and even pages* so you can compose **distinct left- and right-page headers/
+  footers** — e.g. document title (verso) vs. section title (recto), with the page number on the
+  **outer** edge of each (left on even, right on odd). Use **Even Page** breaks where the next
+  section must open on a left-hand page instead.
 
 ---
 
@@ -89,3 +108,16 @@ to the single-size monotype slop signal (charter §3).
   `style.paragraph_format.outline_level` (via XML `w:outlineLvl`) so the TOC/tags pick them up.
 - **Embed + subset** after styling (`doctrine/references/embedding-by-format.md`): File →
   Options → Save → "Embed fonts in the file" + "Embed only the characters used in the document".
+- **Mirror margins / gutter / Even-Odd:** in Word, Layout → Margins → *Mirror margins*, set the
+  **Gutter** and *Gutter position: Inside*, and Layout → *Different odd and even pages*; insert
+  **Section Break (Odd Page)** before each chapter. In **python-docx**, set
+  `section.gutter`, `section.different_first_page_header_footer`, and write `<w:mirrorMargins/>`
+  plus `<w:evenAndOddHeaders/>` into `settings.xml`; use `WD_SECTION_START.ODD_PAGE` /
+  `EVEN_PAGE` for `section.start_type`, and `section.even_page_header` / `odd_page` for the
+  distinct headers/footers.
+- **Reusable components (Building Blocks / Quick Parts):** save a finished **cover page**,
+  **letterhead block**, or **exhibit/figure caption frame** as a reusable Building Block
+  (Insert → Quick Parts → Save Selection to Quick Part Gallery; or the Cover Page / Header /
+  Footer galleries) stored in a shared `.dotx` template, so identity components are inserted
+  consistently rather than rebuilt by hand. (Template-level governance of these blocks belongs to
+  `template-and-master-system-design`.)

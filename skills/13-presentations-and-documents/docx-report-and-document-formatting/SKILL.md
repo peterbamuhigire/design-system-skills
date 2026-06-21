@@ -68,11 +68,16 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
    bold/size runs — that breaks the TOC and the tag tree.
 3. **Set the page grid, margins, and baseline.** Apply the trim, margins, gutter, and a
    consistent vertical rhythm (line grid) from `references/docx-style-system.md`. Define the
-   letterhead/first-page-different section and the body section.
+   letterhead/first-page-different section and the body section. For **double-sided or bound**
+   output, switch to **mirror margins + a binding gutter** and open chapters with **Section Break
+   (Odd Page)** so they fall on a recto (see the two-sided/bound note in the style reference).
 4. **Compose headers, footers, letterhead, and page numbering.** First-page letterhead (logo +
    identity block) distinct from running headers; running header with document/section title;
    footer with page numbering (`Page X of Y`), document reference, and any statutory line. Use
-   section breaks so front-matter is unnumbered or roman-numbered and the body is arabic.
+   section breaks so front-matter is unnumbered or roman-numbered and the body is arabic. For
+   bound documents, enable **Different odd and even pages** for distinct left/right headers-footers
+   (page number on the outer edge). Save the cover/letterhead as a **Building Block / Quick Part**
+   in the template so it is reused, not rebuilt.
 5. **Insert and update the Table of Contents.** Generate the TOC from Heading 1–3 styles (not
    typed by hand), with tab leaders and right-aligned page numbers; mark it to update on open.
 6. **Format tables and figures.** Apply the table style system in

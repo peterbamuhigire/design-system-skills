@@ -21,6 +21,9 @@ References applied throughout: `references/button-and-cta-copy.md`,
 **After**
 > `Create invoice`
 
+**Pattern:** `{verb} {object}` → `Create invoice` (both slots variable across forms; both literal
+once filled). See `references/text-patterns-and-editing-curve.md` §1.
+
 **Reasoning.** "Submit" names the system's mechanism (posting a form), not the user's goal. The
 verb+object formula (`button-and-cta-copy.md` §1) completes "I want to ___ → create invoice".
 It also disambiguates from "Save draft" sitting beside it. Sentence case, no punctuation.
@@ -86,12 +89,19 @@ email. No guessing who is reminded or how.
 > Body: `This permanently removes invoice #1043 and its 3 line items. You can't undo this.`
 > Buttons: `Delete invoice` · `Keep it`
 
+**Patterns:** title `{verb} this {object}?` · destructive button `{verb} {object}` · body
+`This permanently removes {object} and its [{count} ]{sub-items}. You can't undo this.`
+
 **Reasoning.** "Are you sure?" carries zero information; the user must re-read the screen behind
 it to know what they're confirming. The new title states the **consequence**; the body says
 *exactly* what is lost and that it's irreversible; the buttons are the two **verbs**, so the user
-never has to map "OK → which thing?" (`microcopy-patterns.md` §4). The destructive button keeps
-its true verb (`Delete`) and would be styled as the guarded/danger action, with the safe escape
-("Keep it") as the easy default. Calm, not alarmist — on voice.
+never has to map "OK → which thing?" (`microcopy-patterns.md` §4). **Title ↔ CTA continuity** holds:
+the title's verb (`Delete`) is the button's verb — read either alone and the action is clear
+(`text-patterns-and-editing-curve.md` §4). Note the **four-phase curve** at work: the body
+*ballooned* from `This action cannot be undone` to name the invoice and its line items
+(**purposeful** — concise ≠ short, so we kept the messaging that says what is lost), then tightened.
+The destructive button keeps its true verb (`Delete`) and would be styled as the guarded/danger
+action, with the safe escape ("Keep it") as the easy default. Calm, not alarmist — on voice.
 
 ---
 

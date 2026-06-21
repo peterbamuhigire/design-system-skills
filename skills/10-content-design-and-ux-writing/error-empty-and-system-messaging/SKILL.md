@@ -83,16 +83,20 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
    step — ideally as an action they can take right there. Strip three things: **blame** ("You
    entered an invalid…" → "That email doesn't look right — check for a typo?"), **jargon / error
    codes as the headline** (codes go in a copyable detail line for support, never as the message),
-   and **alarm** ("FATAL", "❌", "Oops!"). Match the doctrine: this is an *authored* message, not a
-   reflexive default. (`error-message-formula.md`; `doctrine/design-doctrine.md` §0.)
+   and **alarm** ("FATAL", "❌", "Oops!"). Enforce the **inclusive-language bans**: never "invalid"
+   (blaming *and* ableist) or "illegal" — say what's expected instead; default to singular **"they"**
+   and assume no gender/ability/device; keep internal nouns (`null`, `token`, `exception`, raw
+   codes) out of the prose. Match the doctrine: this is an *authored* message, not a reflexive
+   default. (`references/error-message-formula.md` §1; `doctrine/design-doctrine.md` §0.)
 
-3. **Write empty states as teaching moments, not apologies.** A zero state has three jobs:
-   say what *would* be here, say *why it's empty* (first run vs. you cleared it vs. no results),
-   and give the **one action** that fills it — with a real button, not just prose. Distinguish the
-   three kinds: **first-use** (onboarding tone, "Create your first invoice"), **user-cleared**
-   (affirming, "Inbox zero — nicely done"), and **no-results** (diagnostic, "No matches for
-   'xyz' — try fewer filters"). Never a bare "No data." An empty state is the highest-leverage
-   onboarding surface in the product; treat it as such.
+3. **Write empty states as teaching moments, not apologies.** Run the **3-part empty-state
+   framework** (Ben-David) as the content checklist: **(1) confirm the void is on purpose** (what
+   this is + why it's empty), **(2) motivate filling it** (the *value*, not just "do this"), and
+   **(3) facilitate the action** (the real button, not prose). Then set the *tone* by **type**:
+   **first-use** (onboarding, "Create your first invoice"), **user-cleared** (affirming, "Inbox
+   zero — nicely done"; may drop the CTA), and **no-results** (diagnostic, "No matches for 'xyz' —
+   try fewer filters"). Never a bare "No data." An empty state is the highest-leverage onboarding
+   surface in the product; treat it as such. (`references/error-message-formula.md` §2.)
 
 4. **Write success and confirmation copy proportional to the action.** Routine success often
    needs *no* message (the result is visible) or a quiet toast — don't celebrate a saved draft.
@@ -101,6 +105,16 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
    *dialogs*, the formula flips: name the consequence specifically and make the button say the
    verb ("Delete 3 files" / "Cancel"), never "OK / Cancel". Confirmations that fire for everything
    train users to ignore them — the boy who cried toast.
+
+4b. **Classify each error by interruption — Inline / Detour / Blocking (Podmajersky).** Before
+   choosing a channel, decide *how much the error interrupts the person* and push it to the least
+   disruptive level that still works (the downgrade rule: Blocking → Detour → Inline). **Inline** =
+   fixable in place → terse, located words (a bad field). **Detour** = the original path is blocked
+   but a real alternative reaches the goal → write the **alternate-path instruction first**, reason
+   second ("Use another card to finish — your bank declined this one"). **Blocking** = the flow
+   halts for a decision → calm, complete, one choice (session expired, 403/404/500, destructive
+   confirm). This decides message *style*; the severity map (step 5) then picks the channel — they
+   almost always agree. See `references/error-placement-taxonomy.md`.
 
 5. **Match severity to channel — and never mismatch.** Map each message to its channel by
    stakes and recoverability: **inline** (field-level, fixable in place) → field error text;
@@ -145,8 +159,12 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
 - **"Something went wrong."** / "Oops!" / "An error occurred." — the null message. Says nothing,
   helps nothing, hides the fix. Almost always a sign step 1 (find the real cause) was skipped.
 - **Blaming the user** — "You entered invalid data", "Illegal value", "You failed to…". The
-  system asked for the input in a confusing way; own it or stay neutral. Never "invalid", never
-  "illegal", never "you failed".
+  system asked for the input in a confusing way; own it or stay neutral. Never "invalid" (it's also
+  ableist), never "illegal", never "you failed". Never gender or assume the user — singular "they".
+- **Over-interrupting** — a Blocking dialog or full page for something fixable Inline, or stating a
+  diagnosis when a Detour (alternate path) exists. Push every error down the interruption ladder
+  (Blocking → Detour → Inline). A Detour that buries the alternate action behind the reason is the
+  same failure — lead with the action.
 - **Raw error codes / stack traces as the headline** — "Error 0x80004005", "NullPointerException".
   Codes belong in a copyable detail line *for support*, beneath a human sentence — never as the
   message the user reads first.
@@ -184,8 +202,10 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
 - `examples/error-copy-library.md` — a real, populated message library for a SaaS app: form
   validation, auth/login, payment, network/offline, permissions, 404/500, empty states
   (first-use, cleared, no-results), success/confirmation, and destructive dialogs — each row
-  showing the trigger, channel, severity, the before (weak) and after (rewritten) string, the
-  action label, and the a11y role. The worked artifact this skill produces.
+  showing the trigger, **placement (Inline / Detour / Blocking)**, channel, severity, the before
+  (weak) and after (rewritten) string, the action label, and the a11y role. Detour rows lead with
+  the alternate action; empty-state rows are worked through Ben-David's 3-part framework. The worked
+  artifact this skill produces.
 
 ## References
 
@@ -194,8 +214,14 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
   one) and Anti-Slop Charter §2 (state the intent before producing — here, the real cause and fix
   before the wording).
 - `references/error-message-formula.md` — the what + why + how-to-fix formula, the no-blame /
-  no-jargon / no-alarm rules, the empty-state three-types model, the success-proportionality rule,
-  and the severity-to-channel map. The core method of this skill.
+  no-jargon / no-alarm rules **with the specific inclusive-language bans** ("invalid"=ableist,
+  singular "they", no internal jargon), the empty-state three-types model **plus Ben-David's
+  3-part framework** (confirm-on-purpose / motivate / facilitate), the success-proportionality
+  rule, and the severity-to-channel map. The core method of this skill.
+- `references/error-placement-taxonomy.md` — Podmajersky's **Inline / Detour / Blocking** taxonomy:
+  classifying an error by *how much it interrupts* the person and mapping message style to each
+  (terse-located / instruction-led / decision-framing), with the downgrade rule. Read alongside the
+  severity map — interruption sets the style, severity sets the channel.
 - `doctrine/references/wcag-2.2-criteria.md` — Error Identification (3.3.1), Error Suggestion
   (3.3.3), Redundant Entry (3.3.7), Use of Colour (1.4.1), and Status Messages (4.1.3): the
   accessibility rules that make these strings stand alone and get announced correctly.

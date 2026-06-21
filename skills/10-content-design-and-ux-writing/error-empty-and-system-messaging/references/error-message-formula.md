@@ -39,6 +39,27 @@ Then subtract three things — this is where most messages fail:
 yet — go back to the cause. A message with no fix degrades into "Something went wrong", which is
 the absence of a message.
 
+### Inclusive-language bans (no blame · no jargon · no alarm — made specific)
+
+The three subtractions above are easy to nod at and hard to enforce. These are the concrete word
+bans that operationalize them; treat them as lint rules.
+
+- **"Invalid" / "illegal" are banned — they are blaming and "invalid" is ableist.** "Invalid"
+  doubles as a slur for disabled people and frames the *person* as the defect; "illegal" implies
+  wrongdoing. Say what's *expected* instead: not "Invalid email" → **"That email needs an @ sign."**;
+  not "Illegal character" → **"Passwords can't include spaces."** Also banned: "you failed",
+  "you forgot", "you didn't", "wrong" *(of the person)* — the UI asked unclearly; own it or stay
+  neutral.
+- **Default to singular "they"; never gender or assume the user.** Write "Ask whoever owns this
+  workspace to share it with **them**", not "him/her". No assumed name, gender, ability, or device.
+- **No jargon, no internal nouns, no codes as words.** Ban `null`, `token`, `exception`, `payload`,
+  `400/500` *as the sentence*, `0x…`, `ECONNREFUSED`, "the server", "the database" — the person
+  doesn't have those concepts. Codes live in a copyable support line, never in the prose.
+- **No alarm vocabulary.** Ban "FATAL", "CRITICAL", "ERROR" *(as a shout)*, "WARNING", all-caps,
+  "❌", "Oops!", "Uh-oh!", and exclamation pile-ups. The steady voice carries more authority than
+  the panicked one. (Humour is also banned in *genuine* failures — wit is allowed only in playful
+  empty states; see §2 and `breaking-best-practices` for the rare, reasoned override.)
+
 ### Worked transforms
 
 | Weak | Rewritten (formula) |
@@ -66,6 +87,29 @@ Three jobs: say what *would* be here, say *why it's empty*, give the **one actio
 Anti-patterns: a bare "Nothing here"; a sad mascot with no next step; a first-use empty that reads
 like an error ("No items found" on a screen the user has never had items on).
 
+### The 3-part empty-state framework (Ben-David)
+
+The *type* above tells you the **tone**; this framework tells you the **three things every empty
+state must contain**, in order. It maps cleanly onto the what/why/fix spine. From Ben-David,
+*The Fundamentals of UX Writing*:
+
+| Part | Job | The question it answers | Maps to |
+|---|---|---|---|
+| **1. Confirm the void is on purpose** | Reassure that the emptiness is expected, not a bug or a loading hang. Name *what this is* and *why it's empty* (first run / cleared / no results). | "Is this broken, or just empty?" | *what it is + why it's empty* |
+| **2. Motivate filling it** | Give the *value* — not just "do this", but *why it's worth doing*. The pitch, not just the instruction. | "Why would I bother?" | *why act* |
+| **3. Facilitate the action** | Provide the **actual button** to act, not prose telling them to act. One primary action. | "How do I start?" | *what to do next* |
+
+Worked (first-use):
+> **Your invoices will live here.** *(part 1 — confirms it's empty on purpose)*
+> Create your first one and we'll track who's paid, chase late payers, and total it all up.
+> *(part 2 — the value, not just "create an invoice")*
+> `[ Create invoice ]` *(part 3 — the real button)*
+
+The two views combine: pick the **type** (first-use / user-cleared / no-results) for tone, then run
+the **3 parts** as the content checklist. A user-cleared state often softens or drops part 2/3 (no
+nagging CTA when the person *chose* the empty) — that's a reasoned `breaking-best-practices`
+override, not an exception to forget about.
+
 ---
 
 ## 3. Success & confirmation: proportional to the stakes
@@ -90,6 +134,12 @@ the verb:
 ---
 
 ## 4. Severity → channel map (and the rule you must not break)
+
+> **First decide the *interruption* level.** Before picking a channel by stakes, classify the error
+> by *how much it interrupts the person* — **Inline / Detour / Blocking** — per
+> `references/error-placement-taxonomy.md`. That decides the message *style* (terse-located /
+> instruction-led / decision-framing) and pushes you to the least disruptive placement that still
+> works. The severity map below then picks the channel; the two almost always agree.
 
 Pick the channel by **stakes × recoverability**:
 
@@ -147,7 +197,11 @@ Two more from WCAG that change the *words*:
 - [ ] States **what** happened, plainly, first.
 - [ ] Gives the **why** only where it helps the user act.
 - [ ] Gives a **concrete next action** (ideally a button) — the fix exists.
-- [ ] **No blame** ("invalid"/"illegal"/"you failed" all removed).
+- [ ] **Placement classified** as Inline / Detour / Blocking, pushed to the least disruptive level
+      that works; Detours lead with the alternate-path instruction (`error-placement-taxonomy.md`).
+- [ ] **No blame** ("invalid"/"illegal"/"you failed"/"wrong" all removed; "invalid" is also ableist).
+- [ ] **Inclusive language**: singular "they", no assumed gender/ability/device, no internal jargon
+      (`null`/`token`/`exception`) in the prose.
 - [ ] **No raw code/jargon as headline** (codes → copyable support detail line).
 - [ ] **No alarm** (no FATAL/❌/Oops!/all-caps).
 - [ ] Empty states **teach** (type-appropriate tone + one action), never "No data".
