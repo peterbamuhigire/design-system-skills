@@ -53,7 +53,7 @@ thought about design. That undermines the premium positioning of the whole portf
 | Path | What it holds |
 |---|---|
 | `doctrine/design-doctrine.md` | This charter — the always-load entry point. |
-| `doctrine/references/` | The canonical rules: banned list, font groups, pairing, type scale, embedding, licensing. |
+| `doctrine/references/` | The canonical rules: banned list, font groups, pairing, type scale, embedding, licensing, and the device-common system-font fallback tier. |
 | `doctrine/examples/` | Worked examples (good pairings, a slop-audit before/after). |
 | `skills/01-typography-and-fonts/` | The font skills: selection & pairing, slop audit, premium-font scan, embedding & licensing. |
 | `skills/02-document-formatting/` | Visual formatting of DOCX/PPTX/PDF/XLSX deliverables. |

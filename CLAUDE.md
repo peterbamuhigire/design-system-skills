@@ -8,10 +8,13 @@ the finance engine (`chwezi-accounting-doctrine`) is consulted alongside domain 
 These skills are NOT on the native skill-discovery path. **Read the `SKILL.md` files directly;
 do not use the `Skill` tool for them.**
 
-## Routing
+## Routing (dynamic discovery — the filesystem is the index)
 
 1. Read `doctrine/design-doctrine.md` first (anti-slop charter + map).
-2. Glob `skills/**/SKILL.md` and read the matching skill. Use the router table in `README.md`.
+2. **Glob `skills/**/SKILL.md` FRESH every time** and read each match's frontmatter
+   `description`; route by best fit. Do NOT rely on any hardcoded skill list — the README
+   table is a hint only. This is what makes newly-added skills appear automatically with no
+   registration step.
 3. Apply the doctrine references in `doctrine/references/`.
 
 ## The one rule that overrides convenience

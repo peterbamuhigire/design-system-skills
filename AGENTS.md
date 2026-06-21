@@ -6,8 +6,10 @@ Mirror of the guidance in `CLAUDE.md`, kept for dual-compat tooling.
 ## Protocol
 
 1. **Entry:** read `doctrine/design-doctrine.md`.
-2. **Select:** glob `skills/**/SKILL.md`; read the match (router table in `README.md`). Do not
-   use a `Skill` tool — read the files directly.
+2. **Select:** glob `skills/**/SKILL.md` **fresh every time** and route by frontmatter
+   `description` (the filesystem is the index — never a cached list; this is how new skills are
+   picked up with zero registration). The README table is a hint only. Do not use a `Skill`
+   tool — read the files directly.
 3. **Apply:** follow the `doctrine/references/` rules the skill cites.
 4. **Gate:** before declaring an artifact done, run `governance/design-quality-gate.md`.
 

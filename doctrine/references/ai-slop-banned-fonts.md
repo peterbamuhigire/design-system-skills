@@ -1,56 +1,80 @@
 # Reference: The AI-Slop Banned Font List
 
 **Rule:** None of these may appear as a **primary typeface** in any generated artifact —
-website, DOCX, PPTX, PDF, or UI — regardless of how convenient or "clean" they seem. They are
-the statistical centre of AI output and a recognisable tell of unconsidered, machine-generated
-work.
+website, DOCX, PPTX, PDF, or UI — regardless of how convenient or "clean" they seem.
+
+**Evidence basis:** the strongest single source is Anthropic's own **Claude Cookbook**,
+*"Prompting for frontend aesthetics"* (T1, the AI vendor itself), which instructs the model to
+avoid the fonts it over-produces — verbatim: *"Overused font families (Inter, Roboto, Arial,
+system fonts)"*, *"Never use: Inter, Roboto, Open Sans, Lato, default system fonts"*, and on
+Space Grotesk: *"You still tend to converge on common choices (Space Grotesk, for example)…
+Avoid this."* Corroborated by Vercel/shadcn tooling defaults and designer commentary. Verified
+via the digital-research engine's source-verification pass (2026-06-21).
+
+> **Label every ban by its failure mode — they are not all the same.** Three distinct reasons:
+> **[AI]** = genuine AI-ecosystem default / tell · **[POP]** = generic-popular & overused (reads
+> as "no design," predates AI) · **[SYS]** = lazy system default. Only **[AI]** is truly an "AI
+> tell"; all three are still banned as a *primary* typeface for Chwezi work, but stating the
+> right reason keeps the doctrine honest.
 
 ---
 
 ## 1. Hard ban (primary offenders)
 
-- **Inter** — the single most recognisable AI tell; "the Comic Sans of AI." Banned outright.
-- **Roboto**
-- **Arial**
-- **Open Sans**
-- **Lato**
-- **Bare system-font stacks used alone** — e.g. `-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif`
-  with no deliberate typeface layered on top.
+- **Inter** — **[AI]** the single strongest tell; "the Helvetica of the LLM era"; shadcn's
+  historic `--font-sans` default. Banned outright.
+- **Geist** — **[AI]** *added 2026-06-21.* Vercel's own font, now the **v0 / shadcn / Vercel
+  template default that replaced Inter** — the modern successor AI tell. Banned outright.
+- **Roboto** — **[POP/AI]** on the Cookbook list; also the #1 Google Font and Android/Material
+  system face. Banned.
+- **Open Sans** — **[POP]** Cookbook "never use"; ~#2 Google Font. Banned.
+- **Lato** — **[POP]** Cookbook "never use"; ~#3 Google Font. Banned.
+- **Arial** — **[SYS]** "lazy default," reads as no-design. Banned as a deliberate choice.
+- **Bare system-font stacks used alone** — **[SYS]** e.g. `-apple-system, BlinkMacSystemFont,
+  "Segoe UI", sans-serif` with no deliberate face layered on top. (Note: a *deliberate,
+  documented* system-font fallback chain is different — see `system-font-fallbacks.md`.)
 
 ## 2. Secondary ban (the "I tried" upgrades)
 
-The fonts AI reaches for *after* being told to avoid the first list. Equally forbidden as a
-default reflex — they are second-order slop:
+The fonts AI reaches for *after* being told to avoid the first list. Banned as a default reflex
+for Chwezi work — but note the honest evidence label:
 
-- **Space Grotesk** — the most common "escape attempt." Do **not** treat it as the safe
-  distinctive choice.
-- **Poppins**
-- **Montserrat**
-- **Nunito** / **Nunito Sans**
-- **Source Sans Pro / Source Sans 3** *as a standalone "neutral upgrade"* — Source Sans 3 is
-  permitted **only** as a body face paired with a distinctive display font (see the workhorse
-  note in `font-groups-and-usage.md`), never alone and never as the headline.
+- **Space Grotesk** — **[AI]** named by the Claude Cookbook as *the* convergence trap. The most
+  common "escape attempt." Do **not** treat it as the safe distinctive choice.
+- **Instrument Serif** — **[AI]** *added 2026-06-21.* Repeatedly named as the AI serif-accent
+  reflex. Avoid as the default serif accent.
+- **Poppins** — **[POP]** *generic-popular cliché, weak AI-specific evidence.* Kept on the ban
+  list as a Chwezi house rule (overused), but the honest reason is "modern-startup cliché," not
+  "AI tell."
+- **Montserrat** — **[POP]** ~#4 Google Font; popular human default. Banned as overused, not as
+  an AI signature.
+- **Nunito / Nunito Sans** — **[POP]** no direct AI-tell evidence found; banned as a Chwezi
+  house preference (rounded-friendly cliché), not on evidence grounds.
+
+## 3. Explicitly NOT banned (evidence corrects an over-ban)
+
+- **Source Sans 3 / Source Sans Pro** — the Claude Cookbook *recommends* it as a deliberate
+  "technical" choice. **Permitted as a paired body face** (never alone, never the headline) —
+  this matches the workhorse rule. Do not ban it as an AI tell.
 
 ---
 
-## 3. Why the ban matters
+## 4. Why the ban matters
 
 Chwezi products compete on looking intentionally designed and trustworthy. The moment a
-deliverable opens in Inter (or on a generic system stack), a discerning client reads it as
-"no one thought about typography," which corrodes the premium positioning across the whole
-portfolio and every external client deliverable shipped under the Chwezi Core Systems name.
+deliverable opens in Inter or Geist, a discerning client reads it as "no one thought about
+typography," which corrodes the premium positioning across the portfolio and every external
+client deliverable shipped under the Chwezi Core Systems name.
 
----
+## 5. Edge cases
 
-## 4. Edge cases
-
-- **Code/monospace inside a technical artifact** may legitimately need a monospace face — use
-  an approved one (JetBrains Mono, IBM Plex Mono, Fira Code), never Roboto Mono or Consolas
-  as a *design* choice.
+- **Code/monospace** in a technical artifact may need a monospace face — use an approved one
+  (JetBrains Mono, IBM Plex Mono, Fira Code), never Roboto Mono as a *design* choice.
 - **A client brand guideline that mandates a banned font** overrides this list for that client
-  only — state it explicitly, record it, and do not generalise it to other work.
-- **Body text** may use an approved workhorse; the ban targets *defaults chosen without
-  thought*, not every sans-serif in existence.
+  only — state it explicitly, record it, do not generalise it.
+- **A deliberate device-common fallback** (e.g. Georgia, the system stacks in
+  `system-font-fallbacks.md`) is **not** slop — slop is the *thoughtless* default, not every
+  pre-installed face used on purpose.
 
 When unsure whether a face is slop, treat it as slop and pick a deliberate alternative from
 `font-groups-and-usage.md`.

@@ -36,6 +36,29 @@ directly; do not use the `Skill` tool for them.
 3. **Follow the doctrine references** in `doctrine/references/` — they are the canonical rules
    the skills cite.
 
+> **The router table above is convenience only — it is NOT the source of truth.** See the
+> discovery contract below.
+
+---
+
+## Discovery contract (how new skills are picked up — flawlessly, with zero registration)
+
+This engine is **self-indexing**. To find the right skill you (or any consuming engine) MUST:
+
+1. **Glob `skills/**/SKILL.md` fresh, every time.** Never rely on a cached or hand-maintained
+   list — the tables in this README, `CLAUDE.md`, and the trigger block are *hints*, not the
+   index. The filesystem is the index.
+2. **Read each candidate's frontmatter `description`** and route by best match to the task.
+
+**Adding a skill is therefore a one-step operation:** drop a folder at
+`skills/<NN-group>/<skill-name>/SKILL.md` with valid frontmatter (copy `skills/_TEMPLATE/`).
+No registry to update, no router edit required, no consumer-engine change. The next glob finds
+it automatically. New groups work the same way — create `skills/<NN-newgroup>/` and it is
+discovered on the next glob. See `CONTRIBUTING.md`.
+
+The only hard requirement for flawless pickup: **every skill has well-formed frontmatter**
+(`name` + a specific, trigger-rich `description`). The template enforces this.
+
 ---
 
 ## Layout
