@@ -1,0 +1,20 @@
+# Premium / purchased font binaries are NEVER committed.
+# They are dropped in per device; only the tracked MANIFEST.md records what belongs here.
+# This also enforces the Fontshare rule (Clash Display, Satoshi, Cabinet Grotesk, General Sans
+# may be embedded into built artifacts but their files may not be redistributed).
+
+fonts/**/*.ttf
+fonts/**/*.otf
+fonts/**/*.woff
+fonts/**/*.woff2
+fonts/**/*.eot
+fonts/**/*.ttc
+
+# Keep the structure and the manifests tracked.
+!fonts/**/MANIFEST.md
+!fonts/**/README.md
+
+# OS / editor noise
+Thumbs.db
+.DS_Store
+desktop.ini
