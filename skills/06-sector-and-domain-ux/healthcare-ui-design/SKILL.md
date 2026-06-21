@@ -71,6 +71,10 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - `doctrine/references/ai-slop-banned-fonts.md`, `doctrine/references/pairing-principles.md`, `doctrine/references/type-scale-and-spacing.md` — typography, pairing, and scale rules for the colour/typography choices below.
 - `doctrine/references/system-font-fallbacks.md` — the deliberate device-common fallback tier (relevant to the OS-native font note in Mobile Typography).
 - Use the `references/` directory for deep detail after reading the core workflow below.
+
+## Examples
+
+- `examples/clinical-screen-worked.md` — worked spec for an inpatient vitals dashboard (bedside tablet): safety-first information hierarchy, three-signal status/alert design, WCAG 2.2 AA accessibility, error-prevention on vitals entry, and trust cues.
 <!-- dual-compat-end -->
 ## Overview
 

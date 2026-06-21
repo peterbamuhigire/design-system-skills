@@ -71,6 +71,10 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - `doctrine/references/type-scale-and-spacing.md` — the canonical type scale, line-height, weight, tracking, and spacing-rhythm numbers behind the typography and spacing sections (replaces the former `math-for-web-design` reference, which did not migrate to this engine).
 - Use the `references/` directory for deep detail after reading the core workflow below.
 - Use `references/visual-consistency.md` when pattern coherence, affordances, or user expectations are part of the task.
+
+## Examples
+
+- `examples/ui-before-after-worked.md` — a pricing card taken from a weak (AI-slop) version to a fixed version, with every change mapped to the rule it satisfies (spacing, hierarchy, contrast, colour restraint, button design, shadow/border).
 <!-- dual-compat-end -->
 ## Plugins (Load Alongside)
 

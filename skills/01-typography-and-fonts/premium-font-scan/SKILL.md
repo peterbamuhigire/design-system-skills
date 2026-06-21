@@ -56,6 +56,13 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
 - The resolved typeface (premium or baseline) with its licence basis recorded for the embedding
   step.
 
+## Examples
+
+- `examples/premium-scan-worked.md` — a full worked scan for a startup-product artifact: scan
+  `fonts/3-Startup-Product/`, read its MANIFEST, find Satoshi present, apply its Fontshare
+  embed-yes/redistribute-no rule, decide premium-vs-baseline (vs Bricolage Grotesque) with the
+  licence basis stated, and record the resolved face.
+
 ## References
 
 - `doctrine/references/font-groups-and-usage.md`, `licensing-and-embedding.md`;

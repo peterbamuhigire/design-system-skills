@@ -44,6 +44,13 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 ## Outputs
 - Implementation guidance, configuration, generated artifacts, or concrete follow-on steps.
 
+## Examples
+- `examples/palette-generation-worked.md` — a full palette *generation* for a named brief
+  (Texas barbecue restaurant): brisket-bark anchor → *smoked* mood → analogous-plus-warm-accent
+  harmony → candidate palette (OKLCH + hex) → 60-30-10 framing → a quick WCAG sanity check, then a
+  clean hand-off to the system sibling. Stays in the generation lane; the ramps/roles/hard gate are
+  the sibling's job.
+
 ## References
 - `doctrine/design-doctrine.md` — the Mission and Anti-Slop Charter (state the colour choice and its anchor first; the sourcing-authority asymmetry rule — AI picks are evidence of what to avoid, never authority for what to use).
 - `doctrine/references/ai-slop-taxonomy.md` — the convergent colour defaults to reject (indigo/purple→blue gradient, stock Tailwind palette, glassmorphism, neon-on-dark).

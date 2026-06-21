@@ -67,4 +67,8 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 ## Consolidated Child References
 
 - Load `references/routing.md` to map retired AI child skill slugs to their reference modules.
+
+## Examples
+
+- `examples/agent-ux-spec-worked.md` — a full worked agent-UX spec for a sample copilot ("Ledger"): status surface, approval/confirmation UX, uncertainty + confidence display, interruption/stop, error recovery, and the human-in-the-loop gates that tie them together. Use as a fill-in template.
 <!-- dual-compat-end -->

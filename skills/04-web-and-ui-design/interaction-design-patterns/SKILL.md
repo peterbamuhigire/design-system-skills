@@ -274,6 +274,16 @@ interaction-design-patterns (this skill)
 
 ---
 
+## Examples
+
+- `examples/pattern-applied-worked.md` — one real screen (the invoice line-items editor in an SMB
+  accounting SaaS) with three named patterns applied together: **Inline Edit**, **Optimistic Action**,
+  and **Progressive Disclosure**. Shows how each pattern is selected from observed user behaviour, the
+  trigger→response wiring and full state list for each, why each fits this screen specifically, and how
+  the three share one undo/escape, one totals source, and one save lifecycle.
+
+---
+
 ## Sources
 
 - Tidwell, J., Brewer, C., Valencia, A. (2020). *Designing Interfaces*, 3rd ed. O'Reilly.

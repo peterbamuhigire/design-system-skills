@@ -55,6 +55,13 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
 - The artifact with the chosen font correctly loaded/embedded, licence-verified, with fallback
   and (for documents) subsetting applied.
 
+## Examples
+
+- `examples/embedding-worked-spec.md` — a worked embedding spec for one chosen face (Clash Display,
+  Fontshare) across web (woff2 `@font-face` + variable + `font-display`), DOCX (embed + subset), and
+  PDF (embed-not-reference), each with its licence check (OFL vs Fontshare redistribution rule) and
+  file-size impact.
+
 ## References
 
 - `doctrine/references/embedding-by-format.md`, `licensing-and-embedding.md`.

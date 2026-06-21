@@ -88,6 +88,10 @@ App shell component, route-level layout files, reusable primitives (`DataTable`,
 - For the Bootstrap/Tabler/PHP seeder stack, load `sections/01-overview.md` and onwards.
 <!-- dual-compat-end -->
 
+## Examples
+
+- `examples/app-shell-spec-worked.md` — a worked, end-to-end SaaS app-shell spec (*Ledger Relay*, a payment-reconciliation tool): shell layout (nav rail + top bar), navigation IA, a dashboard view, a data-table view, key component states, design tokens/spacing, and responsive behaviour across breakpoints.
+
 ## Overview
 
 This skill prescribes the component architecture and interaction patterns for a modern SaaS web UI. The house stack is **Next.js App Router + React 19 + TypeScript + Tailwind** with **Shadcn/ui primitives** and **TanStack Query/Table/Form** where appropriate. Every section below is a reusable primitive or a layout pattern; build once, compose everywhere.

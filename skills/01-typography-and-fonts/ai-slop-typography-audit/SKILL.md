@@ -54,6 +54,14 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
 - A findings list (each tagged critical/major/minor with the rule it breaks) and a stated,
   non-slop remediation ready to apply.
 
+## Examples
+
+- `examples/typography-audit-filled.md` — a filled audit of a sample SaaS landing-page stylesheet
+  (Inter body + Geist display + Space Grotesk accent over a bare system stack): each banned and
+  secondary-slop face detected with the rule it breaks, scored critical/major/minor, then one
+  deliberate non-slop remediation (Bricolage Grotesque 800 → Hanken Grotesk 400, Group 3) mapped
+  finding-by-finding with the before/after CSS.
+
 ## References
 
 - `doctrine/references/ai-slop-banned-fonts.md`, `pairing-principles.md`,

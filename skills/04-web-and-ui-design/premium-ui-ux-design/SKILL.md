@@ -69,6 +69,10 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - A premium UI/UX score with specific remediation items when reviewing finished work.
 - Source notes for any book-derived reasoning used in the decision.
 
+## Examples
+
+- `examples/premium-direction-worked.md` - a full worked premium UI/UX direction for one SaaS screen (the Collections workspace): visual voice, dominant/subordinate/accent colour logic, typography roles, imagery rules, data/proof presentation, component states, and the "why this reads premium not templated" rationale.
+
 ## References
 
 - `doctrine/design-doctrine.md` — the Mission ("the moat is looking human-made") and the Anti-Slop Charter (state the choice first; the sourcing-authority asymmetry rule). Premium is the engine's core promise.

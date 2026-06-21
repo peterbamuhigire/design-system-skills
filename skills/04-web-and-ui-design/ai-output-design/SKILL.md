@@ -211,6 +211,10 @@ If a section has no content, omit it.
 
 - `ai-agent-ux` — sibling skill covering streaming/loading/feedback patterns (`ai-ux-patterns` module), long-running agent surfaces (`ai-agentic-ui` module), and AI trust/transparency principles.
 - `doctrine/references/ai-slop-taxonomy.md` — product/interface slop tells for AI surfaces.
+## Examples
+
+- [examples/ai-output-surface-worked.md](examples/ai-output-surface-worked.md) — a full worked AI output-surface spec (a "Lease Clause Explainer" feature) running through all five principles, canvas-vs-chat, and the anti-hallucination affordances.
+
 ## Consolidated Child References
 
 - Load [references/routing.md](references/routing.md) to map retired AI child skill slugs to their reference modules.

@@ -72,6 +72,10 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - `doctrine/references/type-scale-and-spacing.md` — label/field type sizing and spacing rhythm.
 - This skill's own `references/` directory for platform-specific deep detail (web/Android/iOS components, validation, accessibility) after reading the core workflow below.
 - Sibling: `04-color-and-visual-identity/color-system-and-palette` for error/success/validation colour roles (gate every pair on WCAG contrast).
+
+## Examples
+
+- `examples/form-spec-worked.md` — a complete, build-ready spec for a real account sign-up form: field anatomy, label placement, input types, inline validation with timing, the five field states plus form-level states, and WCAG 2.2 accessibility (3.3.7 redundant entry, 3.3.8 accessible authentication, 2.5.8 target size) with mobile behaviour. Use as a fill-in template.
 <!-- dual-compat-end -->
 Cross-cutting form design patterns for **web** (Bootstrap 5 / Tabler + PHP), **Android** (Jetpack Compose + Material 3), and **iOS** (SwiftUI). Apply this skill whenever you build, review, or refactor any form.
 

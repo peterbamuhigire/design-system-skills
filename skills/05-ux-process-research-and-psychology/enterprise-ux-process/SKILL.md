@@ -120,6 +120,10 @@ A complete enterprise-ux-process engagement produces:
    - Accessible (ADA/Section 508/WCAG 2.1 AA)
    - **Rule:** 4-of-5 disqualifies premium pricing. One No = no launch.
 
+## Examples
+
+- `examples/ux-engagement-worked.md` — a full worked enterprise UX engagement for a sample client (Meridian Trust Bank treasury portal): scored UX maturity assessment, 14-week engagement plan with phases/deliverables/gates, value/ROI framing, and the completed 5-outcomes pre-launch declaration.
+
 ## Cross-references
 
 ### Design doctrine (always consult)

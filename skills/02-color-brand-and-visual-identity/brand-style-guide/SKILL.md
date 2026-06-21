@@ -51,6 +51,12 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - Sibling skills: `04-color-and-visual-identity/color-system-and-palette` (palette card hexes + WCAG), `04-color-and-visual-identity/brand-visual-identity`, `01-typography-and-fonts/font-selection-and-pairing`.
 - Start with `references/legacy-guidance.md` and `references/style-guide-template.md` for the deliverable structure; read only the files under `references/` that match the task.
 
+## Examples
+- `examples/mini-style-guide-worked.md` — a worked compact brand style-guide deliverable for a
+  sample roaster (Köya): logo usage, colour palette (hex + OKLCH + roles), an approved Fraunces +
+  Public Sans typography specimen with scale, spacing system, photography note, and a do/don't.
+  Use it as the calibration target for specificity and the stated-choice discipline.
+
 ## Notes
 - Treat this `SKILL.md` as the portable execution layer for both Claude Code and Codex.
 - Preserve existing project behavior unless the current task explicitly requires a change.

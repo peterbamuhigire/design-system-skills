@@ -48,6 +48,10 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - Treat this `SKILL.md` as the portable execution layer for both Claude Code and Codex.
 - Preserve existing project behavior unless the current task explicitly requires a change.
 
+## Examples
+
+- `examples/psychology-critique-worked.md` — a worked critique of one real screen (a coffee-subscription checkout) through named psychology lenses: Gestalt grouping, Nielsen's heuristics, Norman's affordances/signifiers, cognitive load (Miller/Sweller), and Hick's/Fitts's law. Each finding pairs the principle with the design change it implies; ends with a findings-to-changes table.
+
 ## References
 
 - `doctrine/design-doctrine.md` — the Mission and Anti-Slop Charter; psychological quality is part of looking deliberately human-made, not templated.

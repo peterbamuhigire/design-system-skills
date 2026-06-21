@@ -1,61 +1,24 @@
-# Examples Backfill Tracker
+# Examples Backfill Tracker — COMPLETE
 
-The `examples/` convention (Phase 0.3) is mandatory. This tracks backfilling worked examples into
-the **pre-Phase-1 skills**. (All 23 Phase-1 P0 skills shipped their example on creation, so they
-are not debt.) **P0-ten** (hardened in Phase 1) are starred ★.
+The `examples/` convention (Phase 0.3) is mandatory. As of 2026-06-21, **every skill in the engine
+ships ≥1 worked example.** Backfill of the pre-Phase-1 skills is done.
 
-Tick ☑ when the skill ships ≥1 real worked example.
+## Status: 52 / 52 skills have a worked example ✅
 
-## 00 Cross-cutting Ops/QA/A11y
-- [x] design-audit ★ ✅
-- [x] visual-product-slop-audit ★ ✅
+- **23 Phase-1 P0 skills** — shipped their example on creation.
+- **10 P0-ten** (Phase 1 hardening) — gained references + a worked example.
+- **1 deck-system** (Phase 0.4 de-dup) — ships 8 `examples/variant-*` blueprints.
+- **18 legacy skills** (this backfill) — each gained one relevant, current, efficient worked
+  example: ai-slop-typography-audit, font-embedding-and-licensing, premium-font-scan,
+  brand-style-guide, color-selection, distinctive-by-design (before/after — the soul skill),
+  ai-agent-ux, ai-output-design, form-ux-design, interaction-design-patterns, practical-ui-design,
+  premium-ui-ux-design, webapp-gui-design, enterprise-ux-process, ux-psychology,
+  healthcare-ui-design, legal-sector-ui-ux, sector-strategies.
 
-## 01 Typography & Fonts
-- [x] font-selection-and-pairing ★ ✅
-- [ ] ai-slop-typography-audit
-- [ ] premium-font-scan
-- [ ] font-embedding-and-licensing
+## Ongoing rule
+New skills (Phase 2+) ship their example on creation (`CONTRIBUTING.md`), so this never re-accrues
+as debt. Periodically refresh examples to reflect current best practice.
 
-## 02 Color, Brand & Visual Identity
-- [x] color-system-and-palette ★ ✅
-- [x] brand-visual-identity ★ ✅
-- [ ] color-selection
-- [ ] brand-style-guide
-
-## 03 Layout, Grid & Composition
-- [x] layout-grid-and-spacing ★ ✅
-
-## 04 Web & UI Design
-- [ ] distinctive-by-design
-- [ ] practical-ui-design
-- [ ] premium-ui-ux-design
-- [ ] webapp-gui-design
-- [ ] interaction-design-patterns
-- [ ] form-ux-design
-- [ ] ai-agent-ux
-- [ ] ai-output-design
-
-## 05 UX Process, Research & Psychology
-- [ ] ux-psychology
-- [ ] enterprise-ux-process
-
-## 06 Sector & Domain UX
-- [ ] healthcare-ui-design
-- [ ] legal-sector-ui-ux
-- [ ] sector-strategies
-
-## 07 Mobile
-- [x] ios-ui-ux-design ★ ✅
-- [x] android-ui-ux-design ★ ✅
-
-## 08 Motion & Interaction
-- [x] motion-design ★ ✅
-
-## 12 Data Viz & Dashboards
-- [x] data-visualization ★ ✅
-
-## 13 Presentations & Documents
-- [x] deck-system ✅ (de-dup; ships 8 examples/variant-*)
-
-**Progress: 12 / ~29 pre-Phase-1 craft skills** (deck-system via Phase 0.4 + the 10 P0-ten via
-Phase 1 hardening). Remaining ~17 are P1/P2 backfill, hardened in later phases.
+## Post-backfill QA fixes
+- `premium-ui-ux-design`: chosen UI face Inter → **IBM Plex Sans** (Inter is banned).
+- `sector-strategies`: chosen body face Space Grotesk → **Hanken Grotesk** (Space Grotesk is secondary-ban).

@@ -51,6 +51,9 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - Sibling skills: `03-web-and-ui-design/distinctive-by-design` (commit one distinctive idea per build), `03-web-and-ui-design/legal-sector-ui-ux` and `03-web-and-ui-design/healthcare-ui-design` (deeper sector skills), `04-color-and-visual-identity/color-system-and-palette`.
 - Start with `references/legacy-guidance.md` for the preserved detailed sector matrix; read only the files under `references/` and `templates/` that match the current task.
 
+## Examples
+- `examples/sector-strategy-worked.md` — a fully reasoned worked strategy for one sector (fintech): trust cues, visual/aesthetic direction, content priorities, and the single anti-homogeneity move that keeps it distinctive. Read it to see how a sector template informs but does not dictate the final design.
+
 ## Notes
 - Treat this `SKILL.md` as the portable execution layer for both Claude Code and Codex.
 - Preserve existing project behavior unless the current task explicitly requires a change.

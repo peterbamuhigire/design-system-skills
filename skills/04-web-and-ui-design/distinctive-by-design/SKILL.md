@@ -163,6 +163,15 @@ real choice), **say so and ask** — never silently ship the convergent default.
 - A clear handoff to the build with the focal point, asymmetry, type pairing, motif/image rule,
   and the three+ craft details specified — so what gets built is authored, not defaulted.
 
+## Examples
+
+- `examples/before-after-distinctive.md` — one real screen (the *Cadence* SaaS landing hero)
+  taken from the convergent AI-slop default (Inter everywhere, indigo→blue gradient, centred
+  uniform card grid, ✨ AI badge) to an authored version built on **one stated distinctive
+  decision + why** (an asymmetric editorial split hero that shows the draft writing itself, set
+  in Bricolage Grotesque, grounded in Vignelli), with the full human-craft signature checklist
+  run against it. Read it to see the discipline applied end to end.
+
 ## References
 
 - `doctrine/design-doctrine.md` — the Mission ("the moat is looking human-made"), the five

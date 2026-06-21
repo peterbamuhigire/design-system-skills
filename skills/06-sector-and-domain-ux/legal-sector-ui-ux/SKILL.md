@@ -51,6 +51,9 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - Sibling skills: `03-web-and-ui-design/sector-strategies` (the generic sector skill this one overrides), `04-color-and-visual-identity/color-system-and-palette` (trust-signal palette + WCAG gate).
 - Start with `references/legacy-guidance.md` for the preserved detailed guidance; read only the files under `references/` that match the current task.
 
+## Examples
+- `examples/law-firm-screen-worked.md` — a worked family-law practice-area page spec: client-psychology framing, non-default trust palette and a non-banned type pairing, authority/credibility signals sequenced after reassurance, plain-English process, and a practice-specific confidential-consult CTA with the required attorney–client disclaimer.
+
 ## Notes
 - Treat this `SKILL.md` as the portable execution layer for both Claude Code and Codex.
 - Preserve existing project behavior unless the current task explicitly requires a change.
