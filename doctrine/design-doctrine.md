@@ -1,6 +1,6 @@
 # Chwezi Design Doctrine
 
-**Version:** 0.1.0
+**Version:** 0.2.0
 **Owner:** Peter Bamuhigire / Chwezi Core Systems (chwezicore.com)
 **Status:** active
 **Scope:** Cross-cutting presentation-layer doctrine for every Chwezi engine that emits a
@@ -76,7 +76,7 @@ AI nod as endorsement. See `references/ai-slop-banned-fonts.md` §Evidence basis
 | Path | What it holds |
 |---|---|
 | `doctrine/design-doctrine.md` | This charter — the always-load entry point. |
-| `doctrine/references/` | The canonical rules: the AI-slop taxonomy, banned font list, font groups, pairing, type scale, embedding, licensing, and the device-common system-font fallback tier. |
+| `doctrine/references/` | The canonical rules: the AI-slop taxonomy, banned font list, font categories, pairing, type scale, embedding, licensing, and the device-common system-font fallback tier. |
 | `doctrine/examples/` | Worked examples (good pairings, a slop-audit before/after). |
 | `skills/00-cross-cutting-ops-qa-a11y/` | **Co-activates with every group.** Accessibility (WCAG 2.2), design QA/critique, the visual audits, ethics, performance-as-UX — consult IN ADDITION, never skip. |
 | `skills/01-typography-and-fonts/` | Type selection & pairing, scale, embedding, licensing, slop audit. |
@@ -92,7 +92,7 @@ AI nod as endorsement. See `references/ai-slop-banned-fonts.md` §Evidence basis
 | `skills/11-imagery-illustration-and-art-direction/` | Photography, illustration, iconography, 3D, AI-image direction. |
 | `skills/12-data-viz-and-dashboards/` | Charts, dashboards, KPI exhibits, data products. |
 | `skills/13-presentations-and-documents/` | Decks **+** real DOCX/PDF/XLSX/editorial formatting. |
-| `fonts/<group>/` | Premium font files you purchase (gitignored) + a tracked `MANIFEST.md` per group. |
+| `fonts/<category>/` | Premium font files you purchase (gitignored) + a tracked `MANIFEST.md` per design-intent category. |
 | `governance/` | The design quality gate. |
 | `integration/` | The trigger block other engines paste in, plus the migration log. |
 
@@ -105,13 +105,20 @@ Every font skill follows the same two-tier rule:
 1. **Baseline (always available):** the named standard fonts in `references/font-groups-and-usage.md`
    are OFL/Google-Fonts faces. They never need files shipped — they are named, fetched (web),
    or assumed installed, and are safe to embed.
-2. **Premium (use when present):** before committing, **scan `fonts/<matching-group>/`** for a
+2. **Premium (use when present):** before committing, **scan `fonts/<matching-category>/`** for a
    purchased family the user has dropped in. If a premium family is present *and* its MANIFEST
    permits the intended use, prefer it when it would make the product look better. Otherwise
    fall back to the named baseline. See `skills/01-typography-and-fonts/premium-font-scan/`.
 
-The four groups in `fonts/` mirror the user's own `Downloads\Fonts` taxonomy exactly:
-`1-Editorial-Authoritative`, `2-Developer-Technical`, `3-Startup-Product`, `4-Body-Workhorses`.
+The font folders now route by design intent and functional role:
+`01-formal-institutional`, `02-editorial-literary`, `03-modern-product-grotesque`,
+`04-technical-data-code`, `05-friendly-humanist`, `06-expressive-display-artistic`,
+`07-script-cursive-handwritten`, and `08-body-ui-workhorses`.
+
+Selection order is: artifact context -> design voice -> functional role -> licence and
+availability. This lets the engine distinguish formal authority, editorial craft, product
+grotesques, technical precision, friendly service UX, expressive display type, cursive/script
+accents, and quiet body/UI workhorses.
 
 ---
 

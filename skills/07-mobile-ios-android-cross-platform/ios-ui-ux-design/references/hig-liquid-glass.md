@@ -1,9 +1,9 @@
-# Reference: Apple HIG — Liquid Glass, SF Symbols & Dynamic Type (iOS 26)
+# Reference: Apple HIG - Liquid Glass, SF Symbols And Dynamic Type
 
-The current Apple platform-design baseline for native iOS/iPadOS work. Use this alongside
+The current Apple platform-design baseline for native Apple-platform work. Use this alongside
 `doctrine/design-doctrine.md` (the anti-slop charter) and `doctrine/references/wcag-2.2-criteria.md`
 (the accessibility floor). Source: Apple Human Interface Guidelines (developer.apple.com/design/),
-"Adopting Liquid Glass," SF Symbols 7, and the iOS 26 design refresh announced at WWDC 2025.
+"Adopting Liquid Glass," the WWDC26 Design guide, SF Symbols 8, and 2026 HIG updates.
 
 Platform-face note: **SF Pro / SF Compact (San Francisco)** is the Apple **system face** — a
 platform-native default, allowed and correct for native iOS UI, carrying **no slop penalty**. It is
@@ -13,9 +13,9 @@ and avoid the banned list. Body/labels/system controls stay on SF; brand express
 
 ---
 
-## 1. Liquid Glass — the iOS 26 material
+## 1. Liquid Glass - the current Apple platform material
 
-Liquid Glass is the dynamic material introduced in iOS 26 that unifies the look across the platform.
+Liquid Glass is the dynamic material that unifies the look across Apple platforms.
 It is a **real-time rendered material** that refracts and reflects the content behind it, with
 specular highlights and a subtle lensing edge. It behaves like a physical pane of glass floating
 above content, not a flat translucent fill.
@@ -36,14 +36,14 @@ above content, not a flat translucent fill.
 - **Clear** — more transparent, for media-rich contexts (e.g. over photos/video) where you want the
   content to dominate; requires a dimming/scrim layer behind text to protect contrast.
 
-**Implementation anchors (SwiftUI, iOS 26):**
+**Implementation anchors (SwiftUI/UIKit, current Apple SDKs):**
 - `glassEffect(_:in:)` applies the material to a custom view; pair with a shape
   (e.g. `.glassEffect(.regular, in: .capsule)`).
 - `GlassEffectContainer` groups multiple glass elements so they blend and morph as one — use it when
   several glass controls sit close together (e.g. a floating control cluster).
 - `.buttonStyle(.glass)` / `.glassProminent` for glass buttons.
 - Toolbars/tab bars adopt Liquid Glass automatically when you build on standard SwiftUI containers
-  (`TabView`, `.toolbar`, `NavigationStack`) and link against the iOS 26 SDK — **prefer standard
+  (`TabView`, `.toolbar`, `NavigationStack`) or system UIKit bars and link against the current SDK - **prefer standard
   containers** so the material, scroll-edge behaviour, and accessibility come for free.
 
 **Scroll-edge effect:** content scrolling under glass chrome gets a soft gradient/blur at the edge so
@@ -59,8 +59,10 @@ Liquid Glass is contrast- and motion-sensitive. The system adapts it, but **you 
 - **Increase Contrast** — borders and separators strengthen; verify the glass edge reads as a control.
 - **Reduce Motion** — the material's specular shimmer and morph animations are dampened; never tie a
   *required* affordance to a glass animation. (See `references/ios-sensory-and-haptics.md`.)
-- **Reduce Transparency + Dark Mode** combinations — test both; legibility over busy content is the
+- **Reduce Transparency + Dark Mode** combinations - test both; legibility over busy content is the
   failure mode.
+- **Appearance personalization** - verify app icons, controls, and chrome still read under current
+  Apple appearance, tint, transparency, and icon variant settings.
 
 **Contrast still governs.** Text and glyphs on or behind glass must clear the WCAG floor: body
 **≥ 4.5:1**, large text and UI/graphical objects **≥ 3:1** (`wcag-2.2-criteria.md`). Glass is never an
@@ -69,12 +71,12 @@ for real legibility, certify with the WCAG ratio.
 
 ---
 
-## 3. SF Symbols 7 (the system icon library)
+## 3. SF Symbols 8 (the system icon library)
 
 SF Symbols is Apple's iconography system, weight- and size-matched to SF text. Using it is the native,
 non-slop default for iconography in iOS chrome.
 
-- **~6,900+ symbols**, available across weights (Ultralight → Black) and three scales
+- **7,000+ symbols**, available across weights (Ultralight -> Black) and three scales
   (small/medium/large) that align to the surrounding Dynamic Type.
 - **Rendering modes:** Monochrome, Hierarchical (one tint, layered opacities), Palette (multiple
   explicit colours), and Multicolor (built-in meaningful colour). Pick Hierarchical for most chrome;
@@ -86,6 +88,8 @@ non-slop default for iconography in iOS chrome.
   share an optical rhythm.
 - **Custom symbols** must be drawn on the SF Symbols template so they inherit weights, scales, and
   rendering modes; ad-hoc PNGs break the system and read as slop.
+- **SF Symbols 8 watch item:** use the current app to validate new symbols, annotations, animations,
+  and rendering modes before exporting custom symbols.
 
 ---
 
@@ -120,8 +124,10 @@ Dynamic Type lets users pick their text size; supporting it is a hard iOS access
 4. Text over **Clear** glass or imagery has a scrim and clears **4.5:1 / 3:1**.
 5. Built on **standard system containers** (`TabView`, `.toolbar`, `NavigationStack`) so material,
    scroll-edge, and a11y are automatic — no hand-rolled bars unless unavoidable.
-6. Icons are **SF Symbols** (or template-drawn custom symbols), weight-matched to adjacent text.
+6. Icons are **SF Symbols 8** (or template-drawn custom symbols), weight-matched to adjacent text.
 7. All text uses **semantic Dynamic Type styles** and survives **AX5**; branded display type scales
    relatively, body stays on SF.
-8. Branded display face (if any) is from an **approved font group** — not the banned list; SF carries
+8. Branded display face (if any) is from an **approved font category** — not the banned list; SF carries
    the system UI.
+9. App icon variants and appearance personalization are reviewed for Liquid Glass attributes,
+   legibility, and brand recognition.

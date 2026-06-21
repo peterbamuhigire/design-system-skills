@@ -1,10 +1,10 @@
 # Worked example: scanning the premium folder before committing a face
 
 A complete, copy-real application of `premium-font-scan` end to end: classify the artifact,
-scan the matching `fonts/<group>/` folder, read its `MANIFEST.md`, decide premium-vs-baseline
+scan the matching `fonts/<category>/` folder, read its `MANIFEST.md`, decide premium-vs-baseline
 with the licence basis stated, and record the resolved face for the embedding step. Built on
 `doctrine/references/font-groups-and-usage.md`, `licensing-and-embedding.md`, and
-`fonts/3-Startup-Product/MANIFEST.md`.
+`fonts/03-modern-product-grotesque/MANIFEST.md`.
 
 ---
 
@@ -15,18 +15,18 @@ with the licence basis stated, and record the resolved face for the embedding st
 > body face is **embedded as `woff2`** and served from the site — never shipped as a downloadable
 > file. Audience: startup/product. No client brand guideline mandates fonts.
 
-Classify → **Group 3, Startup / Product** (`font-groups-and-usage.md`). The named OFL baseline
+Classify → **03 Modern Product / Grotesque** (`font-groups-and-usage.md`). The named OFL baseline
 anchor for this group is **Bricolage Grotesque**.
 
 ---
 
 ## Step 1–2 — Locate and list what is actually present
 
-Folder: `fonts/3-Startup-Product/`. Premium binaries are gitignored, so I list what is on *this*
+Folder: `fonts/03-modern-product-grotesque/`. Premium binaries are gitignored, so I list what is on *this*
 device rather than assuming:
 
 ```
-$ ls fonts/3-Startup-Product/
+$ ls fonts/03-modern-product-grotesque/
 MANIFEST.md
 Satoshi-Variable.woff2
 Satoshi-Variable.ttf
@@ -40,7 +40,7 @@ so they are not candidates for this scan.
 
 ## Step 3 — Read the MANIFEST for the present family
 
-From `fonts/3-Startup-Product/MANIFEST.md`, the row for Satoshi:
+From `fonts/03-modern-product-grotesque/MANIFEST.md`, the row for Satoshi:
 
 | Family | Licence | Embed? | Redistribute file? | Present? |
 |---|---|---|---|---|
@@ -71,12 +71,12 @@ the format is web where the face is **embedded**, not file-shipped.
 
 Step 5 guard observed: the build pipeline **embeds** Satoshi as `woff2`; it must **not** commit the
 Satoshi binary into the site repo or expose it as a downloadable asset. The gitignore on
-`fonts/3-Startup-Product/` already enforces this; the deploy step references the embedded face only.
+`fonts/03-modern-product-grotesque/` already enforces this; the deploy step references the embedded face only.
 
 > Counter-case for the record: had this been a **DOCX** deliverable that *bundles* the font file
 > inside the document for an external client, that bundling is closer to file redistribution — in
 > that case Satoshi would be dropped and the body would fall back to the OFL baseline (Bricolage
-> Grotesque, or a Group 4 OFL workhorse like Hanken Grotesk) and the report would say so. Here the
+> Grotesque, or a 08 Body / UI Workhorse like Hanken Grotesk) and the report would say so. Here the
 > web-embed format keeps Satoshi licit.
 
 ---

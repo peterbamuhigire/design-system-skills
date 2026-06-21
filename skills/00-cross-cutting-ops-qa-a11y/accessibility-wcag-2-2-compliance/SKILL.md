@@ -32,6 +32,9 @@ that co-activates with every group and is enforced one last time by
 - A request mentions: focus order/visibility, keyboard operability, tab traps, ARIA,
   accessible names, screen-reader testing, target size, dragging alternatives, redundant
   entry, accessible authentication, reduced motion, reflow, or 200% zoom.
+- The UI uses Apple Liquid Glass, SF Symbols, App Intents surfaces, widgets, or iOS/iPadOS/macOS
+  chrome that must pass VoiceOver, Dynamic Type, Reduce Transparency, Increase Contrast, and
+  Reduce Motion checks.
 - Certifying that a deliverable meets the AA floor before ship (alongside the QA gate).
 
 ## Do Not Use When
@@ -106,19 +109,23 @@ that co-activates with every group and is enforced one last time by
 14. **Contrast — design with APCA, certify with the WCAG ratio.** Body ≥ 4.5:1; large text and
     UI/graphical objects ≥ 3:1. Construct the palette in `accessible-color-and-contrast`; this
     skill only verifies the result. See `wcag-2.2-criteria.md` §contrast method note.
+15. **Apple material settings.** For Liquid Glass or Apple-native chrome, verify Reduce
+    Transparency, Increase Contrast, Reduce Motion, Dark Mode, Dynamic Type AX sizes, VoiceOver,
+    and appearance/icon variants. Do not let translucency, refraction, or icon-only symbols carry
+    required meaning without a text/name fallback.
 
 ### B. Audit (certify against the floor)
-15. **Automated sweep first.** Run axe-core / Lighthouse / Accessibility Insights. This catches
+16. **Automated sweep first.** Run axe-core / Lighthouse / Accessibility Insights. This catches
     only **~30–40%** of issues (per `wcag-2.2-criteria.md` §testing) — never stop here.
-16. **Manual keyboard traversal.** Unplug the mouse. Tab through the whole flow: every control
+17. **Manual keyboard traversal.** Unplug the mouse. Tab through the whole flow: every control
     reachable, focus visible and never obscured, order logical, no trap, Esc works, modal
     behaviour correct. See the checklist in `references/keyboard-and-focus.md`.
-17. **Screen-reader smoke test.** Walk the flow with NVDA (Win) and VoiceOver (mac/iOS): does
+18. **Screen-reader smoke test.** Walk the flow with NVDA (Win) and VoiceOver (mac/iOS): does
     each control announce a sensible **name + role + state**? Are dynamic changes announced?
     Are decorative images silent and meaningful ones described? See `references/aria-patterns.md`.
-18. **Target-size + zoom + reduced-motion spot checks.** Measure tap targets; test at 200% and
+19. **Target-size + zoom + reduced-motion spot checks.** Measure tap targets; test at 200% and
     320px; toggle reduced motion.
-19. **Record the result on the audit sheet.** For each applicable criterion: **Pass / Fail /
+20. **Record the result on the audit sheet.** For each applicable criterion: **Pass / Fail /
     N/A**, evidence, and the fix. Use `examples/wcag-2.2-audit-sheet.md` as the template.
     A Fail on any AA criterion blocks ship.
 

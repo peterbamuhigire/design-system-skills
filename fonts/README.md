@@ -1,34 +1,51 @@
-# fonts/ — Premium font drop-in folders & scan protocol
+# fonts/ - Premium font drop-in folders and scan protocol
 
-These four folders mirror the user's own `Downloads\Fonts` taxonomy exactly. They hold the
-**premium font files** the user purchases and drops in per device. The `premium-font-scan`
-skill reads them to decide whether a premium family should override the OFL baseline.
+These folders hold purchased or manually downloaded font files that are available on this
+device. Font binaries are gitignored; the tracked `MANIFEST.md` files are the durable routing
+and licence records. Agents must classify by design intent before scanning.
 
-```
+```text
 fonts/
-├── 1-Editorial-Authoritative/   MANIFEST.md   ← reports, proposals, business plans, SRS
-├── 2-Developer-Technical/       MANIFEST.md   ← dashboards, code UI, API docs
-├── 3-Startup-Product/           MANIFEST.md   ← landing pages, SaaS marketing, decks
-└── 4-Body-Workhorses/           MANIFEST.md   ← body layer under a display face
+├── 01-formal-institutional/        MANIFEST.md  - official, legal, finance, board, SRS
+├── 02-editorial-literary/          MANIFEST.md  - authored reports, essays, whitepapers
+├── 03-modern-product-grotesque/    MANIFEST.md  - SaaS, startup, product, pitch decks
+├── 04-technical-data-code/         MANIFEST.md  - dashboards, admin, API docs, code/data
+├── 05-friendly-humanist/           MANIFEST.md  - healthcare, education, civic/service UI
+├── 06-expressive-display-artistic/ MANIFEST.md  - campaigns, posters, cultural/hero display
+├── 07-script-cursive-handwritten/  MANIFEST.md  - signatures, cursive, handwritten accents
+└── 08-body-ui-workhorses/          MANIFEST.md  - quiet body/UI layer under a display face
 ```
 
-## The protocol (standard-first, premium-when-present)
+## Selection protocol
 
-1. A skill classifies the artifact into a group (see `doctrine/references/font-groups-and-usage.md`).
-2. It **scans the matching folder** for actually-present families (binaries are gitignored, so
-   presence varies per device).
-3. It **reads the group's `MANIFEST.md`** for licence/embedding permission.
-4. If a present premium family fits better *and* the licence allows the needed use → use it.
-   Else → use the named OFL baseline. Always **state which and why**.
+1. Classify the artifact by context: document, site, app UI, dashboard, deck, campaign, etc.
+2. Classify the desired voice: formal, editorial, product, technical, friendly, expressive, or
+   script/cursive.
+3. Classify the role: display, body, UI, code/data, or accent.
+4. Scan the matching category folder for present `.ttf`, `.otf`, or `.woff2` files.
+5. Read that folder's `MANIFEST.md` and confirm role, avoid-for notes, pairing, licence,
+   embedding permission, and file redistribution permission.
+6. If a present premium family fits the voice and licence, use it. Otherwise use the named OFL
+   baseline from `doctrine/references/font-groups-and-usage.md`.
+7. State the typeface pair and reason before producing the artifact.
 
-## Why binaries are gitignored
+## Manifest schema
 
-- Keeps the repo light (a single family across weights is hundreds of KB to MB).
-- Respects licences uniformly — the **Fontshare** families (Clash Display, Satoshi, Cabinet
-  Grotesk, General Sans) **forbid file redistribution**, so they must never enter git.
-- The tracked **MANIFEST.md** files are the durable record of *what should be here* and *what
-  each licence permits* — they sync via git; the files themselves you place per device.
+Each manifest uses this schema so agents can make defensible choices:
 
-Drop files directly into the group folder (subfolders per family are fine). Update the
-MANIFEST's "Present?" column if you want a per-device note, but the MANIFEST's licence columns
-are canonical.
+```markdown
+| Family | Role | Voice | Best for | Avoid for | Pair with | Licence | Embed? | Redistribute file? | Present? |
+```
+
+## Licence policy
+
+- OFL families are safe to use and embed, but font files are still kept out of git by policy.
+- Fontshare families such as Clash Display, Satoshi, Cabinet Grotesk, and General Sans may be
+  used and embedded, but raw files may not be redistributed.
+- Premium commercial families must be added to the right category manifest with explicit
+  embedding and redistribution notes before use.
+- Geist is banned. Do not place it in any category.
+
+Drop files directly into the category folder, or into family subfolders inside it. Update the
+manifest only when the licence or intended routing changes; actual file presence is detected by
+scanning the device.

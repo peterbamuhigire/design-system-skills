@@ -13,7 +13,7 @@ in `references/cover-and-divider-systems.md`), with a thin left accent band as t
 - **Type (group 01 Editorial):** **Fraunces** (display, headline) over **Source Serif 4** (body /
   marks). Reason: Fraunces' high-contrast, slightly old-style cut reads as institutional and authored
   — the opposite of a Calibri export — while Source Serif 4 keeps the body credible and quiet. Both
-  are OFL, safe to embed (`font-groups-and-usage.md`). Scanned `fonts/1-Editorial-Authoritative/`
+  are OFL, safe to embed (`font-groups-and-usage.md`). Scanned `fonts/01-formal-institutional/`
   first; no licensed premium family present, so baseline used.
 - **Colour:** ground **warm off-white `#FAF8F4`**; ink **near-black `#1A1A1A`**; single accent
   **deep teal `#0F4C4A`** (the recurring thread). No gradient.

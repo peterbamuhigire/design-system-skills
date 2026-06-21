@@ -5,8 +5,8 @@ Liquid Glass)** native resolution, the **Android (Material 3 Expressive)** nativ
 the **parity call**. "Unify" = same value/behaviour both sides. "Diverge" = use each platform's
 native form. Brand layers stay unified throughout (`doctrine/design-doctrine.md` §0).
 
-Version gates: **Liquid Glass** is the iOS 26+ HIG material (translucent, refractive layered
-surfaces); on older iOS fall back to standard HIG materials/vibrancy. **Material 3 Expressive** is
+Version gates: **Liquid Glass** is the current Apple HIG material (translucent, refractive layered
+surfaces); on older deployment targets fall back to standard HIG materials/vibrancy. **Material 3 Expressive** is
 the M3 evolution (larger/looser shapes, springy motion, expanded tonal + shape tokens); requires
 the M3 Expressive token set, else fall back to baseline Material 3.
 
@@ -16,7 +16,7 @@ the M3 Expressive token set, else fall back to baseline Material 3.
 
 | Element | iOS (HIG / Liquid Glass) | Android (Material 3 Expressive) | Parity call |
 |---|---|---|---|
-| Primary destinations (3–5) | Tab bar, bottom, Liquid Glass material; SF Symbols | Bottom navigation bar (compact) → navigation rail (medium) → navigation drawer/pane (expanded) | **Diverge** — same destinations, native container per platform |
+| Primary destinations (3–5) | Tab bar, bottom, Liquid Glass material; SF Symbols 8 | Bottom navigation bar (compact) → navigation rail (medium) → navigation drawer/pane (expanded) | **Diverge** — same destinations, native container per platform |
 | Back navigation | Top-left chevron + **edge-swipe-back** gesture (system) | System **back gesture/button** (OS-owned, predictive back) + up-affordance in top app bar | **Diverge** — never put an iOS chevron on Android as the only back path |
 | Hierarchical drill-in | `NavigationStack` push (slide-in from right) | Navigate within nav host; container-transform or shared-axis transition | **Diverge** (mechanism); **Unify** the hierarchy itself |
 | Modal / focused task | Sheet (detent: medium/large), grabber; full-screen cover only for true takeover | Bottom sheet (modal/standard) or full-screen dialog; FAB may launch create flows | **Diverge** — both modal, different physics & affordances |
@@ -41,7 +41,7 @@ the M3 Expressive token set, else fall back to baseline Material 3.
 | Aspect | iOS | Android | Parity call |
 |---|---|---|---|
 | System UI face | **SF Pro** (Dynamic Type styles: LargeTitle…Caption2) | **Roboto** (M3 type scale: Display/Headline/Title/Body/Label) | **Diverge** for *system* text only — both are allowed system defaults (see `doctrine/references/ai-slop-banned-fonts.md` caveat) |
-| Branded display face | From approved font groups, embedded | Same approved face, same files | **Unify** — brand type is identical both sides |
+| Branded display face | From approved font categories, embedded | Same approved face, same files | **Unify** — brand type is identical both sides |
 | Scaling | Dynamic Type (respect user setting) | Font scale (sp units; respect setting) | **Unify** the intent: never hardcode, always scale |
 | Type scale mapping | LargeTitle ≈ Display, Title ≈ Headline, Body ≈ Body, Footnote ≈ Label | per `doctrine/references/type-scale-and-spacing.md` | **Unify** the hierarchy; map names per platform |
 | Min touch text/target | 44 pt | 48 dp | **Diverge** value; both satisfy `wcag-2.2-criteria.md` 24px floor |

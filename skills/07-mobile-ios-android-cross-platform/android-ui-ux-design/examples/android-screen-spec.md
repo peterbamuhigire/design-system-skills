@@ -17,9 +17,9 @@ component/colour/type/motion/state decisions, then the gate.
 - **Anti-slop stance:** This will not ship as stock Material 3 with default Roboto everywhere and a
   flat card grid — that is the convergent default. The authored signature here is **one expressive
   shape language + a container-transform into the sale flow + a fixed brand palette**.
-- **Type:** Branded display/headline from an **approved font group** —
-  `1-Editorial-Authoritative` (a confident grotesque/serif display for the big "Today" + the money
-  figure) paired with a body workhorse from `4-Body-Workhorses` for dense numbers/labels. **Roboto
+- **Type:** Branded display/headline from an **approved font category** —
+  `03-modern-product-grotesque` (a confident product display for the big "Today" + the money
+  figure) paired with a body workhorse from `08-body-ui-workhorses` for dense numbers/labels. **Roboto
   is used only as the system fallback** for label/body roles if no body family is embedded — it is
   **not** the deliberate display face (Roboto-as-brand is banned, doctrine
   `ai-slop-banned-fonts.md`). Choice checked against the banned list; pairing, not monotype.
@@ -77,9 +77,9 @@ certified with the WCAG ratio — see `doctrine/references/wcag-2.2-criteria.md`
 
 | Text | M3 role | Face |
 |---|---|---|
-| "Today" / screen title | Headline Large | Approved display (`1-Editorial-Authoritative`) |
+| "Today" / screen title | Headline Large | Approved display (`03-modern-product-grotesque`) |
 | Net sales figure | Display Large | Approved display |
-| KPI numbers | Title Medium | Body workhorse (`4-Body-Workhorses`) |
+| KPI numbers | Title Medium | Body workhorse (`08-body-ui-workhorses`) |
 | Transaction rows / labels | Body Medium / Label Large | Body workhorse, **Roboto fallback** if unembedded |
 
 All sizes in **sp**; layout verified at **200% font scale** without clipping.

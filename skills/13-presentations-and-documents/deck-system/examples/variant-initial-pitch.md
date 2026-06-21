@@ -35,7 +35,7 @@ metadata:
 ## References
 - Read `references/pitch-psychology.md` when you need the deeper framework, examples, or supporting material it contains.
 - Read `references/storytelling.md` when you need the deeper framework, examples, or supporting material it contains.
-- Apply `doctrine/design-doctrine.md` (the anti-slop charter and Mission) and `doctrine/references/ai-slop-banned-fonts.md` when specifying deck typography and Visual Direction — never a banned default. Use `doctrine/references/pairing-principles.md` and `doctrine/references/type-scale-and-spacing.md` for the type pairing, scale, and spacing on every slide (decks default to Group 3 Startup/Product — Bricolage Grotesque display + Hanken Grotesk body — per `doctrine/references/font-groups-and-usage.md`).
+- Apply `doctrine/design-doctrine.md` (the anti-slop charter and Mission) and `doctrine/references/ai-slop-banned-fonts.md` when specifying deck typography and Visual Direction — never a banned default. Use `doctrine/references/pairing-principles.md` and `doctrine/references/type-scale-and-spacing.md` for the type pairing, scale, and spacing on every slide (decks default to 03 Modern Product / Grotesque - Bricolage Grotesque display + Hanken Grotesk body - per `doctrine/references/font-groups-and-usage.md`).
 
 <!-- dual-compat:end -->
 

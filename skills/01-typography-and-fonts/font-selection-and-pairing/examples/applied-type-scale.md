@@ -14,7 +14,7 @@ settings, and the anti-slop checklist run. Built on
 > templated startup page — and survive from a 360px budget phone to a 1240px+ desktop. Output:
 > web (HTML/CSS). Audience: startup/product. No client brand guideline mandates fonts.
 
-Classify → **Group 3, Startup / Product** (`font-groups-and-usage.md`).
+Classify → **03 Modern Product / Grotesque** (`font-groups-and-usage.md`).
 
 ---
 

@@ -1,6 +1,6 @@
 # Reference: DOCX Named Style System (real pt sizes)
 
-The canonical named-style set for a premium Group 1 (Editorial / Authoritative) Word document.
+The canonical named-style set for a premium 01 Formal / Institutional Word document.
 Every value is a *real* setting you enter in Word's style editor. Define these as **named
 paragraph styles** (and a few character styles), bind the heading styles to Word's built-in
 **outline levels** so the TOC and the accessibility tag tree read them. Never format headings
@@ -8,7 +8,7 @@ with manual bold/size runs.
 
 > Default pairing (baseline, always available): **Fraunces** (display serif) for Title/Headings,
 > **Source Serif 4** for body — or **Public Sans** body for a quieter sans counterpoint. Scan
-> `fonts/1-Editorial-Authoritative/` for a purchased premium family and prefer it when it
+> `fonts/01-formal-institutional/` for a purchased premium family and prefer it when it
 > improves the result. Never Calibri, Aptos, Inter, or Times New Roman as a reflex.
 
 ---

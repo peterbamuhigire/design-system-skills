@@ -15,6 +15,28 @@ here, so each domain engine's skill count stays low.
 
 ---
 
+## Latest Update: Apple UI And WWDC26 Compatibility
+
+As of 2026-06-21, the mobile Apple guidance is aligned with WWDC26-era design
+and platform expectations:
+
+- `ios-ui-ux-design` now references current Apple SDK-era Liquid Glass, SF
+  Symbols 8, Dynamic Type, haptics, app icon variants, appearance
+  personalization, and Apple accessibility settings.
+- Cross-platform mobile parity now treats iPhone/iPad/Mac-designed-for-iPhone
+  resizability and Liquid Glass as platform-specific behavior, not generic
+  mobile chrome.
+- Responsive layout, accessibility, motion, design tokens, and pre-launch QA
+  now include Apple-specific gates for Safari/WebKit behavior, Reduce
+  Transparency, Increase Contrast, Reduce Motion, VoiceOver, Dynamic Type, and
+  resizable Apple windows.
+
+This update is coordinated with the `skills-web-dev` WWDC26 Apple platform
+modernization so implementation skills own code/toolchain guidance and this
+engine owns presentation-layer guidance.
+
+---
+
 ## How to use this engine (router)
 
 These skills are **not** on Claude Code's native discovery path. Read the `SKILL.md` files
@@ -31,7 +53,7 @@ directly; do not use the `Skill` tool for them.
 | Designing web / app / desktop UI (craft) | `skills/04-web-and-ui-design/` |
 | UX research, process & psychology | `skills/05-ux-process-research-and-psychology/` |
 | Sector/vertical UX (healthcare, legal, fintech…) | `skills/06-sector-and-domain-ux/` |
-| Mobile (iOS / Android / cross-platform) | `skills/07-mobile-ios-android-cross-platform/` |
+| Mobile (iOS / Android / cross-platform, including current Apple UI) | `skills/07-mobile-ios-android-cross-platform/` |
 | Motion & interaction | `skills/08-motion-and-interaction/` |
 | Design systems, tokens & handoff | `skills/09-design-systems-tokens-and-theming/` |
 | Content design & UX writing | `skills/10-content-design-and-ux-writing/` |
@@ -75,7 +97,7 @@ design-system-skills/
 ├── README.md                      ← this router       CLAUDE.md · AGENTS.md (dual-compat)
 ├── doctrine/
 │   ├── design-doctrine.md         ← always-load charter
-│   ├── references/                ← banned list, font groups, pairing, type scale, embedding, licensing
+│   ├── references/                ← banned list, font categories, pairing, type scale, embedding, licensing
 │   └── examples/
 ├── skills/                        ← 13 groups + 1 cross-cutting (co-activates)
 │   ├── 00-cross-cutting-ops-qa-a11y/   (2)  ← accessibility, QA, audits — always-on
@@ -101,8 +123,14 @@ design-system-skills/
 
 - **v0.2.0 (2026-06-21)** — live and populated: **37 skills** across 6 groups; full doctrine
   (Mission, anti-slop charter, sourcing-authority asymmetry, AI-slop taxonomy, banned list,
-  font groups, pairing, type scale, embedding, licensing, system-font fallbacks); font taxonomy
+  font categories, pairing, type scale, embedding, licensing, system-font fallbacks); font taxonomy
   + manifests; discovery contract + `_TEMPLATE` + `CONTRIBUTING.md`.
+- **v0.4.1 (2026-06-21) - Apple UI compatibility refresh.** Updated iOS,
+  cross-platform parity, responsive layout, accessibility, motion, tokens, and
+  QA guidance for current Apple Liquid Glass, SF Symbols 8, app icon variants,
+  Safari/WebKit behavior, and resizable iPhone/iPad/Mac-designed-for-iPhone
+  surfaces. Active public count remains **52 skills**; `_TEMPLATE` is present
+  on disk but is not an active skill.
 - **v0.4.0 — Hardening Phase 1 COMPLETE (2026-06-21).** On the 14-group taxonomy (Phase 0),
   authored all **23 P0 skills** — real DOCX/PDF document formatting, design tokens + component
   library + dev handoff, accessibility (WCAG 2.2), i18n/RTL, performance-as-UX, design-QA,

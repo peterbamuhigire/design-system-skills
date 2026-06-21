@@ -79,8 +79,8 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 5. **Speed is UX** — If it feels slow, it's broken regardless of how it looks.
 6. **Content-first hierarchy** — Important information is immediately visible.
 7. **Touch-friendly targets** — Minimum 44pt for all interactive elements (Apple HIG).
-8. **SF Symbols for icons** — Use SF Symbols for system icons unless custom icons are required per `mobile-custom-icons`.
-9. **iOS 26 Liquid Glass** — For apps recompiled against iOS 26 SDK, adopt the Liquid Glass design language for translucent materials and depth.
+8. **SF Symbols for icons** — Use SF Symbols 8 for system icons unless custom icons are required per `mobile-custom-icons`.
+9. **Current Apple Liquid Glass** — For apps built against current Apple SDKs, adopt Liquid Glass for platform chrome and depth while preserving availability and accessibility fallbacks.
 
 ### Visual Standards
 
@@ -91,7 +91,7 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 | **Content padding** | 16pt horizontal, 8-16pt vertical between items |
 | **Screen padding** | 16pt compact, 20pt regular |
 | **Touch targets** | Minimum 44pt height/width (Apple HIG) |
-| **Icon size** | SF Symbols: 17pt body, 22pt title, 48pt empty states |
+| **Icon size** | SF Symbols 8: 17pt body, 22pt title, 48pt empty states |
 | **Typography** | Use system `Font` API exclusively |
 
 ## Additional Guidance

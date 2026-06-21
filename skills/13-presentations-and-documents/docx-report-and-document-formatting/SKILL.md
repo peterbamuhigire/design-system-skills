@@ -42,7 +42,7 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
 
 - The document's purpose, audience, and length class (memo vs multi-section report) — this sets
   how many heading levels and whether a TOC is warranted.
-- The chosen **Group 1 (Editorial / Authoritative)** pairing — a distinctive serif for headings
+- The chosen **01 Formal / Institutional** pairing — a distinctive serif for headings
   plus a refined body face — stated and justified per the doctrine charter, with its licence
   basis confirmed for embedding. Never a banned default (Calibri/Aptos/Inter/Times New Roman as
   a reflex).
@@ -52,11 +52,12 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
 
 ## Workflow
 
-1. **Pick the Group 1 editorial type and state it.** Per the Anti-Slop Charter
+1. **Pick the 01 Formal / Institutional type and state it.** Per the Anti-Slop Charter
    (`doctrine/design-doctrine.md` §2), name the heading face, the body face, and *why they fit
-   this document* **before** formatting. Default baseline pairing: **Fraunces → Source Serif 4**
-   (or → **Public Sans** for a quieter sans body). Confirm against
-   `doctrine/references/font-groups-and-usage.md`; scan `fonts/1-Editorial-Authoritative/` for a
+   this document* **before** formatting. Default baseline pairing: **Source Serif 4 -> Public Sans**
+   for formal institutional documents, or **Fraunces -> Source Serif 4** when the brief calls for
+   a more editorial/literary register. Confirm against
+   `doctrine/references/font-groups-and-usage.md`; scan `fonts/01-formal-institutional/` for a
    purchased premium family and prefer it when it improves the result. Never use a banned font
    (`doctrine/references/ai-slop-banned-fonts.md`) — and never silently fall back to Calibri.
 2. **Build the named style set with real pt sizes.** Define Word *named paragraph and character
@@ -115,7 +116,7 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
 - **Embedded + subset** fonts (licence-verified) so it renders as designed everywhere.
 - **WCAG-tagged** document: language set, heading tree, alt text, table headers, AA contrast,
   logical reading order — passing Word's Accessibility Checker with zero errors.
-- A one-paragraph **type-choice rationale** (which Group 1 pairing and why), per the charter.
+- A one-paragraph **type-choice rationale** (which 01 Formal / Institutional pairing and why), per the charter.
 
 ## Examples
 
@@ -127,7 +128,7 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
 ## References
 
 - `doctrine/design-doctrine.md` — Anti-Slop Charter, the asymmetry rule, state-the-choice.
-- `doctrine/references/font-groups-and-usage.md` — Group 1 Editorial baseline pairings.
+- `doctrine/references/font-groups-and-usage.md` — 01 Formal / Institutional and 02 Editorial / Literary baseline pairings.
 - `doctrine/references/embedding-by-format.md` — DOCX embed + subset rules.
 - `doctrine/references/licensing-and-embedding.md` — licence check before embedding.
 - `doctrine/references/ai-slop-banned-fonts.md` — the fonts never to use.

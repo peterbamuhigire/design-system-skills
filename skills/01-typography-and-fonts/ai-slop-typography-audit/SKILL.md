@@ -28,7 +28,7 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
 ## Required Inputs
 
 - The artifact or its source (CSS/HTML, the document file, screenshots, or a style spec).
-- The intended context (so the remediation maps to the right font group).
+- The intended context and design voice (so the remediation maps to the right font category).
 
 ## Workflow
 
@@ -40,7 +40,7 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
 3. **Detect structural slop:** one font for everything; mid-weights only (no extremes);
    near-identical size steps; wide-tracked body; pure-black body text.
 4. **Score** each finding (primary-font slop is critical; structural slop is major/minor).
-5. **Remediate deliberately:** propose a non-slop pairing + scale for the artifact's group via
+5. **Remediate deliberately:** propose a non-slop pairing + scale for the artifact's category via
    `font-selection-and-pairing`; state the replacement and reason.
 6. **Report** findings → fixes, with before/after.
 
@@ -59,7 +59,8 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
 - `examples/typography-audit-filled.md` — a filled audit of a sample SaaS landing-page stylesheet
   (Inter body + Geist display + Space Grotesk accent over a bare system stack): each banned and
   secondary-slop face detected with the rule it breaks, scored critical/major/minor, then one
-  deliberate non-slop remediation (Bricolage Grotesque 800 → Hanken Grotesk 400, Group 3) mapped
+  deliberate non-slop remediation (Bricolage Grotesque 800 -> Hanken Grotesk 400, 03 Modern
+  Product / Grotesque) mapped
   finding-by-finding with the before/after CSS.
 
 ## References

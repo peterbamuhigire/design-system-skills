@@ -1,87 +1,121 @@
-# Reference: Font Groups, Where They Apply, and the Approved Baseline
+# Reference: Font Categories, Usage, and Approved Baselines
 
-Four groups. Each maps to a folder in `fonts/<group>/` (mirroring the user's `Downloads\Fonts`
-taxonomy) and to a context. The faces listed are **OFL/Google-Fonts baselines** — always
-available, safe to embed — unless noted. Before committing, scan the matching `fonts/<group>/`
-folder for a purchased premium family and prefer it when it improves the result
-(see `premium-font-scan`).
+Font routing is based on design intent, not only artifact type. Each category maps to a folder
+in `fonts/<category>/` and to a family of visual voices. Before committing, scan the matching
+folder for present premium files and read its `MANIFEST.md`.
 
-> Pairing always crosses a display/header face with a refined body face. A group tells you the
-> *mood*; the pairing rules in `pairing-principles.md` tell you how to combine.
+> Pairing always crosses a display/header face with a refined body face. A category tells you
+> the voice and role; `pairing-principles.md` tells you how to combine faces.
 
----
+## Routing order
 
-## Group 1 — Editorial / Authoritative
+1. **Artifact context:** proposal, SRS, dashboard, app UI, landing page, pitch deck, campaign,
+   report, document, mobile screen, etc.
+2. **Design voice:** formal, editorial, product, technical, friendly, expressive, or
+   script/cursive.
+3. **Functional role:** display, body, UI, code/data, or accent.
+4. **Licence and availability:** premium present? embed allowed? raw-file redistribution allowed?
 
-**Use for:** reports, proposals, business plans, BRD/SRS documents, whitepapers, any artifact
-that must read as considered, credible, and institutional. The default group for the
-document-generating engines (business-plan, srs, proposal, digital-research).
+## 01 - Formal / Institutional
 
-**Baseline faces (serif):** Fraunces · Crimson Pro · Newsreader · Source Serif 4 · Spectral
+**Use for:** official, legal, finance, government, board, policy, SRS/BRD, business plans,
+formal proposals, statutory or audit-ready documents.
 
-**Premium folder:** `fonts/1-Editorial-Authoritative/`
-**Typical role:** distinctive serif for headings + a refined serif or quiet sans for body.
+**Baseline faces:** Source Serif 4, Spectral, Crimson Pro, IBM Plex Serif, Libre Baskerville.
 
----
+**Premium folder:** `fonts/01-formal-institutional/`
+**Typical role:** serious serif display/body with a quiet sans body or UI layer.
 
-## Group 2 — Developer / Technical
+## 02 - Editorial / Literary
 
-**Use for:** dashboards, code-adjacent UI, API docs, technical documentation, admin panels,
-anything where a precise, engineered feel is correct.
+**Use for:** authored reports, whitepapers, essays, thought leadership, premium report covers,
+cultural or magazine-like documents.
 
-**Baseline faces:** IBM Plex family (Sans / Serif / Mono — pairs *within* one superfamily) ·
-JetBrains Mono (display or code accents) · Fira Code (code blocks) · Space Mono (sparingly,
-short labels only).
+**Baseline faces:** Fraunces, Newsreader, Cormorant Garamond, Alegreya, Libre Caslon Text.
 
-**Premium folder:** `fonts/2-Developer-Technical/`
-**Typical role:** IBM Plex Sans for UI body, IBM Plex Mono / JetBrains Mono for code and data,
-a Plex Serif accent for long-form. Never mix monospace with proportional in the same role.
+**Premium folder:** `fonts/02-editorial-literary/`
+**Typical role:** distinctive editorial display with a readable serif or quiet sans body.
 
----
+## 03 - Modern Product / Grotesque
 
-## Group 3 — Startup / Product
+**Use for:** SaaS landing pages, startup marketing, pitch decks, branded product UI, product
+launches, pricing pages, contemporary web apps.
 
-**Use for:** landing pages, SaaS marketing, product launch sites, pitch decks — anywhere a
-confident, contemporary, branded feel wins.
+**Baseline faces:** Bricolage Grotesque. Premium/manual faces: Clash Display, Satoshi, Cabinet
+Grotesk, General Sans.
 
-**Baseline faces:** Bricolage Grotesque (distinctive display, OFL) is the always-available
-anchor. **Clash Display, Satoshi, Cabinet Grotesk, General Sans** are premium (Fontshare) —
-free to *use/embed* but **not redistributable as files**, so they live in the premium folder,
-not the repo.
+**Premium folder:** `fonts/03-modern-product-grotesque/`
+**Typical role:** strong product display with a polished grotesque body.
 
-**Premium folder:** `fonts/3-Startup-Product/`
-**Typical role:** a strong display face (Clash Display / Bricolage Grotesque) for headlines +
-a refined geometric/grotesque body (Satoshi / General Sans).
+## 04 - Technical / Data / Code
 
----
+**Use for:** dashboards, developer tools, admin panels, API docs, code-adjacent UI, analytics,
+data products, technical documentation.
 
-## Group 4 — Body Workhorses (NOT slop)
+**Baseline faces:** IBM Plex Sans, IBM Plex Serif, IBM Plex Mono, JetBrains Mono, Fira Code,
+Space Mono for short labels only.
 
-**Use for:** the body-text layer of any artifact, paired beneath a distinctive display face
-from groups 1–3. These are quiet, legible, and deliberately chosen — never the headline.
+**Premium folder:** `fonts/04-technical-data-code/`
+**Typical role:** IBM Plex Sans for UI/body; mono faces only for code, IDs, logs, or data accents.
 
-**Baseline faces:** Public Sans · Hanken Grotesk · Source Sans 3 *(body only, paired — never
-alone, never as the display face; permitted as a quiet body face on human-design grounds, but
-overused as a standalone "neutral upgrade")*.
+## 05 - Friendly / Humanist
 
-> **Do NOT use Geist here.** It was briefly considered a workhorse but is now **banned** — it is
-> Vercel's font and the v0/shadcn default that replaced Inter (see `ai-slop-banned-fonts.md`).
-> When you cannot embed, use the device-common non-slop tier in `system-font-fallbacks.md`
-> (Georgia, the system stacks) instead.
+**Use for:** healthcare, education, NGO/public-service products, onboarding, support flows,
+forms, service design, accessibility-sensitive interfaces.
 
-**Premium folder:** `fonts/4-Body-Workhorses/`
-**Typical role:** body, captions, UI labels — the calm layer under the expressive one.
+**Baseline faces:** Atkinson Hyperlegible, Lexend, Alegreya Sans, Hanken Grotesk, Public Sans.
 
----
+**Premium folder:** `fonts/05-friendly-humanist/`
+**Typical role:** warm body/UI face under a more distinctive heading face, or accessible UI body.
+
+## 06 - Expressive Display / Artistic
+
+**Use for:** campaign heads, posters, event identities, cultural brands, portfolio covers,
+beauty/luxury moments, bold hero sections.
+
+**Baseline faces:** Syne, Unbounded, Bodoni Moda, Eczar, Fraunces.
+
+**Premium folder:** `fonts/06-expressive-display-artistic/`
+**Typical role:** display only, paired with a quiet body face.
+
+## 07 - Script / Cursive / Handwritten
+
+**Use for:** signatures, short accent words, invitations, boutique/beauty/event branding,
+human annotation effects.
+
+**Baseline faces:** Caveat, Kalam, Dancing Script, Great Vibes, Sacramento.
+
+**Premium folder:** `fonts/07-script-cursive-handwritten/`
+**Typical role:** accent only. Never body text, never dense UI, rarely more than a few words.
+
+## 08 - Body / UI Workhorses
+
+**Use for:** the readable body and UI layer beneath a distinctive display face from another
+category.
+
+**Baseline faces:** Public Sans, Hanken Grotesk, Source Sans 3 body-only, IBM Plex Sans,
+Atkinson Hyperlegible.
+
+**Premium folder:** `fonts/08-body-ui-workhorses/`
+**Typical role:** body, captions, labels, forms, and UI text. Never the whole identity by itself.
 
 ## Quick chooser by artifact
 
-| Artifact | Default group | Header → Body example |
+| Artifact | Default category | Header -> Body example |
 |---|---|---|
-| Business plan / proposal / SRS / report (DOCX/PDF) | 1 Editorial | Fraunces → Source Serif 4 (or → Public Sans) |
-| Dashboard / admin UI / API docs | 2 Developer | IBM Plex Sans → IBM Plex Sans + Mono accents |
-| SaaS landing / product marketing / pitch deck | 3 Startup | Clash Display (premium) or Bricolage → Satoshi / Hanken Grotesk |
-| App / web UI body layer | 4 Workhorse under a display face | Bricolage Grotesque → Hanken Grotesk |
-| Mobile app UI | 3 or 4 + platform constraints | see `skills/06-mobile-ui-ux/` |
+| Business plan / statutory report / SRS / legal proposal | 01 Formal / Institutional | Source Serif 4 -> Public Sans |
+| Premium report / whitepaper / thought leadership | 02 Editorial / Literary | Fraunces -> Source Serif 4 or Public Sans |
+| Dashboard / admin UI / API docs | 04 Technical / Data / Code | IBM Plex Sans -> IBM Plex Sans + IBM Plex Mono accents |
+| SaaS landing / product marketing / pitch deck | 03 Modern Product / Grotesque | Bricolage Grotesque or Clash Display -> Hanken Grotesk or Satoshi |
+| Healthcare / education / civic service UI | 05 Friendly / Humanist | Atkinson Hyperlegible -> Public Sans, or Fraunces -> Atkinson Hyperlegible |
+| Campaign / poster / expressive hero | 06 Expressive Display / Artistic | Syne or Bodoni Moda -> Public Sans |
+| Signature / boutique accent / handwritten note | 07 Script / Cursive / Handwritten | Great Vibes or Caveat -> Public Sans |
+| Generic readable body layer | 08 Body / UI Workhorses | Any approved display -> Hanken Grotesk or Public Sans |
 
-Whatever you pick, **state it and say why** before producing the artifact.
+## Guardrails
+
+- Never use banned primary faces from `ai-slop-banned-fonts.md`.
+- Never use a script/cursive face for body text.
+- Never let body workhorses become a monotype identity.
+- Never place Geist in any folder; it is banned.
+- State the chosen display + body pair and reason before producing output.

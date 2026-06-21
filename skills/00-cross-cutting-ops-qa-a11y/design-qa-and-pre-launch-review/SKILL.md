@@ -32,6 +32,9 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
   type scale, spacing, components, states, copy) and pixel parity against the mockup/Figma.
 - You need to confirm the page **holds up across devices and browsers** — the small-phone /
   tablet / desktop / large-screen breakpoints and the Chromium / WebKit / Firefox engines.
+- You are shipping an Apple-platform surface and need iOS/iPadOS/macOS checks for Liquid Glass,
+  SF Symbols 8, Dynamic Type, VoiceOver, Reduce Transparency, iPhone resizability, iPad
+  multitasking, Mac-designed-for-iPhone, TestFlight screenshots, or Safari/WebKit behavior.
 - You want the **anti-slop, accessibility, and performance gates rolled into a single
   checklist** with a recorded verdict and sign-off, rather than three separate passes that
   nobody reconciles.
@@ -110,7 +113,11 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
    **WebKit** (Safari, incl. iOS Safari), and **Firefox/Gecko**. Watch the usual divergences:
    focus-ring rendering, form-control styling, `backdrop-filter`/`gap`/container-query
    support, font rendering/metrics, and date/number input. Record per-engine pass.
-9. **Tally and sign the verdict.** Roll the checklist into a single verdict: **SHIP** (all
+9. **Apple-platform visual QA when in scope.** Verify Liquid Glass chrome, SF Symbols 8, Dynamic
+   Type AX sizes, Reduce Transparency, Increase Contrast, Reduce Motion, Dark Mode, appearance
+   personalization, app icon variants, iPhone resizability, iPad multitasking, and
+   Mac-designed-for-iPhone windows. Record device, OS, SDK, and build evidence.
+10. **Tally and sign the verdict.** Roll the checklist into a single verdict: **SHIP** (all
    blocking gates PASS), **SHIP-WITH-FOLLOWUPS** (only non-blocking lows remain, logged with
    owners), or **NO-SHIP** (any blocker open — list each blocker with its gate and fix).
    The launch owner signs. A blocker on slop, a11y-AA, or perf-budget **always** forces
@@ -124,6 +131,7 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
   assumed. Slop, a11y-AA, and perf-budget are blocking; the verdict reflects that.
 - Accessibility is verified with automation **plus** manual keyboard **plus** screen-reader —
   a green Lighthouse score alone is not a pass.
+- Apple-platform release checks record actual device/simulator evidence, not only a desktop browser resize.
 - Every blocker in the verdict names its gate, its standard, and a specific fix.
 
 ## Anti-Patterns

@@ -22,8 +22,8 @@ glob is authoritative).
 
 ## Premium fonts
 
-Drop purchased font files into the matching `fonts/<group>/` folder (binaries are gitignored)
-and record them in that group's `MANIFEST.md` (licence + embedding permission). The
+Drop purchased font files into the matching `fonts/<category>/` folder (binaries are gitignored)
+and record them in that category's `MANIFEST.md` (licence + embedding permission). The
 `premium-font-scan` skill reads the MANIFEST automatically.
 
 ## Examples are mandatory (the convention)

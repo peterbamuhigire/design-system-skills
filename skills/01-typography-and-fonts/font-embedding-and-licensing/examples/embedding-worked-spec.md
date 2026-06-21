@@ -15,7 +15,7 @@ faces are already chosen and stated — here we only *load* them, per the skill'
 
 | Role | Face | Licence basis | Source |
 |---|---|---|---|
-| Display / headings | **Clash Display** (700) | **Fontshare** — free to use **and** embed; raw file **not** redistributable | `premium-font-scan` of `fonts/3-Startup-Product/` (MANIFEST grants embed, denies file-ship) |
+| Display / headings | **Clash Display** (700) | **Fontshare** — free to use **and** embed; raw file **not** redistributable | `premium-font-scan` of `fonts/03-modern-product-grotesque/` (MANIFEST grants embed, denies file-ship) |
 | Body | **Hanken Grotesk** (400) | **OFL 1.1** — use, embed **and** redistribute all permitted | OFL baseline |
 
 This is pairing **S2** from `references/pairing-catalog.md`. The two licences are deliberately

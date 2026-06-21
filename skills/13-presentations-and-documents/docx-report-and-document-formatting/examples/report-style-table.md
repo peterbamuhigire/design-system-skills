@@ -15,7 +15,7 @@ what "state the choice, then apply real values" produces — copy these settings
 > all licence-clear to embed and subset. Rejected: Calibri/Aptos (Word default = slop signal),
 > Times New Roman (dated reflex), Inter (the AI mean).
 
-Premium scan: `fonts/1-Editorial-Authoritative/` held no purchased family for this job, so the
+Premium scan: `fonts/01-formal-institutional/` held no purchased family for this job, so the
 baseline pairing stands.
 
 ---

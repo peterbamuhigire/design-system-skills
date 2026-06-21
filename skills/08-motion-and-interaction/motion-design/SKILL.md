@@ -2,7 +2,8 @@
 name: motion-design
 description: Animation and micro-interaction standards for web, Android, and iOS.
   Covers timing rules (100/300/500), easing curves, GPU-accelerated animation, staggered
-  entrances, state transitions, loading states, and mandatory prefers-reduced-motion...
+  entrances, state transitions, loading states, Apple haptics/Liquid Glass motion checks,
+  and mandatory prefers-reduced-motion.
 status: active
 metadata:
   portable: true
@@ -65,6 +66,7 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - `references/spring-physics-and-easing.md` — easing-vs-spring decision, stiffness/damping/ζ params, platform spring APIs, CSS `linear()`.
 - `references/view-transitions.md` — View Transitions API patterns (same-doc, shared-element morph, cross-doc MPA, directionality).
 - `references/reduced-motion.md` — `prefers-reduced-motion` strategy, WCAG 2.3.3 contract, considered-replacement table.
+- Pair with `../../07-mobile-ios-android-cross-platform/ios-ui-ux-design/references/ios-sensory-and-haptics.md` and `../../07-mobile-ios-android-cross-platform/ios-ui-ux-design/references/hig-liquid-glass.md` when Apple haptics, SF Symbols animation, or Liquid Glass chrome is in scope.
 - `doctrine/design-doctrine.md` — the anti-slop charter; motion is a slop tell when overused or when bounce/elastic easing is applied.
 - `doctrine/references/ai-slop-taxonomy.md` — the product/interface slop tells, including AI-fingerprint animation (bounce/elastic, animation fatigue).
 - `doctrine/references/wcag-2.2-criteria.md` — the accessibility floor; motion must honour 2.3.3 (reduced motion) and 2.3.1 (≤3 flashes/s).
@@ -342,6 +344,8 @@ User taps "Like" → Heart fills instantly → API call fires in background
 - `.spring(duration:bounce:)` — keep bounce at 0 (ζ=1) for professional feel; ≤0.15 max
 - `matchedGeometryEffect` for shared element transitions
 - Check `UIAccessibility.isReduceMotionEnabled`
+- Keep haptics semantic: success only for success, warning/error for those outcomes, selection for selection changes. Verify the UI remains fully usable with haptics disabled.
+- For Liquid Glass chrome and SF Symbols animation, verify Reduce Motion, Reduce Transparency, Increase Contrast, and VoiceOver. Required affordances cannot depend on shimmer, refraction, bounce, or symbol-only animation.
 
 ---
 
@@ -358,6 +362,7 @@ Before shipping animations:
 - [ ] Exit animations are ~75% of enter duration
 - [ ] No animation fatigue (not everything animates)
 - [ ] Animations serve purpose (guide attention, show relationships, provide feedback)
+- [ ] Apple haptics/Liquid Glass/SF Symbols animation paths pass Reduce Motion and accessibility checks when iOS is in scope
 - [ ] Tested on real devices (not just DevTools)
 
 ---

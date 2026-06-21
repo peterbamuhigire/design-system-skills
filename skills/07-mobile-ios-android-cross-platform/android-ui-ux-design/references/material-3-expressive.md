@@ -80,7 +80,7 @@ hardcode `Color(0xFF…)` for themable surfaces.
   Roboto is **allowed only as the platform system default / fallback** — it is **banned as a
   deliberate Chwezi brand or display primary**, because shipping stock Roboto everywhere is exactly
   the unconsidered, convergent default the doctrine exists to remove. Any **branded display/heading
-  type must come from an approved font group** (`doctrine/references/font-groups-and-usage.md`),
+  type must come from an approved font category** (`doctrine/references/font-groups-and-usage.md`),
   pass the banned-list check (`doctrine/references/ai-slop-banned-fonts.md`), and be paired — never
   monotype. A common, defensible split: branded display/headline from an approved group, Roboto (or
   the chosen body workhorse) for dense body/label roles.
@@ -123,7 +123,7 @@ in-progress swipe.
 
 - [ ] Colour bound to **role tokens**, not raw hex; **light + dark** `ColorScheme` both shipped.
 - [ ] Brand vs. **dynamic colour** decision stated (default: fixed brand seed; dynamic = opt-in).
-- [ ] Type uses M3 **type-scale roles**; branded display from an **approved font group**, Roboto only
+- [ ] Type uses M3 **type-scale roles**; branded display from an **approved font category**, Roboto only
       as system/body fallback (never the deliberate display primary).
 - [ ] **Expressive levers** named (shape scale, motion, emphasis, containment, expressive components).
 - [ ] **Predictive back** supported via `PredictiveBackHandler` / nav predictive-back, interruptible.

@@ -24,6 +24,9 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
   4-up sidebar grid), not merely to the global window width — i.e. you need **container queries**.
 - Deciding whether a value should be fixed, fluid, or intrinsic: column counts, gutters, type
   size, image sizing, and how they interpolate between sizes via `clamp()`.
+- An Apple-platform UI or web surface must survive iPhone resizability, iPad multitasking,
+  Mac-designed-for-iPhone windows, iPhone Mirroring, Safari/WebKit viewport behavior, or
+  intermediate window widths that are not named device breakpoints.
 - A layout was designed desktop-first and "responsiveness" is being bolted on by stacking
   everything into one centred column on small screens — the slop tell this skill exists to remove.
 
@@ -122,6 +125,11 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
 
 10. **Run the responsive anti-slop checklist** (below). If any item fails, fix before shipping.
 
+11. **For Apple surfaces, test resizable windows, not just device presets.** On iOS/iPadOS/macOS
+    and Safari/WebKit, resize through intermediate widths; verify Liquid Glass chrome, safe areas,
+    toolbars, keyboards, popovers, pointer states, and home-screen PWA display modes do not clip,
+    overlap, or hide primary actions.
+
 ## The Responsive Anti-Slop Checklist (run every time)
 
 1. Mobile-first source order; each size **re-composed**, never collapsed into one identical-card stack.
@@ -134,6 +142,7 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
 7. Logical properties (`inline-size`, `margin-inline`…) so RTL/vertical modes work; measure capped ~66ch.
 8. A named focal point and at least one intentional asymmetry survive at the **smallest** size too.
 9. `prefers-reduced-motion`, `prefers-color-scheme`, and coarse-pointer target sizes honoured.
+10. Apple surfaces checked across resizable iPhone/iPad/Mac-designed-for-iPhone windows and Safari/WebKit viewport behavior where applicable.
 
 ## Anti-Patterns (the responsive AI-slop tells)
 

@@ -46,7 +46,7 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
    **group 01 Editorial** pairing — a distinctive serif display over a refined body (e.g. *Fraunces →
    Source Serif 4*, or *Newsreader → Public Sans* for a quieter body). Name the faces, the palette
    intent, and why they fit a bankable document **before** laying out a single page. Never a banned
-   font (`doctrine/references/ai-slop-banned-fonts.md`); scan `fonts/1-Editorial-Authoritative/` for a
+   font (`doctrine/references/ai-slop-banned-fonts.md`); scan `fonts/01-formal-institutional/` for a
    licensed premium family first (`premium-font-scan`).
 2. **Set the page grid & margins.** Choose trim (A4 = 210×297 mm), a column grid (single-column body
    with a wide outer/marginalia column is the bankable default), and asymmetric margins for a binding

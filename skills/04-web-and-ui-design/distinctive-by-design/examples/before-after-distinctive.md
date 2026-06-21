@@ -61,9 +61,9 @@ details") the product is trying to make. Sameness here is free *and* actively of
 Supporting moves, all subordinated to that one idea:
 
 - **Signature typeface (approved, not a banned face).** Headline in **Bricolage Grotesque** —
-  the Group 3 OFL display anchor (`font-groups-and-usage.md`), an idiosyncratic grotesque whose
+  the 03 Modern Product / Grotesque OFL display anchor (`font-groups-and-usage.md`), an idiosyncratic grotesque whose
   uneven, *almost-hand-cut* terminals literally read as "made by a person." Body and the live
-  draft in **Hanken Grotesk** (Group 4 workhorse). Two faces, crossed display-vs-body — never
+  draft in **Hanken Grotesk** (08 Body / UI Workhorse). Two faces, crossed display-vs-body — never
   one font for everything. Bricolage was chosen on type-design grounds (its deliberate
   irregularity suits a product about human sign-off), not because any tool recommended it.
 - **Real weight + size extremes.** Headline Bricolage at **900** weight, 72px; the live-draft

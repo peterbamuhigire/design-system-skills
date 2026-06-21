@@ -1,6 +1,9 @@
 ---
 name: cross-platform-design-parity
-description: Use when one product design must ship as BOTH idiomatic iOS and idiomatic Android — deciding what to unify (brand, content, IA, flows) versus diverge (navigation, controls, motion, gestures, system chrome), and mapping a single design to React Native or Flutter without flattening it into a lowest-common-denominator clone. Triggers on "cross-platform", "iOS and Android", "one design two platforms", "React Native design", "Flutter design", "parity spec", "should this look the same on both", "Material vs HIG", "Liquid Glass vs Material 3 Expressive".
+description: Use when one product design must ship as BOTH idiomatic iOS and
+  idiomatic Android - deciding what to unify (brand, content, IA, flows) versus
+  diverge (navigation, controls, motion, gestures, system chrome), including
+  current Apple Liquid Glass/SF Symbols 8 guidance and Material 3 Expressive.
 status: active
 metadata:
   portable: true
@@ -33,7 +36,7 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - The screens/flows in scope, the single source-of-truth design (Figma, screenshots, or a token set), and which platform it was authored on.
 - The brand system: typeface(s), colour tokens, logo, voice — the things that MUST stay constant across platforms.
 - The build target: native Swift+Kotlin, React Native, or Flutter (this changes the mapping, not the parity decisions).
-- Target device classes (compact phone, large phone, tablet/foldable) and minimum OS versions (these gate Liquid Glass / Material 3 Expressive availability).
+- Target device classes (compact phone, large phone, tablet/foldable), Apple resizable windows/Mac-designed-for-iPhone behavior when relevant, and minimum OS versions (these gate Liquid Glass / Material 3 Expressive availability).
 
 ## The Parity Principle (state this before specifying anything)
 
@@ -56,7 +59,7 @@ See `references/ios-vs-android-idioms.md` for the element-by-element divergence 
 
 1. **Name the source of truth and the brand constants.** State the typeface(s) and palette intent against the anti-slop charter — see `doctrine/design-doctrine.md` and `doctrine/references/ai-slop-banned-fonts.md` — *once*, because brand is the unified layer and must read identically on both platforms. Note the platform-font caveat: SF Pro on iOS and Roboto on Android are allowed *as system UI text*; a branded display face still comes from `doctrine/references/font-groups-and-usage.md`.
 2. **Classify every element** in scope into Unify or Diverge using the table above and `references/ios-vs-android-idioms.md`. Produce this as an explicit list — never leave it implicit.
-3. **For each Diverge element, name both native resolutions** (the iOS HIG component and the Android Material 3 component) and the version gate (e.g. Liquid Glass needs iOS 26+, Material 3 Expressive needs the M3 Expressive token set).
+3. **For each Diverge element, name both native resolutions** (the iOS HIG component and the Android Material 3 component) and the version gate (for example, current Apple SDK Liquid Glass/SF Symbols 8 availability and Material 3 Expressive token availability).
 4. **Map to the build technology** using `references/rn-flutter-mapping.md`: decide per element whether to use a shared component, a platform-adaptive component (`Platform.select` / Flutter `.adaptive` / `Theme.of(context).platform`), or two distinct implementations.
 5. **Model every shared state** on both platforms: loading, content, empty, error, offline, permission-denied, syncing — confirm each diverges only where the platform demands (e.g. permission dialogs are OS-owned).
 6. **Apply both single-platform quality gates.** Run the screen through `ios-ui-ux-design` and `android-ui-ux-design` checks; the parity spec passes only when each platform's native build would independently pass its own gate.
@@ -69,6 +72,7 @@ See `references/ios-vs-android-idioms.md` for the element-by-element divergence 
 - **Diverging the brand** — letting the two platforms drift into different colours, type, or voice "because the OS does it that way." Brand is the unified layer.
 - **Unstated divergence** — diverging without writing down *why*, so the next designer "fixes" it back to identical.
 - **Forgetting version gates** — speccing Liquid Glass or Material 3 Expressive without checking the minimum OS / token availability, leaving older devices with a broken fallback.
+- **Ignoring Apple windowing/resizability** - treating iPhone, iPad, and Mac-designed-for-iPhone as one fixed phone canvas instead of testing compact/regular width, pointer, keyboard, and safe-area changes.
 - **RN/Flutter "write once" complacency** — assuming the framework makes it native automatically. It does not; adaptive components and per-platform branches are deliberate choices.
 
 ## Outputs
@@ -84,7 +88,7 @@ See `references/ios-vs-android-idioms.md` for the element-by-element divergence 
 - `doctrine/design-doctrine.md` — the always-load anti-slop charter; §0 (looking human-made/authored) is the basis for "idiomatic port, not clone."
 - `doctrine/references/ai-slop-banned-fonts.md`, `doctrine/references/font-groups-and-usage.md`, and `doctrine/references/type-scale-and-spacing.md` for the unified brand type system and the SF Pro / Roboto system-font caveat.
 - `doctrine/references/wcag-2.2-criteria.md` — accessibility floor both platforms must clear (target size, contrast, focus); note iOS minimum touch target is 44 pt and Android 48 dp.
-- `references/ios-vs-android-idioms.md` — element-by-element comparison: navigation, controls, typography, motion, gestures, system chrome (HIG / Liquid Glass vs Material 3 Expressive).
+- `references/ios-vs-android-idioms.md` — element-by-element comparison: navigation, controls, typography, motion, gestures, system chrome (HIG / Liquid Glass / SF Symbols 8 vs Material 3 Expressive).
 - `references/rn-flutter-mapping.md` — how each design element maps to React Native and Flutter components, and when to go shared vs platform-adaptive vs branched.
 - Pair with `ios-ui-ux-design` and `android-ui-ux-design` (same group) — this skill decides the split; those two skills perfect each native side.
 <!-- dual-compat-end -->

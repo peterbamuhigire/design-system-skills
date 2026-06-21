@@ -18,7 +18,7 @@ Mirror of the guidance in `CLAUDE.md`, kept for dual-compat tooling.
 - No banned AI-slop fonts as primary type (`doctrine/references/ai-slop-banned-fonts.md`).
 - Always state typeface + reason before producing output.
 - Always pair (display + body); use weight/size extremes; check licence before embedding.
-- Premium font binaries are gitignored — scan `fonts/<group>/`, read its `MANIFEST.md`, fall
+- Premium font binaries are gitignored — scan `fonts/<category>/`, read its `MANIFEST.md`, fall
   back to the named OFL baseline when a premium family is absent or its licence does not permit
   the intended use.
 

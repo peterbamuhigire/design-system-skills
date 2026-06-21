@@ -36,7 +36,7 @@ p  { font-size: 17px; }
 .small { font-size: 15px; }
 ```
 
-Classify → **Group 3, Startup / Product** (`doctrine/references/font-groups-and-usage.md`) — this
+Classify → **03 Modern Product / Grotesque** (`doctrine/references/font-groups-and-usage.md`) — this
 sets which approved group the remediation must draw from.
 
 ---
@@ -72,7 +72,7 @@ tracking, and the scale — otherwise the page stays slop with a new name on it.
 
 ## The deliberate remediation (one stated decision)
 
-Draw the replacement from **Group 3** of `pairing-catalog.md` — pairing **S1**, the named non-slop
+Draw the replacement from **03 Modern Product / Grotesque** of `pairing-catalog.md` - pairing **P1**, the named non-slop
 default for startup/product:
 
 - **Display / headings: Bricolage Grotesque (800).** A contrasty, slightly quirky grotesque no
@@ -142,5 +142,5 @@ closed. Hand off to `font-embedding-and-licensing` for the woff2-variations load
 
 - `skills/01-typography-and-fonts/ai-slop-typography-audit/SKILL.md` (the workflow this applies).
 - `doctrine/references/ai-slop-banned-fonts.md` (the banned + secondary-slop guard list).
-- `skills/01-typography-and-fonts/font-selection-and-pairing/references/pairing-catalog.md` (pairing S1, Group 3).
+- `skills/01-typography-and-fonts/font-selection-and-pairing/references/pairing-catalog.md` (pairing P1, 03 Modern Product / Grotesque).
 - `doctrine/references/type-scale-and-spacing.md` · `pairing-principles.md` · `font-groups-and-usage.md`.

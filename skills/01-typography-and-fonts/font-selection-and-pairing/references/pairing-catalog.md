@@ -1,93 +1,111 @@
-# Reference: Pairing Catalog (real display+body pairings, by context)
+# Reference: Pairing Catalog
 
-Concrete, named pairings you can adopt directly — every face checked against
-`doctrine/references/ai-slop-banned-fonts.md` (none banned) and drawn from the approved baselines
-in `doctrine/references/font-groups-and-usage.md`. This is the *menu*;
-`doctrine/references/pairing-principles.md` is the *theory* (cross categories, contrast weight,
-match x-heights, don't mix moods). Each row states **why it works** so the choice stays defensible,
-never reflexive.
+Concrete, named display+body pairings by design-intent category. Every face is checked against
+`doctrine/references/ai-slop-banned-fonts.md` and drawn from the approved baselines in
+`doctrine/references/font-groups-and-usage.md`.
 
-> Stating rule still applies: name the display face, the body face, and a one-line reason **before**
-> producing the artifact. This catalog gives you the pairing and the reason; you supply the context fit.
+`pairing-principles.md` is the theory. This catalog is the menu. State the display face, body
+face, category, and one-line reason before producing the artifact.
 
----
+## 01 Formal / Institutional
 
-## Group 1 — Editorial / Authoritative (reports, proposals, plans, whitepapers)
-
-| # | Display / Header | Body | Why it works (principle) |
+| # | Display / Header | Body | Why it works |
 |---|---|---|---|
-| E1 | **Fraunces** (900, `opsz`/`WONK` on) | **Source Serif 4** (400) | Two serifs, but *radically* different — Fraunces is a high-contrast "old-style with teeth," Source Serif is quiet and even. Concord of mood, contrast of weight (900 vs 400). The variable `opsz`+`WONK` give the headline character a body face can't compete with. |
-| E2 | **Newsreader** (700, `ital` for decks) | **Public Sans** (400) | Serif display ↔ neutral sans body = the golden cross-category combination (Bonneville 25). Newsreader's news-serif warmth leads; Public Sans recedes. Matched x-heights. |
-| E3 | **Spectral** (600) | **Public Sans** (400) | Spectral's narrow, literary serif against a plain grotesque body — strong style contrast, neutral body lets dense report text breathe. |
-| E4 | **Crimson Pro** (700) | **Source Serif 4** (400) | When an all-serif, book-like register is wanted: pair only because the two are clearly distinct (Crimson is calligraphic, Source Serif is rational). Push weight to 700/400 to keep hierarchy obvious. |
+| F1 | Source Serif 4 700 | Public Sans 400 | Serious serif authority over a civic, quiet sans body; strong for formal proposals and statutory reports. |
+| F2 | Spectral 600 | Public Sans 400 | Literary but restrained serif display over a plain body; good for policy, public-sector, and board documents. |
+| F3 | Crimson Pro 700 | Source Serif 4 400 | Formal all-serif register with enough contrast in structure and weight to avoid muddiness. |
+| F4 | IBM Plex Serif 600 | IBM Plex Sans 400 | Engineered formal tone for technical reports, standards, governance packs, and SRS/BRD work. |
 
-Avoid: two *similar* serifs (Crimson Pro + Spectral) — muddy middle, fails Bonneville 2–3.
+## 02 Editorial / Literary
 
----
+| # | Display / Header | Body | Why it works |
+|---|---|---|---|
+| E1 | Fraunces 900 | Source Serif 4 400 | Authored, distinctive editorial headline over a calm reading serif. |
+| E2 | Newsreader 700 | Public Sans 400 | News/editorial warmth with neutral sans body clarity. |
+| E3 | Cormorant Garamond 700 | Source Serif 4 400 | Elegant high-contrast title face over a durable body serif. Use for covers and title pages. |
+| E4 | Alegreya 700 | Alegreya Sans 400 | Humanist editorial pair for education, culture, and long-form narrative reports. |
 
-## Group 2 — Developer / Technical (dashboards, admin, API docs)
-
-| # | Display / Header | Body | Code / data accent | Why it works |
-|---|---|---|---|---|
-| D1 | **IBM Plex Sans** (700) | **IBM Plex Sans** (400) | **IBM Plex Mono** (labels, code) | Superfamily pairing — designed to harmonise, so "two typefaces" come from one system. Contrast lives in **weight** (700 vs 400), per the principle "two typefaces, many fonts." Mono stays in its lane (code/data only). |
-| D2 | **IBM Plex Serif** (600) | **IBM Plex Sans** (400) | **IBM Plex Mono** | A serif accent for long-form passages inside a technical product, still one superfamily — coherent and engineered-feeling. |
-| D3 | **JetBrains Mono** (700, headings only) | **IBM Plex Sans** (400) | **JetBrains Mono** (code) | Monospace *display* gives a deliberately "engineered" headline; proportional body keeps reading fast. Never let the mono drift into body (Bonneville 24). |
-
-Avoid: mono in body text; mixing IBM Plex Mono **and** JetBrains Mono in one product (two mono
-moods clash).
-
----
-
-## Group 3 — Startup / Product (landing pages, SaaS marketing, pitch decks)
+## 03 Modern Product / Grotesque
 
 | # | Display / Header | Body | Why it works | Note |
 |---|---|---|---|---|
-| S1 | **Bricolage Grotesque** (800) | **Hanken Grotesk** (400) | Bricolage's quirky, contrasty grotesque is the expressive face; Hanken is the calm geometric body. Both OFL — fully shippable. Weight extremes (800/400). | Baseline, no premium needed. |
-| S2 | **Clash Display** (700, premium) | **Hanken Grotesk** (400) | Clash's confident, slightly condensed display reads as branded; Hanken recedes. | Clash is Fontshare — free to use/embed, not redistributable; scan `fonts/3-Startup-Product/`. |
-| S3 | **Bricolage Grotesque** (800) | **Public Sans** (400) | When body must be maximally neutral (long marketing copy) under an expressive head. | All OFL. |
-| S4 | **Cabinet Grotesk** (700, premium) | **Hanken Grotesk** (400) | Cabinet's tighter, modern-grotesque display for a sharper, more corporate startup tone. | Fontshare premium. |
+| P1 | Bricolage Grotesque 800 | Hanken Grotesk 400 | Distinctive product display over calm modern body; fully OFL. | Baseline, no premium needed. |
+| P2 | Clash Display 700 | Satoshi 400 | Confident branded display over premium product body. | Fontshare; embed yes, raw redistribution no. |
+| P3 | Cabinet Grotesk 700 | Hanken Grotesk 400 | Sharper corporate startup tone with a softer body. | Fontshare display. |
+| P4 | Bricolage Grotesque 800 | Public Sans 400 | Use when product marketing needs more neutral long-copy body text. | All OFL. |
 
-Avoid the reflex: **Space Grotesk** here is the named AI convergence trap (`ai-slop-banned-fonts.md`)
-— Bricolage Grotesque is the deliberate, non-slop distinctive grotesque instead.
+## 04 Technical / Data / Code
 
----
+| # | Display / Header | Body | Code / Data Accent | Why it works |
+|---|---|---|---|---|
+| T1 | IBM Plex Sans 700 | IBM Plex Sans 400 | IBM Plex Mono | One engineered superfamily; weight carries hierarchy; mono stays in code/data. |
+| T2 | IBM Plex Serif 600 | IBM Plex Sans 400 | IBM Plex Mono | Adds technical-formal authority for docs without leaving the Plex system. |
+| T3 | JetBrains Mono 700 | IBM Plex Sans 400 | JetBrains Mono | Monospace display gives a deliberate developer signal; proportional body protects readability. |
+| T4 | Unbounded 700 | IBM Plex Sans 400 | IBM Plex Mono | More expressive technical campaign tone while preserving dashboard/body clarity. |
 
-## Group 4 — Body Workhorse layer (paired beneath a display face from 1–3)
+## 05 Friendly / Humanist
 
-These are body partners, never the headline. Use when the display face comes from another group.
+| # | Display / Header | Body | Why it works |
+|---|---|---|---|
+| H1 | Fraunces 800 | Atkinson Hyperlegible 400 | Warm display with legibility-first body for healthcare, education, and service products. |
+| H2 | Bricolage Grotesque 700 | Lexend 400 | Product energy with a calm learning-friendly body; useful for onboarding and education. |
+| H3 | Alegreya 700 | Alegreya Sans 400 | Humanist literary pairing for schools, culture, and social-impact documents. |
+| H4 | Source Serif 4 650 | Public Sans 400 | Civic, plainspoken warmth for public-service reports and forms. |
+
+## 06 Expressive Display / Artistic
+
+| # | Display / Header | Body | Why it works |
+|---|---|---|---|
+| A1 | Syne 800 | Public Sans 400 | Artistic geometric display over quiet civic body; strong for campaigns and posters. |
+| A2 | Bodoni Moda 700 | Public Sans 400 | Dramatic high-contrast display with readable body support for luxury/beauty/culture. |
+| A3 | Eczar 700 | Alegreya Sans 400 | Textured expressive headline with warm humanist body. |
+| A4 | Unbounded 700 | IBM Plex Sans 400 | Futuristic display with technical clarity beneath it. |
+
+## 07 Script / Cursive / Handwritten
+
+Script and cursive faces are accents only. They must sit beside a readable display/body system.
+
+| # | Accent | Display / Body System | Why it works |
+|---|---|---|---|
+| C1 | Great Vibes | Cormorant Garamond 700 -> Public Sans 400 | Formal script for a signature or short flourish without sacrificing readability. |
+| C2 | Caveat | Fraunces 800 -> Atkinson Hyperlegible 400 | Casual human annotation over an accessible service-oriented pair. |
+| C3 | Kalam | Alegreya 700 -> Alegreya Sans 400 | Handwritten education/workshop accent over a humanist reading pair. |
+| C4 | Sacramento | Bodoni Moda 700 -> Public Sans 400 | Boutique/lifestyle accent with a controlled high-contrast display system. |
+
+## 08 Body / UI Workhorses
+
+These are partners, not complete identities.
 
 | Display source | Workhorse body | Why |
 |---|---|---|
-| Any Group-1 serif | **Public Sans** (400) | Neutral grotesque body under a literary serif — maximum cross-category contrast. |
-| Any Group-3 grotesque | **Hanken Grotesk** (400) | Warm, legible geometric — matches startup mood without competing. |
-| Editorial, all-serif feel | **Source Serif 4** (400) | Quiet serif body that holds long passages. |
-| Constrained / overused-OK | **Source Sans 3** (400, **paired only**) | Permitted *only* as a quiet body face beneath a distinctive display — never standalone, never the display (see banned list §3). |
+| Formal serif display | Public Sans 400 | Neutral civic sans under institutional headings. |
+| Product grotesque display | Hanken Grotesk 400 | Soft, polished product body that does not compete. |
+| Editorial display | Source Serif 4 400 | Quiet serif body for long reading. |
+| Accessibility-first display | Atkinson Hyperlegible 400 | Legibility-first body for forms, healthcare, and education. |
+| Technical display | IBM Plex Sans 400 | Rational UI body under technical headings and mono accents. |
 
----
-
-## Cross-group "house" defaults (safe starting points)
+## Cross-category defaults
 
 | Context | Pairing | One-line reason to state |
 |---|---|---|
-| Business plan / proposal / SRS (DOCX/PDF) | Fraunces → Source Serif 4 | "Authoritative high-contrast serif head over a calm reading serif — reads considered and institutional." |
-| Dashboard / admin UI | IBM Plex Sans 700 → IBM Plex Sans 400 + Plex Mono | "One engineered superfamily; weight carries hierarchy; mono confined to data." |
-| SaaS landing / pitch deck | Bricolage Grotesque 800 → Hanken Grotesk 400 | "A distinctive grotesque headline that no template would pick, over a calm geometric body." |
-| App / web UI body layer | Bricolage Grotesque → Hanken Grotesk | "Expressive display + quiet workhorse body; both OFL and embeddable." |
+| Business plan / formal proposal / SRS | Source Serif 4 -> Public Sans | Formal serif authority over a plain civic body; credible and readable. |
+| Premium whitepaper / authored report | Fraunces -> Source Serif 4 | Distinctive editorial headline over a calm long-form reading serif. |
+| Dashboard / admin UI | IBM Plex Sans -> IBM Plex Sans + Plex Mono | One engineered superfamily; weight carries hierarchy; mono confined to data. |
+| SaaS landing / pitch deck | Bricolage Grotesque -> Hanken Grotesk | Distinctive product display over a quiet modern body. |
+| Healthcare / education service UI | Fraunces -> Atkinson Hyperlegible | Warm authored headings with accessibility-first body text. |
+| Campaign / expressive hero | Syne -> Public Sans | Artistic display energy with readable body support. |
+| Cursive accent | Great Vibes accent + Cormorant/Public Sans system | Script is limited to a human signature moment, not body text. |
 
----
+## Banned-face guard
 
-## Banned-face guard (run before committing any pairing)
-
-Neither face may be: Inter · Geist · Roboto · Open Sans · Lato · Arial · bare system stack ·
-Space Grotesk · Instrument Serif · Poppins · Montserrat · Nunito/Nunito Sans · Source Sans 3 *as a
-display/standalone*. (Full reasons + labels in `doctrine/references/ai-slop-banned-fonts.md`.)
-
----
+Neither display nor body may be: Inter, Geist, Roboto, Open Sans, Lato, Arial, bare system stack,
+Space Grotesk, Instrument Serif, Poppins, Montserrat, Nunito/Nunito Sans, or Source Sans 3 as a
+display/standalone face. Full reasons are in `doctrine/references/ai-slop-banned-fonts.md`.
 
 ## References
 
-- `doctrine/references/pairing-principles.md` (the 12 core moves these rows apply).
-- `doctrine/references/font-groups-and-usage.md` (the approved baseline faces & premium folders).
-- `doctrine/references/ai-slop-banned-fonts.md` (the guard list above).
-- `skills/01-typography-and-fonts/font-selection-and-pairing/references/type-scale-recipes.md` (scale to apply once paired).
-- `skills/01-typography-and-fonts/font-selection-and-pairing/examples/applied-type-scale.md` (a full worked brief).
+- `doctrine/references/pairing-principles.md`
+- `doctrine/references/font-groups-and-usage.md`
+- `doctrine/references/ai-slop-banned-fonts.md`
+- `skills/01-typography-and-fonts/font-selection-and-pairing/references/type-scale-recipes.md`
+- `skills/01-typography-and-fonts/font-selection-and-pairing/examples/applied-type-scale.md`

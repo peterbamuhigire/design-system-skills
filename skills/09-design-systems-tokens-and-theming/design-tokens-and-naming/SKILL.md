@@ -22,6 +22,8 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
   anything that must reskin without rewriting components.
 - Exporting tokens for engineering: CSS custom properties, JSON, Tailwind theme, iOS/Android,
   or a Style Dictionary build that fans out to all of those.
+- Mapping brand tokens onto Apple-native materials, SF Symbols, app icon variants, or Liquid
+  Glass chrome without pretending system materials are raw brand color tokens.
 - Reviewing an existing token set that has drifted — duplicate hexes, components hardcoding
   primitives, names like `--blue-2` used as a semantic role.
 
@@ -113,6 +115,11 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
    names has already lost the plot. Hand the wired tokens to
    `09-…/component-library-architecture` and `09-…/design-handoff-and-dev-spec`.
 
+9. **Treat Apple materials as platform aliases, not primitives.** Liquid Glass, vibrancy, system
+   backgrounds, SF Symbols rendering modes, and app icon variants should be named as semantic
+   platform roles with fallbacks. Do not hardcode a fake glass color or shadow token and call it
+   Liquid Glass; the platform material remains owned by the OS.
+
 ## Anti-Patterns
 
 - **Two tiers, not three** — semantic tokens that *are* the primitives (`--blue-500` used as the
@@ -130,6 +137,8 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
   Style Dictionary transforms.
 - Treating the 4.5:1 / 3:1 gate as something to check once in light mode rather than a per-theme
   token invariant.
+- Encoding Liquid Glass as literal translucency/shadow values instead of platform material roles
+  with accessibility and non-Apple fallbacks.
 
 ## Outputs
 

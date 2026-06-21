@@ -1,7 +1,7 @@
-# Worked Example: iOS Screen Spec — "Send Payment" (iOS 26, Liquid Glass)
+# Worked Example: iOS Screen Spec — "Send Payment" (Current Apple SDK, Liquid Glass)
 
 A worked, applied iOS screen spec for the convention required by Phase 0.3 (every skill ships ≥1 worked
-example). It exercises the injected 2026 standards — **Liquid Glass, SF Symbols, Dynamic Type, haptics** —
+example). It exercises the injected 2026 standards — **Liquid Glass, SF Symbols 8, Dynamic Type, haptics** —
 against the doctrine. It is illustrative, not a real product brief.
 
 **Brief:** Maduuka (a Chwezi merchant app). Screen: confirm and send a mobile-money payment to a saved
@@ -50,7 +50,7 @@ App-Store-quality.
   in a `.capsule`.
 - **iPad:** `NavigationSplitView` — payee list in the sidebar, this confirm screen in the detail column.
 
-## 3. SF Symbols
+## 3. SF Symbols 8
 
 | Element | Symbol | Rendering | Notes |
 |---|---|---|---|
