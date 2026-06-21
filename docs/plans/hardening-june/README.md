@@ -38,4 +38,9 @@ sequence, score-visible at each step.
 - **Phase 0 COMPLETE (2026-06-21):** taxonomy migrated to 14 groups; routing updated; two
   2026-standards refs added; `examples/` convention mandated; de-dup done (brand-alignment folded;
   8 decks → 1 `deck-system`). Engine now **29 skills / 14 groups**. Score: taxonomy ~70, overall ~62.
-- **Next:** Phase 1 (the 24 P0 skills).
+- **Phase 1 COMPLETE (2026-06-21):** authored all **23 P0 skills** (each with references + a
+  worked example) and hardened the **P0-ten** existing skills (references + worked example +
+  2026-standards injection: Liquid Glass, Material 3 Expressive, OKLCH, View Transitions, spring
+  physics, APCA). Engine now **52 skills / 14 groups**; the three worst output types (documents,
+  tokens/handoff, mobile) addressed. Est. overall ~70→~85 as the layer matures.
+- **Next:** Phase 2 (the P1 wave) — see `phase-2-p1-wave/`.

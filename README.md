@@ -103,13 +103,16 @@ design-system-skills/
   (Mission, anti-slop charter, sourcing-authority asymmetry, AI-slop taxonomy, banned list,
   font groups, pairing, type scale, embedding, licensing, system-font fallbacks); font taxonomy
   + manifests; discovery contract + `_TEMPLATE` + `CONTRIBUTING.md`.
-- **v0.3.0 — Hardening Phase 0 COMPLETE (2026-06-21).** Restructured to the **13-group + 1
-  cross-cutting** taxonomy (`docs/plans/hardening-june/`); all skills migrated (none deleted);
-  routing updated. Added two cross-cutting 2026-standards refs (`wcag-2.2-criteria.md`,
-  `web-performance-budgets-2026.md`); mandated the `examples/` convention; de-duped
-  (`brand-alignment` folded → colour/brand 5→4; **8 decks → 1 `deck-system`** with 8 variant
-  examples). **29 skills** across 14 groups. Drives off the audit in `docs/initial-analysis/`
-  (51/100). **Next: Phase 1** — the 24 P0 skills (`docs/plans/hardening-june/phase-1-p0-skills/`).
+- **v0.4.0 — Hardening Phase 1 COMPLETE (2026-06-21).** On the 14-group taxonomy (Phase 0),
+  authored all **23 P0 skills** — real DOCX/PDF document formatting, design tokens + component
+  library + dev handoff, accessibility (WCAG 2.2), i18n/RTL, performance-as-UX, design-QA,
+  dark-mode, accessible-colour, responsive layout, navigation/IA, landing/conversion, states,
+  UX research, wireframing, cross-platform mobile, UX-writing, messaging, photography art-
+  direction, iconography, dashboards — each with references + a worked example. Hardened the
+  **P0-ten** existing skills with 2026 standards (Liquid Glass, Material 3 Expressive, OKLCH,
+  View Transitions, spring physics, APCA). **52 skills** across 14 groups. Drives off the audit
+  in `docs/initial-analysis/` (51/100). **Next: Phase 2** — the P1 wave
+  (`docs/plans/hardening-june/phase-2-p1-wave/`).
 
 ## Integration
 
