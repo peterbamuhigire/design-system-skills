@@ -80,7 +80,7 @@ design-system-skills/
 ├── skills/                        ← 13 groups + 1 cross-cutting (co-activates)
 │   ├── 00-cross-cutting-ops-qa-a11y/   (2)  ← accessibility, QA, audits — always-on
 │   ├── 01-typography-and-fonts/        (4)
-│   ├── 02-color-brand-and-visual-identity/ (5)
+│   ├── 02-color-brand-and-visual-identity/ (4)
 │   ├── 03-layout-grid-and-composition/ (1)
 │   ├── 04-web-and-ui-design/           (8)
 │   ├── 05-ux-process-research-and-psychology/ (2)
@@ -91,7 +91,7 @@ design-system-skills/
 │   ├── 10-content-design-and-ux-writing/     (0 — Phase 1)
 │   ├── 11-imagery-illustration-and-art-direction/ (0 — Phase 1)
 │   ├── 12-data-viz-and-dashboards/     (1)
-│   └── 13-presentations-and-documents/ (8 decks → Phase 0.4 de-dup; + docs in Phase 1)
+│   └── 13-presentations-and-documents/ (1: deck-system w/ 8 variant examples; + docs in Phase 1)
 ├── fonts/                         ← premium drop-in folders (binaries gitignored) + MANIFESTs
 ├── governance/design-quality-gate.md
 └── integration/integration-plan.md   ← the trigger block other engines paste in + migration log
@@ -103,10 +103,13 @@ design-system-skills/
   (Mission, anti-slop charter, sourcing-authority asymmetry, AI-slop taxonomy, banned list,
   font groups, pairing, type scale, embedding, licensing, system-font fallbacks); font taxonomy
   + manifests; discovery contract + `_TEMPLATE` + `CONTRIBUTING.md`.
-- **Hardening Phase 0 in progress** — restructured to the **13-group + 1 cross-cutting**
-  taxonomy (`docs/plans/hardening-june/`). All 37 skills migrated to new groups (none deleted).
-  Next in Phase 0: two cross-cutting 2026-standards refs, the `examples/` convention, and the
-  deck/colour de-dup. See `docs/initial-analysis/` for the audit (51/100) that drives this.
+- **v0.3.0 — Hardening Phase 0 COMPLETE (2026-06-21).** Restructured to the **13-group + 1
+  cross-cutting** taxonomy (`docs/plans/hardening-june/`); all skills migrated (none deleted);
+  routing updated. Added two cross-cutting 2026-standards refs (`wcag-2.2-criteria.md`,
+  `web-performance-budgets-2026.md`); mandated the `examples/` convention; de-duped
+  (`brand-alignment` folded → colour/brand 5→4; **8 decks → 1 `deck-system`** with 8 variant
+  examples). **29 skills** across 14 groups. Drives off the audit in `docs/initial-analysis/`
+  (51/100). **Next: Phase 1** — the 24 P0 skills (`docs/plans/hardening-june/phase-1-p0-skills/`).
 
 ## Integration
 

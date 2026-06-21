@@ -34,4 +34,8 @@ sequence, score-visible at each step.
 - Pull each repo before touching it; commit per logical unit.
 
 ## Status
-Plan authored 2026-06-21. Execution not yet started — awaiting go.
+- Plan authored 2026-06-21.
+- **Phase 0 COMPLETE (2026-06-21):** taxonomy migrated to 14 groups; routing updated; two
+  2026-standards refs added; `examples/` convention mandated; de-dup done (brand-alignment folded;
+  8 decks → 1 `deck-system`). Engine now **29 skills / 14 groups**. Score: taxonomy ~70, overall ~62.
+- **Next:** Phase 1 (the 24 P0 skills).

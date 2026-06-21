@@ -55,7 +55,7 @@ Tick ☑ when the skill ships ≥1 real worked example.
 - [ ] data-visualization ★
 
 ## 13 Presentations & Documents
-- [ ] (decks → de-dup into `deck-system` with the 8 purposes as `examples/variant-*` — Phase 0.4)
+- [x] deck-system ✅ (de-dup done Phase 0.4 — ships 8 `examples/variant-*` blueprints)
 
-**Progress: 0 / ~30 craft skills.** New skills (Phase 1+) ship their example on creation, so they
-never enter this tracker as debt.
+**Progress: 1 / ~29 craft skills** (deck-system done via the Phase 0.4 de-dup). New skills (Phase 1+)
+ship their example on creation, so they never enter this tracker as debt.
