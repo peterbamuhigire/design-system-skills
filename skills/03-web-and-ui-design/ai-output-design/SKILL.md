@@ -5,10 +5,12 @@ description: Use when designing AI output surfaces — structure templates, veri
   affordances, inline adjustability, and canvas-vs-chat selection. The five output
   principles (Clear, Verifiable, Grounded, Actionable, Adjustable) with concrete UI
   mechanics for each. Based on Macfadyen, *Designing AI Interfaces* (O'Reilly, 2025).
+status: active
 metadata:
   portable: true
+  category: 03-web-and-ui-design
   compatible_with:
-  - Codex
+  - claude-code
   - codex
 ---
 
@@ -23,8 +25,8 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 
 ## Do Not Use When
 
-- Designing the chrome around AI (loading, streaming, confidence states on input side) — use `ai-ux-patterns`.
-- Designing long-running agent control primitives — use `ai-agentic-ui`.
+- Designing the chrome around AI (loading, streaming, confidence states on input side) — use `ai-agent-ux` (its `ai-ux-patterns` reference module).
+- Designing long-running agent control primitives — use `ai-agent-ux` (its `ai-agentic-ui` reference module).
 
 ## Required Inputs
 
@@ -66,6 +68,8 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 
 ## References
 
+- `doctrine/design-doctrine.md` — the anti-slop charter; ungrounded, unverifiable, dead-end AI output is product slop.
+- `doctrine/references/ai-slop-taxonomy.md` — the product/interface slop tells (output surfaced without verifiability, grounding, or an undo/adjust affordance) the five principles fix.
 - `references/five-output-principles.md` — expanded treatment with UI mechanics.
 - `references/verifiability-patterns.md` — why confidence % is wrong; inline-source patterns.
 - `references/canvas-vs-chat.md` — decision matrix, versioning, collaboration.
@@ -205,10 +209,8 @@ If a section has no content, omit it.
 
 **See also:**
 
-- `ai-ux-patterns` — streaming, loading, feedback patterns.
-- `ai-agentic-ui` — long-running agent surfaces.
-- `ai-feature-spec` — output schema design.
-- `ux-for-ai` — trust and transparency principles.
+- `ai-agent-ux` — sibling skill covering streaming/loading/feedback patterns (`ai-ux-patterns` module), long-running agent surfaces (`ai-agentic-ui` module), and AI trust/transparency principles.
+- `doctrine/references/ai-slop-taxonomy.md` — product/interface slop tells for AI surfaces.
 ## Consolidated Child References
 
 - Load [references/routing.md](references/routing.md) to map retired AI child skill slugs to their reference modules.

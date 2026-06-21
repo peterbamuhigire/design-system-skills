@@ -1,10 +1,12 @@
 ---
 name: ios-ui-ux-design
 description: Specialized iOS UI/UX design skill for premium SwiftUI apps. Use alongside ios-development when iPhone or iPad screens must be beautiful, native, usable, accessible, and commercially credible.
+status: active
 metadata:
   portable: true
+  category: 06-mobile-ui-ux
   compatible_with:
-  - Codex
+  - claude-code
   - codex
 ---
 
@@ -30,8 +32,8 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 
 ## Workflow
 
-1. Load `ios-development` for implementation standards.
-2. Load `premium-ui-ux-design` and specifically its `../premium-ui-ux-design/references/mobile-android-ios-premium-ux.md` reference.
+1. Load your platform's iOS development/implementation skill for code and build standards.
+2. State the typography and visual-quality intent against the Chwezi anti-slop charter — see `doctrine/design-doctrine.md` and `doctrine/references/ai-slop-banned-fonts.md` — before styling.
 3. Define the primary iOS task, top-level destinations, navigation hierarchy, and device classes.
 4. Choose SwiftUI-native patterns before custom controls.
 5. Model every screen state: loading, content, empty, error, offline, permission denied, and syncing.
@@ -65,9 +67,9 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 
 ## References
 
-- `../premium-ui-ux-design/references/mobile-android-ios-premium-ux.md`
-- `../premium-ui-ux-design/references/premium-ui-ux-gate.md`
-- `../ios-development/references/skill-deep-dive.md`
+- `doctrine/design-doctrine.md` — the always-load anti-slop charter governing typography, colour, and visual identity.
+- `doctrine/references/ai-slop-banned-fonts.md` and `doctrine/references/type-scale-and-spacing.md` for type choices, scale, and spacing.
+  - Mobile-platform font caveat: iOS's **San Francisco / SF Pro** is the Apple system face — a platform-native default, allowed (and correct) for native iOS UI; it is not a Chwezi-chosen primary and carries no slop penalty. A deliberate branded display face should still come from the approved font groups (`doctrine/references/font-groups-and-usage.md`) and avoid the banned list.
 - `references/swiftui-design.md` for SwiftUI-native layout, navigation, forms, accessibility, and visual polish.
 - `references/swiftui-pro-patterns.md` for advanced SwiftUI layout, identity, animation, and performance patterns.
 - `references/ios-uikit-advanced.md` for UIKit diffable data sources, compositional layout, custom transitions, and UIKit interop.

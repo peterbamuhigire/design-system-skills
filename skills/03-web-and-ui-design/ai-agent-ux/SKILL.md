@@ -2,8 +2,10 @@
 name: ai-agent-ux
 description: >-
   Use when designing UX for agentic AI, AI copilots, agent status, approvals, uncertainty, mobile and web agent workflows, and user trust surfaces.
+status: active
 metadata:
   portable: true
+  category: 03-web-and-ui-design
   compatible_with:
   - claude-code
   - codex
@@ -56,6 +58,9 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - The selected consolidated reference files and any assumptions, risks, evidence requirements, or follow-up actions that affect execution.
 ## References
 
+- `doctrine/design-doctrine.md` — the anti-slop charter; agent UX must avoid "AI hammer looking for a nail" feature-cramming.
+- `doctrine/references/ai-slop-taxonomy.md` — the product/interface slop tells (AI feature where search was faster; ungrounded output; "AI" badges as decoration) that agent surfaces must not exhibit.
+- `ai-output-design` — sibling skill for the AI output surface (verifiability, grounding, forward-actions) these agent flows render into.
 - `references/routing.md` maps retired child skill slugs to their consolidated reference folders.
 - `references/generative-ai-ui-ux.md` covers generative-AI prompt, streaming, confidence, source, review, recovery, and human-override UI patterns.
 

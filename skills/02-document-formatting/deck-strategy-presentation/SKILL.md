@@ -1,6 +1,13 @@
 ---
 name: deck-strategy-presentation
 description: Generates a 14-slide social media strategy presentation deck in structured markdown, ready to paste into PowerPoint, Canva, or Google Slides. Invoke this skill when a strategy document exists (from 05-social-media-strategy) and the consultant needs to present it to the client for the first time. Applies Minto's Pyramid Principle — conclusion first, then evidence, then detail.
+status: active
+metadata:
+  portable: true
+  category: 02-document-formatting
+  compatible_with:
+    - claude-code
+    - codex
 ---
 # Social Media Strategy Presentation Deck
 
@@ -29,6 +36,7 @@ description: Generates a 14-slide social media strategy presentation deck in str
 
 ## References
 - Read `references/presentation-frameworks.md` when you need the deeper framework, examples, or supporting material it contains.
+- Apply `doctrine/design-doctrine.md` (the anti-slop charter and Mission) and `doctrine/references/ai-slop-banned-fonts.md` when specifying deck typography and Visual Direction — never a banned default. Use `doctrine/references/pairing-principles.md` and `doctrine/references/type-scale-and-spacing.md` for the type pairing, scale, and spacing on every slide (decks default to Group 3 Startup/Product — Bricolage Grotesque display + Hanken Grotesk body — per `doctrine/references/font-groups-and-usage.md`).
 
 <!-- dual-compat:end -->
 

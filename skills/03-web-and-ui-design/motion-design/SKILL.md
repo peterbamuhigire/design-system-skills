@@ -3,10 +3,12 @@ name: motion-design
 description: Animation and micro-interaction standards for web, Android, and iOS.
   Covers timing rules (100/300/500), easing curves, GPU-accelerated animation, staggered
   entrances, state transitions, loading states, and mandatory prefers-reduced-motion...
+status: active
 metadata:
   portable: true
+  category: 03-web-and-ui-design
   compatible_with:
-  - Codex
+  - claude-code
   - codex
 ---
 
@@ -60,18 +62,18 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 
 ## References
 
-- Use the links and companion skills already referenced in this file when deeper context is needed.
+- `doctrine/design-doctrine.md` — the anti-slop charter; motion is a slop tell when overused or when bounce/elastic easing is applied.
+- `doctrine/references/ai-slop-taxonomy.md` — the product/interface slop tells, including AI-fingerprint animation (bounce/elastic, animation fatigue).
 <!-- dual-compat-end -->
 ## Plugins (Load Alongside)
 
 | Companion Skill | When to Load |
 |---|---|
 | `practical-ui-design` | Visual system (colour, type, spacing) |
-| `jetpack-compose-ui` | Android Compose animation APIs |
-| `swiftui-design` | SwiftUI animation/transition APIs |
+| `android-ui-ux-design` | Android Compose animation APIs |
+| `ios-ui-ux-design` | SwiftUI animation/transition APIs |
 | `webapp-gui-design` | Web app CSS/JS animation |
-| `ai-slop-prevention` | Validate animations aren't AI slop |
-| `frontend-performance` | Measure animation frame rates |
+| `visual-product-slop-audit` | Validate animations aren't AI slop |
 
 ---
 

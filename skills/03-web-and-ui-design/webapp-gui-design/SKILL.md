@@ -5,10 +5,12 @@ description: Use when designing or building SaaS web application UIs with React,
   tables, forms, dialogs, loading and error states, auth flows, uploads, accessibility,
   and interface consistency. For the Bootstrap/Tabler/PHP stack used in the seeder
   template, load the deep-dive files in the `sections/` directory.
+status: active
 metadata:
   portable: true
+  category: 03-web-and-ui-design
   compatible_with:
-  - Codex
+  - claude-code
   - codex
 ---
 
@@ -24,9 +26,9 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 
 ## Do Not Use When
 
-- Pure landing or marketing pages — use `frontend-design` for editorial layouts
-- Mobile-native screens — use `jetpack-compose-ui` or `swiftui-design`
-- Low-level Tailwind syntax questions — use `tailwind-css`
+- Pure landing or marketing pages — use editorial/marketing layout guidance, not this app-shell skill
+- Mobile-native screens — use `android-ui-ux-design` or `ios-ui-ux-design`
+- Low-level Tailwind syntax questions — out of scope for this skill
 
 ## Required Inputs
 
@@ -34,7 +36,7 @@ The target surface (dashboard, CRUD table, form, settings), the auth/tenant mode
 
 ## Workflow
 
-0. For premium, revenue-critical, dashboard-heavy, or executive-facing products, load `premium-software-product-execution` and `premium-ui-ux-design` before choosing layout or visual direction.
+0. For premium, revenue-critical, dashboard-heavy, or executive-facing products, state the typeface(s) and palette intent first per `doctrine/design-doctrine.md` (§2 Anti-Slop Charter) and pick a deliberate, non-slop face from `doctrine/references/font-groups-and-usage.md` before choosing layout or visual direction.
 1. Place the screen in the app shell (sidebar + topbar + content area).
 2. Pick the layout primitive (dashboard grid, table, form, detail-with-tabs).
 3. Wire data with React Query; never call `fetch` inside components.
@@ -56,7 +58,7 @@ The target surface (dashboard, CRUD table, form, settings), the auth/tenant mode
 - Button labels describe the outcome ("Save changes", "Delete project"), not a vague mechanism ("Submit", "OK").
 - Destructive actions use a dedicated danger variant and explicit confirmation or undo when the action is high impact.
 - Touch targets are at least 44x44 CSS pixels, including icon-only buttons.
-- Premium screens must pass the `premium-ui-ux-design` gate: business clarity, visual quality, usability, content, accessibility, data quality, and production fit all at 8/10 or better.
+- Premium screens must clear a quality gate — business clarity, visual quality, usability, content, accessibility, data quality, and production fit all at 8/10 or better — and must satisfy the anti-slop charter in `doctrine/design-doctrine.md` (deliberate, stated typeface and palette; no banned default).
 - Premium application screens must also show product value: buyer-relevant metrics, proof, clear next action, polished states, trustworthy copy, and support or escalation paths where the user may feel risk.
 
 ## Anti-Patterns
@@ -77,9 +79,10 @@ App shell component, route-level layout files, reusable primitives (`DataTable`,
 
 ## References
 
-- Companion skills: `react-development`, `nextjs-app-router`, `tailwind-css`, `responsive-design`, `form-ux-design`, `frontend-performance`, `ux-principles-101`.
-- Load `premium-ui-ux-design` for premium SaaS, dashboards, high-ticket products, and any screen where perceived quality affects trust or conversion.
-- Load `premium-software-product-execution` when the UI must help justify premium pricing through reporting, controls, onboarding, sales proof, website/content authority, or executive decision support.
+- `doctrine/design-doctrine.md` — the anti-slop charter; state the typeface and palette before building any screen.
+- `doctrine/references/ai-slop-banned-fonts.md` — banned primary typefaces; choose a deliberate face from `doctrine/references/font-groups-and-usage.md` (Group 2 IBM Plex Sans + JetBrains/IBM Plex Mono suits dashboard/technical SaaS).
+- `doctrine/references/pairing-principles.md` and `doctrine/references/type-scale-and-spacing.md` — pairing, type scale, and spacing rhythm for the shell, tables, and forms.
+- Companion skills in this engine: `interaction-design-patterns`, `motion-design`, `design-audit`, `practical-ui-design`, `visual-product-slop-audit`. (The former skills-web-dev siblings `react-development`, `tailwind-css`, `responsive-design`, `form-ux-design`, `premium-ui-ux-design` did not migrate; their visual concerns are covered by the doctrine references above.)
 - Use `references/interface-consistency.md` when a new module risks drifting from the established UI language.
 - Free: Shadcn/ui (`ui.shadcn.com`), TanStack Table (`tanstack.com/table`), Atomic Design (`atomicdesign.bradfrost.com`), React Hook Form (`react-hook-form.com`), Zod (`zod.dev`).
 - For the Bootstrap/Tabler/PHP seeder stack, load `sections/01-overview.md` and onwards.
@@ -218,7 +221,7 @@ export function InviteUserForm({ onSuccess }: { onSuccess: () => void }) {
 }
 ```
 
-`FormField` owns the label, error, description, and the input. Load `form-ux-design` for field-level patterns across web + mobile.
+`FormField` owns the label, error, description, and the input. For field-level patterns across web + mobile, apply `interaction-design-patterns` (Deferred Choices, Good Defaults).
 
 ---
 
@@ -330,7 +333,7 @@ Tenants identify by slug and appear in the URL: `/[tenant]/orders`. The `TenantS
 />
 ```
 
-Tenant-scoped API requests derive the tenant from context; never from a client-provided header that the user could forge. Load `multi-tenant-saas-architecture` for the backend isolation model.
+Tenant-scoped API requests derive the tenant from context; never from a client-provided header that the user could forge. (The backend tenant-isolation model is owned by the engineering catalog, not this design engine.)
 
 ---
 
@@ -391,7 +394,7 @@ Empty lists, empty dashboards, first-run onboarding. Three components: icon, sho
 />
 ```
 
-First-use onboarding: a checklist card on the dashboard; tick items as they complete; dismiss after all done with a "show me tips" toggle. See `ux-principles-101` for empty-state rules #34–#38.
+First-use onboarding: a checklist card on the dashboard; tick items as they complete; dismiss after all done with a "show me tips" toggle. See `interaction-design-patterns` (Instant Gratification, Safe Exploration) for the empty-state and first-run rules.
 
 ---
 

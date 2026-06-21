@@ -3,8 +3,10 @@ name: interaction-design-patterns
 description: Use when designing interfaces, building UX flows, choosing layouts, or
   making navigation decisions. Covers Tidwell's 45+ proven interaction patterns for
   behavior, navigation, layout, actions, and data display. Load alongside webapp-gui-design...
+status: active
 metadata:
   portable: true
+  category: 03-web-and-ui-design
   compatible_with:
   - claude-code
   - codex
@@ -60,6 +62,8 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 
 ## References
 
+- `doctrine/design-doctrine.md` — the anti-slop charter; grounding interaction choices in proven patterns is how this skill avoids the convergent AI-generic interface.
+- `doctrine/references/ai-slop-taxonomy.md` — the product/interface slop tells (e.g. an AI feature where standard navigation was faster) these patterns guard against.
 - Use the `sections/` directory for modular deep dives and load only the parts relevant to the task.
 <!-- dual-compat-end -->
 Grounded in Tidwell, Brewer & Valencia (2020) *Designing Interfaces*, 3rd ed. — the industry's definitive interaction design pattern library. These patterns describe how real humans behave with software and what interface structures consistently work.
@@ -260,12 +264,12 @@ People's decisions are shaped by what peers do and say. Social dynamics increase
 ```
 interaction-design-patterns (this skill)
     |
-    +-- webapp-gui-design ------> Apply patterns to Bootstrap/Tabler web UI
-    +-- jetpack-compose-ui -----> Apply patterns to Android Compose mobile UI
-    +-- ux-psychology ----------> Cognitive science behind the behavioral patterns
-    +-- cognitive-ux-framework -> Evaluate patterns against the Six Minds
-    +-- form-ux-design ---------> Deferred Choices, Instant Gratification in forms
-    +-- lean-ux-validation -----> Validate pattern choices with real users before building
+    +-- webapp-gui-design ------> Apply patterns to React/Next.js or Bootstrap/Tabler web UI
+    +-- android-ui-ux-design ---> Apply patterns to Android Compose mobile UI
+    +-- ios-ui-ux-design -------> Apply patterns to iOS SwiftUI/UIKit mobile UI
+    +-- practical-ui-design ----> Visual system (colour, type, spacing) for the chosen patterns
+    +-- design-audit -----------> Validate pattern choices against the 10 quality dimensions
+    +-- enterprise-ux-process --> Validate pattern choices with real users before building (Phase 9)
 ```
 
 ---

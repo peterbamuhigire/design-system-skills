@@ -3,10 +3,12 @@ name: practical-ui-design
 description: Rules-based visual UI design system covering colour, typography, spacing,
   layout, buttons, forms, and visual consistency. Load alongside any platform skill when
   the work needs a deliberate interface system instead of ad hoc styling.
+status: active
 metadata:
   portable: true
+  category: 03-web-and-ui-design
   compatible_with:
-  - Codex
+  - claude-code
   - codex
 ---
 
@@ -63,31 +65,27 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 
 ## References
 
+- `doctrine/design-doctrine.md` — the anti-slop charter; this visual system exists to push UI away from the convergent AI mean.
+- `doctrine/references/ai-slop-banned-fonts.md` — banned primary typefaces; pick a deliberate face from `doctrine/references/font-groups-and-usage.md` before applying the type rules below.
+- `doctrine/references/pairing-principles.md` — always pair a distinctive display face with a refined body face; never monotype.
+- `doctrine/references/type-scale-and-spacing.md` — the canonical type scale, line-height, weight, tracking, and spacing-rhythm numbers behind the typography and spacing sections (replaces the former `math-for-web-design` reference, which did not migrate to this engine).
 - Use the `references/` directory for deep detail after reading the core workflow below.
 - Use `references/visual-consistency.md` when pattern coherence, affordances, or user expectations are part of the task.
-- Pair with `responsive-design/references/math-for-web-design.md` when proportions, type scales, spacing, aspect ratios, color steps, fluid sizing, or motion timing require mathematical consistency.
-- Pair with `premium-software-product-execution` when visual quality must support premium pricing, executive trust, proof, service packaging, or high-ticket product perception.
 <!-- dual-compat-end -->
 ## Plugins (Load Alongside)
 
 | Companion Skill | When to Load |
 |---|---|
 | `webapp-gui-design` | Web app dashboards, admin panels, SaaS UIs |
-| `jetpack-compose-ui` | Android native (Kotlin/Compose) |
-| `form-ux-design` | Deep form patterns (this skill covers quick reference only) |
+| `android-ui-ux-design` | Android native (Kotlin/Compose) |
+| `ios-ui-ux-design` | iOS native (SwiftUI/UIKit) |
 | `healthcare-ui-design` | Clinical-grade interfaces with strict accessibility |
-| `pos-sales-ui-design` | Point-of-sale and retail entry screens |
-| `ux-psychology` | Cognitive science foundations behind these rules |
-| `laws-of-ux` | Named-law quick reference (Fitts, Hick, Miller, etc.) |
-| `ai-slop-prevention` | Quality gate to catch generic AI-generated UI patterns |
+| `visual-product-slop-audit` | Quality gate to catch generic AI-generated UI patterns |
 | `motion-design` | Animation timing, easing, and micro-interaction standards |
-| `ux-writing` | Microcopy standards for buttons, errors, empty states |
-| `responsive-design` | Mobile-first, container queries, pointer detection |
-| `frontend-performance` | Core Web Vitals, image and rendering optimisation |
 | `design-audit` | Comprehensive UI quality audit with severity ratings |
-| `premium-software-product-execution` | Premium product/service packaging, proof, buyer trust, and pricing-power requirements |
+| `interaction-design-patterns` | Tidwell behaviour/navigation/layout/action patterns |
 
-**Usage:** This skill provides the *visual system* (colour, type, spacing, components). Platform skills provide *implementation code*. Load both.
+**Usage:** This skill provides the *visual system* (colour, type, spacing, components). Platform skills provide *implementation code*. Load both. Font, pairing, and type-scale rules trace to `doctrine/references/*` — do not restate them here.
 
 ---
 

@@ -1,6 +1,13 @@
 ---
 name: deck-campaign-proposal
 description: Generates a 12-slide campaign proposal presentation in structured markdown, ready to paste into PowerPoint, Canva, or Google Slides. Invoke this skill when presenting a specific campaign idea to the client for approval and budget sign-off. Tone is persuasive and enthusiastic — this deck wins the campaign budget.
+status: active
+metadata:
+  portable: true
+  category: 02-document-formatting
+  compatible_with:
+    - claude-code
+    - codex
 ---
 # Campaign Proposal Deck
 
@@ -30,6 +37,7 @@ description: Generates a 12-slide campaign proposal presentation in structured m
 ## References
 - Read `references/pitch-psychology.md` when you need the deeper framework, examples, or supporting material it contains.
 - Read `references/storytelling.md` when you need the deeper framework, examples, or supporting material it contains.
+- Apply `doctrine/design-doctrine.md` (the anti-slop charter and Mission) and `doctrine/references/ai-slop-banned-fonts.md` when specifying deck typography and Visual Direction — never a banned default. Use `doctrine/references/pairing-principles.md` and `doctrine/references/type-scale-and-spacing.md` for the type pairing, scale, and spacing on every slide (decks default to Group 3 Startup/Product — Bricolage Grotesque display + Hanken Grotesk body — per `doctrine/references/font-groups-and-usage.md`).
 
 <!-- dual-compat:end -->
 

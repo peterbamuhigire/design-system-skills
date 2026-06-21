@@ -1,10 +1,17 @@
 ---
 name: enterprise-ux-process
 description: Operationalize Synechron's enterprise UX process for premium-priced enterprise engagements (financial services, insurance, regulated industries, large internal apps, B2B SaaS). Produces maturity-level declaration + activity evidence pack + heuristic evaluation + 5-outcomes pre-launch declaration. Cite when scoping, executing, or auditing premium enterprise UX work.
+status: active
+metadata:
+  portable: true
+  category: 03-web-and-ui-design
+  compatible_with:
+  - claude-code
+  - codex
 ---
 
 # Enterprise UX Process Skill
-**Source:** Operationalizes `book-extractions/enterprise-ux-financial-insurance-extraction.md` (Synechron, 2018; derived from The Design Ladder + Natalie Hanson's UX Maturity Model).
+**Source:** Operationalizes the Synechron enterprise-UX extraction (Synechron, 2018; derived from The Design Ladder + Natalie Hanson's UX Maturity Model). The underlying `book-extractions/*` source files live in the originating engineering catalog, not this design engine.
 
 ---
 
@@ -60,7 +67,7 @@ The process maps directly to Synechron's Activity-by-Level matrix. All 9 phases 
 - Output: user-research report with both data types
 
 ### Phase 5 — Competitor Analysis
-- Use Levy's 19-column competitive matrix (cite `book-extractions/levy-ux-strategy-extraction.md` Part VII or, in `website-skills`, `skills/design-reference/references/levy-competitive-matrix.md`)
+- Use Levy's 19-column competitive matrix (the Levy UX-strategy extraction; the source file lives in the originating engineering catalog, not this design engine)
 - Minimum: 5 direct + 3 indirect competitors
 - Output: filled matrix + 1-page distilled brief
 
@@ -115,14 +122,12 @@ A complete enterprise-ux-process engagement produces:
 
 ## Cross-references
 
-### Canonical extraction (source-of-truth)
-- `book-extractions/enterprise-ux-financial-insurance-extraction.md`
+### Design doctrine (always consult)
+- `doctrine/design-doctrine.md` — the anti-slop charter; Phase 7 visual design and the "Pleasing" pre-launch outcome must satisfy it.
+- `doctrine/references/ai-slop-taxonomy.md` — the product/interface slop tells the heuristic evaluation (Phase 8) and Aesthetic-and-Minimal heuristic should screen for.
 
-### Related skills in this engine
-- `book-extractions/levy-ux-strategy-extraction.md` — strategy framing (Four Tenets) that should sit upstream of this process
-- `book-extractions/branson-ux-ui-design-extraction.md` — persona discipline + working memory + 4-stage affordance applied within phases 6 and 8
-- `book-extractions/deacon-ux-ui-strategy-extraction.md` — 3 levels of UX scope; declare in Phase 1
-- `book-extractions/fekeshazi-pm-ux-guide-extraction.md` — PM collaboration rules and the "design is ongoing" stance
+### Canonical extractions (source-of-truth — external to this design engine)
+The Synechron, Levy, Branson, Deacon, and Fekeshazi `book-extractions/*` files that this process operationalizes live in the originating engineering catalog, not this engine. They frame strategy (Levy Four Tenets, upstream of Phase 1), persona discipline and the 4-stage affordance audit (Branson, in Phases 6 and 8), the 3 levels of UX scope (Deacon, declared in Phase 1), and PM collaboration rules (Fekeshazi).
 
 ### Operational skills in other engines
 - `website-skills/skills/design-quality-score/` — Category 8 (UX Maturity) scores the same artifacts independently

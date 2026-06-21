@@ -1,10 +1,12 @@
 ---
 name: android-ui-ux-design
 description: Specialized Android UI/UX design skill for premium Jetpack Compose apps. Use alongside android-development when Android screens must be beautiful, native, usable, accessible, and commercially credible.
+status: active
 metadata:
   portable: true
+  category: 06-mobile-ui-ux
   compatible_with:
-  - Codex
+  - claude-code
   - codex
 ---
 
@@ -30,8 +32,8 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 
 ## Workflow
 
-1. Load `android-development` for implementation standards.
-2. Load `premium-ui-ux-design` and specifically its `../premium-ui-ux-design/references/mobile-android-ios-premium-ux.md` reference.
+1. Load your platform's Android development/implementation skill for code and build standards.
+2. State the typography and visual-quality intent against the Chwezi anti-slop charter — see `doctrine/design-doctrine.md` and `doctrine/references/ai-slop-banned-fonts.md` — before styling.
 3. Define the primary mobile task, top-level destinations, and device classes.
 4. Choose Material 3 components and adaptive navigation before custom patterns.
 5. Model every Compose screen state: loading, content, empty, error, offline, permission denied, and syncing.
@@ -66,8 +68,8 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 
 ## References
 
-- `../premium-ui-ux-design/references/mobile-android-ios-premium-ux.md`
-- `../premium-ui-ux-design/references/premium-ui-ux-gate.md`
-- `../android-development/references/ui-design-system.md`
+- `doctrine/design-doctrine.md` — the always-load anti-slop charter governing typography, colour, and visual identity.
+- `doctrine/references/ai-slop-banned-fonts.md` and `doctrine/references/type-scale-and-spacing.md` for type choices, scale, and spacing.
+  - Mobile-platform font caveat: Android's **Roboto** is the OS/Material system face — it is allowed only **as the platform system default**, never as a deliberate Chwezi brand/display primary (it is banned for that). Any custom branded type must come from the approved font groups (`doctrine/references/font-groups-and-usage.md`) and avoid the banned list.
 - `references/jetpack-compose-ui.md` for Compose-specific Material 3, layout, animation, navigation, and component patterns.
 <!-- dual-compat-end -->

@@ -1,6 +1,13 @@
 ---
 name: deck-annual-review
 description: Generates an 18-slide annual performance and strategy refresh presentation in structured markdown, ready to paste into PowerPoint, Canva, or Google Slides. Invoke this skill at the end of Year 1 of a client engagement when presenting the full-year review and proposing the Year 2 retainer renewal. This is the highest-stakes deck the consultant presents — it must make the client feel the year was well-invested and excited about Year 2.
+status: active
+metadata:
+  portable: true
+  category: 02-document-formatting
+  compatible_with:
+    - claude-code
+    - codex
 ---
 # Annual Review and Year 2 Strategy Deck
 
@@ -29,6 +36,7 @@ description: Generates an 18-slide annual performance and strategy refresh prese
 
 ## References
 - Read `references/presentation-frameworks.md` when you need the deeper framework, examples, or supporting material it contains.
+- Apply `doctrine/design-doctrine.md` (the anti-slop charter and Mission) and `doctrine/references/ai-slop-banned-fonts.md` when specifying deck typography and Visual Direction — never a banned default. Use `doctrine/references/pairing-principles.md` and `doctrine/references/type-scale-and-spacing.md` for the type pairing, scale, and spacing on every slide (decks default to Group 3 Startup/Product — Bricolage Grotesque display + Hanken Grotesk body — per `doctrine/references/font-groups-and-usage.md`).
 
 <!-- dual-compat:end -->
 

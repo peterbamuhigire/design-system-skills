@@ -3,10 +3,12 @@ name: healthcare-ui-design
 description: Design world-class clinical and patient-facing healthcare UIs for web,
   mobile (Android/iOS), and tablet. Covers EMR/EHR dashboards, patient portals, telemedicine,
   medication management, wellness apps, and aging-care interfaces. Enforces HIPAA...
+status: active
 metadata:
   portable: true
+  category: 03-web-and-ui-design
   compatible_with:
-  - Codex
+  - claude-code
   - codex
 ---
 
@@ -65,6 +67,9 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 
 ## References
 
+- `doctrine/design-doctrine.md` — the anti-slop charter; clinical UIs must still read as deliberately designed, not templated.
+- `doctrine/references/ai-slop-banned-fonts.md`, `doctrine/references/pairing-principles.md`, `doctrine/references/type-scale-and-spacing.md` — typography, pairing, and scale rules for the colour/typography choices below.
+- `doctrine/references/system-font-fallbacks.md` — the deliberate device-common fallback tier (relevant to the OS-native font note in Mobile Typography).
 - Use the `references/` directory for deep detail after reading the core workflow below.
 <!-- dual-compat-end -->
 ## Overview
@@ -144,7 +149,7 @@ Use: modal sheets for quick actions, FAB for single primary action
 - Headings: 26–32px
 - Labels / captions: 14px minimum
 - Line height: 1.6× font size
-- Font: System font (SF Pro / Roboto) — fastest load, OS-native feel
+- Font: deliberate OS-native system stack (SF Pro on iOS, the Android system face) — fastest load and platform familiarity in a safety-critical context; this is a documented device-common fallback, not a default reflex (see `doctrine/references/system-font-fallbacks.md`). For a branded patient-facing layer, pair a distinctive display face over it per `doctrine/references/pairing-principles.md`
 
 ### Mobile Color
 

@@ -1,6 +1,13 @@
 ---
 name: deck-monthly-report
 description: Generates a 10-slide monthly performance report presentation in structured markdown, ready to paste into PowerPoint, Canva, or Google Slides. Invoke this skill at the end of each calendar month when preparing a client reporting meeting. The consultant must replace all placeholder data with actual client figures before presenting.
+status: active
+metadata:
+  portable: true
+  category: 02-document-formatting
+  compatible_with:
+    - claude-code
+    - codex
 ---
 # Monthly Performance Report Deck
 
@@ -29,6 +36,7 @@ description: Generates a 10-slide monthly performance report presentation in str
 
 ## References
 - Read `references/presentation-frameworks.md` when you need the deeper framework, examples, or supporting material it contains.
+- Apply `doctrine/design-doctrine.md` (the anti-slop charter and Mission) and `doctrine/references/ai-slop-banned-fonts.md` when specifying deck typography and Visual Direction — never a banned default. Use `doctrine/references/pairing-principles.md` and `doctrine/references/type-scale-and-spacing.md` for the type pairing, scale, and spacing on every slide (decks default to Group 3 Startup/Product — Bricolage Grotesque display + Hanken Grotesk body — per `doctrine/references/font-groups-and-usage.md`).
 
 <!-- dual-compat:end -->
 

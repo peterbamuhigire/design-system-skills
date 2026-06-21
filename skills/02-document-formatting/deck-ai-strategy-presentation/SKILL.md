@@ -1,6 +1,13 @@
 ---
 name: deck-ai-strategy-presentation
 description: Produces a 14-slide board-level AI marketing strategy presentation in structured markdown, ready to paste into PowerPoint, Canva, or Google Slides. Uses Minto's Pyramid Principle (conclusion-first), the AI Marketing Canvas framework (Venkatesan & Lecinski, 2026), and Randazzo's MVOSSTE model (2024) to present a business case, investment requirements, and ROI expectations. Invoke when a client needs to present an AI marketing strategy to their board, senior leadership, or investors, or when a consultant needs to demonstrate AI capability to a prospective client.
+status: active
+metadata:
+  portable: true
+  category: 02-document-formatting
+  compatible_with:
+    - claude-code
+    - codex
 ---
 # AI Marketing Strategy Presentation Deck
 
@@ -29,6 +36,7 @@ description: Produces a 14-slide board-level AI marketing strategy presentation 
 
 ## References
 - Read `references/presentation-frameworks.md` when you need the deeper framework, examples, or supporting material it contains.
+- Apply `doctrine/design-doctrine.md` (the anti-slop charter and Mission) and `doctrine/references/ai-slop-banned-fonts.md` when specifying deck typography and Visual Direction — never a banned default. Use `doctrine/references/pairing-principles.md` and `doctrine/references/type-scale-and-spacing.md` for the type pairing, scale, and spacing on every slide (decks default to Group 3 Startup/Product — Bricolage Grotesque display + Hanken Grotesk body — per `doctrine/references/font-groups-and-usage.md`).
 
 <!-- dual-compat:end -->
 

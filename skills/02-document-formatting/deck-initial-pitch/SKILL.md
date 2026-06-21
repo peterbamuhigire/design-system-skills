@@ -1,6 +1,13 @@
 ---
 name: deck-initial-pitch
 description: Generates a 15-slide initial pitch presentation in structured markdown, ready to paste into PowerPoint, Canva, or Google Slides. Invoke when a consultant has completed a client intake (01-client-brief) and needs to present their proposed approach to the prospective client before the engagement is signed. This deck is the live pitch — the biz-dev-proposal is the leave-behind document. Tone is confident, diagnostic, and client-centred — not a sales brochure.
+status: active
+metadata:
+  portable: true
+  category: 02-document-formatting
+  compatible_with:
+    - claude-code
+    - codex
 ---
 <!-- dual-compat:start -->
 ## Use when
@@ -28,6 +35,7 @@ description: Generates a 15-slide initial pitch presentation in structured markd
 ## References
 - Read `references/pitch-psychology.md` when you need the deeper framework, examples, or supporting material it contains.
 - Read `references/storytelling.md` when you need the deeper framework, examples, or supporting material it contains.
+- Apply `doctrine/design-doctrine.md` (the anti-slop charter and Mission) and `doctrine/references/ai-slop-banned-fonts.md` when specifying deck typography and Visual Direction — never a banned default. Use `doctrine/references/pairing-principles.md` and `doctrine/references/type-scale-and-spacing.md` for the type pairing, scale, and spacing on every slide (decks default to Group 3 Startup/Product — Bricolage Grotesque display + Hanken Grotesk body — per `doctrine/references/font-groups-and-usage.md`).
 
 <!-- dual-compat:end -->
 

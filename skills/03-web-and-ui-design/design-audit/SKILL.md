@@ -4,10 +4,12 @@ description: Comprehensive UI/UX quality audit covering visual hierarchy, access
   consistency, AI slop detection, typography, colour, layout, interaction states,
   responsive behaviour, performance, and microcopy. Produces severity-rated findings with
   actionable remediation.
+status: active
 metadata:
   portable: true
+  category: 03-web-and-ui-design
   compatible_with:
-  - Codex
+  - claude-code
   - codex
 ---
 
@@ -63,22 +65,19 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 
 ## References
 
-- Use the links and companion skills already referenced in this file when deeper context is needed.
+- `doctrine/design-doctrine.md` — the anti-slop charter every audit enforces.
+- `doctrine/references/ai-slop-taxonomy.md` — the visual/product slop tells the AI Slop dimension checks against.
+- `doctrine/references/ai-slop-banned-fonts.md` — the banned primary typefaces the Typography dimension flags.
+- `doctrine/references/pairing-principles.md` and `doctrine/references/type-scale-and-spacing.md` — the type-pairing and scale standards the Typography dimension audits against.
 - Use `references/consistency-audit.md` when drift between screens, components, or labels is a suspected issue.
 <!-- dual-compat-end -->
 ## Plugins (Load Alongside)
 
 | Companion Skill | When to Load |
 |---|---|
-| `ai-slop-prevention` | Detailed AI anti-pattern reference |
+| `visual-product-slop-audit` | Detailed visual/product AI slop checklist |
 | `practical-ui-design` | Visual system rules to audit against |
 | `motion-design` | Animation quality standards |
-| `ux-writing` | Microcopy quality standards |
-| `responsive-design` | Responsive behaviour standards |
-| `frontend-performance` | Performance measurement targets |
-| `laws-of-ux` | UX law compliance |
-| `ux-principles-101` | Accessibility and usability principles |
-| `premium-software-product-execution` | Premium readiness, proof, service packaging, and buyer-trust audit |
 
 ---
 
