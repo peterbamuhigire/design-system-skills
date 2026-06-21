@@ -43,4 +43,11 @@ sequence, score-visible at each step.
   2026-standards injection: Liquid Glass, Material 3 Expressive, OKLCH, View Transitions, spring
   physics, APCA). Engine now **52 skills / 14 groups**; the three worst output types (documents,
   tokens/handoff, mobile) addressed. Est. overall ~70→~85 as the layer matures.
-- **Next:** Phase 2 (the P1 wave) — see `phase-2-p1-wave/`.
+- **`product-design-audit`** skill added (multi-platform product audit). Engine = **53 skills**.
+- **Plan REWRITTEN (book-informed) 2026-06-21:** after a critical study of 20 UI/UX books
+  (`docs/book-study/`, synthesis in `00-synthesis.md`), the live remaining plan is
+  **`PLAN-v2-book-informed.md`** — it strips the done work and reframes Phase 2/3 (Track A doctrine
+  refs first, Track B 4 new skills incl. `ux-remediation-and-redesign` + `xlsx-...`, Track C
+  changes, Track D the confirmed P1 wave, Track E exclusions). `phase-2-p1-wave/` and
+  `phase-3-ceiling/` remain as the per-skill spec source, superseded where v2 differs.
+- **Next:** execute `PLAN-v2-book-informed.md` Track A → B → C → D.
