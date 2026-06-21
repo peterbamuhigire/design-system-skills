@@ -90,6 +90,32 @@ The only hard requirement for flawless pickup: **every skill has well-formed fro
 
 ---
 
+## Font Folder Contract
+
+The `fonts/` folder is shared taxonomy plus local curation. Font binaries are intentionally
+gitignored, so each teammate may have a different set of individual font files on their device,
+but everyone must keep the same eight top-level category folders:
+
+```text
+fonts/
+├── 01-formal-institutional/
+├── 02-editorial-literary/
+├── 03-modern-product-grotesque/
+├── 04-technical-data-code/
+├── 05-friendly-humanist/
+├── 06-expressive-display-artistic/
+├── 07-script-cursive-handwritten/
+└── 08-body-ui-workhorses/
+```
+
+After cloning this repo on a new device, or after pulling changes that may affect `fonts/`, run
+the idempotent setup command in `fonts/README.md` to create any missing category directories.
+Agents must verify these folders exist before scanning premium fonts or adding local families.
+Do not rename or invent top-level font categories unless the doctrine reference, manifests, and
+typography skills are updated in the same change.
+
+---
+
 ## Layout
 
 ```
@@ -114,7 +140,7 @@ design-system-skills/
 │   ├── 11-imagery-illustration-and-art-direction/ (0 — Phase 1)
 │   ├── 12-data-viz-and-dashboards/     (1)
 │   └── 13-presentations-and-documents/ (1: deck-system w/ 8 variant examples; + docs in Phase 1)
-├── fonts/                         ← premium drop-in folders (binaries gitignored) + MANIFESTs
+├── fonts/                         ← 8 fixed category folders, premium drop-ins gitignored + MANIFESTs
 ├── governance/design-quality-gate.md
 └── integration/integration-plan.md   ← the trigger block other engines paste in + migration log
 ```

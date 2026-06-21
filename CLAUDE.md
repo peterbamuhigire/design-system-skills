@@ -25,6 +25,16 @@ Grotesk, Poppins, Montserrat, Nunito, or standalone Source Sans. **State the cho
 and reason before producing any artifact.** If you cannot satisfy the anti-slop checklist, say
 so and ask — never silently fall back to Inter or a system stack.
 
+## Font folder contract
+
+The eight top-level folders under `fonts/` are fixed team taxonomy, not personal preference:
+`01-formal-institutional`, `02-editorial-literary`, `03-modern-product-grotesque`,
+`04-technical-data-code`, `05-friendly-humanist`, `06-expressive-display-artistic`,
+`07-script-cursive-handwritten`, and `08-body-ui-workhorses`. On a new device, or after pulling a
+font-taxonomy change, ensure all eight directories exist before scanning or adding fonts. Team
+members may curate different individual font files inside those folders, but must not rename or
+replace the categories.
+
 ## When invoked from another engine
 
 A domain engine (business-plan, srs, proposal, website, engineering-catalog, social-media,

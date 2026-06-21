@@ -41,19 +41,22 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
 
 1. **Classify the artifact** via `doctrine/references/font-groups-and-usage.md` using:
    artifact context -> design voice -> functional role -> licence/availability.
-2. **Scan for premium files:** run the `premium-font-scan` logic against the matching
+2. **Verify the font folder taxonomy:** before scanning on a new device or after a pull, ensure
+   the eight required `fonts/<category>/` directories from `fonts/README.md` exist. Create any
+   missing category folder without deleting or moving local font files.
+3. **Scan for premium files:** run the `premium-font-scan` logic against the matching
    `fonts/<category>/` folder. If a permitted premium family is present and would look better,
    prefer it; else take the named OFL baseline.
-3. **Pick a pairing** using `doctrine/references/pairing-principles.md`: display + body,
+4. **Pick a pairing** using `doctrine/references/pairing-principles.md`: display + body,
    category contrast, weight extremes, compatible x-heights, and no mood conflict. For ready,
    named, context-sorted pairings, use `references/pairing-catalog.md`.
-4. **State the choice before producing anything:** name the display face, the body face, the
+5. **State the choice before producing anything:** name the display face, the body face, the
    category, and a one-line reason tied to this artifact's context.
-5. **Run the anti-slop checklist** below. If any item fails, fix before proceeding.
-6. **Set the type scale** per `doctrine/references/type-scale-and-spacing.md`: ratio >=1.25,
+6. **Run the anti-slop checklist** below. If any item fails, fix before proceeding.
+7. **Set the type scale** per `doctrine/references/type-scale-and-spacing.md`: ratio >=1.25,
    real jumps, inverse line-height, and weight extremes. For concrete px/rem scales, fluid
    `clamp()` versions, and variable-font axes, use `references/type-scale-recipes.md`.
-7. **Hand off to `font-embedding-and-licensing`** for the format-correct load/embed.
+8. **Hand off to `font-embedding-and-licensing`** for the format-correct load/embed.
 
 ## The Anti-Slop Checklist
 
@@ -92,6 +95,7 @@ bare system stack.
 
 - `doctrine/design-doctrine.md`, and the references it indexes: `ai-slop-banned-fonts.md`,
   `font-groups-and-usage.md`, `pairing-principles.md`, `type-scale-and-spacing.md`.
+- `fonts/README.md` - required eight-category folder taxonomy and new-device setup command.
 - `references/pairing-catalog.md` - named, context-sorted display+body pairings.
 - `references/type-scale-recipes.md` - concrete px/rem scales, fluid `clamp()`, variable-font axes.
 <!-- dual-compat-end -->

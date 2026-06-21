@@ -115,6 +115,11 @@ The font folders now route by design intent and functional role:
 `04-technical-data-code`, `05-friendly-humanist`, `06-expressive-display-artistic`,
 `07-script-cursive-handwritten`, and `08-body-ui-workhorses`.
 
+These eight folders are fixed team taxonomy. On every new device, and after pulling font-
+taxonomy changes, create or verify all eight category directories before adding local font files
+or scanning for premium families. Individual font choices may differ per device; the categories
+must not.
+
 Selection order is: artifact context -> design voice -> functional role -> licence and
 availability. This lets the engine distinguish formal authority, editorial craft, product
 grotesques, technical precision, friendly service UX, expressive display type, cursive/script

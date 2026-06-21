@@ -31,27 +31,32 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
 
 ## Workflow
 
-1. **Locate the folder:** `fonts/<matching-category>/` in this engine. Categories are:
+1. **Verify the shared folder taxonomy:** before scanning on a new device or after a pull, ensure
+   these exact top-level folders exist under `fonts/`:
    `01-formal-institutional`, `02-editorial-literary`, `03-modern-product-grotesque`,
    `04-technical-data-code`, `05-friendly-humanist`, `06-expressive-display-artistic`,
    `07-script-cursive-handwritten`, and `08-body-ui-workhorses`.
-2. **List present families.** Premium binaries are gitignored, so they may or may not be on this
+   Create any missing category folder using the idempotent setup command in `fonts/README.md`.
+   Do not rename categories or move local font files while doing this check.
+2. **Locate the folder:** `fonts/<matching-category>/` in this engine.
+3. **List present families.** Premium binaries are gitignored, so they may or may not be on this
    device. List whatever `.ttf`/`.otf`/`.woff2` families are actually present.
-3. **Read `MANIFEST.md`** in that folder. For each present family confirm: role, voice, best
+4. **Read `MANIFEST.md`** in that folder. For each present family confirm: role, voice, best
    use, avoid-for notes, pairing guidance, licence, embedding permitted?, and file
    redistribution permitted?
-4. **Decide:** if a present family fits the artifact's voice and role better than the baseline
+5. **Decide:** if a present family fits the artifact's voice and role better than the baseline
    and its MANIFEST grants the permission the format needs, use it. Otherwise use the named OFL
    baseline from `font-groups-and-usage.md`.
-5. **Never ship a file you may not redistribute.** Embedding a Fontshare face into a built
+6. **Never ship a file you may not redistribute.** Embedding a Fontshare face into a built
    artifact is fine; committing or shipping the raw file is not.
-6. **Report** which family was chosen and why: premium vs baseline, category, role, pairing,
+7. **Report** which family was chosen and why: premium vs baseline, category, role, pairing,
    and licence basis.
 
 ## Anti-Patterns
 
 - Using a premium family whose MANIFEST does not grant the needed permission.
 - Assuming a premium file is present because it is on another device - always list first.
+- Skipping the eight-folder taxonomy preflight on a new device, then creating ad hoc categories.
 - Committing premium binaries into any repo.
 - Scanning a body workhorse category when the artifact needs an expressive display face.
 - Using a script/cursive face for body text or dense UI.
@@ -70,6 +75,7 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
 
 ## References
 
+- `fonts/README.md` - required eight-category folder taxonomy and new-device setup command.
 - `doctrine/references/font-groups-and-usage.md`, `licensing-and-embedding.md`;
   the per-category `fonts/<category>/MANIFEST.md`.
 <!-- dual-compat-end -->

@@ -18,6 +18,9 @@ Mirror of the guidance in `CLAUDE.md`, kept for dual-compat tooling.
 - No banned AI-slop fonts as primary type (`doctrine/references/ai-slop-banned-fonts.md`).
 - Always state typeface + reason before producing output.
 - Always pair (display + body); use weight/size extremes; check licence before embedding.
+- On a new device or after pulling font-taxonomy changes, ensure the eight required
+  `fonts/<category>/` directories exist before scanning or adding files. The category names are
+  fixed team contract; individual font choices inside them may differ by device.
 - Premium font binaries are gitignored — scan `fonts/<category>/`, read its `MANIFEST.md`, fall
   back to the named OFL baseline when a premium family is absent or its licence does not permit
   the intended use.

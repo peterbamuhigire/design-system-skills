@@ -22,8 +22,18 @@ glob is authoritative).
 
 ## Premium fonts
 
+The eight top-level folders under `fonts/` are fixed team taxonomy:
+`01-formal-institutional`, `02-editorial-literary`, `03-modern-product-grotesque`,
+`04-technical-data-code`, `05-friendly-humanist`, `06-expressive-display-artistic`,
+`07-script-cursive-handwritten`, and `08-body-ui-workhorses`.
+
+After cloning this repo on a new device, or after pulling a font-taxonomy change, run the
+idempotent setup command in `fonts/README.md` so any missing category directories are recreated
+before local font curation starts.
+
 Drop purchased font files into the matching `fonts/<category>/` folder (binaries are gitignored)
-and record them in that category's `MANIFEST.md` (licence + embedding permission). The
+and record them in that category's `MANIFEST.md` (licence + embedding permission). Teammates may
+choose different individual font files, but must preserve the same category folders. The
 `premium-font-scan` skill reads the MANIFEST automatically.
 
 ## Examples are mandatory (the convention)

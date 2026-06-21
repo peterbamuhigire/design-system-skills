@@ -4,6 +4,10 @@ Font routing is based on design intent, not only artifact type. Each category ma
 in `fonts/<category>/` and to a family of visual voices. Before committing, scan the matching
 folder for present premium files and read its `MANIFEST.md`.
 
+The eight top-level category folder names are fixed team taxonomy. On a new device, or after
+pulling a font-taxonomy change, create or verify these folders before adding files or scanning.
+Individual font selections may differ by device; category names must not.
+
 > Pairing always crosses a display/header face with a refined body face. A category tells you
 > the voice and role; `pairing-principles.md` tells you how to combine faces.
 
