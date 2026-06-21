@@ -15,18 +15,26 @@ Add this to the routing/engine-table section of each consumer engine. Adapt the 
 if the engine lives elsewhere on a given device.
 
 ```markdown
-### Design / typography / UI (cross-cutting — consult IN ADDITION)
+<!-- design-system-skills:trigger v1 -->
+### Design / typography / UI/UX (cross-cutting — consult IN ADDITION)
 
-Any work touching how an artifact LOOKS — font choice, type scale, colour, layout/grid, visual
-identity, web/desktop/mobile UI screens, or the visual formatting of a DOCX/PPTX/PDF/XLSX —
-routes to the **design-system-skills** engine at `C:\wamp64\www\design-system-skills`.
-Start at its `README.md`, then read `doctrine/design-doctrine.md`, then glob
-`skills/**/SKILL.md`. Read the SKILL.md files directly (not via the Skill tool). Content and
-structure stay in this engine; presentation comes from design-system-skills. Hard rule: never
-use a banned AI-slop font (Inter, Roboto, Arial, Open Sans, Lato, bare system stacks; nor the
-escapes Space Grotesk, Poppins, Montserrat, Nunito, standalone Source Sans) — state the chosen
-typeface and reason before producing any artifact.
+Any work touching how an artifact LOOKS — font/typeface choice, type scale, colour, layout/grid,
+visual identity, web/desktop/mobile UI screens, or the visual formatting of a DOCX/PPTX/PDF/XLSX
+— routes to the **`design-system-skills`** engine, the single home for ALL design/UI/UX skills
+and the anti-AI-slop doctrine.
+
+**Resolve its location on THIS device from your global engine-routing table** (`~/.claude/CLAUDE.md`,
+or `AGENTS.md` for Codex) — never assume an absolute path; it varies per machine. Then read its
+`README.md` → `doctrine/design-doctrine.md` → glob `skills/**/SKILL.md` fresh and route by
+frontmatter (read SKILL.md directly, not via the Skill tool). Content and structure stay in THIS
+engine; presentation comes from design-system-skills. Hard rule: never use a banned AI-slop font
+(Inter, Geist, Roboto, Arial, Open Sans, Lato, Space Grotesk, bare system stacks) as primary
+type — state the chosen typeface and reason before producing any artifact.
+<!-- /design-system-skills:trigger -->
 ```
+
+The `<!-- design-system-skills:trigger v1 -->` marker makes the block idempotent (re-runs detect
+it) and lets a future version be found and replaced cleanly.
 
 ### Consumer engines (where the block goes)
 
