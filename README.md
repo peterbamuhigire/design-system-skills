@@ -1,5 +1,7 @@
 # design-system-skills
 
+> *The anti-AI-slop design engine — typography, colour, layout, and UI that look made by skilled human hands, not a template.*
+
 **Cross-cutting design & typography engine for the Chwezi skill-engine family.**
 Owner: Peter Bamuhigire / Chwezi Core Systems (chwezicore.com) · Licence: MIT (code/docs;
 font binaries are not committed — see `fonts/`).
