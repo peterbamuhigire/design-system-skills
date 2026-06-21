@@ -26,9 +26,29 @@ Drop purchased font files into the matching `fonts/<group>/` folder (binaries ar
 and record them in that group's `MANIFEST.md` (licence + embedding permission). The
 `premium-font-scan` skill reads the MANIFEST automatically.
 
+## Examples are mandatory (the convention)
+
+Every **craft** skill (one that produces a design artifact) **MUST ship at least one file under
+`examples/`** that demonstrates the skill's *output* — not more prose. Audit/process skills SHOULD
+ship a worked example (a filled audit, a completed template). A craft skill without `examples/` is
+**incomplete**.
+
+A worked example is one of:
+- a real applied **spec** (a full type scale with px/rem; a token JSON; an OKLCH colour ramp);
+- a **before/after** (a slop version → the fixed version, with the reasoning);
+- a **sample artifact** (a `@font-face` block; a component state matrix; a grid template; a deck
+  outline; a DOCX style table);
+- a worked **decision** (the stated typeface + colour + reason for a named brief).
+
+Never use lorem/placeholder — examples must be specific and reusable. Track backfill in
+`docs/plans/hardening-june/examples-backfill-tracker.md`.
+
 ## Rules every skill must follow
 
-- Valid frontmatter (`name` + specific `description`). Without it, pickup is unreliable.
+- Valid frontmatter (`name` + specific `description` + correct `metadata.category` = its group
+  folder). Without it, pickup is unreliable.
 - One concern per skill; name the sibling skill in `## Do Not Use When`.
-- Never restate doctrine — cite `doctrine/references/*`.
+- Never restate doctrine — cite `doctrine/references/*` (incl. `wcag-2.2-criteria.md` and
+  `web-performance-budgets-2026.md` for any UI/web skill).
+- Ship ≥1 `examples/` file (see above).
 - Honour the anti-slop charter (`doctrine/design-doctrine.md`).

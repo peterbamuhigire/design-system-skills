@@ -31,6 +31,11 @@ metadata:
 ## Outputs
 - What the skill produces.
 
+## Examples
+- See `examples/` — every craft skill MUST ship ≥1 worked example (applied spec / before-after /
+  sample artifact / worked decision). Never lorem. See `CONTRIBUTING.md`.
+
 ## References
-- `doctrine/design-doctrine.md` and the specific `doctrine/references/*` this skill relies on.
+- `doctrine/design-doctrine.md` and the specific `doctrine/references/*` this skill relies on
+  (incl. `wcag-2.2-criteria.md` and `web-performance-budgets-2026.md` for UI/web skills).
 <!-- dual-compat-end -->
