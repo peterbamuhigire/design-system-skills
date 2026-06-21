@@ -46,6 +46,15 @@ thought about design. That undermines the premium positioning of the whole portf
 5. **If you cannot satisfy the above, say so and ask** — never silently fall back to Inter or
    a bare system stack.
 
+**Sourcing authority (the asymmetry rule).** Approvals — what fonts/colours/layouts we *choose*
+— trace **only to human design authority**: typographers, type foundries, and the design
+literature. **AI-vendor recommendations are never authority for what to use**, because an AI
+tool's own picks are precisely what the next wave of AI output converges on — adopting them just
+launders slop one step removed. AI-vendor sources are admissible **only as evidence of what to
+avoid** (the AI confessing its own convergence). When a human-justified approved font also
+happens to appear on an AI tool's recommend-list, note the convergence risk — do not treat the
+AI nod as endorsement. See `references/ai-slop-banned-fonts.md` §Evidence basis.
+
 ---
 
 ## 3. How the engine is organised

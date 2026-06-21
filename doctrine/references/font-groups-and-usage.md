@@ -61,8 +61,8 @@ a refined geometric/grotesque body (Satoshi / General Sans).
 from groups 1–3. These are quiet, legible, and deliberately chosen — never the headline.
 
 **Baseline faces:** Public Sans · Hanken Grotesk · Source Sans 3 *(body only, paired — never
-alone, never as the display face — the Claude Cookbook actively recommends it as a deliberate
-technical body face)*.
+alone, never as the display face; permitted as a quiet body face on human-design grounds, but
+overused as a standalone "neutral upgrade")*.
 
 > **Do NOT use Geist here.** It was briefly considered a workhorse but is now **banned** — it is
 > Vercel's font and the v0/shadcn default that replaced Inter (see `ai-slop-banned-fonts.md`).

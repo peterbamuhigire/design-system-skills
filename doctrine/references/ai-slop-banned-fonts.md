@@ -3,13 +3,24 @@
 **Rule:** None of these may appear as a **primary typeface** in any generated artifact —
 website, DOCX, PPTX, PDF, or UI — regardless of how convenient or "clean" they seem.
 
-**Evidence basis:** the strongest single source is Anthropic's own **Claude Cookbook**,
-*"Prompting for frontend aesthetics"* (T1, the AI vendor itself), which instructs the model to
-avoid the fonts it over-produces — verbatim: *"Overused font families (Inter, Roboto, Arial,
-system fonts)"*, *"Never use: Inter, Roboto, Open Sans, Lato, default system fonts"*, and on
-Space Grotesk: *"You still tend to converge on common choices (Space Grotesk, for example)…
-Avoid this."* Corroborated by Vercel/shadcn tooling defaults and designer commentary. Verified
-via the digital-research engine's source-verification pass (2026-06-21).
+**Evidence basis — and a hard asymmetry principle.** AI-vendor sources are admissible as
+evidence ONLY for what to **BAN**, NEVER as authority for what to **APPROVE**. An AI tool
+confessing *"I converge on X"* is the strongest possible evidence that X is a tell; an AI tool
+saying *"use Y"* is worthless as approval grounds, because the tool's own recommendations are
+exactly what the next wave of AI output will converge on. **Approvals trace only to human design
+authority** — typographers, type foundries, and the design literature (Bonneville, Vignelli,
+Segall; see `pairing-principles.md`).
+
+Applying that: Anthropic's **Claude Cookbook**, *"Prompting for frontend aesthetics"* (the AI
+vendor itself), is cited here **only as the AI confessing its own convergence** — verbatim:
+*"Overused font families (Inter, Roboto, Arial, system fonts)"*, *"Never use: Inter, Roboto,
+Open Sans, Lato, default system fonts"*, and on Space Grotesk: *"You still tend to converge on
+common choices (Space Grotesk, for example)… Avoid this."* That is valid ban-evidence.
+Its *recommendation* list (which includes several of our approved faces) is **deliberately not
+used as a reason to approve anything** — those faces earn their place on human-design grounds,
+and we note the convergence risk on any the cookbook also happens to push. Corroborated by
+Vercel/shadcn defaults and designer commentary; verified via the digital-research engine's
+source-verification pass (2026-06-21).
 
 > **Label every ban by its failure mode — they are not all the same.** Three distinct reasons:
 > **[AI]** = genuine AI-ecosystem default / tell · **[POP]** = generic-popular & overused (reads
@@ -51,11 +62,13 @@ for Chwezi work — but note the honest evidence label:
 - **Nunito / Nunito Sans** — **[POP]** no direct AI-tell evidence found; banned as a Chwezi
   house preference (rounded-friendly cliché), not on evidence grounds.
 
-## 3. Explicitly NOT banned (evidence corrects an over-ban)
+## 3. Conditional — Source Sans 3 (paired body only)
 
-- **Source Sans 3 / Source Sans Pro** — the Claude Cookbook *recommends* it as a deliberate
-  "technical" choice. **Permitted as a paired body face** (never alone, never the headline) —
-  this matches the workhorse rule. Do not ban it as an AI tell.
+- **Source Sans 3 / Source Sans Pro** — a competent, human-designed text face (Adobe / Paul D.
+  Hunt). It is **overused as a standalone "neutral upgrade,"** so it is **banned as a primary /
+  display / standalone face** but **permitted as a quiet paired body face** beneath a
+  distinctive display font — matching the original Chwezi rule and the workhorse note. This is a
+  human-design / overuse judgement, **not** an "an AI tool recommended it" approval.
 
 ---
 
