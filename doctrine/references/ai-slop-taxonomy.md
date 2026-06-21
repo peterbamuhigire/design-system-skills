@@ -64,6 +64,32 @@ and therefore valuable.
 
 ---
 
+## Counter-doctrinal "best practices" — taught by the literature, REJECTED here
+
+The UI/UX book canon (see `docs/book-study/`) contains advice that was once standard but
+contradicts this engine's doctrine. Skills must **not** adopt these even though respected books
+teach them — inoculate against them explicitly:
+
+- **Glassmorphism as a default surface treatment** (taught by *Fundamentals of Creating a Great
+  UI/UX*). It is a convergent AI-slop tell (see the taxonomy above) and usually fails contrast.
+  Use deliberate, legible surfaces; reserve translucency for genuine platform materials (iOS
+  Liquid Glass *chrome only*), never as decoration.
+- **Fixed red/green or red/blue colour semantics + shadow-only dark-mode elevation** (taught by
+  *Mobile Design Pattern Gallery*). We use **OKLCH semantic roles** and **lightness-based**
+  elevation in dark mode (see `dark-mode-and-theming`), and **never colour-alone** signalling
+  (WCAG 1.4.1) — always pair colour with icon/shape/text.
+- **`ease-*-back` / bouncy overshoot interpolators** (taught by *App Design Apprentice*). These
+  contradict `motion-design`'s **damping-ratio ζ ≥ 0.7 (no bounce)** rule. Use spring physics in
+  the no-bounce band; honour `prefers-reduced-motion`.
+- **Hover-reveal / hover-as-primary-invitation and drag-as-hero interactions** (taught by
+  *Designing Web Interfaces*, 2009). Desktop-only; they have **no touch equivalent**. Provide a
+  visible, tap-operable affordance first; hover is an enhancement, never the only path.
+
+If a skill's source material recommends one of the above, it must state the rejection and the
+doctrine-correct alternative.
+
+---
+
 ## How the engine uses this
 
 - The **`visual-product-slop-audit`** skill (`skills/00-cross-cutting-ops-qa-a11y/`) runs these
