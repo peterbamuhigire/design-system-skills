@@ -71,12 +71,12 @@ design-system-skills/
 │   ├── references/                ← banned list, font groups, pairing, type scale, embedding, licensing
 │   └── examples/
 ├── skills/
-│   ├── 01-typography-and-fonts/   ← seeded (4 skills)
-│   ├── 02-document-formatting/    ← migration target
-│   ├── 03-web-and-ui-design/      ← migration target
-│   ├── 04-color-and-visual-identity/   ← migration target
-│   ├── 05-layout-grid-and-data-viz/    ← migration target
-│   └── 06-mobile-ui-ux/           ← migration target
+│   ├── 01-typography-and-fonts/   (4 skills)
+│   ├── 02-document-formatting/    (8 skills)
+│   ├── 03-web-and-ui-design/      (16 skills)
+│   ├── 04-color-and-visual-identity/   (5 skills)
+│   ├── 05-layout-grid-and-data-viz/    (2 skills)
+│   └── 06-mobile-ui-ux/           (2 skills)
 ├── fonts/                         ← premium drop-in folders (binaries gitignored) + MANIFESTs
 ├── governance/design-quality-gate.md
 └── integration/integration-plan.md   ← the trigger block other engines paste in + migration log
@@ -84,9 +84,16 @@ design-system-skills/
 
 ## Status
 
-- **v0.1.0** — engine scaffolded; typography group seeded; doctrine written; font taxonomy and
-  manifests in place. Groups 02–06 are **migration targets** — design skills will be moved here
-  out of the other engines (see `integration/integration-plan.md`).
+- **v0.2.0 (2026-06-21)** — live and populated: **37 skills** across 6 groups; full doctrine
+  (Mission, anti-slop charter, sourcing-authority asymmetry, AI-slop taxonomy, banned list,
+  font groups, pairing, type scale, embedding, licensing, system-font fallbacks); font taxonomy
+  + manifests; discovery contract + `_TEMPLATE` + `CONTRIBUTING.md`.
+- **Migration Phases 1–2 complete** — design skills consolidated here out of skills-web-dev,
+  social-media-skills, website-skills, and digital-research-engine (see
+  `integration/migration-manifest.md`). Per-group counts: 01 typography (4), 02 document-
+  formatting (8), 03 web-and-ui (16), 04 colour-and-identity (5), 05 layout/data-viz (2),
+  06 mobile (2).
+- Remaining: Phase 3 (the clean `tailwind`/`avalonia` splits; `professional-word-output` merge).
 
 ## Integration
 
