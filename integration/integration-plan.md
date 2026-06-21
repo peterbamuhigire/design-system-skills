@@ -40,13 +40,13 @@ it) and lets a future version be found and replaced cleanly.
 
 | Engine | Path | Block added? |
 |---|---|---|
-| business-plan-skills | `C:\wamp64\www\business-plan-skills` | pending |
-| srs-skills | `C:\wamp64\www\srs-skills` | pending |
-| proposal-skills | `C:\wamp64\www\proposal-skills` | pending |
-| website-skills | `C:\wamp64\www\website-skills` | pending |
-| social-media-skills | `C:\wamp64\www\social-media-skills` | pending |
-| engineering-catalog (`~/.claude/skills`) | `C:\Users\Peter\.claude\skills` | pending |
-| digital-research-engine | `C:\Users\Peter\Documents\Claude Projects\digital-research-engine` | pending |
+| business-plan-skills | `C:\wamp64\www\business-plan-skills` | ✅ 2026-06-21 |
+| srs-skills | `C:\wamp64\www\srs-skills` | ✅ 2026-06-21 |
+| proposal-skills | `C:\wamp64\www\proposal-skills` | ✅ 2026-06-21 |
+| website-skills | `C:\wamp64\www\website-skills` | ✅ 2026-06-21 |
+| social-media-skills | `C:\wamp64\www\social-media-skills` | ✅ 2026-06-21 |
+| engineering-catalog (`~/.claude/skills`) | `C:\Users\Peter\.claude\skills` | ✅ 2026-06-21 |
+| digital-research-engine | `C:\Users\Peter\Documents\Claude Projects\digital-research-engine` | ✅ 2026-06-21 |
 
 > The user's global `~/.claude/CLAUDE.md` engine-routing table should also gain a row for
 > design-system-skills as a cross-cutting engine (alongside the finance engine note).

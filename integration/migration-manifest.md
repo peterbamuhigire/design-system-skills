@@ -84,3 +84,10 @@ phase.
 ## Status log
 
 - 2026-06-21: manifest approved; Phase 1 beginning (additive copy first, then source deletion).
+- 2026-06-21: **Phase 1 COMPLETE.** 19 skills migrated (copied to design engine, then deleted
+  from source): 11 from skills-web-dev (frontend-ux design cluster + ai-agent-ux + ai-output-
+  design + android/ios UI → groups 03 & 06), 8 deck skills from social-media → group 02.
+  skills-web-dev 153→142; social-media 184→176. All 9 engines wired with the portable trigger
+  block. (Embedded finance doctrine mirror in skills-web-dev untracked + gitignored.)
+- Pending: Phase 2 (dedup consolidations + visual identity + website portable) and Phase 3
+  (tailwind/avalonia splits + reference wiring + doctrine-alignment of migrated skills).

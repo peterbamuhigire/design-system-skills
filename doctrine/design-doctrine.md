@@ -10,6 +10,20 @@ exactly as the finance doctrine is consulted alongside domain work.
 
 ---
 
+## 0. Mission — the moat is looking human-made
+
+In the age of AI, almost anything *functional* can be generated cheaply. What will sell a
+product is whether it looks **different, distinct, and the product of highly skilled human
+hands.** Sameness is now free and worthless; deliberate, crafted distinctiveness is the moat.
+
+Every skill in this engine exists to push output **away from the convergent AI mean** and toward
+the unmistakable signature of a skilled designer who made specific, defensible choices. When two
+options are equally "clean," prefer the one that looks *authored* — the one a templating tool
+would never have produced. Restraint plus one strong, intentional choice beats five hedged,
+safe ones. This mission outranks convenience every time.
+
+---
+
 ## 1. Purpose
 
 Typography, colour, layout, and visual identity are not domain concerns — they cut across
@@ -62,7 +76,7 @@ AI nod as endorsement. See `references/ai-slop-banned-fonts.md` §Evidence basis
 | Path | What it holds |
 |---|---|
 | `doctrine/design-doctrine.md` | This charter — the always-load entry point. |
-| `doctrine/references/` | The canonical rules: banned list, font groups, pairing, type scale, embedding, licensing, and the device-common system-font fallback tier. |
+| `doctrine/references/` | The canonical rules: the AI-slop taxonomy, banned font list, font groups, pairing, type scale, embedding, licensing, and the device-common system-font fallback tier. |
 | `doctrine/examples/` | Worked examples (good pairings, a slop-audit before/after). |
 | `skills/01-typography-and-fonts/` | The font skills: selection & pairing, slop audit, premium-font scan, embedding & licensing. |
 | `skills/02-document-formatting/` | Visual formatting of DOCX/PPTX/PDF/XLSX deliverables. |
