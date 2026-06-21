@@ -25,15 +25,20 @@ directly; do not use the `Skill` tool for them.
 
 | You are… | Go to |
 |---|---|
-| Choosing fonts for any artifact | `skills/01-typography-and-fonts/font-selection-and-pairing/` |
-| Auditing something for AI slop | `skills/01-typography-and-fonts/ai-slop-typography-audit/` |
-| Checking for purchased premium fonts | `skills/01-typography-and-fonts/premium-font-scan/` |
-| Loading/embedding a font into web/DOCX/PPTX/PDF | `skills/01-typography-and-fonts/font-embedding-and-licensing/` |
-| Visually formatting a DOCX/PPTX/PDF/XLSX deliverable | `skills/02-document-formatting/` |
-| Designing web / desktop UI | `skills/03-web-and-ui-design/` |
-| Choosing colour / building visual identity | `skills/04-color-and-visual-identity/` |
-| Grids, spacing, charts / data viz | `skills/05-layout-grid-and-data-viz/` |
-| Designing mobile app UI/UX | `skills/06-mobile-ui-ux/` |
+| Choosing/pairing/embedding fonts | `skills/01-typography-and-fonts/` |
+| Choosing colour / building brand & visual identity | `skills/02-color-brand-and-visual-identity/` |
+| Grids, spacing, composition, responsive layout | `skills/03-layout-grid-and-composition/` |
+| Designing web / app / desktop UI (craft) | `skills/04-web-and-ui-design/` |
+| UX research, process & psychology | `skills/05-ux-process-research-and-psychology/` |
+| Sector/vertical UX (healthcare, legal, fintech…) | `skills/06-sector-and-domain-ux/` |
+| Mobile (iOS / Android / cross-platform) | `skills/07-mobile-ios-android-cross-platform/` |
+| Motion & interaction | `skills/08-motion-and-interaction/` |
+| Design systems, tokens & handoff | `skills/09-design-systems-tokens-and-theming/` |
+| Content design & UX writing | `skills/10-content-design-and-ux-writing/` |
+| Imagery, illustration & art direction | `skills/11-imagery-illustration-and-art-direction/` |
+| Charts, dashboards & data products | `skills/12-data-viz-and-dashboards/` |
+| Presentations & documents (decks, DOCX/PDF/XLSX) | `skills/13-presentations-and-documents/` |
+| Accessibility, QA, ethics, performance (**co-activates with every group**) | `skills/00-cross-cutting-ops-qa-a11y/` |
 
 3. **Follow the doctrine references** in `doctrine/references/` — they are the canonical rules
    the skills cite.
@@ -72,13 +77,21 @@ design-system-skills/
 │   ├── design-doctrine.md         ← always-load charter
 │   ├── references/                ← banned list, font groups, pairing, type scale, embedding, licensing
 │   └── examples/
-├── skills/
-│   ├── 01-typography-and-fonts/   (4 skills)
-│   ├── 02-document-formatting/    (8 skills)
-│   ├── 03-web-and-ui-design/      (16 skills)
-│   ├── 04-color-and-visual-identity/   (5 skills)
-│   ├── 05-layout-grid-and-data-viz/    (2 skills)
-│   └── 06-mobile-ui-ux/           (2 skills)
+├── skills/                        ← 13 groups + 1 cross-cutting (co-activates)
+│   ├── 00-cross-cutting-ops-qa-a11y/   (2)  ← accessibility, QA, audits — always-on
+│   ├── 01-typography-and-fonts/        (4)
+│   ├── 02-color-brand-and-visual-identity/ (5)
+│   ├── 03-layout-grid-and-composition/ (1)
+│   ├── 04-web-and-ui-design/           (8)
+│   ├── 05-ux-process-research-and-psychology/ (2)
+│   ├── 06-sector-and-domain-ux/        (3)
+│   ├── 07-mobile-ios-android-cross-platform/ (2)
+│   ├── 08-motion-and-interaction/      (1)
+│   ├── 09-design-systems-tokens-and-theming/ (0 — Phase 1)
+│   ├── 10-content-design-and-ux-writing/     (0 — Phase 1)
+│   ├── 11-imagery-illustration-and-art-direction/ (0 — Phase 1)
+│   ├── 12-data-viz-and-dashboards/     (1)
+│   └── 13-presentations-and-documents/ (8 decks → Phase 0.4 de-dup; + docs in Phase 1)
 ├── fonts/                         ← premium drop-in folders (binaries gitignored) + MANIFESTs
 ├── governance/design-quality-gate.md
 └── integration/integration-plan.md   ← the trigger block other engines paste in + migration log
@@ -90,12 +103,10 @@ design-system-skills/
   (Mission, anti-slop charter, sourcing-authority asymmetry, AI-slop taxonomy, banned list,
   font groups, pairing, type scale, embedding, licensing, system-font fallbacks); font taxonomy
   + manifests; discovery contract + `_TEMPLATE` + `CONTRIBUTING.md`.
-- **Migration Phases 1–2 complete** — design skills consolidated here out of skills-web-dev,
-  social-media-skills, website-skills, and digital-research-engine (see
-  `integration/migration-manifest.md`). Per-group counts: 01 typography (4), 02 document-
-  formatting (8), 03 web-and-ui (16), 04 colour-and-identity (5), 05 layout/data-viz (2),
-  06 mobile (2).
-- Remaining: Phase 3 (the clean `tailwind`/`avalonia` splits; `professional-word-output` merge).
+- **Hardening Phase 0 in progress** — restructured to the **13-group + 1 cross-cutting**
+  taxonomy (`docs/plans/hardening-june/`). All 37 skills migrated to new groups (none deleted).
+  Next in Phase 0: two cross-cutting 2026-standards refs, the `examples/` convention, and the
+  deck/colour de-dup. See `docs/initial-analysis/` for the audit (51/100) that drives this.
 
 ## Integration
 

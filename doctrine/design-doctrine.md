@@ -78,12 +78,20 @@ AI nod as endorsement. See `references/ai-slop-banned-fonts.md` §Evidence basis
 | `doctrine/design-doctrine.md` | This charter — the always-load entry point. |
 | `doctrine/references/` | The canonical rules: the AI-slop taxonomy, banned font list, font groups, pairing, type scale, embedding, licensing, and the device-common system-font fallback tier. |
 | `doctrine/examples/` | Worked examples (good pairings, a slop-audit before/after). |
-| `skills/01-typography-and-fonts/` | The font skills: selection & pairing, slop audit, premium-font scan, embedding & licensing. |
-| `skills/02-document-formatting/` | Visual formatting of DOCX/PPTX/PDF/XLSX deliverables. |
-| `skills/03-web-and-ui-design/` | Web and desktop UI visual design. |
-| `skills/04-color-and-visual-identity/` | Palettes, brand identity, contrast. |
-| `skills/05-layout-grid-and-data-viz/` | Grids, spacing, charts/data visualisation. |
-| `skills/06-mobile-ui-ux/` | Mobile-specific UI/UX (iOS HIG, Android Material, touch, gestures, safe areas). |
+| `skills/00-cross-cutting-ops-qa-a11y/` | **Co-activates with every group.** Accessibility (WCAG 2.2), design QA/critique, the visual audits, ethics, performance-as-UX — consult IN ADDITION, never skip. |
+| `skills/01-typography-and-fonts/` | Type selection & pairing, scale, embedding, licensing, slop audit. |
+| `skills/02-color-brand-and-visual-identity/` | Palettes, contrast-as-design, brand systems, identity. |
+| `skills/03-layout-grid-and-composition/` | Grids, spacing, hierarchy, responsive/editorial composition. |
+| `skills/04-web-and-ui-design/` | Core interface craft (web/app/desktop), AI-native UI, forms, interaction patterns. |
+| `skills/05-ux-process-research-and-psychology/` | Research, usability, heuristics, behavioural/cognitive, process. |
+| `skills/06-sector-and-domain-ux/` | Vertical playbooks (healthcare, legal, fintech, e-comm, gov/NGO…). |
+| `skills/07-mobile-ios-android-cross-platform/` | iOS HIG, Android Material, cross-platform, touch/gesture/adaptive. |
+| `skills/08-motion-and-interaction/` | Animation, micro-interactions, transitions, gesture choreography. |
+| `skills/09-design-systems-tokens-and-theming/` | Tokens, components, dark mode, multi-brand, dev handoff. |
+| `skills/10-content-design-and-ux-writing/` | Microcopy, voice/tone, error/empty/onboarding copy. |
+| `skills/11-imagery-illustration-and-art-direction/` | Photography, illustration, iconography, 3D, AI-image direction. |
+| `skills/12-data-viz-and-dashboards/` | Charts, dashboards, KPI exhibits, data products. |
+| `skills/13-presentations-and-documents/` | Decks **+** real DOCX/PDF/XLSX/editorial formatting. |
 | `fonts/<group>/` | Premium font files you purchase (gitignored) + a tracked `MANIFEST.md` per group. |
 | `governance/` | The design quality gate. |
 | `integration/` | The trigger block other engines paste in, plus the migration log. |
