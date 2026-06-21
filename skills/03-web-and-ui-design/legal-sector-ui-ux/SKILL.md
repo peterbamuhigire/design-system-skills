@@ -1,9 +1,16 @@
 ---
-name: sectors/legal
+name: legal-sector-ui-ux
 description: Legal sector website design for law firms. Use instead of generic sector-strategies when building websites for lawyers, law firms, solicitors, barristers, or legal consultants. Covers practice-area-specific design direction, client psychology for legal services, ethical advertising constraints (bar association rules), attorney profile pages, trust signals for legal, local SEO for law firms, and conversion for legal intake. Works alongside all standard build pipeline skills.
+status: active
+metadata:
+  portable: true
+  category: 03-web-and-ui-design
+  compatible_with:
+    - claude-code
+    - codex
 ---
 
-# Sectors/Legal
+# Legal Sector UI/UX
 Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 
 ## Use when
@@ -38,9 +45,11 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - Implementation guidance, configuration, generated artifacts, or concrete follow-on steps.
 
 ## References
-- Start with `references/legacy-guidance.md` when you need the preserved detailed instructions from the previous skill version.
-- Read only the specific files under `references/` that match the current task instead of loading the whole directory.
-- This skill has no bundled scripts by default; keep execution focused on the documented workflow and any existing project files.
+- `doctrine/design-doctrine.md` — the Mission and Anti-Slop Charter; legal sites must read as authored and trustworthy, never templated.
+- `doctrine/references/ai-slop-taxonomy.md` — convergent-default tells to avoid in a credibility-critical sector.
+- `references/ethics-constraints.md`, `references/content-templates.md`, `references/local-seo.md` (this folder) — bar-association advertising rules, attorney profile/practice-area structure, and law-firm local SEO.
+- Sibling skills: `03-web-and-ui-design/sector-strategies` (the generic sector skill this one overrides), `04-color-and-visual-identity/color-system-and-palette` (trust-signal palette + WCAG gate).
+- Start with `references/legacy-guidance.md` for the preserved detailed guidance; read only the files under `references/` that match the current task.
 
 ## Notes
 - Treat this `SKILL.md` as the portable execution layer for both Claude Code and Codex.

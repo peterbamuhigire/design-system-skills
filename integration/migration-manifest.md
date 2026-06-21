@@ -89,5 +89,32 @@ phase.
   design + android/ios UI → groups 03 & 06), 8 deck skills from social-media → group 02.
   skills-web-dev 153→142; social-media 184→176. All 9 engines wired with the portable trigger
   block. (Embedded finance doctrine mirror in skills-web-dev untracked + gitignored.)
-- Pending: Phase 2 (dedup consolidations + visual identity + website portable) and Phase 3
-  (tailwind/avalonia splits + reference wiring + doctrine-alignment of migrated skills).
+- 2026-06-21: **Phase 2 (dedup + website portable) COMPLETE.** 9 canonical skills consolidated
+  into the design engine (sources deleted, copies verified): from skills-web-dev —
+  data-visualization (canonical 497-line copy), form-ux-design, premium-ui-ux-design; from
+  website-skills — color-selection, ux-psychology, brand-style-guide, brand-alignment,
+  sector-strategies, legal (→legal-sector-ui-ux); from digital-research — data-visualization dup
+  deleted. Website build-coupled skills (design-system, page-builder, visual-qa, website-builder)
+  kept + wired to the doctrine; website's orchestration premium-ui-ux-design kept. ~20 name-based
+  cross-refs in website resolved via a single relocation note (build pipeline unaffected). Design
+  engine now 37 skills. **Deferred:** professional-word-output (blended, near-equal copies in
+  skills-web-dev + digital-research — needs a manual content merge, not a blind pick).
+- Pending: Phase 3 (tailwind/avalonia clean splits; professional-word-output manual merge).
+
+---
+
+## PHASE 4 — Convert the FINANCE engine to the reference model (approved 2026-06-21)
+
+Finance is currently MIRRORED (duplicated) into srs-skills, business-plan-skills, proposal-skills,
+and skills-web-dev — the same count-inflation/drift problem the design engine avoids. Approved to
+convert finance to the reference model like design. Separate, careful phase (finance is large,
+~17 skill groups):
+
+1. **Verify** `chwezi-accounting-doctrine` is the complete, current source of every mirrored
+   skill/doctrine file (diff each mirror vs source; surface any drift before deleting).
+2. **Delete** the mirrored `doctrine/` + `skills/finance/` (and `meta-finance/`,
+   `finance-accounting/`) copies from the 4 consumer engines.
+3. **Confirm** each engine carries a finance trigger block (global routing already routes finance;
+   add a per-engine block mirroring the design one if missing).
+4. Retire the finance engine's "Build Once, Mirror Everywhere" integration in favour of references.
+5. Update counts. This unifies the whole architecture on "one home per concern, referenced."

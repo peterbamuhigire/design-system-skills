@@ -1,11 +1,13 @@
 ---
 name: premium-ui-ux-design
 description: Premium UI/UX design intelligence for web, SaaS, dashboard, Android, and iOS products. Use when a product must look expensive, feel pleasant, communicate clearly, and justify high customer trust or high-ticket pricing.
+status: active
 metadata:
   portable: true
+  category: 03-web-and-ui-design
   compatible_with:
-  - claude-code
-  - codex
+    - claude-code
+    - codex
 ---
 
 # Premium UI/UX Design
@@ -69,7 +71,10 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 
 ## References
 
-- Use companion skill `premium-software-product-execution` when the UI/UX work must connect to premium offer architecture, affluent or executive buyer psychology, high-ticket pricing, sales proof, onboarding, or service design.
+- `doctrine/design-doctrine.md` — the Mission ("the moat is looking human-made") and the Anti-Slop Charter (state the choice first; the sourcing-authority asymmetry rule). Premium is the engine's core promise.
+- `doctrine/references/ai-slop-taxonomy.md` — the convergent-default tells ("generic AI aesthetic") this skill exists to push away from.
+- `doctrine/references/pairing-principles.md` and `doctrine/references/type-scale-and-spacing.md` — typographic craft underpinning perceived value.
+- Sibling skills in this engine: `03-web-and-ui-design/distinctive-by-design` (the pre-flight that commits one distinctive idea), `04-color-and-visual-identity/color-system-and-palette` (colour roles + WCAG gate), `05-layout-grid-and-data-viz/data-visualization` (dashboard/chart rules). (The former cross-engine companion `premium-software-product-execution` lives in `srs-skills`; consult it there when the UI/UX work must connect to premium offer architecture, buyer psychology, high-ticket pricing, or service design.)
 - `references/premium-visual-principles.md` - hierarchy, layout, typography, perceived value, and pleasantness.
 - `references/color-emotion-brand-systems.md` - color choice, palette systems, emotion, hierarchy, and accessibility.
 - `references/data-visualization-dashboard-ux.md` - chart, table, KPI, and dashboard rules.

@@ -1,6 +1,13 @@
 ---
 name: brand-alignment
 description: Ensures every website element — layout, messaging, navigation, imagery, CTAs — reflects the client's brand identity and speaks clearly to their ideal customer. Use before and during page building to validate that the site feels intentional, cohesive, and trustworthy.
+status: active
+metadata:
+  portable: true
+  category: 04-color-and-visual-identity
+  compatible_with:
+    - claude-code
+    - codex
 ---
 
 # Brand Alignment
@@ -38,10 +45,11 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - Revisions, review findings, acceptance criteria, or quality guidance tied to the artifact under review.
 
 ## References
-- Start with `references/legacy-guidance.md` when you need the preserved detailed instructions from the previous skill version.
-- Use `references/trust-architecture-checklist.md` when validating proof, legitimacy, and credibility requirements across a site's strategy or pages.
-- Read only the specific files under `references/` that match the current task instead of loading the whole directory.
-- This skill has no bundled scripts by default; keep execution focused on the documented workflow and any existing project files.
+- `doctrine/design-doctrine.md` — the Mission ("the moat is looking human-made") and Anti-Slop Charter; brand alignment is the check that every element is an intentional, stated choice.
+- `doctrine/references/ai-slop-taxonomy.md` — the convergent-default tells that signal "no brand thought went in here."
+- Sibling skills: `04-color-and-visual-identity/brand-style-guide` (the recorded brand system this skill validates against), `04-color-and-visual-identity/color-system-and-palette`, `03-web-and-ui-design/distinctive-by-design`.
+- `references/trust-architecture-checklist.md` (this folder) when validating proof, legitimacy, and credibility requirements.
+- Start with `references/legacy-guidance.md` for preserved detailed guidance; read only the files under `references/` that match the task.
 
 ## Notes
 - Treat this `SKILL.md` as the portable execution layer for both Claude Code and Codex.

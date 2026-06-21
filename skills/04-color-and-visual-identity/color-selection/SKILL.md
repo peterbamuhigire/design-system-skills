@@ -1,6 +1,13 @@
 ---
 name: color-selection
 description: Select optimal color palettes for websites using brand colors and color theory. Use when users need to define their website's color scheme, generate complementary palettes, ensure accessibility compliance, or refine existing colors for better visual impact and industry alignment.
+status: active
+metadata:
+  portable: true
+  category: 04-color-and-visual-identity
+  compatible_with:
+    - claude-code
+    - codex
 ---
 
 # Color Selection
@@ -38,9 +45,10 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - Implementation guidance, configuration, generated artifacts, or concrete follow-on steps.
 
 ## References
-- Start with `references/legacy-guidance.md` when you need the preserved detailed instructions from the previous skill version.
-- Read only the specific files under `references/` that match the current task instead of loading the whole directory.
-- Use bundled tools in `scripts/` when they cover the task more reliably than redoing the work manually.
+- `doctrine/design-doctrine.md` — the Mission and Anti-Slop Charter (state the colour choice and its anchor first; the sourcing-authority asymmetry rule — AI picks are evidence of what to avoid, never authority for what to use).
+- `doctrine/references/ai-slop-taxonomy.md` — the convergent colour defaults to reject (indigo/purple→blue gradient, stock Tailwind palette, glassmorphism, neon-on-dark).
+- **Sibling — `04-color-and-visual-identity/color-system-and-palette`.** That skill is the colour *system* (semantic roles, tonal ramps, dark-mode remap, the hard WCAG gate) and the default entry skill for colour. **This skill is palette *generation*** — the imagery-first / brand-hue Flux method for arriving at a starting palette. Generate the palette here, then hand it to `color-system-and-palette` to derive roles, ramps, and the contrast gate. Use them together; do not merge.
+- Start with `references/legacy-guidance.md` for preserved detailed guidance; read only the files under `references/` that match the task, and use `scripts/palette_generator.py` when it covers the work reliably.
 
 ## Notes
 - Treat this `SKILL.md` as the portable execution layer for both Claude Code and Codex.
@@ -63,4 +71,4 @@ For projects without strong brand-colour direction, the Flux Academy process (Ra
 
 The Flux worked example (a black-and-white "girl with balloons" reference photo, tinted purple → navy-purple hero / mid-purple chrome / magenta accent / off-white surfaces) is captured in the reference. Use the imagery-first algorithm for any client website that needs to feel cohesive rather than templated.
 
-For a deeper colour theory skill that goes beyond website-specific palette selection (full colour models, OKLCH scale generation, archetype mapping), use the `color-theory` skill in the parent skills repository.
+For a deeper colour-system skill that goes beyond website-specific palette selection (semantic roles, perceptual OKLCH/CIELAB ramp generation, the WCAG contrast gate, and the dark-mode remap), hand off to the sibling `04-color-and-visual-identity/color-system-and-palette` in this engine. (The former cross-engine `color-theory` skill did not migrate; its concerns are covered by `color-system-and-palette` plus `doctrine/design-doctrine.md` §2.)

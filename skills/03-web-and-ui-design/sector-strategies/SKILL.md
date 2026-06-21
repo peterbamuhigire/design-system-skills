@@ -1,6 +1,13 @@
 ---
 name: sector-strategies
 description: Industry-specific website design strategies and templates. Use when building websites for different business sectors (tour & travel, corporate & consulting, personal & portfolio, education, healthcare, e-commerce, professional services, hobbyist creators, nonprofit/charity/NGO, law firms/legal) to ensure the site reflects sector-specific design psychology, trust cues, and visual identity. Choose your sector → customize template → get industry-authentic design that doesn't look AI-generated.
+status: active
+metadata:
+  portable: true
+  category: 03-web-and-ui-design
+  compatible_with:
+    - claude-code
+    - codex
 ---
 
 # Sector Strategies
@@ -38,9 +45,11 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - Implementation guidance, configuration, generated artifacts, or concrete follow-on steps.
 
 ## References
-- Start with `references/legacy-guidance.md` when you need the preserved detailed instructions from the previous skill version.
-- Read only the specific files under `references/` that match the current task instead of loading the whole directory.
-- This skill has no bundled scripts by default; keep execution focused on the documented workflow and any existing project files.
+- `doctrine/design-doctrine.md` — the Mission ("the moat is looking human-made") and Anti-Slop Charter; sector authenticity is one route to authored, non-convergent design.
+- `doctrine/references/ai-slop-taxonomy.md` — the convergent-default tells each sector strategy must avoid.
+- `ANTI-HOMOGENEITY-PRINCIPLE.md` (this folder) — why sector templates inform but never dictate the final tokens.
+- Sibling skills: `03-web-and-ui-design/distinctive-by-design` (commit one distinctive idea per build), `03-web-and-ui-design/legal-sector-ui-ux` and `03-web-and-ui-design/healthcare-ui-design` (deeper sector skills), `04-color-and-visual-identity/color-system-and-palette`.
+- Start with `references/legacy-guidance.md` for the preserved detailed sector matrix; read only the files under `references/` and `templates/` that match the current task.
 
 ## Notes
 - Treat this `SKILL.md` as the portable execution layer for both Claude Code and Codex.

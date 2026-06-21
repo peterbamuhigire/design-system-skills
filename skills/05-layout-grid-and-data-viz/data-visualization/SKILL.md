@@ -1,20 +1,22 @@
 ---
 name: data-visualization
-description: Data visualization patterns for transforming raw data into compelling visual stories, dashboards, charts, and decision-ready analytical exhibits.
+description: Data visualization patterns for transforming raw data into compelling visual stories, dashboards, charts, and decision-ready analytical exhibits. Use when designing or reviewing charts, dashboards, KPI exhibits, or report visuals on any medium.
+status: active
 metadata:
   portable: true
+  category: 05-layout-grid-and-data-viz
   compatible_with:
-  - Codex
-  - codex
+    - claude-code
+    - codex
 ---
 
-# Data Visualization ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â Storytelling with Data
+# Data Visualization -- Storytelling with Data
 Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 
 <!-- dual-compat-start -->
 ## Use When
 
-- Data visualization patterns from Storytelling with Data (Knaflic, 2015) ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€šÃ‚Â the 6-lesson framework for transforming raw data into compelling visual stories
+- Data visualization patterns from Storytelling with Data (Knaflic, 2015) -- the 6-lesson framework for transforming raw data into compelling visual stories
 - The task needs reusable judgment, domain constraints, or a proven workflow rather than ad hoc advice.
 
 ## Do Not Use When
@@ -58,7 +60,11 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 
 ## References
 
-- Use the links and companion skills already referenced in this file when deeper context is needed.
+- `doctrine/design-doctrine.md` — the Mission and Anti-Slop Charter; charts must be authored and clutter-free, never decorative chart-junk.
+- `doctrine/references/ai-slop-taxonomy.md` — the "dashboard decoration" / chart-junk tells (3D, gauges, rainbow palettes) this skill rejects.
+- **Sibling — `05-layout-grid-and-data-viz/layout-grid-and-spacing`** for the grid, alignment, and spacing rhythm that exhibits sit on (this skill's alignment and white-space rules inherit from it).
+- Sibling — `04-color-and-visual-identity/color-system-and-palette` for the categorical/sequential colour scales and the WCAG contrast gate the "grey base + one accent" rule depends on.
+- The deep references in this folder: `references/analytics-dashboard-decision-story.md`, `references/responsive-mobile-charts.md`, `references/svg-css-js-implementation.md`. The book sources are listed in the References block below.
 <!-- dual-compat-end -->
 > Source: *Storytelling with Data* by Cole Nussbaumer Knaflic (Wiley, 2015)
 

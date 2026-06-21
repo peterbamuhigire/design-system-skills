@@ -3,12 +3,14 @@ name: form-ux-design
 description: Cross-platform form UX/UI patterns for web (Bootstrap 5/Tabler), Android
   (Jetpack Compose), and iOS (SwiftUI). Covers field anatomy, validation, error states,
   multi-step wizards, accessibility, touch-friendly inputs, and submission workflows.
-  Use...
+  Use when designing, building, reviewing, or refactoring any form on any platform.
+status: active
 metadata:
   portable: true
+  category: 03-web-and-ui-design
   compatible_with:
-  - Codex
-  - codex
+    - claude-code
+    - codex
 ---
 
 ## Platform Notes
@@ -21,7 +23,7 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 <!-- dual-compat-start -->
 ## Use When
 
-- Cross-platform form UX/UI patterns for web (Bootstrap 5/Tabler), Android (Jetpack Compose), and iOS (SwiftUI). Covers field anatomy, validation, error states, multi-step wizards, accessibility, touch-friendly inputs, and submission workflows. Use...
+- Designing, building, reviewing, or refactoring any form on web (Bootstrap 5/Tabler), Android (Jetpack Compose), or iOS (SwiftUI) — field anatomy, validation, error states, multi-step wizards, accessibility, touch-friendly inputs, and submission workflows.
 - The task needs reusable judgment, domain constraints, or a proven workflow rather than ad hoc advice.
 
 ## Do Not Use When
@@ -65,7 +67,11 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 
 ## References
 
-- Use the `references/` directory for deep detail after reading the core workflow below.
+- `doctrine/design-doctrine.md` — the Mission and the Anti-Slop Charter; forms must look authored, not defaulted.
+- `doctrine/references/ai-slop-taxonomy.md` — the convergent-default tells to avoid in form layout and styling.
+- `doctrine/references/type-scale-and-spacing.md` — label/field type sizing and spacing rhythm.
+- This skill's own `references/` directory for platform-specific deep detail (web/Android/iOS components, validation, accessibility) after reading the core workflow below.
+- Sibling: `04-color-and-visual-identity/color-system-and-palette` for error/success/validation colour roles (gate every pair on WCAG contrast).
 <!-- dual-compat-end -->
 Cross-cutting form design patterns for **web** (Bootstrap 5 / Tabler + PHP), **Android** (Jetpack Compose + Material 3), and **iOS** (SwiftUI). Apply this skill whenever you build, review, or refactor any form.
 

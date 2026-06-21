@@ -1,6 +1,13 @@
 ---
 name: ux-psychology
 description: Cognitive psychology for premium web design. Gestalt principles, Nielsen's 10 heuristics, Norman's 3 design levels, System 1/2 thinking with cognitive biases, Branson's three HCI paradigms (Building/HIP/Design Thinking), working-memory rules (Miller 7±2, chunking, stacking, cognitive load), four-stage cognitive affordance discipline (Presence/Visibility/Recognizability/Intelligibility), and Deacon's three levels of UX scope. Use for premium $20k+ websites to justify quality and prevent common psychological UX mistakes.
+status: active
+metadata:
+  portable: true
+  category: 03-web-and-ui-design
+  compatible_with:
+    - claude-code
+    - codex
 ---
 
 # Ux Psychology
@@ -37,18 +44,16 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 ## Outputs
 - Revisions, review findings, acceptance criteria, or quality guidance tied to the artifact under review.
 
-## References
-- Start with `references/legacy-guidance.md` when you need the preserved detailed instructions from the previous skill version.
-- Read only the specific files under `references/` that match the current task instead of loading the whole directory.
-- This skill has no bundled scripts by default; keep execution focused on the documented workflow and any existing project files.
-
 ## Notes
 - Treat this `SKILL.md` as the portable execution layer for both Claude Code and Codex.
 - Preserve existing project behavior unless the current task explicitly requires a change.
 
 ## References
 
-- `references/legacy-guidance.md` — Gestalt, Nielsen, Norman, Krug; **+ working-memory rules + four-stage cognitive affordance** (added 2026-05-04)
+- `doctrine/design-doctrine.md` — the Mission and Anti-Slop Charter; psychological quality is part of looking deliberately human-made, not templated.
+- `doctrine/references/ai-slop-taxonomy.md` — the interface/product slop tells whose cognitive cost this skill explains.
+- Sibling skills: `03-web-and-ui-design/distinctive-by-design`, `03-web-and-ui-design/interaction-design-patterns`, `03-web-and-ui-design/motion-design`.
+- `references/legacy-guidance.md` — Gestalt, Nielsen, Norman, Krug; **+ working-memory rules + four-stage cognitive affordance** (added 2026-05-04). Read only the specific files under `references/` that match the task.
 - `references/three-paradigms-of-hci.md` — Building / HIP / Design Thinking; cockpit-voice example for stakeholder alignment
 - `references/three-levels-of-ux-scope.md` — Single Interaction / Journey / Relationship — declare in every proposal
 
