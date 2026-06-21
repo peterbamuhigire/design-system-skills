@@ -88,11 +88,17 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
    *Thinking with Type*). Where baseline rhythm applies (long-form text/documents), snap leading
    to the spacing grid so lines across columns share a baseline.
 
-8. **Make the breakpoints deliberate.** For web/UI, the layout must be *redesigned* at each
-   breakpoint, not merely reflowed: a 3-column desktop grid that collapses to a single stacked
-   column of identical cards on mobile re-creates the slop pattern. Decide what the focal point and
-   the asymmetry become at each width. For documents, decide how the grid behaves across page
-   breaks and on the slide master.
+8. **Make the breakpoints deliberate — but prefer letting the grid adapt itself.** For web/UI, the
+   layout must be *redesigned* at each breakpoint, not merely reflowed: a 3-column desktop grid that
+   collapses to a single stacked column of identical cards on mobile re-creates the slop pattern.
+   Decide what the focal point and the asymmetry become at each width. Two 2026 tools reduce how many
+   breakpoints you need: **container queries** (`container-type: inline-size` + `@container` — a
+   component adapts to *its container*, not the viewport, so one block lays out correctly in a wide
+   column and a narrow rail) and **intrinsic layout** (e.g. `repeat(auto-fit, minmax(min(100%, 16rem),
+   1fr))` reflows 1→N columns with *no* media query). Name them here; the sibling
+   `03-layout-grid-and-composition/responsive-and-adaptive-layout` owns the depth (breakpoint
+   strategy, fluid `clamp()`, the full intrinsic pattern library). For documents, decide how the grid
+   behaves across page breaks and on the slide master.
 
 9. **Run the anti-slop layout checklist** (below). If any item fails, fix before shipping.
 
@@ -152,10 +158,25 @@ that as evidence of the convergent mean to *avoid*, not as endorsement.
 - A layout that reads as deliberately authored, consistent with the Mission in
   `doctrine/design-doctrine.md` §0.
 
+## Examples
+
+- `examples/grid-template-worked.md` — a real **12-column + 8pt** landing-page grid applied
+  end-to-end: the stated decision (7+5 hero, 8+4 features, named focal point), copy-ready CSS Grid +
+  spacing tokens, a container-query variant, re-composition at each breakpoint, and the anti-slop
+  checklist run against it. Read this to see the workflow above turned into shippable layout.
+
 ## References
 
+- `references/grid-systems-catalog.md` (the named grid structures — manuscript, column, modular,
+  12/16-col, asymmetric, compound — with column/gutter/margin guidance, uneven-split ratios, and the
+  CSS Grid mapping; also flags container queries / intrinsic layout and defers their depth).
+- `references/spacing-rhythm.md` (the operational **8pt scale**: tokens, the proximity law for
+  *uneven* spacing, gutter vs. section spacing, baseline rhythm, and fluid `clamp()` spacing).
 - `doctrine/design-doctrine.md` (§0 Mission — "the moat is looking human-made"; §2 sourcing-
   authority asymmetry rule).
 - `doctrine/references/type-scale-and-spacing.md` (spacing-unit rhythm, type-scale ratios and
   real jumps, line-height, weight extremes — the numbers this layout's hierarchy is built on).
+- `03-layout-grid-and-composition/responsive-and-adaptive-layout` (sibling — owns the *depth* of
+  container queries, intrinsic layout, breakpoint strategy, and fluid responsiveness; this skill
+  owns the grid + spacing decision the responsive layer adapts).
 <!-- dual-compat-end -->

@@ -41,6 +41,10 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 
 ## Android UX Standards
 
+- Target **Material 3 Expressive** (the current 2026 standard) — not stock M3. State which expressive levers you use (shape scale up to 28dp `extraLarge`, spring motion, emphasis, containment, expressive components like button groups / FAB menu / loading indicators). See `references/material-3-expressive.md`.
+- Bind colour to **M3 role tokens** (`MaterialTheme.colorScheme.*`), never raw hex. Ship a designed **light + dark** `ColorScheme`. **Dynamic colour (Material You)** is opt-in for branded products — default to a **fixed brand seed** (HCT-generated tonal ramps); state the choice. Certify contrast WCAG 2.2 AA regardless.
+- Support **predictive back gestures** via `PredictiveBackHandler` / navigation predictive-back — interruptible, progress-tracked, reversible on cancel. Prefer M3 components that ship predictive-back dismissal. See `references/android-motion.md`.
+- **Roboto is the Android system face** and is allowed **only as the platform default/fallback** — it is **banned as a deliberate Chwezi brand or display primary**. Branded display/headline type must come from an **approved font group** (`doctrine/references/font-groups-and-usage.md`), pass the banned-list check, and be paired (never monotype).
 - Use Material 3, Compose, semantic tokens, and adaptive layout by default.
 - Use bottom navigation for 3-5 primary destinations on compact screens; use navigation rail or pane layouts on larger screens.
 - Minimum touch target is 48 dp.
@@ -66,8 +70,14 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 
 - Android UI brief, Compose component guidance, navigation model, state matrix, accessibility notes, or review findings.
 
+## Examples
+
+- `examples/android-screen-spec.md` — a worked Android screen spec (Maduuka "Today" dashboard): visual-quality intent stated against the doctrine, Material 3 Expressive component/colour/type decisions, predictive-back motion, full state matrix, and the accessibility sign-off gate.
+
 ## References
 
+- `references/material-3-expressive.md` — the current Android visual standard: Material 3 Expressive levers, the M3 role-based colour system, dynamic colour (Material You) vs fixed brand seed, type-scale roles, predictive back, and adaptive layout.
+- `references/android-motion.md` — Android motion: spring/motion-scheme tokens, predictive-back gesture motion, signature moments (container transform, shape morph, shared element), and the reduced-motion path.
 - `doctrine/design-doctrine.md` — the always-load anti-slop charter governing typography, colour, and visual identity.
 - `doctrine/references/ai-slop-banned-fonts.md` and `doctrine/references/type-scale-and-spacing.md` for type choices, scale, and spacing.
   - Mobile-platform font caveat: Android's **Roboto** is the OS/Material system face — it is allowed only **as the platform system default**, never as a deliberate Chwezi brand/display primary (it is banned for that). Any custom branded type must come from the approved font groups (`doctrine/references/font-groups-and-usage.md`) and avoid the banned list.

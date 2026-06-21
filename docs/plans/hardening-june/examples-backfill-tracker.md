@@ -1,29 +1,29 @@
 # Examples Backfill Tracker
 
 The `examples/` convention (Phase 0.3) is mandatory. This tracks backfilling worked examples into
-the existing 37 skills. **P0-ten** (Phase 1 `02-p0-ten-hardening.md`) are starred ★ — do first.
+the **pre-Phase-1 skills**. (All 23 Phase-1 P0 skills shipped their example on creation, so they
+are not debt.) **P0-ten** (hardened in Phase 1) are starred ★.
 
 Tick ☑ when the skill ships ≥1 real worked example.
 
 ## 00 Cross-cutting Ops/QA/A11y
-- [ ] design-audit ★
-- [ ] visual-product-slop-audit ★
+- [x] design-audit ★ ✅
+- [x] visual-product-slop-audit ★ ✅
 
 ## 01 Typography & Fonts
-- [ ] font-selection-and-pairing ★
+- [x] font-selection-and-pairing ★ ✅
 - [ ] ai-slop-typography-audit
 - [ ] premium-font-scan
 - [ ] font-embedding-and-licensing
 
 ## 02 Color, Brand & Visual Identity
-- [ ] color-system-and-palette ★
+- [x] color-system-and-palette ★ ✅
+- [x] brand-visual-identity ★ ✅
 - [ ] color-selection
-- [ ] brand-visual-identity ★
 - [ ] brand-style-guide
-- [ ] brand-alignment  *(folding into brand-visual-identity — Phase 0.4)*
 
 ## 03 Layout, Grid & Composition
-- [ ] layout-grid-and-spacing ★
+- [x] layout-grid-and-spacing ★ ✅
 
 ## 04 Web & UI Design
 - [ ] distinctive-by-design
@@ -45,17 +45,17 @@ Tick ☑ when the skill ships ≥1 real worked example.
 - [ ] sector-strategies
 
 ## 07 Mobile
-- [ ] ios-ui-ux-design ★
-- [ ] android-ui-ux-design ★
+- [x] ios-ui-ux-design ★ ✅
+- [x] android-ui-ux-design ★ ✅
 
 ## 08 Motion & Interaction
-- [ ] motion-design ★
+- [x] motion-design ★ ✅
 
 ## 12 Data Viz & Dashboards
-- [ ] data-visualization ★
+- [x] data-visualization ★ ✅
 
 ## 13 Presentations & Documents
-- [x] deck-system ✅ (de-dup done Phase 0.4 — ships 8 `examples/variant-*` blueprints)
+- [x] deck-system ✅ (de-dup; ships 8 examples/variant-*)
 
-**Progress: 1 / ~29 craft skills** (deck-system done via the Phase 0.4 de-dup). New skills (Phase 1+)
-ship their example on creation, so they never enter this tracker as debt.
+**Progress: 12 / ~29 pre-Phase-1 craft skills** (deck-system via Phase 0.4 + the 10 P0-ten via
+Phase 1 hardening). Remaining ~17 are P1/P2 backfill, hardened in later phases.

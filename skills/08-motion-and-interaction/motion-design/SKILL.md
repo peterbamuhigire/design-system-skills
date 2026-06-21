@@ -62,8 +62,16 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 
 ## References
 
+- `references/spring-physics-and-easing.md` — easing-vs-spring decision, stiffness/damping/ζ params, platform spring APIs, CSS `linear()`.
+- `references/view-transitions.md` — View Transitions API patterns (same-doc, shared-element morph, cross-doc MPA, directionality).
+- `references/reduced-motion.md` — `prefers-reduced-motion` strategy, WCAG 2.3.3 contract, considered-replacement table.
 - `doctrine/design-doctrine.md` — the anti-slop charter; motion is a slop tell when overused or when bounce/elastic easing is applied.
 - `doctrine/references/ai-slop-taxonomy.md` — the product/interface slop tells, including AI-fingerprint animation (bounce/elastic, animation fatigue).
+- `doctrine/references/wcag-2.2-criteria.md` — the accessibility floor; motion must honour 2.3.3 (reduced motion) and 2.3.1 (≤3 flashes/s).
+
+## Examples
+
+- `examples/micro-interaction-spec.md` — a worked save/bookmark toggle spec: timing, spring params, all states, optimistic rollback, and a considered `prefers-reduced-motion` fallback. Use as the template for any motion spec.
 <!-- dual-compat-end -->
 ## Plugins (Load Alongside)
 
@@ -120,6 +128,16 @@ Exit duration = **~75% of enter duration**. Users care less about things leaving
 | `linear` | Mechanical, unnatural (except for continuous rotation) |
 | `ease` (CSS default) | Too gentle, feels mushy |
 | Custom springs with visible oscillation | Distracting, unprofessional |
+
+### Easing vs Spring (when to leave cubic-bezier behind)
+
+Use a **physics spring** instead of a fixed cubic-bezier when the motion can be **interrupted or
+redirected** mid-flight (drag, gesture, re-tap) or should carry mass/momentum (sheets, drag-to-
+dismiss). Parameterise by **stiffness + damping**, and keep the damping ratio **ζ ≥ 0.7** (default
+ζ = 1.0 — no overshoot); **ζ < 0.6 is the banned bounce/elastic tell.** Good starting presets:
+snappy `stiffness 700 / damping 38`, standard UI `400 / 40`. On the web you can bake a spring into a
+hardware-accelerated CSS `linear()` easing function. Full decision table, per-platform spring APIs,
+and tuning rules: `references/spring-physics-and-easing.md`.
 
 ---
 
@@ -180,6 +198,13 @@ These run on the GPU compositor — no layout recalculation, no jank.
 - Shared element: morph position/size between views (400ms, ease-out-expo)
 - Back navigation: reverse the enter animation direction
 
+**Use the View Transitions API for state/route/page swaps** instead of hand-rolling FLIP or
+absolute-positioned clones. Same-document: feature-detect `document.startViewTransition(update)`
+(instant fallback when unsupported). Shared-element morphs use matching `view-transition-name`s in
+both states; cross-document MPA navigations opt in with CSS `@view-transition { navigation: auto; }`.
+View Transitions are **not** reduced-motion-exempt — disable the `::view-transition-*` animations
+under `prefers-reduced-motion`. Full patterns: `references/view-transitions.md`.
+
 ### 4.5 Loading & Feedback
 
 - Skeleton screens: shimmer gradient animation (1.5s, infinite, ease-in-out)
@@ -228,6 +253,14 @@ These run on the GPU compositor — no layout recalculation, no jank.
 ## 6. Reduced Motion (MANDATORY)
 
 **35%+ of adults over 40 experience vestibular sensitivity.** This is not optional.
+
+This satisfies **WCAG 2.3.3 Animation from Interactions** — treated here as a hard floor despite its
+AAA label (see `doctrine/references/wcag-2.2-criteria.md`). The query means *"prefers safer motion,"*
+not "zero motion": **replace** vestibular triggers (large translate, parallax, scale, spring
+overshoot) with non-spatial equivalents (opacity-only ≤100ms, static) — don't strip feedback
+wholesale. Also honour **2.3.1** (nothing flashes >3×/s) and **2.2.2** (auto-play >5s is pausable),
+including inside the reduce path. Full replacement table, the `no-preference` opt-in pattern, and
+JS/native hooks: `references/reduced-motion.md`.
 
 ### CSS Implementation
 
@@ -300,13 +333,13 @@ User taps "Like" → Heart fills instantly → API call fires in background
 
 - Use `animateFloatAsState`, `animateContentSize`, `AnimatedVisibility`
 - `Animatable` for interruptible animations
-- `spring()` for physics-based (use stiffness, not bounce)
+- `spring()` for physics-based: `dampingRatio = DampingRatioNoBouncy` (ζ=1), tune via `stiffness`
 - Check `LocalReducedMotion.current` (Compose 1.7+)
 
 ### iOS (SwiftUI)
 
 - Use `.animation()` modifier or `withAnimation {}`
-- `.spring(duration:bounce:)` — keep bounce at 0 for professional feel
+- `.spring(duration:bounce:)` — keep bounce at 0 (ζ=1) for professional feel; ≤0.15 max
 - `matchedGeometryEffect` for shared element transitions
 - Check `UIAccessibility.isReduceMotionEnabled`
 
@@ -329,4 +362,4 @@ Before shipping animations:
 
 ---
 
-*Sources: Impeccable motion-design reference (Bakaus, 2025); Material Design Motion guidelines; Apple Human Interface Guidelines — Motion.*
+*Sources: Impeccable motion-design reference (Bakaus, 2025); Material Design 3 motion-physics spec; Apple Human Interface Guidelines — Motion; W3C CSS View Transitions Module L1/L2 (MDN); WCAG 2.2 (2.3.1 / 2.3.3 / 2.2.2). Deep-dives in `references/`.*

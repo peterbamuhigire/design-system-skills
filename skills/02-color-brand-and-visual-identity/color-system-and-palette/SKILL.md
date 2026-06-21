@@ -60,12 +60,20 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
    judged by its neighbours, so tune the ramp in context, not in isolation. Itten's contrast
    types (hue, light–dark, saturation, warm–cool) name the levers; pick the one the artifact
    needs. Prefer a perceptually-uniform space (OKLCH / CIELAB) over naive HSL, whose "equal"
-   steps are perceptually uneven.
+   steps are perceptually uneven. **Operationalize this in OKLCH (CSS Color 4, native in evergreen
+   browsers):** author tokens as `oklch(L C H)` — step the ramp evenly on **L** (e.g. 50→900 at
+   L ≈ 0.97→0.24), arc **C** so it peaks in the mid-tones and falls off both ends (so tints don't
+   go chalky, shades don't go muddy), and hold **H** roughly constant (rotate ≤ ~15° only with
+   intent). Build neutrals as a low-chroma ramp on the anchor hue (C ≈ 0.005–0.02), never pure grey.
+   The full recipe with stop tables is in `references/oklch-ramp-construction.md`.
 
 4. **Assign semantic roles, not raw hexes.** Map ramp positions to roles: `surface` (and
    raised/sunken surfaces), `text` (primary + muted), `border`, `accent` (the brand voice),
    and the status set `success / warning / error / info`. Components reference roles, never
-   literal colours, so the system can be retuned or remapped in one place.
+   literal colours, so the system can be retuned or remapped in one place. Each role carries the
+   contrast contract (e.g. `text-muted` is *defined* as ≥4.5:1 on `surface`), so the gate is
+   applied once per role pairing, not re-litigated per screen. Full role set + bindings in
+   `references/semantic-color-roles.md`.
 
 5. **Hold the 60-30-10 distribution.** ~60% a quiet dominant (usually surface), ~30% a
    secondary, ~10% the accent that carries the brand. The accent earns its scarcity — colour
@@ -75,6 +83,10 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
    Body and small text ≥ **4.5:1**; large text (≥24px, or ≥18.66px bold) and meaningful UI
    components/icons/focus rings ≥ **3:1** (WCAG 2.x 1.4.3 / 1.4.11). Any pair that fails is
    rejected and the ramp step is retuned until it passes — no exceptions for "it looks fine."
+   **Design with APCA, certify with WCAG:** while tuning mid-tones, judge real legibility with
+   **APCA** (the WCAG 3.0 *draft* algorithm — not yet normative), which models thin/small text
+   better; then **verify against the 4.5:1 / 3:1 ratios for conformance** before shipping. See
+   `doctrine/references/wcag-2.2-criteria.md` (Contrast method note).
 
 7. **Never put pure black on white, or pure white on a saturated field.** `#000` on `#fff`
    over-contrasts and vibrates (haloing/eye strain); use a near-black with a trace of the brand
@@ -85,7 +97,11 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
    surfaces want *lower* chroma and a near-dark grey carrying the brand hue (not `#000`);
    accents usually need to be *lightened and slightly desaturated* to stay legible and keep the
    same semantic meaning at 3:1/4.5:1. Re-run the contrast gate (step 6) for the dark roles
-   independently — passing in light mode does not imply passing in dark.
+   independently — passing in light mode does not imply passing in dark. **Dark mode is a re-bind
+   of the same role names, never an inversion:** `surface` points *low* (≈ ramp 900), `surface-raised`
+   becomes *lighter* than surface (elevation logic flips), `text` points *high*, and `accent-text`
+   may flip from white to near-black when the accent is lightened. The role names — and the
+   component code — stay identical; only the ramp bindings change (`references/semantic-color-roles.md`).
 
 9. **State the system and hand off.** Output the named roles, the ramp, the distribution rule,
    and the recorded contrast results. Hand categorical/sequential data scales to
@@ -110,8 +126,20 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
   map, the 60-30-10 distribution, recorded WCAG results for light and dark, and a clean handoff
   to data-viz colour.
 
+## Examples
+
+- `examples/oklch-palette-worked.md` — a full applied OKLCH ramp (weathered-copper patina anchor),
+  both light and dark role bindings, with measured WCAG contrast for every pair and a real
+  retune-on-fail loop on the focus ring.
+
 ## References
 
+- `references/oklch-ramp-construction.md` — operationalized OKLCH ramp recipe (L/C/H channels,
+  stop tables, gamut and neutral handling).
+- `references/semantic-color-roles.md` — the full role set, status set, contrast contract, and
+  the dark-mode re-bind rule.
+- `doctrine/references/wcag-2.2-criteria.md` — the 4.5:1 / 3:1 contrast floors and the
+  design-with-APCA / certify-with-WCAG method note (the dark-mode roles are gated against these).
 - `doctrine/design-doctrine.md` — Mission §0 (the moat is looking human-made; authored over
   convergent), Anti-Slop Charter §2 (state the choice first; the sourcing-authority asymmetry
   rule).

@@ -95,10 +95,13 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
    and execution. This is the rule a templating tool can never infer.
 
 7. **Produce the mini style-guide deliverable** (see Outputs) and run the **Consistency Gate**.
+   Structure the system against `references/identity-system-spec.md`; for a complete worked
+   instance, see `examples/identity-mini-guide.md`.
 
 ## The Consistency Gate (quality gate — run before sign-off)
 
 A distinctive identity that is applied inconsistently reads as accidental, not authored.
+The full checklist lives in `references/brand-consistency-gate.md` (this folder); the summary:
 
 1. Logo: correct lockup, clear-space, and minimum size on every surface; single-colour and
    dark-mode variants exist and are legible.
@@ -136,8 +139,20 @@ A **mini style-guide** (one to three pages) containing:
 - The voice-of-the-visuals paragraph + one do/don't pair.
 - A completed Consistency Gate checklist.
 
+## Examples
+
+- `examples/identity-mini-guide.md` — a full worked mini brand identity ("Sonda"): strategy,
+  logo system, colour tie-in, type tie-in, supporting visual language, voice-of-the-visuals,
+  an applied one-screen style-guide, and a filled Consistency Gate. Mirror its shape, not its
+  values.
+
 ## References
 
+- `references/identity-system-spec.md` (this folder) — the canonical structure every layer of
+  the identity system must fill; read it before producing the mini style-guide.
+- `references/brand-consistency-gate.md` (this folder) — the sign-off checklist run in step 7.
+- `references/trust-architecture-checklist.md` (this folder) — when the brand surfaces must
+  carry proof/legitimacy (legal, consulting, healthcare, financial, high-stakes sectors).
 - `doctrine/design-doctrine.md` — Mission (§0, the moat is looking human-made), the Anti-Slop
   Charter (§2), and the sourcing-authority asymmetry rule (human design authority only).
 - `doctrine/references/ai-slop-taxonomy.md` — corporate/advertising slop (misspelled logos,

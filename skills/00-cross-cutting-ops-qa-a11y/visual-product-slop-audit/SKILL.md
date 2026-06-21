@@ -34,9 +34,16 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
 
 ## Workflow
 
-1. **Run the visual tells checklist** (`ai-slop-taxonomy.md` → Visual & video tells): waxy skin,
-   melted backgrounds, gibberish text, floating objects, extra fingers/impossible anatomy,
-   warped/misspelled logos, uncanny faces, mismatched lighting.
+1. **Run the visual tells checklist** (`references/visual-tells-checklist.md`, which operationalises
+   `ai-slop-taxonomy.md` → Visual & video tells): waxy skin, melted backgrounds, gibberish text,
+   floating objects, extra fingers/impossible anatomy, warped/misspelled logos, uncanny faces,
+   mismatched lighting. **Current 2026 AI-image tells** (the classic six-finger artifact is largely
+   fixed in late-2025/2026 models, so the tells migrated): plastic "default-render" lighting & creamy
+   bokeh, texture-too-perfect / uniform-frequency detail, micro-anatomy & accessory errors visible
+   only on zoom (teeth, earrings, watch faces, fused hair), garbled small text / UI chrome / gauges,
+   impossible reflections & re-tiling patterns, and the "no-author" style-blend aesthetic — perfect,
+   even, styleless competence that looks made by nobody. The 2026 rule of thumb: the tell is now the
+   **absence of authored specificity**, not a hard anomaly.
 2. **Run the product/interface tells checklist**: AI feature where nav/search was faster;
    ungrounded chatbot that can invent commitments; generative output with no verifiability/undo;
    decorative "AI" badges/gradients with no user benefit.
@@ -59,8 +66,16 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
 - A findings list (tagged critical/major/minor with the tell it breaks) and a stated,
   human-craft remediation ready to apply.
 
+## Examples
+
+- `examples/slop-audit-filled.md` — a real before/after audit of a Maduuka landing-page hero +
+  embedded AI chat panel: findings (tagged critical/major/minor) → remake/remediate dispositions
+  with the human-craft alternative named for each.
+
 ## References
 
+- `references/visual-tells-checklist.md` — the concrete, tickable image + product/interface tells
+  (incl. the current 2026 AI-image tells), citing the taxonomy.
 - `doctrine/references/ai-slop-taxonomy.md`, `doctrine/design-doctrine.md` (Mission).
 - Sibling audits: `ai-slop-typography-audit` (type); digital-research `anti-ai-slop` (writing).
 <!-- dual-compat-end -->

@@ -70,6 +70,16 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - `doctrine/references/ai-slop-banned-fonts.md` — the banned primary typefaces the Typography dimension flags.
 - `doctrine/references/pairing-principles.md` and `doctrine/references/type-scale-and-spacing.md` — the type-pairing and scale standards the Typography dimension audits against.
 - Use `references/consistency-audit.md` when drift between screens, components, or labels is a suspected issue.
+- `references/audit-rubric.md` — composes the AI-slop, WCAG 2.2, and Core Web Vitals gates into a
+  scored 0–100 rubric with cap rules; use it whenever the audit needs a defensible number.
+- `doctrine/references/wcag-2.2-criteria.md` and `doctrine/references/web-performance-budgets-2026.md`
+  — the accessibility floor (WCAG 2.2 AA) and performance floor (CWV "good") the rubric enforces.
+
+## Examples
+
+- `examples/design-audit-filled.md` — a real scored audit of a sample artifact (marketing
+  landing + signup), showing the three gates, 0–4 dimension scoring, and how a failed gate caps
+  the final score.
 <!-- dual-compat-end -->
 ## Plugins (Load Alongside)
 
@@ -146,6 +156,13 @@ Premium audit red flags include generic screenshots, unsupported premium claims,
 | Zoom support | Usable at 200% zoom | High |
 | Reduced motion | `prefers-reduced-motion` respected | High |
 | Focus management | Focus moves logically after interactions | Medium |
+
+**WCAG 2.2 deltas to check (new since 2.1):** focus not obscured by sticky chrome (2.4.11, AA);
+target size **>= 24x24 CSS px** or spaced (2.5.8, AA); every drag has a single-pointer
+alternative (2.5.7, AA); no re-entry of info already given in the flow (3.3.7, A); auth needs no
+cognitive-function test without an alternative (3.3.8, AA); help appears in consistent order
+(3.2.6, A). See `doctrine/references/wcag-2.2-criteria.md`. Certify with the WCAG ratio; design
+with APCA.
 
 ### Dimension 4: Typography
 
@@ -227,12 +244,16 @@ Every interactive element must have these states defined:
 
 | Check | Standard |
 |---|---|
-| LCP | < 2.5s on mid-range mobile |
-| INP | < 200ms |
-| CLS | < 0.1 |
-| Initial load | < 650 KB compressed total |
+| LCP | < 2.5s (Core Web Vitals "good", field p75) |
+| INP | < 200ms (CWV "good", field p75; INP replaced FID in 2024) |
+| CLS | < 0.1 (CWV "good", field p75) |
+| Initial load | Within archetype budget (marketing total <= 1 MB gz) |
 | Images | WebP/AVIF, srcset, lazy loading, explicit dimensions |
 | Fonts | `font-display: swap`, preloaded, subset |
+
+Verify CWV from **field p75** (CrUX/RUM) where available; Lighthouse lab is a proxy. Set the
+three thresholds as Lighthouse-CI gates. See `doctrine/references/web-performance-budgets-2026.md`
+for per-archetype asset budgets.
 
 ---
 
@@ -319,6 +340,10 @@ Every interactive element must have these states defined:
 ---
 
 ## 4. Scoring Guide
+
+For a defensible, repeatable score, use **`references/audit-rubric.md`** — it composes the AI
+Slop, WCAG 2.2, and Core Web Vitals gates (which can cap the total) with the 0–4 dimension
+scoring and the weights below. A worked, filled example is in `examples/design-audit-filled.md`.
 
 | Score | Meaning |
 |---|---|

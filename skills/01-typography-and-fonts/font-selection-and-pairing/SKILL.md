@@ -43,12 +43,15 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
    `fonts/<group>/` folder. If a permitted premium family is present and would look better,
    prefer it; else take the named OFL baseline.
 3. **Pick a pairing** (display + body) using `doctrine/references/pairing-principles.md` — cross
-   categories, contrast weight extremes, match x-heights, don't mix moods.
+   categories, contrast weight extremes, match x-heights, don't mix moods. For ready, named,
+   context-sorted pairings (none banned), use `references/pairing-catalog.md`.
 4. **State the choice BEFORE producing anything:** name the display face, the body face, and a
    one-line reason tied to this artifact's context.
 5. **Run the anti-slop checklist** (below). If any item fails, fix before proceeding.
 6. **Set the type scale** per `doctrine/references/type-scale-and-spacing.md` (ratio ≥1.25,
-   real jumps, inverse line-height, weight extremes).
+   real jumps, inverse line-height, weight extremes). For concrete px/rem scales to paste —
+   plus the **fluid `clamp()`** version and **variable-font axes** (`wght`/`opsz`/`GRAD`) so
+   one file carries the whole hierarchy — use `references/type-scale-recipes.md`.
 7. **Hand off to `font-embedding-and-licensing`** for the format-correct load/embed.
 
 ## The Anti-Slop Checklist (run every time)
@@ -75,8 +78,16 @@ never silently fall back to Inter or a system stack.
 - A stated typographic decision (display + body + reason), a completed anti-slop checklist, the
   type scale, and a clean handoff to embedding.
 
+## Examples
+
+- `examples/applied-type-scale.md` — a real px/rem type scale for a named brief (Maduuka SaaS
+  landing): the stated pairing + reason, the full scale, the fluid `clamp()` version, the
+  variable-font axis settings, and the anti-slop checklist run end to end.
+
 ## References
 
 - `doctrine/design-doctrine.md`, and the references it indexes: `ai-slop-banned-fonts.md`,
   `font-groups-and-usage.md`, `pairing-principles.md`, `type-scale-and-spacing.md`.
+- `references/pairing-catalog.md` — named, context-sorted display+body pairings (none banned).
+- `references/type-scale-recipes.md` — concrete px/rem scales, fluid `clamp()`, variable-font axes.
 <!-- dual-compat-end -->

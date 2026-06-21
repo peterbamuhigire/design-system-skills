@@ -66,7 +66,7 @@ and therefore valuable.
 
 ## How the engine uses this
 
-- The **`visual-product-slop-audit`** skill (`skills/03-web-and-ui-design/`) runs these
+- The **`visual-product-slop-audit`** skill (`skills/00-cross-cutting-ops-qa-a11y/`) runs these
   checklists against imagery, UI, and product features.
 - The **`ai-slop-typography-audit`** skill covers the type-specific tells
   (`ai-slop-banned-fonts.md`).

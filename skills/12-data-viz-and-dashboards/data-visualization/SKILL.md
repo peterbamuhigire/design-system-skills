@@ -64,7 +64,8 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - `doctrine/references/ai-slop-taxonomy.md` — the "dashboard decoration" / chart-junk tells (3D, gauges, rainbow palettes) this skill rejects.
 - **Sibling — `05-layout-grid-and-data-viz/layout-grid-and-spacing`** for the grid, alignment, and spacing rhythm that exhibits sit on (this skill's alignment and white-space rules inherit from it).
 - Sibling — `04-color-and-visual-identity/color-system-and-palette` for the categorical/sequential colour scales and the WCAG contrast gate the "grey base + one accent" rule depends on.
-- The deep references in this folder: `references/analytics-dashboard-decision-story.md`, `references/responsive-mobile-charts.md`, `references/svg-css-js-implementation.md`. The book sources are listed in the References block below.
+- The deep references in this folder: `references/chart-encoding.md` (the perceptual-accuracy ranking + the accessible-chart floor — load whenever choosing or reviewing an encoding), `references/dashboard-patterns.md` (per-chart behaviour inside a dashboard tile; page-level layout/drill/real-time is the sibling `dashboard-and-data-product-design`), `references/analytics-dashboard-decision-story.md`, `references/responsive-mobile-charts.md`, `references/svg-css-js-implementation.md`. The book sources are listed in the References block below.
+- **Sibling — `12-data-viz-and-dashboards/dashboard-and-data-product-design`** owns **page-level** dashboard design (zone sequence, layout archetypes, KPI tiering, drill-down, cross-filtering, real-time UX). This skill owns the **individual chart**; defer page composition to it.
 <!-- dual-compat-end -->
 > Source: *Storytelling with Data* by Cole Nussbaumer Knaflic (Wiley, 2015)
 
@@ -76,6 +77,38 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 4. **Focus attention** — Use preattentive attributes to direct the eye
 5. **Think like a designer** — Affordances, accessibility, aesthetics, acceptance
 6. **Tell a story** — Beginning (plot), middle (twists), end (call to action)
+
+---
+
+## 2026 Standards — Perceptual Encoding & Accessible Charts (apply on every chart)
+
+These two standards sit *underneath* Knaflic's lessons and make them non-negotiable. Full
+treatment + checklists in `references/chart-encoding.md`.
+
+### Perceptual encoding (the *why* behind chart choice)
+Encode the most important quantity in the **most accurately decoded channel available**. Ranked
+most → least accurate: **position on a common scale → length → angle/slope → area → 3-D volume →
+colour intensity → colour hue.** Operational rules:
+- The more precisely a quantity must be compared, the higher up that list its encoding must sit.
+  (This is the reason pies/donuts/3-D are banned — they push the key comparison onto angle/area;
+  a sorted horizontal bar puts it back on *position*.)
+- **Hue is categorical, intensity is ordinal, length/position are quantitative.** Match the channel
+  to the data type; never use hue to carry magnitude or rainbow to carry order (use a single-hue
+  ramp). Length encodings **require a zero baseline** (expressiveness).
+
+### Accessible charts (the measurable a11y floor — `doctrine/references/wcag-2.2-criteria.md`)
+- **Never colour-alone (WCAG 1.4.1).** ~8% of men have red–green CVD. Every colour distinction
+  carries a **second, non-colour cue** — direct labels, dash/marker/shape, pattern, or a +/− sign.
+  Use **blue (positive) + orange (negative)**, never red+green, and add a sign/arrow.
+- **Contrast, concretely:** data marks & key points **≥ 3:1** vs background *and* vs adjacent marks
+  (1.4.11); chart text/labels **≥ 4.5:1** (≥3:1 for ≥24px / ≥18.66px-bold) (1.4.3). **Design with
+  APCA, certify with the WCAG ratio.**
+- **Colour-blind-safe palettes** (Okabe–Ito / ColorBrewer "colorblind-safe"); test in a CVD
+  simulator before shipping. Source the actual scales from `color-system-and-palette`.
+- **Text alternative + targets:** every chart has an informative caption/`alt` (the action title is
+  its seed) and ideally a backing data table (1.1.1); interactive points are keyboard-reachable
+  with name/role/value (4.1.2) and ≥ **24×24px** (2.5.8); animation honours `prefers-reduced-motion`
+  and never flashes >3×/s; usable at **320px / 200% zoom**.
 
 ---
 
@@ -501,3 +534,12 @@ When hand-building charts in HTML/SVG/CSS/JS, load `references/svg-css-js-implem
 ---
 
 When the visual carries a management decision, KPI review, forecast, risk score, or analytics output, load `references/analytics-dashboard-decision-story.md`.
+
+---
+
+## Examples
+
+- `examples/chart-worked-examples.md` — five real **good vs bad** chart encodings (pie→sorted bar,
+  dual-axis→split panels, red/green→colour+non-colour cue, rainbow→single-hue ramp, gauge→bullet
+  graph), each with the perceptual + accessibility reasoning. Use it as the reasoning pattern when
+  choosing or reviewing an encoding.
