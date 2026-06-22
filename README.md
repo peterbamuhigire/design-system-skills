@@ -166,9 +166,16 @@ design-system-skills/
   UX research, wireframing, cross-platform mobile, UX-writing, messaging, photography art-
   direction, iconography, dashboards — each with references + a worked example. Hardened the
   **P0-ten** existing skills with 2026 standards (Liquid Glass, Material 3 Expressive, OKLCH,
-  View Transitions, spring physics, APCA). **52 skills** across 14 groups. Drives off the audit
-  in `docs/initial-analysis/` (51/100). **Next: Phase 2** — the P1 wave
-  (`docs/plans/hardening-june/phase-2-p1-wave/`).
+  View Transitions, spring physics, APCA). **Next: Phase 2** — the P1 wave.
+- **v0.5.0 — book-informed v2 plan COMPLETE (2026-06-22).** Critically studied 20 UI/UX books
+  (`docs/book-study/`) and rewrote the plan (`docs/plans/hardening-june/PLAN-v2-book-informed.md`):
+  added the `product-design-audit` skill (audits a real product across web/iOS/Android/desktop),
+  2 doctrine refs (`creative-selection-and-taste`, `interaction-anti-patterns`) + inoculation
+  notes, and the full P1 wave + 4 net-new skills. Then re-authored the 12 boilerplate SKILL.md
+  heads and split the overloaded group 04 (new `14-conversion-and-web-page-patterns`; email → 13).
+  **81 skills across 15 groups, 100% example-complete.** Re-audit (`docs/audits/post-v2-plan/`):
+  overall **~73/100** (51 → 67 → 73). **Next:** confirm re-audit; then the render-pipeline +
+  RN/Flutter-depth ceilings (v3).
 
 ## Integration
 

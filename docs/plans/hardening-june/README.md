@@ -56,5 +56,9 @@ sequence, score-visible at each step.
   design-storytelling-and-case-studies); Track C (design-audit triage, ux-writing notation,
   Inline/Detour/Blocking errors, docx mirror-margins); Track D (the full P1 wave — 24 skills).
   **Engine now 81 skills / 14 groups.** Track E exclusions honoured (Niehaus, no rich-interaction).
-- **Next (needs the subagent fleet → after limit reset):** a fresh `skill-engine-audit` re-audit
-  to measure the lift (baseline post-Phase-1 was ~67; target ~80+).
+- **Re-audit done (2026-06-22):** overall **~67 → ~73** (`docs/audits/post-v2-plan/`). Then the two
+  cheapest fixes it named were applied: **re-authored all 12 boilerplate SKILL.md heads** and
+  **split group 04** (→ new `14-conversion-and-web-page-patterns`; email → 13). Engine = **81
+  skills / 15 groups**.
+- **Next:** a fresh re-audit to confirm skill-depth at ~70+; then (v3) the render-pipeline +
+  RN/Flutter-depth ceilings.

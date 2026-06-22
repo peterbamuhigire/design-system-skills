@@ -57,10 +57,13 @@ Android **72**, cross-platform mobile **67** (now-weakest, +9).
   notes remain.
 
 ## Recommended next (fastest route to ~80)
-1. **Re-author the ~13 boilerplate SKILL.md heads** (cheap; lifts skill-depth 64→70+, removes a
-   slop tell). 
-2. **Split group 04** + relocate email.
-3. (v3) Decide the render-pipeline question and add RN/Flutter implementation depth.
+1. ✅ **DONE (2026-06-22)** — Re-authored all 12 boilerplate SKILL.md heads (entrypoints now match
+   bodies; slop tell removed; skill-depth expected ~64→70+ on re-audit).
+2. ✅ **DONE (2026-06-22)** — Split group 04 (15→9) into a new `14-conversion-and-web-page-patterns`
+   (5) and relocated `email-and-newsletter-design` → group 13. Now **15 groups**.
+3. ⏭️ (v3) Decide the render-pipeline question (execute .docx/.pptx/.xlsx + front-end) and add
+   RN/Flutter implementation depth — the two remaining structural ceilings. A fresh re-audit will
+   confirm the lift from #1/#2.
 
 ## Reports
 `02-coverage-and-taxonomy-reaudit.md` (78) · `03-existing-groups-reaudit.md` (64) ·

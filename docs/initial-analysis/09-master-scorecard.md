@@ -3,10 +3,21 @@
 All scores out of 100, against the top-0.1% bar (see `01-methodology-and-rubric.md`). Strict:
 default 45–65; 70+ requires extraordinary justification.
 
-## Overall engine: **51 / 100**
+## Overall engine: **51 / 100** *(BASELINE — current is ~73; see progression below)*
 
 > Strong doctrine foundation; competent-but-not-world-class execution; real coverage holes and
 > zero applied proof. Short of the bar — correctly so under the strictness rule.
+
+### Progression (latest first)
+| Milestone | Overall | Taxonomy | Output-readiness | Skill-depth | Examples |
+|---|---:|---:|---:|---:|---:|
+| **Post-v2 (book-informed)** 2026-06-22 | **~73** | 78 | 75 | 64→~70* | ~80 |
+| Post-Phase-1 2026-06-21 | ~67 | 71 | 70 | 63 | ~58 |
+| Baseline (this file) 2026-06-21 | 51 | 48 | 52 | 58 | 22 |
+
+*Skill-depth 64 was measured before the 12 boilerplate-head re-authorings + the group-04 split
+(both since applied); a fresh re-audit should show it at ~70+. Engine: 81 skills / 15 groups,
+100% example-complete. Full current detail: `docs/audits/post-v2-plan/`.
 
 ## By dimension
 
