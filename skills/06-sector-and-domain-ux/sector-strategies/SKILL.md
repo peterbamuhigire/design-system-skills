@@ -56,7 +56,7 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - `doctrine/design-doctrine.md` — the Mission ("the moat is looking human-made") and Anti-Slop Charter; sector authenticity is one route to authored, non-convergent design.
 - `doctrine/references/ai-slop-taxonomy.md` — the convergent-default tells each sector strategy must avoid.
 - `ANTI-HOMOGENEITY-PRINCIPLE.md` (this folder) — why sector templates inform but never dictate the final tokens.
-- Sibling skills: `03-web-and-ui-design/distinctive-by-design` (commit one distinctive idea per build), `03-web-and-ui-design/legal-sector-ui-ux` and `03-web-and-ui-design/healthcare-ui-design` (deeper sector skills), `04-color-and-visual-identity/color-system-and-palette`.
+- Sibling skills: `04-web-and-ui-design/distinctive-by-design` (commit one distinctive idea per build), `06-sector-and-domain-ux/legal-sector-ui-ux` and `06-sector-and-domain-ux/healthcare-ui-design` (deeper sector skills), `02-color-brand-and-visual-identity/color-system-and-palette`.
 - Start with `references/legacy-guidance.md` for the preserved detailed sector matrix; read only the files under `references/` and `templates/` that match the current task.
 
 ## Examples
@@ -65,4 +65,3 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 ## Notes
 - Treat this `SKILL.md` as the portable execution layer for both Claude Code and Codex.
 - Preserve existing project behavior unless the current task explicitly requires a change.
-

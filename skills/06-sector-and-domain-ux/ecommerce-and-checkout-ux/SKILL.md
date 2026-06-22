@@ -40,7 +40,7 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
 ## Do Not Use When
 
 - The task is a **marketing/landing page** ending at a single CTA, not a purchase flow — use
-  `04-web-and-ui-design/landing-page-and-conversion-design`. That skill *ends* at the click; this
+  `14-conversion-and-web-page-patterns/landing-page-and-conversion-design`. That skill *ends* at the click; this
   one owns everything after it.
 - The task is **generic form field anatomy, validation, or wizard mechanics** in isolation — use
   `04-web-and-ui-design/form-ux-design`. This skill *composes* those patterns into the retail
@@ -250,7 +250,7 @@ coercive version.
   for product media; a slow storefront is an abandoned one.
 - Sibling skills: `04-web-and-ui-design/distinctive-by-design` (run first; gates the build),
   `04-web-and-ui-design/form-ux-design` (field anatomy, validation, the five field states — applied
-  inside checkout), `04-web-and-ui-design/landing-page-and-conversion-design` (the page *before* the
+  inside checkout), `14-conversion-and-web-page-patterns/landing-page-and-conversion-design` (the page *before* the
   click; this skill owns *after*), `06-sector-and-domain-ux/design-ethics-and-anti-dark-patterns`
   (paired — the general ethics/dark-pattern doctrine this skill applies to retail),
   `10-content-design-and-ux-writing/ux-writing-and-microcopy` (button/error/empty wording).

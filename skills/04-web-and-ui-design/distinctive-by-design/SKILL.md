@@ -96,7 +96,7 @@ These are the fingerprints of skilled hands. Do at least three:
   system tied to the motif.
 - **Considered empty, loading, and error states** — real copy, in voice, not "No data."
 - **Micro-interactions** with intent — a hover, a focus ring, a transition that has a reason and
-  a consistent easing/duration (route motion through `03-web-and-ui-design/motion-design`).
+  a consistent easing/duration (route motion through `08-motion-and-interaction/motion-design`).
 - **Real content, never lorem** — genuine headlines, genuine labels, genuine numbers.
 - **Optical adjustments** — align to the eye, not the bounding box; correct the gaps the machine
   leaves equal but the eye reads as unequal.
@@ -181,6 +181,6 @@ real choice), **say so and ask** — never silently ship the convergent default.
 - `doctrine/references/pairing-principles.md` — the human design authority (Bonneville,
   Vignelli, Segall) grounding type, weight extremes, contrast, and deliberate composition.
 - Sibling skills: `01-typography-and-fonts/font-selection-and-pairing` (the type decision),
-  `03-web-and-ui-design/visual-product-slop-audit` (the retrospective twin),
-  `03-web-and-ui-design/motion-design` (purposeful micro-interactions).
+  `00-cross-cutting-ops-qa-a11y/visual-product-slop-audit` (the retrospective twin),
+  `08-motion-and-interaction/motion-design` (purposeful micro-interactions).
 <!-- dual-compat-end -->

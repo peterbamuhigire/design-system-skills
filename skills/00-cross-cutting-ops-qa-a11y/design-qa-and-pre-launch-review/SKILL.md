@@ -160,14 +160,6 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - A **follow-ups log** — non-blocking lows with owners, for SHIP-WITH-FOLLOWUPS.
 - The **Lighthouse-CI / axe build-gate lines** to keep the gates enforced post-launch.
 
-## Evidence Produced
-
-| Category | Artifact | Format | Example |
-|----------|----------|--------|---------|
-| Pre-ship QA | Pre-launch QA review | Markdown checklist with composed gate verdicts + signed go/no-go | `docs/qa/pre-launch-checkout.md` |
-| Pre-ship QA | Cross-device/browser matrix | Pass/fail grid per viewport × engine | `docs/qa/device-browser-matrix.md` |
-| Pre-ship QA | Blocker + follow-up log | Findings with gate, standard, fix, owner | `docs/qa/launch-blockers.md` |
-
 ## Examples
 
 - `examples/qa-review-filled.md` — a fully filled pre-launch review of a sample page (a

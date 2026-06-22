@@ -1,81 +1,83 @@
-# 05 — Per-Output-Type Readiness RE-AUDIT (Post-v2-Plan, Book-Informed)
+# 05 - Per-Output-Type Readiness Re-Audit
 
-**Engine:** `C:\wamp64\www\design-system-skills`
-**Doctrine reviewed:** `doctrine/design-doctrine.md` (v0.2.0 — Mission "the moat is looking human-made", Anti-Slop Charter, sourcing-authority asymmetry) + reference files.
-**Inventory reviewed:** **81 skills** across groups 00–13 (was 52 at the post-Phase-1 re-audit), including the **24 new P1 skills** (two Track-D waves), the new `product-design-audit` composer, and the two net-new output-type owners `email-and-newsletter-design` and `xlsx-and-financial-model-presentation` — with their `references/`, `examples/`, `sections/`, and `templates/` payloads (depth-checked, not counted).
-**Baseline compared against:** `docs/audits/post-phase-1/05-per-output-type-reaudit.md` (overall **70/100**; web app **79**; weakest cross-platform mobile **58**).
 **Date:** 2026-06-22
-**Question (unchanged):** Guided ONLY by this engine's current skills + doctrine, could an agent produce work that rivals top global studios (Apple / Pentagram / award winners) — per output type?
+**Scope:** What an agent can produce when guided only by the current design-system skills and
+doctrine.
+**Score:** **78 / 100** (prior post-v2 score: 75)
 
-**Scoring bar (unchanged, ruthless, top 0.1%):** 90–100 rivals Apple/Pentagram/award winners · 75–89 excellent pro · 60–74 solid but visibly short · 40–59 competent/amateur · <40 skeletal. Default band 45–65. A 70+ requires extraordinary justification.
+## Verdict
 
----
+Output readiness improved again after the final cleanup. The group-04 split makes web, conversion,
+and email routing clearer, the reauthored active heads reduce friction for agents, and stale active
+sibling paths no longer misroute output work. The score does not jump dramatically because the
+remaining blockers are mostly execution-mile problems: the engine specifies artifacts well, but it
+does not render files, run client matrices, publish tokens through CI, or implement
+Flutter/SwiftUI/Compose code. React Native/Expo handoff is now stronger, but not a full app-build
+owner.
 
-## What changed since Phase 1 (the v2 delta drivers)
+## Output ranking
 
-The v2 plan was **book-informed** (six craft studies folded into the doctrine refs and skills) and shipped in tracks A–D. Verified against the bar, the consequential additions:
+| Rank | Output type | Prior v2 | Current | Why it moved |
+|---:|---|---:|---:|---|
+| 1 | Web application / SaaS UI | 82 | **83** | Better routing after group split; component states, practical UI, webapp shell, AI UX, and micro-interactions compose cleanly. Still no deep front-end implementation owner. |
+| 2 | Marketing website / landing page | 80 | **82** | Group 14 gives landing, trust, onboarding, nav/IA, and states a coherent home. Still missing scroll-storytelling/page-transition craft. |
+| 3 | Design deliverable / handoff | 78 | **81** | Figma workflow, tokens, component specs, and handoff form a strong chain with cleaner routing. CI token publishing and two-way Figma/code sync remain outside scope. |
+| 4 | Data product / dashboards | 78 | **79** | Dashboard, chart-selection, data-viz, and accessibility are well covered. Advanced time-series, geospatial, and large cross-filter systems remain thin. |
+| 5 | Spreadsheet / financial-model exhibit | 76 | **78** | XLSX has a real exhibit owner. Actual workbook generation/model logic remains external. |
+| 6 | Proposal / pitch | 76 | **78** | DOCX/PDF/deck/storytelling are stronger together under group 13. PPTX rendering remains absent. |
+| 7 | Business document / DOCX-PDF | 75 | **77** | Stronger document cluster after email/XLSX/storytelling consolidation. No python-docx/Typst/LaTeX render pipeline. |
+| 8 | Brand / visual identity | 74 | **76** | Logo, brand identity, style guide, color, and type now compose well. Identity architecture and large asset-library governance remain missing. |
+| 9 | iOS app presentation layer | 73 | **75** | Current Apple presentation guidance remains solid: Liquid Glass constraints, SF Symbols 8, haptics, accessibility, app-store craft. Code surfaces remain external. |
+| 10 | Android app presentation layer | 72 | **74** | Material 3 Expressive, predictive back, touch/haptics, and store craft are present. Foldables and Wear/widgets are missing. |
+| 11 | Email | 72 | **74** | Correctly relocated to the documents/output group. Specs the hostile email environment well; does not run Litmus/Email-on-Acid matrices. |
+| 12 | Cross-platform mobile / RN-Flutter | 67 | **72** | Parity, touch, haptics, store craft, and RN/Expo implementation-readiness gates are useful. Flutter/full-app implementation depth remains outside scope, so it remains the floor. |
 
-- **The previously-weak types got dedicated craft, not just hardening.**
-  - *Cross-platform mobile* gained two real owners beyond the parity skill: `touch-gesture-and-haptics` (WCAG 2.5.1/2.5.7 single-pointer + non-drag fallback **rule table** — the legal core — plus iOS impact/notification/selection vs Android `HapticFeedbackConstants`/predictive-back semantics, thumb-zone arcs, system-gesture reservation table) and `app-store-presence-and-aso` (dual-store icon delivery incl. iOS **Liquid Glass** light/dark/tinted/clear variants, captioned device-framed screenshot **narrative**, App Preview storyboard, copy-field model, 2026 preflight). These close two of the exact gaps the prior audit named for iOS/Android (App-Store screenshot craft) and cross-platform (touch/haptic per side).
-  - *iOS / Android native* deepened: iOS now carries SF Symbols 8 + advanced UIKit/SwiftUI sub-modules; Android carries **Material 3 Expressive** + **Predictive Back end-to-end** (`PredictiveBackHandler`, interruptible/reversible) + **WindowSizeClass** adaptivity + dense data-tables.
+**Blended readiness score:** 78 / 100.
 
-- **Marketing-website ceiling lifted.** `editorial-and-long-form-layout` (measure 45–75ch, baseline rhythm, pull-quotes/sidenotes/footnotes, drop caps, figure handling) closes the prior "no true scrollytelling/long-scroll narrative-layout" gap; `trust-credibility-and-social-proof` (attributed-proof credibility hierarchy, honest security cues, anti-fabrication) + `onboarding-and-first-run-design` own the conversion/trust spine the prior audit said was only half-owned.
+## What improved
 
-- **Brand identity got generation craft + an icon system.** `logo-and-wordmark-design` (grid/optical mark construction, lockup family, **responsive logo ladder**, favicon + iOS/Android/web/maskable **app-icon matrix**, misuse sheet) plus the strengthened `brand-visual-identity` close the prior "logo/wordmark only lightly taught" gap.
+1. **Routing clarity improves output quality.** An agent now finds conversion/page-pattern work in
+   group 14 instead of threading through an overloaded web/UI drawer.
+2. **Email is now in the right output family.** It sits beside DOCX/PDF/XLSX/decks/storytelling
+   instead of being treated as a web UI sibling.
+3. **Web and marketing compositions are easier to assemble.** `webapp-gui-design`,
+   `practical-ui-design`, `interaction-design-patterns`, `component-states-and-interaction-fidelity`,
+   `landing-page-and-conversion-design`, `trust-credibility-and-social-proof`, and
+   `onboarding-and-first-run-design` now have cleaner boundaries.
+4. **The audit/fix loop is stronger.** `product-design-audit` can identify cross-surface issues and
+   hand them to the right remediation skill.
+5. **Stale active path references are gone.** Agent routing is now less likely to fall into old
+   group names during output assembly.
+6. **RN/Expo parity handoff is less thin.** Navigation shell, platform branches, state model,
+   native APIs, permission states, list performance, release-build performance checks, and
+   EAS/build-channel implications are now explicit.
 
-- **Two net-new output types now have real owners.** `email-and-newsletter-design` (table+inline-CSS constrained model, hybrid/spongy responsive, bulletproof VML/anchor button, fallback-IS-the-design type, dark-mode inversion + logo swap, image-off resilience — grounded in Litmus/Email-on-Acid/Parmentier authority) and `xlsx-and-financial-model-presentation` (custom number masks, accounting negatives, blue-input/black-formula convention, conditional-formatting-as-encoding with non-colour cue, integrity charts, print-exhibit layout).
+## What still caps the score
 
-- **Sector + composition depth.** `ecommerce-and-checkout-ux`, `fintech-and-financial-product-ui`, `journey-mapping-and-service-design`, `composition-and-visual-hierarchy`, plus cross-cutting `figma-and-tooling-workflow` (variable collections + modes, Dev Mode, Code Connect, branching) — which directly chips at the prior "no Figma library/Dev-Mode export mechanics" handoff gap.
+- **No render pipeline:** no owned path for `.docx`, `.pdf`, `.pptx`, `.xlsx`, HTML email, or
+  production front-end generation.
+- **No full platform implementation layer:** iOS/Android/Flutter guidance remains
+  presentation-layer guidance, and RN/Expo is now handoff-ready rather than a deep app-engineering
+  owner.
+- **No token publishing pipeline:** token structure and exports are covered, but CI publishing and
+  governance/versioning are not deep enough.
+- **No advanced motion/page storytelling depth:** group 08 is still thin, and marketing sites lack
+  a true scroll/story choreography owner.
 
-- **A product-wide audit composer.** `product-design-audit` runs the doctrine + per-platform lenses + the three hard gates across every surface and routes each finding to the remediating skill — raising the realistically-achievable quality floor because the engine can now find its own misses.
+## Current best-supported outputs
 
-The payloads were depth-checked: the haptic WCAG fallback table, the Liquid-Glass icon variants, the bulletproof-email VML recipe, and the xlsx number-mask system are all technically correct and specific — craft, not filler.
+The engine is strongest for **web application design**, **marketing/conversion sites**, **handoff
+specs**, **data products**, and **document/spreadsheet/proposal presentation design**.
 
----
+## Current weakest output
 
-## Re-scored ranking (delta vs the Phase-1 re-audit)
+**Cross-platform mobile remains weakest at 72.** The design advice and RN/Expo handoff are now
+better, but missing Flutter/full-app implementation keeps it below the native-platform and
+web-output scores.
 
-| Rank | Output type | Phase-1 | **Now** | Δ | Biggest remaining gaps (2–3) |
-|---|---|---:|---:|---:|---|
-| 1 | Web application (SaaS / dashboard UI) | 79 | **82** | +3 | Frontier interaction polish still short of Linear/Vercel (command palette, multiplayer/presence, optimistic-everything as a system); component-states + micro-interactions now present, but no deep front-end *implementation* skill |
-| 2 | Marketing website / landing page | 73 | **80** | +7 | Editorial long-form + trust + conversion now owned; ceiling held by no true *scrollytelling-with-scroll-driven-motion* recipe (GSAP/scroll-timeline choreography) and no SEO-render/perf-budget-for-content depth beyond the CWV gate |
-| 3 | Data product / dashboards | 74 | **78** | +4 | KPI tiering + layout archetypes + real-time freshness now solid; still thin on geospatial / advanced time-series, deep perceptual animation timing, and large-scale cross-filter state |
-| 4 | Design deliverable / handoff | 74 | **78** | +4 | `figma-and-tooling-workflow` adds variable-collections/modes + Dev Mode + Code Connect + branching; gap now narrows to **CI token publishing / Style-Dictionary-in-pipeline** and live two-way Figma↔code sync |
-| 5 | Spreadsheet / financial-model exhibit *(NEW)* | — | **76** | new | Real exhibit-grade owner (masks, blue/black, CF-as-encoding, integrity charts, print layout); ceiling: engine **specs** the settings, does not drive the actual `.xlsx` write pipeline; defers all model mechanics to finance engine |
-| 6 | Proposal / pitch (deck + document) | 72 | **76** | +4 | PDF/DOCX legs real, deck-system has 8 variant blueprints; still no `.pptx` *rendering* mechanics (masters/chart objects) — decks stop at markdown blueprint |
-| 7 | Business document (DOCX/PDF) | 71 | **75** | +4 | Named-style + TOC + tagged-DOCX + bankable-PDF preflight all real; gap unchanged — engine **specs**, does not **render** (no python-docx/LaTeX/Typst execution pipeline) |
-| 8 | Brand / visual identity | 65 | **74** | +9 | Logo/wordmark construction + lockup family + responsive ladder + app-icon matrix now taught; still no identity **architecture** (parent/sub/endorsed), no environmental / motion-identity system, no Figma asset-library *management* at scale |
-| 9 | Email *(NEW)* | — | **72** | new | Real client-resilient owner (Outlook/Word engine, hybrid/spongy, bulletproof button, dark-mode, image-off); ceiling: engine specs + render-checklist but cannot itself run the Litmus/Email-on-Acid cross-client test matrix it (correctly) demands |
-| 10 | iOS app (Apple Design Award bar) | 68 | **73** | +5 | Haptics owner + SF Symbols 8 + UIKit/SwiftUI sub-modules + App-Store craft added; still **no Live Activities / Dynamic Island / WidgetKit / Lock-Screen surfaces** — the current iOS award differentiators |
-| 11 | Android app (M3 Expressive bar) | 67 | **72** | +5 | M3 Expressive + Predictive-Back end-to-end + WindowSizeClass + App-Store craft; still **no dedicated foldable/large-screen playbook** and no Wear/widget surfaces |
-| 12 | Cross-platform mobile (RN / Flutter) | 58 | **67** | +9 | Parity skill + RN/Flutter mapping + now `touch-gesture-and-haptics` (per-side gesture/haptic/WCAG) + `app-store` (per-store delivery); gap unchanged & decisive — **no deep RN-specific or Flutter-specific *implementation* skill** (Expo, navigation, offline sync; Skia/Impeller vs Fabric render models). Parity + touch *strategy* exist; framework *depth* does not |
+## Bottom line
 
----
-
-## Did the new P1 skills lift the previously-weak types? (the targeted question)
-
-**Yes — measurably, across the board, and the floor rose by 9 points.**
-
-- **Cross-platform mobile 58 → 67 (+9):** lifted by `touch-gesture-and-haptics` (the WCAG 2.5.1/2.5.7 single-pointer/non-drag fallback table + correct iOS/Android haptic semantics, applied *per side*) and `app-store-presence-and-aso` (per-store icon/screenshot/copy delivery incl. Liquid Glass variants). The engine now teaches the *parity decision* **and** the *touch + store* craft on each platform — but still **not** deep framework implementation (render models, Expo, navigation, offline sync). It is no longer near-amateur, but it remains the floor for exactly the reason the prior audit named: strategy without framework depth.
-- **iOS 68 → 73 / Android 67 → 72 (+5 each):** the App-Store screenshot-craft gap (called out for both in Phase 1) is now closed by a real owner; Android's Predictive-Back is now end-to-end and WindowSizeClass covers adaptive sizing; touch/haptic detail is now owned. They clear into the **excellent-pro** band's lower edge. They do not reach the award ceiling because the platform-frontier *signature* surfaces remain absent — Live Activities / Dynamic Island / WidgetKit on iOS, a foldable/large-screen playbook on Android.
-- **Conversion / trust (marketing website) 73 → 80 (+7):** `trust-credibility-and-social-proof` (honest attributed-proof hierarchy) + `onboarding-and-first-run-design` + `editorial-and-long-form-layout` together close the prior "CRO owned but narrative-layout missing, trust only half-owned" gap. This is now the **strongest non-web-app surface** and the second type to clear 75.
-
-The two web-cluster P1 skills (`component-states-and-interaction-fidelity`, `micro-interactions-and-feedback`) also nudged the web app from 79 → 82 by supplying the state-matrix + feedback fidelity the prior audit said was "not at Linear/Vercel level."
-
----
-
-## Overall output readiness — **75 / 100** (Δ **+5** vs 70)
-
-Computed as the mean of the twelve re-scored types (≈75.3; the ten prior types alone average ≈76.4, lifted by every one rising 3–9 points, and the two new types enter at a healthy 76 and 72). The v2 plan moved the engine from "solid-to-excellent, three types in the excellent band" to "**excellent-pro is now the modal band: seven of twelve types clear 75**, the amateur band (<60) is empty, and the floor rose from 58 to 67."
-
-**Why not higher:** the bar is end-to-end *world-class*, and the engine still **specs rather than renders** the last execution mile in the same places, now joined by the two new types' own version of it:
-- no `.pptx` / `.docx` / `.pdf` / `.xlsx` **generation pipeline** (it designs the artifact, it does not drive the file);
-- no deep **RN / Flutter implementation** skill (the single reason cross-platform stays the floor);
-- no **Live Activities / Dynamic Island / WidgetKit** (iOS) or **foldable** (Android) platform-frontier surfaces;
-- no **CI token publishing / two-way Figma↔code** sync (the remaining handoff mile);
-- and email/xlsx, while now real owners, still hand off the actual cross-client test run and the spreadsheet write to tooling outside the engine.
-These are "**build the artifact**," not "**design the artifact**," gaps — which is why even the leaders sit at 80–82 rather than 85+.
-
-**Now-weakest output type:** **Cross-platform mobile (RN / Flutter) at 67/100** — still the floor despite a +9 jump and two new supporting skills, because the engine now teaches the parity decision, the per-side touch/haptic craft, and per-store delivery, but **not** deep framework *implementation* (render models, Expo, navigation, offline sync). It is the one type whose remaining gap is squarely "build," and it would be the highest-leverage target for a v3.
-
-> **Caveat on method (unchanged):** scores assess what an agent could produce *guided only by this engine's current skills + doctrine*, against the named world-class bar — end-to-end readiness per output type, not the (high) quality of the foundations in isolation. The two new types (email, spreadsheet exhibit) are scored on the same rubric. No skill files were modified for this audit.
+The design engine is now output-ready for high-quality specs and design direction, with a few output
+types already in the low-80s. It is not yet an end-to-end artifact production engine. Moving the
+overall output score beyond the high-70s depends less on writing more design advice and more on
+deciding whether this repo owns render/build execution or explicitly hands it to another engine.

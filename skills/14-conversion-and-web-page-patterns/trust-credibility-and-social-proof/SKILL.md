@@ -41,7 +41,7 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
 ## Do Not Use When
 
 - You are building the **whole landing/marketing page** (hero, value prop, mechanism, objections,
-  CTA hierarchy) — use `04-web-and-ui-design/landing-page-and-conversion-design`. That skill
+  CTA hierarchy) — use `14-conversion-and-web-page-patterns/landing-page-and-conversion-design`. That skill
   *composes* this proof section into the page spine; this skill details the proof section itself.
 - The task is the **ethics gate / dark-pattern audit across the whole experience** (fake scarcity,
   confirmshaming, forced continuity, roach-motel) — use
@@ -232,7 +232,7 @@ If any item can't be satisfied (proof is thin, a stakeholder wants a borrowed lo
   verified-review links, badge contrast.
 - `doctrine/references/web-performance-budgets-2026.md` — proof images sized/compressed/CLS-reserved;
   avoid INP-tanking third-party review widgets.
-- Sibling skills: `04-web-and-ui-design/landing-page-and-conversion-design` (composes this proof
+- Sibling skills: `14-conversion-and-web-page-patterns/landing-page-and-conversion-design` (composes this proof
   section into the whole page; defers the testimonial/security-cue detail here),
   `00-cross-cutting-ops-qa-a11y/design-ethics-and-anti-dark-patterns` (the cross-cutting dark-pattern
   catalog — no fake scarcity/urgency; this skill defers there and forbids only proof-specific fakery),

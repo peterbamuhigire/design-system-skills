@@ -31,7 +31,7 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
 - The task is only constructing or correcting a colour palette / contrast — use
   `color-system-and-palette` and return here for the system-level tie-in.
 - The task is auditing imagery/UI for generative-AI artefacts (warped logos, uncanny photos) —
-  run `skills/03-web-and-ui-design/visual-product-slop-audit` first, then design the
+  run `skills/00-cross-cutting-ops-qa-a11y/visual-product-slop-audit` first, then design the
   replacement here.
 - A binding client brand guideline already exists — follow it, record it, and apply only the
   consistency gate.
@@ -82,7 +82,7 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
 5. **Define the supporting visual language** — these are what separate an authored identity
    from a template:
    - **Spacing & geometry:** a consistent spacing rhythm and corner/edge language (sharp vs
-     soft) applied everywhere. Cross-ref `skills/05-layout-grid-and-data-viz` for the grid.
+     soft) applied everywhere. Cross-ref `skills/03-layout-grid-and-composition/layout-grid-and-spacing` for the grid.
    - **Photography style:** state the rules — framing, colour grade, subject treatment, whether
      people are real. **Reject uncanny / waxy / impossible-physics AI imagery** as brand
      content (`ai-slop-taxonomy.md` §1–2).
@@ -159,7 +159,7 @@ A **mini style-guide** (one to three pages) containing:
   uncanny assets) and the visual tells checklist.
 - Sibling skills: `../color-system-and-palette` (palette construction & contrast) and
   `../../01-typography-and-fonts/font-selection-and-pairing` (typeface selection & pairing);
-  `../../05-layout-grid-and-data-viz` (grid/spacing); `../../03-web-and-ui-design/visual-product-slop-audit`.
+  `../../03-layout-grid-and-composition/layout-grid-and-spacing` (grid/spacing); `../../00-cross-cutting-ops-qa-a11y/visual-product-slop-audit`.
 - Human design authority grounding the approach: Paul Rand (a mark is simple, distinctive,
   reproducible, and earns meaning through use); Massimo Vignelli (discipline — a small governed
   set of elements, used consistently); Marty Neumeier, *The Brand Gap* (differentiation first;

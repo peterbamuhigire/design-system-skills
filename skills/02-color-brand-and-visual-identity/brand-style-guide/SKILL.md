@@ -52,7 +52,7 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - `doctrine/design-doctrine.md` — the Mission and Anti-Slop Charter; the style guide must record *deliberate, stated* choices, not defaults.
 - `doctrine/references/ai-slop-banned-fonts.md` and `doctrine/references/font-groups-and-usage.md` — verify the typography specimen names an approved, non-banned face before it ships to the client.
 - `doctrine/references/pairing-principles.md`, `doctrine/references/type-scale-and-spacing.md` — typography pairing and the spacing/type scale the specimen documents.
-- Sibling skills: `04-color-and-visual-identity/color-system-and-palette` (palette card hexes + WCAG), `04-color-and-visual-identity/brand-visual-identity`, `01-typography-and-fonts/font-selection-and-pairing`.
+- Sibling skills: `02-color-brand-and-visual-identity/color-system-and-palette` (palette card hexes + WCAG), `02-color-brand-and-visual-identity/brand-visual-identity`, `01-typography-and-fonts/font-selection-and-pairing`.
 - Start with `references/legacy-guidance.md` and `references/style-guide-template.md` for the deliverable structure; read only the files under `references/` that match the task.
 
 ## Examples
@@ -64,4 +64,3 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 ## Notes
 - Treat this `SKILL.md` as the portable execution layer for both Claude Code and Codex.
 - Preserve existing project behavior unless the current task explicitly requires a change.
-

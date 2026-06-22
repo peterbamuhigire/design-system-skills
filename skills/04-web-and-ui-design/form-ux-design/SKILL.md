@@ -34,7 +34,7 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - The screen has no data-entry fields — for blank/no-data, failure, and loading screens use sibling `empty-error-and-loading-states` (this skill covers the field-level loading/error states only).
 - You need general button/input hover, press, and focus motion fidelity across a component library — use `component-states-and-interaction-fidelity` or `interaction-design-patterns`.
 - The work is page-level layout, spacing rhythm, or visual hierarchy rather than form mechanics — use `practical-ui-design`; for menus/wayfinding use `navigation-and-information-architecture`.
-- Picking error/success/validation colour roles — defer to `04-color-and-visual-identity/color-system-and-palette` and gate every pair on WCAG contrast.
+- Picking error/success/validation colour roles — defer to `02-color-brand-and-visual-identity/color-system-and-palette` and gate every pair on WCAG contrast.
 
 ## Required Inputs
 
@@ -62,15 +62,11 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 
 ## Outputs
 
-- A concrete result that fits the task: implementation guidance, review findings, architecture decisions, templates, or generated artifacts.
+- A **form UX audit** covering field grouping, validation, error states, submission affordances,
+  accessibility, and platform-specific behaviour.
+- A build-ready form spec or implementation guidance when the task is creation or refactoring rather than audit.
 - Clear assumptions, tradeoffs, or unresolved gaps when the task cannot be completed from available context alone.
 - References used, companion skills, or follow-up actions when they materially improve execution.
-
-## Evidence Produced
-
-| Category | Artifact | Format | Example |
-|----------|----------|--------|---------|
-| UX quality | Form UX audit | Markdown doc covering field grouping, validation, error states, and submit affordances per platform | `docs/ux/form-audit-checkout.md` |
 
 ## References
 
@@ -78,7 +74,7 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - `doctrine/references/ai-slop-taxonomy.md` — the convergent-default tells to avoid in form layout and styling.
 - `doctrine/references/type-scale-and-spacing.md` — label/field type sizing and spacing rhythm.
 - This skill's own `references/` directory for platform-specific deep detail (web/Android/iOS components, validation, accessibility) after reading the core workflow below.
-- Sibling: `04-color-and-visual-identity/color-system-and-palette` for error/success/validation colour roles (gate every pair on WCAG contrast).
+- Sibling: `02-color-brand-and-visual-identity/color-system-and-palette` for error/success/validation colour roles (gate every pair on WCAG contrast).
 
 ## Examples
 

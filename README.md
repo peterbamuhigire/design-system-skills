@@ -15,10 +15,21 @@ here, so each domain engine's skill count stays low.
 
 ---
 
-## Latest Update: Apple UI And WWDC26 Compatibility
+## Latest Update: Self-Review, RN Readiness, And Apple UI Compatibility
 
-As of 2026-06-21, the mobile Apple guidance is aligned with WWDC26-era design
-and platform expectations:
+As of 2026-06-22, the engine has a living AI-slop doctrine refresh loop and stronger
+React Native/Expo handoff gates:
+
+- `slop-doctrine-refresh-and-research-loop` routes changing AI-slop definitions through the
+  digital-research engine's source-evaluation discipline before doctrine changes.
+- `living-slop-refresh-protocol.md` requires evidence grade, scope, design consequence, and date
+  checked for any slop-taxonomy or banned-font update.
+- `cross-platform-design-parity` now includes RN/Expo implementation-readiness gates for
+  navigation, state, permissions, native APIs, offline/sync, list performance, release-build
+  performance checks, and EAS/build-channel implications.
+
+The 2026-06-21 Apple mobile guidance remains aligned with WWDC26-era design and platform
+expectations:
 
 - `ios-ui-ux-design` now references current Apple SDK-era Liquid Glass, SF
   Symbols 8, Dynamic Type, haptics, app icon variants, appearance
@@ -126,8 +137,8 @@ design-system-skills/
 │   ├── design-doctrine.md         ← always-load charter
 │   ├── references/                ← banned list, font categories, pairing, type scale, embedding, licensing
 │   └── examples/
-├── skills/                        ← 14 groups + 1 cross-cutting (co-activates) · 81 skills
-│   ├── 00-cross-cutting-ops-qa-a11y/   (11) ← accessibility, QA, audits, ethics — always-on
+├── skills/                        ← 14 groups + 1 cross-cutting (co-activates) · 82 active skills
+│   ├── 00-cross-cutting-ops-qa-a11y/   (12) ← accessibility, QA, audits, ethics — always-on
 │   ├── 01-typography-and-fonts/        (6)
 │   ├── 02-color-brand-and-visual-identity/ (7)
 │   ├── 03-layout-grid-and-composition/ (4)
@@ -173,9 +184,11 @@ design-system-skills/
   2 doctrine refs (`creative-selection-and-taste`, `interaction-anti-patterns`) + inoculation
   notes, and the full P1 wave + 4 net-new skills. Then re-authored the 12 boilerplate SKILL.md
   heads and split the overloaded group 04 (new `14-conversion-and-web-page-patterns`; email → 13).
-  **81 skills across 15 groups, 100% example-complete.** Re-audit (`docs/audits/post-v2-plan/`):
-  overall **~73/100** (51 → 67 → 73). **Next:** confirm re-audit; then the render-pipeline +
-  RN/Flutter-depth ceilings (v3).
+  **82 active skills across 15 groups, 100% example-complete.** Re-audit
+  (`docs/audits/post-v2-plan/`): overall **81/100** (51 → 67 → 73 → 80 → 81), taxonomy **86**,
+  output-readiness **78**, skill-depth **74**. Added a living AI-slop doctrine refresh loop wired
+  to the digital-research engine and RN/Expo implementation-readiness gates. **Next:** decide the
+  render-pipeline + Flutter-depth ceilings (v3).
 
 ## Integration
 

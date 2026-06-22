@@ -56,9 +56,12 @@ sequence, score-visible at each step.
   design-storytelling-and-case-studies); Track C (design-audit triage, ux-writing notation,
   Inline/Detour/Blocking errors, docx mirror-margins); Track D (the full P1 wave — 24 skills).
   **Engine now 81 skills / 14 groups.** Track E exclusions honoured (Niehaus, no rich-interaction).
-- **Re-audit done (2026-06-22):** overall **~67 → ~73** (`docs/audits/post-v2-plan/`). Then the two
+- **Re-audit replaced (2026-06-22):** overall **81** (`docs/audits/post-v2-plan/`) after the two
   cheapest fixes it named were applied: **re-authored all 12 boilerplate SKILL.md heads** and
-  **split group 04** (→ new `14-conversion-and-web-page-patterns`; email → 13). Engine = **81
-  skills / 15 groups**.
-- **Next:** a fresh re-audit to confirm skill-depth at ~70+; then (v3) the render-pipeline +
-  RN/Flutter-depth ceilings.
+  **split group 04** (→ new `14-conversion-and-web-page-patterns`; email → 13). Cleanup then
+  closed and self-review/RN hardening landed: added
+  `slop-doctrine-refresh-and-research-loop` and RN/Expo implementation-readiness gates. Engine =
+  **82 active skills / 15 groups**. Current scores: taxonomy **86**, output-readiness **78**,
+  skill-depth **74**.
+- **Cleanup closed:** 0 active `Evidence Produced` sections and 0 active stale sibling-path
+  references. **Next:** the render-pipeline + Flutter/full-app-depth ceilings.

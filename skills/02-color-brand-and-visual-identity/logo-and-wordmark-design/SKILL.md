@@ -42,7 +42,7 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
 - The ask is only the palette / contrast — use `../color-system-and-palette`, then bind the
   logo's colour variants here.
 - You are auditing existing UI/marketing imagery for generative-AI artefacts (warped or
-  misspelled marks, melted glyphs) — run `../../03-web-and-ui-design/visual-product-slop-audit`
+  misspelled marks, melted glyphs) — run `../../00-cross-cutting-ops-qa-a11y/visual-product-slop-audit`
   first, then design the clean replacement here.
 - A binding client logo guideline already exists — follow and record it; apply only the
   responsive/favicon/variant extensions it lacks.
@@ -201,7 +201,7 @@ A **mark + lockup specification** (the buildable spec, 1–3 pages) containing:
   (strategy, colour+type tie-in, voice, Consistency Gate). Pair, don't duplicate: that skill
   owns the *system*; this one owns the *mark's construction and the icon set*.
 - `../color-system-and-palette` (owned colour + contrast); `../../01-typography-and-fonts/font-selection-and-pairing`
-  (the wordmark's skeleton); `../../03-web-and-ui-design/visual-product-slop-audit`.
+  (the wordmark's skeleton); `../../00-cross-cutting-ops-qa-a11y/visual-product-slop-audit`.
 - `doctrine/design-doctrine.md` — Mission (§0, the moat is looking human-made) and the
   Anti-Slop Charter (§2, sourcing-authority asymmetry: human design authority only).
 - `doctrine/references/creative-selection-and-taste.md` — pick the mark by conviction + the

@@ -25,7 +25,7 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 ## Do not use when
 - You need to run usability sessions, interviews, or analyze test results — use `05-ux-process-research-and-psychology/ux-research-and-usability-testing`.
 - You want a structured heuristic walkthrough or design critique deliverable — use `05-ux-process-research-and-psychology/heuristic-evaluation-and-design-critique` (this skill supplies its psychology vocabulary, not the critique format).
-- The work is visual/brand differentiation or component-level UI patterns — use `03-web-and-ui-design/distinctive-by-design`, `interaction-design-patterns`, or `motion-design`.
+- The work is visual/brand differentiation or component-level UI patterns — use `04-web-and-ui-design/distinctive-by-design`, `interaction-design-patterns`, or `motion-design`.
 - You only need a non-psychological correctness check (copy, accessibility audit, performance).
 
 ## Required inputs
@@ -64,8 +64,7 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 
 - `doctrine/design-doctrine.md` — the Mission and Anti-Slop Charter; psychological quality is part of looking deliberately human-made, not templated.
 - `doctrine/references/ai-slop-taxonomy.md` — the interface/product slop tells whose cognitive cost this skill explains.
-- Sibling skills: `03-web-and-ui-design/distinctive-by-design`, `03-web-and-ui-design/interaction-design-patterns`, `03-web-and-ui-design/motion-design`.
+- Sibling skills: `04-web-and-ui-design/distinctive-by-design`, `04-web-and-ui-design/interaction-design-patterns`, `08-motion-and-interaction/motion-design`.
 - `references/legacy-guidance.md` — Gestalt, Nielsen, Norman, Krug; **+ working-memory rules + four-stage cognitive affordance** (added 2026-05-04). Read only the specific files under `references/` that match the task.
 - `references/three-paradigms-of-hci.md` — Building / HIP / Design Thinking; cockpit-voice example for stakeholder alignment
 - `references/three-levels-of-ux-scope.md` — Single Interaction / Journey / Relationship — declare in every proposal
-

@@ -11,6 +11,12 @@ interface). The **textual** tells (preambles, buzzword salad, vague attribution)
 concern owned by the `digital-research-engine` (`anti-ai-slop` / `ai-slop-audit`) — cross-cite,
 don't duplicate.
 
+**Living-reference rule:** AI-slop tells move as models, templates, vendor defaults, and public
+recognition move. Before changing this taxonomy or treating a "current" tell as durable, run
+`skills/00-cross-cutting-ops-qa-a11y/slop-doctrine-refresh-and-research-loop/` and
+`doctrine/references/living-slop-refresh-protocol.md` with the digital-research engine's source
+evaluation discipline.
+
 ---
 
 ## The 5 categories (design-relevant emphasis in **bold**)
@@ -96,5 +102,7 @@ doctrine-correct alternative.
   checklists against imagery, UI, and product features.
 - The **`ai-slop-typography-audit`** skill covers the type-specific tells
   (`ai-slop-banned-fonts.md`).
+- The **`slop-doctrine-refresh-and-research-loop`** skill refreshes this doctrine when the world
+  changes, using the digital-research engine for source evaluation instead of guessing from vibes.
 - Together with the Mission and the banned-font list, this is the engine's definition of "what
   we must never ship."

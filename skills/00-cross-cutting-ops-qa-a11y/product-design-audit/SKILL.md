@@ -182,15 +182,6 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - A **cross-platform parity note** listing parity gaps routed to `cross-platform-design-parity`.
 - An **evidence-gap list** — surfaces/flows not fully accessible, marked low-confidence.
 
-## Evidence Produced
-
-| Category | Artifact | Format | Example |
-|----------|----------|--------|---------|
-| Product UX | Product design audit | Markdown report: per-surface scorecards + overall verdict | `docs/ux/product-audit-acme.md` |
-| Product UX | Skill-routed recommendation table | Prioritized P0/P1/P2 table, each finding → remediating skill | `docs/ux/audit-recommendations.md` |
-| Product UX | Per-surface dimension worksheet | 0–4 grid (11 dimensions) per surface with gate flags | `docs/ux/audit-scorecards.md` |
-| Product UX | Cross-platform parity note | Parity gaps routed to `cross-platform-design-parity` | `docs/ux/audit-parity.md` |
-
 ## Examples
 
 - `examples/product-audit-worked.md` — a fully worked product audit of a real-ish SaaS product

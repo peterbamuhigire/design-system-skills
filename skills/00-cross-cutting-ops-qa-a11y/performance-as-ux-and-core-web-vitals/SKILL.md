@@ -132,14 +132,6 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
   preload list, and per-asset KB.
 - The **Lighthouse-CI threshold line** to wire into the build gate.
 
-## Evidence Produced
-
-| Category | Artifact | Format | Example |
-|----------|----------|--------|---------|
-| Performance | Performance budget sheet | Markdown table: CWV targets + asset budgets + design decisions | `docs/perf/budget-landing.md` |
-| Performance | Loading-state spec | Skeleton/optimistic frames with copy | `docs/perf/loading-states-checkout.md` |
-| Performance | Lighthouse-CI thresholds | Build-gate config snippet | `lighthouserc` budget block |
-
 ## Examples
 
 - `examples/performance-budget-sheet.md` — a fully filled budget for a real page archetype

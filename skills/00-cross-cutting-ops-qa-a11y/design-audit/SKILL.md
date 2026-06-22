@@ -57,16 +57,11 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 
 ## Outputs
 
-- A concrete result that fits the task: implementation guidance, review findings, architecture decisions, templates, or generated artifacts.
+- A **design audit report** covering visual hierarchy, typography, spacing, colour, accessibility,
+  performance, microcopy, slop signals, and an ordered fix queue.
+- An **accessibility pass report** when WCAG conformance is part of the audit scope.
 - Clear assumptions, tradeoffs, or unresolved gaps when the task cannot be completed from available context alone.
 - References used, companion skills, or follow-up actions when they materially improve execution.
-
-## Evidence Produced
-
-| Category | Artifact | Format | Example |
-|----------|----------|--------|---------|
-| UX quality | Design audit report | Markdown doc covering visual hierarchy, typography, spacing, colour, and accessibility findings | `docs/ux/design-audit-checkout.md` |
-| UX quality | Accessibility pass report | Markdown doc summarising WCAG conformance | `docs/ux/a11y-checkout.md` |
 
 ## References
 

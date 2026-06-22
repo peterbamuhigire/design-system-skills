@@ -1,11 +1,11 @@
 # Initial Analysis — Executive Summary
 
 > **⚠️ THIS IS THE BASELINE (51/100, 2026-06-21).** It has since been superseded by execution.
-> **Current overall: ~73/100** (post Phase 1 + book-informed v2 plan). Progression:
-> **51 → ~67 (post-Phase-1) → ~73 (post-v2)**. Engine grew **37 → 81 skills / 15 groups**, now
-> 100% example-complete. Latest re-audit: `docs/audits/post-v2-plan/00-reaudit-summary.md`
-> (taxonomy 78, output-readiness 75, skill-depth 64 — the last since lifted by re-authoring the
-> 12 boilerplate heads and splitting group 04). Keep this file as the historical baseline.
+> **Current overall: 81/100** (post Phase 1 + book-informed v2 plan + cleanup/self-review/RN re-audit).
+> Progression: **51 -> ~67 (post-Phase-1) -> ~73 (post-v2) -> 80 -> 81 (current)**.
+> Engine grew **37 -> 82 active skills / 15 groups**, now 100% example-complete. Latest re-audit:
+> `docs/audits/post-v2-plan/00-reaudit-summary.md` (taxonomy 86, output-readiness 78,
+> skill-depth 74). Keep this file as the historical baseline.
 
 **Engine:** design-system-skills · **Date:** 2026-06-21 · **Method:** 6 parallel strict audit
 agents (2 cited via the digital-research engine, no-hallucination) + synthesis.

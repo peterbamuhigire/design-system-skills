@@ -216,8 +216,8 @@ copy yet), **say so and ask** — never quietly ship the coercive or convergent 
 - `doctrine/references/web-performance-budgets-2026.md` — hero as LCP, CLS reservation, LCP/INP/CLS
   as design constraints.
 - Sibling skills: `04-web-and-ui-design/distinctive-by-design` (run first; gates the build),
-  `04-web-and-ui-design/trust-credibility-and-social-proof` (P1 — the proof section in depth),
-  `04-web-and-ui-design/onboarding-and-first-run-design` (P1 — what happens after the click),
+  `14-conversion-and-web-page-patterns/trust-credibility-and-social-proof` (P1 — the proof section in depth),
+  `14-conversion-and-web-page-patterns/onboarding-and-first-run-design` (P1 — what happens after the click),
   `06-sector-and-domain-ux/ecommerce-and-checkout-ux` (P1 — purchase flows),
   `10-content-design-and-ux-writing/ux-writing-and-microcopy` (the CTA and headline wording).
 <!-- dual-compat-end -->

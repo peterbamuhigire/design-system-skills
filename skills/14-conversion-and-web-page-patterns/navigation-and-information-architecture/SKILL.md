@@ -36,7 +36,7 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
 - The structure is settled and you're laying out *one page's* internal blocks — that's layout
   (`03-layout-grid-and-composition/layout-grid-and-spacing`).
 - It's a single landing/marketing page with no real hierarchy to architect — use
-  `04-web-and-ui-design/landing-page-and-conversion-design` (its nav is a thin top bar + CTA).
+  `14-conversion-and-web-page-patterns/landing-page-and-conversion-design` (its nav is a thin top bar + CTA).
 - You're writing the *words* on the nav as a microcopy/voice exercise — pair with
   `10-content-design-and-ux-writing/ux-writing-and-microcopy`; this skill owns the *label system*
   (the taxonomy and what each label must denote), the copy skill owns tone.

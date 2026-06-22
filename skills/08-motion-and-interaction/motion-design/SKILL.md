@@ -59,15 +59,11 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 
 ## Outputs
 
-- A concrete result that fits the task: implementation guidance, review findings, architecture decisions, templates, or generated artifacts.
+- A **motion audit** covering timing rules, easing curves, reduced-motion support, performance, and
+  per-platform parity.
+- A motion spec, implementation guidance, review findings, or generated artifacts when the task is creation or refactoring.
 - Clear assumptions, tradeoffs, or unresolved gaps when the task cannot be completed from available context alone.
 - References used, companion skills, or follow-up actions when they materially improve execution.
-
-## Evidence Produced
-
-| Category | Artifact | Format | Example |
-|----------|----------|--------|---------|
-| UX quality | Motion audit | Markdown doc covering timing rules, easing curves, reduce-motion support, and per-platform parity | `docs/ux/motion-audit-checkout.md` |
 
 ## References
 

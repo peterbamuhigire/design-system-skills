@@ -58,16 +58,13 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 
 ## Outputs
 
-- A concrete result that fits the task: implementation guidance, review findings, architecture decisions, templates, or generated artifacts.
+- A **clinical UI accessibility audit** covering WCAG, error tolerance, alarm fatigue, and clinician
+  workflow findings.
+- A **PHI handling note** covering display, redaction, timeout, audit-trail, and equivalent privacy
+  requirements when regulated health data is in scope.
+- Implementation guidance, review findings, templates, or generated artifacts for the healthcare surface.
 - Clear assumptions, tradeoffs, or unresolved gaps when the task cannot be completed from available context alone.
 - References used, companion skills, or follow-up actions when they materially improve execution.
-
-## Evidence Produced
-
-| Category | Artifact | Format | Example |
-|----------|----------|--------|---------|
-| UX quality | Clinical UI accessibility audit | Markdown doc covering WCAG, error tolerance, alarm fatigue, and clinician workflow findings | `docs/health/clinical-ui-audit.md` |
-| Security | PHI handling note | Markdown doc covering display, redaction, and audit-trail requirements per HIPAA / equivalent regulation | `docs/health/phi-handling-note.md` |
 
 ## References
 

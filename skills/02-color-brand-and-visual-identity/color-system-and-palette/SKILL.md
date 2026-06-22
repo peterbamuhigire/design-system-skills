@@ -28,7 +28,7 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
   hexes and roles, and skip selection (but still run the contrast gate and the dark-mode remap).
 - The task is only typography — use `01-typography-and-fonts/font-selection-and-pairing`.
 - The task is chart/data-viz colour encoding specifically — start here for the base palette,
-  then hand the categorical/sequential scales to `05-layout-grid-and-data-viz`.
+  then hand the categorical/sequential scales to `12-data-viz-and-dashboards/data-visualization`.
 
 ## Required Inputs
 
@@ -105,7 +105,7 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
 
 9. **State the system and hand off.** Output the named roles, the ramp, the distribution rule,
    and the recorded contrast results. Hand categorical/sequential data scales to
-   `05-layout-grid-and-data-viz`.
+   `12-data-viz-and-dashboards/data-visualization`.
 
 ## Anti-Patterns
 

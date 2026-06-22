@@ -49,7 +49,7 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
 ## Do Not Use When
 
 - The work is the **marketing landing page** that *precedes* the product — use
-  `04-web-and-ui-design/landing-page-and-conversion-design`. That skill *ends* at the CTA click;
+  `14-conversion-and-web-page-patterns/landing-page-and-conversion-design`. That skill *ends* at the CTA click;
   THIS skill owns everything after it.
 - You only need the **visual/interaction design of the first-run empty state in isolation** (skeleton
   geometry, illustration, motion) — that is `04-web-and-ui-design/empty-error-and-loading-states`.
@@ -244,7 +244,7 @@ tour), **say so and ask** — never quietly ship the install-killing or converge
   colour-not-alone (1.4.1), reduced motion (2.3.3) for coachmark/spotlight animation.
 - Sibling `04-web-and-ui-design/empty-error-and-loading-states` — owns the **pixel craft** of the
   first-run empty state (illustration, skeleton, motion); this skill composes it into the activation arc.
-- Sibling `04-web-and-ui-design/landing-page-and-conversion-design` — owns the marketing page that
+- Sibling `14-conversion-and-web-page-patterns/landing-page-and-conversion-design` — owns the marketing page that
   *precedes* the product; it ends at the CTA click, this skill begins there.
 - `10-content-design-and-ux-writing/ux-writing-and-microcopy` and `error-empty-and-system-messaging` —
   own the **words** of welcome copy, tooltips, checklist items, and empty-state prompts.

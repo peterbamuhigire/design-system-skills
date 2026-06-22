@@ -25,8 +25,8 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 ## Do Not Use When
 
 - The work is **page-level** dashboard composition — zone sequence, layout archetypes, KPI tiering, drill-down, cross-filtering, real-time UX. Use sibling `12-data-viz-and-dashboards/dashboard-and-data-product-design`; this skill owns the single chart inside a tile.
-- You need the categorical/sequential **colour scales themselves** or the WCAG contrast tooling — those live in `04-color-and-visual-identity/color-system-and-palette`; this skill only consumes them.
-- The task is the **grid, alignment, or spacing rhythm** the exhibit sits on — defer to `05-layout-grid-and-data-viz/layout-grid-and-spacing`.
+- You need the categorical/sequential **colour scales themselves** or the WCAG contrast tooling — those live in `02-color-brand-and-visual-identity/color-system-and-palette`; this skill only consumes them.
+- The task is the **grid, alignment, or spacing rhythm** the exhibit sits on — defer to `03-layout-grid-and-composition/layout-grid-and-spacing`.
 
 ## Required Inputs
 
@@ -54,22 +54,18 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 
 ## Outputs
 
-- A concrete result that fits the task: implementation guidance, review findings, architecture decisions, templates, or generated artifacts.
+- A **data visualisation review** applying the Knaflic framework, perceptual encoding rules, and
+  accessible-chart floor to the dashboard, report, or chart under review.
+- A chart spec, implementation guidance, review findings, templates, or generated artifacts when the task is creation rather than review.
 - Clear assumptions, tradeoffs, or unresolved gaps when the task cannot be completed from available context alone.
 - References used, companion skills, or follow-up actions when they materially improve execution.
-
-## Evidence Produced
-
-| Category | Artifact | Format | Example |
-|----------|----------|--------|---------|
-| UX quality | Data visualisation review | Markdown doc applying Knaflic's six-lesson framework to the dashboard or report under review | `docs/ux/dataviz-review-checkout.md` |
 
 ## References
 
 - `doctrine/design-doctrine.md` — the Mission and Anti-Slop Charter; charts must be authored and clutter-free, never decorative chart-junk.
 - `doctrine/references/ai-slop-taxonomy.md` — the "dashboard decoration" / chart-junk tells (3D, gauges, rainbow palettes) this skill rejects.
-- **Sibling — `05-layout-grid-and-data-viz/layout-grid-and-spacing`** for the grid, alignment, and spacing rhythm that exhibits sit on (this skill's alignment and white-space rules inherit from it).
-- Sibling — `04-color-and-visual-identity/color-system-and-palette` for the categorical/sequential colour scales and the WCAG contrast gate the "grey base + one accent" rule depends on.
+- **Sibling — `03-layout-grid-and-composition/layout-grid-and-spacing`** for the grid, alignment, and spacing rhythm that exhibits sit on (this skill's alignment and white-space rules inherit from it).
+- Sibling — `02-color-brand-and-visual-identity/color-system-and-palette` for the categorical/sequential colour scales and the WCAG contrast gate the "grey base + one accent" rule depends on.
 - The deep references in this folder: `references/chart-encoding.md` (the perceptual-accuracy ranking + the accessible-chart floor — load whenever choosing or reviewing an encoding), `references/dashboard-patterns.md` (per-chart behaviour inside a dashboard tile; page-level layout/drill/real-time is the sibling `dashboard-and-data-product-design`), `references/analytics-dashboard-decision-story.md`, `references/responsive-mobile-charts.md`, `references/svg-css-js-implementation.md`. The book sources are listed in the References block below.
 - **Sibling — `12-data-viz-and-dashboards/dashboard-and-data-product-design`** owns **page-level** dashboard design (zone sequence, layout archetypes, KPI tiering, drill-down, cross-filtering, real-time UX). This skill owns the **individual chart**; defer page composition to it.
 <!-- dual-compat-end -->

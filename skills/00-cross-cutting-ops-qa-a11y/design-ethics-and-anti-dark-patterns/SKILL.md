@@ -45,7 +45,7 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
   catalogue to the retail surfaces (sneak-into-basket, drip pricing, forced continuity in a cart);
   this one is the general doctrine it defers to.
 - You are designing the **trust / social-proof section** and the question is fabricated vs. authentic
-  proof — use `04-web-and-ui-design/trust-credibility-and-social-proof`. It forbids proof-specific
+  proof — use `14-conversion-and-web-page-patterns/trust-credibility-and-social-proof`. It forbids proof-specific
   fakery (anonymous "★★★★★", borrowed logos, fake review counts) and defers the cross-cutting scarcity
   rule here.
 - You need a **full scored, skill-routed product audit** across surfaces and platforms — use
@@ -181,7 +181,7 @@ The seven families to walk a flow against:
   / Forced Action**, **D6 Oceans of Buttons** — the usability half; this skill adds the intent-to-
   deceive half and the honest swap.
 - Sibling skills: `06-sector-and-domain-ux/ecommerce-and-checkout-ux` and
-  `04-web-and-ui-design/trust-credibility-and-social-proof` (both **pair** with this skill and name it
+  `14-conversion-and-web-page-patterns/trust-credibility-and-social-proof` (both **pair** with this skill and name it
   as the cross-cutting ethics catalog they defer to); `00-cross-cutting-ops-qa-a11y/product-design-audit`
   (runs this ethics lens as one scored dimension of a full product review).
 <!-- dual-compat-end -->

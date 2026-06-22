@@ -77,7 +77,22 @@ on older devices).
 
 ---
 
-## E. Sign-off
+## E. RN implementation-readiness addendum
+
+- **RN target:** Expo prebuild with React Navigation native-stack; EAS Build and EAS Update in
+  scope.
+- **Native dependencies:** notifications, secure storage, haptics, share sheet, and biometric
+  auth for sensitive transaction actions.
+- **Platform branches:** tab scaffold styling, primary action placement, row affordance, action
+  sheet/bottom sheet, date picker, and transition behavior.
+- **Performance risks:** long transaction lists, grouped sections, refresh/sync indicators, and
+  detail transition animation. Release-build testing required; debug FPS is not accepted.
+- **Release gates:** device smoke test on one iPhone and one Android phone, permission wording
+  review, offline/stale-data test, screen-reader pass, and EAS channel plan before store build.
+
+---
+
+## F. Sign-off
 
 The spec passes only when the **iOS** column would independently pass the `ios-ui-ux-design` gate
 (SwiftUI-native, 44 pt targets, Dynamic Type, VoiceOver, swipe-back) **and** the **Android** column

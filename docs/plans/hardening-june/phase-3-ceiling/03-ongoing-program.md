@@ -13,6 +13,10 @@ is the maintenance loop.
 - **Banned-font watch:** review `ai-slop-banned-fonts.md` for newly-converged AI defaults (Geist
   was added 2026-06-21; the next "Inter" will appear) — AI-vendor sources are ban-evidence only.
 
+- **AI-slop doctrine watch:** run `slop-doctrine-refresh-and-research-loop` with the
+  digital-research engine when visual/product/textual slop definitions shift. Update the taxonomy
+  only with evidence grade, scope, design consequence, and date checked.
+
 ## 2. Re-audit cadence
 - Run the **`skill-engine-audit`** skill (in skills-web-dev) after every phase and then
   **quarterly**. Compare the master scorecard to the prior run; any dimension that slipped below 75

@@ -91,3 +91,11 @@ client deliverable shipped under the Chwezi Core Systems name.
 
 When unsure whether a face is slop, treat it as slop and pick a deliberate alternative from
 `font-groups-and-usage.md`.
+
+## 6. Living refresh rule
+
+Font defaults move. Before adding, removing, or reclassifying a banned face, run
+`skills/00-cross-cutting-ops-qa-a11y/slop-doctrine-refresh-and-research-loop/` and
+`doctrine/references/living-slop-refresh-protocol.md` with the digital-research engine's source
+evaluation discipline. Record the observed shift, evidence grade, design consequence, scope, and
+date checked. Weak evidence becomes a watchlist note, not a hard ban.

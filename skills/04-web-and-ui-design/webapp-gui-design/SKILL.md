@@ -67,15 +67,13 @@ Spinners on the whole page after initial load; per-route custom chrome; forms wi
 
 ## Outputs
 
-App shell component, route-level layout files, reusable primitives (`DataTable`, `FormField`, `Dialog`, `EmptyState`, `StatusPill`), Tailwind theme tokens, a11y checklist report.
-
-## Evidence Produced
-
-| Category | Artifact | Format | Example |
-|----------|----------|--------|---------|
-| UX quality | Screen layout + state matrix | Markdown doc covering per-screen layout, states, and component inventory | `docs/ui/screens/orders-list.md` |
-| UX quality | Accessibility + responsive sweep | Markdown doc covering a11y findings and responsive behaviour across breakpoints | `docs/ui/a11y-audit-2026-04-16.md` |
-| Correctness | UI shell + primitives register | Markdown doc listing layout, data-table, form-field, and dialog primitives used per screen | `docs/ui/primitives-register.md` |
+- App shell component, route-level layout files, reusable primitives (`DataTable`, `FormField`,
+  `Dialog`, `EmptyState`, `StatusPill`), and Tailwind theme tokens.
+- A **screen layout + state matrix** covering per-screen layout, loading/empty/error/success states,
+  and component inventory.
+- An **accessibility + responsive sweep** covering findings and behaviour across breakpoints.
+- A **UI shell + primitives register** listing layout, data-table, form-field, dialog, and state
+  primitives used per screen.
 
 ## References
 

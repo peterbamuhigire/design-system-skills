@@ -19,12 +19,18 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
 - Reviewing AI-generated or AI-assisted imagery, key art, thumbnails, or brand/marketing assets.
 - Auditing a UI screen or a product feature that embeds generative AI.
 - Gate-checking any visual deliverable before it ships under the Chwezi name.
+- Checking a specific artifact against the current slop doctrine after the doctrine has already
+  been refreshed.
 
 ## Do Not Use When
 
 - The concern is the typeface/type system — use `ai-slop-typography-audit`.
 - The concern is written copy (preambles, buzzword salad, vague attribution) — that is a writing
   concern owned by the `digital-research-engine` (`anti-ai-slop`); route there.
+
+- The question is whether the definition of AI slop, a banned font, or a current visual tell has
+  changed - use `slop-doctrine-refresh-and-research-loop` first, then return here for artifact
+  audit.
 
 ## Required Inputs
 
@@ -77,5 +83,7 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
 - `references/visual-tells-checklist.md` — the concrete, tickable image + product/interface tells
   (incl. the current 2026 AI-image tells), citing the taxonomy.
 - `doctrine/references/ai-slop-taxonomy.md`, `doctrine/design-doctrine.md` (Mission).
+- `doctrine/references/living-slop-refresh-protocol.md` and
+  `slop-doctrine-refresh-and-research-loop` for refreshing changing slop definitions.
 - Sibling audits: `ai-slop-typography-audit` (type); digital-research `anti-ai-slop` (writing).
 <!-- dual-compat-end -->

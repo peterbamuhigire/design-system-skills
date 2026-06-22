@@ -150,14 +150,6 @@ the thread's summary. Async trades immediacy for a written record and wider time
 - A **next-step**: the next demo to build (not the next debate to have), and any "live-on-it" items
   to dogfood before re-deciding.
 
-## Evidence Produced
-
-| Category | Artifact | Format | Example |
-|----------|----------|--------|---------|
-| Critique facilitation | Critique session record | Markdown: frame/ask, framework used, feedback captured, decision log | `docs/crit/onboarding-crit-2026-06-21.md` |
-| Critique facilitation | Decision log | Table: question → decision/owner/why/decider | `docs/crit/onboarding-decisions.md` |
-| Critique facilitation | Requirement vs taste split | Two lists: objective must-fix vs decider-input | `docs/crit/onboarding-req-vs-taste.md` |
-
 ## Examples
 
 - `examples/critique-session-worked.md` — a full worked critique session of a real artifact (a

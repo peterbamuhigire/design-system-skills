@@ -29,7 +29,7 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
 
 - The decision is purely *which typeface* — use
   `01-typography-and-fonts/font-selection-and-pairing`. (Set type, then lay it out here.)
-- The decision is purely *which colours* — use `04-color-and-visual-identity`.
+- The decision is purely *which colours* — use `02-color-brand-and-visual-identity`.
 - The work is a chart or table's internal design (axes, encodings, data-ink) — use the
   data-visualisation skill in this same category. This skill governs the *page-level grid the
   chart sits in*, not the chart's own marks.

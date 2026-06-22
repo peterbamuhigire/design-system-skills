@@ -28,6 +28,12 @@ engine's quality-gate pattern. A failed item blocks shipment until fixed or expl
 - [ ] Sufficient contrast (text and UI) for accessibility.
 - [ ] Consistent spacing rhythm on a single unit; grid respected.
 
+## AI-slop freshness (when applicable)
+
+- [ ] If the task depends on a current AI-slop definition, font ban, or visual tell, the
+      `slop-doctrine-refresh-and-research-loop` was run or the current doctrine was explicitly
+      accepted as fresh enough for the artifact's risk level.
+
 ## Mobile (when applicable)
 
 - [ ] Platform conventions honoured (iOS HIG / Android Material), touch targets ≥ the platform

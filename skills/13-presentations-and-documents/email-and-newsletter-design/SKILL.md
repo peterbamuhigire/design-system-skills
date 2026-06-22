@@ -46,7 +46,7 @@ degradation* beats five choices that only render in one client.
 
 ## Do Not Use When
 - The artifact is a **web page / web app / landing page** rendered in a real browser — use
-  `04-web-and-ui-design/landing-page-and-conversion-design` and
+  `14-conversion-and-web-page-patterns/landing-page-and-conversion-design` and
   `03-layout-grid-and-composition/responsive-and-adaptive-layout` (modern CSS is available there;
   none of the email constraints apply). This skill is *only* for the email client target.
 - You are choosing the **subject line, preheader wording, button label, or any in-message copy**

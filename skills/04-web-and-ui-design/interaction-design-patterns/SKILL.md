@@ -57,14 +57,9 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 ## Outputs
 
 - A named set of interaction patterns per surface, each justified by the user behavior it serves and wired as trigger -> response with full states.
+- A **Tidwell pattern usage register** when multiple surfaces or flows need a durable pattern inventory.
 - Navigation/layout/action/data decisions traceable to Tidwell patterns, with the shared undo, data, and save lifecycle made explicit.
 - The handoff note to the visual/platform companion skill, plus any pattern conflicts or open behavioral assumptions.
-
-## Evidence Produced
-
-| Category | Artifact | Format | Example |
-|----------|----------|--------|---------|
-| UX quality | Tidwell pattern usage register | Markdown doc cataloguing applied Tidwell interaction patterns per surface | `docs/ux/tidwell-pattern-register.md` |
 
 ## References
 
