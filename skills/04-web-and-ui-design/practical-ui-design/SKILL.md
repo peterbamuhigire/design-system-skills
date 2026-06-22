@@ -18,18 +18,25 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 <!-- dual-compat-start -->
 ## Use When
 
-- Rules-based visual UI design system covering colour (HSB palettes, light/dark mode), typography (type scales, line height), layout (spacing tokens, 12-column grid), copywriting, buttons, and forms. Load alongside any platform skill...
-- The task needs reusable judgment, domain constraints, or a proven workflow rather than ad hoc advice.
+- You need to build a colour palette: pick a single brand hue and derive a monochromatic 1-hue + 5-variation scale in HSB (or OKLCH for perceptually even brightness), tint all neutrals 2-5% toward the brand hue, and reserve brand colour for interactive elements only.
+- You are deciding light/dark mode tokens, system colours (red/amber/green/blue), or checking WCAG 2.1 AA contrast (4.5:1 small text, 3:1 large text and UI components) or APCA values for a real screen.
+- You are designing or auditing buttons and forms — states, brand-colour-as-affordance, border rules for low-contrast brand colours — and want them governed by tokens, not ad hoc CSS.
+- You need typography, spacing rhythm, or 12-column layout rules grounded in `doctrine/references/type-scale-and-spacing.md` and a deliberate (non-banned) typeface from `doctrine/references/font-groups-and-usage.md`.
+- An existing UI has token drift, duplicated components, or inconsistent states and you want a system-level fix rather than per-screen patches.
 
 ## Do Not Use When
 
-- The task is unrelated to `practical-ui-design` or would be better handled by a more specific companion skill.
-- The request only needs a trivial answer and none of this skill's constraints or references materially help.
+- You need platform implementation code or layout chrome — load `webapp-gui-design`, `android-ui-ux-design`, or `ios-ui-ux-design`; this skill supplies the visual system, not the framework code.
+- The job is choosing a typeface or pairing from scratch — that lives in the `doctrine/references/*` font and pairing docs, not this entrypoint.
+- You want behaviour/navigation/action patterns (`interaction-design-patterns`), animation timing (`motion-design`), or a pass/fail generic-AI-UI quality gate (`visual-product-slop-audit`, `design-audit`) — those are companion siblings, not this skill.
+- Clinical-grade accessibility is the core requirement — start from `healthcare-ui-design` and load this for the colour/type/spacing layer.
 
 ## Required Inputs
 
-- Gather relevant project context, constraints, and the concrete problem to solve; load `references` only as needed.
-- Confirm the desired deliverable: design, code, review, migration plan, audit, or documentation.
+- The brand colour (or permission to choose one) plus target mode(s) — light, dark, or both — so the palette and contrast pairings can be fixed.
+- The concrete surface under design or audit: which screens, components (buttons, forms, cards), and states need tokens.
+- Existing tokens, palette, or component inventory when retrofitting, so token drift and duplicated/inconsistent states can be reconciled instead of re-invented.
+- The chosen (non-banned) typeface and pairing, or a go-ahead to select one from `doctrine/references/*` before applying the type and spacing rules.
 
 ## Workflow
 

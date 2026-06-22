@@ -14,16 +14,22 @@ metadata:
 Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 
 ## Use when
-- The task matches this domain: Select optimal color palettes for websites using brand colors and color theory. Use when users need to define their website's color scheme, generate complementary palettes, ensure accessibility compliance, or refine existing colors for better visual impact and industry alignment.
-- The user needs an implementation-facing skill rather than a general discussion.
+- You need to *generate* a starting palette from scratch — a project with weak or no brand-colour direction, and you must arrive at a primary hue, harmony, and candidate swatches.
+- You have reference imagery (hero photo, product shots) and want the photography to live *inside* the palette via duotone/brand-hue tinting (the imagery-first Flux method).
+- A brief exists with a mood word, audience, and target viewer action, and you need to translate it into a hue + harmony (mono / analogous / complementary / split-complementary / triadic / tetradic).
+- You need to fight templated AI-default colour (indigo→blue gradients, stock Tailwind, neon-on-dark) by sourcing colour from brand and imagery instead.
 
 ## Do not use when
-- The prerequisite upstream context is missing and the task is not yet execution-ready.
-- Another narrower skill is the clear better fit for the exact subtask.
+- The palette already exists and you need semantic roles, tonal ramps, dark-mode remap, or the hard WCAG contrast gate — that is the system sibling `04-color-and-visual-identity/color-system-and-palette`. Generate here, then hand off.
+- You only need to theme/restyle an existing palette across light/dark — see `dark-mode-and-theming`.
+- You only need to verify or repair contrast on fixed colours — see `accessible-color-and-contrast`.
+- Strong locked brand colours already dictate the palette and no generation is needed.
 
 ## Required inputs
-- Project context, current files, and any constraints that affect implementation.
-- Upstream artifacts produced by earlier skills when this skill is part of a pipeline.
+- A brief: the mood word, the audience, and the action you want the viewer to take.
+- Any existing brand colours or constraints (one locked hue is enough to anchor generation).
+- Reference imagery if available — the hero/product photos that should be tinted toward the brand hue.
+- Answers to the four diagnostic questions: any colour constraints? is the guidance complete? what feel? what action?
 
 ## Workflow
 1. Read only the relevant project inputs and preserved guidance before acting.

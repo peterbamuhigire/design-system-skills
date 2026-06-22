@@ -18,41 +18,47 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 <!-- dual-compat-start -->
 ## Use When
 
-- Use when designing interfaces, building UX flows, choosing layouts, or making navigation decisions. Covers Tidwell's 45+ proven interaction patterns for behavior, navigation, layout, actions, and data display. Load alongside webapp-gui-design...
-- The task needs reusable judgment, domain constraints, or a proven workflow rather than ad hoc advice.
+- Choosing a navigation model — Hub & Spoke vs Flat vs Pyramid, Escape Hatch, Modal Panel, Breadcrumbs, Deep Links, Progress Indicator (`sections/02-navigation.md`).
+- Structuring a page or screen — Visual Framework, Center Stage, Grid of Equals, Accordion, Collapsible Panels, Titled Sections (`sections/03-layout.md`).
+- Wiring action flows — Prominent Done Button, Preview, Multi-Level Undo, Cancelability, Hover Tools, Smart Menu Items (`sections/04-actions.md`).
+- Displaying dense or interactive data — Datatips, Data Spotlight, Dynamic Queries, Small Multiples, Multi-Y Graph (`sections/05-data.md`).
+- Designing for real human behavior — Safe Exploration, Instant Gratification, Satisficing, Habituation, Spatial Memory, Microbreaks, Streamlined Repetition.
+- Justifying *why* a pattern fits, or replacing an AI-generic layout with a behavior the user already has muscle memory for.
 
 ## Do Not Use When
 
-- The task is unrelated to `interaction-design-patterns` or would be better handled by a more specific companion skill.
-- The request only needs a trivial answer and none of this skill's constraints or references materially help.
+- You need the visual system (color, type, spacing scales) rather than the interaction structure — use `practical-ui-design` / `premium-ui-ux-design`.
+- The work is the empty/error/loading state of a single component — use `empty-error-and-loading-states` or `component-states-and-interaction-fidelity`.
+- You are scoping a full site's nav tree and URL hierarchy — use `navigation-and-information-architecture`; this skill picks the *pattern*, that skill designs the *map*.
+- The deliverable is animation timing and easing — use `motion-design`; this skill says *when* to give feedback, motion-design says *how* it moves.
+- It is platform binding (React/Compose/SwiftUI) — pair with `webapp-gui-design`, `android-ui-ux-design`, or `ios-ui-ux-design`.
 
 ## Required Inputs
 
-- Gather relevant project context, constraints, and the concrete problem to solve; load `sections` only as needed.
-- Confirm the desired deliverable: design, code, review, migration plan, audit, or documentation.
+- The surface and its primary user goal — what is the ONE thing the user does first on this screen.
+- Observed or assumed user behavior (expert vs first-run, repetitive vs one-off, mobile microbreak vs deep work).
+- The platform target, so patterns map to real shortcuts and gestures (Ctrl-Z, swipe-to-delete, Back).
+- Which companion skill carries the visual/platform layer, so this skill stays pattern-only.
 
 ## Workflow
 
-- Read this `SKILL.md` first, then load only the referenced deep-dive files that are necessary for the task.
-- Apply the ordered guidance, checklists, and decision rules in this skill instead of cherry-picking isolated snippets.
-- Produce the deliverable with assumptions, risks, and follow-up work made explicit when they matter.
-
-## Quality Standards
-
-- Keep outputs execution-oriented, concise, and aligned with the repository's baseline engineering standards.
-- Preserve compatibility with existing project conventions unless the skill explicitly requires a stronger standard.
-- Prefer deterministic, reviewable steps over vague advice or tool-specific magic.
+- Start from the user behavior, not the UI: name the pattern from how people actually act (they scan and satisfice; they leave reminders; they pivot mid-task).
+- Pull the matching pattern from the Quick Reference table below and load only that one `sections/` file.
+- Wire each pattern as trigger to response with its full state list, and make undo/escape, data source, and save lifecycle shared across patterns on one screen (see `examples/pattern-applied-worked.md`).
+- Hand off the visual and platform specifics to the paired companion skill; keep this output structural.
 
 ## Anti-Patterns
 
-- Treating examples as copy-paste truth without checking fit, constraints, or failure modes.
-- Loading every reference file by default instead of using progressive disclosure.
+- Reaching for a novel "AI" interaction where a habituated standard (Back button, Ctrl-S, breadcrumb) would have been faster and invisible.
+- Rearranging menus by usage frequency, auto-closing idle tabs, or auto-sorting user-placed items — this destroys Spatial and Prospective Memory.
+- Relying on a confirmation dialog for critical protection when habituated OK-clicks bypass it; warn *before* an irreversible action instead.
+- Loading all six `sections/` files at once instead of the one the task needs.
 
 ## Outputs
 
-- A concrete result that fits the task: implementation guidance, review findings, architecture decisions, templates, or generated artifacts.
-- Clear assumptions, tradeoffs, or unresolved gaps when the task cannot be completed from available context alone.
-- References used, companion skills, or follow-up actions when they materially improve execution.
+- A named set of interaction patterns per surface, each justified by the user behavior it serves and wired as trigger -> response with full states.
+- Navigation/layout/action/data decisions traceable to Tidwell patterns, with the shared undo, data, and save lifecycle made explicit.
+- The handoff note to the visual/platform companion skill, plus any pattern conflicts or open behavioral assumptions.
 
 ## Evidence Produced
 

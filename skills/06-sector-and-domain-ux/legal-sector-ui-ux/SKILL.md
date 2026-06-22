@@ -14,16 +14,21 @@ metadata:
 Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 
 ## Use when
-- The task matches this domain: Legal sector website design for law firms. Use instead of generic sector-strategies when building websites for lawyers, law firms, solicitors, barristers, or legal consultants. Covers practice-area-specific design direction, client psychology for legal services, ethical advertising constraints (bar association rules), attorney profile pages, trust signals for legal, local SEO for law firms, and conversion for legal intake. Works alongside all standard build pipeline skills.
-- The user needs an implementation-facing skill rather than a general discussion.
+- Building or redesigning a website for a law firm, solo lawyer, solicitor, barrister, or legal consultant — use this instead of the generic `03-web-and-ui-design/sector-strategies`.
+- Designing practice-area pages (family, criminal, corporate, immigration, etc.) and need practice-specific tone, client-psychology framing, and a confidential-consult intake CTA.
+- Building attorney profile pages, credentials/bar-admission blocks, case-result or testimonial sections, and other trust/credibility signals for a credibility-critical service.
+- Wording or laying out legal calls-to-action that must carry the attorney–client disclaimer and respect bar-association advertising rules (no guarantees, no unverifiable "best/specialist" claims).
+- Planning law-firm local SEO (jurisdiction pages, practice-area + city targeting, attorney schema).
 
 ## Do not use when
-- The prerequisite upstream context is missing and the task is not yet execution-ready.
-- Another narrower skill is the clear better fit for the exact subtask.
+- The site is not a legal-services business — use the matching sector skill (e.g. `healthcare-ui-design`, `fintech-and-financial-product-ui`, `ecommerce-and-checkout-ux`) or the generic `sector-strategies`.
+- You only need cross-sector trust/social-proof patterns with no legal-ethics or bar-rule constraints — pull from the trust-credibility-and-social-proof guidance directly.
+- The job is pure palette/contrast or type-system work — defer to `04-color-and-visual-identity/color-system-and-palette` (this skill calls into it for the trust-signal palette and WCAG gate).
 
 ## Required inputs
-- Project context, current files, and any constraints that affect implementation.
-- Upstream artifacts produced by earlier skills when this skill is part of a pipeline.
+- Firm details: jurisdiction(s), practice areas, attorney roster with real credentials/bar admissions, and any governing bar-association advertising rules.
+- Brand and visual constraints (existing identity, or the trust-signal palette from `color-system-and-palette`) and the standard build-pipeline context.
+- Real trust assets where available: case results, testimonials, accreditations, plus the required attorney–client disclaimer text.
 
 ## Workflow
 1. Read only the relevant project inputs and preserved guidance before acting.

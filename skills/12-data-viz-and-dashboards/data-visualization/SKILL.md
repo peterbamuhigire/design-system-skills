@@ -16,18 +16,24 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 <!-- dual-compat-start -->
 ## Use When
 
-- Data visualization patterns from Storytelling with Data (Knaflic, 2015) -- the 6-lesson framework for transforming raw data into compelling visual stories
-- The task needs reusable judgment, domain constraints, or a proven workflow rather than ad hoc advice.
+- Choosing or reviewing an **individual chart's encoding** — picking the chart type, mapping the key quantity to the most accurately decoded channel (Cleveland–McGill: position > length > angle > area > colour), enforcing zero baselines, sorting bars by value.
+- Killing chart-junk on a specific exhibit: a pie/donut/3-D chart, a secondary y-axis, a spaghetti line graph, a rainbow scale, a legend stranded from its data, or diagonal axis labels.
+- Making a chart **colour-blind-safe and WCAG-compliant** — replacing red/green with blue+orange plus a non-colour cue, hitting the 3:1 mark / 4.5:1 text contrast floor, adding captions/alt text and keyboard-reachable points.
+- Turning a number or table into a **decision-ready exhibit**: applying Knaflic's context → visual → declutter → focus → design → story arc, writing an action title, and annotating the one insight that drives the call to action.
+- Hand-building a custom chart in SVG/D3/CSS/JS, or adapting a chart to narrow mobile viewports.
 
 ## Do Not Use When
 
-- The task is unrelated to `data-visualization` or would be better handled by a more specific companion skill.
-- The request only needs a trivial answer and none of this skill's constraints or references materially help.
+- The work is **page-level** dashboard composition — zone sequence, layout archetypes, KPI tiering, drill-down, cross-filtering, real-time UX. Use sibling `12-data-viz-and-dashboards/dashboard-and-data-product-design`; this skill owns the single chart inside a tile.
+- You need the categorical/sequential **colour scales themselves** or the WCAG contrast tooling — those live in `04-color-and-visual-identity/color-system-and-palette`; this skill only consumes them.
+- The task is the **grid, alignment, or spacing rhythm** the exhibit sits on — defer to `05-layout-grid-and-data-viz/layout-grid-and-spacing`.
 
 ## Required Inputs
 
-- Gather relevant project context, constraints, and the concrete problem to solve.
-- Confirm the desired deliverable: design, code, review, migration plan, audit, or documentation.
+- The **data and its types** (quantitative / ordinal / categorical, number of series, time vs. category x-axis) and the **single message** the chart must carry.
+- The **audience and the decision/action** the exhibit should drive (who, what they must do) — the seed for the action title.
+- The **medium**: live presentation vs. circulated document vs. mobile/320px, since it changes annotation, animation, and detail density.
+- Brand colour constraints and the target contrast/accessibility bar (or confirmation to default to grey-base + blue accent, Okabe–Ito palette).
 
 ## Workflow
 

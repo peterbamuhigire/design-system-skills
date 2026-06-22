@@ -19,18 +19,26 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 <!-- dual-compat-start -->
 ## Use When
 
-- Animation and micro-interaction standards for web, Android, and iOS. Covers timing rules (100/300/500), easing curves, GPU-accelerated animation, staggered entrances, state transitions, loading states, and mandatory prefers-reduced-motion...
-- The task needs reusable judgment, domain constraints, or a proven workflow rather than ad hoc advice.
+- Setting animation timing or easing: applying the 100/300/500 duration rule, picking exponential ease-out curves over the banned bounce/elastic, or deriving stagger delays (40-80ms, capped at 800ms).
+- Choosing between a fixed cubic-bezier and a **physics spring** for interruptible/gesture-driven motion — tuning stiffness, damping, and damping ratio (ζ ≥ 0.7) so motion never overshoots into the bounce tell.
+- Wiring **View Transitions** for route/state/shared-element swaps instead of hand-rolled FLIP, and gating them under reduced motion.
+- Building or auditing a `prefers-reduced-motion` path: replacing vestibular triggers (parallax, large translate, scale, spring overshoot) with safe non-spatial equivalents per WCAG 2.3.3 / 2.3.1 / 2.2.2.
+- Specifying GPU-only animation (transform/opacity), entrance/state/loading motion, optimistic-update feedback, or Apple haptics / Liquid Glass / SF Symbols motion checks.
 
 ## Do Not Use When
 
-- The task is unrelated to `motion-design` or would be better handled by a more specific companion skill.
-- The request only needs a trivial answer and none of this skill's constraints or references materially help.
+- The work is the static visual system (colour, type, spacing, layout) with no motion — use `practical-ui-design` or `webapp-gui-design`.
+- You need a worked feedback/toggle spec end-to-end (all states, optimistic rollback) — start from sibling `micro-interactions-and-feedback`.
+- The motion is platform-API implementation detail only (Compose `animateFloatAsState`, SwiftUI `.spring(duration:bounce:)`) — pair with `android-ui-ux-design` / `ios-ui-ux-design`.
+- You only need to judge whether existing animation reads as AI slop — use `visual-product-slop-audit`.
 
 ## Required Inputs
 
-- Gather relevant project context, constraints, and the concrete problem to solve.
-- Confirm the desired deliverable: design, code, review, migration plan, audit, or documentation.
+- Platform target(s): web (CSS/JS), Android (Compose), iOS (SwiftUI) — these drive the spring API and reduced-motion hook.
+- The animation category (feedback, state change, layout shift, entrance, loading) so the right 100/300/500 band and easing apply.
+- Whether the motion can be interrupted/redirected (drag, gesture, re-tap) — decides cubic-bezier vs physics spring.
+- The reduced-motion intent: which triggers need a non-spatial replacement vs which feedback must be preserved.
+- Whether Apple haptics, Liquid Glass chrome, or SF Symbols animation are in scope (pulls in the iOS sensory/HIG references).
 
 ## Workflow
 

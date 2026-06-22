@@ -14,16 +14,24 @@ metadata:
 Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 
 ## Use when
-- The task matches this domain: Cognitive psychology for premium web design. Gestalt principles, Nielsen's 10 heuristics, Norman's 3 design levels, System 1/2 thinking with cognitive biases, emotional design, dark patterns to avoid, and affordance principles. Use for premium $20k+ websites to justify quality and prevent common psychological UX mistakes.
-- The work needs a quality gate or standard applied across other outputs.
+- A design or layout needs grouping/hierarchy diagnosed through Gestalt lenses (proximity, similarity, common region, closure, continuity).
+- You must justify or defend UX quality on a premium $20k+ build, naming the principle a choice rests on rather than asserting taste.
+- A flow feels confusing or high-friction and you need a cognitive-load read: Miller's 7±2, chunking/stacking, Sweller's intrinsic vs. extraneous load.
+- An interaction's affordances are unclear and you want the four-stage discipline — Presence, Visibility, Recognizability, Intelligibility — applied to controls and signifiers.
+- You need to map a screen against Nielsen's 10 heuristics or Norman's three levels (visceral/behavioral/reflective) and turn each gap into a concrete change.
+- Aligning stakeholders on which HCI paradigm (Building / HIP / Design Thinking) a decision belongs to, or declaring UX scope (Single Interaction / Journey / Relationship) in a proposal.
+- Spotting System 1/2 friction or dark patterns that erode trust on a conversion path.
 
 ## Do not use when
-- The task is unrelated to this standard or quality lens.
-- A more specific execution skill should own the work instead.
+- You need to run usability sessions, interviews, or analyze test results — use `05-ux-process-research-and-psychology/ux-research-and-usability-testing`.
+- You want a structured heuristic walkthrough or design critique deliverable — use `05-ux-process-research-and-psychology/heuristic-evaluation-and-design-critique` (this skill supplies its psychology vocabulary, not the critique format).
+- The work is visual/brand differentiation or component-level UI patterns — use `03-web-and-ui-design/distinctive-by-design`, `interaction-design-patterns`, or `motion-design`.
+- You only need a non-psychological correctness check (copy, accessibility audit, performance).
 
 ## Required inputs
-- The content, interface, or artifact being reviewed or improved.
-- Any brand, audience, regional, or conversion context that affects the judgment.
+- The specific screen, flow, or interaction under review (mockup, URL, or described artifact) — concrete enough to point at named elements.
+- The user goal and decision context for that screen, so cognitive-load and affordance judgments are anchored to a real task.
+- Brand, audience, regional, and conversion context that determines whether a psychological tradeoff is acceptable.
 
 ## Workflow
 1. Read the artifact and the decision context before applying rules.

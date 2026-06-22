@@ -14,16 +14,20 @@ metadata:
 Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 
 ## Use when
-- The task matches this domain: Produces a client-facing brand style guide deliverable (docs/brand-style-guide.md). Use after brand-strategy and design-system are complete. Covers logo usage rules, colour palette card (hex/RGB/CMYK), typography specimen, spacing system, photography style, voice and tone guide, and component usage examples. This document is delivered to the client as a premium project deliverable.
-- The user needs domain-specific strategy, writing, or planning in this area.
+- You need to assemble the final client-facing brand style guide (`docs/brand-style-guide.md`) once brand strategy and the design system already exist — the premium hand-off deliverable.
+- The request is to package logo usage rules, a colour palette card (hex/RGB/CMYK + roles), a typography specimen with scale, the spacing system, photography style, voice/tone, and component usage examples into one governed document.
+- The client asks "how do we keep the brand consistent" and needs do/don't rules and usage standards a third party could follow without you in the room.
 
 ## Do not use when
-- Another skill is clearly narrower and better matched to the request.
-- The task is unrelated to this domain or needs direct implementation instead.
+- The palette itself is still being decided or needs WCAG-contrast values worked out — use the sibling `color-system-and-palette` first.
+- The logo or wordmark has not been designed yet — that is `logo-and-wordmark-design`, and the broader mark/identity system is `brand-visual-identity`.
+- The deep voice, tone, and editorial rules are the actual ask (not just a guide section) — route to `voice-tone-and-content-style-guide`.
+- Type faces are still being chosen/paired — use `font-selection-and-pairing` before specimen-ing them here.
 
 ## Required inputs
-- Business context, target audience, and the artifact or decision being developed.
-- Any existing materials, constraints, or supporting references already available.
+- Completed brand strategy and design-system decisions: chosen palette (with hexes/roles), the selected and paired typefaces, logo/wordmark assets, and spacing/type scale.
+- Voice and tone direction, photography/art-direction intent, and any component patterns to be shown in usage examples.
+- The banned-fonts and font-groups references, so the specimen can be verified against approved, non-slop faces before it ships.
 
 ## Workflow
 1. Read the current business context and the concrete task to solve.

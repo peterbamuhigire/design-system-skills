@@ -23,18 +23,25 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 <!-- dual-compat-start -->
 ## Use When
 
-- Designing, building, reviewing, or refactoring any form on web (Bootstrap 5/Tabler), Android (Jetpack Compose), or iOS (SwiftUI) — field anatomy, validation, error states, multi-step wizards, accessibility, touch-friendly inputs, and submission workflows.
-- The task needs reusable judgment, domain constraints, or a proven workflow rather than ad hoc advice.
+- Building, reviewing, or refactoring any form: sign-up, login, checkout, settings, contact, search filters, or multi-step wizards on web (Bootstrap 5/Tabler), Android (Jetpack Compose), or iOS (SwiftUI).
+- Deciding label placement, single vs. two-column layout, required/optional marking, or whether to split a long form (>7 fields) into steps or a gateway screen.
+- Writing or fixing inline validation: when to validate (on blur, not keystroke), the five field states, error-summary-with-anchors for long forms, and Enders-style error copy that says what's wrong and how to fix it.
+- Making fields accessible: WCAG 2.2 redundant entry (3.3.7), accessible authentication (3.3.8), target size (2.5.8), autocomplete attributes, and screen-reader/keyboard behaviour.
+- Choosing touch-friendly input types, smart defaults, and auto-formatting (phone, currency) to cut keystrokes and friction.
 
 ## Do Not Use When
 
-- The task is unrelated to `form-ux-design` or would be better handled by a more specific companion skill.
-- The request only needs a trivial answer and none of this skill's constraints or references materially help.
+- The screen has no data-entry fields — for blank/no-data, failure, and loading screens use sibling `empty-error-and-loading-states` (this skill covers the field-level loading/error states only).
+- You need general button/input hover, press, and focus motion fidelity across a component library — use `component-states-and-interaction-fidelity` or `interaction-design-patterns`.
+- The work is page-level layout, spacing rhythm, or visual hierarchy rather than form mechanics — use `practical-ui-design`; for menus/wayfinding use `navigation-and-information-architecture`.
+- Picking error/success/validation colour roles — defer to `04-color-and-visual-identity/color-system-and-palette` and gate every pair on WCAG contrast.
 
 ## Required Inputs
 
-- Gather relevant project context, constraints, and the concrete problem to solve; load `references` only as needed.
-- Confirm the desired deliverable: design, code, review, migration plan, audit, or documentation.
+- Platform(s) in scope: web (Bootstrap 5/Tabler + PHP), Android (Compose + Material 3), iOS (SwiftUI) — components and code differ per platform.
+- The actual fields being collected and which are genuinely required, so unnecessary questions can be cut.
+- Deliverable type: a build-ready form spec (see `examples/form-spec-worked.md`), new component code, a UX audit, or a refactor of an existing form.
+- Any validation/business rules (formats, async uniqueness checks, dependencies) and the WCAG conformance target.
 
 ## Workflow
 

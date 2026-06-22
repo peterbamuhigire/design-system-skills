@@ -19,18 +19,23 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 <!-- dual-compat-start -->
 ## Use When
 
-- Comprehensive UI/UX quality audit covering visual hierarchy, accessibility, AI slop detection, typography, colour, layout, interaction states, responsive behaviour, performance, and microcopy. Produces severity-rated findings with actionable...
-- The task needs reusable judgment, domain constraints, or a proven workflow rather than ad hoc advice.
+- You need a severity-rated UI/UX audit across the 10 dimensions (AI slop, visual hierarchy, accessibility, typography, colour, layout/spacing, interaction states, motion, microcopy, performance) with a defensible 0–100 score.
+- A screen, flow, landing page, or component "looks AI-generated" or generic and you need to prove it: Inter/Roboto defaults, purple gradients, everything-in-cards, glassmorphism, "Submit"/"Loading..." copy.
+- You need a WCAG 2.2 AA pass (contrast, target size 24/44px, focus not obscured, drag/auth/redundant-entry deltas) and a Core Web Vitals check (LCP/INP/CLS at field p75).
+- You need findings triaged into an **ordered fix queue** (red-route/Travis test + effort×impact + MoSCoW) to hand off to `ux-remediation-and-redesign`, not just a list of complaints.
+- A premium product needs a premium-readiness pass: buyer proof, pricing confidence, support visibility, empty states, executive clarity.
 
 ## Do Not Use When
 
-- The task is unrelated to `design-audit` or would be better handled by a more specific companion skill.
-- The request only needs a trivial answer and none of this skill's constraints or references materially help.
+- You want to **execute** the fixes — redesign lo-fi→hi-fi, run 5-user/A/B/tree tests, measure uplift. That is `ux-remediation-and-redesign`; this skill diagnoses, scores, and triages, then hands off.
+- You need only the detailed visual/product slop checklist (`visual-product-slop-audit`), the positive visual system rules to build against (`practical-ui-design`), or animation craft standards (`motion-design`) — load those directly.
+- You need a ship go/no-go gate — that is `design-qa-and-pre-launch-review`.
 
 ## Required Inputs
 
-- Gather relevant project context, constraints, and the concrete problem to solve.
-- Confirm the desired deliverable: design, code, review, migration plan, audit, or documentation.
+- The artifact under audit: screens/URLs/components plus, ideally, the live build (CWV needs CrUX/RUM field data, not just a mockup).
+- Context for Step 1: who the users are, the purpose (task/commerce/info), the platform (web/Android/iOS), the design system/tokens if any, and the intended brand personality.
+- Whether a **full 10-dimension scored audit** or the **10-minute quick checklist** is wanted, and whether a premium-readiness pass applies.
 
 ## Workflow
 

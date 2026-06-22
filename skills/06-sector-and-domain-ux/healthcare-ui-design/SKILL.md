@@ -22,18 +22,22 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 <!-- dual-compat-start -->
 ## Use When
 
-- Design world-class clinical and patient-facing healthcare UIs for web, mobile (Android/iOS), and tablet. Covers EMR/EHR dashboards, patient portals, telemedicine, medication management, wellness apps, and aging-care interfaces. Enforces HIPAA...
-- The task needs reusable judgment, domain constraints, or a proven workflow rather than ad hoc advice.
+- Designing or reviewing EMR/EHR dashboards, patient portals, telehealth flows, medication management, mood/symptom trackers, or aging-care interfaces across mobile, tablet (bedside), and clinician desktop.
+- Laying out clinical safety surfaces: allergies banner before prescribing, drug-interaction warnings, two patient identifiers, out-of-range vitals flagging, autosave/interruption recovery, session timeout.
+- Choosing the calm-blue healthcare palette and three-signal status design (color + icon + text), or a specialty palette (soft lilac for mental health, high-contrast for aging/ICU).
+- Mapping HIPAA, FDA 21 CFR Part 11 e-signatures, ISO 62366-1, or HL7 FHIR requirements onto concrete UI patterns.
 
 ## Do Not Use When
 
-- The task is unrelated to `healthcare-ui-design` or would be better handled by a more specific companion skill.
-- The request only needs a trivial answer and none of this skill's constraints or references materially help.
+- The accessibility/WCAG conformance work is the whole task and platform-agnostic — use the sibling `accessibility-wcag-2-2-compliance` skill (this skill applies WCAG within clinical context, not full audits).
+- The task is product/sector strategy or positioning rather than UI design — use `sector-strategies`.
+- The work is non-healthcare UI with no clinical safety, PHI, or patient-context constraints.
 
 ## Required Inputs
 
-- Gather relevant project context, constraints, and the concrete problem to solve; load `references` only as needed.
-- Confirm the desired deliverable: design, code, review, migration plan, audit, or documentation.
+- Target platform(s) and primary user: patient/community-health-worker (mobile), bedside nurse or rounding physician (tablet, both orientations), or physician/admin (desktop).
+- App type from the quick-start guide (patient portal, EMR/EHR, telehealth, mental health, aging care, medication mgmt, ICU/emergency, wellness).
+- Applicable regulatory regime (HIPAA / FDA / ISO 62366-1 / FHIR) and any branding constraints over the OS-native font stack.
 
 ## Workflow
 
