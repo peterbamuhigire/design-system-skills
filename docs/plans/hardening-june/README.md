@@ -50,4 +50,11 @@ sequence, score-visible at each step.
   refs first, Track B 4 new skills incl. `ux-remediation-and-redesign` + `xlsx-...`, Track C
   changes, Track D the confirmed P1 wave, Track E exclusions). `phase-2-p1-wave/` and
   `phase-3-ceiling/` remain as the per-skill spec source, superseded where v2 differs.
-- **Next:** execute `PLAN-v2-book-informed.md` Track A → B → C → D.
+- **v2 plan Tracks A–D COMPLETE (2026-06-22):** Track A (creative-selection-and-taste +
+  interaction-anti-patterns doctrine refs + inoculation notes); Track B (4 new skills:
+  ux-remediation-and-redesign, xlsx-and-financial-model-presentation, demo-driven-design-process,
+  design-storytelling-and-case-studies); Track C (design-audit triage, ux-writing notation,
+  Inline/Detour/Blocking errors, docx mirror-margins); Track D (the full P1 wave — 24 skills).
+  **Engine now 81 skills / 14 groups.** Track E exclusions honoured (Niehaus, no rich-interaction).
+- **Next (needs the subagent fleet → after limit reset):** a fresh `skill-engine-audit` re-audit
+  to measure the lift (baseline post-Phase-1 was ~67; target ~80+).
