@@ -4,7 +4,7 @@ description: Use when designing or restructuring a landing page, marketing page,
 status: active
 metadata:
   portable: true
-  category: 04-web-and-ui-design
+  category: 14-conversion-and-web-page-patterns
   compatible_with:
     - claude-code
     - codex

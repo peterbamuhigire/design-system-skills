@@ -4,7 +4,7 @@ description: Use when structuring how a product's content and screens are organi
 status: active
 metadata:
   portable: true
-  category: 04-web-and-ui-design
+  category: 14-conversion-and-web-page-patterns
   compatible_with:
     - claude-code
     - codex

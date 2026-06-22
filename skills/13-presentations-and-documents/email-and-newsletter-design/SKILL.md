@@ -4,7 +4,7 @@ description: Use when designing or building an HTML email or newsletter that mus
 status: active
 metadata:
   portable: true
-  category: 04-web-and-ui-design
+  category: 13-presentations-and-documents
   compatible_with:
     - claude-code
     - codex

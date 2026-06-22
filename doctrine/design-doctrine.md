@@ -91,7 +91,8 @@ AI nod as endorsement. See `references/ai-slop-banned-fonts.md` §Evidence basis
 | `skills/10-content-design-and-ux-writing/` | Microcopy, voice/tone, error/empty/onboarding copy. |
 | `skills/11-imagery-illustration-and-art-direction/` | Photography, illustration, iconography, 3D, AI-image direction. |
 | `skills/12-data-viz-and-dashboards/` | Charts, dashboards, KPI exhibits, data products. |
-| `skills/13-presentations-and-documents/` | Decks **+** real DOCX/PDF/XLSX/editorial formatting. |
+| `skills/13-presentations-and-documents/` | Decks, DOCX/PDF/XLSX, editorial, **email/newsletter**, design storytelling/case-studies. |
+| `skills/14-conversion-and-web-page-patterns/` | Landing/conversion, IA & navigation, onboarding, trust/social-proof, empty/error/loading states. |
 | `fonts/<category>/` | Premium font files you purchase (gitignored) + a tracked `MANIFEST.md` per design-intent category. |
 | `governance/` | The design quality gate. |
 | `integration/` | The trigger block other engines paste in, plus the migration log. |

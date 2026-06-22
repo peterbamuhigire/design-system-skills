@@ -59,7 +59,8 @@ directly; do not use the `Skill` tool for them.
 | Content design & UX writing | `skills/10-content-design-and-ux-writing/` |
 | Imagery, illustration & art direction | `skills/11-imagery-illustration-and-art-direction/` |
 | Charts, dashboards & data products | `skills/12-data-viz-and-dashboards/` |
-| Presentations & documents (decks, DOCX/PDF/XLSX) | `skills/13-presentations-and-documents/` |
+| Presentations & documents (decks, DOCX/PDF/XLSX, **email**, case-studies) | `skills/13-presentations-and-documents/` |
+| Conversion & web page patterns (landing, nav/IA, onboarding, trust, states) | `skills/14-conversion-and-web-page-patterns/` |
 | Accessibility, QA, ethics, performance (**co-activates with every group**) | `skills/00-cross-cutting-ops-qa-a11y/` |
 
 3. **Follow the doctrine references** in `doctrine/references/` — they are the canonical rules
@@ -125,21 +126,22 @@ design-system-skills/
 │   ├── design-doctrine.md         ← always-load charter
 │   ├── references/                ← banned list, font categories, pairing, type scale, embedding, licensing
 │   └── examples/
-├── skills/                        ← 13 groups + 1 cross-cutting (co-activates)
-│   ├── 00-cross-cutting-ops-qa-a11y/   (2)  ← accessibility, QA, audits — always-on
-│   ├── 01-typography-and-fonts/        (4)
-│   ├── 02-color-brand-and-visual-identity/ (4)
-│   ├── 03-layout-grid-and-composition/ (1)
-│   ├── 04-web-and-ui-design/           (8)
-│   ├── 05-ux-process-research-and-psychology/ (2)
-│   ├── 06-sector-and-domain-ux/        (3)
-│   ├── 07-mobile-ios-android-cross-platform/ (2)
-│   ├── 08-motion-and-interaction/      (1)
-│   ├── 09-design-systems-tokens-and-theming/ (0 — Phase 1)
-│   ├── 10-content-design-and-ux-writing/     (0 — Phase 1)
-│   ├── 11-imagery-illustration-and-art-direction/ (0 — Phase 1)
-│   ├── 12-data-viz-and-dashboards/     (1)
-│   └── 13-presentations-and-documents/ (1: deck-system w/ 8 variant examples; + docs in Phase 1)
+├── skills/                        ← 14 groups + 1 cross-cutting (co-activates) · 81 skills
+│   ├── 00-cross-cutting-ops-qa-a11y/   (11) ← accessibility, QA, audits, ethics — always-on
+│   ├── 01-typography-and-fonts/        (6)
+│   ├── 02-color-brand-and-visual-identity/ (7)
+│   ├── 03-layout-grid-and-composition/ (4)
+│   ├── 04-web-and-ui-design/           (9)  ← UI craft & foundations
+│   ├── 05-ux-process-research-and-psychology/ (7)
+│   ├── 06-sector-and-domain-ux/        (5)
+│   ├── 07-mobile-ios-android-cross-platform/ (5)
+│   ├── 08-motion-and-interaction/      (2)
+│   ├── 09-design-systems-tokens-and-theming/ (4)
+│   ├── 10-content-design-and-ux-writing/     (3)
+│   ├── 11-imagery-illustration-and-art-direction/ (4)
+│   ├── 12-data-viz-and-dashboards/     (3)
+│   ├── 13-presentations-and-documents/ (6: deck-system, docx, pdf, xlsx, email, storytelling)
+│   └── 14-conversion-and-web-page-patterns/ (5: landing, nav/IA, onboarding, trust, states)
 ├── fonts/                         ← 8 fixed category folders, premium drop-ins gitignored + MANIFESTs
 ├── governance/design-quality-gate.md
 └── integration/integration-plan.md   ← the trigger block other engines paste in + migration log

@@ -15,7 +15,7 @@ description: Use when designing the first-run / activation experience of a produ
 status: active
 metadata:
   portable: true
-  category: 04-web-and-ui-design
+  category: 14-conversion-and-web-page-patterns
   compatible_with:
     - claude-code
     - codex
