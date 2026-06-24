@@ -1,0 +1,7 @@
+Alkia — licensing & provenance
+Source: font.download (https://font.download/), listed as FREE FOR COMMERCIAL USE.
+No EULA/OFL file was bundled with the download. Per the source site this family is
+free for personal and commercial use. font.download is an aggregator — for high-stakes
+/ client work, confirm against the original foundry before shipping. Treat as:
+commercial use OK; do not resell/redistribute the font file by itself.
+Repo policy: binaries gitignored; this note + MANIFEST.md tracked.

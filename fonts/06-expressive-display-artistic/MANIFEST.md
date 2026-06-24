@@ -1,18 +1,32 @@
 # MANIFEST - fonts/06-expressive-display-artistic
 
-High-personality display faces for campaign heads, posters, cultural brands, event identities,
-portfolio covers, and hero moments. Use sparingly and pair with a quiet body face. Binaries are
-gitignored; drop files in per device.
+High-personality display faces for campaigns, posters, event identities, cultural brands, portfolio covers, and hero moments. Use sparingly and pair with a quiet body face. Binaries are gitignored; each family ships a license note.
 
-| Family | Role | Voice | Best for | Avoid for | Pair with | Licence | Embed? | Redistribute file? | Present? |
-|---|---|---|---|---|---|---|---|---|---|
-| Syne | Display | Artistic, geometric, expressive | Posters, creative campaigns, cultural brands | Long body copy, formal documents | Public Sans, Hanken Grotesk | OFL | Yes | Allowed (kept out by policy) | drop-in |
-| Unbounded | Display | Futuristic, assertive, constructed | Tech campaigns, bold hero sections, events | Dense UI, reports | Public Sans, IBM Plex Sans | OFL | Yes | Allowed (kept out by policy) | drop-in |
-| Bodoni Moda | Display | Fashion, high-contrast, dramatic | Luxury, beauty, culture, editorial covers | Small UI text, data-heavy documents | Source Serif 4, Public Sans | OFL | Yes | Allowed (kept out by policy) | drop-in |
-| Eczar | Display | Lively, literary, distinctive | Cultural/editorial headings, education campaigns | Minimal SaaS dashboards | Alegreya Sans, Public Sans | OFL | Yes | Allowed (kept out by policy) | drop-in |
-| Fraunces | Display | Warm, idiosyncratic, crafted | Artistic report covers, food/craft brands, campaign headlines | Dense admin UI | Hanken Grotesk, Source Serif 4 | OFL | Yes | Allowed (kept out by policy) | drop-in |
+**Count:** 20 families (target 12-20). **Default voice:** High-personality, artistic. **Best for:** Posters, campaigns, hero moments, cultural brands. **Avoid for:** Body copy, dense UI, small sizes, tables. **Pair with:** a quiet body face from 08.
 
-**Use rule:** display only unless the specific family is proven readable for body text at the
-target size. If the brief says stylish, artistic, expressive, campaign, cultural, poster, or
-hero moment, scan this folder before falling back to product grotesques.
+| Family | Folder | Role | Licence | Embed? | Redistribute file? | Present? |
+|---|---|---|---|---|---|---|
+| Belagak | `belagak` | Display | Free for commercial | Docs + web OK * | No (no resell) | yes (local, 2f) |
+| BroadwayD | `broadway` | Display | Summitsoft Commercial-Use | Docs OK / web NO | No | yes (local, 9f) |
+| Capo Sfogliato | `capo-sfogliato` | Display | OFL 1.1 | Docs + web OK | Allowed (kept out by policy) | yes (local, 2f) |
+| CompactaOnlShaDReg | `compacta` | Display | Summitsoft Commercial-Use | Docs OK / web NO | No | yes (local, 1f) |
+| FrankfurterChrD | `frankfurter` | Display | Summitsoft Commercial-Use | Docs OK / web NO | No | yes (local, 3f) |
+| Genesys | `genesys` | Display | OFL 1.1 | Docs + web OK | Allowed (kept out by policy) | yes (local, 1f) |
+| Golden Goose Uppercase | `golden-goose` | Display | Free for commercial | Docs + web OK * | No (no resell) | yes (local, 1f) |
+| Greengoth | `greengoth` | Display | CC0 / Public Domain | Docs + web OK | Allowed | yes (local, 2f) |
+| Sinar | `hd-sinar` | Display | OFL 1.1 | Docs + web OK | Allowed (kept out by policy) | yes (local, 19f) |
+| Horovod | `horovod` | Display | Free for commercial | Docs + web OK * | No (no resell) | yes (local, 2f) |
+| Lapsus Pro | `lapsus-pro` | Display | OFL 1.1 | Docs + web OK | Allowed (kept out by policy) | yes (local, 1f) |
+| LatinComD | `latin-wide` | Display | Summitsoft Commercial-Use | Docs OK / web NO | No | yes (local, 2f) |
+| Life Savers | `life-savers-family` | Display | Free (see folder note) | Docs + web OK * | No (no resell) | yes (local, 3f) |
+| MetropolitainesD | `metropolitaines` | Display | Summitsoft Commercial-Use | Docs OK / web NO | No | yes (local, 4f) |
+| Rum Raisin | `rum-raisin` | Display | Free (see folder note) | Docs + web OK * | No (no resell) | yes (local, 1f) |
+| SouthGhetto | `southgetto` | Display | Free for commercial | Docs + web OK * | No (no resell) | yes (local, 1f) |
+| StopD | `stop` | Display | Summitsoft Commercial-Use | Docs OK / web NO | No | yes (local, 3f) |
+| Tenada | `tenada` | Display | OFL 1.1 | Docs + web OK | Allowed (kept out by policy) | yes (local, 1f) |
+| ThorowgoodDReg | `thorowgood` | Display | Summitsoft Commercial-Use | Docs OK / web NO | No | yes (local, 2f) |
+| ThunderbirdDReg | `thunderbird` | Display | Summitsoft Commercial-Use | Docs OK / web NO | No | yes (local, 2f) |
 
+**Baseline fallbacks (OFL, always available):** Syne, Unbounded, Bodoni Moda, Eczar, Fraunces.
+
+**Legend / licence policy:** `Docs + web OK` = OFL/CC0/CC-BY/MIT-class, safe to embed and self-host as webfonts. `Docs OK / web NO` = Summitsoft (documents & rasterised design only, not live @font-face or app-bundle embedding). `Docs OK / web ?` = 1001Fonts FFC (web tier unconfirmed). `*` = free-commercial per the source site (e.g. font.download / fontspace); the source is not always authoritative - confirm with the foundry for high-stakes / client work. `No` redistribute = the font file may not be re-shared on its own; binaries are kept out of git regardless. Per-family terms live in each folder's `LICENSE.txt`.

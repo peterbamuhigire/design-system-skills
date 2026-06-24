@@ -1,0 +1,8 @@
+Windsor — Summitsoft Creative Fonts (purchased bundle)
+Origin: D:\Creative Fonts Collection 2025$(echo "W/WINDSOR" | sed 's#/#\#g')
+Licence: Summitsoft Commercial-Use (2-seat). Authoritative copy:
+fonts/SUMMITSOFT-COMMERCIAL-LICENSE.pdf
+GRANTED: personal+commercial use, web banners, embedding in DOCUMENTS (PDF/DOCX/PPTX).
+NOT GRANTED: live webfont (@font-face) self-hosting or app-bundle embedding; modifying;
+renting/lending/redistributing the font file. Credit Summitsoft where credits show.
+Repo policy: binaries gitignored; this note + MANIFEST.md tracked.

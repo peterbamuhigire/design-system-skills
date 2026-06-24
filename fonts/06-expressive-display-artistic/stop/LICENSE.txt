@@ -1,0 +1,27 @@
+Stop — licensing & provenance
+================================================================
+Source        : Summitsoft Creative Fonts Collection (purchased bundle)
+Origin path   : D:\Creative Fonts Collection 2025$src
+Licence       : Summitsoft "Commercial-Use License" (2-seat).
+                Authoritative copy: fonts/SUMMITSOFT-COMMERCIAL-LICENSE.pdf
+
+GRANTED (per the EULA):
+  - Personal AND commercial use, incl. advertisements & web banners (cl.1).
+  - Install on up to 2 computers owned by the purchaser (cl.1).
+  - Embed in an electronic DOCUMENT (PDF/DOCX/PPTX) for printing/service
+    bureau use (cl.3). Documents are fully covered.
+
+NOT GRANTED:
+  - Modifying / derivative works for redistribution (cl.2).
+  - Renting, leasing, sublicensing, lending or otherwise DISTRIBUTING the
+    font file (cl.4). => Live webfont (@font-face) self-hosting and bundling
+    the binary inside a shipped app are NOT covered. Use OFL faces for those.
+  - Reselling or representing the fonts as sellable to a third party.
+
+OBLIGATION:
+  - Credit Summitsoft as trademark/copyright owner and list the font name
+    wherever design/production credits are shown (cl.5).
+
+REPO POLICY:
+  - Font binaries are gitignored (never committed) — consistent with the
+    no-redistribute term. This note + the category MANIFEST.md are tracked.

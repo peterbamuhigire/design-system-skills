@@ -1,17 +1,27 @@
 # MANIFEST - fonts/07-script-cursive-handwritten
 
-Script, cursive, calligraphic, and handwritten accent faces. These are for signatures, short
-accent words, invitations, boutique/event/beauty marks, and human-made touches. Never use them
-for body text or dense UI. Binaries are gitignored; drop files in per device.
+Short accents that intentionally feel signed, annotated, celebratory, boutique, or handmade: signatures, invitation accents, beauty/event marks, and occasional expressive words. Binaries are gitignored; each family ships a license note.
 
-| Family | Role | Voice | Best for | Avoid for | Pair with | Licence | Embed? | Redistribute file? | Present? |
-|---|---|---|---|---|---|---|---|---|---|
-| Caveat | Accent | Casual handwritten | Friendly notes, annotation-style callouts | Formal reports, body text | Public Sans, Atkinson Hyperlegible | OFL | Yes | Allowed (kept out by policy) | drop-in |
-| Kalam | Accent | Informal handwritten | Education, workshop materials, human annotations | Legal/finance documents, body text | Public Sans, Alegreya Sans | OFL | Yes | Allowed (kept out by policy) | drop-in |
-| Dancing Script | Accent | Friendly cursive | Invitations, celebratory accents, boutique sections | Corporate dashboards, body text | Hanken Grotesk, Source Serif 4 | OFL | Yes | Allowed (kept out by policy) | drop-in |
-| Great Vibes | Accent | Elegant formal script | Signatures, luxury/event title accents | Paragraphs, forms, UI labels | Cormorant Garamond, Public Sans | OFL | Yes | Allowed (kept out by policy) | drop-in |
-| Sacramento | Accent | Light retro script | Beauty, boutique, lifestyle accents | Technical or institutional artifacts | Public Sans, Bodoni Moda | OFL | Yes | Allowed (kept out by policy) | drop-in |
+**Count:** 15 families (target 12-20). **Default voice:** Signed, handmade, expressive. **Best for:** Short accents, signatures, invitations, callouts. **Avoid for:** Body, forms, UI, tables, long text. **Pair with:** a very readable body face.
 
-**Use rule:** script/cursive fonts are accent-only. Cap at a few words, pair with a readable
-body face, and never use them to solve a body or UI typography problem.
+| Family | Folder | Role | Licence | Embed? | Redistribute file? | Present? |
+|---|---|---|---|---|---|---|
+| ChocD | `choc` | Script/accent | Summitsoft Commercial-Use | Docs OK / web NO | No | yes (local, 2f) |
+| CoronetI | `coronet` | Script/accent | Summitsoft Commercial-Use | Docs OK / web NO | No | yes (local, 1f) |
+| Dacomment | `dacomment` | Script/accent | Free for commercial | Docs + web OK * | No (no resell) | yes (local, 2f) |
+| dearJoe four | `dearjoe4` | Script/accent | Summitsoft Commercial-Use | Docs OK / web NO | No | yes (local, 1f) |
+| DiskusDMed | `diskus` | Script/accent | Summitsoft Commercial-Use | Docs OK / web NO | No | yes (local, 2f) |
+| Flamenco | `flamenco` | Script/accent | OFL 1.1 | Docs + web OK | Allowed (kept out by policy) | yes (local, 2f) |
+| Gargouillette | `gargouillette` | Script/accent | Free for commercial | Docs + web OK * | No (no resell) | yes (local, 1f) |
+| Italianno | `italianno` | Script/accent | OFL 1.1 | Docs + web OK | Allowed (kept out by policy) | yes (local, 1f) |
+| KabarettD | `kabarett` | Script/accent | Summitsoft Commercial-Use | Docs OK / web NO | No | yes (local, 1f) |
+| KunstlerschreibschDMed | `kunstlerschreib` | Script/accent | Summitsoft Commercial-Use | Docs OK / web NO | No | yes (local, 4f) |
+| Meditation | `meditation` | Script/accent | Free (see folder note) | Docs + web OK * | No (no resell) | yes (local, 1f) |
+| MistralD | `mistral` | Script/accent | Summitsoft Commercial-Use | Docs OK / web NO | No | yes (local, 3f) |
+| ParkAveD | `park-avenue` | Script/accent | Summitsoft Commercial-Use | Docs OK / web NO | No | yes (local, 1f) |
+| PassionsConflictROB | `passions-conflict` | Script/accent | Summitsoft Commercial-Use | Docs OK / web NO | No | yes (local, 1f) |
+| Walking Straight | `walking-straight` | Script/accent | Summitsoft Commercial-Use | Docs OK / web NO | No | yes (local, 4f) |
 
+**Baseline fallbacks (OFL, always available):** Caveat, Kalam, Dancing Script, Great Vibes, Sacramento.
+
+**Legend / licence policy:** `Docs + web OK` = OFL/CC0/CC-BY/MIT-class, safe to embed and self-host as webfonts. `Docs OK / web NO` = Summitsoft (documents & rasterised design only, not live @font-face or app-bundle embedding). `Docs OK / web ?` = 1001Fonts FFC (web tier unconfirmed). `*` = free-commercial per the source site (e.g. font.download / fontspace); the source is not always authoritative - confirm with the foundry for high-stakes / client work. `No` redistribute = the font file may not be re-shared on its own; binaries are kept out of git regardless. Per-family terms live in each folder's `LICENSE.txt`.

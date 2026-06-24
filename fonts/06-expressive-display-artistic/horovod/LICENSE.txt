@@ -1,0 +1,54 @@
+Font License Agreement for Horovod font
+
+Font Name: Horovod
+Author: Natalia Mavromati (Nata Georgiadi)
+Contact Information:
+E-mail: treeolivetree7@gmail.com
+Телефон: +79944389228
+Telegram: @natageorgiadi
+Behance: https://www.behance.net/natageorgiadi
+
+1. Copyright Notice
+The Horovod font is an original work protected by copyright law. All exclusive rights to the font are held solely by the author, Natalia Mavromati (Nata Georgiadi).
+
+2. License Grant
+
+2.1 Personal and Commercial Use
+You are granted permission to:
+- use the font for personal and non-commercial purposes;
+- use the font in commercial projects (including web design, print, applications, and products), provided that proper credit is given to the author.
+
+2.2 Modification
+You are allowed to modify, adapt, or create derivative works based on this font, as long as attribution to the original author is retained — Natalia Mavromati (Nata Georgiadi).
+
+2.3 Distribution
+You may distribute the original or modified versions of this font only if:
+- this license agreement is included without changes;
+- the author is properly credited;
+- the font is not sold or monetized as a standalone product.
+
+3. Prohibited Uses
+You are strictly prohibited from:
+- selling, reselling, or otherwise commercially profiting from the standalone font or its modifications;
+- using the font to promote hate speech, discrimination, extremism, or any unlawful content;
+- incorporating the font into products or materials that violate the laws of the Russian Federation, the European Union, or the United States of America.
+
+4. Attribution Requirement
+Attribution to the original author is required for any commercial use or modification.
+Recommended credit format:
+"Horovod font by Nata Georgiadi (Natalia Mavromati)"
+
+5. Disclaimer of Warranty
+The font is provided “as is,” without warranty of any kind. The author shall not be liable for any damages arising from the use or inability to use the font.
+
+6. Jurisdiction
+This license is governed primarily by the laws of the Russian Federation and the European Union.
+
+For use or disputes arising within the United States, this license is intended to be interpreted in accordance with applicable U.S. copyright law and international copyright treaties (e.g., Berne Convention), to the extent permitted.
+
+Any legal disputes shall be resolved under the applicable laws of these jurisdictions.
+
+7. Distribution Format
+This license agreement must accompany any distribution of the font:
+- as embedded metadata (where supported),
+- and as a separate file named LICENSE.txt.

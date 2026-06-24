@@ -1,18 +1,24 @@
 # MANIFEST - fonts/01-formal-institutional
 
-Serious, credible type for documents and interfaces that must feel institutional: proposals,
-SRS/BRD, business plans, legal/finance/government reports, board packs, statutory material.
-Prefer calm authority over fashion. Binaries are gitignored; drop files in per device.
+Sober, credible, long-form serifs (plus a few engineered official faces) for legal, finance, government, audit-ready reporting, SRS/BRD documents, business plans, policy papers, board packs, procurement responses, statutory exhibits, and official correspondence. Binaries are gitignored; each family ships a license note.
 
-| Family | Role | Voice | Best for | Avoid for | Pair with | Licence | Embed? | Redistribute file? | Present? |
-|---|---|---|---|---|---|---|---|---|---|
-| Source Serif 4 | Display or body | Formal, bookish, durable | Long reports, business plans, policy/statutory docs | Loud marketing heroes | Public Sans, IBM Plex Sans, Hanken Grotesk | OFL | Yes | Allowed (kept out by policy) | drop-in |
-| Spectral | Display or body | Serious, literary, institutional | Proposals, whitepapers, public-sector documents | Dense UI, dashboards | Public Sans, Source Sans 3 body-only | OFL | Yes | Allowed (kept out by policy) | drop-in |
-| Crimson Pro | Display or body | Classical, scholarly, formal | Board reports, academic/technical papers, formal proposals | Youthful product pages | Public Sans, Hanken Grotesk | OFL | Yes | Allowed (kept out by policy) | drop-in |
-| IBM Plex Serif | Display accent or body | Engineered, official, precise | Technical reports, governance packs, standards docs | Luxury/editorial drama | IBM Plex Sans, IBM Plex Mono | OFL | Yes | Allowed (kept out by policy) | drop-in |
-| Libre Baskerville | Display or body | Traditional, conservative, readable | Legal-adjacent docs, executive summaries, print-style reports | Modern SaaS/product branding | Public Sans, Hanken Grotesk | OFL | Yes | Allowed (kept out by policy) | drop-in |
+**Count:** 12 families (target 12-20). **Default voice:** Formal, authoritative, restrained. **Best for:** Reports, policy, statutory, official correspondence. **Avoid for:** Youthful SaaS, playful campaigns. **Pair with:** a quiet sans from 08-body-ui-workhorses.
 
-**Baseline guarantee:** listed OFL families are available via Google Fonts or public upstreams.
-Use this category when the brief says formal, official, credible, institutional, legal,
-financial, governmental, board-level, or statutory.
+| Family | Folder | Role | Licence | Embed? | Redistribute file? | Present? |
+|---|---|---|---|---|---|---|
+| Arapey | `arapey` | Body/display serif | OFL 1.1 | Docs + web OK | Allowed (kept out by policy) | yes (local, 2f) |
+| Arodora Pro | `arodora-pro` | Body/display serif | Free for commercial | Docs + web OK * | No (no resell) | yes (local, 2f) |
+| Aurelis ADF No2 Std | `aurelis` | Body/display serif | GPL + font-exception | Docs + web OK | Allowed (GPL) | yes (local, 7f) |
+| Beau | `beau` | Body/display serif | OFL 1.1 | Docs + web OK | Allowed (kept out by policy) | yes (local, 1f) |
+| Buenard | `buenard` | Body/display serif | OFL 1.1 | Docs + web OK | Allowed (kept out by policy) | yes (local, 2f) |
+| Crimson Pro | `crimson-pro` | Body/display serif | OFL 1.1 | Docs + web OK | Allowed (kept out by policy) | yes (local, 2f) |
+| Fjord | `fjord` | Body/display serif | OFL 1.1 | Docs + web OK | Allowed (kept out by policy) | yes (local, 1f) |
+| LIGHTWEIGHT SERIF | `lightweight-serif` | Body/display serif | Free for commercial | Docs + web OK * | No (no resell) | yes (local, 1f) |
+| Pelagiad | `pelagiad` | Body/display serif | OFL 1.1 | Docs + web OK | Allowed (kept out by policy) | yes (local, 1f) |
+| Podkova | `podkova` | Body/display serif | OFL 1.1 | Docs + web OK | Allowed (kept out by policy) | yes (local, 7f) |
+| Spectral | `spectral` | Body/display serif | OFL 1.1 | Docs + web OK | Allowed (kept out by policy) | yes (local, 14f) |
+| Trykker | `trykker` | Body/display serif | OFL 1.1 | Docs + web OK | Allowed (kept out by policy) | yes (local, 1f) |
 
+**Baseline fallbacks (OFL, always available):** Source Serif 4, Spectral, Crimson Pro, IBM Plex Serif, Libre Baskerville.
+
+**Legend / licence policy:** `Docs + web OK` = OFL/CC0/CC-BY/MIT-class, safe to embed and self-host as webfonts. `Docs OK / web NO` = Summitsoft (documents & rasterised design only, not live @font-face or app-bundle embedding). `Docs OK / web ?` = 1001Fonts FFC (web tier unconfirmed). `*` = free-commercial per the source site (e.g. font.download / fontspace); the source is not always authoritative - confirm with the foundry for high-stakes / client work. `No` redistribute = the font file may not be re-shared on its own; binaries are kept out of git regardless. Per-family terms live in each folder's `LICENSE.txt`.

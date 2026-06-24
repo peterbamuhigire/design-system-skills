@@ -1,18 +1,30 @@
 # MANIFEST - fonts/02-editorial-literary
 
-Authored, magazine-like, literary, and premium editorial type. Use when the artifact should feel
-considered and written by humans, with more personality than a purely formal institutional
-document. Binaries are gitignored; drop files in per device.
+Authored, literary, magazine-like serifs and editorial display for whitepapers, essays, thought-leadership reports, cultural reports, publication covers, and narrative proposals. Binaries are gitignored; each family ships a license note.
 
-| Family | Role | Voice | Best for | Avoid for | Pair with | Licence | Embed? | Redistribute file? | Present? |
-|---|---|---|---|---|---|---|---|---|---|
-| Fraunces | Display | Warm, editorial, distinctive | Report covers, proposal openers, thought-leadership headlines | Dense body copy, admin UI | Source Serif 4, Public Sans, Hanken Grotesk | OFL | Yes | Allowed (kept out by policy) | drop-in |
-| Newsreader | Display or body | Literary, readable, contemporary | Whitepapers, essays, premium reports | Dashboards, small UI labels | Public Sans, Source Sans 3 body-only | OFL | Yes | Allowed (kept out by policy) | drop-in |
-| Cormorant Garamond | Display | Elegant, refined, high-contrast | Covers, title pages, cultural/editorial work | Long small-size body, data-heavy screens | Source Serif 4, Public Sans | OFL | Yes | Allowed (kept out by policy) | drop-in |
-| Alegreya | Display or body | Humanist, literary, textured | Long-form editorial, education, narrative reports | Minimal SaaS UI | Public Sans, Hanken Grotesk | OFL | Yes | Allowed (kept out by policy) | drop-in |
-| Libre Caslon Text | Body or display | Historical, editorial, bookish | Essays, long documents, editorial proposals | Product dashboards | Public Sans, Hanken Grotesk | OFL | Yes | Allowed (kept out by policy) | drop-in |
+**Count:** 18 families (target 12-20). **Default voice:** Crafted, literary, art-directed. **Best for:** Whitepapers, essays, covers, narrative proposals. **Avoid for:** Dashboards, dense admin UI, code-heavy docs. **Pair with:** a readable serif or quiet sans body face.
 
-**Baseline guarantee:** listed OFL families are available via Google Fonts or public upstreams.
-Use this category when the brief says editorial, literary, premium report, essay, magazine,
-authored, cultural, or thought leadership.
+| Family | Folder | Role | Licence | Embed? | Redistribute file? | Present? |
+|---|---|---|---|---|---|---|
+| Andada ht_2015 | `andada` | Editorial display/text serif | OFL 1.1 | Docs + web OK | Allowed (kept out by policy) | yes (local, 8f) |
+| ARROSE | `arrose` | Editorial display/text serif | OFL 1.1 | Docs + web OK | Allowed (kept out by policy) | yes (local, 2f) |
+| BernhardFasD | `bernhard` | Editorial display/text serif | Summitsoft Commercial-Use | Docs OK / web NO | No | yes (local, 1f) |
+| BordeauxDReg | `bordeaux` | Editorial display/text serif | Summitsoft Commercial-Use | Docs OK / web NO | No | yes (local, 3f) |
+| Broadsheet LDO | `broadsheet-ldo` | Editorial display/text serif | Freeware (free-commercial) | Docs + web OK * | No | yes (local, 4f) |
+| Cardiff | `cardiff` | Editorial display/text serif | CC0 / Public Domain | Docs + web OK | Allowed | yes (local, 4f) |
+| Coconat | `coconat` | Editorial display/text serif | OFL 1.1 | Docs + web OK | Allowed (kept out by policy) | yes (local, 3f) |
+| Cormorant Garamond | `cormorant-garamond` | Editorial display/text serif | OFL 1.1 | Docs + web OK | Allowed (kept out by policy) | yes (local, 10f) |
+| Fraunces | `fraunces` | Editorial display/text serif | OFL 1.1 | Docs + web OK | Allowed (kept out by policy) | yes (local, 2f) |
+| Hattori Hanzo | `hattori-hanzo` | Editorial display/text serif | Free (see folder note) | Docs + web OK * | No (no resell) | yes (local, 2f) |
+| Negara Serif | `negara-serif` | Editorial display/text serif | Freeware (free-commercial) | Docs + web OK * | No | yes (local, 1f) |
+| Newsreader | `newsreader` | Editorial display/text serif | OFL 1.1 | Docs + web OK | Allowed (kept out by policy) | yes (local, 2f) |
+| NicolasCocTBla | `nicolas-cochin` | Editorial display/text serif | Summitsoft Commercial-Use | Docs OK / web NO | No | yes (local, 4f) |
+| Requiner | `requiner` | Editorial display/text serif | Free for commercial | Docs + web OK * | No (no resell) | yes (local, 1f) |
+| RozinaV06 | `rozina` | Editorial display/text serif | Free (see folder note) | Docs + web OK * | No (no resell) | yes (local, 2f) |
+| Theano Didot | `theano-didot` | Editorial display/text serif | OFL 1.1 | Docs + web OK | Allowed (kept out by policy) | yes (local, 3f) |
+| VendomeT | `vendome` | Editorial display/text serif | Summitsoft Commercial-Use | Docs OK / web NO | No | yes (local, 7f) |
+| WindsorD | `windsor` | Editorial display/text serif | Summitsoft Commercial-Use | Docs OK / web NO | No | yes (local, 6f) |
 
+**Baseline fallbacks (OFL, always available):** Fraunces, Newsreader, Cormorant Garamond, Alegreya, Libre Caslon Text.
+
+**Legend / licence policy:** `Docs + web OK` = OFL/CC0/CC-BY/MIT-class, safe to embed and self-host as webfonts. `Docs OK / web NO` = Summitsoft (documents & rasterised design only, not live @font-face or app-bundle embedding). `Docs OK / web ?` = 1001Fonts FFC (web tier unconfirmed). `*` = free-commercial per the source site (e.g. font.download / fontspace); the source is not always authoritative - confirm with the foundry for high-stakes / client work. `No` redistribute = the font file may not be re-shared on its own; binaries are kept out of git regardless. Per-family terms live in each folder's `LICENSE.txt`.
