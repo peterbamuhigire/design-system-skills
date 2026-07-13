@@ -1,13 +1,12 @@
 ---
 name: design-storytelling-and-case-studies
-description: Use when structuring the NARRATIVE of a design deck, pitch, portfolio piece, or written case study — choosing and applying a named story structure (Freytag, Three-Act, Pixar, Kishōtenketsu, Contrast beginning-to-end, Peak-End) to tell the story of real, authored work. Covers the problem→stakes→authored-decision→before/after→proof→CTA arc, user-as-protagonist / product-as-bit-player framing, and evidence-anchored (not fictional) beats. For case studies of shipped work, design write-ups, and the narrative spine beneath a deck. NOT for deck visual craft (use deck-system) and NEVER as a substitute for the working demo.
-status: active
+description: Use when structuring the evidence-backed narrative of a design deck, pitch, portfolio piece, or case study around problem, stakes, decisions, before/after, proof, and action. Use deck-system for slide craft and never substitute narrative for a working demonstration.
 metadata:
   portable: true
   category: 13-presentations-and-documents
   compatible_with:
-    - claude-code
-    - codex
+  - claude-code
+  - codex
 ---
 
 # Design Storytelling & Case Studies
@@ -42,6 +41,11 @@ metadata:
   demo first (`creative-selection-and-taste.md`). Do not use this skill to dress up the unbuilt.
 
 ## Required Inputs
+| Input | Source | Required? | Evidence |
+|---|---|---|---|
+| Real problem, users, constraints, decisions, and outcome | Project evidence | yes | Source artefacts and chronology |
+| Audience and desired action | Sponsor or publisher | yes | Narrative brief |
+| Permission and confidentiality boundaries | Project owner | yes | Approved disclosure scope |
 - The **real work** being told: a shipped artifact / working demo / outcome you can point to.
 - The **evidence** available at each beat: the original problem, the decision you made and *why*,
   the measurable before/after delta, proof (metrics, screens, quotes, the live thing).
@@ -80,6 +84,21 @@ metadata:
    craft; if it is a written case study, format per the docx/pdf skills. The *structure* is done
    here; the *visual telling* is theirs.
 
+## Decision Rules
+| Condition | Story choice | Wrong-choice failure |
+|---|---|---|
+| Audience must approve a decision | Problem–stakes–options–recommendation | A portfolio arc delays the decision |
+| Shipped work has measurable change | Before–decision–after–proof | Process theatre displaces outcomes |
+| Evidence is incomplete | State limits and use a conditional ending | Invented certainty damages credibility |
+
+## Capability Contract
+Read and search are required for project evidence and permissions. Editing is allowed for an authorised narrative deliverable. Publication, client identification, or confidential disclosure requires separate authority.
+
+## Degraded Mode
+
+If required evidence or tooling is unavailable, use the scoped fallback below and mark the result unverified.
+Without outcome evidence, produce a process case study labelled accordingly. Stop before publishing claims, quotes, or metrics that cannot be sourced; recover through anonymisation, omission, or a named evidence request.
+
 ## Anti-Patterns
 - **Narrative as decoration over slop** — wrapping a templated, unbuilt, or convergent artifact in
   a Hero's-Journey arc. The cardinal sin this skill is fenced against. Story never launders slop.
@@ -97,6 +116,11 @@ metadata:
   audience actually came for.
 
 ## Outputs
+| Artefact | Consumer | Evidence and acceptance condition |
+|---|---|---|
+| Evidence-backed story spine | Deck or case-study author | Every beat maps to a source or is labelled interpretation |
+| Scene/slide/section outline | Production skill | Stakes, decisions, proof, and action progress coherently |
+| Disclosure and evidence register | Reviewer and project owner | Permissions, anonymisation, sources, and gaps are explicit |
 - A **narrative spec** for a case study or deck: the named structure chosen (with the reason), the
   protagonist cast, the before→after contrast stated, the beats mapped onto the structure, and
   **the concrete evidence anchoring each beat** — ready to hand to `deck-system` (deck) or the

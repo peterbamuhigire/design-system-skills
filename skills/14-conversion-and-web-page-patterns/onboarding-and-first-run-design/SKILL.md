@@ -1,24 +1,12 @@
 ---
 name: onboarding-and-first-run-design
-description: Use when designing the first-run / activation experience of a product — what a new
-  user sees and does between their first open and their first real moment of value. Covers
-  value-first sequencing (delay sign-up, let people try before they commit), progressive
-  disclosure of features, the empty state AS onboarding, activation flows and setup checklists,
-  coachmarks/tooltips/product-tours (used sparingly), permission-priming, and time-to-value /
-  time-to-first-value optimisation. Triggers on "onboarding", "first run", "first-run experience",
-  "activation", "getting started", "welcome flow", "product tour", "walkthrough", "coachmark",
-  "tooltip tour", "setup checklist", "getting-started checklist", "aha moment", "time to value",
-  "TTV", "TTFV", "new-user experience", "NUX", "empty state onboarding", or "sign-up wall".
-  Forbids the Forced Sign-Up wall before any value, forced/unskippable tours, and feature-tour
-  theatre that delays the first real action. Pairs with empty-error-and-loading-states (the
-  first-run empty state) and landing-page-and-conversion-design (what happens after the CTA click).
-status: active
+description: Use when designing first-run, activation, setup checklists, progressive disclosure, permission priming, coachmarks, or time-to-value paths from first open to real value. Use empty-error-and-loading-states for isolated state behaviour and ux-writing-and-microcopy for the words.
 metadata:
   portable: true
   category: 14-conversion-and-web-page-patterns
   compatible_with:
-    - claude-code
-    - codex
+  - claude-code
+  - codex
 ---
 
 # Onboarding & First-Run Design — Time-to-Value, Not Time-to-Tour
@@ -65,6 +53,11 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
   to show that form at all).
 
 ## Required Inputs
+| Input | Source | Required? | Evidence |
+|---|---|---|---|
+| User segment, first job, activation event, and time-to-value | Product research and analytics | yes | Behavioural definition and baseline |
+| Required setup, permissions, dependencies, and skip rules | Product and engineering | yes | Step/dependency map |
+| Lifecycle content and accessibility constraints | Content and accessibility owners | yes | Message and interaction contract |
 
 - **The activation moment ("aha").** The single, concrete action that first delivers real value to a
   new user (e.g. "sent their first invoice," "saw their data on a chart," "invited a teammate"). If
@@ -79,8 +72,6 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
   sample/demo data so the value is visible immediately? (Design around real content, never lorem.)
 - **The brand's illustration/voice/type system** (or a note that none exists) so the welcome,
   empty states, and checklist are *authored*, not a stock "Welcome aboard!" with a rocket emoji.
-
-## Workflow
 
 ### 1. Name the activation moment and measure the current path to it
 Write down the one "aha" action and the current **time-to-first-value** (steps and seconds from open
@@ -161,6 +152,13 @@ screen-by-screen sequence from open to aha, the empty-state-as-onboarding treatm
 (if any), where (and whether) any coachmark fires, and the WCAG/escape constraints. Run the checklist
 below first.
 
+## Workflow
+1. Define the first meaningful value event and measure the current time-to-value.
+2. Map only the prerequisites required for that event; defer optional education.
+3. Design skip, resume, recovery, and permission-priming paths with accessible focus order.
+4. Prototype with representative new users and inspect abandonment by step.
+5. Release only with event definitions, state coverage, and owner-approved measurement.
+
 ## First-Run Checklist (run before building)
 
 1. **Activation moment named** in one sentence; current time-to-first-value measured.
@@ -182,6 +180,21 @@ below first.
 
 If any item can't be satisfied (no clear aha, a stakeholder insists on a sign-up wall or a forced
 tour), **say so and ask** — never quietly ship the install-killing or convergent version.
+
+## Decision Rules
+| Condition | Onboarding choice | Wrong-choice failure |
+|---|---|---|
+| User can experience value safely before account creation | Delay signup until after value | Sign-up wall blocks learning and trust |
+| Setup is optional or contextual | Teach in context, not a mandatory tour | Feature theatre delays real work |
+| Permission is needed later | Prime immediately before the feature needs it | Early prompts are denied without context |
+
+## Capability Contract
+Read and search are required for research, analytics, activation, permissions, and implementation. Editing is allowed only for requested design/build work. Experiment launch, tracking mutation, messaging, and publication require separate authority.
+
+## Degraded Mode
+
+If required evidence or tooling is unavailable, use the scoped fallback below and mark the result unverified.
+Without an evidenced activation event, deliver a hypothesis map and research plan, not a definitive flow. Stop release when skip, recovery, permission, accessibility, or measurement paths are missing.
 
 ## Anti-Patterns
 
@@ -208,6 +221,11 @@ tour), **say so and ask** — never quietly ship the install-killing or converge
   identical coachmarks; the convergent default the Mission targets (`doctrine/design-doctrine.md`).
 
 ## Outputs
+| Artefact | Consumer | Evidence and acceptance condition |
+|---|---|---|
+| Activation definition and first-run journey | Product and growth teams | Each step advances the first meaningful outcome |
+| Setup, checklist, permission, skip, and recovery specification | Designers and engineers | Dependencies and optional paths are explicit |
+| Measurement and usability evidence | Analytics, research, and release owner | TTFV, completion, abandonment, accessibility, and recovery are tested |
 
 - A **stated activation moment** and a measured/target **time-to-first-value**.
 - A **value-first sign-up decision**: what is anonymous/guest, what gates, and the chosen auth method.

@@ -1,13 +1,12 @@
 ---
 name: brand-visual-identity
-description: Use when building, defining, or refreshing a DISTINCTIVE visual identity system for a product, company, or deliverable — logo usage and lockups, the colour+type tie-in, spacing/photography/illustration style, the "voice of the visuals", and a mini style-guide. Routes here whenever the ask is "make this brand recognisable / ownable / not look like every other startup", or when assembling the visual rules that govern a website, app, deck, or document suite. Defers typeface choice to font-selection-and-pairing and palette construction to color-system-and-palette, and ties them into one cohesive, unmistakably-authored identity.
-status: active
+description: Use when defining or refreshing a distinctive visual identity across logo usage, colour, type, spacing, imagery, and applications. Unlike logo-and-wordmark-design, this owns the whole identity system; detailed palette and type construction route to specialist skills.
 metadata:
   portable: true
   category: 02-color-brand-and-visual-identity
   compatible_with:
-    - claude-code
-    - codex
+  - claude-code
+  - codex
 ---
 
 # Brand Visual Identity
@@ -37,6 +36,12 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
   consistency gate.
 
 ## Required Inputs
+
+| Input | Supplied by | Required? | Why |
+|---|---|---|---|
+| Brand strategy, audience, promise, and differentiation | Brand owner/strategy | yes | Anchors every choice |
+| Existing assets, equity, and constraints | Client or source system | conditional | Controls preservation |
+| Required channels and applications | Delivery brief | yes | Proves the system works |
 
 - Who the brand is *for* and *against*: audience, the category it competes in, and the two or
   three competitors it must NOT be confused with. Distinctiveness is relative; you cannot be
@@ -129,6 +134,36 @@ If any item fails, fix before sign-off — do not ship a half-applied system.
 - Five hedged "safe" choices instead of one strong, defensible one (doctrine §0).
 
 ## Outputs
+
+| Output | Consumer | Evidence / acceptance |
+|---|---|---|
+| Identity-system specification | Designers and partners | Mark, colour, type, layout, imagery, and voice rules |
+| Application exemplars | Product, marketing, and document teams | At least three representative contexts |
+| Consistency-gate record | Brand owner | Recognition, coherence, accessibility, and misuse checks |
+
+## Quality Standards
+
+- Tie every visual rule to the brand promise, audience, or constraint.
+- Prove coherence across real applications rather than a mood board alone.
+- Stop sign-off when assets are unlicensed, accessibility fails, or differentiation is absent.
+
+## Decision Rules
+
+| Condition | Decision | Wrong-choice failure |
+|---|---|---|
+| Existing asset has recognised equity and remains fit | Evolve with documented continuity | Refresh destroys recognition |
+| Several directions are plausible | Select against differentiation and application proof | Trend or vote decides taste |
+| High-stakes sector needs legitimacy | Apply trust-architecture evidence | Expression weakens credibility |
+| Rule cannot reproduce across channels | Simplify or govern by context | Identity fragments in delivery |
+
+## Capability Contract
+
+Read and cross-channel inspection are required. Editing and publication require identity authority. Do not alter protected marks, approve licences, or claim market differentiation without evidence.
+
+## Degraded Mode
+
+If required evidence or tooling is unavailable, use the scoped fallback below and mark the result unverified.
+Without strategy or application contexts, produce a discovery gap list and provisional direction only. Without renderable assets, mark validation conditional.
 
 A **mini style-guide** (one to three pages) containing:
 - Brand essence + adjective set + the not-to-be-confused-with list.

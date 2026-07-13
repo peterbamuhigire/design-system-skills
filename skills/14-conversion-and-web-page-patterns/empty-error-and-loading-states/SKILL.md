@@ -1,21 +1,12 @@
 ---
 name: empty-error-and-loading-states
-description: Use when designing the non-happy-path UI states of any component, screen, or
-  flow — empty/zero states, first-run and onboarding-empty, error and failure states
-  (inline, page-level, partial/component, offline, permission-denied, 404/500), loading
-  states (skeletons, spinners, progressive/streaming, optimistic UI), and success/confirmation
-  states. Triggers on "empty state", "error state", "loading skeleton", "spinner", "zero
-  data", "blank slate", "no results", "failed to load", "retry", "offline UX", "perceived
-  performance", or any review/QA/audit of a component's full state coverage. This skill owns
-  the VISUAL and INTERACTION design of states; pairs with the content skill
-  `error-empty-and-system-messaging`, which owns the words.
-status: active
+description: Use when designing visual and interaction behaviour for empty, error, loading, offline, permission, partial-failure, success, or confirmation states. Use error-empty-and-system-messaging for the words and onboarding-and-first-run-design for the wider activation journey.
 metadata:
   portable: true
   category: 14-conversion-and-web-page-patterns
   compatible_with:
-    - claude-code
-    - codex
+  - claude-code
+  - codex
 ---
 
 # Empty, Error & Loading States — States as First-Class Design
@@ -49,6 +40,12 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
   use `00-cross-cutting-ops-qa-a11y/performance-as-ux-and-core-web-vitals`.
 
 ## Required Inputs
+
+| Artefact or context | Source | Required? | Why |
+|---|---|---|---|
+| Component, flow, and data-source behaviour | Product and engineering | yes | Determines reachable states and recovery paths |
+| State inventory, latency, and failure modes | Runtime evidence or specification | yes | Selects loading, retry, and stale-data treatment |
+| Voice, illustration, type, and semantic colour systems | Brand and design system | conditional | Keeps non-happy paths consistent and accessible |
 
 - The **component or flow** being designed and its data source (sync? async? paginated?
   streamed? user-generated?). Async + user-generated = the richest state set.
@@ -108,6 +105,22 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - **Accessible in every state**, not just the filled one (contrast, focus, target size, live
   regions, reduced motion).
 
+## Decision Rules
+| Condition | State pattern | Wrong-choice failure |
+|---|---|---|
+| First use with a meaningful action | Instructional empty state with primary action | Decorative blank slate delays activation |
+| Local component fails | Preserve the rest and show local recovery | Page-level error destroys usable context |
+| Wait is brief and determinate | Inline progress or skeleton matching geometry | Spinner flash or layout shift feels slower |
+| Action is reversible and server-backed | Optimistic state plus rollback | False success silently diverges from truth |
+
+## Capability Contract
+Read and search are required for full state, latency, service, and content contracts. Editing is allowed only for requested implementation. Rendering and execution are required for focus, announcement, timing, rollback, and layout-stability claims.
+
+## Degraded Mode
+
+If required evidence or tooling is unavailable, use the scoped fallback below and mark the result unverified.
+Without failure and latency semantics, deliver a state matrix and stop before prescribing optimistic success. Without renders, mark assistive, responsive, motion, and layout-shift evidence unverified.
+
 ## Anti-Patterns
 
 - **Designing only the happy/filled state** and treating the rest as engineering's problem.
@@ -126,6 +139,11 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - **Ignoring `prefers-reduced-motion`** on shimmer/pulse/success animations.
 
 ## Outputs
+| Artefact | Consumer | Evidence and acceptance condition |
+|---|---|---|
+| Complete state matrix | Design, engineering, and QA | Every reachable empty, loading, error, success, offline, and permission state is covered |
+| Visual, interaction, focus, announcement, and recovery specification | Component implementers | State transitions preserve context and provide honest recovery |
+| Render and behaviour evidence | Release owner | Timing, rollback, accessibility, responsive, and partial-failure checks pass |
 
 - A complete **per-component state matrix** (every reachable state enumerated and designed).
 - **Designed specs** for each state: empty (per sub-type), loading (skeleton geometry + tier

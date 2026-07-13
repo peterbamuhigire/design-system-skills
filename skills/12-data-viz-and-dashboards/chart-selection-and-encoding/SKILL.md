@@ -1,13 +1,12 @@
 ---
 name: chart-selection-and-encoding
-description: Use when deciding WHICH chart type to use for a dataset and message — comparison, trend, distribution, part-to-whole, relationship, or geographic — and whether the visual encoding, axis/scale, and colour are honest and accessible. Routes data-type × message to a concrete chart (e.g. pie→sorted bar, dual-axis→split panels), then checks zero-baseline honesty, the dual-axis ban, annotation, and non-colour accessibility cues. Pairs with `data-visualization` (which owns the Cleveland–McGill perceptual ranking and single-chart decluttering craft); this skill owns the chart-TYPE selection decision that comes first.
-status: active
+description: Use when choosing a chart type and honest encoding for comparison, trend, distribution, relationship, part-to-whole, or geography. Use data-visualization for decluttering and storytelling after selection, and dashboard-and-data-product-design for multi-chart products.
 metadata:
   portable: true
   category: 12-data-viz-and-dashboards
   compatible_with:
-    - claude-code
-    - codex
+  - claude-code
+  - codex
 ---
 
 # Chart Selection & Encoding — Pick the Right Chart, Then Encode It Honestly
@@ -46,6 +45,11 @@ chart you picked.
   skill; or a **colour-ramp construction** question → use `color-system-and-palette`.
 
 ## Required Inputs
+| Input | Source | Required? | Evidence |
+|---|---|---|---|
+| Decision question, audience, and intended comparison | Analyst or decision owner | yes | One-sentence message |
+| Data types, grain, units, ranges, and uncertainty | Validated dataset | yes | Field profile and quality notes |
+| Medium and accessibility constraints | Delivery owner | yes | Size, interaction, colour, and assistive requirements |
 
 - The **data type(s)** of the variables to show: quantitative (amount), ordinal (ranked),
   categorical/nominal (identity), temporal (time), or geographic.
@@ -97,6 +101,22 @@ chart you picked.
      backing data table (1.1.1); interactive points keyboard-reachable, name/role/value (4.1.2),
      targets ≥ **24×24px** (2.5.8); honour `prefers-reduced-motion`; usable at 320px / 200% zoom.
 
+## Decision Rules
+| Condition | Encoding choice | Wrong-choice failure |
+|---|---|---|
+| Compare magnitudes | Common-baseline position or sorted bars | Area/angle impairs comparison |
+| Show change over ordered time | Line or aligned small multiples | Categories imply false continuity |
+| Show distribution | Histogram, box, violin, or dot plot | Averages hide spread and outliers |
+| Scales or units differ | Separate aligned panels | Dual axes manufacture correlation |
+
+## Capability Contract
+Read and search are required for data definitions and delivery constraints. Editing is allowed only when chart production is requested. Execution is required for calculations and rendering claims; publication requires separate authority.
+
+## Degraded Mode
+
+If required evidence or tooling is unavailable, use the scoped fallback below and mark the result unverified.
+Without validated data, produce a conditional chart recommendation using a labelled schema. Stop before final encoding when units, grain, or decision question are unknown; mark all unrendered accessibility and scale checks unverified.
+
 ## Anti-Patterns
 
 - **Picking the chart from the data shape alone**, ignoring the message — the same table is a
@@ -115,6 +135,11 @@ chart you picked.
 - **Descriptive title with no annotation** — "Revenue by Region" instead of the takeaway.
 
 ## Outputs
+| Artefact | Consumer | Evidence and acceptance condition |
+|---|---|---|
+| Chart-selection decision record | Analyst and designer | Message, data relationship, chosen chart, and rejected alternatives are explicit |
+| Encoding and scale specification | Chart implementer | Channels, axes, units, uncertainty, and accessibility cues are defined |
+| Integrity check record | Reviewer | Baselines, denominators, missingness, colour, and labels pass or are flagged |
 
 - A **chart-selection decision**: the message-type, the chosen chart type with the data-type ×
   message reason, the named encoding channel for the key comparison, the axis/scale honesty

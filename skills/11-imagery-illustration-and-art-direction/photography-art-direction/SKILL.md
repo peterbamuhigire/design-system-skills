@@ -1,13 +1,12 @@
 ---
 name: photography-art-direction
-description: Use when choosing, treating, cropping, or sourcing PHOTOGRAPHY for a brand, website, deck, document, or app — and when directing an AI image generator to produce brand imagery. Routes here for art-direction briefs, photo style/mood boards, image treatment systems (grade/grain/duotone), crop and focal-point rules, anti-stock-photo direction (killing the smiling-handshake/headset-agent/diverse-team-laughing-at-salad look), licensing/sourcing decisions, and the prompt+constraint handoff that keeps generated images off the AI-slop tells. This is the single biggest "looks human-made" lever in the engine.
-status: active
+description: Use when sourcing, selecting, shooting, treating, cropping, or licensing photography and producing a photographic art-direction brief. Use ai-image-generation-art-direction for model generation controls and illustration-style-and-systems for drawn imagery.
 metadata:
   portable: true
   category: 11-imagery-illustration-and-art-direction
   compatible_with:
-    - claude-code
-    - codex
+  - claude-code
+  - codex
 ---
 
 # Photography & Art Direction
@@ -42,6 +41,11 @@ doctrine Mission demands ("the moat is looking human-made", `doctrine/design-doc
   direction*; that one owns the product-wide reject gate.
 
 ## Required Inputs
+| Input | Source | Required? | Evidence |
+|---|---|---|---|
+| Brand intent, audience, and message | Brand and product owners | yes | Approved brief and reference rationale |
+| Surface, crops, ratios, and safe zones | Layout and channel specifications | yes | Placement inventory |
+| Sourcing budget, rights, consent, and truth status | Producer and legal owner | yes | Licence, releases, and provenance record |
 - The **brand**: voice/positioning, audience, the one feeling the imagery must carry.
 - Where the image lives: hero / inline / background / report cover / OG card / avatar — and its
   rendered size and aspect ratios.
@@ -80,6 +84,24 @@ doctrine Mission demands ("the moat is looking human-made", `doctrine/design-doc
    empty alt), sufficient contrast for any overlaid text (`doctrine/references/wcag-2.2-criteria.md`),
    and a weight inside the LCP budget (`doctrine/references/web-performance-budgets-2026.md`).
 
+## Decision Rules
+
+| Condition | Sourcing/direction choice | Wrong-choice failure |
+|---|---|---|
+| Real people, places, outcomes, or testimony are claimed | Commission or license authentic photography | Fabricated imagery becomes deceptive evidence |
+| Distinctive access and sufficient budget exist | Direct an original shoot | Generic stock weakens brand ownership |
+| Stock is necessary | Select for narrative truth, then apply the treatment system | Raw stock looks interchangeable and inconsistent |
+| Rights or consent cannot be verified | Reject the image | Shipping creates legal and ethical exposure |
+
+## Capability Contract
+
+Read and search are required for the brief, surfaces, assets, licences, and consent. Editing is allowed only for authorised treatment or selection. Network sourcing, purchase, publication, and representation of real people require separate authority and recorded provenance.
+
+## Degraded Mode
+
+If required evidence or tooling is unavailable, use the scoped fallback below and mark the result unverified.
+Without image assets, deliver the brief, shot list, crop map, and treatment recipe. Without licence, release, or provenance evidence, use placeholders and block embedding or publication.
+
 ## Anti-Patterns
 - **The slop cliché set:** smiling handshake, headset agent, team-laughing-at-salad,
   isolated-on-white with no story, generic-gradient-city, fake-candid-with-perfect-teeth.
@@ -96,6 +118,11 @@ doctrine Mission demands ("the moat is looking human-made", `doctrine/design-doc
   product-tells.
 
 ## Outputs
+| Artefact | Consumer | Evidence and acceptance condition |
+|---|---|---|
+| Photographic art-direction brief and shot/source list | Photographer, producer, or selector | Intent, subject, light, framing, and exclusions are concrete |
+| Treatment, crop, and responsive focal-point specification | Designers and engineers | Representative ratios retain subject and text-safe areas |
+| Rights, consent, provenance, and reject record | Legal and release owner | Every shipped asset has verified usage rights and rationale |
 - A one-page **art-direction brief / board**: intent sentence, sourcing tier, treatment spec
   (grade/grain/crop/ratios), reference frames, do/don't, and (if AI) the prompt + negative list
   + accept/reject gate.

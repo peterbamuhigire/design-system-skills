@@ -1,13 +1,12 @@
 ---
 name: editorial-and-long-form-layout
-description: Use when laying out a long-form READING experience on the web — an article, essay, report, documentation page, case study, whitepaper, or any text-dominant page where the job is sustained reading, not scanning a UI. Sets the measure (45–75ch), a baseline reading rhythm, and the long-form furniture — drop caps, pull-quotes, footnotes/sidenotes, figure+caption handling, multi-column where it earns its place, and scannability landmarks (subheads, lead, TOC). Triggers on "lay out this article/essay/report for the web", "reading layout", "measure / line length", "pull-quote / sidenote / footnote", "drop cap", "make this long page readable". This is the web/long-form reading partner to the DOCX/PDF document skills in group 13.
-status: active
+description: Use when an article, essay, documentation page, case study, or web report needs sustained-reading measure, rhythm, landmarks, notes, figures, or captions. Do not use for editable DOCX or print-PDF production; route those artefacts to the document skills.
 metadata:
   portable: true
   category: 03-layout-grid-and-composition
   compatible_with:
-    - claude-code
-    - codex
+  - claude-code
+  - codex
 ---
 
 # Editorial And Long-Form Layout
@@ -45,6 +44,13 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
   here.
 
 ## Required Inputs
+
+| Input | Source | Required evidence |
+|---|---|---|
+| Full text or representative section and length class | Editor, author, or approved content source | Word count, heading structure, and stable sample content |
+| Type pairing and spacing basis | Typography skill or design system | Named families, licence status, body size, leading, and spacing unit |
+| Figures, tables, notes, quotes, and asides | Content inventory | Count, captions, source/alt text, and editorial priority |
+| Reading contexts | Delivery brief or analytics-supported targets | Target widths, devices, and print-style requirement |
 
 - The full text (or a representative section) and its **length class** — short read (<800 words),
   feature (800–3000), or long report (3000+). Length sets whether you need a TOC, sidenotes, and
@@ -163,7 +169,36 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
 10. Contrast and reading order pass `doctrine/references/wcag-2.2-criteria.md`; performance budget
     respected per `doctrine/references/web-performance-budgets-2026.md`.
 
-## Anti-Patterns (the long-form slop tells)
+## Decision Rules
+
+| Condition | Choose | Wrong-choice failure |
+|---|---|---|
+| Continuous prose is the primary task | A 45–75ch single reading column | Viewport-wide lines cause lost line returns and fatigue |
+| Notes are short and wide screens have stable margin space | Sidenotes with numbered footnote fallback | Sidenotes on narrow screens collide with prose or disappear |
+| Figures need detail beyond the prose measure | Controlled breakout with caption anchored to the figure | Forcing detail into the measure makes labels illegible |
+| Text is short or sequential | Omit the TOC and preserve uninterrupted flow | A ceremonial TOC adds navigation noise without benefit |
+| Parallel snippets are independently readable | Multi-column only above a proven width | Newspaper columns for continuous web prose create disruptive jumps |
+
+## Capability Contract
+
+- Must read stable content and inspect rendered output at representative widths; may measure line length, overflow, landmarks, and contrast.
+- Review defaults to read-only. Edit content or templates only under an explicit implementation/remediation request and preserve editorial meaning.
+- Network access is optional for cited source verification; never fabricate captions, citations, alt text, or reading-test evidence.
+
+## Degraded Mode
+
+- If stable text is unavailable, use labelled representative copy and return a provisional layout; stop before final pagination or landmark claims.
+- If rendering is unavailable, provide CSS/token specifications and a verification matrix marked pending.
+- If a font licence or source is unresolved, use the named OFL baseline and record the substitution.
+- Recover from overflow, orphaned furniture, or poor measure by fixing the smallest governing rule, rerendering all target widths, and recording the retest.
+
+## Quality Standards
+
+- Running prose stays within the chosen measure and maintains a coherent baseline rhythm at every target width.
+- Headings, links, notes, figures, tables, and code remain navigable, legible, and semantically associated.
+- Release evidence includes rendered widths, measured line length, overflow/accessibility findings, and unresolved editorial risks.
+
+## Anti-Patterns
 
 - **The full-bleed paragraph:** running text at 100–120ch because the body width was never
   constrained — the single biggest readability failure.
@@ -202,6 +237,12 @@ When an AI tool proposes a viewport-wide body or three-column article, treat it 
 mean to *avoid*, not as endorsement.
 
 ## Outputs
+
+| Output | Consumer | Evidence and acceptance |
+|---|---|---|
+| Editorial layout specification | Designer and frontend implementer | Measure, rhythm, hierarchy, furniture, and breakpoint rules are explicit |
+| Annotated representative renders | Editor and accessibility reviewer | Desktop and narrow layouts show readable prose with no hidden overflow |
+| Reading-layout gate | Approver | Checklist records tested content, widths, failures, corrections, and residual risks |
 
 - A stated reading-layout decision: the **measure** (in ch/rem), the **body size + leading +
   baseline unit**, the paragraph-separation convention, the drop-cap decision, the pull-quote

@@ -1,13 +1,12 @@
 ---
 name: premium-ui-ux-design
-description: Premium UI/UX design intelligence for web, SaaS, dashboard, Android, and iOS products. Use when a product must look expensive, feel pleasant, communicate clearly, and justify high customer trust or high-ticket pricing.
-status: active
+description: Use when a web, SaaS, dashboard, iOS, or Android product must communicate premium value through trust, clarity, restraint, sensory polish, and service detail. Do not use as a substitute for the platform, accessibility, or design-system implementation skill.
 metadata:
   portable: true
   category: 04-web-and-ui-design
   compatible_with:
-    - claude-code
-    - codex
+  - claude-code
+  - codex
 ---
 
 # Premium UI/UX Design
@@ -29,6 +28,12 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 
 ## Required Inputs
 
+| Input | Source | Evidence |
+|---|---|---|
+| Buyer/user expectations and value proposition | Research and commercial brief | Trust drivers, anxieties, and premium proof points |
+| Critical journeys and failure costs | Product/service owner | Priority flows, service promises, and recovery expectations |
+| Brand assets and platform constraints | Brand/system owners | Approved type, imagery, tokens, licences, and native rules |
+
 - Product goal, target users, business model, brand position, platform, and primary user tasks.
 - Existing screenshots, designs, or product screens when available.
 - Domain constraints: data density, performance budget, accessibility needs, device classes, and revenue-critical flows.
@@ -44,6 +49,24 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 7. Run the premium UI/UX gate before calling the work done.
 8. Produce evidence: screenshots, score, defects, and concrete improvements.
 9. When operating in SRS mode, translate the above into testable non-functional requirements linked to SRS IDs and verification methods (see `premium-ui-ux-specification-rules.md`).
+
+## Decision Rules
+
+| Condition | Choice | Wrong-choice failure |
+|---|---|---|
+| Trust depends on high-stakes decisions | Prioritise clarity, proof, and calm recovery | Decorative luxury cues feel evasive or manipulative |
+| Product is used frequently by experts | Reward speed, density control, and continuity | Showy transitions and excess whitespace slow real work |
+| Brand lacks distinctive assets | Invest in authored type/layout/content detail | Generic gradients and glass imitate premium without substance |
+
+## Capability Contract
+
+- Must inspect real journeys, brand assets, and platform behaviour; critique is read-only unless remediation is requested.
+- May create in-scope concepts, but may not purchase assets, change pricing/service claims, or publish without authority and evidence.
+
+## Degraded Mode
+
+- If premium promise or target buyer is unclear, stop aesthetic direction and return the strategic questions.
+- Without rendering/user evidence, provide a provisional experience standard and mark sensory/trust claims unverified. Recover weak results by correcting the highest-cost trust or task defect before adding polish.
 
 ## Quality Standards
 
@@ -64,6 +87,11 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - Design systems that define colors and fonts but omit component states, usage rules, ownership, and quality gates.
 
 ## Outputs
+
+| Output | Consumer | Evidence and acceptance |
+|---|---|---|
+| Premium experience direction | Product, brand, and design | Trust, clarity, craft, service, and platform choices are explicit |
+| Premium quality review | Commercial owner and QA | Critical journeys show proof, accessibility, responsiveness, and graceful recovery |
 
 - Premium UI/UX brief, visual direction, token plan, component/pattern guidance, dashboard guidance, mobile guidance, or review findings.
 - A premium UI/UX score with specific remediation items when reviewing finished work.

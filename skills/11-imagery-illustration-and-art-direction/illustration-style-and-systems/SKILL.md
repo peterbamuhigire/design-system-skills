@@ -1,13 +1,12 @@
 ---
 name: illustration-style-and-systems
-description: Use when defining, building, or auditing an ILLUSTRATION language for a brand, product, site, deck, or document — the deliberate visual system that makes spot art and scenes look like one skilled hand drew them. Routes here for "illustration style guide", "spot illustration system", "scene/hero illustration", "character construction rules", "illustration style attributes" (line/shape/colour/perspective), "ownable visual motif", "make our illustrations consistent across a set", "when to illustrate instead of photograph", "fix our generic blob-people illustrations", and the explicit kill of corporate-memphis / blob-people / flat-default slop. Treats illustration as a constructed system (like type or icons), not clip-art commissioned one frame at a time. Sibling to photography-art-direction (when to photograph) and iconography-system-design (the reductive grid-bound cousin).
-status: active
+description: Use when defining, building, or auditing an illustration language, spot-art set, scene system, character rules, or ownable visual motif. Use photography-art-direction for photographs and iconography-system-design for reductive grid-bound glyphs.
 metadata:
   portable: true
   category: 11-imagery-illustration-and-art-direction
   compatible_with:
-    - claude-code
-    - codex
+  - claude-code
+  - codex
 ---
 
 # Illustration Style & Systems
@@ -58,6 +57,11 @@ viewer could recognise as *yours* with the logo cropped off.
   `visual-product-slop-audit` (group 00/04). This skill owns *illustration direction*.
 
 ## Required Inputs
+| Input | Source | Required? | Evidence |
+|---|---|---|---|
+| Brand intent, audience, and concept inventory | Brand and product owners | yes | Approved creative brief |
+| Surfaces, sizes, themes, and accessibility needs | Product and channel specifications | yes | Placement matrix |
+| Production, rights, and maintenance constraints | Art director and legal owner | yes | Ownership and delivery contract |
 - The **brand**: voice/positioning, audience, and the one idea the illustration must carry
   (warmth? rigour? play? craft?). Illustration is interpretive — state the read before drawing.
 - The **surfaces and sizes**: spot (16–80px / small tile), inline (200–480px), hero/scene
@@ -134,6 +138,24 @@ viewer could recognise as *yours* with the logo cropped off.
    (huge weight win, infinite scale, themeable via `currentColor`); rasterise only complex
    textured scenes, inside the LCP budget (`doctrine/references/web-performance-budgets-2026.md`).
 
+## Decision Rules
+
+| Condition | Illustration choice | Wrong-choice failure |
+|---|---|---|
+| Concept is abstract or impossible to photograph | Use illustration with an explicit metaphor | Forced photography becomes generic or misleading |
+| Surface is small or peripheral | Use a simplified spot with reduced density | Scene detail collapses and creates noise |
+| Multiple images must feel related | Apply one construction system and ownable motif | Frame-by-frame invention produces style drift |
+| Image implies a real event or person | Label clearly or use authentic photography | Fiction is mistaken for evidence |
+
+## Capability Contract
+
+Read and search are required for brand, surfaces, inventory, and rights. Editing or generation is allowed only when production is requested. Rendering is required for scale, theme, contrast, and export claims; publication and external commissioning require separate authority.
+
+## Degraded Mode
+
+If required evidence or tooling is unavailable, use the scoped fallback below and mark the result unverified.
+Without drawing or rendering capability, deliver the style system, construction rules, motif, inventory, and acceptance rubric. Without rights or provenance, block embedding and provide placeholder specifications.
+
 ## Anti-Patterns
 - **Corporate Memphis / "Alegria" / blob-people** — faceless figures with oversized limbs and
   tiny heads, gangly noodle arms, flat saturated purple/coral, confetti geometric shapes floating
@@ -158,6 +180,11 @@ viewer could recognise as *yours* with the logo cropped off.
   taxonomy's product/interface tells.
 
 ## Outputs
+| Artefact | Consumer | Evidence and acceptance condition |
+|---|---|---|
+| Illustration style and construction system | Illustrators and art directors | Line, shape, colour, perspective, finish, and motif are reproducible |
+| Spot/scene inventory and density ladder | Product designers | Detail scales intentionally across target sizes |
+| Export, accessibility, rights, and consistency evidence | Engineers and release owner | Representative assets pass size, theme, labelling, and provenance checks |
 - A **stated style spec**: the five style attributes (line, shape, colour ramp, perspective,
   finish) named concretely *before* production.
 - The **ownable motif** — the one signature move, documented and applied across the set.

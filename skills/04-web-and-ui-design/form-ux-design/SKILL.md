@@ -1,16 +1,12 @@
 ---
 name: form-ux-design
-description: Cross-platform form UX/UI patterns for web (Bootstrap 5/Tabler), Android
-  (Jetpack Compose), and iOS (SwiftUI). Covers field anatomy, validation, error states,
-  multi-step wizards, accessibility, touch-friendly inputs, and submission workflows.
-  Use when designing, building, reviewing, or refactoring any form on any platform.
-status: active
+description: Use when a web, iOS, or Android form needs field anatomy, validation, errors, multi-step flow, accessibility, or submission recovery. Do not use for general page layout or backend-only validation; pair with platform implementation and contract skills.
 metadata:
   portable: true
   category: 04-web-and-ui-design
   compatible_with:
-    - claude-code
-    - codex
+  - claude-code
+  - codex
 ---
 
 ## Platform Notes
@@ -38,6 +34,12 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 
 ## Required Inputs
 
+| Input | Source | Evidence |
+|---|---|---|
+| User goal, fields, and business rules | Product owner and data/API contract | Field schema, dependencies, and server errors |
+| Platform and input contexts | Delivery requirements | Web/mobile, keyboard, touch, autofill, and locale needs |
+| Risk and completion constraints | Security/compliance owner | Sensitive fields, consent, timeout, and retention rules |
+
 - Platform(s) in scope: web (Bootstrap 5/Tabler + PHP), Android (Compose + Material 3), iOS (SwiftUI) — components and code differ per platform.
 - The actual fields being collected and which are genuinely required, so unnecessary questions can be cut.
 - Deliverable type: a build-ready form spec (see `examples/form-spec-worked.md`), new component code, a UX audit, or a refactor of an existing form.
@@ -45,28 +47,55 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 
 ## Workflow
 
-- Read this `SKILL.md` first, then load only the referenced deep-dive files that are necessary for the task.
-- Apply the ordered guidance, checklists, and decision rules in this skill instead of cherry-picking isolated snippets.
-- Produce the deliverable with assumptions, risks, and follow-up work made explicit when they matter.
+1. Confirm the user goal, minimum necessary fields, sensitive data, and server-authoritative rules.
+2. Group and order fields by user meaning; select native input types, labels, hints, and autofill metadata.
+3. Specify field and form states, validation timing, error association, focus movement, and correction copy.
+4. Design submission, duplicate-prevention, timeout, offline, server-error, and safe retry behaviour.
+5. Render and test representative content with keyboard, touch, zoom, screen reader, autofill, and failure paths; record evidence before sign-off.
+
+## Decision Rules
+
+| Condition | Choice | Wrong-choice failure |
+|---|---|---|
+| Field can be validated locally with certainty | Validate on blur or meaningful transition | Per-keystroke errors interrupt entry and punish users |
+| Task is long but naturally grouped | Staged form with progress and saved state | One wall of fields increases abandonment |
+| Server rejects valid-looking input | Preserve entries and map error to field/summary | Clearing the form destroys work and hides recovery |
+
+## Capability Contract
+
+- Must inspect field and API rules and test keyboard/touch/error paths; review is read-only unless remediation is requested.
+- May edit in-scope UI but must not weaken server validation, expose sensitive values, or submit real data without authority.
+
+## Degraded Mode
+
+- If business rules or error contract are missing, stop final validation copy and return the unresolved rule list.
+- Without a runnable form, produce an annotated flow/state matrix marked untested. Recover failures by preserving input, focusing the first error, explaining correction, and retesting resubmission.
 
 ## Quality Standards
 
-- Keep outputs execution-oriented, concise, and aligned with the repository's baseline engineering standards.
-- Preserve compatibility with existing project conventions unless the skill explicitly requires a stronger standard.
-- Prefer deterministic, reviewable steps over vague advice or tool-specific magic.
+The form must be completable by keyboard and assistive technology, explain errors at the point of
+action, preserve entered data after recoverable failures, and specify every asynchronous state.
+
 
 ## Anti-Patterns
 
-- Treating examples as copy-paste truth without checking fit, constraints, or failure modes.
-- Loading every reference file by default instead of using progressive disclosure.
+- Placeholder-only labels. Correction: keep persistent visible labels and use placeholders as examples.
+- Validating every keystroke. Correction: validate at a meaningful pause, blur, or submit based on certainty.
+- Clearing entries after server failure. Correction: preserve safe values and focus the actionable error.
+- Disabled submit with no explanation. Correction: keep requirements visible and identify the unmet condition.
+- Error colour without text, icon, or programmatic association. Correction: provide redundant cues and an error summary.
+- One field per screen regardless of task. Correction: group by user meaning and minimise unnecessary transitions.
 
 ## Outputs
+
+| Output | Consumer | Evidence and acceptance |
+|---|---|---|
+| Form specification | Design and engineering | Field anatomy, rules, copy, states, order, and submission recovery are explicit |
+| Form QA record | Product and accessibility QA | Keyboard, touch, autofill, errors, focus, and representative completion pass |
 
 - A **form UX audit** covering field grouping, validation, error states, submission affordances,
   accessibility, and platform-specific behaviour.
 - A build-ready form spec or implementation guidance when the task is creation or refactoring rather than audit.
-- Clear assumptions, tradeoffs, or unresolved gaps when the task cannot be completed from available context alone.
-- References used, companion skills, or follow-up actions when they materially improve execution.
 
 ## References
 

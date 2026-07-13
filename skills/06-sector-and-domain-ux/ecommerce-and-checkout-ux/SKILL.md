@@ -1,7 +1,7 @@
 ---
 name: ecommerce-and-checkout-ux
-description: Use when designing, building, reviewing, or rescuing a retail/e-commerce buying journey — product-listing pages (PLP), product-detail pages (PDP), the cart/basket, the checkout flow (guest-first, minimal fields), payment and address entry, and the post-purchase trust surface (returns, refunds, order status). Covers conversion-grade retail UX done HONESTLY: guest checkout before account creation, total-cost transparency before the pay button, real stock/scarcity, and a symmetric cancel/return path. Strictly anti-dark-pattern — forbids sneak-into-cart, hidden costs, drip pricing, pre-checked add-ons/insurance, forced account creation, forced continuity/subscription traps, fake scarcity and confirmshaming. Run distinctive-by-design first; use form-ux-design for field anatomy; pair with design-ethics-and-anti-dark-patterns and landing-page-and-conversion-design.
-status: active
+description: >-
+  Use when designing or reviewing an e-commerce journey across PLP, PDP, cart, guest checkout, payment, returns, refunds, and order status with transparent cost and no dark patterns. Use form-ux-design for field anatomy and landing-page-and-conversion-design for campaign pages.
 metadata:
   portable: true
   category: 06-sector-and-domain-ux
@@ -53,6 +53,12 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
 
 ## Required Inputs
 
+| Input | Source | Evidence |
+|---|---|---|
+| Catalogue, price, inventory, delivery, tax, and returns rules | Commerce, finance, and operations owners | Representative products, totals, availability, and policy sources |
+| Shopper segments and priority journeys | Research, analytics, and product | Search/browse intent, devices, locales, and conversion baseline |
+| Payment, identity, fraud, and accessibility constraints | Engineering, risk, and compliance | Supported methods, failure codes, consent, and testing requirements |
+
 - **The catalog reality.** Roughly how many products, how they are categorised, what attributes
   matter for filtering (size, colour, price, brand), and whether variants exist (a shirt in S/M/L ×
   3 colours). You cannot design a PLP filter or a PDP variant picker for a catalog you haven't seen.
@@ -67,6 +73,9 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
   marketing — those are different, and only the first justifies gating).
 
 ## Workflow
+
+Map the buying journey from discovery through post-purchase, then remove friction without weakening
+price transparency, consent, cancellation, returns, or recovery.
 
 ### 0. Run the pre-flight, then commit the store's ONE distinctive idea
 Run `04-web-and-ui-design/distinctive-by-design` first — it gates the build. A storefront is a
@@ -195,6 +204,30 @@ If any item can't be satisfied (a stakeholder insists on a pre-checked add-on, f
 early, "make cancel hard"), **refuse and offer the honest equivalent** — never quietly ship the
 coercive version.
 
+## Decision Rules
+
+| Condition | Choice | Wrong-choice failure |
+|---|---|---|
+| Shopper can buy without a durable account need | Guest checkout first, account after purchase | Forced registration increases abandonment and data collection |
+| Total cost varies by address/method | Show known subtotal early and explain remaining variables | Late fees destroy trust and create dark-pattern risk |
+| Product choice requires comparison | Stable attributes, filters, and comparison support | Decorative cards hide meaningful differences |
+| Payment outcome is uncertain | Idempotent pending state with safe status recovery | Blind retry can duplicate charges or orders |
+
+## Capability Contract
+
+- Must inspect commerce and payment contracts and representative journeys; review is read-only unless implementation is requested.
+- May edit/test in-scope storefront UI, but must not place real orders, change prices/policies, process payment data, or publish without authority.
+
+## Degraded Mode
+
+- If price, fulfilment, returns, or payment-failure rules are missing, stop checkout sign-off and issue a blocker list.
+- Without a runnable store, produce a state/total specification marked unverified. Recover failures by preserving the basket, preventing duplicate submission, exposing order/payment status, and testing the safe next action.
+
+## Quality Standards
+
+- Totals, availability, delivery, consent, and return terms remain truthful and visible before commitment.
+- Release evidence covers search-to-order, guest checkout, payment failure/pending, duplicate prevention, accessibility, and post-purchase recovery.
+
 ## Anti-Patterns
 
 - **Forced account creation before checkout** — the highest-impact abandon driver; guest-first is
@@ -215,6 +248,11 @@ coercive version.
   was — a trust killer and a dead-end (C3).
 
 ## Outputs
+
+| Output | Consumer | Evidence and acceptance |
+|---|---|---|
+| Commerce journey and state specification | Product, design, engineering | PLP/PDP/cart/checkout/payment/post-purchase rules and totals are explicit |
+| Checkout quality gate | Commerce, risk, accessibility QA | Representative devices/methods/states pass without hidden cost or blocked recovery |
 
 - A **stated store/journey goal** and the committed distinctive idea (what + why + human authority),
   written before markup.

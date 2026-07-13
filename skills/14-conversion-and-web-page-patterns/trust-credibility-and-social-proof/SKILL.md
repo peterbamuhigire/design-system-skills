@@ -1,13 +1,12 @@
 ---
 name: trust-credibility-and-social-proof
-description: Use when designing the trust / proof / credibility section of a page in isolation — testimonials and reviews, customer logo strips, ratings and aggregate-usage numbers, security/privacy cues (SOC 2, ISO 27001, encryption, GDPR), trust badges, founder/team credibility, guarantees, certifications, press/awards, and case-study proof. Covers authentic, ATTRIBUTED proof (name + role + company + face), the credibility hierarchy (what to lead with when proof is strong vs thin), the trust-signal catalog, and where each signal earns its placement. Honest persuasion only — forbids fabricated testimonials, borrowed logos, invented "★★★★★ — anonymous," fake review counts, and any fake scarcity/urgency. Pairs with landing-page-and-conversion-design (which composes this section into the whole page) and design-ethics-and-anti-dark-patterns.
-status: active
+description: Use when selecting, verifying, and placing testimonials, reviews, logos, ratings, usage numbers, certifications, guarantees, security cues, awards, team credentials, or case-study proof. Use landing-page-and-conversion-design to compose the whole page and design-ethics-and-anti-dark-patterns for persuasion review.
 metadata:
   portable: true
   category: 14-conversion-and-web-page-patterns
   compatible_with:
-    - claude-code
-    - codex
+  - claude-code
+  - codex
 ---
 
 # Trust, Credibility & Social Proof
@@ -56,6 +55,11 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
   not analytical dashboards.
 
 ## Required Inputs
+| Input | Source | Required? | Evidence |
+|---|---|---|---|
+| Audience anxieties, claims, objections, and decision stage | Research, sales, and support | yes | Prioritised trust questions |
+| Candidate proof and attribution rights | Customers, legal, security, and brand owners | yes | Source, date, scope, and permission |
+| Page context and conversion goal | `landing-page-and-conversion-design` or product owner | yes | Placement brief |
 
 - **The credibility gap.** The specific doubt this section must answer: *"is it real?"*, *"is it for
   someone like me?"*, *"is it safe with my data?"*, *"will it actually deliver?"* Different doubts
@@ -68,8 +72,6 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
   out-converts a famous-but-irrelevant name. You cannot match the proof without knowing the audience.
 - **The privacy/security posture** when relevant — what certifications, encryption, data-residency,
   and compliance facts are *true and current* (not aspirational), so security cues are honest.
-
-## Workflow
 
 ### 0. Name the doubt, then pick the proof type that answers it
 Map the credibility gap (above) to the signal class in `references/trust-signal-catalog.md`. *"Is it
@@ -159,6 +161,13 @@ Produce a proof-section spec (see `examples/credibility-section-spec.md`): the n
 chosen signals in hierarchy order, the real attributed content for each, the placement, the
 accessibility/perf treatment, and the authenticity checklist completed.
 
+## Workflow
+1. Rank the audience's trust questions and objections by decision risk.
+2. Inventory candidate proof with source, scope, date, permission, and expiry.
+3. Match the strongest relevant proof to the claim and point of hesitation.
+4. Remove unverifiable, misleading, outdated, or over-broad signals.
+5. Review placement, accessibility, legal scope, and expiry ownership before publication.
+
 ## Authenticity & Trust Checklist (run before building)
 
 1. **The doubt is named** and each signal chosen answers it (no badge-spray).
@@ -179,6 +188,19 @@ accessibility/perf treatment, and the authenticity checklist completed.
 
 If any item can't be satisfied (proof is thin, a stakeholder wants a borrowed logo or a fake count),
 **say so and ask** — never quietly ship fabricated or anonymous proof.
+
+## Decision Rules
+| Condition | Proof choice | Wrong-choice failure |
+|---|---|---|
+| Verifiable outcome proof exists | Lead with specific result, context, and attribution | Generic praise fails to reduce risk |
+| Certification scope is current and relevant | State exact scope and verification path | Badge implies broader compliance than earned |
+| Proof is thin | Use transparent process, guarantees, or founder credibility | Fabrication creates ethical and legal exposure |
+
+## Capability Contract
+Read and search are required for proof sources, dates, permissions, and page context. Editing is allowed only for authorised composition. Contacting customers, using logos, publishing claims, or asserting certification requires separate authority.
+
+## Degraded Mode
+Without attributable proof, produce a proof-gap register and safe placement plan. Stop publication of testimonials, logos, ratings, counts, awards, or compliance claims until permission, scope, date, and source are verified.
 
 ## Anti-Patterns
 
@@ -203,6 +225,11 @@ If any item can't be satisfied (proof is thin, a stakeholder wants a borrowed lo
   avatar cards. The reflexive proof section; the Mission targets it.
 
 ## Outputs
+| Artefact | Consumer | Evidence and acceptance condition |
+|---|---|---|
+| Trust-question and proof hierarchy | Marketing and product teams | Strongest evidence answers the highest-risk objection |
+| Attributed proof inventory and placement map | Designers and writers | Each signal has source, scope, date, permission, and destination |
+| Verification and expiry record | Legal, security, and release owner | Claims remain current, accurately scoped, and removable on expiry |
 
 - A **named credibility gap** and the **proof signals chosen to close it**, in hierarchy order.
 - A **proof-section spec** (per signal: the real attributed content, placement, type/space treatment,

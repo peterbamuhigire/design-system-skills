@@ -1,13 +1,12 @@
 ---
 name: premium-font-scan
-description: Use before committing to a typeface to scan the engine's fonts/<category>/ folders for premium font files the user has purchased and dropped in, read each category's MANIFEST for role, voice, licence, and embedding permission, and decide whether a premium family should override the named OFL baseline for this artifact. Implements the standard-first, premium-when-present rule.
-status: active
+description: Use when a font category is known and local premium files must be checked before choosing the OFL baseline. Unlike font-selection-and-pairing, this resolves availability and licence evidence; embedding routes to font-embedding-and-licensing.
 metadata:
   portable: true
   category: 01-typography-and-fonts
   compatible_with:
-    - claude-code
-    - codex
+  - claude-code
+  - codex
 ---
 
 # Premium Font Scan
@@ -25,6 +24,12 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
 - No font category has been chosen yet - classify the artifact first.
 
 ## Required Inputs
+
+| Input | Supplied by | Required? | Why |
+|---|---|---|---|
+| Design-intent category | Typeface selector | yes | Limits the scan to the correct role |
+| Format and distribution model | Delivery brief | yes | Determines licence permission |
+| Local font tree and manifests | Repository/device | yes | Establishes actual availability |
 
 - The chosen font category and the artifact's output format and intended use, so the licence
   check is meaningful: embedding, reference, or raw file shipment.
@@ -63,10 +68,41 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
 
 ## Outputs
 
+| Output | Consumer | Evidence / acceptance |
+|---|---|---|
+| Availability inventory | Typeface selector | Files grouped by family and category |
+| Licence disposition | Embedding workflow | Permission and restriction recorded |
+| Resolved font choice | Design owner | Role, pairing, availability, and reason stated |
+
 - The resolved typeface, premium or baseline, with role, voice, pairing, and licence basis
   recorded for the embedding step.
 
 ## Examples
+
+- See `examples/premium-scan-worked.md` for a file, manifest, licence, and fallback decision.
+
+## Quality Standards
+
+- Treat filesystem evidence and the manifest as authoritative for local availability.
+- Record embedding and redistribution permissions separately.
+- Stop selection when licence evidence is absent; recover with the named OFL baseline.
+
+## Decision Rules
+
+| Condition | Decision | Wrong-choice failure |
+|---|---|---|
+| Premium face is present, suitable, and licensed | Prefer it when it improves the artefact | Purchased differentiation is missed |
+| File is absent on this device | Use the OFL baseline | Build depends on an unavailable binary |
+| Embedding allowed but redistribution forbidden | Embed only in the permitted artefact | Raw font is unlawfully shipped |
+| Licence evidence is missing | Stop and use the baseline | Permission is guessed |
+
+## Capability Contract
+
+Read and filesystem search are required. Create a missing taxonomy directory only through the documented idempotent preflight; do not move, delete, commit, or redistribute binaries. Network access is optional for licence verification.
+
+## Degraded Mode
+
+Without local file access, return the category baseline and a pending scan checklist. Without reliable rights evidence, mark the premium option blocked and recover with the OFL baseline.
 
 - `examples/premium-scan-worked.md` - a full worked scan for a startup-product artifact: scan
   `fonts/03-modern-product-grotesque/`, read its MANIFEST, find Satoshi present, apply its

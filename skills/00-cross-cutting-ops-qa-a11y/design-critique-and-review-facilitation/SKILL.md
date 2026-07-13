@@ -1,22 +1,12 @@
 ---
 name: design-critique-and-review-facilitation
-description: Use when you must RUN a human design critique or design-review session (live or async)
-  and want it to be productive, safe, and decisive — framing the ask, choosing a feedback framework
-  (I-like / I-wish / what-if; problem-not-solution; ladder of feedback), separating taste from
-  requirement, naming the single decider, capturing decisions, and protecting psychological safety.
-  Triggers — "run a design critique", "facilitate a design review", "design crit", "feedback
-  session", "review meeting for this design", "how do I give/structure design feedback", "crit
-  protocol", "who decides in the review", "design feedback is unstructured / hurts / goes in
-  circles", "async design review", "capture the decisions from the crit". This is the FACILITATION
-  of the human session; for an expert artifact evaluation use `heuristic-evaluation-and-design-critique`
-  or `design-audit` (those EVALUATE; this one FACILITATES the room).
-status: active
+description: Use when facilitating a live or asynchronous design critique that needs a clear ask, safe feedback, a decider, and recorded outcomes. Unlike design-audit or heuristic evaluation, this runs the human review session rather than producing expert findings.
 metadata:
   portable: true
   category: 00-cross-cutting-ops-qa-a11y
   compatible_with:
-    - claude-code
-    - codex
+  - claude-code
+  - codex
 ---
 
 # Design Critique & Review Facilitation
@@ -54,6 +44,12 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
   (`doctrine/references/creative-selection-and-taste.md`). Return when there is a demo.
 
 ## Required Inputs
+
+| Input | Supplied by | Required? | Why |
+|---|---|---|---|
+| Review artefact and maturity | Maker | yes | Calibrates feedback depth |
+| Decision, constraints, and open questions | Maker and sponsor | yes | Keeps critique on scope |
+| Participants, roles, and decider | Organiser | yes | Establishes authority and safety |
 
 - **A concrete artifact to react to** — a working demo, screens, a prototype, a flow, or a redline.
   Never run a crit on a verbal description or a mock-of-a-mock (creative-selection rule 1: *the
@@ -142,6 +138,12 @@ the thread's summary. Async trades immediacy for a written record and wider time
 
 ## Outputs
 
+| Output | Consumer | Evidence / acceptance |
+|---|---|---|
+| Critique brief and agenda | Participants | Ask, stage, constraints, and protocol visible |
+| Structured feedback register | Maker and decider | Observation, impact, question, and source captured |
+| Decision and action log | Delivery team | Decision, rationale, owner, and due date recorded |
+
 - A **run session** (live or async) that produced **decisions, not just comments**.
 - A **decision log** — each open question resolved as decided / author's-call / needs-a-demo /
   parked, with owner, one-line rationale, and (for taste calls) the decider named.
@@ -151,6 +153,32 @@ the thread's summary. Async trades immediacy for a written record and wider time
   to dogfood before re-deciding.
 
 ## Examples
+
+- Use the worked example in `examples/` as the facilitation and decision-log model.
+
+## Quality Standards
+
+- Critique the work and its objectives, never the maker's competence or identity.
+- Distinguish evidence, requirements, hypotheses, and taste before deciding.
+- Stop the session when scope, decider, psychological safety, or artefact readiness is absent.
+
+## Decision Rules
+
+| Condition | Decision | Wrong-choice failure |
+|---|---|---|
+| Work is early and divergent | Use questions and possibilities | Premature polish feedback narrows exploration |
+| Decision is constrained by a requirement | Cite the requirement and owner | Taste is debated as preference |
+| Feedback conflicts | Decider resolves against stated objective | Loudest voice wins |
+| Maker needs time to process | Collect async and decide later | Defensive real-time reactions replace judgement |
+
+## Capability Contract
+
+Read and facilitation are required. Writing is limited to the authorised brief, feedback, and decision record. Do not alter the reviewed artefact, expose private feedback, or infer consensus without participant evidence.
+
+## Degraded Mode
+
+If required evidence or tooling is unavailable, use the scoped fallback below and mark the result unverified.
+Without synchronous access, run an asynchronous critique with deadlines and the same structured fields. Without a named decider or objective, pause decisions and return the missing-context checklist.
 
 - `examples/critique-session-worked.md` — a full worked critique session of a real artifact (a
   first-time-user onboarding flow demo): the agenda and frame, the author's ask, the feedback

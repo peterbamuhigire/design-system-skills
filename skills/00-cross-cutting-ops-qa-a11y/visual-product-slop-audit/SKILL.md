@@ -1,13 +1,12 @@
 ---
 name: visual-product-slop-audit
-description: Use when auditing imagery, generated visuals, brand/marketing assets, UI screens, or AI-powered product features for AI slop — beyond typography. Detects the visual tells (waxy skin, melted backgrounds, gibberish text, extra fingers, warped logos, uncanny faces) and product/interface tells (AI-hammer feature cramming, ungrounded chatbots, decorative "AI" gradients). Produces findings + a remake/remediation. Pairs with ai-slop-typography-audit (type) and the digital-research engine's anti-ai-slop (writing).
-status: active
+description: Use when auditing imagery, brand assets, UI screens, or AI product features for visual and product slop. Unlike ai-slop-typography-audit, this excludes type; written-copy slop routes to the digital-research engine.
 metadata:
   portable: true
   category: 00-cross-cutting-ops-qa-a11y
   compatible_with:
-    - claude-code
-    - codex
+  - claude-code
+  - codex
 ---
 
 # Visual & Product Slop Audit
@@ -33,6 +32,12 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
   audit.
 
 ## Required Inputs
+
+| Input | Supplied by | Required? | Why |
+|---|---|---|---|
+| Assets, screens, or live feature | Requester | yes | Defines the audit surface |
+| Audience, channel, and stakes | Product or brand brief | yes | Calibrates severity |
+| Current slop taxonomy | Design doctrine | yes | Prevents stale or invented tells |
 
 - The asset(s) or screens (images, mockups, the live UI, or a description of the feature).
 - The context and audience, and whether it is public-facing (raises the bar — corporate slop is
@@ -66,13 +71,46 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
 - "Touching up" a six-fingered hero image instead of remaking it.
 - Keeping an AI feature because it's impressive when a search bar served users better.
 - Treating an AI gradient/badge as design.
+- Declaring any polished generated image slop without naming a concrete tell and evidence.
+- Spot-fixing anatomy, text, or logo corruption instead of remaking the source asset.
+
+## Quality Standards
+
+- Inspect focal details at delivery resolution and evaluate the feature in its actual flow.
+- Separate anomalies, convergence, provenance gaps, and product-risk findings.
+- Block public release for corrupted identity, anatomy, text, or ungrounded consequential output.
 
 ## Outputs
+
+| Output | Consumer | Evidence / acceptance |
+|---|---|---|
+| Severity-rated finding register | Designer and owner | Asset location, tell, evidence, and taxonomy mapping |
+| Remake/remediate disposition | Production team | Named human-craft alternative for every finding |
+| Gate verdict | Pre-launch QA | PASS, CONDITIONAL, or BLOCKED with unresolved risks |
 
 - A findings list (tagged critical/major/minor with the tell it breaks) and a stated,
   human-craft remediation ready to apply.
 
 ## Examples
+
+- See `examples/slop-audit-filled.md` for a complete severity and disposition register.
+
+## Decision Rules
+
+| Condition | Decision | Wrong-choice failure |
+|---|---|---|
+| Identity, anatomy, or embedded text is corrupted | Remake or replace and block ship | Visible anomaly damages trust |
+| Asset is competent but unauthored and generic | Re-art-direct with a specific point of view | Convergent brand work ships |
+| AI feature lacks grounding, verification, or undo | Remove or ground it | Generated output is treated as fact |
+| Evidence is ambiguous | Mark conditional and seek source/provenance | Suspicion is presented as proof |
+
+## Capability Contract
+
+Read and high-resolution visual inspection are required. Review is read-only unless remediation is authorised. Network access is optional for provenance checks; editing or generation must preserve brand and usage rights.
+
+## Degraded Mode
+
+Without original-resolution assets or live-flow access, audit the supplied evidence, mark hidden details unverified, and withhold a pass. Recover by requesting crops, source files, or a recorded walkthrough.
 
 - `examples/slop-audit-filled.md` — a real before/after audit of a Maduuka landing-page hero +
   embedded AI chat panel: findings (tagged critical/major/minor) → remake/remediate dispositions

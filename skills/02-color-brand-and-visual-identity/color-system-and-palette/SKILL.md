@@ -1,13 +1,12 @@
 ---
 name: color-system-and-palette
-description: Use when choosing colours or building a colour system for ANY artifact — a website or landing page, an app/web UI, a dashboard, a DOCX/PPTX/PDF deck or report, or a brand identity. Selects a deliberate, non-slop palette anchored in a real brand or concept, derives tonal ramps and semantic roles, gates every pair on WCAG contrast, and remaps deliberately for dark mode. This is the default entry skill for colour in the design engine.
-status: active
+description: Use when building a cross-format colour system with an authored anchor, perceptual ramps, semantic roles, contrast contracts, and theme mappings. Unlike color-selection, this operationalises a palette; focused contrast audit routes to accessible-color-and-contrast.
 metadata:
   portable: true
   category: 02-color-brand-and-visual-identity
   compatible_with:
-    - claude-code
-    - codex
+  - claude-code
+  - codex
 ---
 
 # Color System And Palette
@@ -31,6 +30,12 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
   then hand the categorical/sequential scales to `12-data-viz-and-dashboards/data-visualization`.
 
 ## Required Inputs
+
+| Input | Supplied by | Required? | Why |
+|---|---|---|---|
+| Brand/concept anchor and mood | Brand owner or brief | yes | Prevents arbitrary generation |
+| Artefact types, themes, and semantic needs | Design brief | yes | Defines role coverage |
+| Existing colours and constraints | Source system or client | conditional | Preserves equity |
 
 - Artifact type and medium (web / UI / DOCX / PPTX / PDF), and whether dark mode is required.
 - A real anchor: the brand, product, place, material, or concept the palette must express
@@ -121,6 +126,36 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
 - A different literal hex sprinkled per component instead of a small set of semantic roles.
 
 ## Outputs
+
+| Output | Consumer | Evidence / acceptance |
+|---|---|---|
+| Perceptual colour ramps | Designers and token engineers | OKLCH stops, gamut checks, and rationale |
+| Semantic role map | Components and documents | Roles map to tested values by theme |
+| Contrast and usage contract | Accessibility and QA | Approved pairs, restrictions, and evidence |
+
+## Quality Standards
+
+- State the palette anchor and contextual reason before generating values.
+- Build ramps perceptually and test real component, document, and data contexts.
+- Stop release when a core pair fails contrast or two states cannot be distinguished.
+
+## Decision Rules
+
+| Condition | Decision | Wrong-choice failure |
+|---|---|---|
+| Strong brand hue exists | Preserve hue and tune lightness/chroma | Recognition is discarded |
+| No defensible anchor exists | Derive one through color-selection | Generic trend palette is invented |
+| Value expresses meaning across surfaces | Assign a semantic token | Raw colour names leak into components |
+| Dark theme is required | Remap roles deliberately | Light palette is mechanically inverted |
+
+## Capability Contract
+
+Read and colour calculation are required. Edit only for authorised token or artefact changes; rendering is preferred. Do not overwrite established brand colours without owner approval.
+
+## Degraded Mode
+
+If required evidence or tooling is unavailable, use the scoped fallback below and mark the result unverified.
+Without colour tooling or rendering, return a provisional role architecture and candidate values, marking gamut and contrast unverified. Recover with approved pairs until tests exist.
 
 - A stated colour decision (anchor + primary hue + reason), the tonal ramp, the semantic role
   map, the 60-30-10 distribution, recorded WCAG results for light and dark, and a clean handoff

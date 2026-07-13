@@ -1,23 +1,12 @@
 ---
 name: component-states-and-interaction-fidelity
-description: Use when specifying the full INTERACTIVE-STATE FIDELITY of a single component — the
-  spec-grade state matrix (default / hover / focus-visible / active-pressed / disabled / loading /
-  selected-checked / error-invalid / read-only) and, critically, the TRANSITIONS between those
-  states (what triggers each move, what the duration/easing is, what happens to focus and the
-  cursor). Owns focus-visible to WCAG 2.4.7 / 2.4.11 / 1.4.11, target size 2.5.8, and the
-  reduced-motion transition path. Triggers on "state matrix", "interactive states", "hover/focus/
-  active states", "focus-visible spec", "focus ring", "disabled state", "selected state",
-  "pressed/active state", "state transitions", "interaction fidelity", "per-component state table",
-  or any review/QA of whether a component's states are all defined. This skill owns the per-component
-  STATE FIDELITY spec; it pairs with `09…/component-library-architecture` (which owns the variant/
-  API model) and `04…/empty-error-and-loading-states` (which owns empty/error/loading content-states).
-status: active
+description: Use when a single interactive control needs complete hover, focus-visible, pressed, selected, read-only, and transition fidelity. Do not use for aggregate data-region lifecycle handling or API architecture; route those concerns to system-state design or component-library architecture.
 metadata:
   portable: true
   category: 04-web-and-ui-design
   compatible_with:
-    - claude-code
-    - codex
+  - claude-code
+  - codex
 ---
 
 # Component States & Interaction Fidelity — the state matrix and the moves between states
@@ -56,6 +45,12 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - You only need **field-level** validation affordances inside a form — `04…/form-ux-design`.
 
 ## Required Inputs
+
+| Input | Source | Evidence |
+|---|---|---|
+| Component purpose, variants, and actions | Product/component owner | Existing component or approved anatomy |
+| Supported inputs and accessibility targets | Platform policy and WCAG contract | Keyboard, pointer, touch, and assistive paths |
+| Tokens and motion rules | Design system | Named colour, focus, duration, and easing tokens |
 - The **component** and which states it can actually *reach* (a link can't be `loading`; a trigger
   Button can't be `selected`). Run `references/state-matrix-method.md` to enumerate before designing.
 - The **anatomy** of the component (its named parts) so each state names *which part* changes — use
@@ -108,6 +103,29 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
    intentional hover — and route it through tokens so it reads as one skilled hand across every
    state and variant (`doctrine/design-doctrine.md` §0).
 
+## Decision Rules
+
+| Condition | Choice | Wrong-choice failure |
+|---|---|---|
+| Action is temporarily unavailable | Disabled only with visible reason or prerequisite | Silent disabled controls strand users |
+| Action is processing | Preserve label/width, show busy state, block duplicate activation | Layout shift or repeat submission corrupts intent |
+| Motion is reduced | Instant or opacity-safe transition with equivalent state cue | Motion dependence causes discomfort and hides state |
+
+## Capability Contract
+
+- Must inspect the component and exercise supported input paths; review is read-only unless remediation is requested.
+- May edit in-scope component styles/tests, but must preserve semantics and may not remove focus or accessibility behaviour for visual convenience.
+
+## Degraded Mode
+
+- If component anatomy or state events are unknown, stop and request the contract.
+- Without interactive rendering, return a provisional state-transition table marked untested. Recover a failed state by restoring semantic control behaviour, then retest keyboard, touch, pointer, and reduced-motion paths.
+
+## Quality Standards
+
+- Every reachable state has a truthful cue, trigger, exit, focus rule, and non-colour-only distinction.
+- Release evidence records component build, inputs, transitions, accessibility checks, and failures corrected.
+
 ## Anti-Patterns
 - **State gaps.** default + hover only; focus-visible, active, disabled, loading, selected, error
   forgotten. The matrix exists so nothing is missed — an empty cell is a bug.
@@ -124,6 +142,11 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - **Loading that loses focus or shifts layout** — reserve label width; keep focus on the control.
 
 ## Outputs
+
+| Output | Consumer | Evidence and acceptance |
+|---|---|---|
+| State-transition matrix | Designer and engineer | Trigger, visual, semantic, focus, cursor, duration, and exit are complete |
+| Interaction-fidelity gate | QA and accessibility reviewer | Keyboard, touch, pointer, contrast, target, and reduced-motion evidence passes |
 - A **per-component state matrix**: every reachable state (default/hover/focus-visible/active/
   disabled/loading/selected/error/read-only) given a token-backed treatment; non-reachable states
   marked N/A with the correct alternative.

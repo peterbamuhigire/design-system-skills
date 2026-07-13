@@ -1,13 +1,12 @@
 ---
 name: voice-tone-and-content-style-guide
-description: Use when defining or governing a product's content voice and tone — building the operational voice/tone system that the microcopy and error skills consume. Produces the Voice Chart (Podmajersky's six voice rows × product-principle columns, with a ratified tiebreaker), the Voice Guide ("We are / We are not + 3 traps / Examples", Ben-David), the Tone Map (tone by magnitude across flow and user lifecycle), a terminology glossary with governance rules, and the casual≠conversational ruling. Triggers on "define the product voice", "voice and tone guide", "voice chart", "tone map", "content style guide", "what's our voice", "tone of voice spectrum", "terminology / lexicon governance", "voice tiebreaker", "is this on-voice". This is the upstream content-voice system; pairs with brand-style-guide (visual+verbal brand identity) and is consumed by ux-writing-and-microcopy and error-empty-and-system-messaging.
-status: active
+description: Use when defining or governing a product voice chart, tone map, terminology glossary, content style guide, or voice tiebreaker. Use ux-writing-and-microcopy for interface strings and error-empty-and-system-messaging for state-specific messages.
 metadata:
   portable: true
   category: 10-content-design-and-ux-writing
   compatible_with:
-    - claude-code
-    - codex
+  - claude-code
+  - codex
 ---
 
 # Voice, Tone & Content Style Guide (the operational content-voice system)
@@ -64,6 +63,11 @@ voice converges, by default, on slop.
 - You are designing the **visual** empty/error/loading states → `04-…/empty-error-and-loading-states`.
 
 ## Required Inputs
+| Input | Source | Required? | Evidence |
+|---|---|---|---|
+| Product principles, audience, and positioning | Product and brand owners | yes | Ratified strategy or named provisional owner |
+| Representative content and failure cases | Product surfaces and support evidence | yes | Corpus spanning routine and high-stakes moments |
+| Legal, accessibility, and localisation constraints | Policy and regional owners | when applicable | Approved terminology and prohibited claims |
 - The **product principles** (2–4) the experience is designed around — these become the **columns**
   of the Voice Chart. If none are documented, derive a provisional set with the team before
   building the chart; the chart is meaningless without them.
@@ -145,6 +149,24 @@ voice converges, by default, on slop.
    `02-…/brand-style-guide`). Keep the brand-style-guide ↔ this-skill reference mutual, not
    duplicated: brand identity there, operational content voice/tone here.
 
+## Decision Rules
+
+| Condition | Voice/tone choice | Wrong-choice failure |
+|---|---|---|
+| Trait must remain stable across contexts | Encode it in the voice chart | Tone guidance drifts by writer and screen |
+| Emotional magnitude changes | Adjust tone, not the core voice | The product sounds like a different organisation |
+| Clarity conflicts with personality | Choose clarity and document the limit | Cleverness delays or distorts action |
+| Regulated or crisis moment | Use restrained, literal, accountable language | Humour or warmth trivialises harm and creates risk |
+
+## Capability Contract
+
+Read and search are required across product strategy, representative content, research, and policy. Editing is allowed only for authorised guide or content changes. Research, localisation, publication, and organisation-wide terminology changes require named authority and evidence.
+
+## Degraded Mode
+
+If required evidence or tooling is unavailable, use the scoped fallback below and mark the result unverified.
+Without ratified principles or audience evidence, produce a clearly labelled provisional guide and decision log. Without regional or legal review, mark affected terminology unapproved and block claims that depend on it.
+
 ## Anti-Patterns
 - **A voice "guide" that is just adjectives** — "friendly, clear, human" with no per-aspect rule a
   writer can apply. The Voice Chart exists precisely to make voice *operational*, cell by cell.
@@ -165,6 +187,11 @@ voice converges, by default, on slop.
   with an actual button, label, or error.
 
 ## Outputs
+| Artefact | Consumer | Evidence and acceptance condition |
+|---|---|---|
+| Ratified voice chart and tiebreaker | Writers, designers, and reviewers | Each trait has operational examples and a named authority |
+| Tone map and terminology glossary | Product content teams | Key journeys and magnitude changes are covered consistently |
+| Governance and review record | Content owners | Change process, exceptions, and corpus checks are documented |
 - A ratified **Voice Chart** — six voice rows (Concepts, Vocabulary, Verbosity, Grammar,
   Punctuation, Capitalization) × the product-principle columns, with a header recording the
   **ratification authority and tiebreaker mode**.

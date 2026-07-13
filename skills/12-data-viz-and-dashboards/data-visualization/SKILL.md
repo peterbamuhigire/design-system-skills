@@ -1,13 +1,12 @@
 ---
 name: data-visualization
-description: Data visualization patterns for transforming raw data into compelling visual stories, dashboards, charts, and decision-ready analytical exhibits. Use when designing or reviewing charts, dashboards, KPI exhibits, or report visuals on any medium.
-status: active
+description: Use when crafting or reviewing an individual chart, analytical exhibit, or data story for perceptual accuracy, decluttering, annotation, accessibility, and narrative focus. Use chart-selection-and-encoding to choose the chart type and dashboard-and-data-product-design for page-level systems.
 metadata:
   portable: true
   category: 12-data-viz-and-dashboards
   compatible_with:
-    - claude-code
-    - codex
+  - claude-code
+  - codex
 ---
 
 # Data Visualization -- Storytelling with Data
@@ -29,6 +28,11 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - The task is the **grid, alignment, or spacing rhythm** the exhibit sits on — defer to `03-layout-grid-and-composition/layout-grid-and-spacing`.
 
 ## Required Inputs
+| Input | Source | Required? | Evidence |
+|---|---|---|---|
+| Decision question, audience, and key message | Analyst or decision owner | yes | One-sentence takeaway |
+| Validated data, definitions, units, and uncertainty | Data owner | yes | Source and quality notes |
+| Chosen chart type and delivery medium | `chart-selection-and-encoding` and publisher | yes | Selection record and size constraints |
 
 - The **data and its types** (quantitative / ordinal / categorical, number of series, time vs. category x-axis) and the **single message** the chart must carry.
 - The **audience and the decision/action** the exhibit should drive (who, what they must do) — the seed for the action title.
@@ -36,29 +40,50 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - Brand colour constraints and the target contrast/accessibility bar (or confirmation to default to grey-base + blue accent, Okabe–Ito palette).
 
 ## Workflow
-
-- Read this `SKILL.md` first, then load only the referenced deep-dive files that are necessary for the task.
-- Apply the ordered guidance, checklists, and decision rules in this skill instead of cherry-picking isolated snippets.
-- Produce the deliverable with assumptions, risks, and follow-up work made explicit when they matter.
+1. Confirm the decision, audience, data provenance, and single intended message.
+2. Verify the chosen chart and encoding before styling.
+3. Remove non-data ink, establish visual hierarchy, and annotate the evidence that matters.
+4. Add uncertainty, source, unit, accessibility, and responsive behaviour.
+5. Render at target sizes and test the stated takeaway. Stop release when source, scale, accessibility, or render evidence is unavailable; recover with a labelled table or conditional draft.
 
 ## Quality Standards
+- Preserve denominators, baselines, missingness, uncertainty, and units.
+- Prefer position and length over area, angle, volume, or decorative effects.
+- Never rely on colour alone; include direct labels, patterns, shapes, or text alternatives.
 
-- Keep outputs execution-oriented, concise, and aligned with the repository's baseline engineering standards.
-- Preserve compatibility with existing project conventions unless the skill explicitly requires a stronger standard.
-- Prefer deterministic, reviewable steps over vague advice or tool-specific magic.
+## Decision Rules
+| Condition | Craft choice | Wrong-choice failure |
+|---|---|---|
+| One series carries the message | Emphasise it and mute context | Equal visual weight obscures the takeaway |
+| Exact lookup matters more than pattern | Add a table or direct values | A chart forces imprecise reading |
+| Uncertainty affects the decision | Encode interval/range and explain it | Point estimates imply false certainty |
+| Narrow viewport | Recompose, simplify, or provide scroll/table alternative | Mechanical shrinking destroys legibility |
+
+## Capability Contract
+Read and search are required for data, definitions, sources, and medium constraints. Editing is allowed only for requested production. Calculation and rendering are required for accuracy, accessibility, and responsive claims; publication requires separate authority.
+
+## Degraded Mode
+
+If required evidence or tooling is unavailable, use the scoped fallback below and mark the result unverified.
+Without validated data, deliver a labelled specification or placeholder, not a factual chart. Without rendering, provide chart source and exact checks, mark the result unverified, and block publication where distortion or accessibility risk is material.
 
 ## Anti-Patterns
-
-- Treating examples as copy-paste truth without checking fit, constraints, or failure modes.
-- Loading every reference file by default instead of using progressive disclosure.
+- **Decorative 3D:** use position or length on a flat common scale.
+- **Rainbow categories:** use restrained colour plus direct labels or shapes.
+- **Truncated quantitative axis without disclosure:** restore zero or explicitly justify the bounded range.
+- **Unlabelled uncertainty:** show intervals, ranges, or caveats beside the estimate.
+- **Chart junk and redundant legends:** remove decoration and label the evidence directly.
 
 ## Outputs
+| Artefact | Consumer | Evidence and acceptance condition |
+|---|---|---|
+| Decision-ready chart or analytical exhibit | Decision audience | Intended takeaway is accurate and identifiable without narration |
+| Source, definition, annotation, and accessibility package | Publisher and reviewer | Units, provenance, uncertainty, text alternative, and colour-independent cues are present |
+| Render and integrity evidence | QA and release owner | Target-size, responsive, contrast, and scale checks pass or are marked unverified |
 
 - A **data visualisation review** applying the Knaflic framework, perceptual encoding rules, and
   accessible-chart floor to the dashboard, report, or chart under review.
 - A chart spec, implementation guidance, review findings, templates, or generated artifacts when the task is creation rather than review.
-- Clear assumptions, tradeoffs, or unresolved gaps when the task cannot be completed from available context alone.
-- References used, companion skills, or follow-up actions when they materially improve execution.
 
 ## References
 
@@ -364,101 +389,12 @@ Orientation | Shape | Line length | Line width | Size | Curvature | Added marks 
 
 ---
 
-## Lesson 6: Tell a Story
+## Lesson 6: Tell A Story
 
-### Why Story Works
+Use [`references/data-storytelling-and-case-patterns.md`](references/data-storytelling-and-case-patterns.md)
+for narrative structures, spoken-versus-written choices, story-clarity tests, spaghetti-graph
+repairs, pie-chart alternatives, animation strategy, and stable ordering.
 
-- Stories engage emotion in ways facts cannot (McKee, HBR)
-- Red Riding Hood test: 80-90% of adults recall the high-level story — proof of story's memory power
-- Conventional rhetoric (bullet-point facts) = intellectual only; story = emotional + intellectual
-
-### Aristotle's Three-Act Structure Applied to Data
-
-| Act | Content | Data Presentation Equivalent |
-|-----|---------|------------------------------|
-| **Beginning** (Setup) | Setting, main character, imbalance, desired balance | Context: who is the audience (they are the hero), what changed, what should happen |
-| **Middle** (Conflict) | Protagonist faces escalating challenges | Supporting data, comparison points, options, benefits of recommendation |
-| **End** (Resolution) | Climax + dramatic question answered | Clear call to action; tie back to the beginning |
-
-### Story Construction Questions (McKee)
-
-- What does the protagonist want to restore balance?
-- What is the core need?
-- What keeps them from achieving their desire?
-- How would they act in the face of antagonistic forces?
-
-### Conflict and Tension Are Essential
-
-- A story where everything is rosy is not attention-grabbing
-- Frame in terms of the audience's problem — they have a stake in the solution
-- Duarte: tension = "the conflict between what is and what could be"
-
-### Narrative Structure
-
-**Order options:**
-- **Chronological**: take audience through your analytical journey. Works when you need to establish credibility or audience cares about process.
-- **Lead with the ending**: start with call to action, then back into supporting evidence. Works when trust exists and audience wants the "so what."
-
-**Bing, Bang, Bongo** (repetition framework):
-1. Tell them what you will tell them (executive summary)
-2. Tell them (main content)
-3. Tell them what you told them (recap + call to action)
-
-### Spoken vs Written Narrative
-
-- **Live**: words on screen reinforced by spoken words; keep slides sparse so audience listens
-- **Written**: must stand alone; make "so what" explicit on every slide/section
-- Tell audience your presentation structure upfront ("I will start with X, then cover Y")
-
-### Four Tactics for Story Clarity
-
-1. **Horizontal logic** — slide titles alone tell the overarching story (requires action titles)
-2. **Vertical logic** — everything on one slide self-reinforces (title — visual — text)
-3. **Reverse storyboarding** — flip through final deck, write down each slide's main point; result should match your intended storyboard
-4. **Fresh perspective** — show to someone without context; have them narrate what they see
-
-### Vonnegut's Writing Rules (Applied to Data)
-
-1. Find a subject you care about
-2. Do not ramble
-3. Keep it simple
-4. Have the guts to cut
-5. Sound like yourself
-6. Say what you meant to say
-7. Pity the readers — be a sympathetic, patient teacher
-
----
-
-## Case Study Patterns
-
-### Spaghetti Graph Solutions (Too Many Overlapping Lines)
-
-1. **Emphasise one line at a time** — bold + colour one series, grey the rest
-2. **Separate spatially (vertically)** — same x-axis, one mini-graph per series (sparklines)
-3. **Separate spatially (horizontally)** — same y-axis, side-by-side mini-graphs (small multiples)
-4. **Combined approach** — separate AND emphasise one at a time
-5. **Reduce data** — do you really need all categories/years?
-
-### Pie Chart Alternatives
-
-1. **Simple text** — if 1-2 numbers tell the story, just state them
-2. **Simple bar graph** — aligned baseline, easy comparison
-3. **100% stacked horizontal bar** — preserves part-to-whole, consistent baselines on both ends
-4. **Slopegraph** — shows change between two points with intuitive slope
-
-### Animation Strategy (Presentation vs Circulation)
-
-- **Live presentation**: build the graph progressively using animation (Appear/Disappear only — no fly-ins)
-- **Circulated version**: single annotated visual with all key points marked
-- Stack all animation frames on one slide; final annotated version on top for print
-
-### Logic in Order
-
-- When telling multiple stories from one dataset, preserve the same category order throughout
-- Rearranging data between views creates mental tax
-- Use colour to highlight different stories while keeping order stable
-
----
 
 ## Model Visual Checklist
 

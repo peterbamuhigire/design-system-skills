@@ -1,13 +1,12 @@
 ---
 name: deck-system
-description: Design and write a world-class presentation deck — pitch, strategy, campaign proposal, credentials, board/investor update, monthly/quarterly/annual review. Owns the shared deck-craft discipline (narrative arc, slide economy, one-idea-per-slide, builds, presenter notes, visual system) and routes to the right purpose via its variant examples. Use whenever a slide deck / pitch / presentation (PPTX, Google Slides, Canva, or rendered) is the deliverable.
-status: active
+description: Use when designing or writing a slide deck, pitch, strategy presentation, board update, review, or credentials deck with a visual system, slide economy, builds, and presenter notes. Use design-storytelling-and-case-studies for the narrative spine and document skills for paginated output.
 metadata:
   portable: true
   category: 13-presentations-and-documents
   compatible_with:
-    - claude-code
-    - codex
+  - claude-code
+  - codex
 ---
 
 # Deck System
@@ -25,6 +24,11 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
 - The need is the typographic/colour system itself → use groups 01 / 02 (this skill *applies* them).
 
 ## Required Inputs
+| Input | Source | Required? | Evidence |
+|---|---|---|---|
+| Audience, decision, venue, duration, and delivery mode | Presenter and sponsor | yes | Approved brief |
+| Evidence, narrative, and required sections | Content owners | yes | Source register and outline |
+| Brand, template, format, and accessibility constraints | Brand and delivery owners | yes | Asset package and output spec |
 - The deck's **purpose** (pick the matching `examples/variant-*`), audience, the single decision or
   action you want, the content/evidence, and the brand (or a deliberate type+colour choice).
 
@@ -44,12 +48,35 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
 7. **Run the gates** — anti-slop (no template look, no stock gradients), accessibility (contrast,
    legibility at room distance), and `design-qa-and-pre-launch-review`.
 
+## Decision Rules
+| Condition | Deck choice | Wrong-choice failure |
+|---|---|---|
+| Live presentation | Sparse slides plus presenter notes/builds | Slides become a teleprompter |
+| Stand-alone circulation | More explicit evidence and captions | Readers lack spoken context |
+| One slide contains two claims | Split or subordinate one claim | Competing messages destroy hierarchy |
+
+## Capability Contract
+Read, edit, and render capabilities are required for production; analysis defaults read-only. Execution is required to claim font embedding, animation, media, or layout fidelity. External publication requires separate authority.
+
+## Degraded Mode
+Without rendering, deliver an outline and slide specification marked unverified. Stop release when sources, fonts, aspect ratio, or target-app inspection are missing; recover with a static PDF-ready version and named gaps.
+
 ## Anti-Patterns
+- **Paragraph slides:** reduce to one claim and move detail into notes.
+- **Template repetition:** vary composition while preserving the system.
+- **Tiny evidence:** enlarge, crop, or split the exhibit.
+- **Unattributed claims:** cite the source on the slide.
+- **Decorative builds:** animate only to control sequence or explain change.
 - One template reused unthinkingly for every purpose (the slop the old 8 deck-skills risked).
 - Title = topic instead of takeaway; bullet soup; 6 ideas per slide.
 - Decorative builds/transitions; stock-gradient title slides; banned fonts.
 
 ## Outputs
+| Artefact | Consumer | Evidence and acceptance condition |
+|---|---|---|
+| Editable deck and narrative map | Presenter and sponsor | Each slide has one role in the argument |
+| Presenter notes and source register | Presenter and reviewer | Claims, transitions, and citations are traceable |
+| Rendered review package | Release owner | Fonts, overflow, contrast, media, and aspect ratio are inspected |
 - A deck spec: chosen variant, stated type+colour, slide-by-slide narrative with action titles,
   exhibit plan, and presenter notes — ready to build in PPTX/Slides/Canva.
 

@@ -1,13 +1,12 @@
 ---
 name: accessibility-wcag-2-2-compliance
-description: Use when building, reviewing, or auditing any interactive UI — web, app, desktop, or mobile — for WCAG 2.2 AA accessibility. Triggers on focus order, focus visibility, keyboard operability, tab traps, ARIA roles/states, accessible names, screen-reader behaviour (VoiceOver/NVDA/TalkBack), target size (24px minimum), dragging alternatives, redundant entry, accessible authentication, reduced motion, reflow/zoom, or any request to "make this accessible", "run an a11y audit", "check WCAG", or "fix screen-reader issues". Co-activates with EVERY design group — components, forms, navigation, colour, motion, mobile — never skip it on a UI deliverable.
-status: active
+description: Use when designing or auditing an interactive UI for WCAG 2.2 AA, keyboard and focus behaviour, accessible names, screen readers, target size, reflow, authentication, or reduced motion. Use inclusive-and-assistive-design for needs beyond the compliance floor.
 metadata:
   portable: true
   category: 00-cross-cutting-ops-qa-a11y
   compatible_with:
-    - claude-code
-    - codex
+  - claude-code
+  - codex
 ---
 
 # Accessibility — WCAG 2.2 Compliance (Build + Audit)
@@ -47,7 +46,13 @@ that co-activates with every group and is enforced one last time by
 - You only need the **final pre-launch gate** that composes a11y + slop + perf →
   `design-qa-and-pre-launch-review` (it calls this skill in).
 
-## Required Inputs
+## Inputs
+
+| Artefact or context | Source | Required? | Why |
+|---|---|---|---|
+| Interactive component or flow | User or project | yes | Defines applicable criteria and interactions |
+| Rendered semantics and target platforms | Build | required for audit | Enables keyboard and assistive-technology checks |
+| Conformance target | Product or compliance owner | yes | Defaults to WCAG 2.2 AA |
 - The component(s) or screen under work, with their interaction model (what is clickable,
   draggable, focusable, dynamic).
 - The rendered markup / framework (HTML, React, SwiftUI, Compose, Flutter) — you must know
@@ -57,6 +62,8 @@ that co-activates with every group and is enforced one last time by
   (NVDA + Firefox/Chrome on Windows, VoiceOver + Safari on macOS/iOS, TalkBack on Android).
 
 ## Workflow
+
+Choose the build or audit branch, then record evidence for every applicable requirement.
 
 ### A. Build (wire accessibility in as you author the component)
 1. **Choose the right pattern, not a generic `<div>`.** Map the component to a known
@@ -129,6 +136,27 @@ that co-activates with every group and is enforced one last time by
     N/A**, evidence, and the fix. Use `examples/wcag-2.2-audit-sheet.md` as the template.
     A Fail on any AA criterion blocks ship.
 
+## Decision Rules
+
+| Condition | Action | Wrong-choice failure |
+|---|---|---|
+| New component or flow | Design native semantics, keyboard behaviour, focus, and names before visual polish | Accessibility becomes an expensive retrofit |
+| Existing interactive build | Run automated checks plus keyboard and screen-reader testing | Tool-only coverage misses interaction failures |
+| Any applicable WCAG 2.2 AA criterion fails | Record evidence and block the release gate | A known barrier ships under a misleading pass label |
+| Legal certification or formal conformance claim is requested | Produce technical evidence and require qualified human/legal sign-off | The skill overstates authority it does not hold |
+
+## Capability Contract
+
+Read and interactive inspection are required for an audit. Browser or device access and at least
+one automated checker are preferred; keyboard and screen-reader checks remain mandatory for a
+release verdict. Editing is allowed only when remediation is requested.
+
+## Degraded Mode
+
+Without an interactive build, return design/spec risks and test cases, not a WCAG conformance
+verdict. Without a screen reader or target device, mark those checks unverified and block any
+claim that the experience passes the full gate.
+
 ## Anti-Patterns
 - **`outline: none` with no replacement** — the single most common keyboard-a11y failure.
 - **`<div onclick>` as a button** — no role, no name, no keyboard, no focus. Use `<button>`.
@@ -146,6 +174,11 @@ that co-activates with every group and is enforced one last time by
 - **Audit by automated tool only** — declaring "axe is green, we're accessible". It isn't.
 
 ## Outputs
+
+| Artefact | Consumer | Evidence and acceptance condition |
+|---|---|---|
+| Accessible component or flow specification | Design and engineering | Native semantics, keyboard, focus, names, states, and alternatives are defined |
+| WCAG 2.2 audit sheet | Pre-launch review | Each applicable criterion has Pass/Fail/N/A, evidence, and a fix; any AA failure blocks |
 - Components built to the WAI-ARIA pattern with correct name/role/state, keyboard operation,
   managed focus, ≥24px targets, and drag alternatives.
 - A completed **WCAG 2.2 audit sheet** (Pass/Fail/N/A + evidence + fix per criterion) suitable

@@ -1,13 +1,12 @@
 ---
 name: logo-and-wordmark-design
-description: Use when designing, drawing, or specifying the actual LOGO and WORDMARK as a buildable system — mark construction on a geometry/grid, custom lettering or wordmark cuts, lockups (primary/stacked/horizontal/monogram), clear-space and minimum-size rules, a responsive logo set, a favicon + app-icon system (iOS/Android/web), monochrome/reversed/dark-mode variants, and a misuse sheet. Routes here whenever the ask is "draw/construct/spec the mark", "make a logo grid", "build the favicon and app-icon set", "give me the lockups and clear-space", or "what are the logo do-nots". The distinctiveness lever is Janoff's interactive wit (a small surprise, like the FedEx arrow) and encoding the product's USP into the mark. Defers brand strategy/colour/type tie-in and the full style-guide to brand-visual-identity; defers typeface selection to font-selection-and-pairing and palette to color-system-and-palette.
-status: active
+description: Use when constructing or specifying a logo, wordmark, lockups, clear space, responsive marks, favicons, or app icons. Unlike brand-visual-identity, this owns mark geometry and reduction; strategy, palette, typography, and the broader system remain upstream.
 metadata:
   portable: true
   category: 02-color-brand-and-visual-identity
   compatible_with:
-    - claude-code
-    - codex
+  - claude-code
+  - codex
 ---
 
 # Logo and Wordmark Design
@@ -48,6 +47,12 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
   responsive/favicon/variant extensions it lacks.
 
 ## Required Inputs
+
+| Input | Supplied by | Required? | Why |
+|---|---|---|---|
+| Brand strategy, name, and USP | Brand owner or brief | yes | Gives the mark meaning |
+| Usage contexts and icon platforms | Product/marketing teams | yes | Defines lockups and reduction targets |
+| Trademark, legacy, and production constraints | Legal/client/production | conditional | Prevents unusable concepts |
 
 - **Strategy hand-off from `brand-visual-identity`** (or gather it first): the one-word
   essence, adjective set, and the *not-to-be-confused-with* competitor list. Distinctiveness is
@@ -169,6 +174,35 @@ If any item fails, fix before sign-off — do not ship a half-built mark.
   a metric is the asymmetry-rule error (`creative-selection-and-taste.md`; doctrine §2).
 
 ## Outputs
+
+| Output | Consumer | Evidence / acceptance |
+|---|---|---|
+| Master mark and lockup set | Brand and production teams | Vector, monochrome, reverse, and responsive variants |
+| Construction and usage spec | Style-guide owner | Grid, correction, clear space, minimum size, and misuse |
+| App-icon and favicon package | Product engineering | Platform sizes, safe zones, and small-size tests |
+
+## Quality Standards
+
+- Construct in vector form, apply optical corrections, and verify silhouette and one-colour use.
+- Test at 16px, app masks, print, dark, light, and adverse backgrounds.
+- Stop sign-off when legibility, trademark clearance, production feasibility, or ownership is unresolved.
+
+## Decision Rules
+
+| Condition | Decision | Wrong-choice failure |
+|---|---|---|
+| Concept needs explanation to reveal relevance | Simplify or reject it | Cleverness does not survive use |
+| Geometric alignment looks optically wrong | Correct by eye and document offset | Pure geometry appears unbalanced |
+| Detail disappears at minimum size | Create a responsive simplified mark | Small icons become mush |
+| Wordmark relies on an unlicensed font | Customise lawfully or change basis | Identity cannot be distributed |
+
+## Capability Contract
+
+Read and vector inspection are required. Editing and export require explicit design authority. Do not claim trademark clearance, purchase licences, overwrite masters, or publish without approval.
+
+## Degraded Mode
+
+Without vector tooling, deliver a construction specification and sketches marked non-production. Without legal or licence clearance, mark release blocked and avoid public deployment.
 
 A **mark + lockup specification** (the buildable spec, 1–3 pages) containing:
 - The stated device (interactive wit / small surprise, or USP-encoding) and why it fits.

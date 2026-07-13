@@ -1,0 +1,92 @@
+- prompt: Choose and pair typefaces for a bankable PDF proposal and check embedding rights.
+  expected: font-selection-and-pairing
+- prompt: Audit this website for Inter, timid type hierarchy, and other AI typography tells.
+  expected: ai-slop-typography-audit
+- prompt: Build semantic colour tokens and an accessible tonal palette for light and dark themes.
+  expected: color-system-and-palette
+- prompt: Check these foreground and background pairs against WCAG contrast requirements.
+  expected: accessible-color-and-contrast
+- prompt: Define primitive, semantic, and component design tokens with stable naming.
+  expected: design-tokens-and-naming
+- prompt: Prepare redlines, component states, breakpoints, and acceptance criteria for engineering handoff.
+  expected: design-handoff-and-dev-spec
+- prompt: Run a final pre-launch design QA gate across browsers, devices, accessibility, and performance.
+  expected: design-qa-and-pre-launch-review
+- prompt: Audit the whole product across its website, SaaS app, iOS app, and Android app.
+  expected: product-design-audit
+- prompt: Turn existing UX audit findings into a prioritised remediation and redesign plan.
+  expected: ux-remediation-and-redesign
+- prompt: Design keyboard focus, screen-reader names, reflow, and WCAG 2.2 AA behaviour.
+  expected: accessibility-wcag-2-2-compliance
+- prompt: Choose the honest chart type for comparison and avoid a misleading dual axis.
+  expected: chart-selection-and-encoding
+- prompt: Design the page-level KPI hierarchy, filters, drill-down, and data freshness for a dashboard.
+  expected: dashboard-and-data-product-design
+- prompt: Format an editable Word report with named styles, TOC, captions, and accessible tags.
+  expected: docx-report-and-document-formatting
+- prompt: Design a print-ready lender proposal PDF with cover, dividers, exhibits, and embedded fonts.
+  expected: pdf-proposal-and-bankable-document-design
+- prompt: Design guest checkout, cart, payment, returns, and transparent total cost without dark patterns.
+  expected: ecommerce-and-checkout-ux
+- prompt: Write clear error, empty, offline, loading, and confirmation messages for the product.
+  expected: error-empty-and-system-messaging
+- prompt: Define every loading, empty, error, disabled, and retry state for this table component.
+  expected: empty-error-and-loading-states
+- prompt: Create a custom icon system with grid, stroke, terminals, optical alignment, and SVG naming.
+  expected: iconography-system-design
+- prompt: Direct and reject AI-generated brand imagery using anatomy, text, provenance, and slop checks.
+  expected: ai-image-generation-art-direction
+- prompt: Design an RTL Arabic interface with logical properties, bidi text, locale formatting, and string expansion.
+  expected: internationalization-and-rtl-design
+- prompt: Create a recognisable visual identity system tying logo usage, colour, typography, imagery, and spacing together.
+  expected: brand-visual-identity
+- prompt: Produce a client-facing style guide with logo rules, palette cards, typography specimens, and usage examples.
+  expected: brand-style-guide
+- prompt: Construct the actual logo mark, wordmark, lockups, clear space, favicon, and app icon variants.
+  expected: logo-and-wordmark-design
+- prompt: Design a true dark theme by remapping semantic roles and elevation instead of inverting colours.
+  expected: dark-mode-and-theming
+- prompt: Define the column grid, spacing unit, gutters, and alignment system for a report and web page.
+  expected: layout-grid-and-spacing
+- prompt: Compose this hero so one focal point wins through scale, weight, whitespace, and intentional asymmetry.
+  expected: composition-and-visual-hierarchy
+- prompt: Create a fluid responsive grid using intrinsic sizing, container queries, and content-led breakpoints.
+  expected: responsive-and-adaptive-layout
+- prompt: Lay out a long-form article with readable measure, baseline rhythm, figures, sidenotes, and pull quotes.
+  expected: editorial-and-long-form-layout
+- prompt: Specify hover, focus, pressed, selected, disabled, loading, success, and error behavior for this component.
+  expected: component-states-and-interaction-fidelity
+- prompt: Design a complex SaaS desktop interface with dense tables, sidebars, command surfaces, and responsive behavior.
+  expected: webapp-gui-design
+- prompt: Design validation timing, field grouping, labels, errors, submission, and multi-step behavior for this form.
+  expected: form-ux-design
+- prompt: Choose an interaction pattern for disclosure, navigation, selection, commands, and data manipulation.
+  expected: interaction-design-patterns
+- prompt: Design approval, progress, permissions, interruption, and human-control UX for an autonomous AI agent.
+  expected: ai-agent-ux
+- prompt: Present generated AI results with sources, uncertainty, refinement, and canvas-versus-chat decisions.
+  expected: ai-output-design
+- prompt: Plan moderated usability sessions, participant tasks, observation evidence, and a findings synthesis.
+  expected: ux-research-and-usability-testing
+- prompt: Build a service blueprint and journey map across user stages, backstage processes, pain points, and opportunities.
+  expected: journey-mapping-and-service-design
+- prompt: Select fidelity and create wireframes or prototypes for testing a flow before visual production.
+  expected: wireframing-and-prototyping
+- prompt: Facilitate a live design critique where feedback is separated from evaluation and tied to the brief.
+  expected: design-critique-and-review-facilitation
+- prompt: Design gesture recognition, touch targets, haptic feedback, cancellation, and accessible alternatives.
+  expected: touch-gesture-and-haptics
+- prompt: Reconcile one product design across iOS and Android without forcing pixel-identical controls.
+  expected: cross-platform-design-parity
+- prompt: Specify animation choreography, duration, easing, spring behavior, and reduced-motion alternatives.
+  expected: motion-design
+- prompt: Design immediate state feedback and a complete trigger rules feedback loops micro-interaction.
+  expected: micro-interactions-and-feedback
+- prompt: Define product voice, tone by situation, terminology governance, and a content style guide.
+  expected: voice-tone-and-content-style-guide
+- prompt: Write concise button labels, field hints, tooltips, menu labels, and destructive confirmation microcopy.
+  expected: ux-writing-and-microcopy
+- prompt: Define a consistent photography brief, sourcing rules, crop system, grade, and anti-stock direction.
+  expected: photography-art-direction
+- prompt: Build an illustration language with repeatable line, shape, colour, character, and perspective rules.
+  expected: illustration-style-and-systems

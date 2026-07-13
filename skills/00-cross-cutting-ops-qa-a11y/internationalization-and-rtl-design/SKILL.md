@@ -1,13 +1,12 @@
 ---
 name: internationalization-and-rtl-design
-description: Use when designing or building any UI, document, or layout that will ship in more than one language, script, or region — or that might. Triggers on right-to-left (RTL) languages (Arabic, Hebrew, Persian/Farsi, Urdu), bidirectional text, logical vs physical CSS properties, mirroring a layout, translation/string expansion overflow, truncation, locale-aware number/date/currency/percent formatting, pluralization, ICU MessageFormat, `dir="rtl"`, `lang` attributes, font coverage for non-Latin scripts, or any request to "localize", "internationalize", "make it work in Arabic", "add RTL support", "handle long German strings", or "format dates/currency by locale". Co-activates with EVERY design group — layout, typography, components, forms, navigation, content — never assume English-LTR-only.
-status: active
+description: Use when a UI or document must support multiple locales, scripts, RTL direction, bidi text, string expansion, pluralisation, or locale formatting. Unlike responsive-layout work, this owns language-driven adaptation; translation wording remains with content design.
 metadata:
   portable: true
   category: 00-cross-cutting-ops-qa-a11y
   compatible_with:
-    - claude-code
-    - codex
+  - claude-code
+  - codex
 ---
 
 # Internationalization & RTL Design (i18n)
@@ -45,13 +44,21 @@ because direction and expansion touch grids, type, components, forms, and copy a
   cites it for `lang`/`dir` and reflow, but does not own the audit).
 
 ## Required Inputs
+
+| Input | Supplied by | Required? | Why |
+|---|---|---|---|
+| Target locales and scripts | Product/localisation owner | yes | Defines direction and coverage |
+| UI or document flow and strings | Design/content team | yes | Exposes expansion and bidi risks |
+| Formatting and font requirements | Domain and typography owners | yes | Covers data and glyph behaviour |
+
+## Workflow
+
+Apply the direction, expansion, formatting, and verification phases below. Stop release when a target locale cannot complete a critical task or required script coverage is missing.
 - The **target locales** (or "unknown / might expand later" — design defensively then).
 - Which targets are **RTL** and which scripts are in play (Latin, Arabic, Hebrew, CJK, Cyrillic…).
 - Whether the artifact is UI (web/app), a document (DOCX/PDF/PPTX), or both.
 - The longest expected strings, or permission to budget from `references/string-expansion-budgets.md`.
 - Locale formatting needs: dates, times, numbers, currency, percentages, units, names, addresses.
-
-## Workflow
 
 ### A. Direction & layout (build it direction-agnostic)
 1. **Set language and direction at the root.** `<html lang="ar" dir="rtl">` (or `dir="auto"`
@@ -135,6 +142,12 @@ because direction and expansion touch grids, type, components, forms, and copy a
 - **"We'll add languages later"** with English-LTR-hard-coded layout — "later" becomes a rebuild.
 
 ## Outputs
+
+| Output | Consumer | Evidence / acceptance |
+|---|---|---|
+| Locale and direction matrix | Product and localisation teams | Script, direction, formats, and exceptions recorded |
+| RTL/expansion decision sheet | Designer and engineer | Mirror, no-mirror, bidi, and expansion per element |
+| Localised-flow evidence | QA and accessibility | Real RTL, expansion, CJK, and pseudo-locale results |
 - A **direction-agnostic layout** (logical properties, correct `lang`/`dir`, mirrored where
   appropriate, bidi-isolated where needed) that flips by changing one attribute.
 - An **expansion-tolerant layout** sized from real per-language budgets, pseudo-localization-tested.
@@ -143,6 +156,31 @@ because direction and expansion touch grids, type, components, forms, and copy a
   ready for handoff and for the `design-qa-and-pre-launch-review` gate.
 
 ## Examples
+
+- See `examples/rtl-before-after.md` for the required element-by-element decision record.
+
+## Quality Standards
+
+- Use logical properties, locale APIs, whole messages, and script-capable font stacks.
+- Test at least one real RTL locale, long-expansion locale, CJK locale, and pseudo-locale.
+- Block release for clipped meaning, broken bidi order, wrong financial/date semantics, or tofu glyphs.
+
+## Decision Rules
+
+| Condition | Decision | Wrong-choice failure |
+|---|---|---|
+| Element follows reading or navigation flow | Mirror it in RTL | Flow feels reversed or inconsistent |
+| Element represents time, code, numbers, brand, or physical reality | Do not mirror; isolate if needed | Meaning or identity is corrupted |
+| Short translated control expands heavily | Wrap or provide flexible inline size | Label clips or becomes ambiguous |
+| Locale rules differ | Use CLDR-backed platform formatting | Dates, amounts, or plurals are wrong |
+
+## Capability Contract
+
+Read and locale inspection are required. Editing and execution are allowed only for authorised implementation/testing. Do not invent translations or approve linguistic quality without a qualified locale reviewer.
+
+## Degraded Mode
+
+Without translations, use expansion budgets and pseudo-localisation, marking language quality unverified. Without target-locale rendering, return a conditional decision sheet and test plan rather than a pass.
 - `examples/rtl-before-after.md` — a **real worked LTR→RTL conversion** of an Arabic e-commerce
   product screen (header, search, breadcrumb, product card, rating, price, qty stepper, reviews,
   carousel), logging for each element whether it mirrors, stays put, or needs bidi isolation —

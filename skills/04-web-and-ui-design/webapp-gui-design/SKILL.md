@@ -1,11 +1,6 @@
 ---
 name: webapp-gui-design
-description: Use when designing or building SaaS web application UIs with React, Next.js,
-  TypeScript, and Tailwind CSS. Covers the application shell, navigation, dashboards, data
-  tables, forms, dialogs, loading and error states, auth flows, uploads, accessibility,
-  and interface consistency. For the Bootstrap/Tabler/PHP stack used in the seeder
-  template, load the deep-dive files in the `sections/` directory.
-status: active
+description: Use when designing or building a SaaS web-app shell, navigation, dashboard, table, form, dialog, auth, upload, or system state in React/Next/Tailwind or Bootstrap/Tabler/PHP. Do not use for marketing websites or backend-only work.
 metadata:
   portable: true
   category: 04-web-and-ui-design
@@ -32,6 +27,12 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 
 ## Required Inputs
 
+| Input | Source | Evidence |
+|---|---|---|
+| Roles, jobs, routes, and object model | Product and application contracts | Permission matrix, routes, entities, and critical tasks |
+| Target stack and existing components | Repository and engineering owner | Framework versions, design-system inventory, and constraints |
+| Data/state/error contracts | API and domain owners | Loading, empty, failure, permission, and concurrency states |
+
 The target surface (dashboard, CRUD table, form, settings), the auth/tenant model, and the data model for at least one screen. For the seeder stack, the `seeder-page.php` template path.
 
 ## Workflow
@@ -44,6 +45,24 @@ The target surface (dashboard, CRUD table, form, settings), the auth/tenant mode
 5. Check consistency against existing screens and primitives before adding a new pattern.
 6. Extend shared primitives/components before creating a bespoke screen-only pattern.
 7. Run the a11y + responsive sweep (§15 checklist) before merge.
+
+## Decision Rules
+
+| Condition | Choice | Wrong-choice failure |
+|---|---|---|
+| Users compare many records | Table with stable columns, filters, and bulk actions | Card grids slow scanning and hide relationships |
+| Task is contextual and reversible | Drawer or inline edit preserving place | Full navigation loses context and selection |
+| Permission or tenancy changes visibility | Server-authoritative guard plus clear UI state | Cosmetic hiding leaks capability or confuses access |
+
+## Capability Contract
+
+- Must inspect repository, routes, data contracts, and existing components before implementation; review remains read-only unless changes are requested.
+- May edit and test in-scope UI. Do not mutate production data, weaken authorization, expose secrets, or deploy without separate authority.
+
+## Degraded Mode
+
+- If roles, data contract, or target stack are missing, stop implementation and return the blocking contract questions.
+- If execution/rendering is unavailable, provide a patch/specification and test matrix marked unverified. Recover failed loading/error/auth states by preserving context, offering a truthful next action, and rerunning affected tests.
 
 ## Quality Standards
 
@@ -63,9 +82,20 @@ The target surface (dashboard, CRUD table, form, settings), the auth/tenant mode
 
 ## Anti-Patterns
 
-Spinners on the whole page after initial load; per-route custom chrome; forms with unvalidated submit handlers; empty states that say only "No data"; modals that trap focus incorrectly; buttons used as links; generic CTA copy; loading buttons that remove the action label.
+- Whole-page spinners after initial load. Correction: retain the shell and skeleton only the changing region.
+- Per-route custom chrome. Correction: use one application shell and explicit contextual variants.
+- Forms with unvalidated submit handlers. Correction: pair client feedback with server-authoritative validation.
+- Empty states that say only "No data". Correction: explain context and offer the permitted next action.
+- Modals that trap focus incorrectly. Correction: implement semantic dialog focus entry, containment, and return.
+- Buttons used as links. Correction: preserve native element semantics for navigation versus actions.
+- Loading buttons that remove the action label. Correction: preserve label and width while exposing busy state.
 
 ## Outputs
+
+| Output | Consumer | Evidence and acceptance |
+|---|---|---|
+| Web-app UI implementation/specification | Product and engineering | Shell, navigation, objects, states, permissions, and responsive behaviour are explicit |
+| Verification record | QA, security, accessibility | Build/tests, keyboard paths, roles, data states, and representative renders pass |
 
 - App shell component, route-level layout files, reusable primitives (`DataTable`, `FormField`,
   `Dialog`, `EmptyState`, `StatusPill`), and Tailwind theme tokens.

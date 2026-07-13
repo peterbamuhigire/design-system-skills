@@ -1,21 +1,7 @@
 ---
 name: product-design-audit
-description: Point the WHOLE design engine at a real, existing PRODUCT (not a single
-  artifact) and produce a scored, multi-platform design audit with a PRIORITIZED
-  recommendation table where every finding is routed to the exact engine skill that
-  fixes it. Audits across ALL surfaces a product ships on — marketing website, SaaS
-  web app, iOS app (iPhone/iPad/Mac), Android app, and desktop app — running the
-  doctrine anti-slop gate, each relevant design-group lens, and the cross-cutting
-  WCAG-2.2 / Core-Web-Vitals / content gates over the whole experience. Triggers:
-  "audit my product", "audit our app", "design review of the whole product", "score
-  our SaaS / website / iOS app / Android app / desktop app", "product-level design
-  audit", "multi-platform design audit", "where is our design losing us users",
-  "what should design fix first", "route the findings to skills", "design health
-  check", "cross-platform design parity audit", "is our product design any good".
-  For a single screen/artifact critique use design-audit; for a pass/fail ship gate
-  use design-qa-and-pre-launch-review. This skill composes both and adds the
-  product + platform breadth and the skill-routing.
-status: active
+description: >-
+  Use when auditing a real product across multiple surfaces such as marketing web, SaaS, iOS, Android, or desktop and producing scored, prioritised, skill-routed findings. Use design-audit for one artefact and design-qa-and-pre-launch-review for a release gate.
 metadata:
   portable: true
   category: 00-cross-cutting-ops-qa-a11y
@@ -62,7 +48,13 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - The deliverable is a **document** (DOCX/PDF/PPTX) rather than a product — use the group-13
   document skills; CWV / platform idioms do not apply.
 
-## Required Inputs
+## Inputs
+
+| Artefact or context | Source | Required? | Why |
+|---|---|---|---|
+| Product and complete platform set | Product owner | yes | Prevents silent scope loss |
+| Inspectable key flows and states per surface | Builds or evidence pack | yes | Grounds per-surface scores |
+| Users, jobs, brand, system, analytics, and field data | Product evidence | conditional | Supports impact and confidence judgments |
 
 - **The product and its platform set.** Name the product and confirm *which* surfaces are in
   scope: website, SaaS web app, iOS (iPhone/iPad/Mac), Android, desktop (native vs Electron).
@@ -135,6 +127,27 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
    then the per-surface scores, then the routed table. Make assumptions, evidence gaps, and any
    surface you could not fully access explicit.
 
+## Decision Rules
+
+| Condition | Action | Wrong-choice failure |
+|---|---|---|
+| One isolated artefact or flow | Route to `design-audit` | Product-wide machinery adds noise without comparative value |
+| Two or more live product surfaces | Audit each surface, then reconcile shared-system and parity findings | Separate reports hide systemic design drift |
+| A surface cannot be inspected | Keep it in the coverage map as an evidence gap | Missing platforms silently inflate the product score |
+| A release verdict is requested | Hand the relevant build to `design-qa-and-pre-launch-review` | A strategic audit is misrepresented as release certification |
+
+## Capability Contract
+
+Read and visual inspection are required across every in-scope surface. Browser, device, repository,
+analytics, and research access are conditional on the evidence available. This audit is read-only;
+implementation belongs to `ux-remediation-and-redesign` after findings are accepted.
+
+## Degraded Mode
+
+Audit accessible surfaces, publish a coverage matrix, and lower confidence for missing platforms,
+states, analytics, or user evidence. Do not calculate a whole-product score that implies complete
+coverage when a material surface is absent.
+
 ## Quality Standards
 
 - **Product-level, not artifact-level.** Score whole surfaces and their flows, not one hero
@@ -172,6 +185,11 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
   are required.
 
 ## Outputs
+
+| Artefact | Consumer | Evidence and acceptance condition |
+|---|---|---|
+| Multi-surface scorecard and finding register | Product and design leaders | Scores reconcile per-surface evidence and hard-gate caps |
+| Skill-routed remediation portfolio | Remediation owner | Every recommendation names priority, surface, evidence, owner skill, and confidence |
 
 - A **product design audit report** (`examples/product-audit-worked.md` shape): header (product,
   platforms, context), the product-wide anti-slop verdict, a **per-surface scorecard** (0–100

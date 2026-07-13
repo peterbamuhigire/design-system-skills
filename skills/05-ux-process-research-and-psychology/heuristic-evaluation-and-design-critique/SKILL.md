@@ -1,21 +1,12 @@
 ---
 name: heuristic-evaluation-and-design-critique
-description: Use when you need a structured, expert-led heuristic evaluation or design critique of
-  an existing interface or flow — walking a UI against Nielsen's 10 usability heuristics and
-  Tognazzini's first principles, capturing each violation with a screen reference, the heuristic
-  it breaks, evidence, and a 0–4 severity rating. Triggers — "heuristic evaluation", "expert
-  review", "usability inspection", "design critique", "Nielsen heuristics", "Tognazzini /
-  first principles of interaction design", "rate the severity of this usability problem",
-  "walk this screen/flow and find the usability issues", "discount usability method", "review
-  this UI without testing users". This is the inspection (no-users) evaluation method; pair it
-  with `design-audit` (the scored 0–100 artifact rubric).
-status: active
+description: Use when an existing interface or flow needs an expert, no-users inspection against Nielsen/Tognazzini heuristics with screen evidence and 0–4 severity. Do not use for empirical usability testing or a broad 0–100 visual audit; route those to research or design-audit.
 metadata:
   portable: true
   category: 05-ux-process-research-and-psychology
   compatible_with:
-    - claude-code
-    - codex
+  - claude-code
+  - codex
 ---
 
 # Heuristic Evaluation & Design Critique
@@ -48,6 +39,12 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
   use `ux-remediation-and-redesign` (the fix side).
 
 ## Required Inputs
+
+| Input | Source | Evidence |
+|---|---|---|
+| Stable interface/flow and task scope | Product owner or test build | Versioned screens, routes, and critical tasks |
+| Target users and context | Research or approved assumptions | Experience, device, environment, and constraints |
+| Known business/platform rules | Product and engineering | Constraints that distinguish defect from intended behaviour |
 
 - **The artifact** — screens, screenshots, a prototype, a flow, or a URL, ideally covering the
   product's red-route tasks (sign-up, core task, checkout) end to end.
@@ -89,6 +86,29 @@ The evaluation is a **structured walkthrough**, not a free-form opinion. Run it 
    a severity-ordered table + positive findings (what works — always name strengths, a critique
    that only lists faults is not credible). Tie each finding to its fix / right-pattern.
 
+## Decision Rules
+
+| Condition | Choice | Wrong-choice failure |
+|---|---|---|
+| Issue blocks task or risks severe loss | Severity 4 with immediate escalation | Averaging it into a score hides urgent harm |
+| Issue is repeated but recoverable | One systemic finding plus instances | Duplicate findings inflate volume and fragment remediation |
+| Observation depends on user behaviour | Convert to research hypothesis | Expert opinion is misrepresented as user evidence |
+
+## Capability Contract
+
+- Must inspect the actual interface and capture reproducible screen/step evidence; evaluation is read-only by default.
+- May annotate findings, but may not edit the product, contact users, or claim empirical validation unless separately authorised.
+
+## Degraded Mode
+
+- If the interface or critical tasks are inaccessible, stop scoring and return the missing evidence request.
+- With screenshots only, limit findings to observable states and mark interaction claims unverified. Recover disputed findings by reproducing the path, clarifying the violated principle, or downgrading to a testable hypothesis.
+
+## Quality Standards
+
+- Every finding has location, evidence, violated heuristic, user consequence, severity rationale, and actionable correction.
+- The report separates observations, inference, and assumptions and avoids certification claims.
+
 ## Anti-Patterns
 
 - **Opinion dressed as evaluation.** "I'd use a different colour" with no heuristic and no
@@ -105,6 +125,11 @@ The evaluation is a **structured walkthrough**, not a free-form opinion. Run it 
   scale; do not auto-floor visual issues to severity 1.
 
 ## Outputs
+
+| Output | Consumer | Evidence and acceptance |
+|---|---|---|
+| Heuristic findings register | Product and design | Reproducible evidence, heuristic, severity, consequence, and fix per issue |
+| Prioritised critique summary | Decision owner | Systemic themes, top risks, quick wins, and research hypotheses are separated |
 
 - A **heuristic evaluation / design critique report**: framing, the heuristic set used, per-finding
   cards (location · heuristic · issue · evidence · severity · fix), a **severity-ordered findings

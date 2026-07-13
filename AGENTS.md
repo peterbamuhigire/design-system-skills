@@ -13,6 +13,10 @@ Mirror of the guidance in `CLAUDE.md`, kept for dual-compat tooling.
 3. **Apply:** follow the `doctrine/references/` rules the skill cites.
 4. **Gate:** before declaring an artifact done, run `governance/design-quality-gate.md`.
 
+For skill creation, normalisation, or review, also read
+`governance/skill-authoring-standard.md`. Run the local validator and routing smoke test after
+any skill, frontmatter, router, doctrine, or governance change.
+
 ## Hard rules
 
 - No banned AI-slop fonts as primary type (`doctrine/references/ai-slop-banned-fonts.md`).
@@ -29,3 +33,13 @@ Mirror of the guidance in `CLAUDE.md`, kept for dual-compat tooling.
 
 Referenced, not mirrored. Domain engines consult this one IN ADDITION to their own work for any
 presentation-layer concern. See `integration/integration-plan.md`.
+
+## Skill-engine release commands
+
+```powershell
+python -X utf8 scripts/validate_engine.py --baseline tests/quality-baseline.json
+python -X utf8 scripts/routing_smoke_test.py
+```
+
+The baseline is zero-debt: all 82 active skills pass the local contract. Any new finding is a CI
+regression and must be fixed before release.

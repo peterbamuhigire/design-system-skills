@@ -1,13 +1,12 @@
 ---
 name: design-ethics-and-anti-dark-patterns
-description: Use when you need the cross-cutting ethics gate for an interface — the deceptive-pattern (dark-pattern) catalogue and the honest-design guardrails that apply to ANY flow, not one surface. Covers the named pattern families — sneaking (sneak-into-basket, hidden costs / drip pricing), urgency (fake scarcity, resetting countdowns), misdirection / confirmshaming, forced action (forced continuity, roach motel), nagging, and obstruction — each with its honest swap; plus consent UX, default ethics, the "would you be comfortable if the user saw this?" test, and a light note on the legal angle (GDPR consent, CCPA, the EU/UK/US deceptive-pattern rules and FTC). Use it to audit a flow for dark patterns, to choose the honest alternative when a stakeholder reaches for a coercive one, or as the ethics reference the conversion skills defer to. Pairs with ecommerce-and-checkout-ux and trust-credibility-and-social-proof, which name this as the ethics catalog; for a full scored product review use product-design-audit.
-status: active
+description: Use when auditing or redesigning consent, urgency, pricing, subscription, checkout, or retention flows for deception and coercion. Unlike product-design-audit, this is the focused ethics gate; conversion optimisation remains with its surface skill.
 metadata:
   portable: true
   category: 00-cross-cutting-ops-qa-a11y
   compatible_with:
-    - claude-code
-    - codex
+  - claude-code
+  - codex
 ---
 
 # Design Ethics & Anti-Dark-Patterns
@@ -56,6 +55,12 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
   framing and the honest swap.
 
 ## Required Inputs
+
+| Input | Supplied by | Required? | Why |
+|---|---|---|---|
+| Complete user flow and all states | Product team | yes | Reveals hidden and delayed coercion |
+| Commercial objective and user promise | Owner or brief | yes | Exposes incentive conflicts |
+| Applicable jurisdiction and policy | Legal/compliance owner | conditional | Frames legal escalation, not legal advice |
 
 - **The flow and its goal, stated honestly.** What is the business outcome (a sale, a sign-up, a
   retained subscriber) *and* what is the user actually trying to do? A dark pattern is exactly the gap
@@ -152,6 +157,12 @@ The seven families to walk a flow against:
 
 ## Outputs
 
+| Output | Consumer | Evidence / acceptance |
+|---|---|---|
+| Ethics finding register | Product and legal owners | Pattern, location, harm, evidence, and severity |
+| Honest-swap specification | Designer and engineer | Equivalent non-coercive flow and copy |
+| Ethics verdict | Release owner | PASS, CONDITIONAL, or BLOCKED with owner |
+
 - An **ethics / dark-pattern audit** of the flow: every detected pattern by family, with location,
   evidence, user harm, the light legal note, and the **honest swap** — in the shape of
   `examples/ethics-audit-worked.md`.
@@ -160,6 +171,31 @@ The seven families to walk a flow against:
 - A **completed comfort-test summary** — the questionable decisions, each resolved to its honest form.
 
 ## Examples
+
+- Use the worked example in `examples/` for the pattern-to-harm-to-honest-swap trace.
+
+## Quality Standards
+
+- Evaluate the complete journey, including cancellation, refusal, renewal, and post-purchase states.
+- Preserve informed, freely given, specific, and reversible user choice.
+- Stop release for hidden costs, fabricated urgency, non-equivalent refusal, or obstructed cancellation.
+
+## Decision Rules
+
+| Condition | Decision | Wrong-choice failure |
+|---|---|---|
+| Claim or urgency is objectively verifiable and expires truthfully | Permit with evidence | Legitimate information is suppressed |
+| Decline is less visible or harder than accept | Equalise prominence and effort | Consent is coerced |
+| Optional data is required without necessity | Remove requirement or state dependency | Forced action captures excess data |
+| Legal interpretation is needed | Escalate to qualified counsel | Design guidance is misrepresented as legal advice |
+
+## Capability Contract
+
+Read and complete-flow inspection are required. Audit defaults to read-only; editing needs remediation authority. Do not approve legal compliance, manipulate production data, or publish consent changes without accountable owner review.
+
+## Degraded Mode
+
+Without all states or policy context, issue a conditional ethics review, identify missing screens and claims, and withhold a pass. Recover with recordings, state maps, terms, and legal-owner input.
 
 - `examples/ethics-audit-worked.md` — a fully worked ethics audit of a real-ish flow (the sign-up →
   trial → cancellation journey of a habit-tracking SaaS, "Streaky"), finding the dark patterns across

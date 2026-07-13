@@ -1,16 +1,12 @@
 ---
 name: cross-platform-design-parity
-description: Use when one product design must ship as BOTH idiomatic iOS and
-  idiomatic Android - deciding what to unify (brand, content, IA, flows) versus
-  diverge (navigation, controls, motion, gestures, system chrome), including
-  current Apple Liquid Glass/SF Symbols 8 guidance and Material 3 Expressive.
-status: active
+description: Use when one product must ship as idiomatic iOS and Android and needs explicit unify/diverge decisions for brand, IA, flows, navigation, controls, motion, gestures, and system chrome. Do not use to perfect only one platform; route that work to the iOS or Android skill.
 metadata:
   portable: true
   category: 07-mobile-ios-android-cross-platform
   compatible_with:
-    - claude-code
-    - codex
+  - claude-code
+  - codex
 ---
 
 # Cross-Platform Design Parity
@@ -35,12 +31,37 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 
 ## Required Inputs
 
+| Input | Source | Evidence |
+|---|---|---|
+| Shared product model, brand, content, and critical flows | Product/design system | Approved invariants and representative screens/states |
+| Platform support and implementation stack | iOS/Android engineering | OS/API ranges, native/RN/Flutter constraints, component inventory |
+| Platform conventions and accessibility requirements | Current official guidance and policy | Verified navigation, controls, gestures, targets, and fallback needs |
+
 - The screens/flows in scope, the single source-of-truth design (Figma, screenshots, or a token set), and which platform it was authored on.
 - The brand system: typeface(s), colour tokens, logo, voice — the things that MUST stay constant across platforms.
 - The build target: native Swift+Kotlin, React Native, or Flutter (this changes the mapping, not the parity decisions).
 - For React Native/Expo: Expo managed vs prebuild vs bare RN, minimum RN/Expo version if known,
   native dependencies, permission surfaces, offline/sync expectations, and EAS Build/Update scope.
 - Target device classes (compact phone, large phone, tablet/foldable), Apple resizable windows/Mac-designed-for-iPhone behavior when relevant, and minimum OS versions (these gate Liquid Glass / Material 3 Expressive availability).
+
+## Decision Rules
+
+| Condition | Choice | Wrong-choice failure |
+|---|---|---|
+| Difference expresses brand/content/business meaning | Unify through shared semantic tokens/content | Unnecessary divergence fractures product identity |
+| Difference is a learned platform convention | Diverge idiomatically and document rationale | Pixel cloning feels foreign and harms usability |
+| Shared framework lacks safe native behaviour | Platform branch behind one semantic contract | Lowest-common-denominator UI is native to neither platform |
+| Version-specific feature lacks required fallback | Gate by version and specify fallback | Unsupported devices receive broken or inconsistent behaviour |
+
+## Capability Contract
+
+- Must inspect both platform contracts/builds and current guidance; review is read-only unless parity remediation is requested.
+- May edit shared/in-scope platform UI, but may not change minimum OS/API support, permissions, or release configuration without authority.
+
+## Degraded Mode
+
+- If either platform, support range, or shared product invariant is unavailable, stop parity sign-off and mark that side pending.
+- Without runnable builds, produce a side-by-side specification marked unverified. Recover divergence defects by identifying the semantic invariant, correcting the platform resolution, and rerunning both native gates.
 
 ## The Parity Principle (state this before specifying anything)
 
@@ -87,6 +108,11 @@ See `references/ios-vs-android-idioms.md` for the element-by-element divergence 
   implications.
 
 ## Outputs
+
+| Output | Consumer | Evidence and acceptance |
+|---|---|---|
+| Unify/diverge parity specification | Product, design, iOS/Android engineering | Shared invariant, each platform resolution, rationale, version gate, and fallback are explicit |
+| Cross-platform gate | QA and accessibility | Both native quality gates and shared critical flows/states pass independently |
 
 - A parity spec: the Unify/Diverge classification, a side-by-side element sheet (unified value · iOS resolution · Android resolution · rationale), the RN/Flutter mapping, the state matrix, version-gate notes, and an RN implementation-readiness addendum when React Native/Expo is the build target.
 

@@ -1,17 +1,12 @@
 ---
 name: micro-interactions-and-feedback
-description: Use when designing or reviewing per-control feedback — button press, toggle/switch,
-  text input, checkbox/radio states, signifier (hint) animation, and the occasional delight moment.
-  Covers the trigger → rules → feedback → loops anatomy, optimistic feedback with rollback, haptic
-  pairing, and how to keep feedback honest and non-AI-slop. Pairs with `motion-design` (which owns
-  the global timing/easing/spring/reduced-motion law); this skill owns the control-level feedback layer.
-status: active
+description: Use when designing per-control feedback for presses, toggles, inputs, selections, optimistic actions, haptics, or delight moments. Use motion-design for the product-wide timing, easing, transition, choreography, and reduced-motion system.
 metadata:
   portable: true
   category: 08-motion-and-interaction
   compatible_with:
-    - claude-code
-    - codex
+  - claude-code
+  - codex
 ---
 
 # Micro-Interactions & Feedback
@@ -32,6 +27,11 @@ metadata:
 - The work is **visual styling of the control at rest** (colour, type, spacing, shape) → `../../04-web-and-ui-design/` or the token/theming group.
 
 ## Required Inputs
+| Input | Source | Required? | Evidence |
+|---|---|---|---|
+| Control, task, and complete state set | Product flow and component spec | yes | Reachable-state inventory |
+| Motion tokens and platform channels | `motion-design` and platform guidance | yes | Approved timing, haptic, and reduced-motion rules |
+| Server authority and failure behaviour | Engineering contract | when remote | Success, latency, rejection, and rollback cases |
 - The control and its **complete state set** (rest, hover, focus-visible, pressed, active/checked, disabled, loading, error).
 - Whether the action is **local** (instant, authoritative) or **server-backed** (needs optimistic + rollback).
 - Target platforms (web / iOS / Android) and whether **haptics** are available and appropriate.
@@ -47,6 +47,24 @@ metadata:
 7. **Delight, even more sparingly.** At most one celebratory flourish per meaningful milestone; it is additive (the action already succeeded without it), ≤ ~400 ms, never on the hot path, and fully replaced under reduced-motion.
 8. **Write the spec** as a state table + motion timeline + reduced-motion replacement + platform parity (see `examples/`). Run the acceptance checklist.
 
+## Decision Rules
+
+| Condition | Feedback design | Wrong-choice failure |
+|---|---|---|
+| Local authoritative action | Immediate visual state change | Artificial delay makes a reliable action feel broken |
+| Reversible server-backed action | Optimistic feedback with visible rollback | Premature success silently diverges from server truth |
+| Irreversible or high-risk action | Confirm before action; do not optimise success | Optimism creates harmful false confirmation |
+| Haptics unavailable or inappropriate | Visual plus semantic state feedback | Haptic-only feedback excludes users and platforms |
+
+## Capability Contract
+
+Read and search are required for component states, motion tokens, and service behaviour. Editing is allowed only when implementation is requested. Rendering or execution is required to claim timing, haptic, assistive-technology, or rollback success.
+
+## Degraded Mode
+
+If required evidence or tooling is unavailable, use the scoped fallback below and mark the result unverified.
+Without a runnable control, produce a state-and-timeline specification and mark tactile, timing, and assistive checks unverified. Without server failure semantics, do not prescribe optimistic success; use pending feedback until authority is known.
+
 ## Anti-Patterns
 - **`ease-*-back` / bouncy overshoot interpolators** (the App Design Apprentice habit). They violate the engine's **ζ ≥ 0.7 no-bounce** rule and are the #1 AI animation fingerprint (`doctrine/references/ai-slop-taxonomy.md`). Use a spring in the no-bounce band; if you want a "pop", cap it at ζ≈0.7–0.75 (barely perceptible), never elastic.
 - **Animation fatigue** — every control pulsing, bouncing, or flourishing. Feedback that is always on is noise; reserve motion for state change and confirmation.
@@ -57,6 +75,11 @@ metadata:
 - **Feedback that lies about latency** — instant "done" checkmark while the request is still in flight with no reconciliation.
 
 ## Outputs
+| Artefact | Consumer | Evidence and acceptance condition |
+|---|---|---|
+| Per-control feedback specification | Component designers and engineers | Every reachable state has honest visual and semantic feedback |
+| Optimistic/rollback contract | Frontend and service owners | Latency, success, rejection, and restoration paths are explicit |
+| Accessibility and platform evidence | QA and release owner | Reduced-motion, non-colour cues, and supported haptics are verified |
 - A per-control **micro-interaction spec**: anatomy (trigger/rules/feedback/loops), state table, motion timeline (timing + easing/spring), channel map (visual/haptic/sound), optimistic + rollback path, reduced-motion replacement table, platform parity, and an acceptance checklist.
 
 ## Examples

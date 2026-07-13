@@ -1,5 +1,9 @@
 # Executive Summary
 
+> Update, 2026-07-13: the machine-backed skill-contract audit and implemented conformance work in
+> `11-skill-standard-conformance-2026-07-13.md` supersede this document's contract, routing, and
+> priority conclusions. The original cross-engine ranking below is retained as historical context.
+
 Engine: `design-system-skills`
 Root: `C:\wamp64\www\design-system-skills`
 Rank: 1 of 9

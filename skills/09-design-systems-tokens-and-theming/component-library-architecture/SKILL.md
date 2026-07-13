@@ -1,13 +1,12 @@
 ---
 name: component-library-architecture
-description: Use when architecting a reusable component library or design-system component set — deciding atomic levels (atom/molecule/organism), the variant/size/state model for a component (Button, Input, Card, Modal, Tabs), how components compose via slots/composition over prop-explosion, full interactive-state coverage (default/hover/focus/active/disabled/loading/selected/error), and the per-component documentation (anatomy, props/variant API, do/don't, a11y notes). Routes here for "design a Button component", "component API", "variant matrix", "component states", "atomic design structure", "component spec sheet", "slots vs props", "compound component". Builds ON token architecture (consume semantic tokens, never hard-code).
-status: active
+description: Use when defining reusable component anatomy, variants, states, slots, composition, APIs, or component documentation. Use design-tokens-and-naming for shared values and figma-and-tooling-workflow for tool-specific library operations.
 metadata:
   portable: true
   category: 09-design-systems-tokens-and-theming
   compatible_with:
-    - claude-code
-    - codex
+  - claude-code
+  - codex
 ---
 
 # Component Library Architecture
@@ -28,6 +27,11 @@ metadata:
 - You only need the copy inside a control (labels, button text). Use `ux-writing-and-microcopy`.
 
 ## Required Inputs
+| Input | Source | Required? | Evidence |
+|---|---|---|---|
+| Semantic tokens and supported themes | `design-tokens-and-naming` | yes | Token source and theme map |
+| Component inventory and priority | Product and engineering owners | yes | Ranked use cases and consumers |
+| Platform and accessibility contract | Target repositories and WCAG policy | yes | Framework constraints and required states |
 - A **token layer to consume** — at minimum semantic tokens for color, space, radius, type, elevation, motion (`design-tokens-and-naming`). If absent, stop and build tokens first; a component library built on hex literals cannot be themed and is not a system.
 - The **target platform(s)** — web (HTML/CSS, React/Vue/Web Components), or cross-platform — because composition mechanics (slots, `children`, named regions) differ.
 - The **scope**: which components, and the priority order (foundations first: Button, Input/Field, Icon, Text, then molecules: Field-with-label, Select, then organisms).
@@ -45,6 +49,23 @@ metadata:
 7. **Document the component to the template.** Produce the per-component spec: anatomy diagram (named parts), when-to-use / when-not, the **variant × size × state matrix**, the prop/slot API table, a11y contract, and do/don't pairs. Use `references/component-doc-template.md`. A component without this doc is not "done" — undocumented variants get reinvented and the library forks.
 8. **Resist anti-slop sameness (`doctrine/design-doctrine.md`).** The default-looking Button (flat fill, generic radius, blue) is the convergent AI mean. Make the *one* authored choice — a deliberate radius, a considered pressed-state shift, a focus ring that belongs to the brand — and apply it systematically through tokens so it reads as one skilled hand, not a template.
 
+## Decision Rules
+
+| Condition | Architecture choice | Wrong-choice failure |
+|---|---|---|
+| Variations are mutually exclusive | One typed variant axis | Boolean soup permits contradictory combinations |
+| Consumer supplies structured content | Slot or compound composition | Content props expand into an unmaintainable API |
+| Behaviour and semantics differ materially | Separate components sharing primitives | One mega-component accumulates conditional branches |
+| Difference is only visual role | Same component with semantic variant | Duplicate components drift in behaviour and accessibility |
+
+## Capability Contract
+
+Read and search are required across tokens, usage, components, and accessibility tests. Editing is allowed only for authorised implementation. Execution is required to claim state, API, visual-regression, or accessibility compatibility; publishing a library requires separate authority.
+
+## Degraded Mode
+
+Without repository access, return a proposed inventory, API, and state matrix rather than claiming compatibility. Without test or render capability, mark keyboard, assistive-technology, responsive, and theme evidence unverified and block publication.
+
 ## Anti-Patterns
 - **State gaps.** Shipping default + hover and forgetting focus-visible, loading, disabled, or error. The matrix exists so nothing is forgotten; an empty cell is a bug, not a default.
 - **`outline: none` with no replacement** — a WCAG 2.4.7 failure and the single most common a11y regression in component libraries.
@@ -56,6 +77,11 @@ metadata:
 - **Undocumented component** — no anatomy, no API table, no do/don't → it forks the moment a second person touches it.
 
 ## Outputs
+| Artefact | Consumer | Evidence and acceptance condition |
+|---|---|---|
+| Component inventory and composition map | Design-system owners | Scope, dependencies, and ownership are explicit |
+| Variant, state, slot, and API contracts | Designers and engineers | Reachable combinations are finite, typed, token-backed, and accessible |
+| Component documentation and verification record | Consumers and QA | Examples, theme renders, interaction tests, and known gaps are recorded |
 - An **atomic inventory** classifying each component (atom/molecule/organism) with composition relationships.
 - A **variant model** per component — the orthogonal axes (variant × size × state × modifier) as small enums + booleans.
 - A **full state matrix** per interactive component with a token-backed treatment for every reachable state.

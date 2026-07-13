@@ -15,7 +15,16 @@ here, so each domain engine's skill count stays low.
 
 ---
 
-## Latest Update: Self-Review, RN Readiness, And Apple UI Compatibility
+## Latest update: zero-debt skill-contract conformance
+
+As of 2026-07-13, all 82 active skills conform to the engine's portable authoring contract. Each
+skill now declares routing boundaries, inputs, outputs, capabilities, degraded behaviour,
+decision rules, stop/recovery conditions, evidence, and acceptance criteria. The repository also
+ships machine validation, 46 neighbour-collision routing fixtures, a zero-debt baseline, and CI
+checks for every push and pull request. See
+`docs/engine-upgrade-july-2026/11-skill-standard-conformance-2026-07-13.md`.
+
+## Previous update: self-review, RN readiness, and Apple UI compatibility
 
 As of 2026-06-22, the engine has a living AI-slop doctrine refresh loop and stronger
 React Native/Expo handoff gates:
@@ -99,6 +108,11 @@ discovered on the next glob. See `CONTRIBUTING.md`.
 
 The only hard requirement for flawless pickup: **every skill has well-formed frontmatter**
 (`name` + a specific, trigger-rich `description`). The template enforces this.
+
+Routing alone is not sufficient for release. Every skill must also satisfy the capability,
+degraded-mode, decision, evidence, and output contracts in
+`governance/skill-authoring-standard.md`. CI prevents the documented normalisation baseline from
+growing and runs representative routing collisions on every push and pull request.
 
 ---
 
@@ -195,6 +209,17 @@ design-system-skills/
 Each domain engine carries the one-line trigger block from `integration/integration-plan.md`.
 Reference model — nothing is mirrored. Clone this repo on every device so the reference always
 resolves.
+
+## Engine quality checks
+
+```powershell
+python -X utf8 scripts/validate_engine.py --baseline tests/quality-baseline.json
+python -X utf8 scripts/routing_smoke_test.py
+```
+
+The baseline records zero contract findings across all 82 active skills. Any new structural or
+contract finding fails CI. Routing fixtures must continue to achieve 100% precision at the
+top-three acceptance threshold.
 
 ## Provenance
 

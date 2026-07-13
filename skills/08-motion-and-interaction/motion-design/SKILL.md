@@ -1,10 +1,6 @@
 ---
 name: motion-design
-description: Animation and micro-interaction standards for web, Android, and iOS.
-  Covers timing rules (100/300/500), easing curves, GPU-accelerated animation, staggered
-  entrances, state transitions, loading states, Apple haptics/Liquid Glass motion checks,
-  and mandatory prefers-reduced-motion.
-status: active
+description: Use when defining system-level motion timing, easing, transitions, choreography, loading motion, or reduced-motion behaviour across web and native products. Use micro-interactions-and-feedback for the feedback anatomy of one control.
 metadata:
   portable: true
   category: 08-motion-and-interaction
@@ -34,6 +30,12 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 
 ## Required Inputs
 
+| Input | Source | Required? | Evidence |
+|---|---|---|---|
+| Motion inventory and target platforms | Product flow and platform owners | yes | Named transitions, triggers, states, and APIs |
+| Motion tokens and performance constraints | Design system and engineering | yes | Current durations, easings, budgets, and supported properties |
+| Accessibility and interruption needs | User research and accessibility requirements | yes | Reduced-motion substitutions and interruption cases |
+
 - Platform target(s): web (CSS/JS), Android (Compose), iOS (SwiftUI) — these drive the spring API and reduced-motion hook.
 - The animation category (feedback, state change, layout shift, entrance, loading) so the right 100/300/500 band and easing apply.
 - Whether the motion can be interrupted/redirected (drag, gesture, re-tap) — decides cubic-bezier vs physics spring.
@@ -42,28 +44,53 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 
 ## Workflow
 
-- Read this `SKILL.md` first, then load only the referenced deep-dive files that are necessary for the task.
-- Apply the ordered guidance, checklists, and decision rules in this skill instead of cherry-picking isolated snippets.
-- Produce the deliverable with assumptions, risks, and follow-up work made explicit when they matter.
+1. Inventory motion by trigger, state change, distance, interruption, and user value.
+2. Select duration and easing or spring behaviour using the decision rules below.
+3. Specify only transform/opacity motion where possible and define loading and rollback behaviour.
+4. Provide a non-spatial reduced-motion equivalent for every vestibular trigger.
+5. Render on each target platform, measure performance, and record pass/fail evidence. Stop release when a required reduced-motion path, render, or performance check is missing; recover with a static transition and mark the unverified platform.
 
 ## Quality Standards
 
-- Keep outputs execution-oriented, concise, and aligned with the repository's baseline engineering standards.
-- Preserve compatibility with existing project conventions unless the skill explicitly requires a stronger standard.
-- Prefer deterministic, reviewable steps over vague advice or tool-specific magic.
+- Motion must explain hierarchy, causality, feedback, or continuity; decoration alone is insufficient.
+- Never exceed three flashes per second, hide required state, or make motion the only feedback channel.
+- Acceptance requires platform renders, reduced-motion evidence, and no layout-triggering animation in critical flows.
+
+## Decision Rules
+
+| Condition | Choice | Wrong-choice failure |
+|---|---|---|
+| Short, non-interruptible state change | Tokenised cubic-bezier transition | A spring adds needless oscillation and platform drift |
+| Gesture-driven or interruptible movement | Critically or near-critically damped spring | Fixed easing breaks continuity when redirected |
+| Vestibular trigger or reduced-motion preference | Non-spatial fade, instant swap, or progress change | Disabling nothing exposes users to harmful motion |
+| Work completes under roughly 80 ms | Immediate state feedback, no loader | Spinner flash makes the interface feel slower |
+
+## Capability Contract
+
+Read and search are required for design, token, and implementation sources. Editing is allowed only when implementation is requested. Execution or rendering is required for performance and platform claims; network access, publication, and production mutation require separate authority.
+
+## Degraded Mode
+
+Without runnable builds, deliver a motion specification and mark timing, frame-rate, and platform parity unverified. Without user motion preferences, apply the safest non-spatial replacement and block release of vestibular effects.
 
 ## Anti-Patterns
-
-- Treating examples as copy-paste truth without checking fit, constraints, or failure modes.
-- Loading every reference file by default instead of using progressive disclosure.
+- **Bounce by default:** use a no-overshoot curve or damping ratio of at least 0.7.
+- **Animate layout properties:** animate transform and opacity, then verify frame stability.
+- **Remove all reduced-motion feedback:** retain necessary non-spatial state confirmation.
+- **Spinner for instant work:** show immediate feedback and introduce progress only after a perceptible delay.
+- **Unbounded stagger:** cap the sequence so later content is never withheld.
 
 ## Outputs
+
+| Artefact | Consumer | Evidence and acceptance condition |
+|---|---|---|
+| Motion language and token map | Designers and engineers | Every motion category maps to an approved duration and curve |
+| Transition and reduced-motion specifications | Product teams | Each trigger has normal, interrupted, and reduced-motion behaviour |
+| Render and performance evidence | QA and release owner | Target-platform checks pass or unsupported claims are marked unverified |
 
 - A **motion audit** covering timing rules, easing curves, reduced-motion support, performance, and
   per-platform parity.
 - A motion spec, implementation guidance, review findings, or generated artifacts when the task is creation or refactoring.
-- Clear assumptions, tradeoffs, or unresolved gaps when the task cannot be completed from available context alone.
-- References used, companion skills, or follow-up actions when they materially improve execution.
 
 ## References
 

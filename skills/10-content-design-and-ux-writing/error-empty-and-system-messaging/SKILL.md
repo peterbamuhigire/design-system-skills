@@ -1,13 +1,12 @@
 ---
 name: error-empty-and-system-messaging
-description: Use when writing the words that appear when something goes wrong, when there is nothing yet, or when the system needs to talk to the user — error messages, empty/zero states, success/confirmation copy, loading and offline messaging, toasts/banners, permission and destructive-action dialogs, 404/500 pages, validation and form-error text. Covers the helpful-error formula (what happened + why + how to fix, with no blame and no jargon), empty-state copy that teaches the first action instead of apologizing, and system messages that match severity to channel. This is the COPY layer; pair it with the visual skill `04-…/empty-error-and-loading-states`, which designs the states these words live in. Produces ready-to-ship message strings and a reusable message library. Routes here for "error message", "empty state copy", "validation copy", "404 / 500 page", "toast / banner / snackbar wording", "confirmation dialog text", "offline message", "system message", "error copy", "microcopy for errors".
-status: active
+description: Use when writing error, empty, success, loading, offline, validation, toast, banner, permission, destructive-action, or HTTP-status messages. Use ux-writing-and-microcopy for ordinary interface labels and empty-error-and-loading-states for visual state design.
 metadata:
   portable: true
   category: 10-content-design-and-ux-writing
   compatible_with:
-    - claude-code
-    - codex
+  - claude-code
+  - codex
 ---
 
 # Error, Empty And System Messaging
@@ -52,6 +51,12 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
   different channel, different skill.
 
 ## Required Inputs
+
+| Input | Source | Required? | Evidence |
+|---|---|---|---|
+| Failure/state taxonomy and recovery actions | Product and engineering owners | yes | Cause, severity, recoverability, and next action |
+| Voice, terminology, and channel rules | Content governance and design system | yes | Approved tone and component constraints |
+| Privacy, security, and localisation constraints | Policy and regional owners | when applicable | Redaction and translation requirements |
 
 - The product's **voice & tone** definition (or at least: how formal, how warm, does it use "we",
   does it ever use humour — and the rule that humour is forbidden in genuine error/failure states).
@@ -154,6 +159,24 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
    speaking in one voice. Hand off alongside the visual states from
    `04-…/empty-error-and-loading-states`.
 
+## Decision Rules
+
+| Condition | Message/channel choice | Wrong-choice failure |
+|---|---|---|
+| User can fix the issue in place | Inline message beside the source | A global alert disconnects cause from recovery |
+| System-wide, persistent, or blocking issue | Persistent banner or blocking state | A toast disappears before action is possible |
+| No data exists because the user is new | Teach the first meaningful action | Apologetic empty copy implies failure |
+| Sensitive technical detail exists | Explain impact and safe recovery; log detail privately | Exposing internals creates confusion or security risk |
+
+## Capability Contract
+
+Read and search are required across state taxonomy, system behaviour, voice, and policy. Editing is allowed only when message implementation is requested. Rendering and execution are required to claim timing, announcement, focus, and recovery success; production changes require separate authority.
+
+## Degraded Mode
+
+If required evidence or tooling is unavailable, use the scoped fallback below and mark the result unverified.
+Without a verified cause or recovery action, stop rather than invent specificity; provide a safe holding message and request the missing system contract. Without rendered-state tests, mark channel, focus, screen-reader announcement, and truncation evidence unverified.
+
 ## Anti-Patterns
 
 - **"Something went wrong."** / "Oops!" / "An error occurred." — the null message. Says nothing,
@@ -185,6 +208,12 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
   out, including the one that mattered.
 
 ## Outputs
+
+| Artefact | Consumer | Evidence and acceptance condition |
+|---|---|---|
+| State-keyed message library | Product, design, and engineering | Every message names impact and the safest available next step |
+| Channel and severity map | Component and accessibility owners | Persistence, placement, focus, and announcement match severity |
+| Review evidence and unresolved-state log | QA and service owners | Representative failures and recovery paths are exercised or marked blocked |
 
 - **Ready-to-ship message strings** for each state: the error text (what + why + fix), empty-state
   copy (with its first-action label), success/confirmation copy, and system/status messages —

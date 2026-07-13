@@ -16,6 +16,8 @@ do not use the `Skill` tool for them.**
    table is a hint only. This is what makes newly-added skills appear automatically with no
    registration step.
 3. Apply the doctrine references in `doctrine/references/`.
+4. For skill authoring or catalogue maintenance, apply
+   `governance/skill-authoring-standard.md` and run both local quality commands in `AGENTS.md`.
 
 ## The one rule that overrides convenience
 

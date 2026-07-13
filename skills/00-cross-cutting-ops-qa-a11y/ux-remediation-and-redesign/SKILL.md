@@ -1,17 +1,7 @@
 ---
 name: ux-remediation-and-redesign
-description: Use when you already HAVE audit findings (from design-audit or product-design-audit)
-  and now need to FIX them — owns the post-audit remediation discipline the audits deliberately
-  stop short of: diagnose → triage → redesign → re-validate → measure. Triggers - "fix these
-  findings", "remediation plan", "now redesign it", "sequence the fixes", "what do we fix first",
-  "turn the audit into a work plan", "prioritise the UX fixes", "re-test the redesign", "prove the
-  fix worked", "measure the UX improvement", "before/after redesign", "remediate the checkout /
-  onboarding / form". Composes a real triage matrix (red-route × effort-impact × MoSCoW) to
-  sequence fixes, redesigns at lo-fi→hi-fi against doctrine, re-validates with a usability / A/B /
-  tree-test protocol, and measures the uplift (SUS/NPS/HEART, KPI delta). For finding the problems
-  use design-audit (one artifact) or product-design-audit (whole product); for the final pass/fail
-  ship gate use design-qa-and-pre-launch-review. This is the FIX side; those are the DIAGNOSE side.
-status: active
+description: >-
+  Use when existing design-audit findings must become a prioritised remediation plan, redesign, re-test, and measured before/after result. Use design-audit or product-design-audit to diagnose problems and design-qa-and-pre-launch-review for the final release verdict.
 metadata:
   portable: true
   category: 00-cross-cutting-ops-qa-a11y
@@ -51,6 +41,12 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
   group 03–13 craft skills to build, then audit, then return here only if findings surface.
 
 ## Required Inputs
+
+| Input | Supplied by | Required? | Why |
+|---|---|---|---|
+| Severity-rated audit findings | Design or product audit | yes | Defines diagnosed problems |
+| Baseline task and product metrics | Research/analytics owner | yes | Enables before-and-after proof |
+| Constraints, red routes, and release window | Product and engineering | yes | Controls prioritisation |
 
 - **The audit findings** — the severity-rated list from `design-audit` / `product-design-audit`
   (each finding: dimension, location, issue, impact, the standard it violates, a fix direction).
@@ -152,6 +148,12 @@ reference instead — never leave a fix un-routed.)
 
 ## Outputs
 
+| Output | Consumer | Evidence / acceptance |
+|---|---|---|
+| Prioritised remediation queue | Product and delivery teams | Severity, effort, gate, rank, and owner |
+| Annotated target-state design | Engineering and QA | Each change traces to a finding and craft rule |
+| Re-validation and uplift report | Release owner | Before/after task, gate, and product evidence |
+
 - A **triaged fix queue** — every finding ranked by the matrix (Critical/Serious/Minor ×
   effort-impact quadrant × MoSCoW), gate-failing items forced to Must, with the sequence justified.
 - A **remediation plan** — per fix: the finding(s) it closes, the target right-pattern, the owning
@@ -164,6 +166,32 @@ reference instead — never leave a fix un-routed.)
   back to `design-audit`.
 
 ## Examples
+
+- Use the worked example in `examples/` for the audit-to-queue-to-revalidation lifecycle.
+
+## Quality Standards
+
+- Preserve the original audit evidence and baseline before editing.
+- Fix root causes along complete flows, then re-test the exact failed criterion or task.
+- Block ship when a Must gate-failer remains unresolved or a redesign creates a new blocker.
+
+## Decision Rules
+
+| Condition | Decision | Wrong-choice failure |
+|---|---|---|
+| Finding fails slop, WCAG, or performance gate | Make it a Must | Release blocker is deferred as polish |
+| High-impact fix is low effort | Implement as a quick win | Best return waits behind major projects |
+| Re-validation still fails | Return to triage and revise the approach | Failed fix receives cosmetic polish |
+| Audit evidence or baseline is missing | Stop and obtain it | Improvement cannot be attributed or measured |
+
+## Capability Contract
+
+Read and search are required; editing and execution require explicit remediation authority. Keep production mutation, research recruitment, and release decisions within their accountable owners. Preserve traceability from finding to fix.
+
+## Degraded Mode
+
+If required evidence or tooling is unavailable, use the scoped fallback below and mark the result unverified.
+Without editing, provide the ranked queue and annotated change specification. Without testing or baseline data, mark outcomes conditional and supply a re-validation plan; never claim uplift without evidence.
 
 - `examples/checkout-remediation-worked.md` — a full worked remediation of the **Aurora Analytics
   signup/landing** flow whose flaws were diagnosed in `design-audit/examples/design-audit-filled.md`

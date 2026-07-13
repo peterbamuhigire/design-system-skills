@@ -1,13 +1,12 @@
 ---
 name: xlsx-and-financial-model-presentation
-description: Use when an Excel/.xlsx spreadsheet, financial model, KPI sheet, or analytical exhibit must be PRESENTED as a designed, exhibit-grade artifact — number formats that read as authored (custom masks, accounting negatives, $-on-top-and-totals), conditional formatting used as deliberate visual encoding (data bars / icon sets / colour scales with non-colour cues), named table & cell styles, the blue-input/black-formula model convention, charts styled for integrity, and print/page layout for hand-out exhibits. Triggers on "make this model/spreadsheet look presentable", "format this Excel exhibit/KPI sheet", "number formats for a financial model", "conditional formatting heatmap/data bars", "print this model summary as an exhibit", or any .xlsx that must not open as default Calibri grey-grid. Does NOT cover formulas, pivots, macros, or model calculation logic — those defer to the finance/engineering engines.
-status: active
+description: Use when presenting an XLSX financial model, KPI sheet, or analytical exhibit through number formats, styles, conditional encoding, charts, and print layout. Use accounting or engineering skills for formulas, pivots, macros, calculation logic, and financial correctness.
 metadata:
   portable: true
   category: 13-presentations-and-documents
   compatible_with:
-    - claude-code
-    - codex
+  - claude-code
+  - codex
 ---
 
 # XLSX And Financial-Model Presentation
@@ -59,6 +58,11 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
   (group 01) and the doctrine charter, then return here.
 
 ## Required Inputs
+| Input | Source | Required? | Evidence |
+|---|---|---|---|
+| Validated workbook and calculation-owner sign-off | Finance or analytical owner | yes | Controlled workbook and review status |
+| Audience, key decisions, outputs, and print needs | Sponsor | yes | Exhibit brief |
+| Input/formula/output conventions and brand rules | Model and design owners | yes | Style contract |
 
 - The sheet's purpose, audience, and medium (on-screen review vs printed board hand-out vs PDF
   exhibit) — this sets decimals, density, and whether a print layout is warranted.
@@ -122,6 +126,19 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
    deliberate rules. Then sanity-check that you have **not** strayed into calculation logic — if you
    changed a formula or a number's meaning, stop and route to the finance engine.
 
+## Decision Rules
+| Condition | Workbook presentation choice | Wrong-choice failure |
+|---|---|---|
+| Cell is user input | Distinct named input style plus validation | Colour alone or inconsistency causes accidental edits |
+| Variance needs attention | Direction-aware format plus non-colour cue | Red/green alone excludes users and misstates favourable direction |
+| Sheet is an executive exhibit | Curate outputs and print area | Exposing calculation sprawl obscures the decision |
+
+## Capability Contract
+Read, edit, recalculate, and render are required for workbook production. Analysis of formulas remains read-only unless explicitly authorised. External links, macros, financial logic, and distribution require separate authority and domain review.
+
+## Degraded Mode
+Without spreadsheet recalculation or rendering, produce a style and print specification marked unverified. Stop release when formulas show errors, links are stale, print pages clip, or financial-owner approval is absent.
+
 ## Anti-Patterns
 
 - Shipping the **default Calibri grey-grid**: visible gridlines as the only structure, no number
@@ -143,6 +160,11 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
 - Fit-to-page shrinking the exhibit into illegibility instead of splitting it.
 
 ## Outputs
+| Artefact | Consumer | Evidence and acceptance condition |
+|---|---|---|
+| Styled workbook and exhibit sheets | Analysts and decision-makers | Inputs, formulas, outputs, units, and hierarchy are distinguishable |
+| Named style, format, chart, and print specification | Workbook maintainers | Rules are reusable without manual cell-by-cell formatting |
+| Recalculation and rendered-page evidence | Finance owner and QA | Errors, links, charts, conditional formats, and print pages pass |
 
 - An `.xlsx` (and/or a print/PDF exhibit from it) with **exhibit-grade number formats** applied
   consistently (custom masks, accounting negatives, `$`-on-top-and-totals, units, one decimal per

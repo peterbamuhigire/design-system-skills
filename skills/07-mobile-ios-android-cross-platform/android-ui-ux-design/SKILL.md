@@ -1,7 +1,6 @@
 ---
 name: android-ui-ux-design
-description: Specialized Android UI/UX design skill for premium Jetpack Compose apps. Use alongside android-development when Android screens must be beautiful, native, usable, accessible, and commercially credible.
-status: active
+description: Use when an Android phone, tablet, foldable, or Compose screen needs native Material navigation, components, states, accessibility, and adaptive behaviour. Do not use for iOS conventions or cross-platform unify/diverge decisions; route those to iOS design or parity.
 metadata:
   portable: true
   category: 07-mobile-ios-android-cross-platform
@@ -27,6 +26,12 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 
 ## Required Inputs
 
+| Input | Source | Evidence |
+|---|---|---|
+| User task, navigation, roles, and screen states | Product and application contracts | Critical flow, routes, loading/error/offline/permission states |
+| Supported Android versions and form factors | Engineering support policy | API range, phone/tablet/foldable/window classes, input modes |
+| Brand tokens and native implementation constraints | Design system and Compose repository | Approved type/colour/motion and existing components |
+
 - Target screens, user task, device classes, brand/product context, backend constraints, and any existing screenshots or Compose components.
 - Confirm whether the deliverable is design guidance, implementation, review, QA, or documentation.
 
@@ -38,6 +43,24 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 4. Choose Material 3 components and adaptive navigation before custom patterns.
 5. Model every Compose screen state: loading, content, empty, error, offline, permission denied, and syncing.
 6. Apply the Android mobile quality gate before implementation or review sign-off.
+
+## Decision Rules
+
+| Condition | Choice | Wrong-choice failure |
+|---|---|---|
+| Top-level destinations are few and peer-level | Material navigation bar/rail by window class | Custom tabs or drawers break native predictability |
+| Layout crosses compact/medium/expanded widths | Adaptive pane/navigation transformation | Enlarged phone canvas wastes space and harms productivity |
+| System back or predictive back applies | Integrate native back stack and preview | Custom gesture conflicts strand users or lose state |
+
+## Capability Contract
+
+- Must inspect product and Compose contracts and render/test representative Android configurations; review is read-only unless implementation is requested.
+- May edit/test in-scope UI. Do not change platform support, permissions, production data, or release builds without authority.
+
+## Degraded Mode
+
+- If API range, form factors, navigation, or state contract is missing, stop final specification and request it.
+- Without emulator/device rendering, provide a window-class/state matrix marked unverified. Recover a failed state or configuration by preserving task context, using native fallback, and retesting keyboard/touch/accessibility/back paths.
 
 ## Android UX Standards
 
@@ -65,8 +88,15 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - Squeezing web layouts into a phone UI.
 - Building card walls for dense reports.
 - Ignoring TalkBack, font scaling, offline states, or Android back behavior.
+- Hard-coding one phone width. Correction: design across compact, medium, and expanded window classes.
+- Fighting predictive back with a custom edge gesture. Correction: integrate the native back stack and preview.
 
 ## Outputs
+
+| Output | Consumer | Evidence and acceptance |
+|---|---|---|
+| Android UI/navigation/adaptive specification | Product and Compose engineering | Components, states, window classes, back, accessibility, and tokens are explicit |
+| Android quality gate | QA and accessibility | Representative APIs/form factors/input modes pass critical flows and recovery states |
 
 - Android UI brief, Compose component guidance, navigation model, state matrix, accessibility notes, or review findings.
 

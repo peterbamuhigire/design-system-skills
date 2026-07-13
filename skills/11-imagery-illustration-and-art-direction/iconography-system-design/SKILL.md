@@ -1,13 +1,12 @@
 ---
 name: iconography-system-design
-description: Use when designing or auditing a custom icon set / icon system — choosing the icon grid (e.g. 24px live area on a 24px artboard with keylines), the stroke weight and how it stays constant across sizes, the corner-radius and terminal language, the metaphor rules that keep glyphs consistent and unambiguous, optical-balance corrections (visual vs mathematical centering, square/circle/triangle area compensation), pixel-fitting/hinting at small sizes, and the rules for exporting an SVG sprite/font with a stable naming taxonomy. Routes here for "design an icon set", "icon grid", "icon stroke weight", "keyline shapes", "optical alignment of icons", "icon metaphor consistency", "icon spec sheet", "make our icons feel like one family", "custom iconography", "icon naming/taxonomy". Treats icons as a typographic-grade system, not clip-art picked one at a time.
-status: active
+description: Use when designing or auditing an icon family, grid, keylines, stroke, terminals, metaphors, optical corrections, small-size fitting, naming, or export contract. Use illustration-style-and-systems for expressive scenes and component-library-architecture for icon-button behaviour.
 metadata:
   portable: true
   category: 11-imagery-illustration-and-art-direction
   compatible_with:
-    - claude-code
-    - codex
+  - claude-code
+  - codex
 ---
 
 # Iconography System Design
@@ -30,6 +29,11 @@ metadata:
 - You are designing **spot illustrations or larger decorative art**. Iconography is functional, reductive, and grid-bound; illustration is not.
 
 ## Required Inputs
+| Input | Source | Required? | Evidence |
+|---|---|---|---|
+| Concept inventory and target sizes | Product and component owners | yes | Deconflicted concept list and placement matrix |
+| Brand/type character and platform constraints | Visual identity and platform guidance | yes | Approved style intent |
+| Accessibility, localisation, and export targets | Product requirements | yes | Labelling, RTL, colour, and delivery contract |
 - The **target rendering sizes** (e.g. 16, 20, 24px in UI; 24px as the design base) — this fixes the grid and the stroke weight, because stroke and grid are size-relative.
 - The **style intent**: outline (stroked) vs solid (filled) vs duotone, and the brand's character (geometric/precise, humanist/friendly, sharp/technical). State this before drawing — per `doctrine/design-doctrine.md` §2, the choice is named first.
 - The **inventory** — the concrete list of concepts that need glyphs (not "some icons"), so metaphors can be deconflicted as a set.
@@ -45,6 +49,24 @@ metadata:
 7. **Make icons accessible and color-agnostic.** Icons are **monochrome by default and use `currentColor`** so they inherit text color and theme for free (ties to `dark-mode-and-theming`). A meaningful icon needs a text label or `aria-label`; a **decorative** icon is `aria-hidden`. Never rely on an icon's color alone to carry meaning (WCAG 2.2 **1.4.1**); when an icon sits in a control, the *control's* target is **≥ 24×24 CSS px** (2.5.8) — the glyph itself can be smaller (`doctrine/references/wcag-2.2-criteria.md`). Icon-only buttons must still have an accessible name.
 8. **Define export + naming taxonomy.** Export a single optimized **SVG sprite** (or icon font) with a stable, namespaced naming scheme — `category-name-modifier` (`action-search`, `media-play`, `status-warning-fill`), kebab-case, no synonyms drift. Normalize viewBox to the artboard, strip editor cruft, keep paths as strokes-converted-to-fills *or* document that stroke is preserved for `currentColor` weight control. State the version and how additions are reviewed so the set does not fork.
 
+## Decision Rules
+
+| Condition | Icon-system choice | Wrong-choice failure |
+|---|---|---|
+| Glyph is primarily structural UI | Use the shared grid and restrained metaphor | Expressive illustration reduces recognition |
+| Meaning is unfamiliar or critical | Pair icon with visible text | Icon-only control becomes ambiguous |
+| Direction changes meaning in RTL | Mirror only the directional glyph | Mirroring universal objects corrupts semantics |
+| Small-size detail does not survive | Redraw/hint for that size | Mechanical scaling creates blur and closed counters |
+
+## Capability Contract
+
+Read and search are required for concepts, type, components, platform conventions, and existing assets. Editing is allowed only for authorised icon production. Rendering is required for optical, pixel-fit, contrast, RTL, and export claims; publication requires separate authority.
+
+## Degraded Mode
+
+If required evidence or tooling is unavailable, use the scoped fallback below and mark the result unverified.
+Without vector or raster rendering, deliver the grid, stroke, metaphor, naming, and size-variant specification and mark optical checks unverified. Without labelling or localisation context, block icon-only critical controls.
+
 ## Anti-Patterns
 - **The mixed-library set.** Three icons from Feather, two from Material, one from a random Dribbble file — different grids, weights, and metaphors. The most common slop signature in iconography.
 - **Mixed stroke weights** (or thinning the stroke to cram detail into one busy glyph) — breaks the family instantly. Simplify the glyph instead.
@@ -57,6 +79,11 @@ metadata:
 - **No naming taxonomy** — `icon1`, `Group 47`, synonyms (`bin`/`trash`/`delete`) — guarantees duplicates and a forked set.
 
 ## Outputs
+| Artefact | Consumer | Evidence and acceptance condition |
+|---|---|---|
+| Grid, stroke, terminal, and optical specification | Icon designers | Construction rules reproduce a coherent family |
+| Concept-to-glyph, naming, and RTL map | Product and localisation teams | Meanings are unique, labelled, and directionally correct |
+| Size variants and export verification | Component engineers and QA | Target-size renders, SVG hygiene, and contrast checks pass |
 - A **stated style spec** (stroke px, cap/join, corner radius, outline/solid rule, character) named before production.
 - A **construction grid**: artboard, live area, padding, and the keyline shapes with each glyph assigned to one.
 - A **stroke system** with the constant-weight rule and the per-size scaling/hinting table.

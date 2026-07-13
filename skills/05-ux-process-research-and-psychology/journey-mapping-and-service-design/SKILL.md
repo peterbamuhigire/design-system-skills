@@ -1,13 +1,12 @@
 ---
 name: journey-mapping-and-service-design
-description: Use when modelling a user's or customer's end-to-end experience across touchpoints and channels — building evidence-based personas, journey maps / experience maps, service blueprints (frontstage + backstage + support processes), Jobs-To-Be-Done (JTBD) statements, and alignment diagrams — and when turning that map into a ranked list of design opportunities. Routes here for "map the journey", "customer journey map", "experience map", "service blueprint", "frontstage/backstage", "JTBD", "jobs to be done", "persona", "where are the pain points", "alignment diagram", or "turn research into opportunities". Pick this when the unit of design is the *whole experience over time*, not a single screen.
-status: active
+description: Use when evidence must be synthesised into a persona, JTBD, end-to-end journey, experience map, or service blueprint across channels and frontstage/backstage work. Do not use for a single-screen flow or primary user research collection.
 metadata:
   portable: true
   category: 05-ux-process-research-and-psychology
   compatible_with:
-    - claude-code
-    - codex
+  - claude-code
+  - codex
 ---
 
 # Journey Mapping & Service Design
@@ -27,6 +26,12 @@ metadata:
 - You are defining the end-to-end product/discovery operating model, RACI, and rituals → use `enterprise-ux-process`.
 
 ## Required Inputs
+
+| Input | Source | Evidence |
+|---|---|---|
+| Research observations and segments | Research repository | Traceable quotes, behaviours, and sample limits |
+| Journey scope, actor, and outcome | Sponsor and research lead | Start/end boundary and success definition |
+| Channels, backstage processes, and owners | Operations/service teams | System, policy, handoff, and ownership evidence |
 - **The decision or problem the map must inform.** A map with no decision behind it is a poster. Name it: *which* journey, for *whom*, to resolve *what* (drop-off? a broken hand-off? a new service we are scoping?).
 - **Evidence.** Research notes, interviews, support tickets, analytics funnels, frontline-staff input, complaint logs. Personas and emotion curves invented without evidence are slop (see Anti-Patterns).
 - **The actor and the scope.** *Who* the journey belongs to (one persona, named), and the start/end boundary — where the journey begins (often before your product) and where it ends (often after).
@@ -45,6 +50,29 @@ metadata:
 9. **Apply the doctrine lens.** A journey where the customer says "it felt generic / I didn't trust it / it looked like everyone else's" is a **slop signal** in experience form (`doctrine/design-doctrine.md` §0, `doctrine/references/ai-slop-taxonomy.md`) — the moat is the experience reading as *deliberately authored*. Escalate those troughs as design opportunities, not nuisance comments.
 10. **Check accessibility and channel-equity coverage.** If the map assumes one happy channel and never models the keyboard-only, screen-reader, low-bandwidth, low-literacy, or offline-fallback path, state that as a known gap and pair with `doctrine/references/wcag-2.2-criteria.md` before claiming the journey "works for everyone".
 
+## Decision Rules
+
+| Condition | Choice | Wrong-choice failure |
+|---|---|---|
+| Goal is customer experience over time | Journey/experience map | Screen flow omits channels, time, and emotion |
+| Goal includes operational causes | Service blueprint | Journey alone hides backstage failure sources |
+| Evidence cannot support a persona | Behavioural segment or proto-persona label | Fictional specificity becomes false research |
+
+## Capability Contract
+
+- Must read traceable research and operational evidence; synthesis is read-only unless workshop or artefact editing is requested.
+- May facilitate mapping, but may not invent user evidence, assign organisational commitments, or publish sensitive maps without authority.
+
+## Degraded Mode
+
+- If actor, scope, or evidence provenance is missing, stop the final map and return a proto-map with explicit assumptions.
+- Without workshop access, produce an asynchronous draft for owner validation. Recover conflicts by preserving competing evidence, naming the owner, and marking unresolved branches.
+
+## Quality Standards
+
+- Every major stage, pain point, and opportunity traces to evidence or is labelled assumption.
+- Opportunities identify affected actor, causal layer, owner, expected outcome, and validation need.
+
 ## Anti-Patterns
 - **The invented persona.** A stock-photo archetype with made-up demographics and a cute name, built to rationalise a decision already made. Personas not traceable to research are confirmation laundering.
 - **The decorative emotion curve.** A smooth sad-to-happy squiggle with nothing under each peak/trough. If a low point has no quote, ticket, or metric beneath it, it is fiction.
@@ -56,6 +84,11 @@ metadata:
 - **One persona, one channel, one ability.** Mapping the median user on the best device and calling the service designed.
 
 ## Outputs
+
+| Output | Consumer | Evidence and acceptance |
+|---|---|---|
+| Journey map or service blueprint | Product, service, operations | Scope, stages, evidence, channels, pain points, and backstage causes are explicit |
+| Opportunity register | Decision owners | Ranked opportunities include evidence, owner, outcome, and validation requirement |
 - One or more **evidence-based personas** (goals, context, JTBD, real quotes, traceable to research).
 - A set of **JTBD statements** framing the journey by outcome, not feature.
 - A **journey map / experience map**: stages (in the actor's words) × layers (doing / thinking / feeling / touchpoint / pain & moments of truth), with an evidence-justified emotion curve.

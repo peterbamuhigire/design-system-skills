@@ -4,6 +4,16 @@ Run before declaring any artifact with type, colour, or layout "done." Mirrors t
 engine's quality-gate pattern. A failed item blocks shipment until fixed or explicitly waived
 (with a recorded reason).
 
+For a meaningful change, record the gate evidence in
+`templates/design-delivery-evidence.md`. A checked box without a linked render, measurement,
+inspection result, or explicit N/A reason is not evidence.
+
+## Routing and scope
+
+- [ ] The selected skill owns the requested decision; the closest neighbour was considered.
+- [ ] Artefact, audience, surfaces, states, constraints, and acceptance conditions are named.
+- [ ] Missing context that would materially change the design caused a stop or a qualified draft.
+
 ## Typography
 
 - [ ] Typeface(s) **named and justified** in one line, stated *before* the artifact was produced.
@@ -43,3 +53,11 @@ engine's quality-gate pattern. A failed item blocks shipment until fixed or expl
 
 - [ ] If any gate cannot be met (no font file, no CDN, restrictive licence) the artifact was
       **not** silently downgraded — the limitation was stated and a decision requested.
+
+## Release evidence
+
+- [ ] All required states and target surfaces were inspected, not inferred from one happy path.
+- [ ] Rendered or implemented output was compared with the approved design where tooling exists.
+- [ ] Unverified checks, residual risks, waiver owner, and next action are recorded.
+- [ ] The final verdict is `PASS`, `CONDITIONAL`, or `BLOCKED`; `CONDITIONAL` cannot be described
+      as production-ready.

@@ -1,9 +1,6 @@
 ---
 name: healthcare-ui-design
-description: Design world-class clinical and patient-facing healthcare UIs for web,
-  mobile (Android/iOS), and tablet. Covers EMR/EHR dashboards, patient portals, telemedicine,
-  medication management, wellness apps, and aging-care interfaces. Enforces HIPAA...
-status: active
+description: Use when a clinical, EHR/EMR, patient portal, telemedicine, medication, wellness, or ageing-care interface needs safety-centred web, mobile, or tablet UX. Do not use for medical advice, clinical-rule authoring, or compliance certification; require authoritative clinical and legal owners.
 metadata:
   portable: true
   category: 06-sector-and-domain-ux
@@ -35,36 +32,70 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 
 ## Required Inputs
 
+| Input | Source | Evidence |
+|---|---|---|
+| Clinical task, roles, urgency, and harm scenarios | Clinical safety owner and practitioners | Approved workflow, escalation, and hazard analysis |
+| Patient data, consent, privacy, and jurisdiction rules | Legal/privacy/security owners | Verified policy, minimum-necessary access, and audit requirements |
+| Device, environment, interoperability, and accessibility constraints | Engineering, operations, research | Supported platforms, data states, latency, and user needs |
+
 - Target platform(s) and primary user: patient/community-health-worker (mobile), bedside nurse or rounding physician (tablet, both orientations), or physician/admin (desktop).
 - App type from the quick-start guide (patient portal, EMR/EHR, telehealth, mental health, aging care, medication mgmt, ICU/emergency, wellness).
 - Applicable regulatory regime (HIPAA / FDA / ISO 62366-1 / FHIR) and any branding constraints over the OS-native font stack.
 
 ## Workflow
 
-- Read this `SKILL.md` first, then load only the referenced deep-dive files that are necessary for the task.
-- Apply the ordered guidance, checklists, and decision rules in this skill instead of cherry-picking isolated snippets.
-- Produce the deliverable with assumptions, risks, and follow-up work made explicit when they matter.
+1. Confirm clinical task, accountable roles, patient identity, urgency, environment, and harm scenarios with the clinical safety owner.
+2. Map authoritative data provenance, freshness, access, consent, audit, interoperability, and unavailable/partial states.
+3. Design role-appropriate hierarchy, critical alerts, orders/medications, confirmation, escalation, and safe interruption recovery.
+4. Adapt the flow across required devices, input modes, assistive technologies, text sizes, and connectivity conditions.
+5. Test synthetic critical journeys and failure paths with clinical, privacy, security, and accessibility reviewers; stop release on unresolved critical hazards.
+
+## Decision Rules
+
+| Condition | Choice | Wrong-choice failure |
+|---|---|---|
+| Information affects immediate clinical action | Persistent, prioritised alert with acknowledgement/escalation | Toast-only feedback is missed and may cause harm |
+| Data is stale, partial, or unavailable | Label provenance/time and block unsafe inference | Normal-looking stale data invites clinical misuse |
+| Action changes medication/order/care | Review critical fields and require authorised confirmation | Frictionless submission magnifies wrong-patient/order errors |
+| Consumer wellness feature implies diagnosis | Reframe as bounded information and escalation | Product crosses into unsupported medical advice |
+
+## Capability Contract
+
+- Must inspect approved clinical, privacy, interoperability, and hazard evidence; review is read-only unless implementation is authorised.
+- May edit/test in-scope UI using synthetic/de-identified data. Do not access PHI, make clinical decisions, change care rules, or claim HIPAA/WCAG/regulatory certification.
+
+## Degraded Mode
+
+- If clinical owner, harm analysis, data provenance, privacy basis, or emergency escalation is missing, stop the affected design/release decision.
+- Without a safe test environment, provide a synthetic prototype and verification matrix marked unverified. Recover failures by entering a safe state, preserving audit context, escalating to the named role, and retesting the hazard path.
 
 ## Quality Standards
 
-- Keep outputs execution-oriented, concise, and aligned with the repository's baseline engineering standards.
-- Preserve compatibility with existing project conventions unless the skill explicitly requires a stronger standard.
-- Prefer deterministic, reviewable steps over vague advice or tool-specific magic.
+Clinical safety, patient comprehension, privacy, accessibility, and explicit uncertainty outrank
+visual novelty; high-risk workflows require qualified domain review before release.
+
 
 ## Anti-Patterns
 
-- Treating examples as copy-paste truth without checking fit, constraints, or failure modes.
-- Loading every reference file by default instead of using progressive disclosure.
+- Treating colour as the only severity cue. Correction: add text, iconography, priority, and programmatic semantics.
+- Hiding stale or partial data behind normal styling. Correction: expose timestamp, provenance, and unavailable fields.
+- Using destructive clinical actions without patient/order review. Correction: confirm critical identity and consequence fields.
+- Copying a consumer dashboard into a clinician workflow. Correction: optimise for role, urgency, density, and interruption.
+- Claiming compliance from a visual checklist. Correction: record scope/evidence and require authorised legal/security review.
+
 
 ## Outputs
+
+| Output | Consumer | Evidence and acceptance |
+|---|---|---|
+| Healthcare interaction and safety specification | Clinical, product, engineering | Roles, data provenance, critical actions, alerts, privacy, and recovery are explicit |
+| Clinical UI evidence pack | Safety, privacy, accessibility QA | Hazard paths, stale/partial states, identity, audit, and representative devices are tested |
 
 - A **clinical UI accessibility audit** covering WCAG, error tolerance, alarm fatigue, and clinician
   workflow findings.
 - A **PHI handling note** covering display, redaction, timeout, audit-trail, and equivalent privacy
   requirements when regulated health data is in scope.
 - Implementation guidance, review findings, templates, or generated artifacts for the healthcare surface.
-- Clear assumptions, tradeoffs, or unresolved gaps when the task cannot be completed from available context alone.
-- References used, companion skills, or follow-up actions when they materially improve execution.
 
 ## References
 

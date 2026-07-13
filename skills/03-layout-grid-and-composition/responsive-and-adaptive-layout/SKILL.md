@@ -1,13 +1,12 @@
 ---
 name: responsive-and-adaptive-layout
-description: Use when a web page, landing page, app/web UI screen, dashboard, email, or any browser-rendered artifact must work across screen sizes — phone to ultrawide — and you must decide breakpoints, container queries, fluid vs fixed sizing, and how type and grid scale. Establishes a mobile-first breakpoint strategy, makes components respond to their CONTAINER not just the viewport (container queries), builds intrinsic/fluid layouts with grid + clamp() so the page bends instead of snapping, and strips the "desktop-only mockup that collapses to a single stacked card column on mobile" AI-slop tell. The default entry skill for responsive and adaptive behaviour; sits on top of layout-grid-and-spacing (set the grid there, make it respond here).
-status: active
+description: Use when a browser-rendered page, component, dashboard, or email must adapt across widths using intrinsic layout, fluid values, breakpoints, or container queries. Do not use to establish the base grid or for fixed-canvas documents; route those to layout-grid-and-spacing.
 metadata:
   portable: true
   category: 03-layout-grid-and-composition
   compatible_with:
-    - claude-code
-    - codex
+  - claude-code
+  - codex
 ---
 
 # Responsive And Adaptive Layout
@@ -44,6 +43,13 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
   `performance-as-ux-and-core-web-vitals`. This skill respects those budgets; it does not own them.
 
 ## Required Inputs
+
+| Input | Source | Required evidence |
+|---|---|---|
+| Realistic width and input-mode range | Product requirements, device support policy, or analytics | Minimum/maximum widths and keyboard, touch, or pointer needs |
+| Base grid, hierarchy, and content priority | Layout skill and approved content model | Named focal point, grid tokens, and reflow priorities |
+| Portable component inventory | Component library or interface audit | Placement contexts and widths at which each component fails |
+| Performance and accessibility constraints | Project budgets and doctrine | CLS budget, zoom/text-resize target, and required platform states |
 
 - The target surfaces and their realistic width range (smallest phone to largest desktop/ultrawide
   the design must survive — not an assumed 320–1440 default).
@@ -144,7 +150,36 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
 9. `prefers-reduced-motion`, `prefers-color-scheme`, and coarse-pointer target sizes honoured.
 10. Apple surfaces checked across resizable iPhone/iPad/Mac-designed-for-iPhone windows and Safari/WebKit viewport behavior where applicable.
 
-## Anti-Patterns (the responsive AI-slop tells)
+## Decision Rules
+
+| Condition | Choose | Wrong-choice failure |
+|---|---|---|
+| A component appears in differently sized parents | Container query at its content failure point | Viewport queries make the same component fail in sidebars or embeds |
+| A value can interpolate safely | Bounded `clamp()` tied to approved scale endpoints | Abrupt jumps feel crude; unbounded fluid values become illegible |
+| Structure changes because content no longer fits | Content-derived breakpoint | Device-name breakpoints leave damaging intermediate widths |
+| Source order already matches reading/task order | CSS reflow without DOM duplication | Duplicate desktop/mobile markup creates accessibility and state drift |
+| Dense information cannot remain useful when stacked | Recompose, prioritise, or provide controlled overflow | Blind one-column stacking destroys comparison and task context |
+
+## Capability Contract
+
+- Must inspect the source structure and render at representative and intermediate widths; may resize, measure overflow/CLS, and run accessibility checks.
+- Review defaults to read-only. Change markup, styles, or tokens only for requested implementation/remediation, preserving semantic order and unrelated work.
+- Do not claim device coverage from named breakpoints alone, or deploy/publish without separate authority and test evidence.
+
+## Degraded Mode
+
+- If target widths or content priorities are unknown, stop structural breakpoint decisions and return a discovery matrix.
+- If browser rendering is unavailable, provide intrinsic CSS and a viewport/container test plan marked unverified.
+- If container queries are unsupported by a required environment, document the feature query and smallest maintainable fallback.
+- Recover from overflow, overlap, CLS, or order failure by fixing the earliest governing rule, then retest boundary widths on both sides of it.
+
+## Quality Standards
+
+- No horizontal overflow, clipped critical content, hidden action, or semantic-order mismatch at tested boundary and intermediate widths.
+- Zoom, text resizing, touch/pointer input, reduced motion, and representative content remain usable where applicable.
+- Release evidence names browsers, widths, containers, states, failures, corrections, and residual compatibility risks.
+
+## Anti-Patterns
 
 - **The desktop mockup with mobile bolted on:** designed at 1440 only, then everything stacks into
   one centred column of identical cards on phones — hierarchy and focal point destroyed.
@@ -182,6 +217,12 @@ When an AI tool recommends "three `max-width` breakpoints at 768/1024/1280 with 
 stacking on mobile," treat that as the convergent mean to *avoid* — not as endorsement.
 
 ## Outputs
+
+| Output | Consumer | Evidence and acceptance |
+|---|---|---|
+| Responsive behaviour specification | Designer and frontend implementer | Intrinsic rules, breakpoints, container queries, fluid ranges, and priority changes are explicit |
+| Boundary test matrix | QA and accessibility reviewer | Representative widths/containers and critical states pass without overflow or order defects |
+| Release gate record | Approver | Render evidence, performance/accessibility checks, fallbacks, and unresolved risks are recorded |
 
 - A stated responsive decision **before** any markup/CSS: the breakpoint set (and the content
   reason for each), which components are container-query-driven, the fluid-type `clamp()` floors

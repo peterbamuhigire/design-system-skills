@@ -1,13 +1,12 @@
 ---
 name: docx-report-and-document-formatting
-description: Use when producing a premium Word/.docx report, proposal, business plan, SRS/BRD, whitepaper, memo, letter, or any long-form document that must read as authored — and you need a real named-style hierarchy (H1–H4, body, caption with actual pt sizes), table of contents, headers/footers, letterhead, designed tables and figure captions, page numbering, embedded+subset fonts, and accessible document tags. Triggers on "format this report/proposal in Word", "style hierarchy for a .docx", "Word letterhead/TOC/headers", "make this DOCX look designed not default", or any DOCX that must not open in Calibri/Aptos.
-status: active
+description: Use when producing or formatting an editable DOCX report, proposal, plan, specification, memo, or letter with named styles, contents, headers, footers, tables, figures, pagination, embedded fonts, and accessibility. Use pdf-proposal-and-bankable-document-design for final fixed-layout PDF craft.
 metadata:
   portable: true
   category: 13-presentations-and-documents
   compatible_with:
-    - claude-code
-    - codex
+  - claude-code
+  - codex
 ---
 
 # DOCX Report And Document Formatting
@@ -39,6 +38,11 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
   return here to apply it.
 
 ## Required Inputs
+| Input | Source | Required? | Evidence |
+|---|---|---|---|
+| Final or controlled content and hierarchy | Document owner | yes | Approved source and section map |
+| Brand, fonts, licence, page, and accessibility requirements | Brand and delivery owners | yes | Asset and format specification |
+| Editing and export targets | Consumer | yes | Word version, PDF need, and print constraints |
 
 - The document's purpose, audience, and length class (memo vs multi-section report) — this sets
   how many heading levels and whether a TOC is warranted.
@@ -98,6 +102,19 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
    updates, fields (page numbers, cross-refs) resolve, fonts are embedded+subset (check file
    size), and — if a fixed-fidelity copy is needed — export a PDF whose fonts are embedded.
 
+## Decision Rules
+| Condition | DOCX choice | Wrong-choice failure |
+|---|---|---|
+| Repeated formatting role | Named style, never manual formatting | Direct formatting drifts and breaks navigation |
+| Wide exhibit exceeds portrait page | Landscape section or redesigned exhibit | Shrinking makes evidence unreadable |
+| Font embedding is prohibited | Approved fallback or PDF-only delivery | Unlicensed embedding creates legal exposure |
+
+## Capability Contract
+Read, edit, and DOCX rendering are required for production. Execution is required to claim styles, fields, embedding, pagination, or accessibility. Sending or publishing the document requires separate authority.
+
+## Degraded Mode
+Without Word-compatible rendering, deliver the DOCX marked unverified plus a style map. Stop release when fonts, licences, page renders, fields, or accessibility checks are missing; recover with an approved fallback and explicit caveats.
+
 ## Anti-Patterns
 
 - Opening in **Calibri/Aptos** (Word defaults) or reflexively in Times New Roman / Inter —
@@ -113,6 +130,11 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
   images with no alt text, no document language set.
 
 ## Outputs
+| Artefact | Consumer | Evidence and acceptance condition |
+|---|---|---|
+| Editable DOCX with semantic style system | Authors and client | Heading, body, table, caption, and list roles use named styles |
+| Style/font/layout specification | Maintainers | Type, spacing, sections, and fallback rules are documented |
+| Rendered page and accessibility evidence | QA and release owner | TOC, fields, pagination, overflow, embedding, and reading order pass |
 
 - A `.docx` with a complete **named style hierarchy** (Title, H1–H4, Body, Lead, Caption, Quote,
   lists, code) at real pt sizes bound to outline levels.

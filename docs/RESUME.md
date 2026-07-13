@@ -1,12 +1,16 @@
-# RESUME / Status - where to pick up (updated 2026-06-22)
+# RESUME / Status - where to pick up (updated 2026-07-13)
 
 Single source of truth for "what's done / what's next" on design-system-skills.
 (Supersedes `RESUME-2026-06-21.md`, which is historical.)
 
 ## Current state
 
-- **82 active skills across 15 groups, 100% example-complete.** Overall audit score **81/100**
-  (progression: 51 -> about 67 -> about 73 -> 80 -> 81).
+- **82 active skills across 15 groups, 100% example-complete and 100% contract-compliant.**
+- The zero-debt conformance baseline is enforced in CI. Local and canonical validation pass for
+  all 82 active skills; 46 routing fixtures achieve 100% precision at the top-three threshold.
+- The earlier overall design-readiness audit score remains **81/100** (progression: 51 -> about
+  67 -> about 73 -> 80 -> 81). That score measures broader output capability, not skill-contract
+  conformance.
 - Latest re-audit: `docs/audits/post-v2-plan/`:
   - taxonomy and structure: **86**
   - output-readiness: **78**
@@ -36,10 +40,19 @@ Single source of truth for "what's done / what's next" on design-system-skills.
 - Added RN/Expo implementation-readiness gates to `cross-platform-design-parity`, using the local
   React Native book as historical pattern input and current RN/Expo docs as the version-sensitive
   source of truth.
+- Normalised all 82 active skills to the July 2026 portable contract: neighbour-aware triggers,
+  input/output contracts, decision rules, capability boundaries, degraded mode, stop/recovery
+  behaviour, evidence, acceptance conditions, and five concrete anti-patterns.
+- Added `governance/skill-authoring-standard.md`, a rebuilt `_TEMPLATE`, local validation and
+  routing scripts, 46 routing fixtures, a zero-debt baseline, and GitHub Actions enforcement.
+- Reduced `data-visualization/SKILL.md` below the 500-line limit through a linked reference while
+  retaining routing, workflow, decisions, and safety in the entrypoint.
 
 ## Next
 
-1. **Build remaining P2 differentiators only where they improve output readiness:**
+Skill-contract repair is complete. Remaining work is capability expansion:
+
+1. **Build P2 differentiators only where they improve output readiness:**
    3D/WebGL, scroll/page transitions, print/production layout, multi-brand theming/governance,
    public-sector/education UX, sustainability, advanced analytical exhibits.
 2. **Resolve the two structural ceilings:**
@@ -53,3 +66,10 @@ Single source of truth for "what's done / what's next" on design-system-skills.
 Parallel specialist passes, strict top-0.1% rubric, no banned fonts, real worked examples, no lorem,
 and orchestrator-owned shared-file edits. Watch for shared-file write races when using parallel
 agents.
+
+For catalogue maintenance, run:
+
+```powershell
+python -X utf8 scripts/validate_engine.py --baseline tests/quality-baseline.json
+python -X utf8 scripts/routing_smoke_test.py
+```

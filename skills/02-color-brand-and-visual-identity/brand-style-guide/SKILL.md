@@ -1,17 +1,18 @@
 ---
 name: brand-style-guide
-description: Produces a client-facing brand style guide deliverable (docs/brand-style-guide.md). Use after brand-strategy and design-system are complete. Covers logo usage rules, colour palette card (hex/RGB/CMYK), typography specimen, spacing system, photography style, voice and tone guide, and component usage examples. This document is delivered to the client as a premium project deliverable.
-status: active
+description: Use when packaging an approved identity into a client-facing guide with logo, colour, typography, spacing, imagery, voice, and application rules. Unlike brand-visual-identity, this documents settled decisions rather than creating the identity.
 metadata:
   portable: true
   category: 02-color-brand-and-visual-identity
   compatible_with:
-    - claude-code
-    - codex
+  - claude-code
+  - codex
 ---
 
 # Brand Style Guide
 Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
+
+<!-- dual-compat-start -->
 
 ## Use when
 - You need to assemble the final client-facing brand style guide (`docs/brand-style-guide.md`) once brand strategy and the design system already exist — the premium hand-off deliverable.
@@ -25,6 +26,12 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - Type faces are still being chosen/paired — use `font-selection-and-pairing` before specimen-ing them here.
 
 ## Required inputs
+
+| Input | Supplied by | Required? | Why |
+|---|---|---|---|
+| Approved identity-system specification | Brand-visual-identity | yes | Supplies settled rules |
+| Production assets and licence records | Brand owner/production | yes | Enables lawful delivery |
+| Audience, formats, and maintenance owner | Delivery brief | yes | Shapes usable guidance |
 - Completed brand strategy and design-system decisions: chosen palette (with hexes/roles), the selected and paired typefaces, logo/wordmark assets, and spacing/type scale.
 - Voice and tone direction, photography/art-direction intent, and any component patterns to be shown in usage examples.
 - The banned-fonts and font-groups references, so the specimen can be verified against approved, non-slop faces before it ships.
@@ -44,9 +51,36 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - Do not produce generic framework dumps with no decision made.
 - Do not invent facts to complete the output.
 - Do not ignore the actual audience, offer, or business constraints.
+- Do not invent missing identity decisions to fill pages; return them to the owner.
+- Do not show only ideal examples; include misuses and edge cases.
 
 ## Outputs
+
+| Output | Consumer | Evidence / acceptance |
+|---|---|---|
+| Client-facing style guide | Client, partners, and producers | Required sections use approved examples |
+| Asset and licence index | Client asset custodian | Source, format, owner, and restrictions recorded |
+| Guide QA record | Delivery owner | Links, values, specimens, accessibility, and exports verified |
+
 - Strategy notes, writing deliverables, framework outputs, or implementation-facing recommendations.
+
+## Decision Rules
+
+| Condition | Decision | Wrong-choice failure |
+|---|---|---|
+| Decision is approved and stable | Document with do/don't examples | Rule remains open to interpretation |
+| Decision is missing or contradictory | Stop and return to identity owner | Guide invents policy |
+| Guide serves non-designers | Prefer concise rules and production examples | Attractive document remains unusable |
+| Editable and fixed delivery are needed | Supply source plus verified PDF | Client cannot maintain or view faithfully |
+
+## Capability Contract
+
+Read and document generation are required. Editing applies only to the authorised guide and delivery copies. Do not change master identity rules, redistribute restricted files, or publish without approval.
+
+## Degraded Mode
+
+If required evidence or tooling is unavailable, use the scoped fallback below and mark the result unverified.
+Without final assets or approvals, create a marked draft with an open-decisions register. Without rendering, supply source content and mark visual QA blocked; never call it final.
 
 ## References
 - `doctrine/design-doctrine.md` — the Mission and Anti-Slop Charter; the style guide must record *deliberate, stated* choices, not defaults.
@@ -64,3 +98,4 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 ## Notes
 - Treat this `SKILL.md` as the portable execution layer for both Claude Code and Codex.
 - Preserve existing project behavior unless the current task explicitly requires a change.
+<!-- dual-compat-end -->

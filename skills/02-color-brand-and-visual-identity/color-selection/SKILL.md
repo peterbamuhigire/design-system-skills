@@ -1,17 +1,18 @@
 ---
 name: color-selection
-description: Select optimal color palettes for websites using brand colors and color theory. Use when users need to define their website's color scheme, generate complementary palettes, ensure accessibility compliance, or refine existing colors for better visual impact and industry alignment.
-status: active
+description: Use when generating a starting website palette from brand hues, imagery, audience, mood, or colour harmony. Unlike color-system-and-palette, this selects candidate colours; semantic roles, ramps, dark themes, and final contrast contracts are downstream.
 metadata:
   portable: true
   category: 02-color-brand-and-visual-identity
   compatible_with:
-    - claude-code
-    - codex
+  - claude-code
+  - codex
 ---
 
 # Color Selection
 Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
+
+<!-- dual-compat-start -->
 
 ## Use when
 - You need to *generate* a starting palette from scratch — a project with weak or no brand-colour direction, and you must arrive at a primary hue, harmony, and candidate swatches.
@@ -26,6 +27,12 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - Strong locked brand colours already dictate the palette and no generation is needed.
 
 ## Required inputs
+
+| Input | Supplied by | Required? | Why |
+|---|---|---|---|
+| Brand colours or source imagery | Client or brief | recommended | Provides an authored anchor |
+| Audience, mood, sector, and action | Strategy brief | yes | Guides harmony and emphasis |
+| Existing equity and prohibited colours | Brand owner | conditional | Avoids identity loss |
 - A brief: the mood word, the audience, and the action you want the viewer to take.
 - Any existing brand colours or constraints (one locked hue is enough to anchor generation).
 - Reference imagery if available — the hero/product photos that should be tinted toward the brand hue.
@@ -41,14 +48,42 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - Outputs must be implementation-ready and internally consistent.
 - Preserve existing behavior unless the task explicitly requires a change.
 - Avoid host-specific path assumptions so the skill remains portable.
+- Stop selection when neither a brand/imagery anchor nor an authorised strategic choice exists.
 
 ## Anti-patterns
 - Do not hardcode `.claude/skills` or another single install path.
 - Do not skip validation against upstream or downstream dependencies.
 - Do not generate generic output that ignores the actual project context.
+- Do not copy a fashionable gradient or framework default; anchor the palette in brief or imagery.
+- Do not fix contrast by replacing the brand hue first; move along its tonal scale.
 
 ## Outputs
+
+| Output | Consumer | Evidence / acceptance |
+|---|---|---|
+| Candidate palette and rationale | Brand and web designers | Anchor, mood, harmony, and values recorded |
+| Imagery treatment and balance rule | Art direction and layout | Tint/duotone and 60/30/10 usage demonstrated |
+| Handoff constraints | Colour-system workflow | Roles, contrast risks, and prohibited uses stated |
+
 - Implementation guidance, configuration, generated artifacts, or concrete follow-on steps.
+
+## Decision Rules
+
+| Condition | Decision | Wrong-choice failure |
+|---|---|---|
+| Strong brand colour exists | Build harmony around it | Existing equity is discarded |
+| Imagery leads the experience | Extract or tint toward one defensible hue | Photography and UI feel unrelated |
+| Calm field is required | Use monochromatic or analogous harmony | Excess colour competes for attention |
+| Strong focal action is required | Use a restrained complementary accent | Every surface shouts equally |
+
+## Capability Contract
+
+Read and colour calculation are required. Image sampling and rendering are preferred. Editing requires authorisation; do not change master assets or claim final accessibility before semantic testing.
+
+## Degraded Mode
+
+If required evidence or tooling is unavailable, use the scoped fallback below and mark the result unverified.
+Without imagery or brand direction, return two differentiated candidates and the decision needed to choose. Without contrast tooling, mark pairs provisional and hand off to the colour-system gate.
 
 ## Examples
 - `examples/palette-generation-worked.md` — a full palette *generation* for a named brief
@@ -85,3 +120,4 @@ For projects without strong brand-colour direction, the Flux Academy process (Ra
 The Flux worked example (a black-and-white "girl with balloons" reference photo, tinted purple → navy-purple hero / mid-purple chrome / magenta accent / off-white surfaces) is captured in the reference. Use the imagery-first algorithm for any client website that needs to feel cohesive rather than templated.
 
 For a deeper colour-system skill that goes beyond website-specific palette selection (semantic roles, perceptual OKLCH/CIELAB ramp generation, the WCAG contrast gate, and the dark-mode remap), hand off to the sibling `02-color-brand-and-visual-identity/color-system-and-palette` in this engine. (The former cross-engine `color-theory` skill did not migrate; its concerns are covered by `color-system-and-palette` plus `doctrine/design-doctrine.md` §2.)
+<!-- dual-compat-end -->

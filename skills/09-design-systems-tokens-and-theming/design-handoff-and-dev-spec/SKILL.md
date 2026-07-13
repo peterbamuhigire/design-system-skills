@@ -1,7 +1,7 @@
 ---
 name: design-handoff-and-dev-spec
-description: Use when handing a design off to engineering and you need it to ship pixel- and behaviour-accurate — preparing a Figma-to-dev handoff, writing redlines and component specs, defining acceptance criteria for design-to-code fidelity, or running a build/QA review of an implemented screen against its design. Covers the full handoff package: token-referenced redlines (spacing, type, colour, radius, elevation), every interactive state and breakpoint, behaviour and motion, accessibility annotations, content/data edge cases, and testable acceptance criteria. Produces the spec a developer can build from without guessing and a reviewer can sign off against. Routes here for "design handoff", "redline", "dev spec", "annotation", "acceptance criteria", "design QA", "spec parity", "design-to-code".
-status: active
+description: >-
+  Use when handing a design to engineering through token-referenced redlines, component and screen behaviour, states, breakpoints, accessibility notes, edge cases, and testable acceptance criteria. Use design-tokens-and-naming to define tokens and design-qa-and-pre-launch-review for final release.
 metadata:
   portable: true
   category: 09-design-systems-tokens-and-theming
@@ -43,7 +43,13 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
   product — that is `00-…/design-qa-and-pre-launch-review`. This skill's QA is the narrower
   *spec-vs-build fidelity* check for the handed-off unit.
 
-## Required Inputs
+## Inputs
+
+| Artefact or context | Source | Required? | Why |
+|---|---|---|---|
+| Approved frames for every state and breakpoint | Design owner | yes | Prevents engineering guesswork |
+| Stable token and component names | Design system | yes | Keeps the handoff composable |
+| Behaviour, content, accessibility, data, and platform constraints | Product and engineering | yes | Makes acceptance criteria testable |
 
 - The final design frames (Figma or equivalent) for every state and breakpoint — not just the
   default/happy-path frame. A spec can only be as complete as the frames it is drawn from; missing
@@ -125,6 +131,27 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
    designer's intent — which is exactly why the spec and its acceptance criteria had to be written
    down first. Pairs with `00-…/design-qa-and-pre-launch-review` for the broader gate.
 
+## Decision Rules
+
+| Condition | Action | Wrong-choice failure |
+|---|---|---|
+| Approved tokens and components exist | Reference their stable names and versions | The handoff forks the design system with raw values |
+| A value or state is not defined upstream | Stop and resolve the design decision before handoff | Engineering is forced to invent product behaviour |
+| One implementation target is in scope | Specify its native breakpoints, input modes, and accessibility behaviour | Generic handoff language misses platform constraints |
+| Several platforms share intent but not controls | Share semantic intent and write platform-specific mappings | Pixel parity is imposed where behavioural parity is required |
+
+## Capability Contract
+
+Read access to approved design files, tokens, component documentation, content, and target-platform
+constraints is required. Editing is limited to the authorised handoff artefacts. Build inspection
+is optional during authoring and required when producing a fidelity-review verdict.
+
+## Degraded Mode
+
+If token, component, content, or state definitions are missing, issue a readiness gap list and do
+not label the handoff build-ready. If the implementation cannot be inspected, provide acceptance
+tests but leave fidelity results unverified.
+
 ## Anti-Patterns
 
 - **The happy-path handoff** — one default frame, no states, no breakpoints, no edge cases. The
@@ -146,6 +173,11 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
   into an argument and lets regressions through because there's no record of intent.
 
 ## Outputs
+
+| Artefact | Consumer | Evidence and acceptance condition |
+|---|---|---|
+| Token-referenced component or screen specification | Engineering | Every state, breakpoint, behaviour, content edge, and accessibility note is buildable |
+| Binary acceptance checklist and fidelity log | QA and pre-launch review | Each criterion can pass or fail against the approved design and implementation |
 
 - A **component/screen handoff sheet**: token-referenced redlines (size, spacing, type, colour,
   radius, elevation), the full variant × state matrix, responsive/breakpoint behaviour, behaviour +

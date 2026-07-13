@@ -1,13 +1,12 @@
 ---
 name: pdf-proposal-and-bankable-document-design
-description: Design a print-ready, bankable PDF proposal, report, feasibility study, business case, or investor/lender document — the cover system, section dividers, exhibit/figure pages, running headers/footers, section architecture, and guaranteed font embedding. Use whenever the deliverable is a designed PDF proposal, consulting report, bankable document, tender response, or whitepaper that must look authored, institutional, and credit-grade (not a default Word export). Routes typography to group 01 Editorial. Do NOT use for slide decks (deck-system) or editable DOCX source (docx-report-and-document-formatting).
-status: active
+description: Use when designing a print-ready fixed-layout PDF proposal, report, feasibility study, business case, tender, or lender document with covers, dividers, exhibits, running furniture, and verified font embedding. Use docx-report-and-document-formatting for editable Word source and deck-system for slides.
 metadata:
   portable: true
   category: 13-presentations-and-documents
   compatible_with:
-    - claude-code
-    - codex
+  - claude-code
+  - codex
 ---
 
 # PDF Proposal & Bankable Document Design
@@ -33,6 +32,11 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
   them here (`doctrine/references/embedding-by-format.md`, §XLSX).
 
 ## Required Inputs
+| Input | Source | Required? | Evidence |
+|---|---|---|---|
+| Approved content, audience, decision, and section hierarchy | Document owner | yes | Controlled source and brief |
+| Brand assets, fonts, licences, page and print constraints | Brand and production owners | yes | Asset register |
+| Required exhibits, citations, navigation, and accessibility | Content and compliance owners | yes | Exhibit/source checklist |
 - **Purpose & audience** of the document (proposal vs. report vs. bankable case) and the single
   decision you want from the reader (award the contract / approve the facility / fund the project).
 - **Content** — the narrative, the numbers, and every exhibit (tables, charts, schedules) that must
@@ -68,6 +72,21 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
    and subsetted**, colour space correct (sRGB for screen / CMYK for print), images ≥300 dpi, PDF/A
    or PDF/X where required, accessible tags + reading order, and bleed/crop marks if printing.
 
+## Decision Rules
+| Condition | PDF choice | Wrong-choice failure |
+|---|---|---|
+| Document must remain editable | Produce DOCX source first | PDF-only workflow blocks maintenance |
+| Lender/evaluator scans quickly | Strong section architecture and exhibit hierarchy | Decorative layouts hide bankability evidence |
+| Print and screen both matter | Test crop, margins, links, bookmarks, and contrast | One-medium optimisation fails the other |
+
+## Capability Contract
+Read, edit, PDF generation, inspection, and page rendering are required for production. Execution is required for font, link, bookmark, accessibility, and preflight claims. Submission or publication requires separate authority.
+
+## Degraded Mode
+
+If required evidence or tooling is unavailable, use the scoped fallback below and mark the result unverified.
+Without PDF rendering or preflight, deliver source and a conditional proof only. Stop release when font embedding, page integrity, citations, links, print constraints, or accessibility cannot be inspected.
+
 ## Anti-Patterns
 - A **default Word/Docs export** as the "design": Calibri/Times, 1-inch margins, no cover system, no
   divider rhythm — the single biggest tell that no one designed the document.
@@ -81,6 +100,11 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
   full-bleed cover.
 
 ## Outputs
+| Artefact | Consumer | Evidence and acceptance condition |
+|---|---|---|
+| Print-ready and screen-ready PDF | Evaluator, lender, or client | Page architecture and exhibits support rapid evidence retrieval |
+| Source, font, licence, and citation register | Maintainer and compliance owner | Every embedded asset and claim is traceable |
+| Render and preflight evidence | Release owner | Pages, fonts, links, bookmarks, metadata, and print bounds pass |
 - A complete **PDF design spec**: stated type + colour, page grid & margins, a cover spec, the
   section architecture with the divider system, exhibit-page templates, header/footer + pagination
   rules, and a passed print-ready preflight checklist — ready to build in the generating tool

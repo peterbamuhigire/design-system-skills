@@ -1,13 +1,12 @@
 ---
 name: layout-grid-and-spacing
-description: Use when composing or restyling the LAYOUT of any artifact — a website or landing page, an app/web UI screen, a dashboard, a DOCX/PPTX/PDF report or proposal, or a pitch deck — and you must decide column structure, spacing, alignment, and where the eye lands. Establishes a grid and a single spacing unit, builds hierarchy through scale + space + alignment, introduces intentional asymmetry and a focal point, and strips out the uniform-card / everything-centred / identical-gutter AI-slop layout tells. This is the default entry skill for layout and spacing in the design engine.
-status: active
+description: Use when a page, screen, slide, or document needs its column scaffold, margins, gutters, spacing rhythm, or alignment system defined. Do not use for hierarchy inside an established grid or for breakpoint behaviour; route those to composition or responsive layout.
 metadata:
   portable: true
   category: 03-layout-grid-and-composition
   compatible_with:
-    - claude-code
-    - codex
+  - claude-code
+  - codex
 ---
 
 # Layout, Grid And Spacing
@@ -37,6 +36,13 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
   it, but still apply the optical-alignment and focal-point hygiene below.
 
 ## Required Inputs
+
+| Input | Source | Required evidence |
+|---|---|---|
+| Artefact, dimensions, and delivery format | Approved brief or existing source | Representative page, slide, screen, or viewport bounds |
+| Ranked content inventory | Product owner, author, or content model | Blocks, relationships, and explicit importance order |
+| Type scale and existing tokens | Design system or typography decision | Named scale, spacing token set, or documented provisional values |
+| Binding template or brand constraints | Brand owner or supplied template | Source file, grid specification, and permitted deviations |
 
 - Artifact type and output format (web / UI / DOCX / PPTX / PDF / slide).
 - The content inventory: what blocks exist, and their relative *importance* (you cannot build
@@ -116,7 +122,36 @@ If the content genuinely *is* a uniform set (e.g. a true catalogue grid), say so
 the monotony with a featured/hero item, a varied span, or asymmetric framing — never ship a flat,
 evenly-spaced card field as the whole composition.
 
-## Anti-Patterns (the AI-slop layout tells)
+## Decision Rules
+
+| Condition | Choose | Wrong-choice failure |
+|---|---|---|
+| Repeated components need flexible placement | A consistent multi-column grid with named gutters | Freehand placement drifts and becomes costly to maintain |
+| Long prose dominates | One bounded reading column plus optional margin furniture | A 12-column UI grid creates fragmented reading and excess measure |
+| A fixed slide or cover needs emphasis | Sparse asymmetric scaffold with one deliberate grid break | Filling every cell removes tension and focal rank |
+| Existing brand template is binding | Preserve its grid and correct only optical defects | Reinvention breaks brand continuity and approval expectations |
+| Content relationships do not fit one spacing step | Use a base unit with a small documented semantic scale | Ad hoc gaps destroy rhythm; one identical gap destroys grouping |
+
+## Capability Contract
+
+- Must inspect content and the current artefact; rendering or screenshot inspection is required before release sign-off.
+- Analysis and critique are read-only. Edit layouts or tokens only when implementation/remediation is requested, preserving binding templates and unrelated work.
+- May measure geometry and execute relevant rendering checks. Do not publish, purchase assets, or alter production systems without explicit authority.
+
+## Degraded Mode
+
+- If content priority or output dimensions are missing, stop and request them; do not invent a grid that encodes false hierarchy.
+- If rendering is unavailable, return a dimensioned grid specification and mark optical verification pending.
+- If tokens are absent, propose provisional 4pt/8pt-derived values, clearly separated from approved tokens.
+- Recover from overflow or broken alignment by correcting the governing column/spacing rule, rerendering representative pages, and logging the retest.
+
+## Quality Standards
+
+- Every placement resolves to a named column, edge, baseline, or intentional documented break.
+- Spacing communicates grouping and rank while surviving representative real content.
+- Evidence names the tested dimensions, overlay/measurement method, exceptions, and gate verdict.
+
+## Anti-Patterns
 
 - **The uniform card grid:** N identical cards in an even N-column grid with one global gutter —
   the signature of auto-arrangement. No item leads, nothing is grouped.
@@ -150,6 +185,12 @@ When an AI tool happens to recommend a "12-col grid with even gutters and centre
 that as evidence of the convergent mean to *avoid*, not as endorsement.
 
 ## Outputs
+
+| Output | Consumer | Evidence and acceptance |
+|---|---|---|
+| Grid and spacing specification | Designer and implementer | Dimensions, columns, gutters, margins, base unit, and alignment anchors are explicit |
+| Annotated layout/render | Reviewer and content owner | Grid overlay demonstrates intended relationships on representative content |
+| Layout gate record | Approver | Tested dimensions, checklist results, corrections, and unresolved constraints are recorded |
 
 - A stated layout decision: the spacing unit, the grid (columns/margins), the named focal point,
   the chosen asymmetry, and how each breakpoint/page state re-composes — declared **before** any

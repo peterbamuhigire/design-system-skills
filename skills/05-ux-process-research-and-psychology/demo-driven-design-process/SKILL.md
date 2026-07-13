@@ -1,13 +1,13 @@
 ---
 name: demo-driven-design-process
-description: Use when running the actual working process of refining a design or feature by iteration — driving the demo → feedback → next-demo loop (Kocienda's "creative selection" made operational), deciding what a demo must prove and what to deliberately fake (the fidelity ring + non-goals), "living on" / dogfooding a build to judge it over time, telling an algorithm decision (codify a rule, an objective arrow of improvement) from a heuristic decision (resolve by taste + time, never by a metric or AI pick), converging on an authored choice through rounds, and capturing the decision so it sticks. Routes here for "how do we iterate on this", "run the demo loop", "is this a taste call or a metric call", "what should this demo prove", "we keep redesigning and not converging", "should we A/B this", "let's dogfood it", "capture why we picked this". Pairs with `wireframing-and-prototyping` (that skill picks the fidelity of one artifact; this one runs the multi-round loop those artifacts move through).
-status: active
+description: Use when a design or feature must converge through repeated demo, feedback, dogfooding, selection, and decision capture. Do not use merely to choose one prototype's fidelity; route that artefact decision to wireframing-and-prototyping.
+  through).
 metadata:
   portable: true
   category: 05-ux-process-research-and-psychology
   compatible_with:
-    - claude-code
-    - codex
+  - claude-code
+  - codex
 ---
 
 # Demo-Driven Design Process (Creative Selection, Operationalised)
@@ -47,6 +47,12 @@ metadata:
   refine it after it is stated.
 
 ## Required Inputs
+
+| Input | Source | Evidence |
+|---|---|---|
+| Decision to resolve and demo audience | Product/design lead | One explicit learning question and decision owner |
+| Fidelity boundary and non-goals | Team agreement | What is real, simulated, excluded, and unsafe to infer |
+| Feedback and success evidence | Reviewers, tests, or dogfooding | Observation log separated from opinions |
 - **The one thing this loop is trying to get right** — stated concretely (this interaction, this
   threshold, this moment), not as a direction ("make it feel premium"). A direction is not a
   decision; the loop exists to force the abstraction down to something you can choose between.
@@ -96,6 +102,29 @@ metadata:
    not endorsement**. This stops the choice being silently re-litigated and feeds the next loop. See
    `references/decision-capture.md` and `examples/save-search-toast-iteration-log.md`.
 
+## Decision Rules
+
+| Condition | Choice | Wrong-choice failure |
+|---|---|---|
+| Outcome has an objective measurable improvement | Algorithmic rule/test | Taste voting obscures a verifiable answer |
+| Options are viable and differ by feel | Time-boxed craft judgment with named owner | Fake metrics launder subjective preference |
+| Demo plumbing does not affect the question | Simulate it and label the boundary | Building irrelevant infrastructure delays learning |
+
+## Capability Contract
+
+- Must inspect demo artefacts and capture evidence; review is read-only unless the iteration explicitly authorises edits.
+- May prototype within the agreed fidelity ring, but may not present simulations as production evidence or publish without authority.
+
+## Degraded Mode
+
+- If no single decision or owner exists, stop the demo cycle and establish them.
+- Without runnable prototypes, use a storyboard labelled simulated. Recover a non-informative round by narrowing the question, changing the fidelity boundary, and scheduling the next evidence-producing demo.
+
+## Quality Standards
+
+- Each round changes or confirms one decision and preserves the evidence, dissent, and non-goals.
+- Convergence is an explicit owner decision, not exhaustion or majority taste.
+
 ## Anti-Patterns
 - **Arguing about imaginary puppies.** Holding a design discussion over specs, slides, or a
   mock-of-a-mock with nothing real and running in the room. Build the smallest real artifact that
@@ -121,6 +150,11 @@ metadata:
   three weeks later with no record of what was already tried and beaten.
 
 ## Outputs
+
+| Output | Consumer | Evidence and acceptance |
+|---|---|---|
+| Demo brief and iteration log | Team and decision owner | Question, fidelity ring, observations, selection, and next move are recorded |
+| Decision record | Implementers | Chosen option, rejected options, rationale, owner, and reopening condition are explicit |
 - A **classified decision**: the one thing being resolved + its algorithm/heuristic class + the
   procedure that follows from the class.
 - A **demo plan per round**: the fidelity ring, the explicit non-goals, the cheapest honest fidelity.

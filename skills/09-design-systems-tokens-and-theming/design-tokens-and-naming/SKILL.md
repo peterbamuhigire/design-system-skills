@@ -1,13 +1,12 @@
 ---
 name: design-tokens-and-naming
-description: Use when defining, naming, structuring, or exporting design tokens for ANY product that needs a single source of truth for colour, type, space, radius, elevation, or motion — a design system, a component library, a multi-brand or white-label platform, a dark-mode theme, or a Figma-to-code pipeline. Builds the three-tier token architecture (primitive → semantic → component), sets the naming convention, maps dark-mode and multi-brand semantic roles, and exports to CSS custom properties, JSON, and Style Dictionary. This is the backbone skill the rest of group 09 (component-library, dark-mode/theming, design-handoff) builds on — start here before authoring components or a handoff spec.
-status: active
+description: Use when defining, naming, mapping, or exporting primitive, semantic, and component design tokens for colour, type, space, radius, elevation, motion, themes, or brands. Use component-library-architecture for component APIs and design-handoff-and-dev-spec for screen delivery.
 metadata:
   portable: true
   category: 09-design-systems-tokens-and-theming
   compatible_with:
-    - claude-code
-    - codex
+  - claude-code
+  - codex
 ---
 
 # Design Tokens And Naming
@@ -40,7 +39,13 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
 - The task is purely a type scale or spacing rhythm with no system to tokenise — use the
   doctrine references directly (`type-scale-and-spacing.md`).
 
-## Required Inputs
+## Inputs
+
+| Artefact or context | Source | Required? | Why |
+|---|---|---|---|
+| Approved colour, type, space, radius, elevation, and motion decisions | Upstream design skills | yes | Tokens encode rather than invent decisions |
+| Theme, brand, density, and platform axes | Product architecture | yes | Determines semantic remapping boundaries |
+| Consumer inventory and export targets | Repositories and platform owners | yes | Prevents unusable or colliding contracts |
 
 - The resolved colour system (ramps + semantic intent + recorded WCAG results) from the colour
   skill, the type scale/ratio, and the spacing unit. Tokens *encode* these decisions — they do
@@ -120,6 +125,27 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
    platform roles with fallbacks. Do not hardcode a fake glass color or shadow token and call it
    Liquid Glass; the platform material remains owned by the OS.
 
+## Decision Rules
+
+| Condition | Action | Wrong-choice failure |
+|---|---|---|
+| One product and one theme | Keep three tiers but avoid speculative brand/platform aliases | Premature abstraction makes tokens harder to use |
+| Dark mode or multiple brands are confirmed | Remap semantic roles; do not fork primitive/component contracts | Theme copies drift and components bypass intent |
+| Existing code uses raw values | Inventory usage, define aliases, and migrate incrementally | A big-bang rename breaks consumers and destroys traceability |
+| Platform-owned material has no portable equivalent | Use a semantic platform alias with documented fallback | A fake literal token impersonates native behaviour |
+
+## Capability Contract
+
+Read and search are required across current design files, token sources, and consuming code. Editing
+is allowed only when token implementation is requested. Execution is preferred for schema,
+contrast, export, and consumer tests; publishing packages requires separate authority.
+
+## Degraded Mode
+
+Without consumer-code access, produce a proposed contract and migration risks rather than claiming
+compatibility. Without export or contrast tooling, return source tokens plus the exact unverified
+checks and block release of generated platform packages.
+
 ## Anti-Patterns
 
 - **Two tiers, not three** — semantic tokens that *are* the primitives (`--blue-500` used as the
@@ -141,6 +167,12 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
   with accessibility and non-Apple fallbacks.
 
 ## Outputs
+
+| Artefact | Consumer | Evidence and acceptance condition |
+|---|---|---|
+| Three-tier token source and naming contract | Component and theme skills | Primitive, semantic, and component boundaries are machine-readable and documented |
+| Theme/brand maps and platform exports | Product repositories | Contrast and schema checks pass for each supported transform or are marked unverified |
+| Migration map | Engineering owners | Existing values and aliases have a staged compatibility path |
 
 - A tier'd token file (primitive → semantic → component) in W3C-aligned JSON with OKLCH colour
   (+ hex fallback), a stated naming convention, the semantic role map with the dark and any

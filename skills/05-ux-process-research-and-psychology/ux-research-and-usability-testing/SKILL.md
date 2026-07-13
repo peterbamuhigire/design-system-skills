@@ -1,13 +1,12 @@
 ---
 name: ux-research-and-usability-testing
-description: Use when planning or running UX research — user interviews, surveys, usability tests (moderated or unmoderated), card sorts, tree tests, diary studies — and when synthesizing findings into decisions. Routes here for research plans, screeners, interview guides, usability-test protocols, task scenarios, affinity/synthesis, severity rating, and turning evidence into design/product decisions (research-to-decision). Pick this when someone asks "how do we test this", "talk to users", "are we building the right thing", "why are users dropping off", or needs a defensible study instead of opinion.
-status: active
+description: Use when planning moderated usability sessions, participant tasks, observation evidence, interviews, surveys, card/tree tests, diary studies, or findings synthesis. Do not use for expert-only heuristic inspection or unsupported personas; route those to heuristic evaluation or journey mapping.
 metadata:
   portable: true
   category: 05-ux-process-research-and-psychology
   compatible_with:
-    - claude-code
-    - codex
+  - claude-code
+  - codex
 ---
 
 # UX Research and Usability Testing
@@ -27,6 +26,12 @@ metadata:
 - The work is building the prototype that the test will run on → use group 05 `wireframing-and-prototyping`.
 
 ## Required Inputs
+
+| Input | Source | Evidence |
+|---|---|---|
+| Research question and decision | Sponsor/research lead | Named decision owner and action the study can change |
+| Target population and recruitment limits | Product/research operations | Inclusion, exclusion, sample, and consent requirements |
+| Stimulus, tasks, data, and risk controls | Product, legal, privacy | Stable artefact, protocol, retention, and sensitive-data rules |
 - **The decision the research must inform.** Every study starts from a decision that is currently being made on a guess. No decision → no study.
 - The research question(s), stated so they can be answered with evidence, and what you currently believe (the assumption being tested).
 - The target user / segment, and access to them (recruiting source, screener constraints, incentive budget).
@@ -45,6 +50,29 @@ metadata:
 9. **Apply the doctrine lens.** Research is also how you defend that the product looks *authored*, not templated (`doctrine/design-doctrine.md` §0). Usability findings that surface "this feels generic / I didn't trust it" are slop signals (`doctrine/references/ai-slop-taxonomy.md`), not just nuisance comments — escalate them.
 10. **Check accessibility coverage.** If the test never included a keyboard-only, screen-reader, low-vision, or motor-impaired participant, state that as a known gap; pair findings with `doctrine/references/wcag-2.2-criteria.md` before claiming the experience "works for users".
 
+## Decision Rules
+
+| Condition | Choice | Wrong-choice failure |
+|---|---|---|
+| Need to understand why/mental model | Interview or moderated study | Survey percentages cannot explain mechanism |
+| Need to observe task usability | Behavioural usability test | Preference questions substitute opinion for performance |
+| Navigation findability is the question | Tree test before visual prototype | Visual styling confounds information-architecture evidence |
+
+## Capability Contract
+
+- Must protect consent, privacy, recruitment fairness, and raw evidence; planning/review is read-only unless study execution is authorised.
+- Do not contact participants, record sessions, spend incentives, or publish identifiable data without explicit authority and approved handling.
+
+## Degraded Mode
+
+- If decision, population, consent, or data-handling rules are missing, stop recruitment/collection and return the blockers.
+- Without participant access, deliver a validated protocol or secondary-evidence synthesis, not fabricated findings. Recover weak sessions by documenting deviation, excluding compromised evidence where necessary, and revising the protocol.
+
+## Quality Standards
+
+- Findings separate observation, interpretation, prevalence, and limitation; claims do not exceed sample or method.
+- Every recommendation traces to evidence and names the decision, owner, confidence limits, and next validation.
+
 ## Anti-Patterns
 - **Research theatre** — running a study whose result cannot change any decision. The most common and most expensive mistake.
 - **Leading the witness** — "Don't you find this easy?", naming the button in the task, nodding at the answer you want. Invalidates the data.
@@ -56,6 +84,11 @@ metadata:
 - **Opinion laundering** — presenting a designer's preference as a "research finding" with no traceable evidence.
 
 ## Outputs
+
+| Output | Consumer | Evidence and acceptance |
+|---|---|---|
+| Research plan/protocol | Sponsor and research operations | Question, method, sample, tasks, consent, analysis, and stop rules are complete |
+| Findings and decision trace | Product/design | Evidence references, themes, severity, limitations, decisions, and owners are explicit |
 - A one-page research plan (decision → question → method → participants → success criteria → decision rule).
 - A screener and a moderation guide / interview guide.
 - A usability-test protocol with task scenarios and pre-stated success criteria.

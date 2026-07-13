@@ -1,13 +1,12 @@
 ---
 name: dark-mode-and-theming
-description: Use when building, adding, or auditing a dark mode — or any multi-theme (light/dark/high-contrast/dimmed) system — for a website, app/web UI, dashboard, or themed document. Builds a true dual-mode semantic palette where dark is a deliberate remap (lowered chroma, lightened/desaturated accents, dark-grey surfaces carrying the brand hue, NOT #000), models elevation with surface lightness instead of drop shadows, re-gates every pair on WCAG contrast independently, and keeps contrast parity across modes. Routes here whenever the request mentions "dark mode", "theme switch", "light/dark tokens", "prefers-color-scheme", or "we just inverted it and it looks wrong".
-status: active
+description: Use when building, adding, or auditing a dark mode — or any multi-theme (light/dark/high-contrast/dimmed) system — for a website, app/web UI, dashboard, or themed document. Builds a true dual-mode semantic palette where dark is a deliberate remap (lowered chroma, lightened/desaturated accents, dark-grey surfaces carrying the brand hue, NOT
 metadata:
   portable: true
   category: 02-color-brand-and-visual-identity
   compatible_with:
-    - claude-code
-    - codex
+  - claude-code
+  - codex
 ---
 
 # Dark Mode And Theming
@@ -36,6 +35,12 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
   and feed it the role→value map this skill produces.
 
 ## Required Inputs
+
+| Input | Supplied by | Required? | Why |
+|---|---|---|---|
+| Light-theme semantic tokens | Colour-system workflow | yes | Provides roles to remap |
+| Brand hue, assets, and elevation model | Brand owner | yes | Preserves identity and depth |
+| Supported themes and preference rules | Product brief | yes | Defines switching behaviour |
 
 - The existing (or just-built) **light semantic role map** and tonal ramp, ideally in OKLCH —
   `surface`, raised/sunken surfaces, `text` (primary + muted), `border`, `accent`, and the
@@ -134,6 +139,36 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
 - **Duplicating components per theme** instead of swapping token values behind shared roles.
 
 ## Outputs
+
+| Output | Consumer | Evidence / acceptance |
+|---|---|---|
+| Theme role mapping | Token and component owners | Every semantic role maps across modes |
+| Dark elevation and asset spec | Designers and engineers | Surfaces, logos, imagery, and charts defined |
+| Theme validation record | Accessibility and QA | Contrast, states, preference, persistence, and flash tested |
+
+## Quality Standards
+
+- Treat dark mode as a contextual composition, not an inversion filter.
+- Retest every foreground/background and interaction state in every theme.
+- Stop release for flashing, unreadable, unthemed, or identity-breaking surfaces.
+
+## Decision Rules
+
+| Condition | Decision | Wrong-choice failure |
+|---|---|---|
+| Brand accent vibrates on dark | Reduce chroma or raise lightness | Accent blooms and loses legibility |
+| Surface needs elevation | Increase lightness within tinted neutrals | Hierarchy flattens |
+| OS preference exists and no choice is saved | Honour the OS preference | Theme ignores user expectation |
+| Asset lacks a suitable dark variant | Provide treatment or block | Identity becomes illegible |
+
+## Capability Contract
+
+Read and rendered theme inspection are required. Editing needs implementation authority; preference persistence and deployment remain with engineering. Do not destructively alter master brand assets.
+
+## Degraded Mode
+
+If required evidence or tooling is unavailable, use the scoped fallback below and mark the result unverified.
+Without rendering, deliver a conditional role map and state matrix, marking adaptation unverified. Recover with the light theme when dark assets or accessible pairs cannot be established.
 
 - A dual-mode semantic role map (light + dark columns, OKLCH + hex), a brand-tinted dark surface
   and dark ramp, an elevation-by-lightness ramp, lightened/desaturated accents and a verified

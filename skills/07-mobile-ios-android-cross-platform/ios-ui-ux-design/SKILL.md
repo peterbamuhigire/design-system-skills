@@ -1,10 +1,6 @@
 ---
 name: ios-ui-ux-design
-description: Specialized iOS UI/UX design skill for premium SwiftUI and UIKit
-  apps on current Apple SDKs. Use alongside ios-development when iPhone, iPad,
-  Mac-designed-for-iPhone, or Apple-platform screens must be native, usable,
-  accessible, and commercially credible.
-status: active
+description: Use when an iPhone, iPad, SwiftUI, or UIKit screen needs native Apple navigation, controls, states, Dynamic Type, VoiceOver, and adaptive window behaviour. Do not use for Android conventions or cross-platform unify/diverge decisions; route those to Android design or parity.
 metadata:
   portable: true
   category: 07-mobile-ios-android-cross-platform
@@ -30,6 +26,12 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 
 ## Required Inputs
 
+| Input | Source | Evidence |
+|---|---|---|
+| User task, navigation, roles, and screen states | Product and application contracts | Critical flow, routes, loading/error/offline/permission states |
+| Supported Apple OS/device/window contexts | Engineering support policy | Deployment targets, iPhone/iPad/window classes, keyboard/pointer needs |
+| Brand tokens and native implementation constraints | Design system and SwiftUI/UIKit repository | Approved type/colour/motion and existing components |
+
 - Target screens, user task, device classes, brand/product context, backend constraints, and any existing screenshots or SwiftUI components.
 - Confirm whether the deliverable is design guidance, implementation, review, QA, or documentation.
 
@@ -42,6 +44,24 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 5. Model every screen state: loading, content, empty, error, offline, permission denied, and syncing.
 6. Apply the current Apple platform material and feedback standards: **Liquid Glass** chrome, **SF Symbols 8**, **Dynamic Type**, **haptics**, and system appearance/accessibility personalization per `references/hig-liquid-glass.md` and `references/ios-sensory-and-haptics.md`.
 7. Apply the iOS mobile quality gate before implementation or review sign-off.
+
+## Decision Rules
+
+| Condition | Choice | Wrong-choice failure |
+|---|---|---|
+| Destinations are stable and peer-level | Native tab/sidebar pattern by size class | Web-like navigation weakens orientation and accessibility |
+| Task is focused and temporary | Sheet with clear detent/dismissal and saved state | Full-screen takeover loses context without need |
+| Dynamic Type reaches accessibility sizes | Reflow/stack and preserve complete labels | Fixed geometry clips critical actions and meaning |
+
+## Capability Contract
+
+- Must inspect product and SwiftUI/UIKit contracts and render/test representative Apple configurations; review is read-only unless implementation is requested.
+- May edit/test in-scope UI. Do not change deployment targets, entitlements, production data, or release builds without authority.
+
+## Degraded Mode
+
+- If deployment targets, devices/windows, navigation, or states are missing, stop final specification and request them.
+- Without simulator/device rendering, provide a size-class/state matrix marked unverified. Recover a failed state/configuration by preserving context, using native fallback, and retesting Dynamic Type, VoiceOver, keyboard/pointer, and navigation.
 
 ## iOS UX Standards
 
@@ -69,8 +89,15 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - Squeezing web layouts into a phone UI.
 - Copying Android component patterns into iOS.
 - Ignoring VoiceOver, Dynamic Type, swipe-back, offline states, or sheet/navigation conventions.
+- Applying glass to content or glass-on-glass. Correction: reserve adaptive material for native chrome and test accessibility settings.
+- Hard-coding one iPhone canvas. Correction: test size classes, iPad multitasking, and intermediate windows.
 
 ## Outputs
+
+| Output | Consumer | Evidence and acceptance |
+|---|---|---|
+| iOS UI/navigation/adaptive specification | Product and SwiftUI/UIKit engineering | Components, states, size classes, navigation, accessibility, and tokens are explicit |
+| Apple-platform quality gate | QA and accessibility | Representative OS/device/window/input configurations pass critical and recovery paths |
 
 - iOS UI brief, SwiftUI component guidance, navigation model, state matrix, accessibility notes, or review findings.
 

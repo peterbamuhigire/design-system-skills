@@ -1,13 +1,12 @@
 ---
 name: navigation-and-information-architecture
-description: Use when structuring how a product's content and screens are organised and found — defining the information architecture (sitemap, content inventory, taxonomy, labelling), choosing and specifying navigation systems (global/primary nav, mega-menu, sidebar, tabs, hamburger, bottom bar, footer nav), and designing wayfinding (breadcrumbs, active/current state, "you are here", section landmarks), search and filtering, and the page/URL hierarchy. Reach for it when a product has grown a confusing menu, users can't find things, you're adding a section and don't know where it goes, you're planning a redesign's IA, or you need a navigation spec to hand to engineering. Produces a sitemap + navigation specification with labels, structure, states, and keyboard/ARIA behaviour. This is the skill that decides structure *before* pages are designed — start here, not at the page level.
-status: active
+description: Use when defining or repairing a content inventory, taxonomy, sitemap, URL hierarchy, navigation system, labels, search, filters, or wayfinding. Use landing-page-and-conversion-design for page persuasion and practical-ui-design for visual component styling after structure is settled.
 metadata:
   portable: true
   category: 14-conversion-and-web-page-patterns
   compatible_with:
-    - claude-code
-    - codex
+  - claude-code
+  - codex
 ---
 
 # Navigation And Information Architecture
@@ -45,6 +44,11 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
   those results and *specifies* the methods inline, but the study itself is research's job.
 
 ## Required Inputs
+| Input | Source | Required? | Evidence |
+|---|---|---|---|
+| Content/screen inventory and ownership | Product/content owners | yes | Current inventory |
+| User tasks, mental models, search evidence, and permissions | Research and access-control owners | yes | Task and role matrix |
+| Platform, URL, localisation, and navigation constraints | Engineering and regional owners | yes | Technical contract |
 
 - A **content inventory** (or the means to build one): the real list of pages/sections/objects the
   product must hold, ideally with rough volumes and priorities. You cannot architect an unknown set.
@@ -122,6 +126,21 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
     contract — enough for engineering to build without re-deciding structure. See
     `examples/sitemap-and-nav-spec.md`.
 
+## Decision Rules
+| Condition | IA/navigation choice | Wrong-choice failure |
+|---|---|---|
+| Categories are broad and stable | Hierarchical navigation with tested labels | Flat menus become unscannable |
+| Users know the target term | Search with suggestions and recovery | Browsing alone slows direct retrieval |
+| Content belongs in multiple contexts | One canonical location plus cross-links/facets | Duplicate trees drift and split authority |
+
+## Capability Contract
+Read and search are required across inventory, research, analytics, routes, and permissions. Editing is allowed only for authorised IA implementation. Live route changes, redirects, search indexes, and publication require separate authority.
+
+## Degraded Mode
+
+If required evidence or tooling is unavailable, use the scoped fallback below and mark the result unverified.
+Without inventory or research, produce a provisional sitemap with assumptions. Stop migration when ownership, permissions, canonical URLs, redirects, or critical-task testing is missing; recover with a staged card/tree test.
+
 ## Anti-Patterns
 
 - **Mirroring the org chart** ("Our Departments", "Divisions") instead of user tasks and mental
@@ -145,6 +164,11 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
   with no authored point of view, against the doctrine's anti-slop Mission.
 
 ## Outputs
+| Artefact | Consumer | Evidence and acceptance condition |
+|---|---|---|
+| Content model, taxonomy, and sitemap | Product, content, and engineering | Every item has a canonical parent, owner, and label |
+| Navigation, wayfinding, search, and filter specification | Designers and engineers | States, keyboard/ARIA behaviour, URLs, and permissions are explicit |
+| Validation and migration record | QA and release owner | Critical tasks, redirects, analytics, and localisation pass or are blocked |
 
 - A **sitemap** (hierarchy tree with URL/route paths), the stated **organisation scheme** and why it
   fits, a **label system** (taxonomy with each label's denotation), the **navigation specification**

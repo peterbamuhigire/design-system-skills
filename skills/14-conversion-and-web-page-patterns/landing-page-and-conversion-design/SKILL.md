@@ -1,13 +1,12 @@
 ---
 name: landing-page-and-conversion-design
-description: Use when designing or restructuring a landing page, marketing page, product home, waitlist/signup page, or campaign page where the goal is a single conversion (sign up, start trial, book a demo, buy, join the list). Covers the section architecture — hero with a sharp value proposition, proof and social proof, objection handling, a deliberate CTA hierarchy, and the closing ask — plus the conversion-CREDIBILITY craft that earns the click honestly. Forbids dark patterns (fake scarcity, confirmshaming, forced continuity, sneak-into-cart, disguised ads, hard-to-cancel) and the convergent SaaS-template look (Inter + indigo gradient + three-feature-icon row + hero-with-two-buttons). Run distinctive-by-design first; pair with trust-credibility-and-social-proof for the proof section.
-status: active
+description: Use when designing or restructuring a landing, marketing, campaign, waitlist, signup, or product-home page around one honest conversion goal, value proposition, objections, proof, CTA hierarchy, and closing ask. Use trust-credibility-and-social-proof for proof assets and navigation-and-information-architecture for structure.
 metadata:
   portable: true
   category: 14-conversion-and-web-page-patterns
   compatible_with:
-    - claude-code
-    - codex
+  - claude-code
+  - codex
 ---
 
 # Landing Page & Conversion Design
@@ -47,6 +46,11 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
   placement and hierarchy.
 
 ## Required Inputs
+| Input | Source | Required? | Evidence |
+|---|---|---|---|
+| Audience, job, offer, conversion, and post-click outcome | Product/marketing owner | yes | Approved conversion brief |
+| Proof, objections, claims, pricing, and constraints | Research, sales, legal, and product | yes | Verified evidence inventory |
+| Brand, traffic source, device, analytics, and accessibility needs | Delivery owners | yes | Channel and measurement plan |
 
 - **The ONE action.** Exactly one primary conversion goal for the page. If there are two
   equally-weighted goals, the page has none — split it or rank them. Write it down first.
@@ -58,8 +62,6 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
 - **Real proof you are allowed to use** — named customers, real quotes with attribution, true
   metrics, genuine logos/certifications. If proof is thin, the page must be honest about it (see
   conversion-credibility), not fabricate it.
-
-## Workflow
 
 ### 0. Run the pre-flight, then commit the page's ONE distinctive idea
 Run `04-web-and-ui-design/distinctive-by-design` first — it gates the build. A landing page is the
@@ -145,6 +147,13 @@ Produce a section-by-section spec (see `examples/landing-wireframe-spec.md` for 
 section — purpose, the real content, the type/weight/space treatment, the focal point, the CTA
 state, and the proof token. Run the checklist below before any markup.
 
+## Workflow
+1. Define one audience, job, offer, conversion, and post-click outcome.
+2. Build a claim–proof–objection map from verified evidence.
+3. Sequence value, mechanism, proof, risk reversal, and CTA around commitment level.
+4. Prototype responsive and accessible states without dark patterns.
+5. Validate comprehension, credibility, conversion tracking, and post-click continuity before release.
+
 ## Conversion-Credibility Checklist (run before building)
 
 1. **One conversion goal** named; secondary actions visually subordinate (never a second equal CTA).
@@ -169,6 +178,21 @@ state, and the proof token. Run the checklist below before any markup.
 If any item can't be satisfied (proof is thin, a stakeholder insists on a dark pattern, no real
 copy yet), **say so and ask** — never quietly ship the coercive or convergent version.
 
+## Decision Rules
+| Condition | Page choice | Wrong-choice failure |
+|---|---|---|
+| One dominant conversion | One primary CTA repeated with consistent wording | Competing CTAs split intent |
+| Proof is strong and specific | Place it near the matching claim/objection | A detached logo wall fails to substantiate claims |
+| Commitment is high | Add process, risk reversal, and qualification detail | Premature ask suppresses trust |
+
+## Capability Contract
+Read and search are required for audience, offer, proof, claims, and analytics. Editing is allowed only for requested implementation. Testing, publication, tracking changes, and experiment launch require separate authority and privacy review.
+
+## Degraded Mode
+
+If required evidence or tooling is unavailable, use the scoped fallback below and mark the result unverified.
+Without verified proof or offer detail, deliver a wireframe and evidence-request list, not invented persuasion. Stop publication when claims, pricing, consent, accessibility, analytics, or post-click behaviour are unverified.
+
 ## Anti-Patterns
 
 - **Two co-equal CTAs** in the hero ("Start free" *and* "Contact sales" at identical weight) —
@@ -188,6 +212,11 @@ copy yet), **say so and ask** — never quietly ship the coercive or convergent 
 - **Ignoring message match** — a beautiful page that answers a different question than the ad asked.
 
 ## Outputs
+| Artefact | Consumer | Evidence and acceptance condition |
+|---|---|---|
+| Conversion brief and page architecture | Marketing, product, and design | Every section advances one audience and conversion |
+| Claim-proof-objection-CTA map | Writers and reviewers | Each substantive claim has attributable support |
+| Prototype and measurement evidence | Engineering and growth owner | Responsive, accessibility, tracking, and post-click checks pass |
 
 - A **stated page conversion goal** and the committed distinctive idea (what + why + human
   authority), written before markup.

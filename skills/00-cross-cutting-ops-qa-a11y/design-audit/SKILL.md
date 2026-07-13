@@ -1,10 +1,6 @@
 ---
 name: design-audit
-description: Comprehensive UI/UX quality audit covering visual hierarchy, accessibility,
-  consistency, AI slop detection, typography, colour, layout, interaction states,
-  responsive behaviour, performance, and microcopy. Produces severity-rated findings with
-  actionable remediation.
-status: active
+description: Use when auditing one existing UI, page, screen, flow, or document for design quality and producing evidence-backed, severity-rated findings. Use product-design-audit for multiple product surfaces and design-qa-and-pre-launch-review for a release verdict.
 metadata:
   portable: true
   category: 00-cross-cutting-ops-qa-a11y
@@ -31,7 +27,13 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - You need only the detailed visual/product slop checklist (`visual-product-slop-audit`), the positive visual system rules to build against (`practical-ui-design`), or animation craft standards (`motion-design`) — load those directly.
 - You need a ship go/no-go gate — that is `design-qa-and-pre-launch-review`.
 
-## Required Inputs
+## Inputs
+
+| Artefact or context | Source | Required? | Why |
+|---|---|---|---|
+| Inspectable artefact and key states | User or project | yes | Grounds every finding in evidence |
+| Audience, purpose, platform, and brand intent | Brief | yes | Sets the correct design bar |
+| Design system, analytics, and field data | Project evidence | conditional | Tests consistency and real-world impact |
 
 - The artifact under audit: screens/URLs/components plus, ideally, the live build (CWV needs CrUX/RUM field data, not just a mockup).
 - Context for Step 1: who the users are, the purpose (task/commerce/info), the platform (web/Android/iOS), the design system/tokens if any, and the intended brand personality.
@@ -39,29 +41,60 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 
 ## Workflow
 
-- Read this `SKILL.md` first, then load only the referenced deep-dive files that are necessary for the task.
-- Apply the ordered guidance, checklists, and decision rules in this skill instead of cherry-picking isolated snippets.
-- Produce the deliverable with assumptions, risks, and follow-up work made explicit when they matter.
 - For premium products, add a premium-readiness pass: buyer proof, service cues, pricing confidence, executive clarity, support visibility, SEO/content authority, and product packaging.
+
+## Decision Rules
+
+| Condition | Action | Wrong-choice failure |
+|---|---|---|
+| One page, screen, flow, or document | Run this audit and produce a triaged finding register | Product-wide scope dilutes evidence and misses local detail |
+| Multiple product surfaces or platforms | Route to `product-design-audit` | Independent scores cannot expose cross-platform drift |
+| Final release decision is required | Route to `design-qa-and-pre-launch-review` | A diagnostic score is mistaken for a ship verdict |
+| The artefact or a critical state cannot be inspected | Mark the dimension unverified and cap confidence | Guessed findings are presented as observed evidence |
+
+## Capability Contract
+
+Read and visual inspection are required. Repository search, browser access, rendering, and
+measurement tools are optional but strengthen evidence. This audit is read-only: do not edit the
+artefact unless the user separately requests remediation.
+
+## Degraded Mode
+
+When only screenshots or partial files are available, audit only visible states, label every
+unseen interaction or breakpoint as unverified, and return a conditional score. Do not claim
+accessibility, responsiveness, or release readiness without the relevant interactive checks.
+Stop rather than score when the primary artefact itself cannot be inspected.
 
 ## Quality Standards
 
-- Keep outputs execution-oriented, concise, and aligned with the repository's baseline engineering standards.
-- Preserve compatibility with existing project conventions unless the skill explicitly requires a stronger standard.
-- Prefer deterministic, reviewable steps over vague advice or tool-specific magic.
+Every finding must be observable, severity-calibrated, routed to an owner, and preserved in the
+coverage record. Hard-gate failures cap the verdict; missing evidence lowers confidence.
+
 
 ## Anti-Patterns
 
-- Treating examples as copy-paste truth without checking fit, constraints, or failure modes.
-- Loading every reference file by default instead of using progressive disclosure.
+- **Finding without evidence.** Cite the screen, state, measurement, or source line; otherwise
+  remove the claim.
+- **Severity by taste.** Tie severity to blocked tasks, user harm, compliance, frequency, or
+  business impact; do not promote a personal preference to Critical.
+- **Score averaging across blockers.** Apply the hard caps when accessibility or slop gates fail;
+  a polished visual average must not hide a release blocker.
+- **Audit that silently redesigns.** End with the triaged queue and hand accepted findings to
+  `ux-remediation-and-redesign`.
+- **Happy-path-only inspection.** Include empty, error, loading, focus, disabled, responsive, and
+  recovery states or mark them unverified.
+
 
 ## Outputs
+
+| Artefact | Consumer | Evidence and acceptance condition |
+|---|---|---|
+| Scored audit and triaged finding register | Design and product owners | Every finding cites observed evidence, severity logic, and an owning remediation skill |
+| Coverage and confidence note | Release reviewer | Unseen states and unrun checks are explicit |
 
 - A **design audit report** covering visual hierarchy, typography, spacing, colour, accessibility,
   performance, microcopy, slop signals, and an ordered fix queue.
 - An **accessibility pass report** when WCAG conformance is part of the audit scope.
-- Clear assumptions, tradeoffs, or unresolved gaps when the task cannot be completed from available context alone.
-- References used, companion skills, or follow-up actions when they materially improve execution.
 
 ## References
 

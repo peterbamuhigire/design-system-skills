@@ -1,13 +1,12 @@
 ---
 name: variable-fonts-and-opentype-features
-description: Use when implementing the type *mechanics* of an already-chosen typeface in a web or app UI - driving variable-font axes (wght, opsz, slnt, ital, wdth, GRAD, and custom axes), wiring optical sizing to size, and switching on OpenType features (ligatures, stylistic sets ss01.., contextual alternates, small caps, fractions, and especially tabular vs proportional / lining vs old-style numerals). Covers the exact CSS (font-variation-settings, font-optical-sizing, font-feature-settings and its high-level equivalents) and treats the single variable file + correct numerals as both a craft lever and a performance lever. Pair after font-selection-and-pairing has named the faces.
-status: active
+description: Use when configuring variable-font axes, optical sizing, numerals, or OpenType features after a face is chosen. Unlike font-selection-and-pairing, this implements type mechanics; embedding and licence work routes to font-embedding-and-licensing.
 metadata:
   portable: true
   category: 01-typography-and-fonts
   compatible_with:
-    - claude-code
-    - codex
+  - claude-code
+  - codex
 ---
 
 # Variable Fonts And OpenType Features
@@ -35,6 +34,12 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
 - You are auditing an existing artifact for slop — use `ai-slop-typography-audit`.
 
 ## Required Inputs
+
+| Input | Supplied by | Required? | Why |
+|---|---|---|---|
+| Chosen face and files | Typeface selector | yes | Establishes available mechanics |
+| Axis and feature inventory | Foundry or file inspection | yes | Prevents invented settings |
+| Text contexts and platform | Product brief | yes | Determines numeral and feature policy |
 
 - The chosen face(s) and whether each ships as a **variable** font, and which axes/features it
   exposes (check the foundry/Google Fonts spec sheet or `references/variable-axes.md` table).
@@ -91,6 +96,12 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
 
 ## Outputs
 
+| Output | Consumer | Evidence / acceptance |
+|---|---|---|
+| Axis plan | Implementer | Axis, range, property, and context recorded |
+| Numeral and feature policy | Design-system owner | Real samples render without faux features |
+| Verified type-mechanics spec | QA and handoff | Render plus inspected font metadata |
+
 - A stated axis plan: which axes are driven, by which property, and at which values for display
   vs body (plus `font-optical-sizing: auto`).
 - A stated numeral policy per context (tabular / proportional / old-style / lining).
@@ -99,6 +110,31 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
 - One variable woff2 per face registered with its full weight range — the performance lever.
 
 ## Examples
+
+- See `examples/dashboard-type-system.md` for the complete worked contract and rendered checks.
+
+## Quality Standards
+
+- Verify every axis and feature against the actual file rather than inferring support.
+- Test display, body, data, code, and fallback samples at representative sizes.
+- Stop release when required numerals, glyphs, or features are absent.
+
+## Decision Rules
+
+| Condition | Decision | Wrong-choice failure |
+|---|---|---|
+| High-level CSS controls the setting | Use the high-level property | Raw settings override the cascade |
+| Dense data, prices, timers, or IDs | Use tabular lining numerals | Columns jitter and comparisons fail |
+| Feature is absent | Omit it or change the font cut | A faux or inconsistent result ships |
+| Variable file is not payload-efficient | Compare measured static subsets | Assumed performance benefit adds weight |
+
+## Capability Contract
+
+Read and font inspection are required. Edit only for authorised implementation; execution may render specimens. Network access is optional and cannot replace inspection of the shipped file.
+
+## Degraded Mode
+
+Without inspection or rendering, return a conditional plan, label support unverified, and provide a specimen matrix. Never claim a feature exists without evidence.
 
 - `examples/dashboard-type-system.md` — a real analytics/finance product type system on Recursive
   + IBM Plex: variable axes wired, `opsz` bound to size, tabular numerals in the data layer,

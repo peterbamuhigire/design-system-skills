@@ -1,13 +1,12 @@
 ---
 name: fintech-and-financial-product-ui
-description: Use when designing money-handling UI — transfers, transactions, balances, statements, payment confirmations, mobile-money flows, trust/security cues, regulatory disclosure, currency/number formatting, or error-prevention and undo for financial actions. Covers banking, neobank, remittance, mobile money (M-Pesa / Airtel Money / MoMo), lending, wallet, and payment-product screens. Routes here for "send money", "transfer screen", "transaction history", "balance display", "statement", "fee disclosure", or "confirm payment" work.
-status: active
+description: Use when a banking, wallet, remittance, mobile-money, lending, transfer, balance, transaction, statement, fee, or payment-confirmation interface must prevent costly mistakes and build trust. Do not use for accounting rules or backend payment architecture; consult those domain engines separately.
 metadata:
   portable: true
   category: 06-sector-and-domain-ux
   compatible_with:
-    - claude-code
-    - codex
+  - claude-code
+  - codex
 ---
 
 # Fintech & Financial-Product UI
@@ -46,6 +45,12 @@ collapsing into the convergent fintech look (cool blue/teal, gradient cards, gla
   the finance engine (`C:\wamp64\www\chwezi-accounting-doctrine`).
 
 ## Required Inputs
+
+| Input | Source | Evidence |
+|---|---|---|
+| Money movement, ledger, status, and limit rules | Finance doctrine, product, and API contracts | Currency, precision, fees, limits, timestamps, and state machine |
+| Identity, fraud, disclosure, and approval rules | Risk, legal, and compliance owners | Verified jurisdiction, consent, authentication, and escalation requirements |
+| User contexts and supported channels | Research and operations | Personas, devices, connectivity, accessibility, and support paths |
 - The **money action(s)** the screen owns (view / transfer / pay / withdraw / reconcile) and
   who bears the loss if it goes wrong.
 - **Currencies** in play (single or multi), their ISO codes, decimal places, and symbol position.
@@ -83,6 +88,30 @@ collapsing into the convergent fintech look (cool blue/teal, gradient cards, gla
    pairing and palette intent, and explicitly say how it avoids the default fintech blue/teal/
    gradient skin. Reuse the anti-homogeneity discipline from the sibling `sector-strategies`.
 
+## Decision Rules
+
+| Condition | Choice | Wrong-choice failure |
+|---|---|---|
+| Transfer is not yet irrevocable | Review screen with recipient, amount, fee, rate, and total | One-tap commitment magnifies slips and recipient errors |
+| Provider status is pending/unknown | Durable pending state and status lookup | Showing success early creates false financial assurance |
+| Currency or fee basis differs | Label every amount and disclose conversion basis | Ambiguous numbers cause material loss and disputes |
+| Reversal is possible | Offer truthful cancel/reverse path with deadline | Generic undo promises recovery the system cannot deliver |
+
+## Capability Contract
+
+- Must inspect authoritative finance/API/compliance contracts; design review is read-only unless remediation is requested.
+- May edit/test in-scope UI with synthetic data. Do not move real money, expose financial data, change limits/disclosures, or claim regulatory approval without authority.
+
+## Degraded Mode
+
+- If currency, fee, status, reversal, jurisdiction, or approval rules are unknown, stop the affected flow and return blockers.
+- Without a transaction sandbox, produce a synthetic state matrix marked unverified. Recover failures by preserving reference/status, preventing duplicate submission, and presenting the authorised support/escalation path.
+
+## Quality Standards
+
+- Every amount has currency, sign, precision, fee/exchange context, and a stable transaction status/reference.
+- Evidence covers confirmation, authentication, pending/failure, duplicate prevention, statement formatting, accessibility, and support recovery.
+
 ## Anti-Patterns
 - **Convergent fintech slop** — cool-blue/teal primary, purple-to-blue gradient cards,
   glassmorphism, neon glow, isometric coin blobs. The whole field looks identical; copying it
@@ -101,6 +130,11 @@ collapsing into the convergent fintech look (cool blue/teal, gradient cards, gla
   Especially tempting in fintech because incumbents use them; that is exactly why to refuse.
 
 ## Outputs
+
+| Output | Consumer | Evidence and acceptance |
+|---|---|---|
+| Financial interaction specification | Product, finance, risk, engineering | Amount, fee, recipient, status, approval, disclosure, and recovery rules are explicit |
+| Fintech UI gate | Compliance, operations, accessibility QA | Synthetic journeys verify no ambiguous commitment, false success, or unsafe retry |
 - A screen/flow spec for a money action with: number-format rules, fee/FX disclosure placement,
   review→confirm→status spine, trust cues, undo/irreversibility statement, and a stated palette/
   type direction that avoids the convergent look.

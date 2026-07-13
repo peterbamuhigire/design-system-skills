@@ -1,13 +1,12 @@
 ---
 name: fluid-responsive-typography
-description: Use when type must scale smoothly across screen sizes without breakpoint-snapping — a website, landing page, web/app UI, dashboard, email, or any browser-rendered artifact that runs from a budget phone (~320–360px) to ultrawide. Builds modular fluid type scales with `clamp()` (deriving the min/preferred/max and the vw coefficient from the math, not guessing), controls line-length/measure across breakpoints, sets fluid line-height, scales type to its CONTAINER with container-query units, and keeps it all from breaking browser zoom/reflow (WCAG 1.4.4 / 1.4.10). This is the fluid-sizing entry skill for typography; pairs with font-selection-and-pairing (pick the faces and scale there) and responsive-and-adaptive-layout (make the whole grid respond there).
-status: active
+description: Use when browser typography must scale smoothly across viewport or container sizes while preserving zoom, reflow, measure, and hierarchy. Unlike responsive-and-adaptive-layout, this owns type sizing only; face and pairing choices remain upstream.
 metadata:
   portable: true
   category: 01-typography-and-fonts
   compatible_with:
-    - claude-code
-    - codex
+  - claude-code
+  - codex
 ---
 
 # Fluid Responsive Typography
@@ -40,6 +39,12 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
   `01-typography-and-fonts` skills.
 
 ## Required Inputs
+
+| Input | Supplied by | Required? | Why |
+|---|---|---|---|
+| Chosen faces and static scale | Typeface selector | yes | Defines intended hierarchy |
+| Minimum and maximum containers | Layout brief or implementation | yes | Anchors interpolation |
+| Content samples and accessibility targets | Product and QA | yes | Tests measure, zoom, and reflow |
 
 - The **realistic width range** the type must survive — the smallest target width and the largest
   (e.g. 320 or 360px → 1440px), not an assumed default. The `clamp()` floor/ceiling anchor here.
@@ -122,7 +127,7 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
 
 If the checklist cannot be satisfied, say so and ask — never ship a `vw`-only size that breaks zoom.
 
-## Anti-Patterns (the fluid-type slop / a11y tells)
+## Anti-Patterns
 
 - **Pure-`vw` sizing:** `font-size: 5vw` (or a `clamp()` with a `vw` bound) — illegible on phones,
   gigantic on ultrawide, and it **breaks browser zoom** (WCAG 1.4.4 failure).
@@ -151,6 +156,12 @@ When an AI tool offers `font-size: 6vw` with no floor/ceiling, treat it as the c
 
 ## Outputs
 
+| Output | Consumer | Evidence / acceptance |
+|---|---|---|
+| Fluid type token table | Design-system implementer | Min, preferred, max, viewport range, and formula |
+| Measure and line-height rules | Component designers | Real content passes target widths |
+| Responsive type evidence | Accessibility and QA | Zoom, 320px reflow, and container tests recorded |
+
 - A stated fluid-type decision **before** any CSS: the floor/ceiling widths, which steps are fluid
   (and which stay fixed), the derived `clamp()` for each, the measure cap, and the line-height plan.
 - The fluid CSS itself — `clamp()` scale, capped measure, size-inverse leading, and `cqi`
@@ -160,6 +171,31 @@ When an AI tool offers `font-size: 6vw` with no floor/ceiling, treat it as the c
   `doctrine/design-doctrine.md` §0.
 
 ## Examples
+
+- Use the worked example in `examples/` to verify calculations, zoom, reflow, and measure.
+
+## Quality Standards
+
+- Derive interpolation coefficients from declared endpoints; do not guess viewport units.
+- Include relative units so browser text zoom remains effective.
+- Stop release when text clips, overlaps, loses hierarchy, or fails 200% zoom and 320px reflow.
+
+## Decision Rules
+
+| Condition | Decision | Wrong-choice failure |
+|---|---|---|
+| Scale follows the viewport | Use viewport-based `clamp()` with rem bounds | Breakpoint jumps or runaway text |
+| Component width differs from viewport | Use container query units with fallback | Type scales against the wrong space |
+| Dense UI needs stability | Narrow the fluid range | Controls reflow unpredictably |
+| Browser support or rendering is uncertain | Supply bounded static fallbacks | Unsupported clients lose hierarchy |
+
+## Capability Contract
+
+Read and calculation are required. Editing and browser execution are required only for authorised implementation and verification. Do not change product copy or layout scope merely to make type tests pass.
+
+## Degraded Mode
+
+Without browser rendering, produce formulas, static fallback tokens, and a test matrix, marking zoom and reflow unverified. Recover with conservative stepped sizes if container-query support is unavailable.
 
 - `examples/fluid-type-scale.md` — a real fluid type scale for a 320→1440px range: the stated
   floor/ceiling, the `clamp()` derivation shown step by step for each heading (with the `vw`

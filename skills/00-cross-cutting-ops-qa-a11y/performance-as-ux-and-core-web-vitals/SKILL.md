@@ -1,17 +1,7 @@
 ---
 name: performance-as-ux-and-core-web-vitals
-description: Use when designing or reviewing any web/app page or component where speed
-  is part of the experience — treating Core Web Vitals (LCP <= 2.5s, INP <= 200ms,
-  CLS <= 0.1) and per-archetype asset budgets (JS/CSS/image/font KB) as DESIGN
-  constraints, choosing perceived-performance patterns (skeletons over spinners,
-  optimistic UI, transition masking, above-the-fold priority), and making image/font
-  performance decisions (AVIF/WebP, srcset, variable fonts, subsetting, reserved
-  space to kill layout shift). Triggers: "performance budget", "Core Web Vitals",
-  "LCP/INP/CLS", "page feels slow/janky", "loading state", "skeleton", "image/font
-  optimization as design", "Lighthouse failing", hero image weight, font flash
-  (FOIT/FOUT), layout shift. Pairs with design-qa-and-pre-launch-review and
-  responsive-and-adaptive-layout.
-status: active
+description: >-
+  Use when page speed, loading perception, Core Web Vitals, asset budgets, image or font weight, FOIT/FOUT, or layout shift must be treated as design constraints. Use engineering performance skills for code-level profiling and remediation.
 metadata:
   portable: true
   category: 00-cross-cutting-ops-qa-a11y
@@ -49,6 +39,12 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
   applies, but CWV does not; use the group-13 document skills.
 
 ## Required Inputs
+
+| Input | Supplied by | Required? | Why |
+|---|---|---|---|
+| Page archetype and critical journey | Product/design brief | yes | Selects the correct budget |
+| Candidate assets, fonts, and states | Design and content teams | yes | Exposes weight and shift risk |
+| Field or lab measurements | Performance owner | recommended | Establishes current evidence |
 
 - The **page archetype** (marketing/landing, web-app shell, or document/long-form) —
   this selects the budget row in `web-performance-budgets-2026.md`.
@@ -124,6 +120,12 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 
 ## Outputs
 
+| Output | Consumer | Evidence / acceptance |
+|---|---|---|
+| Performance budget sheet | Designer and engineer | CWV targets, asset caps, LCP element, and reservations |
+| Loading-state specification | Component implementer | Skeleton, optimistic, error, and transition frames |
+| Performance gate record | QA and release owner | Measured thresholds and unresolved exceptions |
+
 - A **filled performance budget sheet** for the page archetype: CWV targets, asset KB caps,
   the named LCP element, CLS reservations, and the specific design decisions that hit each
   number (see `examples/performance-budget-sheet.md`).
@@ -133,6 +135,25 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - The **Lighthouse-CI threshold line** to wire into the build gate.
 
 ## Examples
+
+- See `examples/performance-budget-sheet.md` for the required evidence-backed budget format.
+
+## Decision Rules
+
+| Condition | Decision | Wrong-choice failure |
+|---|---|---|
+| Element is the likely LCP | Prioritise and never lazy-load it | Largest content appears late |
+| Late content has known dimensions | Reserve its final space | Layout shifts after interaction |
+| Wait is predictable and structural | Use a content-shaped skeleton | Spinner provides no spatial continuity |
+| Field p75 fails a CWV target | Block release or approve a documented exception | Lab-only success hides user harm |
+
+## Capability Contract
+
+Read and design inspection are required; measurement execution is strongly preferred. Editing needs implementation authority. Code-level profiling and production remediation route to engineering performance skills.
+
+## Degraded Mode
+
+Without field data, use lab measurements as a conditional proxy and identify the required RUM follow-up. Without execution, deliver the budget and designed states but mark the gate unverified.
 
 - `examples/performance-budget-sheet.md` — a fully filled budget for a real page archetype
   (a marketing/landing page): LCP/INP/CLS targets, JS/CSS/image/font KB budgets, the named

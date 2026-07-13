@@ -1,17 +1,7 @@
 ---
 name: design-qa-and-pre-launch-review
-description: Use when a page, screen, flow, or component is "done" and about to ship —
-  the final pre-launch QA gate that verifies spec/pixel parity against the design,
-  checks cross-device and cross-browser behaviour, and composes the anti-slop +
-  accessibility (WCAG 2.2 AA) + performance (Core Web Vitals) gates into ONE go/no-go
-  checklist with a signed verdict. Triggers: "pre-launch review", "ship checklist",
-  "QA this page before launch", "design QA", "pixel parity", "matches the Figma/mockup",
-  "cross-browser/cross-device check", "is this ready to ship", "launch sign-off",
-  "release gate", "did we regress the design", "acceptance review". Composes the
-  visual-product-slop-audit, accessibility-wcag-2-2-compliance, and
-  performance-as-ux-and-core-web-vitals gates; for a deep diagnostic critique of an
-  existing build use design-audit instead.
-status: active
+description: >-
+  Use when a page, screen, flow, or component is done and needs a final design go/no-go gate across implementation parity, browsers, devices, accessibility, performance, and anti-slop checks. Use design-audit for diagnosis before release.
 metadata:
   portable: true
   category: 00-cross-cutting-ops-qa-a11y
@@ -55,7 +45,13 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - The deliverable is a **static document** (DOCX/PDF) — cross-browser/CWV do not apply;
   use the group-13 document skills, which carry their own export checks.
 
-## Required Inputs
+## Inputs
+
+| Artefact or context | Source | Required? | Why |
+|---|---|---|---|
+| Built artefact and approved design/spec | Release team | yes | Enables parity review |
+| Browser, device, state, and accessibility matrix | Product and QA owners | yes | Defines release coverage |
+| Prior gate results and launch owner | Owning skills and team | yes | Creates an accountable verdict |
 
 - The **built artifact** (a running URL, a staging build, or screenshots per breakpoint)
   AND the **approved design** to check it against (Figma frames, redlines, or the design
@@ -123,6 +119,28 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
    The launch owner signs. A blocker on slop, a11y-AA, or perf-budget **always** forces
    NO-SHIP — convenience never overrides (`doctrine/design-doctrine.md` Mission).
 
+## Decision Rules
+
+| Condition | Verdict | Wrong-choice failure |
+|---|---|---|
+| Any accessibility, security-relevant deception, critical state, or approved-spec blocker fails | `NO-SHIP` | A known user or compliance defect reaches production |
+| Required browser, device, or render evidence is unavailable | `CONDITIONAL` or `NO-SHIP`, never `SHIP` | Missing evidence is mistaken for passing evidence |
+| Only owned, non-blocking cosmetic findings remain | `SHIP-WITH-FOLLOWUPS` with owner and date | Minor debt either blocks indefinitely or disappears |
+| Every applicable gate has linked passing evidence | `SHIP` | Sign-off relies on memory or confidence rather than proof |
+
+## Capability Contract
+
+Read, interactive inspection, and access to the approved design/spec are required. Browser/device
+execution, rendering, accessibility checks, and performance measurement are required when those
+gates apply. The review may record findings but does not mutate production or publish a release.
+
+## Degraded Mode
+
+If rendering is unavailable, the result cannot be `SHIP`.
+If a target browser, device, assistive technology, renderer, or performance environment is
+unavailable, record the missing matrix cell and return `CONDITIONAL` or `NO-SHIP` according to its
+risk. Never convert an unrun check into N/A merely to obtain a passing verdict.
+
 ## Quality Standards
 
 - Parity is checked against **both** the build and the approved design — never certified
@@ -151,6 +169,11 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - **No recorded verdict.** A QA pass with no signed artifact leaves no audit trail.
 
 ## Outputs
+
+| Artefact | Consumer | Evidence and acceptance condition |
+|---|---|---|
+| Signed pre-launch verdict | Launch owner | Every applicable matrix cell and blocking gate has linked evidence |
+| Blocker and follow-up register | Delivery team | Each item has severity, owner, fix, and due date or waiver |
 
 - A **filled pre-launch QA review** (`examples/qa-review-filled.md` shape): header, spec-
   and pixel-parity findings, the three composed gate verdicts (slop / a11y-AA / perf), the

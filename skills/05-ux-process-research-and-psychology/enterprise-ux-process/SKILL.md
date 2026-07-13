@@ -1,7 +1,6 @@
 ---
 name: enterprise-ux-process
-description: Operationalize Synechron's enterprise UX process for premium-priced enterprise engagements (financial services, insurance, regulated industries, large internal apps, B2B SaaS). Produces maturity-level declaration + activity evidence pack + heuristic evaluation + 5-outcomes pre-launch declaration. Cite when scoping, executing, or auditing premium enterprise UX work.
-status: active
+description: Use when a regulated, B2B, or large internal product needs a maturity-declared enterprise UX engagement with stakeholder, research, prototype, evaluation, and launch evidence. Do not use for a small experiment or single prototype; route those to the focused research/prototyping skills.
 metadata:
   portable: true
   category: 05-ux-process-research-and-psychology
@@ -15,6 +14,7 @@ metadata:
 
 ---
 
+<!-- dual-compat-start -->
 ## Use when
 
 - Scoping or executing a premium-priced enterprise UX engagement (financial services, insurance, healthcare, regulated industries, large internal apps, B2B SaaS)
@@ -30,6 +30,12 @@ metadata:
 
 ## Required inputs
 
+| Input | Source | Evidence |
+|---|---|---|
+| Problem, objective, stakeholders, and success criteria | Executive sponsor and product owner | Named funder/owner/executor and signed criteria |
+| Target maturity level and engagement boundary | UX lead and sponsor | Level rationale, phases in scope, timeline, and approvals |
+| User, market, system, regulatory, and accessibility evidence | Research, operations, legal, engineering | Source register, provenance, currency, and handling limits |
+
 Before invoking this skill, the following must be available or generated:
 
 - Problem definition statement (what is the need; why now; for whom)
@@ -38,7 +44,7 @@ Before invoking this skill, the following must be available or generated:
 - Success criteria (signed off by stakeholders)
 - Target maturity level: **3 (UX Design)** for standard premium, **4 (Experience Design)** for top-tier
 
-## Workflow — 9 phases
+## Workflow
 
 The process maps directly to Synechron's Activity-by-Level matrix. All 9 phases must produce documented evidence at Level 3+; the additional Level 4 activities are noted inline.
 
@@ -105,7 +111,48 @@ The process maps directly to Synechron's Activity-by-Level matrix. All 9 phases 
 - ADA / Section 508 / WCAG 2.1 AA verification — required at ALL maturity levels
 - Output: usability test report + accessibility audit
 
+## Decision Rules
+
+| Condition | Choice | Wrong-choice failure |
+|---|---|---|
+| Organisation cannot evidence Level 4 activities | Declare Level 3 and show the gap | Aspirational maturity claims undermine commercial credibility |
+| Research or accessibility evidence is missing | Block the affected gate and gather evidence | Ceremony substitutes documents for user outcomes |
+| Engagement is a bounded experiment | Use the focused research/prototype workflow | Nine-phase overhead delays learning without reducing risk |
+| Regulated decision has unresolved owner | Stop release and assign accountable approval | Diffuse governance leaves high-impact risks unowned |
+
+## Capability Contract
+
+- Must read engagement, research, regulatory, and delivery evidence and preserve provenance; audit/planning is read-only unless execution is authorised.
+- May create in-scope artefacts and facilitate approved research. Do not contact participants, spend budget, sign for stakeholders, publish sensitive evidence, or claim certification without separate authority.
+
+## Degraded Mode
+
+- If sponsor, decision owner, maturity target, success criteria, or evidence provenance is missing, stop maturity/release claims and issue a blocker register.
+- If research or testing cannot run, produce only the completed phases and mark downstream claims pending; never fabricate transcripts, scores, accessibility results, or sign-off.
+- Recover a failed phase by assigning the evidence owner, completing the smallest missing activity, and rerunning all dependent gates.
+
+## Quality Standards
+
+- Each phase has an owner, source evidence, acceptance criterion, decision, and dependency trace; activity volume alone does not prove maturity.
+- Accessibility claims use the current agreed standard and test evidence; legal compliance or certification is never inferred from a checklist.
+- The launch declaration is blocked by any unresolved critical outcome, consent/privacy breach, or missing accountable sign-off.
+
+## Anti-Patterns
+
+- Declaring Level 4 because the proposal lists Level 4 activities. Correction: require completed, reviewed evidence for each activity.
+- Treating stakeholder opinion as user research. Correction: label its source and run an appropriate user method.
+- Producing personas from imagination. Correction: trace attributes to research or label a proto-persona.
+- Running accessibility as a final cosmetic check. Correction: set criteria early and test throughout.
+- Using a five-outcome score to conceal one critical failure. Correction: preserve the blocking rule and evidence each outcome.
+- Claiming ADA, Section 508, or WCAG certification from self-review. Correction: state scope, method, result, and limits.
+
 ## Outputs
+
+| Output | Consumer | Evidence and acceptance |
+|---|---|---|
+| Maturity declaration and phase evidence pack | Sponsor, procurement, delivery leadership | Every claimed activity links to dated evidence, owner, and acceptance |
+| Evaluation, research, and accessibility records | Product, design, compliance | Methods, samples, findings, limits, and remediation decisions are traceable |
+| Five-outcome launch declaration | Accountable launch owner | Each outcome has pass/block evidence; unresolved critical failure blocks launch |
 
 A complete enterprise-ux-process engagement produces:
 
@@ -124,7 +171,9 @@ A complete enterprise-ux-process engagement produces:
 
 - `examples/ux-engagement-worked.md` — a full worked enterprise UX engagement for a sample client (Meridian Trust Bank treasury portal): scored UX maturity assessment, 14-week engagement plan with phases/deliverables/gates, value/ROI framing, and the completed 5-outcomes pre-launch declaration.
 
-## Cross-references
+## References
+
+Load only the directly relevant process references for the current enterprise phase and decision.
 
 ### Design doctrine (always consult)
 - `doctrine/design-doctrine.md` — the anti-slop charter; Phase 7 visual design and the "Pleasing" pre-launch outcome must satisfy it.
@@ -141,3 +190,4 @@ The Synechron, Levy, Branson, Deacon, and Fekeshazi `book-extractions/*` files t
 
 ### Quick-use checklist
 - `references/maturity-checklist.md` — standalone activity-by-level checklist for use in project workspaces
+<!-- dual-compat-end -->

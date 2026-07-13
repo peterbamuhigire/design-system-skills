@@ -1,13 +1,12 @@
 ---
 name: ai-image-generation-art-direction
-description: Use when generating ANY imagery with an AI image model (Midjourney, DALL·E, Imagen, Stable Diffusion, Flux, Firefly, etc.) for a brand, website, deck, document, app, illustration, key art, OG card, icon-set base, or texture — and you need it to look AUTHORED, not slop. Routes here for turning an art-direction brief into a prompt, building the negative-constraint list, running the reject/accept gate against the AI-slop visual tells (waxy skin, melted backgrounds, gibberish text, extra fingers, no-author style-blend), post-processing/integration so generation is the start not the ship, provenance/licensing caution (training-data rights, C2PA, indemnity, truth-claim surfaces), and the decision of when NOT to use AI imagery at all. Pairs with photography-art-direction (photo sourcing/treatment) and visual-product-slop-audit (the product-wide reject gate).
-status: active
+description: Use when turning an art-direction brief into generated imagery, prompts, negative constraints, reject gates, provenance notes, and post-processing instructions. Use photography-art-direction for sourced photos and visual-product-slop-audit for product-wide review.
 metadata:
   portable: true
   category: 11-imagery-illustration-and-art-direction
   compatible_with:
-    - claude-code
-    - codex
+  - claude-code
+  - codex
 ---
 
 # AI Image Generation & Art Direction
@@ -49,6 +48,11 @@ authority for the look; we art-direct *away* from them, exactly as we do with ba
   `iconography-system-design` skills (this group).
 
 ## Required Inputs
+| Input | Source | Required? | Evidence |
+|---|---|---|---|
+| Art-direction brief, surface, and truth status | Brand and product owners | yes | Approved intent and allowed-use decision |
+| Model/service terms, rights, and disclosure rules | Legal and procurement owners | yes | Current provenance and usage constraints |
+| Treatment recipe and reject criteria | Art direction | yes | Concrete prompt, negatives, and acceptance gate |
 - The **art-direction brief** (or enough to write one): brand voice/positioning, audience, the one
   feeling the image must carry, where it lives (surface + rendered size + aspect ratios).
 - The **surface's truth status**: does it make a claim about *real* people, places, customers,
@@ -97,6 +101,24 @@ authority for the look; we art-direct *away* from them, exactly as we do with ba
    gate; re-graded/cropped into <recipe>."* No generated image ships without this sentence — an
    unstated choice is a reflexive default, exactly what the Charter exists to stop.
 
+## Decision Rules
+
+| Condition | Generation decision | Wrong-choice failure |
+|---|---|---|
+| Surface asserts real people, testimony, evidence, or outcomes | Do not generate; source authentic material | Synthetic imagery deceives the audience |
+| Rights, confidentiality, or service terms are unclear | Stop and resolve before upload or generation | Inputs or outputs create legal exposure |
+| Controlled concept has no truth claim and generation is allowed | Generate against the brief and reject gate | Unbounded prompting converges on generic model defaults |
+| Candidate contains anatomy, text, provenance, or brand defects | Reject or repair, then rerun the full gate | Local fixes leave contradictory artefacts elsewhere |
+
+## Capability Contract
+
+Read and search are required for the brief, policy, rights, provenance, and existing assets. Network generation and editing require explicit production authority. Publication, uploading confidential assets, impersonation, and truth-claim use require separately stated authority and evidence.
+
+## Degraded Mode
+
+If required evidence or tooling is unavailable, use the scoped fallback below and mark the result unverified.
+Without an approved generator, deliver a model-neutral generation brief, negative constraints, and reject rubric. Without current terms, provenance, or truth-status evidence, block generation and recommend licensed or commissioned alternatives.
+
 ## Anti-Patterns
 - **Generating onto a truth-claim surface** — AI "customers," AI "our team," an AI clinician on a
   real-care page. The single highest public-backlash risk (`ai-slop-taxonomy.md` §2).
@@ -114,6 +136,11 @@ authority for the look; we art-direct *away* from them, exactly as we do with ba
   were never checked, or laundering an AI render as a genuine photograph.
 
 ## Outputs
+| Artefact | Consumer | Evidence and acceptance condition |
+|---|---|---|
+| Model-neutral generation brief and negative constraints | Authorised image operator | Prompt encodes subject, composition, medium, treatment, and exclusions |
+| Candidate gate and reject/repair log | Art director and reviewer | Every candidate is assessed for truth, anatomy, text, style, and integration |
+| Provenance, rights, disclosure, and post-processing record | Legal and release owner | Shipped imagery has an allowed-use decision and traceable edits |
 - A **generation brief**: intent sentence, the prompt, the negative-constraint list, and the
   accept/reject gate — ready to run against any model.
 - A **gate run** per candidate: tick-listed tells, pass/reject, and (on reject) the reason and next move.

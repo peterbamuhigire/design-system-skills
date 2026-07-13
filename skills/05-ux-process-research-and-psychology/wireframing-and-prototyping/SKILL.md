@@ -1,13 +1,12 @@
 ---
 name: wireframing-and-prototyping
-description: Use when sketching, wireframing, or prototyping a flow or feature before high-fidelity design or build — choosing the right fidelity (paper sketch, lo-fi wireframe, mid-fi greybox, hi-fi mockup, clickable/coded prototype), building wireflows that chain screens to user decisions, deciding when a clickable prototype is worth it, and avoiding the trap of jumping straight to pixel-perfect comps. Routes here for "wireframe this", "prototype the flow", "lo-fi vs hi-fi", "wireflow", "should I make this clickable", "rapid concept sketch", or "what should we prototype before we build".
-status: active
+description: Use when a flow or feature needs sketches, wireframes, wireflows, or a clickable/coded prototype and the fidelity must match the learning question. Do not use to run a multi-round convergence process or produce final visual design; route those to demo-driven process or UI craft.
 metadata:
   portable: true
   category: 05-ux-process-research-and-psychology
   compatible_with:
-    - claude-code
-    - codex
+  - claude-code
+  - codex
 ---
 
 # Wireframing & Prototyping
@@ -40,6 +39,12 @@ metadata:
   fidelity and is its own slop risk (see Anti-Patterns).
 
 ## Required Inputs
+
+| Input | Source | Evidence |
+|---|---|---|
+| Learning question and decision | Product/design owner | What the prototype must prove and who decides |
+| User flow, content, and critical states | Research/content/product | Tasks, branches, errors, and representative content |
+| Time, tools, and fidelity constraints | Delivery team | Deadline, test environment, and simulation boundary |
 - The **goal of the artifact**: what decision or risk this wireframe/prototype must resolve
   (structure? flow? feasibility? desirability? a specific interaction?). Fidelity follows from this.
 - The **user task(s) and entry points** the flow must cover, ideally from research (personas, top
@@ -78,6 +83,29 @@ metadata:
    high-fidelity design (group 09 handoff/tokens/components) with the resolved questions annotated
    on the wireflow, so hi-fi work starts from answers, not from a blank canvas.
 
+## Decision Rules
+
+| Condition | Choice | Wrong-choice failure |
+|---|---|---|
+| Testing concept/order | Sketch or lo-fi wireflow | High polish biases feedback toward visuals |
+| Testing interaction timing or state | Clickable/coded prototype | Static screens cannot expose behavioural failure |
+| Testing visual trust or brand response | High-fidelity representative content | Grey boxes cannot answer perception questions |
+
+## Capability Contract
+
+- Must inspect requirements and preserve a clear simulation boundary; review is read-only unless artefact creation is requested.
+- May create disposable prototypes, but may not present fake data/integrations as real, test with participants, or publish without authority.
+
+## Degraded Mode
+
+- If no learning question exists, stop prototyping and define it before choosing fidelity.
+- Without interactive tools, use an annotated storyboard and mark interaction claims untested. Recover a misleading prototype by exposing simulated areas, narrowing scope, and rebuilding only the fidelity needed.
+
+## Quality Standards
+
+- Fidelity is no higher than necessary, all critical branches/states needed by the question exist, and realistic content replaces lorem ipsum where meaning matters.
+- Evidence records question, fidelity rationale, simulated areas, test result, and next decision.
+
 ## Anti-Patterns
 - **Starting in hi-fi.** Opening Figma in full colour with real type for an unvalidated flow. It
   costs 5× to change, and reviewers critique the gradient instead of the journey.
@@ -97,6 +125,11 @@ metadata:
   of going *back down* to change structure cheaply.
 
 ## Outputs
+
+| Output | Consumer | Evidence and acceptance |
+|---|---|---|
+| Prototype brief and artefact | Product, design, research | Learning question, fidelity, flow, states, and simulation boundary are explicit |
+| Prototype evidence record | Decision owner | Test observations, limitations, decision, and next iteration are captured |
 - A fidelity decision: the chosen rung + the one sentence justifying it against the artifact's job.
 - Wireframes at that fidelity (content blocks, hierarchy, primary action — greyboxed media).
 - A **wireflow**: screens connected by user decisions and system responses, with the real branches

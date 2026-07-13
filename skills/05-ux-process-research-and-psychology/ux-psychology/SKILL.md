@@ -1,17 +1,18 @@
 ---
 name: ux-psychology
-description: Cognitive psychology for premium web design. Gestalt principles, Nielsen's 10 heuristics, Norman's 3 design levels, System 1/2 thinking with cognitive biases, Branson's three HCI paradigms (Building/HIP/Design Thinking), working-memory rules (Miller 7±2, chunking, stacking, cognitive load), four-stage cognitive affordance discipline (Presence/Visibility/Recognizability/Intelligibility), and Deacon's three levels of UX scope. Use for premium $20k+ websites to justify quality and prevent common psychological UX mistakes.
-status: active
+description: Use when a design decision needs a cautious cognitive rationale involving Gestalt grouping, affordances, memory, attention, mental models, or bias. Do not use as proof of user behaviour or for heuristic inspection; route claims to research/testing or heuristic evaluation.
 metadata:
   portable: true
   category: 05-ux-process-research-and-psychology
   compatible_with:
-    - claude-code
-    - codex
+  - claude-code
+  - codex
 ---
 
 # Ux Psychology
 Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
+
+<!-- dual-compat-start -->
 
 ## Use when
 - A design or layout needs grouping/hierarchy diagnosed through Gestalt lenses (proximity, similarity, common region, closure, continuity).
@@ -29,6 +30,12 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - You only need a non-psychological correctness check (copy, accessibility audit, performance).
 
 ## Required inputs
+
+| Input | Source | Evidence |
+|---|---|---|
+| User task, context, and consequence | Research or approved brief | Observed behaviour or clearly labelled assumptions |
+| Interface/flow under consideration | Stable design or build | Versioned screen and decision point |
+| Competing design hypotheses | Design/product team | Alternatives and predicted cognitive effect |
 - The specific screen, flow, or interaction under review (mockup, URL, or described artifact) — concrete enough to point at named elements.
 - The user goal and decision context for that screen, so cognitive-load and affordance judgments are anchored to a real task.
 - Brand, audience, regional, and conversion context that determines whether a psychological tradeoff is acceptable.
@@ -39,7 +46,25 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 3. Review or revise the work using this skill as a focused quality lens.
 4. Return actionable changes or acceptance criteria instead of abstract theory.
 
-## Quality standards
+## Decision Rules
+
+| Condition | Choice | Wrong-choice failure |
+|---|---|---|
+| Claim concerns likely comprehension | Use principle as hypothesis, then test | Psychology is treated as deterministic proof |
+| Many items must be scanned | Meaningful chunking and progressive disclosure | Arbitrary limits hide necessary information |
+| Control meaning is unfamiliar | Visible signifier, label, and feedback | Minimalism creates invisible affordances |
+
+## Capability Contract
+
+- Must inspect the interface and distinguish sourced evidence from inference; analysis is read-only unless redesign is requested.
+- May recommend tests or in-scope changes, but may not diagnose users, manipulate vulnerabilities, or claim universal cognitive effects.
+
+## Degraded Mode
+
+- If no user/task context exists, stop prescriptive claims and return competing hypotheses.
+- Without research access, label principles as provisional and propose a validation method. Recover a contradicted hypothesis by updating the rationale and design, not dismissing user evidence.
+
+## Quality Standards
 - Recommendations must be concrete enough to apply immediately.
 - Changes should improve consistency, usability, or credibility without flattening the brand.
 - The standard should support downstream implementation rather than slow it down.
@@ -48,8 +73,15 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - Do not apply every rule mechanically when only a subset is relevant.
 - Do not give generic critique with no change implications.
 - Do not override project reality with taste-based preferences alone.
+- Do not treat a cognitive principle as proof of behaviour. Correction: frame and test a falsifiable hypothesis.
+- Do not apply a universal item-count cap. Correction: chunk by meaning and test comprehension/findability.
 
 ## Outputs
+
+| Output | Consumer | Evidence and acceptance |
+|---|---|---|
+| Cognitive design rationale | Product and design | Principle, observed issue, hypothesis, alternative, and limitation are explicit |
+| Validation plan | Research and QA | Task, participants/evidence, predicted result, and disconfirmation signal are defined |
 - Revisions, review findings, acceptance criteria, or quality guidance tied to the artifact under review.
 
 ## Notes
@@ -68,3 +100,4 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - `references/legacy-guidance.md` — Gestalt, Nielsen, Norman, Krug; **+ working-memory rules + four-stage cognitive affordance** (added 2026-05-04). Read only the specific files under `references/` that match the task.
 - `references/three-paradigms-of-hci.md` — Building / HIP / Design Thinking; cockpit-voice example for stakeholder alignment
 - `references/three-levels-of-ux-scope.md` — Single Interaction / Journey / Relationship — declare in every proposal
+<!-- dual-compat-end -->

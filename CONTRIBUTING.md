@@ -9,7 +9,8 @@ Adding a skill is one step.
 1. Copy `skills/_TEMPLATE/` to `skills/<NN-group>/<your-skill-name>/`.
 2. Fill in the frontmatter — especially a **specific, trigger-rich `description`** (this is the
    only thing that decides whether the skill gets routed to; vague text = missed pickup).
-3. Write the body (the `## Use When … ## References` sections). Cite `doctrine/references/*`
+3. Write the body using `governance/skill-authoring-standard.md` and the current
+   `skills/_TEMPLATE/SKILL.md`. Cite `doctrine/references/*`
    for any canonical rule rather than restating it.
 4. That's it. The next glob finds it — no edits to `README.md`, `CLAUDE.md`, the domain
    engines, or anything else.
@@ -62,3 +63,7 @@ Never use lorem/placeholder — examples must be specific and reusable. Track ba
   `web-performance-budgets-2026.md` for any UI/web skill).
 - Ship ≥1 `examples/` file (see above).
 - Honour the anti-slop charter (`doctrine/design-doctrine.md`).
+- Declare inputs, outputs, capability limits, degraded mode, decision rules, stop conditions,
+  evidence, and acceptance criteria.
+- Run `python -X utf8 scripts/validate_engine.py --baseline tests/quality-baseline.json` and
+  `python -X utf8 scripts/routing_smoke_test.py` before submitting changes.

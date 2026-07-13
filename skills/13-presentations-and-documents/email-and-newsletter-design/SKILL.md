@@ -1,13 +1,13 @@
 ---
 name: email-and-newsletter-design
-description: Use when designing or building an HTML email or newsletter that must render across hostile, inconsistent clients — Outlook (Word engine), Gmail (web/app, with style-stripping and dark-mode inversion), Apple Mail, Yahoo, Outlook.com, mobile webviews. Triggers on "build an email template", "responsive email", "the email looks broken in Outlook", "dark mode email", "bulletproof button", "email won't render", "preheader text", "newsletter layout", marketing/transactional/digest emails, and any email-client-quirk debugging. Establishes the constrained email model (tables + inline CSS, no flexbox/grid, partial @media/webfont support), fluid/hybrid responsiveness, dark-mode handling, bulletproof VML/anchor buttons, web-safe + webfont-with-fallback type (the fallback IS the design in email), accessible semantic markup, alt text, contrast, and image-off resilience. Pairs with responsive-and-adaptive-layout (the responsive model it constrains to email) and ux-writing-and-microcopy (subject/preheader/CTA copy).
-status: active
+description: Use when designing, building, or debugging HTML email and newsletters across Outlook, Gmail, Apple Mail, dark mode, mobile, image-off, and limited-CSS conditions. Use ux-writing-and-microcopy for subject, preheader, and CTA wording, and responsive layout skills for non-email surfaces.
+  copy).
 metadata:
   portable: true
   category: 13-presentations-and-documents
   compatible_with:
-    - claude-code
-    - codex
+  - claude-code
+  - codex
 ---
 
 # Email & Newsletter Design (Bulletproof, Client-Resilient HTML Email)
@@ -64,6 +64,11 @@ degradation* beats five choices that only render in one client.
   embedding rules (`doctrine/references/embedding-by-format.md`).
 
 ## Required Inputs
+| Input | Source | Required? | Evidence |
+|---|---|---|---|
+| Email type, audience, goal, sender, and content | Campaign or product owner | yes | Approved brief and copy |
+| Client support matrix and delivery platform | Engineering/marketing operations | yes | Target-client list |
+| Brand assets, links, consent, legal footer, and tracking rules | Brand and compliance owners | yes | Asset and compliance register |
 - The **target client matrix** and rough audience split (e.g. "B2B → assume heavy desktop Outlook";
   "consumer → Gmail app + Apple Mail dominate"). The matrix decides how defensive to be.
 - The **email type and single primary goal** (one campaign = one main CTA). Transactional vs
@@ -231,7 +236,32 @@ per `doctrine/design-doctrine.md` §2. Canonical sources for this skill:
 When an AI tool emits "a div-based responsive email with flexbox and an Inter webfont," treat
 that as the convergent mean to *avoid* — it will break in Outlook and lose its font in Gmail.
 
+## Decision Rules
+| Condition | Email implementation choice | Wrong-choice failure |
+|---|---|---|
+| Outlook desktop is supported | Table layout and bulletproof fallback | Modern CSS silently breaks |
+| Critical meaning is in an image | Recreate it in live text and alt text | Image blocking removes the message |
+| Dark-mode inversion is likely | Test explicit colours and resilient assets | Logos and contrast disappear |
+
+## Capability Contract
+Read and edit are required for source and assets; test sends, rendering, and link checks are required for production claims. Sending to recipients, changing lists, or publishing campaigns requires separate authority.
+
+## Degraded Mode
+Without client rendering, deliver HTML and a conditional compatibility matrix. Stop before send when consent, sender identity, links, unsubscribe/legal content, or priority-client evidence is missing.
+
+## Anti-Patterns
+- **Web-page CSS in email:** use tables and supported inline styles.
+- **Image-only message:** provide live text, alt text, and image-off resilience.
+- **Hidden or absent unsubscribe:** provide the required clear control.
+- **Untested dark mode:** inspect logo, text, background, and CTA contrast.
+- **Desktop-only width:** use a fluid/hybrid mobile path.
+
 ## Outputs
+| Artefact | Consumer | Evidence and acceptance condition |
+|---|---|---|
+| Production HTML email and plain-text alternative | Delivery platform | Structure survives target clients and image blocking |
+| Client, dark-mode, accessibility, and link test matrix | QA and campaign owner | Priority clients, links, alt text, focus, and contrast pass |
+| Asset, consent, sender, and compliance record | Operations and legal owner | Provenance, permissions, footer, and unsubscribe are verified |
 - A stated email decision **before** markup: target-client matrix and how defensive to be; the
   responsive approach (fluid vs hybrid/spongy); the type plan **named fallback-first** (web-safe
   stack + optional guarded webfont, no banned primary); the dark-mode treatment (and dark logo

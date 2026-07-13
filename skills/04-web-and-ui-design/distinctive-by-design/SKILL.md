@@ -1,13 +1,12 @@
 ---
 name: distinctive-by-design
-description: Use BEFORE building any UI, website, landing page, app screen, dashboard, pitch deck, or rendered artifact — the pre-flight discipline that makes the work look like the product of highly skilled human hands rather than an AI or template default. Forces ONE committed distinctive idea (a signature typeface, an unexpected layout, a custom motif, a real photographic/illustrative point of view), real weight/size/space extremes, intentional asymmetry and a clear focal point, and craft details (custom bullets, considered empty states, micro-interactions, real content). Forbids the convergent defaults — Inter/Geist, indigo gradients, glassmorphism, uniform card grids, centered-everything, decorative AI badges — and forbids justifying any choice by "an AI tool recommends it." Run this first; it gates the build.
-status: active
+description: Use when a UI, website, dashboard, deck, or rendered artefact needs one defensible visual signature before high-fidelity build. Do not use for detailed token production or final QA; route those to the relevant design-system or audit skill after direction is chosen.
 metadata:
   portable: true
   category: 04-web-and-ui-design
   compatible_with:
-    - claude-code
-    - codex
+  - claude-code
+  - codex
 ---
 
 # Distinctive By Design
@@ -39,6 +38,12 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
 
 ## Required Inputs
 
+| Input | Source | Evidence |
+|---|---|---|
+| Audience, brand position, and desired response | Approved brief and brand owner | Specific positioning words and exclusions |
+| Content and functional constraints | Product/content owners | Representative real content and critical tasks |
+| Existing brand assets and licence limits | Asset library and licence records | Available type, image, and motif rights |
+
 - **Artifact + context + audience.** What is it, who reads it, and what is the one feeling it
   should leave? ("authoritative editorial," "developer tool that respects my time," "a product
   that feels confident and a little daring.")
@@ -48,7 +53,10 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
 - **One reference of human authority** you will pair against (a foundry specimen, a named
   designer's system, a page from the design literature) — never an AI tool's recommendation.
 
-## The Discipline (Workflow)
+## Workflow
+
+Establish the specific product context and identify the default-looking decisions before choosing
+the smallest authored intervention that changes the product's visual signature.
 
 ### 1. Commit to ONE strong distinctive idea — then subordinate everything to it
 Pick a single organising decision and let it govern the whole artifact. Exactly one of:
@@ -138,7 +146,30 @@ Only after every box is checked do you write markup.
 If any item cannot be satisfied (no real content yet, no authority to cite, no time to author a
 real choice), **say so and ask** — never silently ship the convergent default.
 
-## Anti-Patterns (the convergent defaults to push away from)
+## Decision Rules
+
+| Condition | Choice | Wrong-choice failure |
+|---|---|---|
+| Brand has a strong authentic asset | Make it the singular signature | Adding unrelated novelty dilutes recognition |
+| Category demands trust and restraint | Distinguish through typography, proportion, and detail | Decorative spectacle undermines credibility |
+| No premium asset is licensed | Use the named OFL baseline plus authored layout/motif | Unlicensed embedding creates legal and delivery risk |
+
+## Capability Contract
+
+- Must inspect brand/content/assets and compare at least two genuinely different directions; critique is read-only unless production is requested.
+- May create in-scope concepts, but may not purchase, embed, publish, or claim brand approval without authority and licence evidence.
+
+## Degraded Mode
+
+- If positioning or licence status is missing, stop final direction selection and return bounded options with open decisions.
+- Without rendering, provide a written art-direction board marked unverified. Recover a generic result by removing defaults, strengthening one signature, and rerunning the comparison with real content.
+
+## Quality Standards
+
+- One named idea, not a collage of novelties, survives across representative artefacts and accessibility constraints.
+- Decision evidence records rejected directions, rationale, asset licences, and approval status.
+
+## Anti-Patterns
 
 - **Type:** Inter, Geist, Roboto, or the "safe distinctive" escapes (Poppins, Montserrat,
   Space Grotesk) reached for reflexively; one font for headings, body, labels, and buttons.
@@ -156,6 +187,11 @@ real choice), **say so and ask** — never silently ship the convergent default.
   near-identical sizes that erase hierarchy.
 
 ## Outputs
+
+| Output | Consumer | Evidence and acceptance |
+|---|---|---|
+| Distinctive direction statement | Brand owner and design team | One signature, supporting type/layout/image choices, and explicit exclusions |
+| Comparative concept evidence | Approver | Real-content variants show why the selected direction is recognisable and viable |
 
 - A written **one-line distinctive-decision statement** (what + why + human authority), produced
   *before* any markup.

@@ -1,13 +1,12 @@
 ---
 name: font-selection-and-pairing
-description: Use when choosing typefaces for ANY artifact that contains type - a website, a DOCX/PPTX/PDF report or proposal, a software/app UI screen, a pitch deck, or marketing page. Selects a deliberate, non-slop display+body pairing matched to artifact context, design voice, functional role, and licence constraints; states the choice and reason before output; and runs the anti-slop checklist. This is the default entry skill for typography in the design engine.
-status: active
+description: Use when choosing and pairing typefaces for a website, UI, document, report, proposal, deck, or marketing page, including design voice and licence constraints. Use font-embedding-and-licensing after selection and ai-slop-typography-audit for existing output.
 metadata:
   portable: true
   category: 01-typography-and-fonts
   compatible_with:
-    - claude-code
-    - codex
+  - claude-code
+  - codex
 ---
 
 # Font Selection And Pairing
@@ -29,7 +28,13 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
   `font-embedding-and-licensing`.
 - The task is auditing an existing artifact for slop - use `ai-slop-typography-audit`.
 
-## Required Inputs
+## Inputs
+
+| Artefact or context | Source | Required? | Why |
+|---|---|---|---|
+| Artefact type, format, audience, and design voice | Brief | yes | Selects category and pairing contrast |
+| Functional roles and size/device range | Product or document constraints | yes | Protects readability and hierarchy |
+| Brand, script coverage, licence, and font availability | Brand and font manifests | conditional | Governs permitted implementation |
 
 - Artifact type and output format: web, DOCX, PPTX, PDF, XLSX, UI, mobile, or app shell.
 - Context and audience: formal/institutional, editorial/literary, product/grotesque,
@@ -58,6 +63,27 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
    `clamp()` versions, and variable-font axes, use `references/type-scale-recipes.md`.
 8. **Hand off to `font-embedding-and-licensing`** for the format-correct load/embed.
 
+## Decision Rules
+
+| Condition | Action | Wrong-choice failure |
+|---|---|---|
+| Permitted premium family exists and fits the brief | Prefer it over the baseline and record the licence scope | Purchased craft value is ignored or used outside its rights |
+| Premium files are absent or rights are unclear | Use the named OFL baseline pairing | Unlicensed binaries are embedded or work stalls unnecessarily |
+| Script coverage or readability conflicts with the desired voice | Choose coverage and legibility first, then restore contrast through display treatment | Distinctive type excludes readers or breaks localisation |
+| No valid display/body pair can be verified | Stop before producing the artefact and request a decision | A banned or bare-system fallback silently becomes the design |
+
+## Capability Contract
+
+Read access to the brief, doctrine, font taxonomy, and licence information is required. Filesystem
+search is required for premium-font discovery. Network access is optional for source verification;
+embedding or file mutation belongs to `font-embedding-and-licensing`.
+
+## Degraded Mode
+
+If premium files or licence evidence cannot be inspected, propose an OFL baseline pair and label
+premium use unavailable. If script specimens cannot be rendered, provide a provisional choice and
+block embedding until glyph coverage and metrics are checked.
+
 ## The Anti-Slop Checklist
 
 1. Typeface(s) named explicitly with a one-line contextual reason - stated before output.
@@ -80,6 +106,11 @@ bare system stack.
 - Timid mid-weights and near-identical sizes.
 
 ## Outputs
+
+| Artefact | Consumer | Evidence and acceptance condition |
+|---|---|---|
+| Typeface decision and pairing rationale | Artefact-producing workflow | Display/body roles, categories, context, script coverage, and licence basis are explicit |
+| Type scale and embedding handoff | `font-embedding-and-licensing` | Anti-slop checklist passes and unresolved licence or rendering checks are named |
 
 - A stated typographic decision: display + body + category + reason.
 - A completed anti-slop checklist.

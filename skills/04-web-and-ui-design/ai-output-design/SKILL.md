@@ -1,11 +1,6 @@
 ---
 name: ai-output-design
-description: Use when designing AI output surfaces — structure templates, verifiability
-  (inline sources, NOT confidence percentages), grounding indicators, forward-action
-  affordances, inline adjustability, and canvas-vs-chat selection. The five output
-  principles (Clear, Verifiable, Grounded, Actionable, Adjustable) with concrete UI
-  mechanics for each. Based on Macfadyen, *Designing AI Interfaces* (O'Reilly, 2025).
-status: active
+description: Use when an AI answer surface needs structure, citations, grounding, editable refinement, or a chat-versus-canvas decision. Do not use for agent autonomy, approvals, or execution status; route those interaction controls to ai-agent-ux.
 metadata:
   portable: true
   category: 04-web-and-ui-design
@@ -30,6 +25,12 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 
 ## Required Inputs
 
+| Input | Source | Evidence |
+|---|---|---|
+| User task and output decisions | Product brief or observed workflow | Ranked decisions and follow-up actions |
+| Source/grounding payload | Retrieval or model contract | Citation identifiers and unavailable-evidence states |
+| Output variability and error modes | Evaluation results or engineering | Representative good, weak, partial, and failed outputs |
+
 - The output shape (prose, list, table, code, image, plan).
 - The durability of the output: ephemeral (chat) or artifact (canvas).
 - The source material the output will cite (if any).
@@ -42,6 +43,24 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - Decide canvas vs chat using the decision matrix.
 - Draft the output template system prompt block.
 - Specify source attribution, grounding metadata, forward actions, and inline refinement.
+
+## Decision Rules
+
+| Condition | Choice | Wrong-choice failure |
+|---|---|---|
+| Output supports ongoing editing | Persistent canvas with inline controls | Chat-only regeneration loses context and user changes |
+| Claim can be sourced | Citation adjacent to the claim | Detached source lists make verification costly |
+| Evidence is absent or conflicting | State the gap and verification action | Confidence percentages manufacture trust without proof |
+
+## Capability Contract
+
+- Must inspect representative outputs and grounding metadata; evaluation is read-only unless implementation is requested.
+- May edit in-scope templates/components but must not fabricate sources, alter underlying evidence, or publish generated content without authority.
+
+## Degraded Mode
+
+- Without grounding metadata, label claims unverified and stop any verifiability sign-off.
+- Without rendering, return the output schema and state matrix. Recover malformed or partial output with preserved user work, retry/edit controls, and a tested fallback.
 
 ## Quality Standards
 
@@ -56,8 +75,14 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - Unstructured wall of prose.
 - Sources dumped at the bottom with no inline anchoring.
 - Chat used for durable artifacts; canvas used for ephemeral chat.
+- Requiring full regeneration for a local change. Correction: provide inline adjustment that preserves accepted work.
 
 ## Outputs
+
+| Output | Consumer | Evidence and acceptance |
+|---|---|---|
+| AI output template and state matrix | Design and engineering | Clear, verifiable, grounded, actionable, adjustable states are mapped |
+| Output quality review | Product and QA | Representative outputs show source proximity, failure handling, and forward actions |
 
 - Output-template system prompt block.
 - Source-attribution component spec.
@@ -218,4 +243,3 @@ If a section has no content, omit it.
 ## Consolidated Child References
 
 - Load [references/routing.md](references/routing.md) to map retired AI child skill slugs to their reference modules.
-

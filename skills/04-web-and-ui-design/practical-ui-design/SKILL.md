@@ -1,9 +1,6 @@
 ---
 name: practical-ui-design
-description: Rules-based visual UI design system covering colour, typography, spacing,
-  layout, buttons, forms, and visual consistency. Load alongside any platform skill when
-  the work needs a deliberate interface system instead of ad hoc styling.
-status: active
+description: Use when an interface needs a coherent practical visual system for colour, typography, spacing, layout, buttons, and forms. Do not use for brand identity creation or native platform behaviour; pair with the relevant brand and platform skills.
 metadata:
   portable: true
   category: 04-web-and-ui-design
@@ -33,6 +30,12 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 
 ## Required Inputs
 
+| Input | Source | Evidence |
+|---|---|---|
+| Product tasks, audience, and platform | Approved brief | Representative screens and priority actions |
+| Brand/type/colour constraints | Brand system and doctrine | Approved assets, licences, and contrast requirements |
+| Existing component inventory | UI audit or repository | Repeated patterns, variants, and inconsistency examples |
+
 - The brand colour (or permission to choose one) plus target mode(s) — light, dark, or both — so the palette and contrast pairings can be fixed.
 - The concrete surface under design or audit: which screens, components (buttons, forms, cards), and states need tokens.
 - Existing tokens, palette, or component inventory when retrofitting, so token drift and duplicated/inconsistent states can be reconciled instead of re-invented.
@@ -40,31 +43,50 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 
 ## Workflow
 
-- Read this `SKILL.md` first, then load only the referenced deep-dive files that are necessary for the task.
-- Apply the ordered guidance, checklists, and decision rules in this skill instead of cherry-picking isolated snippets.
-- Produce the deliverable with assumptions, risks, and follow-up work made explicit when they matter.
 - When a product already exists, audit token drift, duplicated components, and inconsistent states before proposing new styling.
+
+## Decision Rules
+
+| Condition | Choice | Wrong-choice failure |
+|---|---|---|
+| Existing brand tokens meet usability needs | Extend them minimally | Parallel palette/type systems create drift |
+| Dense operational UI | Restrained surfaces and strong alignment | Excess ornament reduces scanning and data clarity |
+| Primary and secondary actions coexist | One dominant action treatment and quiet alternatives | Equal button weight hides priority |
+
+## Capability Contract
+
+- Must inspect representative screens and existing tokens; review is read-only unless implementation is requested.
+- May edit in-scope UI/tokens but may not replace approved brand assets, embed unlicensed fonts, or publish without authority.
+
+## Degraded Mode
+
+- If brand or task priority is missing, stop final styling and return labelled assumptions.
+- Without rendering, provide a token/component specification marked visually unverified. Recover inconsistency by fixing the shared token or component source, then rerender representative screens.
 
 ## Quality Standards
 
-- Keep outputs execution-oriented, concise, and aligned with the repository's baseline engineering standards.
-- Preserve compatibility with existing project conventions unless the skill explicitly requires a stronger standard.
-- Prefer deterministic, reviewable steps over vague advice or tool-specific magic.
 - Prefer system-level fixes over per-screen decorative fixes.
 - Treat the design system as a living product with documented tokens, components, and usage rules.
 
 ## Anti-Patterns
 
-- Treating examples as copy-paste truth without checking fit, constraints, or failure modes.
-- Loading every reference file by default instead of using progressive disclosure.
+- Inventing a second palette beside approved brand tokens. Correction: extend the existing semantic system minimally.
+- Giving every button primary weight. Correction: reserve one dominant action treatment per decision area.
+- Using shadow, border, and tinted surface on every container. Correction: choose the lightest separator the hierarchy needs.
+- Arbitrary spacing values. Correction: map relationships to a documented base-unit scale.
+- Removing focus indicators for visual neatness. Correction: design a visible tokenised focus treatment.
+- Styling with placeholder content only. Correction: test long, short, empty, error, and localised content.
 
 ## Outputs
+
+| Output | Consumer | Evidence and acceptance |
+|---|---|---|
+| Practical UI specification | Design and engineering | Type, colour, spacing, hierarchy, controls, and states use named rules |
+| Consistency/accessibility review | Product and QA | Representative screens pass contrast, focus, target, and component consistency checks |
 
 - A **practical UI audit** covering palette, typography scale, spacing, button states, form patterns,
   component consistency, and token drift.
 - Implementation guidance, templates, or generated artifacts for the visual system when the task is creation rather than audit.
-- Clear assumptions, tradeoffs, or unresolved gaps when the task cannot be completed from available context alone.
-- References used, companion skills, or follow-up actions when they materially improve execution.
 
 ## References
 

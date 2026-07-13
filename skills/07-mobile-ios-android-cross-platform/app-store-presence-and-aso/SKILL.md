@@ -1,24 +1,12 @@
 ---
 name: app-store-presence-and-aso
-description: Use when designing an app's store listing AS a design surface — the App
-  Store (iOS) and Google Play (Android) product page treated as a composed artifact,
-  not a metadata form. Covers the app icon for both stores (masking, safe zones,
-  rounding, no transparency/alpha rules, iOS Liquid Glass icon variants), the
-  captioned device-framed screenshot set (narrative order, the first 2-3 that sell),
-  the preview video/app preview, the listing copy hierarchy (name, subtitle/short
-  description, promotional text, keywords, long description), localized assets, and
-  current (2026) App Store Connect / Play Console asset specs and review constraints.
-  Routes here for "design app store screenshots", "app icon for App Store and Play",
-  "store listing", "ASO assets", "screenshot captions", "app preview video", "feature
-  graphic", "localize store listing", "what size are App Store screenshots". Treats
-  the listing as a designed conversion surface governed by the anti-slop doctrine.
-status: active
+description: Use when an App Store or Google Play listing needs icon, screenshot narrative, preview video, captions, feature graphic, localisation, or current asset-spec planning. Do not use for in-app UI or growth strategy beyond the store surface; verify current platform specifications before release.
 metadata:
   portable: true
   category: 07-mobile-ios-android-cross-platform
   compatible_with:
-    - claude-code
-    - codex
+  - claude-code
+  - codex
 ---
 
 # App Store Presence & ASO
@@ -41,6 +29,12 @@ metadata:
 - You only need **release notes / changelog copy** — that is content, not the listing design surface.
 
 ## Required Inputs
+
+| Input | Source | Evidence |
+|---|---|---|
+| Product promise, audience, differentiators, and priority actions | Product/marketing brief and research | Approved claims, target locales, and conversion hypothesis |
+| Current app build and authentic screens | Release candidate and design system | Versioned capture source, device/language/state coverage |
+| Store/platform specifications and rights | Current official platform docs and asset owners | Verified dimensions, policies, licences, privacy/claim approvals |
 - **Target stores and primary device classes** (iPhone 6.9"/6.5", iPad 13", Android phone, 7"/10" tablet) — these fix the required screenshot dimensions and how many sets you must ship. See `references/aso-asset-specs.md`.
 - The **approved brand type and palette** (from the type/color skills) — screenshot captions and frame backgrounds use the **app's approved typeface**, never a banned default (`doctrine/references/ai-slop-banned-fonts.md`). State the choice before composing.
 - The **app-icon master** (full-bleed, no rounding baked in) at the largest required size (1024×1024 for App Store, 512×512 for Play), plus — for iOS — the layered source needed for Liquid Glass light/dark/tinted variants.
@@ -56,6 +50,24 @@ metadata:
 6. **Write the copy hierarchy to each store's field model.** Map the value proposition to: iOS **app name (≤30) + subtitle (≤30) + promotional text (≤170) + keyword field (100 chars, comma-separated, no spaces) + description**; Play **title (≤30) + short description (≤80) + full description (≤4000)**. Front-load the first line of the description (the only part shown before "more"). Keywords/short-description carry ASO weight — state the target terms, never keyword-stuff the description (Play penalizes it). See `references/aso-asset-specs.md` §Copy.
 7. **Localize as a system.** Translate captions/copy and, where it matters, screenshot UI language; keep the layout template fixed so each locale is a fill-in, not a redesign. Verify text doesn't overflow caption zones in longer languages (German/Russian) and that RTL locales mirror correctly.
 8. **Pre-flight against current store requirements** (`references/aso-asset-specs.md` §Pre-flight): correct dimensions/aspect per device, no alpha in the icon, no device frames that misrepresent another platform, no placeholder/lorem, no pricing or "free" in the icon, accurate screenshots (review rejects screenshots that don't reflect the app), age-rating and privacy-label consistency.
+
+## Decision Rules
+
+| Condition | Choice | Wrong-choice failure |
+|---|---|---|
+| First frames must communicate value without reading description | Lead with real outcome and concise benefit caption | Splash/logo-first sequence wastes the highest-value impressions |
+| Locale changes meaning or length | Localise capture, caption, proof, and ordering | Literal overlay translation clips or misrepresents the product |
+| Platform specs or review policy changed | Regenerate from verified current requirements | Cached dimensions/policies cause rejection or poor crops |
+
+## Capability Contract
+
+- Must inspect the release build, approved claims, licences, and current official store requirements; review is read-only unless asset production is requested.
+- May create in-scope listing assets, but may not submit/publish, alter store metadata, purchase media, or use customer data/claims without authority.
+
+## Degraded Mode
+
+- If build, claims approval, rights, locale, or current specs are missing, stop release-ready asset claims and return blockers.
+- Without device capture/rendering, provide a storyboard and capture list marked unverified. Recover rejected/failed assets by recording the platform reason, correcting the source asset, regenerating all affected variants, and rechecking the set.
 
 ## Screenshot Narrative Order (the conversion spine)
 - **Frame 1 — the hook:** the single biggest value, one short caption, the strongest screen. Must work as a standalone thumbnail.
@@ -76,6 +88,11 @@ metadata:
 - **One-locale-fits-all** or machine-translated captions that overflow the caption zone / break RTL.
 
 ## Outputs
+
+| Output | Consumer | Evidence and acceptance |
+|---|---|---|
+| Store listing asset/storyboard specification | Product marketing and asset production | Icon, frame order, captions, previews, locales, and platform variants are explicit |
+| Store readiness record | Release/ASO owner | Current spec source/date, dimensions, rights, claims, crops, and localisation checks pass |
 - A **stated type/color intent** for the listing surface (caption face = approved app type, background palette, signature compositional move), named before production.
 - An **app-icon store-delivery spec**: full-bleed master sizes per store, safe zone, no-alpha/no-pre-round rules, and the iOS Liquid Glass light/dark/tinted/clear variants.
 - A **captioned, device-framed screenshot set** per required device class, in narrative order, with caption hierarchy, positions, and contrast verified.

@@ -1,13 +1,12 @@
 ---
 name: accessible-color-and-contrast
-description: Use when colour must stay legible and inclusive — verifying or fixing text/UI contrast, building a colour-blind-safe palette or status set, choosing focus-ring and border colours, or auditing an existing palette before launch. Designs with APCA for real legibility, certifies against WCAG 2.2 (4.5:1 body / 3:1 large-and-UI) as the hard gate, never encodes meaning by hue alone, and makes every status/data colour distinguishable to deuteranopia, protanopia, and tritanopia. The contrast-and-accessibility authority for the colour group.
-status: active
+description: Use when verifying or fixing text, UI, focus, border, status, or data colours for contrast and colour-vision accessibility. Unlike color-system-and-palette, this is the focused WCAG/APCA and non-colour-cue gate, not palette creation.
 metadata:
   portable: true
   category: 02-color-brand-and-visual-identity
   compatible_with:
-    - claude-code
-    - codex
+  - claude-code
+  - codex
 ---
 
 # Accessible Color And Contrast
@@ -37,6 +36,12 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
   ramps from here, then hand the encoding to the data-viz group.
 
 ## Required Inputs
+
+| Input | Supplied by | Required? | Why |
+|---|---|---|---|
+| Colour pairs with semantic roles | Palette or implementation | yes | Defines what must be tested |
+| Text sizes, weights, states, and backgrounds | UI/design source | yes | Selects the threshold |
+| Target WCAG level and supported modes | Accessibility owner | yes | Establishes acceptance |
 
 - The candidate colours as measurable values (hex, or OKLCH/sRGB) — not names. "Brand blue" is
   not checkable; `#2563EB` is.
@@ -111,6 +116,35 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
   (`doctrine/design-doctrine.md` §2, the sourcing-authority asymmetry rule).
 
 ## Outputs
+
+| Output | Consumer | Evidence / acceptance |
+|---|---|---|
+| Contrast matrix | Designer and engineer | Pair, role, state, ratio, APCA value, and verdict |
+| Colour-vision findings | Product and QA | Simulations plus redundant-cue evidence |
+| Colour accessibility verdict | Release owner | PASS, CONDITIONAL, or BLOCKED by criterion |
+
+## Quality Standards
+
+- Design for perceptual legibility with APCA, then certify applicable WCAG 2.2 ratios.
+- Test every state and theme/background combination, not swatches in isolation.
+- Block release when essential meaning depends on hue alone or a required pair fails.
+
+## Decision Rules
+
+| Condition | Decision | Wrong-choice failure |
+|---|---|---|
+| Normal text is below large-text threshold | Require at least 4.5:1 for AA | Body copy becomes illegible |
+| Large text or non-text UI component | Require at least 3:1 where applicable | Controls or boundaries disappear |
+| Status colours collide under CVD simulation | Add shape, icon, text, or pattern and adjust | Meaning is lost for colour-blind users |
+| APCA and WCAG advice differ | Improve design but certify with WCAG | Draft method is misrepresented as certification |
+
+## Capability Contract
+
+Read and colour calculation are required. Review defaults to read-only; editing requires remediation authority. Do not claim legal compliance beyond measured evidence and scope.
+
+## Degraded Mode
+
+Without a trusted calculator or rendered states, provide a conditional matrix and manual test plan, marking ratios unverified. Without exact colours and contexts, stop the verdict.
 
 - A foreground×background **contrast matrix** with measured ratios and PASS/FAIL per WCAG 2.2
   threshold, for light and (where required) dark.

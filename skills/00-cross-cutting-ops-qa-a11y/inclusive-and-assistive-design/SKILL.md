@@ -1,13 +1,12 @@
 ---
 name: inclusive-and-assistive-design
-description: Use when you want to go BEYOND the WCAG 2.2 AA floor into genuinely inclusive, assistive-tech-friendly design — accommodating cognitive load and memory limits, low vision (zoom/spacing/dyslexia-friendly options), motor differences (large targets, switch/voice/dwell), screen-reader and magnifier compatibility, and situational or temporary impairments (one-handed, bright sun, noisy room, broken arm, slow connection). Triggers on "make this inclusive", "who are we excluding?", "plain-language pass", "reduce cognitive load", "support switch/voice/dwell users", "low-vision/dyslexia options", "persona spectrum", "exclusion audit", "inclusive design pass", or designing for ability ranges rather than a single able-bodied default. Pairs with `accessibility-wcag-2-2-compliance` (that skill certifies the legal floor; THIS one designs the experience above it).
-status: active
+description: Use when designing beyond the WCAG floor for cognitive, visual, motor, assistive-technology, temporary, or situational ability ranges. Unlike accessibility-wcag-2-2-compliance, this creates inclusive adaptations rather than certifying criteria.
 metadata:
   portable: true
   category: 00-cross-cutting-ops-qa-a11y
   compatible_with:
-    - claude-code
-    - codex
+  - claude-code
+  - codex
 ---
 
 # Inclusive & Assistive Design (Beyond the WCAG Floor)
@@ -61,6 +60,16 @@ templating tool forgets is exactly that signature — and §3 places accessibili
   `design-qa-and-pre-launch-review`.
 
 ## Required Inputs
+
+| Input | Supplied by | Required? | Why |
+|---|---|---|---|
+| Product flow and usage contexts | Product team or research | yes | Reveals permanent and situational exclusions |
+| Persona spectrum and assistive modes | Research or inclusive-design brief | yes | Prevents an able-bodied default |
+| WCAG baseline findings | Accessibility audit | recommended | Separates floor failures from above-floor design |
+
+## Workflow
+
+Follow the ability-spectrum workflow below; stop when affected users, critical tasks, or assistive modes are unknown enough to change the design.
 - The flow or screen under work, end to end, with its **real tasks and goals** (what is the
   user actually trying to finish, under what pressure, in what context).
 - Who it serves: the realistic **range of abilities, contexts, devices, and connection quality**
@@ -70,8 +79,6 @@ templating tool forgets is exactly that signature — and §3 places accessibili
 - Any constraints: brand voice, regulated content that limits plain-language rewrites, platform
   assistive-tech available for testing (VoiceOver/NVDA/TalkBack, OS magnifier, Voice Control/Voice
   Access, Switch Control/Switch Access, dwell control).
-
-## Workflow
 
 ### A. Find the exclusions (persona spectrum first)
 1. **Frame each ability as a spectrum, not a binary.** For every ability dimension —
@@ -165,6 +172,12 @@ templating tool forgets is exactly that signature — and §3 places accessibili
   still subject to the Anti-Slop Charter.
 
 ## Outputs
+
+| Output | Consumer | Evidence / acceptance |
+|---|---|---|
+| Exclusion map | Product and research teams | Ability, context, task, barrier, and consequence |
+| Inclusive adaptation specification | Designer and engineer | Default, option, and assistive interaction defined |
+| Validation plan and evidence | QA and accessibility owners | Representative users/modes and task outcomes recorded |
 - An **exclusion audit** of the flow (per ability dimension, across permanent/temporary/
   situational), naming who is shut out and where.
 - A matched set of **accommodations above the floor** — cognitive, low-vision, motor,
@@ -174,6 +187,32 @@ templating tool forgets is exactly that signature — and §3 places accessibili
   for handoff to `design-qa-and-pre-launch-review` alongside the WCAG audit sheet.
 
 ## Examples
+
+- Use the worked example in `examples/` for an exclusion-map-to-adaptation handoff.
+
+## Quality Standards
+
+- Design with affected people and representative assistive modes, not only proxy personas.
+- Preserve user agency and avoid segregated or stigmatising alternatives.
+- Block release when a critical task excludes a known ability group without an equivalent path.
+
+## Decision Rules
+
+| Condition | Decision | Wrong-choice failure |
+|---|---|---|
+| Adaptation benefits most users without harm | Make it the default | Useful access is hidden behind settings |
+| Needs conflict across ability ranges | Provide a reversible user preference | One inclusive fix creates another exclusion |
+| Critical task depends on one input mode | Add an equivalent mode | Switch, voice, keyboard, or touch users are blocked |
+| Evidence lacks affected-user participation | Mark conditional and recruit validation | Designer assumptions masquerade as inclusion |
+
+## Capability Contract
+
+Read and interaction inspection are required. User research must use informed consent and minimise sensitive data. Editing or testing with assistive technology requires task authority; never claim certification from this above-floor review.
+
+## Degraded Mode
+
+If required evidence or tooling is unavailable, use the scoped fallback below and mark the result unverified.
+Without affected-user access, use documented patterns and assistive-mode simulation, label conclusions provisional, and create a recruitment/test plan. Without a complete flow, withhold a pass.
 - `examples/inclusive-design-pass.md` — a **worked inclusive-design pass on a real flow**
   (a utility-bill payment / account top-up). Runs the persona spectrum, finds concrete
   exclusions per ability dimension, and lists the accommodation made for each — going above

@@ -1,13 +1,12 @@
 ---
 name: dashboard-and-data-product-design
-description: Use when designing or reviewing a dashboard, analytics console, monitoring view, admin panel, KPI scorecard, or data product — the page-level layer above individual charts. Covers KPI hierarchy and metric tiering, dashboard layout and grid composition, drill-down and filter/cross-filter interaction, and real-time / streaming data UX (refresh, freshness, staleness, latency, empty/loading states). Pairs with `data-visualization`, which owns single-chart craft; this skill owns how many charts plus KPIs plus controls become one coherent, decision-ready product.
-status: active
+description: Use when designing or reviewing a dashboard, analytics console, monitoring view, KPI scorecard, or data product with multiple metrics, charts, filters, drill-downs, and freshness states. Use chart-selection-and-encoding for chart choice and data-visualization for single-chart craft.
 metadata:
   portable: true
   category: 12-data-viz-and-dashboards
   compatible_with:
-    - claude-code
-    - codex
+  - claude-code
+  - codex
 ---
 
 # Dashboard & Data Product Design — From Charts to a Decision Surface
@@ -43,6 +42,11 @@ trustworthy instead of twitchy.
   covers the *dashboard-specific* layout patterns (KPI strip, F/Z scan order, zone density).
 
 ## Required Inputs
+| Input | Source | Required? | Evidence |
+|---|---|---|---|
+| Users, decisions, cadence, and critical tasks | Product research and owners | yes | Decision/task inventory |
+| Metric definitions, targets, dimensions, and freshness | Semantic layer and data owners | yes | Metric dictionary and SLA |
+| Access, interaction, device, and alert constraints | Product and engineering | yes | Role and platform matrix |
 
 - **The decision(s) this dashboard exists to support**, and **who** makes them (role + how often
   they look + on what device). A dashboard with no named decision is a slop signal — see
@@ -87,6 +91,22 @@ trustworthy instead of twitchy.
    still passes `data-visualization`'s own checklist.
 7. **Run the dashboard QA gate** (see Anti-Patterns) and produce the spec.
 
+## Decision Rules
+| Condition | Dashboard choice | Wrong-choice failure |
+|---|---|---|
+| User monitors exceptions | Lead with status, thresholds, and anomalies | Decorative summaries hide action |
+| User investigates causes | Enable scoped drill-down and preserved filters | Static tiles force tool switching |
+| Data freshness varies | Show timestamp and staleness state per source | Users act on stale data unknowingly |
+| Audience decisions differ materially | Separate role views over one metric contract | One overloaded dashboard serves nobody |
+
+## Capability Contract
+Read and search are required across research, metric definitions, data access, and implementation. Editing is allowed only when design or build is requested. Query execution and rendering are required for correctness and interaction claims; production mutation requires separate authority.
+
+## Degraded Mode
+
+If required evidence or tooling is unavailable, use the scoped fallback below and mark the result unverified.
+Without trusted metrics, deliver a wireframe and metric dependency register, not a decision-ready dashboard. Stop release when definitions, freshness, access controls, or critical-state renders are missing; provide the narrowest prototype and list unverified checks.
+
 ## Anti-Patterns
 
 - **No decision, no persona** — a dashboard that "shows all the data" so everyone can find
@@ -112,6 +132,11 @@ trustworthy instead of twitchy.
   `ai-slop-taxonomy.md` "dashboard decoration" tell). Tiles are flat, grey-based, one accent.
 
 ## Outputs
+| Artefact | Consumer | Evidence and acceptance condition |
+|---|---|---|
+| Decision hierarchy and dashboard architecture | Product and data teams | Every region supports a named decision or task |
+| Metric, filter, drill-down, freshness, and state specification | Engineers and analysts | Definitions and interaction scopes are traceable |
+| Tested dashboard prototype and evidence | Users, QA, and release owner | Critical tasks, roles, devices, and failure states pass or are marked blocked |
 
 - A **dashboard spec**: the named decision + persona; the tiered KPI list; the chosen layout
   archetype with zone map; the interaction model (filters, cross-filter, drill-down with

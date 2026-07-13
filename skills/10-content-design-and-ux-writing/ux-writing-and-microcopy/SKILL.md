@@ -1,13 +1,12 @@
 ---
 name: ux-writing-and-microcopy
-description: Use when writing or reviewing the words inside an interface — button and CTA labels, form field labels and hints, tooltips, menu items, empty/onboarding nudges, confirmation and destructive-action dialogs, toggle and checkbox text, placeholder text, success/inline-feedback strings, and tab/nav labels. Triggers on "what should this button say", "rename this label", "write microcopy", "the copy is confusing", "make this clearer", clarity-first interface copy, action-verb buttons, consistent terminology, and tying the words to the brand voice. Pairs with error-empty-and-system-messaging for error/empty/system copy and with brand-style-guide for the voice definition.
-status: active
+description: Use when writing or reviewing buttons, field labels, hints, tooltips, menus, toggles, placeholders, tabs, navigation labels, or other routine interface microcopy. Use error-empty-and-system-messaging for system states and voice-tone-and-content-style-guide for voice governance.
 metadata:
   portable: true
   category: 10-content-design-and-ux-writing
   compatible_with:
-    - claude-code
-    - codex
+  - claude-code
+  - codex
 ---
 
 # UX Writing & Microcopy (Clarity-First Interface Copy)
@@ -56,6 +55,11 @@ then write copy a templating tool would never have produced.
   source is `02-color-brand-and-visual-identity/brand-style-guide`; this skill *consumes* it.
 
 ## Required Inputs
+| Input | Source | Required? | Evidence |
+|---|---|---|---|
+| User goal, screen, and complete flow | Product design and research | yes | Before/action/after context |
+| Voice and terminology rules | `voice-tone-and-content-style-guide` | yes | Approved voice statement and glossary |
+| Action consequence, reversibility, and constraints | Product and engineering owners | yes | Behaviour and validation contract |
 - The **screen/flow and the moment**: what the user is trying to do, what they just did, what
   happens next when they act. Microcopy without context becomes generic.
 - The **brand voice** — the tone adjectives and do/don't from `brand-style-guide`. If none
@@ -122,6 +126,24 @@ then write copy a templating tool would never have produced.
     leave room for ~30% string expansion in other languages; never bake meaning into word order
     that breaks when translated.
 
+## Decision Rules
+
+| Condition | Copy choice | Wrong-choice failure |
+|---|---|---|
+| Action has a clear outcome | Use a specific verb plus object | Generic “Submit” hides the consequence |
+| Space is constrained but meaning is critical | Preserve meaning; shorten surrounding text | Truncating the label creates ambiguity |
+| Destructive action is reversible | State the outcome and recovery path | Alarmist confirmation adds friction without safety |
+| Term conflicts with the glossary | Use the governed term or escalate an exception | Synonyms fragment the product mental model |
+
+## Capability Contract
+
+Read and search are required across flows, behaviour, terminology, and research. Editing is allowed only when content implementation is requested. Rendering and accessibility inspection are required to claim fit, truncation, accessible-name, and localisation success; publication requires separate authority.
+
+## Degraded Mode
+
+If required evidence or tooling is unavailable, use the scoped fallback below and mark the result unverified.
+Without full flow context, return candidate strings with explicit assumptions rather than final copy. Without renders or localisation evidence, mark fit and translation expansion unverified, provide length-safe alternatives, and stop before release of layout-critical strings.
+
 ## Anti-Patterns
 - **"Submit" / "OK" / "Yes-No" buttons** — they name the mechanism, not the outcome. Use the verb.
 - **"Are you sure?" with Yes/No** — the user can't tell which button does what without re-reading.
@@ -138,6 +160,11 @@ then write copy a templating tool would never have produced.
 - **Copy written from the system's view** — "Form submitted successfully" vs "Invite sent".
 
 ## Outputs
+| Artefact | Consumer | Evidence and acceptance condition |
+|---|---|---|
+| Ready-to-ship interface strings | Design and engineering | Each string maps to a named state, action, and outcome |
+| Terminology and rationale record | Content governance | Governed terms and approved exceptions are traceable |
+| Contextual review evidence | QA and localisation | Renders, accessible names, and expansion checks pass or are marked unverified |
 - Final interface strings for the screen/flow: button & CTA labels, field labels + helper text,
   tooltips, toggle/menu labels, confirmation dialog title/body/buttons, inline success strings.
 - A short **terminology glossary** (one word per concept) for consistency across the product.

@@ -1,9 +1,6 @@
 ---
 name: interaction-design-patterns
-description: Use when designing interfaces, building UX flows, choosing layouts, or
-  making navigation decisions. Covers Tidwell's 45+ proven interaction patterns for
-  behavior, navigation, layout, actions, and data display. Load alongside webapp-gui-design...
-status: active
+description: Use when an interface flow needs a proven behaviour, navigation, action, layout, or data-display pattern selected from task and context. Do not use for visual styling or per-component state fidelity; route those to practical-ui-design or component-states.
 metadata:
   portable: true
   category: 04-web-and-ui-design
@@ -35,6 +32,12 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 
 ## Required Inputs
 
+| Input | Source | Evidence |
+|---|---|---|
+| User task, frequency, and consequences | Research and product brief | Scenario, success condition, and error cost |
+| Information model and platform conventions | Product model and platform guidance | Objects, actions, hierarchy, and native constraints |
+| Existing interaction evidence | Analytics, tests, or current UI | Observed problems and baseline behaviour |
+
 - The surface and its primary user goal — what is the ONE thing the user does first on this screen.
 - Observed or assumed user behavior (expert vs first-run, repetitive vs one-off, mobile microbreak vs deep work).
 - The platform target, so patterns map to real shortcuts and gestures (Ctrl-Z, swipe-to-delete, Back).
@@ -47,14 +50,43 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - Wire each pattern as trigger to response with its full state list, and make undo/escape, data source, and save lifecycle shared across patterns on one screen (see `examples/pattern-applied-worked.md`).
 - Hand off the visual and platform specifics to the paired companion skill; keep this output structural.
 
+## Decision Rules
+
+| Condition | Choice | Wrong-choice failure |
+|---|---|---|
+| Users repeatedly switch among peer destinations | Persistent peer navigation | Deep hierarchical navigation adds needless backtracking |
+| Action is destructive or costly | Preview/confirmation with clear consequence | Frictionless activation creates irreversible mistakes |
+| Dataset is dense and comparison matters | Stable table/list with filtering and selection | Decorative cards destroy scanning and comparison |
+
+## Capability Contract
+
+- Must inspect tasks, information architecture, and current behaviour; analysis is read-only unless implementation is requested.
+- May prototype in-scope patterns but may not change business rules, data, or production navigation without explicit authority.
+
+## Degraded Mode
+
+- If task frequency, consequences, or object model are unknown, stop pattern selection and request them.
+- Without prototype/testing capability, return a testable interaction specification marked unvalidated. Recover a failed pattern by revisiting the task constraint, selecting the next-best candidate, and testing the changed path.
+
+## Quality Standards
+
+- The chosen pattern reduces steps or cognitive load without violating platform convention, accessibility, or consequence safeguards.
+- Evidence states alternatives considered, wrong-choice risk, prototype/test result, and residual uncertainty.
+
 ## Anti-Patterns
 
 - Reaching for a novel "AI" interaction where a habituated standard (Back button, Ctrl-S, breadcrumb) would have been faster and invisible.
 - Rearranging menus by usage frequency, auto-closing idle tabs, or auto-sorting user-placed items — this destroys Spatial and Prospective Memory.
 - Relying on a confirmation dialog for critical protection when habituated OK-clicks bypass it; warn *before* an irreversible action instead.
 - Loading all six `sections/` files at once instead of the one the task needs.
+- Choosing a fashionable pattern without task evidence. Correction: compare consequences, frequency, and platform convention.
 
 ## Outputs
+
+| Output | Consumer | Evidence and acceptance |
+|---|---|---|
+| Pattern decision record | Product, design, engineering | Task fit, selected pattern, alternatives, states, and rationale are explicit |
+| Interaction flow/prototype | Research and QA | Critical path and failure recovery can be exercised against acceptance tasks |
 
 - A named set of interaction patterns per surface, each justified by the user behavior it serves and wired as trigger -> response with full states.
 - A **Tidwell pattern usage register** when multiple surfaces or flows need a durable pattern inventory.

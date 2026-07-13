@@ -1,13 +1,12 @@
 ---
 name: composition-and-visual-hierarchy
-description: Use when arranging the ELEMENTS within a layout so the eye reads them in an authored order — a hero, a landing page, a dashboard, a deck slide, a DOCX/PDF report cover, or any screen that must say "someone composed this on purpose." Establishes a single focal point, drives hierarchy with scale + weight + space extremes, sets a deliberate eye-path (Z / F / diagonal), uses intentional asymmetry and tension, controls figure-ground separation, treats whitespace as structure, and applies the halation rule (no pure #000/#FFF edges). Strips the everything-equal, uniform-card-grid, dead-centre AI-slop composition tells. Pairs with layout-grid-and-spacing (that skill sets the grid; this skill decides what wins on it).
-status: active
+description: Use when a screen, page, slide, or cover needs a deliberate focal point, reading order, figure-ground separation, and visual tension. Do not use for choosing columns or spacing units; route those scaffold decisions to layout-grid-and-spacing.
 metadata:
   portable: true
   category: 03-layout-grid-and-composition
   compatible_with:
-    - claude-code
-    - codex
+  - claude-code
+  - codex
 ---
 
 # Composition And Visual Hierarchy
@@ -42,6 +41,12 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
   skill. This skill governs how the chart sits in the composition, not its own marks.
 
 ## Required Inputs
+
+| Input | Source | Required evidence |
+|---|---|---|
+| Ranked content inventory and one primary message | Product owner, editor, or approved brief | Explicit first-, second-, and third-level priorities |
+| Grid, spacing, type, and palette decisions | Sibling skills or existing design system | Token values or a documented provisional assumption |
+| Reading context and target canvases | Delivery brief and representative viewports/pages | Scan-fast versus sustained-reading intent and target sizes |
 
 - The content inventory **ranked by importance** — you cannot build a hierarchy without knowing
   which single element must dominate, which support it, and which are tertiary.
@@ -128,7 +133,35 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
 8. **Not a flat field** — if the content is genuinely a uniform set, one item is still promoted
    (a featured/hero) so it does not ship as an even, identical-card grid.
 
-## Anti-Patterns (the AI-slop composition tells)
+## Decision Rules
+
+| Condition | Choose | Wrong-choice failure |
+|---|---|---|
+| Sparse campaign or hero composition | One dominant focal point on a Z or diagonal path | Equal emphasis makes the page inert and hides the action |
+| Dense comparison or operational screen | F-path with a stable left edge and restrained emphasis | Poster-like asymmetry slows repeated scanning |
+| Background competes with the subject | Simplify, mask, crop, or move the subject before adding effects | More decoration worsens figure-ground ambiguity |
+| Several items are legitimately peers | Preserve the set but promote a contextual lead or summary | Arbitrary promotion misrepresents content importance |
+
+## Capability Contract
+
+- Must read the brief and inspect the existing artefact; rendering or screenshot inspection is required for a release verdict.
+- Review and critique are read-only. Edit source files only when remediation is requested, and preserve existing tokens and unrelated work.
+- May measure geometry, contrast, and hierarchy with available inspection tools. Do not publish, purchase assets, or mutate production without separate authority.
+
+## Degraded Mode
+
+- If priorities are missing, stop composition and request a ranked inventory; do not invent business importance.
+- If rendering is unavailable, return an annotated composition specification and mark visual verification pending.
+- If type, colour, or grid decisions are absent, record provisional assumptions and route them to the owning skill before release.
+- Recover after a failed squint/blur test by reducing competing emphasis, then rerender and repeat the checklist. Never claim completion without visible evidence.
+
+## Quality Standards
+
+- A stranger identifies the intended first fixation and next action without explanation.
+- Hierarchy survives blur, grayscale, narrow widths, and representative real content.
+- The final evidence identifies the tested render, viewport/page, unresolved risks, and checklist verdict.
+
+## Anti-Patterns
 
 - **Everything equal, nothing leads** — uniform sizes, weights, and spacing, so the eye has no
   entry and no path. The defining composition slop (`ai-slop-taxonomy.md`).
@@ -171,6 +204,12 @@ When an AI tool happens to recommend "a centred hero with three equal cards belo
 evidence of the convergent mean to **avoid**, not as endorsement.
 
 ## Outputs
+
+| Output | Consumer | Evidence and acceptance |
+|---|---|---|
+| Composition decision record | Designer, editor, implementer | Named focal point, eye-path, hierarchy levels, and figure-ground treatment |
+| Annotated render or implementation specification | Implementer and reviewer | Representative canvas shows one unambiguous entry point and action path |
+| Quality-gate result | Approver | Checklist with pass/fail evidence, tested canvas, and unresolved exceptions |
 
 - A stated composition decision, declared **before** any markup or layout: the named focal point,
   the three hierarchy levels and the scale/weight/space extremes separating them, the chosen

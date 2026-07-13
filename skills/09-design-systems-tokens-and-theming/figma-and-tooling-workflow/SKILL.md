@@ -1,13 +1,12 @@
 ---
 name: figma-and-tooling-workflow
-description: Use when setting up, structuring, or standardising design work in current (2026) Figma for a design system or product — file/page architecture, component properties & variants, Figma variables with modes for theming (light/dark/brand) and breakpoints, auto-layout, the styles-vs-variables decision, Dev Mode handoff, and branching/library-publishing/naming conventions. Routes here for "Figma file structure", "Figma variables", "variable modes", "component properties", "auto layout", "Dev Mode", "publish library", "Figma branching", "Figma naming convention". Explicitly modern Figma — NOT Sketch, Adobe XD, Axure, or paper-prototyping workflows. Builds ON design-tokens-and-naming (Figma variables are where the token tiers live in-tool) and feeds design-handoff-and-dev-spec.
-status: active
+description: Use when structuring current Figma files, variables, modes, auto-layout, component properties, Dev Mode, branches, or library publishing. Use design-tokens-and-naming for the platform-neutral token contract and design-handoff-and-dev-spec for delivery evidence.
 metadata:
   portable: true
   category: 09-design-systems-tokens-and-theming
   compatible_with:
-    - claude-code
-    - codex
+  - claude-code
+  - codex
 ---
 
 # Figma And Tooling Workflow
@@ -47,6 +46,12 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
   current Figma only; the older-tool workflows are out of scope and are not reproduced here.
 
 ## Required Inputs
+
+| Input | Source | Required? | Evidence |
+|---|---|---|---|
+| Token tiers, modes, and naming contract | `design-tokens-and-naming` | yes | Approved token source and aliases |
+| Component scope and state model | `component-library-architecture` | yes | Component inventory and matrices |
+| Team roles and release process | Design-system owners | yes | Editors, reviewers, publishers, and branch policy |
 
 - The resolved token model from `design-tokens-and-naming`: the three tiers and the semantic role
   map, the theme axes (which of light/dark, brand/tenant, density must coexist), and the
@@ -150,6 +155,24 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
    once in a semantic variable and inherited everywhere. Component instances stay *attached*;
    overrides are deliberate, not accidental detaches. (`doctrine/design-doctrine.md` §0, §2.)
 
+## Decision Rules
+
+| Condition | Figma construct | Wrong-choice failure |
+|---|---|---|
+| Value changes by theme, brand, or density | Variable with an explicit mode | Duplicated styles and frames drift |
+| Visual recipe has no runtime semantic role | Style referencing variables | Forcing everything into variables obscures intent |
+| Property is an orthogonal consumer choice | Component property or variant axis | Detached component copies proliferate |
+| Structural experiment is not release-ready | Branch with named review owner | Editing the main library destabilises consumers |
+
+## Capability Contract
+
+Read access is required to current files, libraries, tokens, and consumers. Editing is allowed only for authorised setup or remediation. Tool execution is required for variable, component, publication, and Dev Mode evidence; library publication and branch merge require separate authority.
+
+## Degraded Mode
+
+If required evidence or tooling is unavailable, use the scoped fallback below and mark the result unverified.
+Without Figma access, deliver a file architecture, variable schema, naming map, and migration plan, all marked proposed. Without publication or consumer access, stop before release and do not claim library compatibility; provide the exact checks and owners needed for verification.
+
 ## Anti-Patterns
 
 - **One giant file of loose frames** with no page/section structure and no library split — un-findable,
@@ -174,6 +197,12 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
   paper-first) in Figma instead of using variables/modes, component properties, and Dev Mode.
 
 ## Outputs
+
+| Artefact | Consumer | Evidence and acceptance condition |
+|---|---|---|
+| File, page, and library architecture | Design-system team | Ownership, purpose, and publication boundary are explicit |
+| Variable, mode, component-property, and naming specification | Designers and engineers | Aliases preserve token tiers and supported themes render correctly |
+| Branch, publication, and Dev Mode handoff record | Reviewers and consumers | Review authority, change notes, and inspected-code evidence are recorded |
 
 - A **Figma file/page/library architecture**: the Foundations/Components/Product split, the page and
   section scheme, and the naming convention, all stated.

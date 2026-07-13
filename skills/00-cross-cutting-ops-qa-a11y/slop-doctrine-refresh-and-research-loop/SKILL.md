@@ -1,13 +1,12 @@
 ---
 name: slop-doctrine-refresh-and-research-loop
 description: Use when AI-slop definitions, banned fonts, visual tells, product-slop patterns, or anti-slop doctrine may have changed and the design engine needs a self-review pass coordinated with the digital-research engine before updating guidance.
-status: active
 metadata:
   portable: true
   category: 00-cross-cutting-ops-qa-a11y
   compatible_with:
-    - claude-code
-    - codex
+  - claude-code
+  - codex
 ---
 
 # Slop Doctrine Refresh & Research Loop
@@ -34,6 +33,12 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
   `ai-slop-audit` skills.
 
 ## Required Inputs
+
+| Input | Supplied by | Required? | Why |
+|---|---|---|---|
+| Current doctrine and change history | Design engine | yes | Establishes the baseline |
+| Candidate new tell or changed norm | Audit, user, or monitoring | yes | Defines the research question |
+| Evidence-discipline rules | Digital-research engine | yes | Controls source quality |
 
 - The doctrine, checklist, or artifact under review.
 - The suspected changed tell, default, font, product trope, or market signal.
@@ -70,12 +75,44 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
 
 ## Outputs
 
+| Output | Consumer | Evidence / acceptance |
+|---|---|---|
+| Source register | Doctrine maintainer | Claims, dates, sources, and confidence recorded |
+| Proposed doctrine delta | Design engine owner | Exact add, revise, retain, or retire decisions |
+| Validation note | Auditors and routers | Collision and downstream impact checked |
+
 - A slop-doctrine refresh note: observed shift, evidence grade, design consequence, scope, date
   checked, and changed files.
 - Updated design doctrine/checklists when evidence supports a change.
 - A rejected-claim note when the evidence is too weak for doctrine.
 
 ## Examples
+
+- Use the worked example in `examples/` for the source register and doctrine-delta format.
+
+## Quality Standards
+
+- Use current, traceable evidence and distinguish human design authority from AI-vendor self-report.
+- Require corroboration before adding a ban or universal tell.
+- Stop publication when evidence conflicts materially; retain the current doctrine and record uncertainty.
+
+## Decision Rules
+
+| Condition | Decision | Wrong-choice failure |
+|---|---|---|
+| Multiple independent human authorities identify convergence | Propose a doctrine update | Current slop signal remains invisible |
+| Only an AI vendor recommends a design choice | Use it only as avoidance evidence | Vendor output becomes design authority |
+| A classic tell has materially declined | Reclassify, do not silently delete | Audit loses historical and edge-case value |
+| Evidence is weak or conflicting | Keep current rule and mark review date | Doctrine churns on anecdotes |
+
+## Capability Contract
+
+Read, search, and network research are required; doctrine editing requires explicit authority. Preserve citations and change history. Do not update bans from model memory, social virality, or a single source.
+
+## Degraded Mode
+
+If required evidence or tooling is unavailable, use the scoped fallback below and mark the result unverified.
+Without current research access, return the question set and source plan, keep doctrine unchanged, and label all currency claims unverified. Recover when authoritative sources can be checked.
 
 - `examples/font-default-refresh-note.md` - classifies an emerging AI-default font signal and
   decides whether it becomes a hard ban, watchlist item, or rejected claim.
