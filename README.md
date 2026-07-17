@@ -17,7 +17,7 @@ here, so each domain engine's skill count stays low.
 
 ## Latest update: zero-debt skill-contract conformance
 
-As of 2026-07-13, all 82 active skills conform to the engine's portable authoring contract. Each
+As of 2026-07-17, all 87 active skills conform to the engine's portable authoring contract. Each
 skill now declares routing boundaries, inputs, outputs, capabilities, degraded behaviour,
 decision rules, stop/recovery conditions, evidence, and acceptance criteria. The repository also
 ships machine validation, 46 neighbour-collision routing fixtures, a zero-debt baseline, and CI
@@ -81,6 +81,7 @@ directly; do not use the `Skill` tool for them.
 | Charts, dashboards & data products | `skills/12-data-viz-and-dashboards/` |
 | Presentations & documents (decks, DOCX/PDF/XLSX, **email**, case-studies) | `skills/13-presentations-and-documents/` |
 | Conversion & web page patterns (landing, nav/IA, onboarding, trust, states) | `skills/14-conversion-and-web-page-patterns/` |
+| Game visual experience (HUD/diegetic UI, art direction, game feel, children/learning) | `skills/15-game-visual-experience/` |
 | Accessibility, QA, ethics, performance (**co-activates with every group**) | `skills/00-cross-cutting-ops-qa-a11y/` |
 
 3. **Follow the doctrine references** in `doctrine/references/` — they are the canonical rules
@@ -151,7 +152,7 @@ design-system-skills/
 │   ├── design-doctrine.md         ← always-load charter
 │   ├── references/                ← banned list, font categories, pairing, type scale, embedding, licensing
 │   └── examples/
-├── skills/                        ← 14 groups + 1 cross-cutting (co-activates) · 82 active skills
+├── skills/                        ← 15 domain groups + 1 cross-cutting (co-activates) · 87 active skills
 │   ├── 00-cross-cutting-ops-qa-a11y/   (12) ← accessibility, QA, audits, ethics — always-on
 │   ├── 01-typography-and-fonts/        (6)
 │   ├── 02-color-brand-and-visual-identity/ (7)
@@ -166,7 +167,8 @@ design-system-skills/
 │   ├── 11-imagery-illustration-and-art-direction/ (4)
 │   ├── 12-data-viz-and-dashboards/     (3)
 │   ├── 13-presentations-and-documents/ (6: deck-system, docx, pdf, xlsx, email, storytelling)
-│   └── 14-conversion-and-web-page-patterns/ (5: landing, nav/IA, onboarding, trust, states)
+│   ├── 14-conversion-and-web-page-patterns/ (5: landing, nav/IA, onboarding, trust, states)
+│   └── 15-game-visual-experience/ (5: orchestration, game UI, art direction, game feel, children/learning)
 ├── fonts/                         ← 8 fixed category folders, premium drop-ins gitignored + MANIFESTs
 ├── governance/design-quality-gate.md
 └── integration/integration-plan.md   ← the trigger block other engines paste in + migration log
@@ -217,7 +219,7 @@ python -X utf8 scripts/validate_engine.py --baseline tests/quality-baseline.json
 python -X utf8 scripts/routing_smoke_test.py
 ```
 
-The baseline records zero contract findings across all 82 active skills. Any new structural or
+The baseline records zero contract findings across all 87 active skills. Any new structural or
 contract finding fails CI. Routing fixtures must continue to achieve 100% precision at the
 top-three acceptance threshold.
 

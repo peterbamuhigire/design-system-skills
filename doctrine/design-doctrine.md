@@ -93,6 +93,7 @@ AI nod as endorsement. See `references/ai-slop-banned-fonts.md` §Evidence basis
 | `skills/12-data-viz-and-dashboards/` | Charts, dashboards, KPI exhibits, data products. |
 | `skills/13-presentations-and-documents/` | Decks, DOCX/PDF/XLSX, editorial, **email/newsletter**, design storytelling/case-studies. |
 | `skills/14-conversion-and-web-page-patterns/` | Landing/conversion, IA & navigation, onboarding, trust/social-proof, empty/error/loading states. |
+| `skills/15-game-visual-experience/` | Game-specific orchestration, HUD/diegetic interfaces, art direction, game feel/camera/haptics, and children/learning experience. |
 | `fonts/<category>/` | Premium font files you purchase (gitignored) + a tracked `MANIFEST.md` per design-intent category. |
 | `governance/` | The design quality gate. |
 | `integration/` | The trigger block other engines paste in, plus the migration log. |

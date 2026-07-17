@@ -90,3 +90,17 @@
   expected: photography-art-direction
 - prompt: Build an illustration language with repeatable line, shape, colour, character, and perspective rules.
   expected: illustration-style-and-systems
+- prompt: Route this game's player fantasy and core loop into HUD, art direction, feedback, camera, accessibility, testing, and engine handoff.
+  expected: game-visual-experience-orchestration
+- prompt: Design a combat game HUD with maps, inventory, controller focus, couch-distance text, touch prompts, and a diegetic fallback.
+  expected: game-ui-hud-and-diegetic-interfaces
+- prompt: Define visual pillars, shape language, colour script, world and character readability, VFX hierarchy, and an asset bible for a 3D game.
+  expected: game-art-direction-and-visual-development
+- prompt: Tune a paddle impact with animation, particles, audio, camera impulse, hit-stop, haptics, and a reduced-intensity alternative.
+  expected: game-feel-feedback-camera-and-haptics
+- prompt: Design a children's educational game loop with scaffolding, separate learning evidence, guardian needs, stopping cues, privacy, and safe ads.
+  expected: educational-and-childrens-game-experience
+- prompt: Build a non-game illustration system for website spot art with line, shape, character, perspective, and an ownable motif.
+  expected: illustration-style-and-systems
+- prompt: Specify one ordinary mobile app toggle's press, loading, success, rollback, haptic, and reduced-motion feedback.
+  expected: micro-interactions-and-feedback
