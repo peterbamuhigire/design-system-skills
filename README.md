@@ -229,3 +229,22 @@ Doctrine distilled from the Chwezi design library (`Downloads\graphix_markdown`)
 *The Big Book of Font Combinations*; Segall, *Complete Guide to Choosing Fonts*; Gingerich and
 Paduraru on UI/UX fundamentals; Neil, *Mobile Design Pattern Gallery* — plus the Chwezi
 "Font Usage Instructions for AI Coding Tools."
+
+## Book-derived 2026 capability upgrade
+
+Dynamic Characters, Digital Storytelling, Video Game Storytelling, Designing for AI, Applying the
+Kaizen in Africa, LEAN, and Paid for Your Perspective strengthen this engine with readable
+silhouettes, gesture, story-driven poses, dynamic composition, framing, value separation,
+narrative information architecture, audience empathy, AI interface transparency, user control,
+correction, contestability, drift awareness, and artist-to-implementation handoff. The
+*Anatomy for Artists* extraction was unreadable and contributes no substantive anatomy claims.
+
+## Kaizen and product-audit contract
+
+Use `Observe -> Baseline -> Select -> Experiment -> Check -> Standardise -> Teach -> Re-measure`.
+Publish audits at `min(raw_score, 65)` and create 95/100 plans with owner, evidence, measure,
+risk, rollback, and re-audit. Design-engine and rendered-product audits cover typography, colour,
+layout, interaction, narrative, accessibility, readability, performance, handoff, and visual QA.
+Route current design research and changing platform claims through `digital-research-skills`.
+See `skills/00-cross-cutting-ops-qa-a11y/design-engine-and-product-improvement/` and
+`docs/continuous-improvement/design-engine-book-upgrade-2026-08.md`.
