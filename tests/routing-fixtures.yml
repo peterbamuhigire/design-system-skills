@@ -58,6 +58,8 @@
   expected: component-states-and-interaction-fidelity
 - prompt: Design a complex SaaS desktop interface with dense tables, sidebars, command surfaces, and responsive behavior.
   expected: webapp-gui-design
+- prompt: Design a Bootstrap/PHP SaaS auth and upload UI with a blurred sign-in surface, light and dark logos, and a Super Admin background manager.
+  expected: webapp-gui-design
 - prompt: Design validation timing, field grouping, labels, errors, submission, and multi-step behavior for this form.
   expected: form-ux-design
 - prompt: Choose an interaction pattern for disclosure, navigation, selection, commands, and data manipulation.

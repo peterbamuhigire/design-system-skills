@@ -77,5 +77,8 @@ wholesale.
 
 ## 3. Changelog
 
+- 2026-08-05 — standardised SaaS authentication and tenant-entry visuals in
+  `webapp-gui-design`: shared blurred-image composition, immediate-surface logo selection,
+  responsive/accessibility evidence, and the Super Admin managed visual-asset experience.
 - v0.1.0 — engine created; typography group + doctrine + font taxonomy seeded; trigger block
   defined; migration log opened (empty).

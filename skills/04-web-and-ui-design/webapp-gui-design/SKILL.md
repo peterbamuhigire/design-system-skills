@@ -17,6 +17,8 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 
 - Building or reviewing a SaaS web UI on React/Next.js/TypeScript/Tailwind
 - Standardising app shell, navigation, dashboards, or data-table patterns across products
+- Standardising authentication surfaces and the Super Admin experience for managed backgrounds,
+  light/dark logos, and favicons
 - Working on the Bootstrap 5 + Tabler + PHP seeder stack — load `sections/01-overview.md` first
 
 ## Do Not Use When
@@ -44,7 +46,9 @@ The target surface (dashboard, CRUD table, form, settings), the auth/tenant mode
 4. Attach loading + error + empty states *before* connecting real data.
 5. Check consistency against existing screens and primitives before adding a new pattern.
 6. Extend shared primitives/components before creating a bespoke screen-only pattern.
-7. Run the a11y + responsive sweep (§15 checklist) before merge.
+7. For authentication or tenant-entry surfaces, apply the shared visual and asset-management
+   contract in `references/auth-and-tenant-visual-standard.md`.
+8. Run the a11y + responsive sweep (§15 checklist) before merge.
 
 ## Decision Rules
 
@@ -79,6 +83,11 @@ The target surface (dashboard, CRUD table, form, settings), the auth/tenant mode
 - Touch targets are at least 44x44 CSS pixels, including icon-only buttons.
 - Premium screens must clear a quality gate — business clarity, visual quality, usability, content, accessibility, data quality, and production fit all at 8/10 or better — and must satisfy the anti-slop charter in `doctrine/design-doctrine.md` (deliberate, stated typeface and palette; no banned default).
 - Premium application screens must also show product value: buyer-relevant metrics, proof, clear next action, polished states, trustworthy copy, and support or escalation paths where the user may feel risk.
+- Authentication surfaces use one reusable background/image/veil/card composition, with an
+  opaque fallback and a stable background for the duration of an authentication journey.
+- Logo choice follows the surface behind the logo: the dark-surface logo belongs on the dark
+  blurred image; the light-surface logo belongs inside a light card. Do not infer logo choice
+  from operating-system theme when the immediate surface is already known.
 
 ## Anti-Patterns
 
@@ -112,6 +121,8 @@ The target surface (dashboard, CRUD table, form, settings), the auth/tenant mode
 - `doctrine/references/pairing-principles.md` and `doctrine/references/type-scale-and-spacing.md` — pairing, type scale, and spacing rhythm for the shell, tables, and forms.
 - Companion skills in this engine: `interaction-design-patterns`, `motion-design`, `design-audit`, `practical-ui-design`, `visual-product-slop-audit`. (The former skills-web-dev siblings `react-development`, `tailwind-css`, `responsive-design`, `form-ux-design`, `premium-ui-ux-design` did not migrate; their visual concerns are covered by the doctrine references above.)
 - Use `references/interface-consistency.md` when a new module risks drifting from the established UI language.
+- Use `references/auth-and-tenant-visual-standard.md` for the canonical glass auth composition,
+  surface-aware logo rule, responsive states, and managed visual-asset administration.
 - Free: Shadcn/ui (`ui.shadcn.com`), TanStack Table (`tanstack.com/table`), Atomic Design (`atomicdesign.bradfrost.com`), React Hook Form (`react-hook-form.com`), Zod (`zod.dev`).
 - For the Bootstrap/Tabler/PHP seeder stack, load `sections/01-overview.md` and onwards.
 <!-- dual-compat-end -->
@@ -119,6 +130,8 @@ The target surface (dashboard, CRUD table, form, settings), the auth/tenant mode
 ## Examples
 
 - `examples/app-shell-spec-worked.md` — a worked, end-to-end SaaS app-shell spec (*Ledger Relay*, a payment-reconciliation tool): shell layout (nav rail + top bar), navigation IA, a dashboard view, a data-table view, key component states, design tokens/spacing, and responsive behaviour across breakpoints.
+- `examples/managed-auth-surface-worked.md` — a worked auth journey and Super Admin visual-asset
+  manager applying the shared blur, logo, upload, ordering, accessibility, and fallback rules.
 
 ## Overview
 
@@ -330,7 +343,11 @@ Never use toast for navigation-required errors — route to an error page or a b
 
 ## 10. Authentication Flow UI
 
-Login, register, forgot-password, reset-password, 2FA. Single-column, narrow (`max-w-sm`), centred, with a subtle brand header. Auth pages never render the shell.
+Login, register, forgot-password, reset-password, 2FA, expired-session recovery, and pre-auth
+tenant selection share one authored visual system. The default composition is a full-viewport
+managed image, an enlarged blurred image layer that prevents edge halos, a dark neutral veil,
+and a restrained glass card with an opaque fallback. Auth pages never render the application
+shell. Use `references/auth-and-tenant-visual-standard.md`; do not recreate this stack per page.
 
 ```tsx
 // app/(auth)/login/page.tsx
