@@ -42,4 +42,4 @@ here.
 The 2026 early-release AI design material is used only for the available design principles. The
 2018/older books provide durable heuristics and process patterns; they do not override current
 WCAG, platform, licensing, legal, or research authority. All current claims must route through
-`C:\wamp64\www\digital-research-skills`.
+`C:\wamp64\www\digital-research-engine`.
