@@ -1,5 +1,9 @@
 # AGENTS.md — design-system-skills
 
+The shared control plane is adapted to visual and document work in
+[`docs/control-plane-adoption.md`](docs/control-plane-adoption.md); the central
+registry is `C:\wamp64\www\skills-web-dev\docs\engine-control-plane.json`.
+
 Cross-cutting design & typography engine. Compatible with Claude Code and Codex-style agents.
 Mirror of the guidance in `CLAUDE.md`, kept for dual-compat tooling.
 
@@ -35,6 +39,10 @@ Referenced, not mirrored. Domain engines consult this one IN ADDITION to their o
 presentation-layer concern. See `integration/integration-plan.md`.
 
 ## Skill-engine release commands
+
+For visual changes, validate the machine-readable delivery record with
+`python -X utf8 scripts/validate_design_delivery_evidence.py tests/fixtures/design-delivery/manifest.json`;
+missing renders or required checks block a `PASS` verdict.
 
 ```powershell
 python -X utf8 scripts/validate_engine.py --baseline tests/quality-baseline.json

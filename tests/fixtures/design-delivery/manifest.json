@@ -1,0 +1,13 @@
+{
+  "artifact_id": "fixture-home",
+  "surfaces": ["web-home-desktop"],
+  "renders": [{"path": "render-home.svg", "state": "desktop"}],
+  "checks": [
+    {"id": "design-doctrine", "result": "PASS"},
+    {"id": "typography", "result": "PASS"},
+    {"id": "accessibility", "result": "PASS"},
+    {"id": "render-parity", "result": "PASS"}
+  ],
+  "verdict": "PASS",
+  "owner": "design-finish-reviewer"
+}

@@ -1,5 +1,9 @@
 # design-system-skills
 
+See [`docs/control-plane-adoption.md`](docs/control-plane-adoption.md) for
+design agents, thin commands, visual hooks, evidence, and implementation
+handoffs.
+
 > *The anti-AI-slop design engine — typography, colour, layout, and UI that look made by skilled human hands, not a template.*
 
 **Cross-cutting design & typography engine for the Chwezi skill-engine family.**
@@ -213,6 +217,11 @@ Reference model — nothing is mirrored. Clone this repo on every device so the 
 resolves.
 
 ## Engine quality checks
+
+Rendered-delivery evidence is validated with
+`python -X utf8 scripts/validate_design_delivery_evidence.py <manifest.json>`.
+The validator fails closed when required renders, checks, or ownership fields
+are missing.
 
 ```powershell
 python -X utf8 scripts/validate_engine.py --baseline tests/quality-baseline.json

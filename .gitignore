@@ -18,3 +18,7 @@ fonts/**/*.ttc
 Thumbs.db
 .DS_Store
 desktop.ini
+
+# Local Python execution caches
+__pycache__/
+*.py[cod]
