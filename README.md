@@ -254,6 +254,6 @@ Use `Observe -> Baseline -> Select -> Experiment -> Check -> Standardise -> Teac
 Publish audits at `min(raw_score, 65)` and create 95/100 plans with owner, evidence, measure,
 risk, rollback, and re-audit. Design-engine and rendered-product audits cover typography, colour,
 layout, interaction, narrative, accessibility, readability, performance, handoff, and visual QA.
-Route current design research and changing platform claims through `digital-research-engine` at `C:\wamp64\www\digital-research-engine`.
+Route current design research and changing platform claims through the [Digital Research Engine](https://github.com/peterbamuhigire/digital-research-skills).
 See `skills/00-cross-cutting-ops-qa-a11y/design-engine-and-product-improvement/` and
 `docs/continuous-improvement/design-engine-book-upgrade-2026-08.md`.
