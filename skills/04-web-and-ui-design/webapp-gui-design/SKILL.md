@@ -88,6 +88,7 @@ The target surface (dashboard, CRUD table, form, settings), the auth/tenant mode
 - Logo choice follows the surface behind the logo: the dark-surface logo belongs on the dark
   blurred image; the light-surface logo belongs inside a light card. Do not infer logo choice
   from operating-system theme when the immediate surface is already known.
+- Page sections, panels, cards, toolbars, form groups, CTA rows, and media groups must have deliberate inset on all relevant edges at every supported viewport. Controls and buttons must not sit on the bottom edge of their container, and headers/toolbars must not be glued to the top edge; use shared spacing tokens instead of one-off padding.
 
 ## Anti-Patterns
 
@@ -98,6 +99,7 @@ The target surface (dashboard, CRUD table, form, settings), the auth/tenant mode
 - Modals that trap focus incorrectly. Correction: implement semantic dialog focus entry, containment, and return.
 - Buttons used as links. Correction: preserve native element semantics for navigation versus actions.
 - Loading buttons that remove the action label. Correction: preserve label and width while exposing busy state.
+- Flush-edge controls or content inside panels/sections. Correction: apply the shared container inset or toolbar/action-row padding and rerender mobile and desktop states.
 
 ## Outputs
 

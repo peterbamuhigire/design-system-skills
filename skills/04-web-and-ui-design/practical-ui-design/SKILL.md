@@ -67,6 +67,7 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 
 - Prefer system-level fixes over per-screen decorative fixes.
 - Treat the design system as a living product with documented tokens, components, and usage rules.
+- Every visual container level must define and use edge inset rules: page sections/bands, heroes, panels, cards, CTA rows, toolbars/control groups, and media groups need deliberate top, bottom, and side padding/margin at mobile and desktop widths. Buttons and controls must never sit on the bottom edge of their section, and headings/controls must not be glued to the top edge.
 
 ## Anti-Patterns
 
@@ -74,6 +75,7 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - Giving every button primary weight. Correction: reserve one dominant action treatment per decision area.
 - Using shadow, border, and tinted surface on every container. Correction: choose the lightest separator the hierarchy needs.
 - Arbitrary spacing values. Correction: map relationships to a documented base-unit scale.
+- Flush-edge sections where buttons, controls, text, or images touch a section/card/band boundary. Correction: apply shared section/container inset tokens, give CTA/control rows their own vertical padding, and verify the result in rendered mobile and desktop views.
 - Removing focus indicators for visual neatness. Correction: design a visible tokenised focus treatment.
 - Styling with placeholder content only. Correction: test long, short, empty, error, and localised content.
 
