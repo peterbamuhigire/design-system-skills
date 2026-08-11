@@ -137,7 +137,7 @@ any non-trivial inventory. Search-relevant decisions:
 - **Faceted results** — for catalogues, results filter by facets that mirror the taxonomy (§2).
 - **Zero-results is a designed state, never a dead end** — acknowledge, suggest corrected/related
   queries, offer to broaden scope, and give an escape (browse links, contact). Pairs with
-  `04-web-and-ui-design/empty-error-and-loading-states`.
+  `14-conversion-and-web-page-patterns/empty-error-and-loading-states`.
 
 ---
 

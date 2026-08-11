@@ -183,10 +183,10 @@ Load only the directly relevant process references for the current enterprise ph
 The Synechron, Levy, Branson, Deacon, and Fekeshazi `book-extractions/*` files that this process operationalizes live in the originating engineering catalog, not this engine. They frame strategy (Levy Four Tenets, upstream of Phase 1), persona discipline and the 4-stage affordance audit (Branson, in Phases 6 and 8), the 3 levels of UX scope (Deacon, declared in Phase 1), and PM collaboration rules (Fekeshazi).
 
 ### Operational skills in other engines
-- `website-skills/skills/design-quality-score/` — Category 8 (UX Maturity) scores the same artifacts independently
-- `website-skills/skills/premium-ui-ux-design/references/enterprise-five-outcomes.md` — same 5-outcomes gate applied to website templates
-- `srs-skills/01-strategic-vision/07-premium-software-product-execution/` — premium-positioning gate using the same 5+5 model
-- `srs-skills/03-design-documentation/05-ux-specification/` — UX spec produced under this process
+- `website-skills/skills/quality-gates/design-quality-score/SKILL.md` — Category 8 (UX Maturity) scores the same artifacts independently
+- `website-skills/skills/orchestration/premium-ui-ux-design/references/enterprise-five-outcomes.md` — same 5-outcomes gate applied to website templates
+- `srs-skills/01-strategic-vision/07-premium-product-positioning/SKILL.md` — premium-positioning gate using the same 5+5 model
+- `srs-skills/03-design-documentation/05-ux-specification/SKILL.md` — UX spec produced under this process
 
 ### Quick-use checklist
 - `references/maturity-checklist.md` — standalone activity-by-level checklist for use in project workspaces

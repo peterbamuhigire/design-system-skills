@@ -74,7 +74,7 @@ Rules:
 
 On marketing surfaces the CTA can lead with the **value or first-person voice** rather than the
 bare verb, but it must still be honest and specific (no dark patterns — pairs with
-`04-web-and-ui-design/landing-page-and-conversion-design`).
+`14-conversion-and-web-page-patterns/landing-page-and-conversion-design`).
 
 | Weak CTA | Stronger CTA |
 |---|---|

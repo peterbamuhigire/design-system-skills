@@ -153,5 +153,5 @@ A developer/QA can check each:
 - [ ] No confirmshaming, no pre-checked opt-ins, no roach-motel.
 - [ ] All onboarding controls ≥24px (2.5.8), focusable with visible focus; focus handled on coachmark
       and step changes (2.4.3); reduced-motion path for the tempo-tick/spotlight motion (2.3.3).
-- [ ] Welcome/empty/checklist copy sourced from `10-content-design-and-ux-writing/ux-writing-and-
-      microcopy` and `error-empty-and-system-messaging`.
+- [ ] Welcome/empty/checklist copy sourced from `10-content-design-and-ux-writing/ux-writing-and-microcopy`
+      and `10-content-design-and-ux-writing/error-empty-and-system-messaging`.

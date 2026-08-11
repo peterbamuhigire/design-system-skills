@@ -49,5 +49,11 @@ python -X utf8 scripts/validate_engine.py --baseline tests/quality-baseline.json
 python -X utf8 scripts/routing_smoke_test.py
 ```
 
-The baseline is zero-debt: all 82 active skills pass the local contract. Any new finding is a CI
-regression and must be fixed before release.
+The baseline is zero-debt: all 88 active skills currently pass the local contract. The validator
+derives the active count from `skills/**/SKILL.md`; any new finding is a CI regression and must be
+fixed before release.
+
+When the sibling-engine workspace is available, also inspect declared external handoffs with
+`python -X utf8 scripts/validate_cross_engine_routes.py --workspace-root <workspace-parent>`.
+Missing sibling repositories are reported as `NOT ASSESSED`, not as a pass; the local route gate
+remains independently runnable from this repository.

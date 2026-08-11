@@ -34,7 +34,7 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
   That skill owns the *axes*; this skill owns the *state cells and the transitions between them*.
 - You are designing **empty / error-page / loading-content** states of a screen or flow (zero-data
   blank slates, 404/500, skeletons vs spinners, offline) — that is
-  `04-web-and-ui-design/empty-error-and-loading-states`. It owns *content-level* states; this skill
+  `14-conversion-and-web-page-patterns/empty-error-and-loading-states`. It owns *content-level* states; this skill
   owns the *control-level* interactive states (hover/focus/active/disabled/selected) of one
   component. (A component's `loading` and `error` cells here link out to that skill for the
   region-level treatment.)
@@ -175,7 +175,7 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
   names a real part with a real measure.
 - Pair: `09-design-systems-tokens-and-theming/component-library-architecture` — owns the variant/
   size/API model; **this skill owns the per-component state fidelity** that fills its state column.
-- Pair: `04-web-and-ui-design/empty-error-and-loading-states` — owns content-level empty/error/
+- Pair: `14-conversion-and-web-page-patterns/empty-error-and-loading-states` — owns content-level empty/error/
   loading (skeletons, 404, offline); this skill owns control-level interactive states and links to
   it for the region-level loading/error treatment.
 - Consumes: `design-tokens-and-naming` (state + motion tokens); aligns with `08-motion-and-interaction`

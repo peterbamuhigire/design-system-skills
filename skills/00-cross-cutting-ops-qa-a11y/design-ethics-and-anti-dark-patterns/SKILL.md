@@ -135,7 +135,7 @@ The seven families to walk a flow against:
    exposure, not the primary reason — the primary reason is that it is wrong. See the catalogue's
    §Legal angle. Do not give definitive legal advice; flag and recommend counsel for live launches.
 7. **Produce the ethics audit.** Write the findings → honest-redesign report (shape:
-   `examples/ethics-audit-worked.md`): each pattern found, its family, evidence, harm, legal note, and
+   `examples/ethics-audit-filled.md`): each pattern found, its family, evidence, harm, legal note, and
    the honest swap, ending with the consent/default verdict and the comfort-test summary.
 
 ## Anti-Patterns
@@ -165,7 +165,7 @@ The seven families to walk a flow against:
 
 - An **ethics / dark-pattern audit** of the flow: every detected pattern by family, with location,
   evidence, user harm, the light legal note, and the **honest swap** — in the shape of
-  `examples/ethics-audit-worked.md`.
+  `examples/ethics-audit-filled.md`.
 - A **consent & default verdict** confirming every default is the informed-user choice and every
   consent is freely-given/specific/informed/unambiguous/withdrawable.
 - A **completed comfort-test summary** — the questionable decisions, each resolved to its honest form.
@@ -197,7 +197,7 @@ Read and complete-flow inspection are required. Audit defaults to read-only; edi
 
 Without all states or policy context, issue a conditional ethics review, identify missing screens and claims, and withhold a pass. Recover with recordings, state maps, terms, and legal-owner input.
 
-- `examples/ethics-audit-worked.md` — a fully worked ethics audit of a real-ish flow (the sign-up →
+- `examples/ethics-audit-filled.md` — a fully worked ethics audit of a real-ish flow (the sign-up →
   trial → cancellation journey of a habit-tracking SaaS, "Streaky"), finding the dark patterns across
   all seven families (drip-priced "pro" fee, pre-ticked annual-plan upsell, confirmshaming decline,
   forced-continuity trial with a roach-motel cancel, nagging notification opt-in, a disguised

@@ -1,13 +1,21 @@
 {
   "artifact_id": "fixture-home",
+  "artifact_type": "tracked SVG fixture; no native Office artifact",
   "surfaces": ["web-home-desktop"],
   "renders": [{"path": "render-home.svg", "state": "desktop"}],
+  "stages": {
+    "generation": {"result": "NOT ASSESSED", "evidence": "No generation command or native artifact was retained; this is a tracked fixture."},
+    "reopen": {"result": "NOT ASSESSED", "evidence": "No target-application reopen evidence was retained."},
+    "render": {"result": "NOT ASSESSED", "evidence": "The tracked SVG is present, but no render command or output comparison was retained."},
+    "visual_qa": {"result": "NOT ASSESSED", "evidence": "No human visual inspection record was retained."},
+    "accessibility": {"result": "NOT ASSESSED", "evidence": "No assistive-technology or format-specific accessibility result was retained."}
+  },
   "checks": [
-    {"id": "design-doctrine", "result": "PASS"},
-    {"id": "typography", "result": "PASS"},
-    {"id": "accessibility", "result": "PASS"},
-    {"id": "render-parity", "result": "PASS"}
+    {"id": "design-doctrine", "result": "NOT ASSESSED"},
+    {"id": "typography", "result": "NOT ASSESSED"},
+    {"id": "accessibility", "result": "NOT ASSESSED"},
+    {"id": "render-parity", "result": "NOT ASSESSED"}
   ],
-  "verdict": "PASS",
+  "verdict": "CONDITIONAL",
   "owner": "design-finish-reviewer"
 }

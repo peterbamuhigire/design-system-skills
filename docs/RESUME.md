@@ -1,13 +1,14 @@
-# RESUME / Status - where to pick up (updated 2026-07-13)
+# RESUME / Status - where to pick up (updated 2026-08-11)
 
 Single source of truth for "what's done / what's next" on design-system-skills.
 (Supersedes `RESUME-2026-06-21.md`, which is historical.)
 
 ## Current state
 
-- **82 active skills across 15 groups, 100% example-complete and 100% contract-compliant.**
+- **88 active skills across 16 groups (15 domain groups plus cross-cutting), 100% example-complete and 100% contract-compliant.**
 - The zero-debt conformance baseline is enforced in CI. Local and canonical validation pass for
-  all 82 active skills; 46 routing fixtures achieve 100% precision at the top-three threshold.
+  all 88 active skills; 54 routing fixtures achieve 100% precision at the top-three threshold
+  (87% precision at top one).
 - The earlier overall design-readiness audit score remains **81/100** (progression: 51 -> about
   67 -> about 73 -> 80 -> 81). That score measures broader output capability, not skill-contract
   conformance.
@@ -33,18 +34,20 @@ Single source of truth for "what's done / what's next" on design-system-skills.
   - split overloaded group 04 into focused group 04 plus new
     `14-conversion-and-web-page-patterns`; moved email to group 13.
 - Fresh current re-audit completed and replaced `docs/audits/post-v2-plan/`.
-- Final cleanup pass closed the two measured hygiene blockers: 0 active `Evidence Produced`
-  sections and 0 active stale sibling-path references.
+- The July cleanup pass closed the measured `Evidence Produced` section blocker. Wave 1 adds a
+  route-existence fixture for repaired local paths; cross-engine references remain owned by their
+  originating engine.
 - Added `slop-doctrine-refresh-and-research-loop`, a living AI-slop self-review skill wired to
   the digital-research engine's source-evaluation discipline.
 - Added RN/Expo implementation-readiness gates to `cross-platform-design-parity`, using the local
   React Native book as historical pattern input and current RN/Expo docs as the version-sensitive
   source of truth.
-- Normalised all 82 active skills to the July 2026 portable contract: neighbour-aware triggers,
+- The July 2026 normalisation covered 82 active skills; the current 88-skill catalogue retains the
+  portable contract with neighbour-aware triggers,
   input/output contracts, decision rules, capability boundaries, degraded mode, stop/recovery
   behaviour, evidence, acceptance conditions, and five concrete anti-patterns.
 - Added `governance/skill-authoring-standard.md`, a rebuilt `_TEMPLATE`, local validation and
-  routing scripts, 46 routing fixtures, a zero-debt baseline, and GitHub Actions enforcement.
+  routing scripts, 54 routing fixtures, a zero-debt baseline, and GitHub Actions enforcement.
 - Reduced `data-visualization/SKILL.md` below the 500-line limit through a linked reference while
   retaining routing, workflow, decisions, and safety in the entrypoint.
 

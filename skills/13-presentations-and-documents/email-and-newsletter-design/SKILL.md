@@ -267,13 +267,13 @@ Without client rendering, deliver HTML and a conditional compatibility matrix. S
   stack + optional guarded webfont, no banned primary); the dark-mode treatment (and dark logo
   swap); and the preheader intent.
 - The email HTML itself — table-structured, inline-CSS, bulletproof button(s), hidden preheader,
-  dark-mode media block, image-off alt strategy — see `examples/responsive-email-template-spec.md`.
+  dark-mode media block, image-off alt strategy — see `examples/email-template-spec.md`.
 - A completed Email Render Checklist plus the list of clients tested (incl. a real Outlook and a
   real dark-mode pass), consistent with the Mission in `doctrine/design-doctrine.md` §0 and the AA
   floor in `doctrine/references/wcag-2.2-criteria.md`.
 
 ## Examples
-- `examples/responsive-email-template-spec.md` — a complete worked spec for a responsive
+- `examples/email-template-spec.md` — a complete worked spec for a responsive
   newsletter email: the boilerplate document head (MSO conditionals + meta), a hybrid/spongy
   two-column-to-stacked body, a bulletproof VML+anchor button, the hidden preheader, the
   fallback-first type stack with an Outlook-guarded webfont, and the dark-mode block with a logo

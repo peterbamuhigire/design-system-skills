@@ -63,7 +63,7 @@ SaaS green and the off-system purple→blue gradient outright (doctrine §2).
 Construction, the full ramp (light+dark), and contrast certification are deferred to
 `../color-system-and-palette`. Identity only assigns roles and names the owned colour.
 
-## 4. Type tie-in  *(selection → `../../01-typography-and-fonts/font-selection-and-pairing`)*
+## 4. Type tie-in  *(selection → `../../../01-typography-and-fonts/font-selection-and-pairing`)*
 
 | Role | Face | Tie-in note |
 |---|---|---|

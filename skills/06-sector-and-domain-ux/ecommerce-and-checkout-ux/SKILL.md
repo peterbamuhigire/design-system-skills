@@ -46,7 +46,7 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
   `04-web-and-ui-design/form-ux-design`. This skill *composes* those patterns into the retail
   context (it does not re-teach label placement or the five field states — it cites them).
 - The task is the **ethics framework / dark-pattern taxonomy itself**, independent of retail — use
-  `06-sector-and-domain-ux/design-ethics-and-anti-dark-patterns` (the paired skill). This skill
+  `00-cross-cutting-ops-qa-a11y/design-ethics-and-anti-dark-patterns` (the paired skill). This skill
   applies that doctrine to the specific retail dark patterns; that one is the general catalog.
 - The task is **only the button/error wording** — use
   `10-content-design-and-ux-writing/ux-writing-and-microcopy`, then return here for placement.
@@ -289,7 +289,7 @@ coercive version.
 - Sibling skills: `04-web-and-ui-design/distinctive-by-design` (run first; gates the build),
   `04-web-and-ui-design/form-ux-design` (field anatomy, validation, the five field states — applied
   inside checkout), `14-conversion-and-web-page-patterns/landing-page-and-conversion-design` (the page *before* the
-  click; this skill owns *after*), `06-sector-and-domain-ux/design-ethics-and-anti-dark-patterns`
+  click; this skill owns *after*), `00-cross-cutting-ops-qa-a11y/design-ethics-and-anti-dark-patterns`
   (paired — the general ethics/dark-pattern doctrine this skill applies to retail),
   `10-content-design-and-ux-writing/ux-writing-and-microcopy` (button/error/empty wording).
 <!-- dual-compat-end -->

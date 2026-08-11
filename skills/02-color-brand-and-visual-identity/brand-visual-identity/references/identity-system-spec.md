@@ -69,7 +69,7 @@ Construction, ramp, and contrast certification live in `../color-system-and-pale
 
 Record where the wordmark's letterforms and the running type deliberately agree or contrast.
 Selection, pairing, scale, embedding, and licensing live in
-`../../01-typography-and-fonts/font-selection-and-pairing`.
+`../../../01-typography-and-fonts/font-selection-and-pairing`.
 
 ## 5. Supporting visual language (what separates authored from templated)
 

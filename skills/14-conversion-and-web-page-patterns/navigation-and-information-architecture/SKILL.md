@@ -108,7 +108,7 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
    the exact thing. Specify: scope (global vs in-section), autosuggest, query persistence, a *useful*
    **zero-results** state (suggestions, scope-broaden, contact), and—for catalogues—a faceted filter
    structure whose facets mirror the taxonomy. Empty/zero-results states pair with
-   `04-web-and-ui-design/empty-error-and-loading-states`.
+   `14-conversion-and-web-page-patterns/empty-error-and-loading-states`.
 
 9. **Make the whole navigation keyboard-operable and announced — this is a gate, not a polish.**
    Nav is the most-traversed, most-keyboard-dependent surface in the product. Every nav item must be
@@ -199,7 +199,7 @@ Without inventory or research, produce a provisional sitemap with assumptions. S
   transforms, active-state and breadcrumb rules, and the per-pattern keyboard/ARIA contract.
 - Upstream: `05-ux-process-research-and-psychology/ux-research-and-usability-testing` (runs the card
   sort / tree test this skill specifies). Downstream: `03-layout-grid-and-composition/...` (lays out
-  the pages the IA defines), `04-web-and-ui-design/empty-error-and-loading-states` (zero-results),
+  the pages the IA defines), `14-conversion-and-web-page-patterns/empty-error-and-loading-states` (zero-results),
   `10-content-design-and-ux-writing/ux-writing-and-microcopy` (label tone).
 - Standards (named for provenance, not in-repo): Rosenfeld/Morville/Arango, *Information
   Architecture* (the polar-bear book); Nielsen Norman Group IA & navigation guidance; W3C WAI-ARIA

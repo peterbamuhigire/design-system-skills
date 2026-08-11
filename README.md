@@ -21,10 +21,11 @@ here, so each domain engine's skill count stays low.
 
 ## Latest update: zero-debt skill-contract conformance
 
-As of 2026-07-17, all 87 active skills conform to the engine's portable authoring contract. Each
+The current filesystem-backed inventory (2026-08-11) contains 88 active skills, all conforming to
+the engine's portable authoring contract. Each
 skill now declares routing boundaries, inputs, outputs, capabilities, degraded behaviour,
 decision rules, stop/recovery conditions, evidence, and acceptance criteria. The repository also
-ships machine validation, 46 neighbour-collision routing fixtures, a zero-debt baseline, and CI
+ships machine validation, 54 neighbour-collision routing fixtures, a zero-debt baseline, and CI
 checks for every push and pull request. See
 `docs/engine-upgrade-july-2026/11-skill-standard-conformance-2026-07-13.md`.
 
@@ -156,8 +157,8 @@ design-system-skills/
 │   ├── design-doctrine.md         ← always-load charter
 │   ├── references/                ← banned list, font categories, pairing, type scale, embedding, licensing
 │   └── examples/
-├── skills/                        ← 15 domain groups + 1 cross-cutting (co-activates) · 87 active skills
-│   ├── 00-cross-cutting-ops-qa-a11y/   (12) ← accessibility, QA, audits, ethics — always-on
+├── skills/                        ← 15 domain groups + 1 cross-cutting (co-activates) · 88 active skills
+│   ├── 00-cross-cutting-ops-qa-a11y/   (13) ← accessibility, QA, audits, ethics — always-on
 │   ├── 01-typography-and-fonts/        (6)
 │   ├── 02-color-brand-and-visual-identity/ (7)
 │   ├── 03-layout-grid-and-composition/ (4)
@@ -228,7 +229,7 @@ python -X utf8 scripts/validate_engine.py --baseline tests/quality-baseline.json
 python -X utf8 scripts/routing_smoke_test.py
 ```
 
-The baseline records zero contract findings across all 87 active skills. Any new structural or
+The baseline records zero contract findings across all 88 active skills. Any new structural or
 contract finding fails CI. Routing fixtures must continue to achieve 100% precision at the
 top-three acceptance threshold.
 

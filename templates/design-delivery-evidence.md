@@ -27,6 +27,25 @@ Use this record for meaningful visual changes. Link evidence; do not replace it 
 | Performance, where applicable | | | |
 | Content and localisation | | | |
 
+## Machine-readable stage evidence
+
+If a delivery manifest is used, keep these stages independent. Do not infer one stage from
+another; use `NOT ASSESSED` with a reason when the environment or target application was not
+available.
+
+| Stage | Result (`PASS`, `CONDITIONAL`, `FAIL`, or `NOT ASSESSED`) | Evidence or unavailable reason |
+|---|---|---|
+| Generation | | |
+| Reopen | | |
+| Render | | |
+| Visual QA | | |
+| Accessibility | | |
+
+For a stage marked `PASS`, the machine-readable manifest must contain one or more retained
+evidence records, each with an allowed type (`command-log`, `retained-artifact`, or
+`independent-review`), a reference, and `AUTOMATED` or `INDEPENDENT` verification. An owner
+statement alone is not evidence. A stage marked `NOT ASSESSED` must retain the reason instead.
+
 ## Handoff
 
 - Files or specifications produced:

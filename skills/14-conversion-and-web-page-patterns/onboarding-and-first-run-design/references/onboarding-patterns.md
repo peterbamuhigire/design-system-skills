@@ -67,7 +67,7 @@ affordance so it is never mistaken for the user's real data.
 
 > Division of labour: this skill owns the **first-action choice and its place in the activation arc**;
 > the *pixel craft* of the empty state (illustration, skeleton geometry, motion) belongs to
-> `04-web-and-ui-design/empty-error-and-loading-states`. Compose, don't duplicate.
+> `14-conversion-and-web-page-patterns/empty-error-and-loading-states`. Compose, don't duplicate.
 
 ---
 

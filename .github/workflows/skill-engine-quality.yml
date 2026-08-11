@@ -15,4 +15,5 @@ jobs:
       - run: pip install PyYAML
       - run: python -X utf8 scripts/validate_engine.py --baseline tests/quality-baseline.json
       - run: python -X utf8 scripts/routing_smoke_test.py
+      - run: python -X utf8 scripts/validate_route_existence.py
       - run: python -X utf8 scripts/validate_design_delivery_evidence.py tests/fixtures/design-delivery/manifest.json

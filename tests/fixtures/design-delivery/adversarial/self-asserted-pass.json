@@ -1,0 +1,21 @@
+{
+  "artifact_id": "adversarial-self-asserted",
+  "artifact_type": "test manifest; no native Office artifact",
+  "surfaces": ["web-home-desktop"],
+  "renders": [{"path": "../render-home.svg", "state": "desktop"}],
+  "stages": {
+    "generation": {"result": "PASS", "evidence": "owner says generation passed"},
+    "reopen": {"result": "PASS", "evidence": "owner says reopen passed"},
+    "render": {"result": "PASS", "evidence": "owner says render passed"},
+    "visual_qa": {"result": "PASS", "evidence": "owner says visual QA passed"},
+    "accessibility": {"result": "PASS", "evidence": "owner says accessibility passed"}
+  },
+  "checks": [
+    {"id": "design-doctrine", "result": "PASS"},
+    {"id": "typography", "result": "PASS"},
+    {"id": "accessibility", "result": "PASS"},
+    {"id": "render-parity", "result": "PASS"}
+  ],
+  "verdict": "PASS",
+  "owner": "self-attested-fixture"
+}

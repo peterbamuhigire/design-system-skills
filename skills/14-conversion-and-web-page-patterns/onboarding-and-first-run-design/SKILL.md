@@ -40,7 +40,7 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
   `14-conversion-and-web-page-patterns/landing-page-and-conversion-design`. That skill *ends* at the CTA click;
   THIS skill owns everything after it.
 - You only need the **visual/interaction design of the first-run empty state in isolation** (skeleton
-  geometry, illustration, motion) — that is `04-web-and-ui-design/empty-error-and-loading-states`.
+  geometry, illustration, motion) — that is `14-conversion-and-web-page-patterns/empty-error-and-loading-states`.
   This skill *composes* the empty-state-as-onboarding into the larger activation arc; come here for
   the sequencing and the first-action choice, go there for the state's pixel craft.
 - You need the **wording** of welcome copy, tooltips, checklist items, or empty-state prompts — use
@@ -260,7 +260,7 @@ Without an evidenced activation event, deliver a hypothesis map and research pla
 - `doctrine/references/wcag-2.2-criteria.md` — focusable controls and visible focus, target size
   ≥24px (2.5.8), focus order on step change (2.4.3), live-region progress announcements (4.1.3),
   colour-not-alone (1.4.1), reduced motion (2.3.3) for coachmark/spotlight animation.
-- Sibling `04-web-and-ui-design/empty-error-and-loading-states` — owns the **pixel craft** of the
+- Sibling `14-conversion-and-web-page-patterns/empty-error-and-loading-states` — owns the **pixel craft** of the
   first-run empty state (illustration, skeleton, motion); this skill composes it into the activation arc.
 - Sibling `14-conversion-and-web-page-patterns/landing-page-and-conversion-design` — owns the marketing page that
   *precedes* the product; it ends at the CTA click, this skill begins there.

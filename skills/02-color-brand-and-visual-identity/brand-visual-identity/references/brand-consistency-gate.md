@@ -47,11 +47,10 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 ## References
 - `doctrine/design-doctrine.md` — the Mission ("the moat is looking human-made") and Anti-Slop Charter; brand alignment is the check that every element is an intentional, stated choice.
 - `doctrine/references/ai-slop-taxonomy.md` — the convergent-default tells that signal "no brand thought went in here."
-- Sibling skills: `04-color-and-visual-identity/brand-style-guide` (the recorded brand system this skill validates against), `04-color-and-visual-identity/color-system-and-palette`, `03-web-and-ui-design/distinctive-by-design`.
+- Sibling skills: `02-color-brand-and-visual-identity/brand-style-guide` (the recorded brand system this skill validates against), `02-color-brand-and-visual-identity/color-system-and-palette`, `04-web-and-ui-design/distinctive-by-design`.
 - `references/trust-architecture-checklist.md` (this folder) when validating proof, legitimacy, and credibility requirements.
 - Start with `references/legacy-guidance.md` for preserved detailed guidance; read only the files under `references/` that match the task.
 
 ## Notes
 - Treat this `SKILL.md` as the portable execution layer for both Claude Code and Codex.
 - Preserve existing project behavior unless the current task explicitly requires a change.
-

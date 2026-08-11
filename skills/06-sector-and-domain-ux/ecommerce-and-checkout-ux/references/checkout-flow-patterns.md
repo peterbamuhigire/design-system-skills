@@ -203,6 +203,6 @@ who return, refer, and don't charge back.
 
 *Companion to `doctrine/references/interaction-anti-patterns.md` (B1/B2/B3/C3/C4/D6) and
 `doctrine/design-doctrine.md` §0. Retail-specific application of the engine's anti-dark-pattern
-posture; pairs with `06-sector-and-domain-ux/design-ethics-and-anti-dark-patterns`. Patterns
+posture; pairs with `00-cross-cutting-ops-qa-a11y/design-ethics-and-anti-dark-patterns`. Patterns
 evergreen; regulatory references current to 2026 (FTC click-to-cancel, EU Omnibus/Consumer Rights,
 UK DMCC Act).*

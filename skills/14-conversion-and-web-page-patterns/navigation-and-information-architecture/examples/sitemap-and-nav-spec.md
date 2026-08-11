@@ -156,7 +156,7 @@ no section becomes an orphan on mobile.
   filtered view is shareable/bookmarkable.
 - **Zero-results (designed, not a dead end):** "No invoices match *overdue + last 7 days*." +
   one-tap **clear filters**, a **broaden** suggestion (drop the narrowest facet), and a **create
-  invoice** action. Pairs with `04-web-and-ui-design/empty-error-and-loading-states`.
+  invoice** action. Pairs with `14-conversion-and-web-page-patterns/empty-error-and-loading-states`.
 
 ---
 

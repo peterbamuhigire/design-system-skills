@@ -42,7 +42,7 @@ then write copy a templating tool would never have produced.
   do/don't voice chart) → that lives in `02-color-brand-and-visual-identity/brand-style-guide`.
   This skill *consumes* that voice and applies it to microcopy.
 - You are designing the **visual** empty/error/loading states (layout, illustration, hierarchy)
-  → `04-web-and-ui-design/empty-error-and-loading-states`. This skill writes the words that go
+  → `14-conversion-and-web-page-patterns/empty-error-and-loading-states`. This skill writes the words that go
   in them.
 - You are writing **long-form** marketing or documentation prose, not in-interface strings.
 - You need to **detect generic, machine-written prose** (the em-dash tell, "delve"-class diction,
@@ -191,5 +191,5 @@ Without full flow context, return candidate strings with explicit assumptions ra
   the boundary note (AI-slop detection → research engine; voice/tone → the new group-10 skill).
 - Pairs with `10-content-design-and-ux-writing/error-empty-and-system-messaging` (error/empty/
   system copy), `02-color-brand-and-visual-identity/brand-style-guide` (the voice this consumes),
-  and `04-web-and-ui-design/empty-error-and-loading-states` (the visual states copy fills).
+  and `14-conversion-and-web-page-patterns/empty-error-and-loading-states` (the visual states copy fills).
 <!-- dual-compat-end -->
