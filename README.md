@@ -251,6 +251,8 @@ correction, contestability, drift awareness, and artist-to-implementation handof
 
 ## Kaizen and product-audit contract
 
+For a ready-to-run product or project operation, use [`prompts/full-kaizen-operation.md`](prompts/full-kaizen-operation.md).
+
 Use `Observe -> Baseline -> Select -> Experiment -> Check -> Standardise -> Teach -> Re-measure`.
 Publish audits at `min(raw_score, 65)` and create 95/100 plans with owner, evidence, measure,
 risk, rollback, and re-audit. Design-engine and rendered-product audits cover typography, colour,
