@@ -21,7 +21,7 @@ here, so each domain engine's skill count stays low.
 
 ## Latest update: zero-debt skill-contract conformance
 
-The current filesystem-backed inventory (2026-08-11) contains 88 active skills, all conforming to
+The current filesystem-backed inventory (2026-08-16) contains 89 active skills, all conforming to
 the engine's portable authoring contract. Each
 skill now declares routing boundaries, inputs, outputs, capabilities, degraded behaviour,
 decision rules, stop/recovery conditions, evidence, and acceptance criteria. The repository also
@@ -157,7 +157,7 @@ design-system-skills/
 │   ├── design-doctrine.md         ← always-load charter
 │   ├── references/                ← banned list, font categories, pairing, type scale, embedding, licensing
 │   └── examples/
-├── skills/                        ← 15 domain groups + 1 cross-cutting (co-activates) · 88 active skills
+├── skills/                        ← 15 domain groups + 1 cross-cutting (co-activates) · 89 active skills
 │   ├── 00-cross-cutting-ops-qa-a11y/   (13) ← accessibility, QA, audits, ethics — always-on
 │   ├── 01-typography-and-fonts/        (6)
 │   ├── 02-color-brand-and-visual-identity/ (7)
@@ -205,7 +205,7 @@ design-system-skills/
   2 doctrine refs (`creative-selection-and-taste`, `interaction-anti-patterns`) + inoculation
   notes, and the full P1 wave + 4 net-new skills. Then re-authored the 12 boilerplate SKILL.md
   heads and split the overloaded group 04 (new `14-conversion-and-web-page-patterns`; email → 13).
-  **82 active skills across 15 groups, 100% example-complete.** Re-audit
+**82 active skills across 15 groups, 100% example-complete.** Re-audit
   (`docs/audits/post-v2-plan/`): overall **81/100** (51 → 67 → 73 → 80 → 81), taxonomy **86**,
   output-readiness **78**, skill-depth **74**. Added a living AI-slop doctrine refresh loop wired
   to the digital-research engine and RN/Expo implementation-readiness gates. **Next:** decide the
@@ -229,7 +229,12 @@ python -X utf8 scripts/validate_engine.py --baseline tests/quality-baseline.json
 python -X utf8 scripts/routing_smoke_test.py
 ```
 
-The baseline records zero contract findings across all 88 active skills. Any new structural or
+The 2026-08-16 POS operations addition added a general ERP POS engineering handoff for tenant
+defaults, three operational POS surfaces, product-to-finished-stock identity, stock timing,
+canonical posting, permissions, idempotency, and reconciliation. The filesystem-backed inventory
+now contains 89 active skills.
+
+The baseline records zero contract findings across all 89 active skills. Any new structural or
 contract finding fails CI. Routing fixtures must continue to achieve 100% precision at the
 top-three acceptance threshold.
 

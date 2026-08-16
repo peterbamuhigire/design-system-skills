@@ -1,7 +1,7 @@
 {
   "recorded": "2026-07-17",
-  "skills": 88,
-  "fully_compliant": 88,
+  "skills": 89,
+  "fully_compliant": 89,
   "failure_counts": {},
-  "note": "Zero-debt conformance baseline after the five-skill game visual-experience route. Any structural or contract finding is a regression and must fail CI."
+  "note": "Zero-debt conformance baseline after the POS and retail operations route. Any structural or contract finding is a regression and must fail CI."
 }

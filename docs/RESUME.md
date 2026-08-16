@@ -5,9 +5,9 @@ Single source of truth for "what's done / what's next" on design-system-skills.
 
 ## Current state
 
-- **88 active skills across 16 groups (15 domain groups plus cross-cutting), 100% example-complete and 100% contract-compliant.**
+- **89 active skills across 16 groups (15 domain groups plus cross-cutting), 100% example-complete and 100% contract-compliant.**
 - The zero-debt conformance baseline is enforced in CI. Local and canonical validation pass for
-  all 88 active skills; 54 routing fixtures achieve 100% precision at the top-three threshold
+  all 89 active skills; 54 routing fixtures achieve 100% precision at the top-three threshold
   (87% precision at top one).
 - The earlier overall design-readiness audit score remains **81/100** (progression: 51 -> about
   67 -> about 73 -> 80 -> 81). That score measures broader output capability, not skill-contract
@@ -42,7 +42,7 @@ Single source of truth for "what's done / what's next" on design-system-skills.
 - Added RN/Expo implementation-readiness gates to `cross-platform-design-parity`, using the local
   React Native book as historical pattern input and current RN/Expo docs as the version-sensitive
   source of truth.
-- The July 2026 normalisation covered 82 active skills; the current 88-skill catalogue retains the
+- The July 2026 normalisation covered 82 active skills; the current 89-skill catalogue retains the
   portable contract with neighbour-aware triggers,
   input/output contracts, decision rules, capability boundaries, degraded mode, stop/recovery
   behaviour, evidence, acceptance conditions, and five concrete anti-patterns.
