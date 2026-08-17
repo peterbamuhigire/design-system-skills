@@ -1,21 +1,12 @@
 # design-system-skills
 
-See [`docs/control-plane-adoption.md`](docs/control-plane-adoption.md) for
-design agents, thin commands, visual hooks, evidence, and implementation
-handoffs.
+Owned by Peter Bamuhigire / Chwezi Core Systems (chwezicore.com), this engine defines the presentation layer for Chwezi outputs: typography, colour, layout, visual identity, and the anti-AI-slop design doctrine. It is the shared reference for rendered documents, websites, and software/app UI; its code and documentation are MIT-licensed, while font binaries are intentionally not committed. See [`docs/control-plane-adoption.md`](docs/control-plane-adoption.md) for design agents, thin commands, visual hooks, evidence, and implementation handoffs.
+
+Designers, product teams, frontend and mobile engineers, and documentation authors use it when a rendered artefact needs coherent visual decisions and a usable implementation handoff. The catalogue covers work from type and colour through composition, web and app UI, UX, mobile, motion, design systems, content, imagery, data visualisation, conversion patterns, accessibility, performance, and visual QA.
+
+Use it alongside the relevant domain engine so presentation decisions stay explicit without copying design guidance into every repository. It is a referenced companion, not the owner of domain rules or implementation: for example, consult the <a href="https://github.com/peterbamuhigire/chwezi-accounting-doctrine" target="_blank" rel="noopener noreferrer">Chwezi Accounting Doctrine</a> for finance requirements while this engine remains the home for shared design skills.
 
 > *The anti-AI-slop design engine — typography, colour, layout, and UI that look made by skilled human hands, not a template.*
-
-**Cross-cutting design & typography engine for the Chwezi skill-engine family.**
-Owner: Peter Bamuhigire / Chwezi Core Systems (chwezicore.com) · Licence: MIT (code/docs;
-font binaries are not committed — see `fonts/`).
-
-This repo is the **single source of truth** for the presentation layer — typography, colour,
-layout, visual identity, and the anti-AI-slop doctrine — across every Chwezi engine that emits
-a rendered artifact (documents, websites, software/app UI). It is modelled on the finance
-engine (`chwezi-accounting-doctrine`): **consult it IN ADDITION to** whichever domain engine is
-active. Unlike the finance engine it is **referenced, not mirrored** — design skills live only
-here, so each domain engine's skill count stays low.
 
 ---
 
@@ -35,7 +26,7 @@ As of 2026-06-22, the engine has a living AI-slop doctrine refresh loop and stro
 React Native/Expo handoff gates:
 
 - `slop-doctrine-refresh-and-research-loop` routes changing AI-slop definitions through the
-  digital-research engine's source-evaluation discipline before doctrine changes.
+  <a href="https://github.com/peterbamuhigire/digital-research-skills" target="_blank" rel="noopener noreferrer">Digital Research Engine</a>'s source-evaluation discipline before doctrine changes.
 - `living-slop-refresh-protocol.md` requires evidence grade, scope, design consequence, and date
   checked for any slop-taxonomy or banned-font update.
 - `cross-platform-design-parity` now includes RN/Expo implementation-readiness gates for
@@ -56,7 +47,7 @@ expectations:
   Transparency, Increase Contrast, Reduce Motion, VoiceOver, Dynamic Type, and
   resizable Apple windows.
 
-This update is coordinated with the `skills-web-dev` WWDC26 Apple platform
+This update is coordinated with the <a href="https://github.com/peterbamuhigire/chwezi-dev-engine" target="_blank" rel="noopener noreferrer">Chwezi Dev Engine</a> WWDC26 Apple platform
 modernization so implementation skills own code/toolchain guidance and this
 engine owns presentation-layer guidance.
 
@@ -262,6 +253,6 @@ Use `Observe -> Baseline -> Select -> Experiment -> Check -> Standardise -> Teac
 Publish audits at `min(raw_score, 65)` and create 95/100 plans with owner, evidence, measure,
 risk, rollback, and re-audit. Design-engine and rendered-product audits cover typography, colour,
 layout, interaction, narrative, accessibility, readability, performance, handoff, and visual QA.
-Route current design research and changing platform claims through the [Digital Research Engine](https://github.com/peterbamuhigire/digital-research-skills).
+Route current design research and changing platform claims through the <a href="https://github.com/peterbamuhigire/digital-research-skills" target="_blank" rel="noopener noreferrer">Digital Research Engine</a>.
 See `skills/00-cross-cutting-ops-qa-a11y/design-engine-and-product-improvement/` and
 `docs/continuous-improvement/design-engine-book-upgrade-2026-08.md`.
