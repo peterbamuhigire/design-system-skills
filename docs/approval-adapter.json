@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "engine": "design",
+  "policy_version": "approval-policy-1.0.0",
+  "actions": [
+    {"action_type":"design.draft","class":"L1","side_effect":"local-design-draft","owner":"design-owner","allowed_approver_roles":["design-owner"],"requires_dual_approval":false,"preview_required":true,"approval_ttl_seconds":null,"idempotency_required":true,"rollback":"discard-draft","verification":"render-and-structure-check","sensitive_fields":["private-brand-assets"]},
+    {"action_type":"design.tokens.publish","class":"L3","side_effect":"live-design-system-change","owner":"design-owner","allowed_approver_roles":["design-owner","product-owner"],"requires_dual_approval":false,"preview_required":true,"approval_ttl_seconds":900,"idempotency_required":true,"rollback":"restore-token-snapshot","verification":"render-contrast-and-regression-check","sensitive_fields":["brand-assets"]},
+    {"action_type":"design.accessibility.exception.approve","class":"L3","side_effect":"accessibility-control-exception","owner":"accessibility-owner","allowed_approver_roles":["accessibility-owner","product-owner"],"requires_dual_approval":true,"preview_required":true,"approval_ttl_seconds":900,"idempotency_required":true,"rollback":"remove-exception-and-restore-control","verification":"exception-expiry-and-audit-check","sensitive_fields":["user-impact"]},
+    {"action_type":"design.agent.checkpoint.release","class":"L3","side_effect":"agent-control-release","owner":"product-owner","allowed_approver_roles":["product-owner","safety-reviewer"],"requires_dual_approval":true,"preview_required":true,"approval_ttl_seconds":900,"idempotency_required":true,"rollback":"disable-agent-flow","verification":"keyboard-state-and-approval-test","sensitive_fields":["user-data"]},
+    {"action_type":"design.consent-flow.change","class":"L3","side_effect":"consent-control-change","owner":"privacy-owner","allowed_approver_roles":["privacy-owner","design-owner"],"requires_dual_approval":true,"preview_required":true,"approval_ttl_seconds":900,"idempotency_required":true,"rollback":"restore-consent-flow","verification":"consent-and-accessibility-check","sensitive_fields":["personal-data"]}
+  ]
+}

@@ -37,3 +37,10 @@ override design doctrine's banned-font and evidence rules.
 
 Missing renders or contrast evidence are `NOT ASSESSED`, not PASS. The
 anti-slop checklist remains a hard release gate.
+
+## Human approval adapter
+
+Live design-system and agent-interface changes are detailed in
+[`approval-enforcement.md`](approval-enforcement.md) and catalogued in
+[`approval-adapter.json`](approval-adapter.json). The checkpoint interaction
+must expose correction, rejection, escalation, and rollback before approval.
