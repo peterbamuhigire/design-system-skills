@@ -99,6 +99,21 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - `references/verifiability-patterns.md` — why confidence % is wrong; inline-source patterns.
 - `references/canvas-vs-chat.md` — decision matrix, versioning, collaboration.
 - `references/inline-refinement.md` — on-select UI, buttons, knobs, version selectors.
+## AI-assisted design workflow guard
+
+When AI accelerates design or product artefact work, preserve source context,
+ask for questions and options before generation, record decisions, manually
+verify external/product facts, prototype early, and apply scoped delta changes
+with human review after each material iteration. AI accelerates execution; it
+does not own product judgement, prioritisation, competitor verification,
+accessibility sign-off, or release approval.
+
+Anti-patterns: an unverified context dump becoming source truth, or broad
+regeneration that changes accepted work. Fix both with a source comparison,
+decision log, numbered delta, and post-change diff check.
+
+Practitioner cross-check: [Eleken AI design workflow](https://www.eleken.co/blog-posts/ai-design-workflow). Use its workflow controls only; exclude time-saved figures and tool claims.
+
 <!-- dual-compat-end -->
 
 ## Why AI Outputs Fail

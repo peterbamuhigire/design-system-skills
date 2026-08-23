@@ -266,4 +266,11 @@ Without an evidenced activation event, deliver a hypothesis map and research pla
   *precedes* the product; it ends at the CTA click, this skill begins there.
 - `10-content-design-and-ux-writing/ux-writing-and-microcopy` and `error-empty-and-system-messaging` —
   own the **words** of welcome copy, tooltips, checklist items, and empty-state prompts.
+Additional decision rule: when identity, consent, or verification is a genuine
+prerequisite, explain why it is needed, minimise the step, and provide
+recovery/support; value-first does not bypass safety or regulation.
+
+Platform cross-check: [Apple Human Interface Guidelines — Onboarding](https://developer.apple.com/design/human-interface-guidelines/onboarding).
+Practitioner cross-check: [Eleken mobile onboarding guide](https://www.eleken.co/blog-posts/mobile-app-onboarding-best-practices). Use for pattern prompts only; do not import conversion claims or universal thresholds.
+
 <!-- dual-compat-end -->

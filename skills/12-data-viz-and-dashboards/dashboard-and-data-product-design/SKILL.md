@@ -166,4 +166,11 @@ Without trusted metrics, deliver a wireframe and metric dependency register, not
   metric demotion, comparison/target/trend rules.
 - `references/dashboard-layout-patterns.md` — layout archetypes, scan-order zoning, drill-down
   and cross-filter patterns, and the real-time / streaming data UX patterns.
+First-run rule: for a newly provisioned dashboard, provide representative
+seeded/demo data or a clear setup path that demonstrates the core decision
+without pretending sample data is live. Treat a blank state as an onboarding
+state with an owner and a measurable next action.
+
+Practitioner cross-check: [Eleken dashboard examples](https://www.eleken.co/blog-posts/dashboard-design-examples-that-catch-the-eye). Use for hierarchy, progressive introduction, and first-run prompts; do not treat visual appeal or portfolio selection as performance evidence.
+
 <!-- dual-compat-end -->

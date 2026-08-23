@@ -35,9 +35,11 @@ metadata:
 - A **token layer to consume** — at minimum semantic tokens for color, space, radius, type, elevation, motion (`design-tokens-and-naming`). If absent, stop and build tokens first; a component library built on hex literals cannot be themed and is not a system.
 - The **target platform(s)** — web (HTML/CSS, React/Vue/Web Components), or cross-platform — because composition mechanics (slots, `children`, named regions) differ.
 - The **scope**: which components, and the priority order (foundations first: Button, Input/Field, Icon, Text, then molecules: Field-with-label, Select, then organisms).
+- The **system boundary and operating owner**: consuming products/teams, accountable maintainer, contribution route, and review authority. If these are unknown, record a component proposal rather than a maintained system.
 - An **accessibility floor** — WCAG 2.2 AA is the minimum (`doctrine/references/wcag-2.2-criteria.md`).
 
 ## Workflow
+0. **Set the boundary before building the library.** Confirm the products, platforms, consumers, owner, contribution path, and maintenance capacity. Inventory repeated patterns, then prioritise the smallest high-frequency/high-risk component set; do not build a catalogue for its own sake.
 1. **Place the component on the atomic ladder before designing it.** Atom (indivisible: Button, Input, Icon, Text, Avatar), Molecule (a small bonded group with one job: Field = Label + Input + HelpText + Error; SearchBar = Input + Button), Organism (a self-contained section: Header, Card, DataTable, Form). The level dictates whether it owns layout or only fills a slot. See `references/atomic-structure.md`. Do not let an atom grow a layout or a molecule grow business logic — that is the #1 architecture smell.
 2. **Define the variant model along orthogonal axes — never one mega-enum.** Separate the axes that vary independently: **intent/variant** (primary/secondary/ghost/destructive), **size** (sm/md/lg), **state** (interactive, below), and **modifiers** (icon-only, full-width, loading). A component's API is the *product* of independent axes, expressed as small enums + booleans, not a `variant="primary-large-loading-icon"` string. State the axes explicitly so the matrix is finite and reviewable.
 3. **Cover the FULL interactive-state set — this is non-negotiable.** For every interactive component enumerate and give a token-backed treatment to: **default, hover, focus-visible, active/pressed, disabled, loading, selected/checked, error/invalid, read-only** (only the states the component can actually enter). Two rules from doctrine's a11y floor:
@@ -48,6 +50,7 @@ metadata:
 6. **Meet the interaction minimums.** Pointer target **≥ 24×24 CSS px** (aim 44×44 touch / 48dp) — WCAG 2.2 **2.5.8**; honour `prefers-reduced-motion` on any state transition (2.3.3); every drag affordance has a single-pointer alternative (2.5.7). All from `doctrine/references/wcag-2.2-criteria.md`. Motion durations come from motion tokens, not magic numbers.
 7. **Document the component to the template.** Produce the per-component spec: anatomy diagram (named parts), when-to-use / when-not, the **variant × size × state matrix**, the prop/slot API table, a11y contract, and do/don't pairs. Use `references/component-doc-template.md`. A component without this doc is not "done" — undocumented variants get reinvented and the library forks.
 8. **Resist anti-slop sameness (`doctrine/design-doctrine.md`).** The default-looking Button (flat fill, generic radius, blue) is the convergent AI mean. Make the *one* authored choice — a deliberate radius, a considered pressed-state shift, a focus ring that belongs to the brand — and apply it systematically through tokens so it reads as one skilled hand, not a template.
+9. **Run the system as a product.** Before marking a library release complete, record component status (`draft`, `in review`, `approved`, `needs work`), documentation/a11y checks, version/changelog impact, consumer notification, and the next review date. Track adoption/reuse, one-off exceptions, defects, and drift as signals for the next priority.
 
 ## Decision Rules
 
@@ -57,6 +60,8 @@ metadata:
 | Consumer supplies structured content | Slot or compound composition | Content props expand into an unmaintainable API |
 | Behaviour and semantics differ materially | Separate components sharing primitives | One mega-component accumulates conditional branches |
 | Difference is only visual role | Same component with semantic variant | Duplicate components drift in behaviour and accessibility |
+| A component is requested outside the agreed boundary | Record it as a proposal and route it through contribution review | Silent scope growth makes the system unmaintainable |
+| The library has no owner, docs, or review route | Stop release and assign the operating controls | An ownerless library becomes a second source of truth |
 
 ## Capability Contract
 
@@ -75,6 +80,7 @@ Without repository access, return a proposed inventory, API, and state matrix ra
 - **Atomic-level creep.** An atom that owns page layout; a molecule that fetches data; an organism duplicated three ways because no one documented the first.
 - **Disabled-by-color-only / error-by-color-only** — fails 1.4.1; pair with text, icon, or shape.
 - **Undocumented component** — no anatomy, no API table, no do/don't → it forks the moment a second person touches it.
+- **Ownerless or overbuilt system** — dozens of low-use components with no maintainer, contribution route, or adoption signal. Fix: start with the smallest high-value set and assign operating ownership before expanding.
 
 ## Outputs
 | Artefact | Consumer | Evidence and acceptance condition |
@@ -82,6 +88,7 @@ Without repository access, return a proposed inventory, API, and state matrix ra
 | Component inventory and composition map | Design-system owners | Scope, dependencies, and ownership are explicit |
 | Variant, state, slot, and API contracts | Designers and engineers | Reachable combinations are finite, typed, token-backed, and accessible |
 | Component documentation and verification record | Consumers and QA | Examples, theme renders, interaction tests, and known gaps are recorded |
+| System operating record | Design-system owner and consuming teams | Scope, owner, contribution status, release change, adoption/quality signals, and review date are visible |
 - An **atomic inventory** classifying each component (atom/molecule/organism) with composition relationships.
 - A **variant model** per component — the orthogonal axes (variant × size × state × modifier) as small enums + booleans.
 - A **full state matrix** per interactive component with a token-backed treatment for every reachable state.
@@ -97,4 +104,5 @@ Without repository access, return a proposed inventory, API, and state matrix ra
 - `references/atomic-structure.md` — the atomic ladder, classification rules, and composition (slots/compound) decision guide.
 - `references/component-doc-template.md` — the per-component documentation template (anatomy, variant API, state matrix, a11y contract, do/don't).
 - Sibling: `design-tokens-and-naming` (tokens this skill consumes), `dark-mode-and-theming`, `design-handoff-and-dev-spec`, `accessibility-wcag-2-2-compliance`.
+- Practitioner cross-check: [Eleken design-system checklist](https://www.eleken.co/blog-posts/design-system-checklist) and [design-consistency guide](https://www.eleken.co/blog-posts/design-consistency). Use for operating prompts only; do not import outcomes or benchmarks.
 <!-- dual-compat-end -->

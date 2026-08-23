@@ -158,4 +158,12 @@ collapsing into the convergent fintech look (cool blue/teal, gradient cards, gla
 - `doctrine/references/ai-slop-banned-fonts.md` — fonts forbidden as primary faces.
 - Sibling `06-sector-and-domain-ux/sector-strategies` (`ANTI-HOMOGENEITY-PRINCIPLE.md` + its
   fintech worked example) — pair with this skill; reuse the "refuse the fintech blue" discipline.
+Trust-surface rule: audit the threat model across account opening, permissions,
+fees/FX, confirmation, pending/failure, statements, support, and data controls.
+Trust cues must expose useful control and consequence, not merely decorate the
+screen. When a user decides whether to disclose data or authorise access, state
+purpose, scope, consequence, and recovery/support at that decision point.
+
+Practitioner cross-check: [Eleken banking-app trust guide](https://www.eleken.co/blog-posts/banking-app-design). Use for trust-threat questions and placement prompts; route regulatory, security, and financial conclusions to authoritative sources and the finance engine.
+
 <!-- dual-compat-end -->
