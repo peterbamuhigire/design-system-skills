@@ -94,6 +94,11 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - `references/routing.md` maps retired child skill slugs to their consolidated reference folders.
 - `references/generative-ai-ui-ux.md` covers generative-AI prompt, streaming, confidence, source, review, recovery, and human-override UI patterns.
 
+## Book-derived additions
+
+For agency, cognitive-privacy, memory, refusal, correction, and exit controls,
+load [human agency and cognitive privacy](references/human-agency-and-cognitive-privacy.md).
+
 ## Consolidated Child References
 
 - Load `references/routing.md` to map retired AI child skill slugs to their reference modules.

@@ -202,6 +202,10 @@ design-system-skills/
   to the digital-research engine and RN/Expo implementation-readiness gates. **Next:** decide the
   render-pipeline + Flutter-depth ceilings (v3).
 
+## September 2026 book-driven Kaizen wave
+
+See [`docs/continuous-improvement/book-driven-kaizen-2026-09-01.md`](docs/continuous-improvement/book-driven-kaizen-2026-09-01.md) for agency, cognitive privacy, uncertainty, and data-lineage design upgrades.
+
 ## Integration
 
 Each domain engine carries the one-line trigger block from `integration/integration-plan.md`.

@@ -255,6 +255,9 @@ If a section has no content, omit it.
 
 - [examples/ai-output-surface-worked.md](examples/ai-output-surface-worked.md) — a full worked AI output-surface spec (a "Lease Clause Explainer" feature) running through all five principles, canvas-vs-chat, and the anti-hallucination affordances.
 
+For high-consequence outputs with mixed evidence or changing information, load
+[uncertainty and evidence message design](references/uncertainty-and-evidence-message-design.md).
+
 ## Consolidated Child References
 
 - Load [references/routing.md](references/routing.md) to map retired AI child skill slugs to their reference modules.

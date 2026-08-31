@@ -475,6 +475,9 @@ When the visual carries a management decision, KPI review, forecast, risk score,
 
 ---
 
+For data-product lineage, freshness, uncertainty, and decision drilldown, load
+[data-foundation to decision visualisation](references/data-foundation-to-decision-visualisation.md).
+
 ## Examples
 
 - `examples/chart-worked-examples.md` — five real **good vs bad** chart encodings (pie→sorted bar,
