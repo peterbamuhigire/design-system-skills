@@ -142,6 +142,14 @@ baseline with explicit assumptions; do not label it a measured improvement.
 - `examples/design-engine-audit-worked.md` - a worked engine audit that caps the report at
   65/100, selects a silhouette-readability experiment, and plans the route to 95/100.
 
+## Mandatory Digital Research currentness gate
+
+Every Kaizen cycle must begin with `digital-research-skills` source evaluation
+and source verification. Record scope, dates, freshness class, support status,
+uncertainty, and review date for current design, accessibility, browser,
+platform, security, document, and lifecycle claims; quarantine unsupported
+claims as `NOT_ASSESSED`. Apply the [portfolio Kaizen currentness gate](../../../../digital-research-skills/docs/continuous-improvement/kaizen-currentness-gate.md).
+
 ## References
 
 - `references/kaizen-audit-contract.md` - audit dimensions, evidence matrix, score cap, and
@@ -153,4 +161,5 @@ baseline with explicit assumptions; do not label it a measured improvement.
 - `../../../doctrine/design-doctrine.md` - authored visual choices and anti-slop charter.
 - `design-audit`, `product-design-audit`, and `ux-remediation-and-redesign` - compose diagnosis,
   product coverage, and execution without duplicating their domain logic.
+- `../../../doctrine/references/book-driven-brand-story-and-visual-evidence.md` - durable brand/story synthesis with visual evidence and current accessibility gate.
 <!-- dual-compat-end -->

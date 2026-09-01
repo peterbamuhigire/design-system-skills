@@ -88,6 +88,7 @@ Without final assets or approvals, create a marked draft with an open-decisions 
 - `doctrine/references/pairing-principles.md`, `doctrine/references/type-scale-and-spacing.md` — typography pairing and the spacing/type scale the specimen documents.
 - Sibling skills: `02-color-brand-and-visual-identity/color-system-and-palette` (palette card hexes + WCAG), `02-color-brand-and-visual-identity/brand-visual-identity`, `01-typography-and-fonts/font-selection-and-pairing`.
 - Start with `references/legacy-guidance.md` and `references/style-guide-template.md` for the deliverable structure; read only the files under `references/` that match the task.
+- Apply `../../../doctrine/references/book-driven-brand-story-and-visual-evidence.md` for strategy-before-styling, evidence mapping, and current accessibility verification.
 
 ## Examples
 - `examples/mini-style-guide-worked.md` — a worked compact brand style-guide deliverable for a
