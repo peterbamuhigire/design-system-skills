@@ -162,4 +162,5 @@ claims as `NOT_ASSESSED`. Apply the [portfolio Kaizen currentness gate](../../..
 - `design-audit`, `product-design-audit`, and `ux-remediation-and-redesign` - compose diagnosis,
   product coverage, and execution without duplicating their domain logic.
 - `../../../doctrine/references/book-driven-brand-story-and-visual-evidence.md` - durable brand/story synthesis with visual evidence and current accessibility gate.
+- [Book-driven Kaizen Wave 3](references/book-driven-kaizen-wave-3-2026-09-02.md) - task-first communication, perceptual integrity, image quality, text alternatives, and current accessibility/performance verification.
 <!-- dual-compat-end -->
