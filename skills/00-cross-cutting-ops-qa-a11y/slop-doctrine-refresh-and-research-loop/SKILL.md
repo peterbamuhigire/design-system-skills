@@ -70,6 +70,11 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
    proposal delta; route prose semantics to Digital Research and mark incomplete evidence
    `NOT_ASSESSED`.
 
+9. **Enforce the visual boundary**: for websites, web products, presentations, and design
+   artefacts, reject purple gradients, glassmorphism, neon glow, AI-beige defaults, decorative
+   editorial scaffolding, and decorative motion. Preserve only task, state, accessibility, data,
+   or approved design-system reasons, and keep unavailable evidence `NOT_ASSESSED`.
+
 ## Anti-Patterns
 
 - Freezing a 2026 slop tell as permanent truth after models have moved.

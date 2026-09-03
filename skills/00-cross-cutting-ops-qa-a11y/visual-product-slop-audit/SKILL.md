@@ -83,6 +83,15 @@ components and the actual user flow. Preserve repeated states, labels, and acces
 their function is documented; otherwise remove or redesign them. Written-copy findings route to the
 Digital Research gate.
 
+### Impeccable-derived AS1-AS7 review
+
+Use `cli`, `browser`, `llm_only`, or `human_review` evidence. Block decorative purple gradients,
+glassmorphism, neon glow, AI-beige defaults, editorial scaffolding, and decorative motion. Review
+AS1 default convergence, AS2 unearned hierarchy, AS3 module monoculture, AS4 decorative attention,
+AS5 placeholder material, AS6 copy tells, and AS7 delivery debt. A missing render, browser, or
+detector is `NOT_ASSESSED`, not clean. Preserve functional state transitions, accessibility cues,
+data encodings, and approved design-system decisions only with a recorded reason.
+
 ## Quality Standards
 
 - Inspect focal details at delivery resolution and evaluate the feature in its actual flow.

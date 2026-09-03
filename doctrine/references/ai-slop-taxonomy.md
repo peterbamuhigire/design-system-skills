@@ -100,10 +100,11 @@ doctrine-correct alternative.
 
 **Observed shift:** The Kaizen input identifies polished output that adds reading or interaction
 cost without adding meaning; the signal is editorial and structural, not only lexical or visual.
-**Evidence grade:** weak for a universal design ban because the input is a qualitative owner report,
-not a prevalence study. **Design consequence:** use ME1-ME7 as a review overlay and watchlist, not as
-a new visual hard ban. **Scope:** interface copy, information architecture, repeated components,
-product feature framing, and handoff. **Date checked:** 2026-09-03.
+**Evidence grade:** first-party and context-bound for the Impeccable catalog, but weak for a
+universal claim about machine authorship or prevalence. **Design consequence:** use ME1-ME7 and
+AS1-AS7 as evidence-led review controls, with the owner's explicit visual no-ship boundary below.
+**Scope:** interface copy, information architecture, repeated components, product feature framing,
+presentation surfaces, and handoff. **Date checked:** 2026-09-03.
 
 The Digital Research engine owns written-copy semantics; this engine applies the same ME1-ME7 lens
 to information architecture, repeated components, interface copy, and visual hierarchy:
@@ -120,6 +121,24 @@ to information architecture, repeated components, interface copy, and visual hie
 
 Repeated UI is valid when it supports scanning, state recognition, accessibility, or a documented
 interaction model. Written-copy findings route to Digital Research's dated machine-error gate.
+
+### Impeccable-derived AS overlay
+
+| ID | Design interpretation |
+|---|---|
+| AS1 | Default palette, type, layout, or copy lacks a brief-specific reason. |
+| AS2 | Eyebrow, chip, icon tile, hero metric, or tiny section number adds authority without task value. |
+| AS3 | Identical cards, nested cards, or monotonous spacing flatten information hierarchy. |
+| AS4 | Glow, gradient, marquee, cursor, pulse, bounce, or hover motion demands attention without state or task value. |
+| AS5 | Imagery, illustration, icon, or example is generic, shape-assembled, washed out, missing, or placeholder-valued. |
+| AS6 | Buzzwords, em-dash cadence, aphoristic contrast, or theatrical framing becomes a repeated copy tell. |
+| AS7 | Hidden content, poor contrast, tiny text, clipping, overflow, broken assets, or invalid structure is concealed by polish. |
+
+For websites, web products, design artefacts, and presentations, purple gradients, glassmorphism,
+neon glow, AI-beige defaults, decorative editorial scaffolding, and decorative motion are no-ship
+choices. Functional status, accessibility, data encoding, and approved brand-system decisions must
+state their reason and evidence mode. The overlay is not a ban on an intentional non-decorative
+choice merely because it is common.
 
 ## How the engine uses this
 
