@@ -1,6 +1,6 @@
 # design-system-skills
 
-Owned by Peter Bamuhigire / Chwezi Core Systems (chwezicore.com), this engine defines the presentation layer for Chwezi outputs: typography, colour, layout, visual identity, and the anti-AI-slop design doctrine. It is the shared reference for rendered documents, websites, and software/app UI; its code and documentation are MIT-licensed, while font binaries are intentionally not committed. See [`docs/control-plane-adoption.md`](docs/control-plane-adoption.md) for design agents, thin commands, visual hooks, evidence, and implementation handoffs.
+Owned by Peter Bamuhigire / Chwezi Core Systems (chwezicore.com), this engine defines the intentional presentation layer for Chwezi outputs: typography, colour, layout, visual identity, interaction, motion, accessibility, and visual proof. It helps teams make and review one screen, component, document, or state at a time, so type, spacing, hierarchy, assets, transitions, and responsive behaviour serve a real user job rather than a template aesthetic.
 
 Designers, product teams, frontend and mobile engineers, and documentation authors use it when a rendered artefact needs coherent visual decisions and a usable implementation handoff. The catalogue covers work from type and colour through composition, web and app UI, UX, mobile, motion, design systems, content, imagery, data visualisation, conversion patterns, accessibility, performance, and visual QA.
 

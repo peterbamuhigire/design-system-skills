@@ -10,7 +10,7 @@ The package may read the router, discover skills, inspect Git, and run only decl
 
 Every Kaizen audit, skill edit, reference update, validator change, and
 standardisation decision MUST begin with the Digital Research Engine at
-`C:\wamp64\www\digital-research-skills`. Read its `source-evaluation` and
+`C:\wamp64\www\digital-research-engine`. Read its `source-evaluation` and
 `source-verification` skills and the currentness gate reference
 `docs/continuous-improvement/kaizen-currentness-gate.md`.
 
@@ -78,3 +78,7 @@ When the sibling-engine workspace is available, also inspect declared external h
 `python -X utf8 scripts/validate_cross_engine_routes.py --workspace-root <workspace-parent>`.
 Missing sibling repositories are reported as `NOT ASSESSED`, not as a pass; the local route gate
 remains independently runnable from this repository.
+
+## PORTFOLIO CRAFT CONTRACT
+
+Load `C:\wamp64\www\chwezi-engine-agents\docs\operations\portfolio-craft-standard-2026-09-04.md` when available. Design in perceptible slices: frame the user job and visual thesis, choose one component or flow, inspect the surrounding system and real content, make one purposeful change, render it in context, check hierarchy, states, contrast, motion, input, and responsive behaviour, refine, and record the visual proof. Every typeface, colour, spacing, asset, radius, shadow, and animation needs a product reason; remove decorative defaults. Do not generate a complete polished-looking system without reviewing its actual screens or artefacts. Apply `Observe -> Baseline -> Select -> Experiment -> Check -> Standardise -> Teach -> Re-measure` to kaizen itself. Missing render, device, accessibility, content, or reviewer evidence is `NOT ASSESSED`, never a pass.
