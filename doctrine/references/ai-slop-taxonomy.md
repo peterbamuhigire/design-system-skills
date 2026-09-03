@@ -96,6 +96,31 @@ doctrine-correct alternative.
 
 ---
 
+## Machine-error overlay for design
+
+**Observed shift:** The Kaizen input identifies polished output that adds reading or interaction
+cost without adding meaning; the signal is editorial and structural, not only lexical or visual.
+**Evidence grade:** weak for a universal design ban because the input is a qualitative owner report,
+not a prevalence study. **Design consequence:** use ME1-ME7 as a review overlay and watchlist, not as
+a new visual hard ban. **Scope:** interface copy, information architecture, repeated components,
+product feature framing, and handoff. **Date checked:** 2026-09-03.
+
+The Digital Research engine owns written-copy semantics; this engine applies the same ME1-ME7 lens
+to information architecture, repeated components, interface copy, and visual hierarchy:
+
+| ID | Design interpretation |
+|---|---|
+| ME1 | Adjacent screens, cards, or labels repeat the same user information without a new task or state. |
+| ME2 | Symmetric columns, cards, or alignment imply equal importance that the product does not support. |
+| ME3 | Onboarding, helper text, or UI copy explains after the user already has enough to act. |
+| ME4 | Visual scale, motion, colour, or AI branding makes an ordinary feature look more consequential than it is. |
+| ME5 | Placeholder imagery, examples, or copy could be swapped into any client or sector unchanged. |
+| ME6 | Repeated gradients, cards, icon rows, badges, or motion become a recognisable template tic. |
+| ME7 | A section, component, or visual flourish has no user task, decision, proof, or state to justify it. |
+
+Repeated UI is valid when it supports scanning, state recognition, accessibility, or a documented
+interaction model. Written-copy findings route to Digital Research's dated machine-error gate.
+
 ## How the engine uses this
 
 - The **`visual-product-slop-audit`** skill (`skills/00-cross-cutting-ops-qa-a11y/`) runs these

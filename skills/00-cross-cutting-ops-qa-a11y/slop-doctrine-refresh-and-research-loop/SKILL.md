@@ -65,6 +65,11 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
 7. **Run the design quality gate** and verify every active `SKILL.md` still has an example when a
    new skill is added.
 
+8. **Apply the machine-error overlay**: review whether a new visual or product pattern adds a user
+   task, state, decision, proof point, or meaningful hierarchy. Record ME1-ME7 findings in the
+   proposal delta; route prose semantics to Digital Research and mark incomplete evidence
+   `NOT_ASSESSED`.
+
 ## Anti-Patterns
 
 - Freezing a 2026 slop tell as permanent truth after models have moved.

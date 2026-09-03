@@ -74,6 +74,15 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
 - Declaring any polished generated image slop without naming a concrete tell and evidence.
 - Spot-fixing anatomy, text, or logo corruption instead of remaking the source asset.
 
+## Machine-error review overlay
+
+Apply the shared Digital Research machine-error gate to interface and product structure. Report
+ME1-ME7 when repeated meaning, decorative symmetry, over-explanation, inflated emphasis, generic
+examples, recurring visual tics, or insight-shaped product sections are evidenced. Compare adjacent
+components and the actual user flow. Preserve repeated states, labels, and accessibility cues when
+their function is documented; otherwise remove or redesign them. Written-copy findings route to the
+Digital Research gate.
+
 ## Quality Standards
 
 - Inspect focal details at delivery resolution and evaluate the feature in its actual flow.
