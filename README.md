@@ -6,6 +6,18 @@ Designers, product teams, frontend and mobile engineers, and documentation autho
 
 Use it alongside the relevant domain engine so presentation decisions stay explicit without copying design guidance into every repository. It is a referenced companion, not the owner of domain rules or implementation: for example, consult the <a href="https://github.com/peterbamuhigire/chwezi-accounting-doctrine" target="_blank" rel="noopener noreferrer">Chwezi Accounting Doctrine</a> for finance requirements while this engine remains the home for shared design skills.
 
+## Capability map
+
+| Need | Primary route |
+|---|---|
+| Typeface, type scale, and font pairing | `skills/01-typography-and-fonts/` |
+| Colour, brand, identity, and themes | `skills/02-color-brand-and-visual-identity/` |
+| Composition, grid, spacing, responsive layout, and visual hierarchy | `skills/03-layout-grid-and-composition/` |
+| Web, app, desktop, mobile, and sector UX | `skills/04-web-and-ui-design/` through `skills/07-mobile-ios-android-cross-platform/` |
+| Motion, interaction, design systems, tokens, and handoff | `skills/08-motion-and-interaction/` and `skills/09-design-systems-tokens-and-theming/` |
+| Content design, imagery, data visualisation, conversion, accessibility, and visual QA | `skills/10-content-design-and-ux-writing/` through `skills/14-conversion-and-web-page-patterns/` |
+| Game visual experience | `skills/15-game-visual-experience/` |
+
 > *The anti-AI-slop design engine — typography, colour, layout, and UI that look made by skilled human hands, not a template.*
 
 ---
