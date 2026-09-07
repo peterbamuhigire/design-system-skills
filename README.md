@@ -261,6 +261,10 @@ narrative information architecture, audience empathy, AI interface transparency,
 correction, contestability, drift awareness, and artist-to-implementation handoff. The
 *Anatomy for Artists* extraction was unreadable and contributes no substantive anatomy claims.
 
+## Current first-wave implementation (7 September 2026)
+
+The bounded first wave adds [`docs/kaizen/first-wave-design-delivery.md`](./docs/kaizen/first-wave-design-delivery.md) and [`docs/kaizen/first-wave-component-parity.md`](./docs/kaizen/first-wave-component-parity.md). These contracts require labelled inputs, authored design rationale, exact asset identity, normal and failure states, source/render comparison, component ownership and variance approval. The engine validator reported 89 fully compliant skills; the design-delivery evidence validator found zero manifest findings but correctly returned a CONDITIONAL verdict with delivery stages NOT ASSESSED. These are fixture specifications rather than completed client artefacts. Render fidelity, licence clearance, accessibility, visual quality and stakeholder acceptance remain unassessed until evidence is attached. Next action: attach one real or explicitly fictional rendered packet and conduct the blind review.
+
 ## Kaizen and product-audit contract
 
 For a ready-to-run product or project operation, use [`prompts/full-kaizen-operation.md`](prompts/full-kaizen-operation.md).
