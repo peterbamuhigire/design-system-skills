@@ -26,11 +26,11 @@ def _validate_stage_evidence(stage: str, value: dict, result: str, findings: lis
             if not isinstance(record, dict):
                 findings.append(f"stage {stage} evidence {index} must be an object")
                 continue
-            if record.get("type") not in ALLOWED_EVIDENCE_TYPES:
+            if not isinstance(record.get("type"), str) or record["type"] not in ALLOWED_EVIDENCE_TYPES:
                 findings.append(f"stage {stage} evidence {index} must have a retained evidence type")
             if not isinstance(record.get("reference"), str) or not record["reference"].strip():
                 findings.append(f"stage {stage} evidence {index} must provide a reference")
-            if record.get("verification") not in ALLOWED_VERIFICATIONS:
+            if not isinstance(record.get("verification"), str) or record["verification"] not in ALLOWED_VERIFICATIONS:
                 findings.append(
                     f"stage {stage} evidence {index} must state AUTOMATED or INDEPENDENT verification"
                 )
@@ -42,7 +42,7 @@ def _validate_stage_evidence(stage: str, value: dict, result: str, findings: lis
 def validate_manifest(manifest_path: Path) -> list[str]:
     try:
         data = json.loads(manifest_path.read_text(encoding="utf-8"))
-    except (OSError, json.JSONDecodeError) as exc:
+    except (OSError, UnicodeError, json.JSONDecodeError) as exc:
         return [f"cannot read manifest: {exc}"]
     if not isinstance(data, dict):
         return ["manifest root must be an object"]
@@ -50,20 +50,26 @@ def validate_manifest(manifest_path: Path) -> list[str]:
     for key in ("artifact_id", "artifact_type", "surfaces", "renders", "stages", "checks", "verdict", "owner"):
         if key not in data:
             findings.append(f"missing required field: {key}")
+    for key in ("artifact_id", "artifact_type", "owner"):
+        if not isinstance(data.get(key), str) or not data[key].strip():
+            findings.append(f"{key} must be non-empty text")
     surfaces = data.get("surfaces")
-    if not isinstance(surfaces, list) or not surfaces or any(not str(x).strip() for x in surfaces):
+    if not isinstance(surfaces, list) or not surfaces or any(not isinstance(x, str) or not x.strip() for x in surfaces):
         findings.append("surfaces must be a non-empty list")
     renders = data.get("renders")
     if not isinstance(renders, list) or not renders:
         findings.append("renders must be a non-empty list")
     else:
         for index, render in enumerate(renders):
-            if not isinstance(render, dict) or not str(render.get("path", "")).strip():
+            if not isinstance(render, dict) or not isinstance(render.get("path"), str) or not render["path"].strip():
                 findings.append(f"render {index} must provide a path")
                 continue
-            path = (manifest_path.parent / str(render["path"])).resolve()
-            if not path.is_file():
-                findings.append(f"render {index} not found: {render['path']}")
+            try:
+                path = (manifest_path.parent / render["path"]).resolve()
+                if not path.is_file():
+                    findings.append(f"render {index} not found: {render['path']}")
+            except (OSError, ValueError, RuntimeError) as exc:
+                findings.append(f"render {index} invalid or inaccessible path: {exc}")
     stages = data.get("stages")
     stage_results: dict[str, str] = {}
     if not isinstance(stages, dict):
@@ -78,7 +84,7 @@ def validate_manifest(manifest_path: Path) -> list[str]:
                 continue
             result = value.get("result")
             stage_results[stage] = str(result)
-            if result not in ALLOWED_RESULTS:
+            if not isinstance(result, str) or result not in ALLOWED_RESULTS:
                 findings.append(f"stage {stage} must have a valid result")
             else:
                 _validate_stage_evidence(stage, value, result, findings)
@@ -94,12 +100,16 @@ def validate_manifest(manifest_path: Path) -> list[str]:
         missing = sorted(REQUIRED_CHECKS - set(check_ids))
         findings.extend(f"missing required check: {item}" for item in missing)
         for index, check in enumerate(checks):
-            if not isinstance(check, dict) or check.get("result") not in ALLOWED_RESULTS:
+            if (not isinstance(check, dict) or not isinstance(check.get("result"), str)
+                    or check["result"] not in ALLOWED_RESULTS):
                 findings.append(f"check {index} must have a valid result")
+                continue
+            if not isinstance(check.get("id"), str) or not check["id"].strip():
+                findings.append(f"check {index} must have a non-empty id")
                 continue
             check_results[str(check["id"])] = str(check["result"])
     verdict = data.get("verdict")
-    if verdict not in ALLOWED_VERDICTS:
+    if not isinstance(verdict, str) or verdict not in ALLOWED_VERDICTS:
         findings.append(f"verdict must be one of {sorted(ALLOWED_VERDICTS)}")
     if verdict == "PASS":
         incomplete_stages = sorted(
@@ -131,7 +141,7 @@ def main() -> int:
     findings = validate_manifest(manifest_path)
     try:
         manifest_data = json.loads(manifest_path.read_text(encoding="utf-8"))
-    except (OSError, json.JSONDecodeError):
+    except (OSError, UnicodeError, json.JSONDecodeError):
         manifest_data = {}
     if not isinstance(manifest_data, dict):
         manifest_data = {}

@@ -104,9 +104,10 @@ AI nod as endorsement. See `references/ai-slop-banned-fonts.md` §Evidence basis
 
 Every font skill follows the same two-tier rule:
 
-1. **Baseline (always available):** the named standard fonts in `references/font-groups-and-usage.md`
-   are OFL/Google-Fonts faces. They never need files shipped — they are named, fetched (web),
-   or assumed installed, and are safe to embed.
+1. **Baseline candidates:** consult the named standard fonts in `references/font-groups-and-usage.md`.
+   Verify actual availability and the licence of the exact font files before use or embedding;
+   a catalogue name is not installation evidence or permission. If the required face cannot be
+   loaded lawfully in the target output, record the gap and select an approved available fallback.
 2. **Premium (use when present):** before committing, **scan `fonts/<matching-category>/`** for a
    purchased family the user has dropped in. If a premium family is present *and* its MANIFEST
    permits the intended use, prefer it when it would make the product look better. Otherwise

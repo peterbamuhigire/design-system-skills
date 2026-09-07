@@ -63,8 +63,8 @@ python -X utf8 scripts/validate_engine.py --baseline tests/quality-baseline.json
 python -X utf8 scripts/routing_smoke_test.py
 ```
 
-The first command may pass with documented baseline debt, but it must fail on any new defect.
-Reduce the baseline whenever a cohort is normalised. The routing test must pass without waivers.
+The current baseline is zero debt, not a waiver. Do not add findings to it to make
+a release pass. The routing test must pass without waivers.
 
 ## Stop conditions
 

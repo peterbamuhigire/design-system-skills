@@ -1,10 +1,65 @@
 import json
+import copy
+import pytest
+import subprocess
+import sys
 from pathlib import Path
 
 from scripts.validate_design_delivery_evidence import validate_manifest
 
 
 ROOT = Path(__file__).resolve().parents[1]
+
+
+@pytest.mark.parametrize('field', ['surfaces', 'path'])
+@pytest.mark.parametrize('value', [None, {}, [], True, '', ' '])
+def test_surface_and_render_types_name_their_findings(tmp_path, field, value):
+    original = ROOT / 'tests/fixtures/design-delivery/manifest.json'
+    data = json.loads(original.read_text(encoding='utf-8'))
+    if field == 'surfaces':
+        data['surfaces'] = [value]
+    else:
+        data['renders'][0]['path'] = value
+    path = tmp_path / 'manifest.json'
+    path.write_text(json.dumps(data), encoding='utf-8')
+    expected = 'surfaces must' if field == 'surfaces' else 'render 0 must provide a path'
+    assert any(expected in finding for finding in validate_manifest(path))
+
+
+def test_nul_render_path_fails_function_and_cli(tmp_path):
+    original = ROOT / 'tests/fixtures/design-delivery/manifest.json'
+    data = json.loads(original.read_text(encoding='utf-8'))
+    data['renders'][0]['path'] = 'bad\x00.svg'
+    path = tmp_path / 'manifest.json'
+    path.write_text(json.dumps(data), encoding='utf-8')
+    assert any('render 0 invalid or inaccessible path' in e for e in validate_manifest(path))
+    result = subprocess.run([sys.executable, str(ROOT / 'scripts/validate_design_delivery_evidence.py'), str(path)],
+                            capture_output=True, text=True)
+    assert result.returncode == 1
+    assert 'invalid or inaccessible path' in result.stdout
+    assert 'Traceback' not in result.stderr
+
+
+@pytest.mark.parametrize('value', [None, [], {}, True, '', ' '])
+@pytest.mark.parametrize('field', ['owner', 'artifact_id', 'artifact_type', 'verdict', 'stage_result', 'check_result', 'check_id', 'evidence_type', 'verification'])
+def test_malformed_nested_fields_fail_without_crash(tmp_path, field, value):
+    original = ROOT / 'tests/fixtures/design-delivery/manifest.json'
+    data = copy.deepcopy(json.loads(original.read_text(encoding='utf-8')))
+    for render in data['renders']:
+        render['path'] = str((original.parent / render['path']).resolve())
+    if field == 'stage_result':
+        data['stages']['generation']['result'] = value
+    elif field in ('check_result', 'check_id'):
+        data['checks'][0][field.removeprefix('check_')] = value
+    elif field in ('evidence_type', 'verification'):
+        record = {'type': 'command-log', 'reference': 'retained-log.txt', 'verification': 'AUTOMATED'}
+        record['type' if field == 'evidence_type' else 'verification'] = value
+        data['stages']['generation'] = {'result': 'PASS', 'evidence': [record]}
+    else:
+        data[field] = value
+    path = tmp_path / 'manifest.json'
+    path.write_text(json.dumps(data), encoding='utf-8')
+    assert validate_manifest(path)
 
 
 def test_design_delivery_fixture_is_conditionally_valid():
