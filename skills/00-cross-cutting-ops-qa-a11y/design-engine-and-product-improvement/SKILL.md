@@ -54,7 +54,9 @@ engine conformance.
 1. **Observe.** Inspect the current engine or product. For an engine, glob the live skill tree,
    read the router and applicable doctrine, and check references, examples, validators, and
    routing. For a product, cover the named surfaces and critical, empty, error, loading,
-   recovery, responsive, keyboard, and AI states.
+   recovery, responsive, keyboard, and AI states. For premium or client-facing work, also load
+   `references/purpose-fit-premium-ux-patterns.md` and inspect the purpose-fit brief, originality
+   rationale, real-content slice, and refinement evidence.
 2. **Baseline.** Score the applicable dimensions and record evidence, confidence, and gaps.
    The reported audit score is hard-capped at 65/100: `reported = min(raw score, 65)`. The cap
    is a reporting ceiling, not permission to ignore defects.
@@ -106,8 +108,8 @@ baseline with explicit assumptions; do not label it a measured improvement.
 - Every improvement plan targets 95/100 and includes gap, root cause, change, hypothesis, owner,
   evidence, risk, rollback, acceptance condition, and due cadence.
 - Product audits cover value/readability, narrative or task flow, typography, layout, contrast,
-  accessibility, interaction states, AI disclosure/control where relevant, performance, and
-  handoff/reuse.
+  accessibility, interaction states, AI disclosure/control where relevant, performance,
+  responsive stability, purpose-fit authorship, originality, and handoff/reuse.
 - Engine audits cover doctrine, routing, skill contract, references, worked examples, source
   provenance, validator coverage, degraded mode, and user-facing output evidence.
 - Current, legal, regulatory, platform, market, and accessibility claims use verified authority;
@@ -127,6 +129,9 @@ baseline with explicit assumptions; do not label it a measured improvement.
   stop/rollback trigger before the experiment.
 - **Using incomplete books as authority.** Correction: quarantine unreadable or unavailable
   chapters and route verification to Digital Research.
+- **Calling a copied visual reference premium.** Correction: preserve the user problem and
+  transferable principle, then require a client-specific thesis, signature decision, and context
+  demo before standardising.
 
 ## Outputs
 
@@ -144,16 +149,18 @@ baseline with explicit assumptions; do not label it a measured improvement.
 
 ## Mandatory Digital Research currentness gate
 
-Every Kaizen cycle must begin with `digital-research-skills` source evaluation
+Every Kaizen cycle must begin with `digital-research-engine` source evaluation
 and source verification. Record scope, dates, freshness class, support status,
 uncertainty, and review date for current design, accessibility, browser,
 platform, security, document, and lifecycle claims; quarantine unsupported
-claims as `NOT_ASSESSED`. Apply the [portfolio Kaizen currentness gate](../../../../digital-research-skills/docs/continuous-improvement/kaizen-currentness-gate.md).
+claims as `NOT_ASSESSED`. Apply the [portfolio Kaizen currentness gate](../../../../digital-research-engine/docs/continuous-improvement/kaizen-currentness-gate.md).
 
 ## References
 
 - `references/kaizen-audit-contract.md` - audit dimensions, evidence matrix, score cap, and
   95-target improvement-plan schema.
+- `references/purpose-fit-premium-ux-patterns.md` - Eleken-informed friction, dashboard,
+  authorship, and finish patterns translated into evidence-bearing design decisions.
 - `../../../docs/continuous-improvement/design-engine-book-upgrade-2026-08.md` - provenance,
   extraction limits, and decisions from the supplied books.
 - `../../../governance/design-quality-gate.md` - required evidence before declaring visual work

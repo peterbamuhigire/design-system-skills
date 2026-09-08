@@ -24,6 +24,30 @@ safe ones. This mission outranks convenience every time.
 
 ---
 
+### Premium authorship means purpose-fit craft
+
+The engine must produce work that is unique, world-class, premium, and artistically considered
+for the client and the job. This is a quality contract, not a promise that every client receives
+the same visual style. Premium means that the visual language, interaction model, information
+hierarchy, content, motion, and level of finish belong to this product rather than to a fashionable
+reference product.
+
+Every meaningful design output therefore needs a **purpose-fit design brief** before production:
+
+1. Name the client, audience, primary job, environment, stakes, and success measure.
+2. State one visual and experiential thesis in plain language.
+3. Record three authored decisions that express the thesis, and the user or business reason for
+   each.
+4. Name the references consulted as transferable principles only. Reject direct imitation of a
+   competitor's composition, gradient, copy, illustration language, or distinctive interaction.
+5. Show the design in context with real or representative content, critical states, responsive
+   behaviour, accessible alternatives, and a concrete refinement or demo loop.
+
+No single visual treatment is universally premium. A colourful marketing site, a quiet clinical
+dashboard, a dense operations console, and an editorial report may all be premium when their
+choices fit their audiences and consequences. A design that cannot explain its fit, authorship,
+and finished states is not ready to be called world-class; missing proof is `NOT ASSESSED`.
+
 ## 1. Purpose
 
 Typography, colour, layout, and visual identity are not domain concerns — they cut across

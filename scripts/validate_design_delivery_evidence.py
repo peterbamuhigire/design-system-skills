@@ -64,6 +64,9 @@ def validate_manifest(manifest_path: Path) -> list[str]:
             if not isinstance(render, dict) or not isinstance(render.get("path"), str) or not render["path"].strip():
                 findings.append(f"render {index} must provide a path")
                 continue
+            if "\x00" in render["path"]:
+                findings.append(f"render {index} invalid or inaccessible path: NUL byte")
+                continue
             try:
                 path = (manifest_path.parent / render["path"]).resolve()
                 if not path.is_file():

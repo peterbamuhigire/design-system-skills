@@ -12,7 +12,24 @@ inspection result, or explicit N/A reason is not evidence.
 
 - [ ] The selected skill owns the requested decision; the closest neighbour was considered.
 - [ ] Artefact, audience, surfaces, states, constraints, and acceptance conditions are named.
+- [ ] Client, audience, primary job, environment, stakes, and success measure are named.
+- [ ] One purpose-fit visual/experiential thesis and three authored decisions are recorded.
 - [ ] Missing context that would materially change the design caused a stop or a qualified draft.
+
+## Premium authorship and originality
+
+- [ ] The design language is derived from the client's product, content, audience, and domain
+      rather than copied from a reference product.
+- [ ] References are translated into principles; no distinctive competitor composition, gradient,
+      copy, illustration language, or interaction has been reproduced without a separate rights
+      and strategy decision.
+- [ ] The work has one memorable, defensible signature choice that improves recognition or use;
+      decoration that does not serve the job has been removed.
+- [ ] Real or representative content has been used to judge hierarchy, density, rhythm, and fit.
+- [ ] A concrete demo, render, or implemented slice has been reviewed through refinement; a
+      moodboard or static hero alone is not premium evidence.
+- [ ] Premium judgement is separated from measurable checks: taste and authorship are human
+      decisions, while accessibility, performance, responsiveness, and task outcomes are gates.
 
 ## Typography
 
@@ -57,6 +74,8 @@ inspection result, or explicit N/A reason is not evidence.
 ## Release evidence
 
 - [ ] All required states and target surfaces were inspected, not inferred from one happy path.
+- [ ] Empty, loading, error, recovery, success, keyboard, touch, reduced-motion, and long-content
+      states were inspected where applicable.
 - [ ] Rendered or implemented output was compared with the approved design where tooling exists.
 - [ ] Unverified checks, residual risks, waiver owner, and next action are recorded.
 - [ ] The final verdict is `PASS`, `CONDITIONAL`, or `BLOCKED`; `CONDITIONAL` cannot be described
