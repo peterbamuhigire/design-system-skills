@@ -1,0 +1,117 @@
+---
+name: data-illustration-and-infographics
+description: Use when designing a self-contained infographic, explanatory visual, annotated diagram, pictorial data story, or chart-led visual for print, presentation, web, or social; use data-visualization for one analytical chart and dashboard-and-data-product-design for dashboard systems.
+metadata:
+  portable: true
+  category: 12-data-viz-and-dashboards
+  compatible_with:
+  - claude-code
+  - codex
+---
+
+# Data Illustration And Infographics
+
+Own the visual translation of a complex idea into a memorable, truthful, self-contained visual argument.
+
+<!-- dual-compat-start -->
+## Use When
+
+- The output is an infographic, visual explainer, pictorial data story, annotated process, timeline, map-led story, comparison poster, or chart-and-illustration composition.
+- The visual must work without a live presenter explaining every element.
+- The brief needs an authored metaphor, human warmth, editorial hierarchy, or a distinctive visual signature in addition to accurate data.
+- A chart alone is not enough because the audience needs context, sequence, mechanism, or a conclusion.
+
+## Do Not Use When
+
+- The task is one analytical chart with no multi-element story; use `data-visualization`.
+- The task is chart-type selection; use `chart-selection-and-encoding`.
+- The task is a dashboard page, KPI tile system, drill-down, or cross-filtered data product; use `dashboard-and-data-product-design`.
+- The task is only brand colour, typography, illustration production, or accessibility remediation; route to the matching sibling skill and use this skill only for the infographic story.
+
+## Required Inputs
+
+| Artefact or context | Source | Required? | Why |
+|---|---|---:|---|
+| Decision, audience, desired action, and single takeaway | Brief owner | yes | Defines the visual thesis and stopping point |
+| Validated data, definitions, units, period, denominators, and uncertainty | Data owner or evidence pack | yes for factual claims | Prevents persuasive decoration from becoming misinformation |
+| Medium, dimensions, viewing distance, responsive target, and distribution context | Publisher | yes | Controls density, type size, interaction, and alternate formats |
+| Brand, cultural, tone, and subject-sensitivity constraints | Brand or domain owner | conditional | Prevents a playful treatment from trivialising a serious subject |
+| Licensed assets, fonts, icons, image provenance, and AI-output status | Production owner | conditional | Establishes lawful, attributable production |
+
+## Workflow
+
+1. **Frame the job.** Write the audience, decision, consequence of misunderstanding, medium, and one-sentence visual thesis. Load `doctrine/design-doctrine.md` and the portfolio craft loop.
+2. **Reduce the editorial question.** Convert the brief into one primary question, one conclusion, and no more than three supporting beats. Put surplus facts in an appendix or companion text.
+3. **Audit the evidence.** Check source, definitions, missingness, scale, uncertainty, and whether each number supports the intended conclusion. Route current claims through Digital Research; books supply durable concepts only.
+4. **Choose the visual grammar.** Decide whether the story is comparative, temporal, spatial, proportional, causal, procedural, categorical, or explanatory. Choose the most truthful chart or diagram before styling.
+5. **Invent the metaphor deliberately.** Select one visual metaphor or pictorial vocabulary that improves comprehension and belongs to this subject. Record why it fits; reject borrowed compositions and decorative metaphor that competes with the data.
+6. **Storyboard the reading path.** Sketch title, orientation, main exhibit, annotations, supporting detail, source note, and conclusion in the order a reader will scan. Use generous space and a clear entry point.
+7. **Build in layers.** Establish the data layer first, then labels and annotations, then restrained illustration, then brand and finishing details. Use one focal accent and a controlled type pair; consult colour, typography, composition, imagery, and accessibility siblings.
+8. **Make the visual self-explaining.** Direct-label important values, explain symbols, show units and period, state the conclusion, and provide alt text or a text-equivalent narrative. Never make a legend, colour, or animation carry meaning alone.
+9. **Exercise failure paths.** Test a missing value, long label, narrow viewport, greyscale print, colour-vision deficiency, 200% zoom, screen reader reading order, and a serious-topic or low-attention interpretation.
+10. **Render, refine, and record.** Inspect at the target size and a reduced thumbnail. Remove one unnecessary element, correct one ambiguity, and retain the design decision that works. Record source/rights, assumptions, checks, reviewer, and unresolved `NOT_ASSESSED` items.
+
+## Decision Rules
+
+| Condition | Action | Wrong-choice failure |
+|---|---|---|
+| The reader must compare exact magnitudes | Use position or length on a common scale; add direct labels | Pictograms or area imply false precision |
+| The story is a process or mechanism | Use a numbered sequence or diagram with directional cues | A decorative collage hides causality |
+| The audience needs a memorable entry point | Add one restrained metaphor or human detail that preserves the data | Novelty becomes the subject and the conclusion disappears |
+| Data is uncertain, incomplete, or estimated | Show range, missingness, definition, and confidence in plain language | A clean icon or single number implies certainty |
+| The topic involves harm, grief, inequality, illness, or trauma | Use warmth and clarity without jokes, caricature, gamification, or sensational contrast | Humour trivialises the subject or damages trust |
+| The output will be read on mobile or shared as an image | Create a mobile composition or split sequence; preserve type size and text alternative | Shrinking the desktop poster makes it unreadable |
+| A visual choice cannot be explained by audience, message, or medium | Remove it or mark it as an experiment | Decoration masquerades as design |
+
+## Capability Contract
+
+- Read and search are required for the brief, evidence, existing brand system, and source/rights record.
+- Calculation or data inspection is required when quantities are encoded.
+- Editing and rendering are required for production; accessibility inspection includes keyboard or reading order where applicable, text alternatives, contrast, and greyscale/CVD checks.
+- Network access is required only for authorised current-source or asset/licence verification. Publication, paid distribution, or third-party contact needs separate authority.
+
+## Degraded Mode
+
+- Without validated data, produce a labelled storyboard or visual specification, never a factual infographic.
+- Without rendering, provide source, dimensions, type scale, checks, and a `NOT_ASSESSED` visual review; do not call the artifact finished.
+- Without licensed assets or font evidence, use placeholders or an approved available baseline and mark rights `NOT_ASSESSED`.
+- Without accessibility tooling, provide the text-equivalent narrative and a manual checklist, then block release of accessibility-critical work until checked.
+
+## Anti-Patterns
+
+- **Poster-shaped data dump.** Fix: choose one conclusion and demote or remove everything else.
+- **Decorative pictograms used as a measurement scale.** Fix: encode comparison with a truthful chart and use illustration only for orientation or metaphor.
+- **Rainbow, red/green-only, or colour-only meaning.** Fix: use a tested semantic scale plus labels, shapes, patterns, or line styles.
+- **Humour pasted onto a serious subject.** Fix: use approachable language and humane spacing without comedy.
+- **Unlabelled estimates, cropped baselines, or missing denominators.** Fix: show units, period, base, uncertainty, and source beside the claim.
+- **AI-generated sameness: gradient, card grid, generic icons, and stock imagery.** Fix: define a visual thesis and make three defensible authored choices before production.
+- **One desktop canvas mechanically shrunk for every channel.** Fix: recompose for print, presentation, mobile, and social with a text alternative.
+
+## Outputs
+
+| Artefact | Consumer | Evidence and acceptance condition |
+|---|---|---|
+| Infographic or visual explainer | Intended reader or publisher | One takeaway is visible, the data is truthful, the reading path is clear, and the target render is reviewed |
+| Storyboard and visual decision record | Designer, analyst, or AI production tool | Metaphor, chart/diagram choice, hierarchy, type, colour, rights, and accessibility decisions are explicit |
+| Text-equivalent and source note | Accessibility reviewer and downstream publisher | All material content, units, uncertainty, and provenance remain available without the graphic |
+
+## Evidence Produced
+
+- Brief and visual thesis.
+- Data/source/rights register with durable book concepts separated from current claims.
+- Chart/diagram selection and encoding record.
+- Render, accessibility, responsive, greyscale, and reader-path checks.
+- Reviewer observation, unresolved gaps, rollback or recovery action, and re-audit date.
+
+## Examples
+
+- See `examples/infographic-worked-spec.md` for a complete illustrative decision and storyboard.
+
+## References
+
+- [`doctrine/design-doctrine.md`](../../../doctrine/design-doctrine.md) for purpose-fit authorship and anti-slop rules.
+- [`references/infographic-systems.md`](references/infographic-systems.md) for the book-informed editorial, visual, and production system.
+- [`../data-visualization/SKILL.md`](../data-visualization/SKILL.md) for analytical chart accuracy and accessibility.
+- [`../chart-selection-and-encoding/SKILL.md`](../chart-selection-and-encoding/SKILL.md) for chart choice and perceptual encoding.
+- `00-cross-cutting-ops-qa-a11y/` for accessibility, ethics, performance, and visual QA co-activation.
+<!-- dual-compat-end -->
