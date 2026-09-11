@@ -134,6 +134,16 @@ Without original-resolution assets or live-flow access, audit the supplied evide
   embedded AI chat panel: findings (tagged critical/major/minor) → remake/remediate dispositions
   with the human-craft alternative named for each.
 
+## Responsibility overlay
+
+The 25 writing signs are non-diagnostic. Route copy and authorship questions to Digital Research;
+this skill owns the visual consequence: does each chart, label, icon, image, hierarchy, and motion
+serve a named user task, state, accessibility need, brand rule, or evidence point? Audit data scope,
+date, source, and annotation fit; label hypothetical examples and generated assets where confusion
+would matter. Missing render, browser, provenance, or human-review evidence is `NOT_ASSESSED`.
+
+- Shared standard: [`AI-slop responsible publishing`](../../../../skills-web-dev/references/ai-slop-responsible-publishing-standard-2026-09-11.md)
+
 ## References
 
 - `references/visual-tells-checklist.md` — the concrete, tickable image + product/interface tells

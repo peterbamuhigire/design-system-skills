@@ -127,6 +127,16 @@ Without current research access, return the question set and source plan, keep d
 - `examples/font-default-refresh-note.md` - classifies an emerging AI-default font signal and
   decides whether it becomes a hard ban, watchlist item, or rejected claim.
 
+## Responsibility overlay
+
+Do not promote a style irritation into a design ban. Classify a visual pattern as a task failure,
+provenance gap, accessibility defect, generic convergence, or contextual preference, and record
+the evidence mode. The 25 writing signs remain editorial prompts owned by Digital Research; this
+engine translates only evidenced visual consequences. Keep intentional repetition and design-system
+consistency when their function is recorded; otherwise remediate or mark the check `NOT_ASSESSED`.
+
+- Shared standard: [`AI-slop responsible publishing`](../../../../skills-web-dev/references/ai-slop-responsible-publishing-standard-2026-09-11.md)
+
 ## References
 
 - `doctrine/references/living-slop-refresh-protocol.md` - required update protocol.
