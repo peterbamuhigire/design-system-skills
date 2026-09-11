@@ -98,6 +98,7 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - `doctrine/design-doctrine.md` — the anti-slop charter; grounding interaction choices in proven patterns is how this skill avoids the convergent AI-generic interface.
 - `doctrine/references/ai-slop-taxonomy.md` — the product/interface slop tells (e.g. an AI feature where standard navigation was faster) these patterns guard against.
 - Use the `sections/` directory for modular deep dives and load only the parts relevant to the task.
+- [Question-answering visual prototypes](references/question-answering-visual-prototypes.md)
 <!-- dual-compat-end -->
 Grounded in Tidwell, Brewer & Valencia (2020) *Designing Interfaces*, 3rd ed. — the industry's definitive interaction design pattern library. These patterns describe how real humans behave with software and what interface structures consistently work.
 

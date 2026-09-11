@@ -29,7 +29,7 @@ Design *within* these, do not fight them:
 
 ---
 
-## 2. Boilerplate document head (MSO conditionals + meta)
+## 2. Document foundation pattern (MSO conditionals + meta)
 
 ```html
 <!DOCTYPE html>

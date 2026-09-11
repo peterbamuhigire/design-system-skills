@@ -1,7 +1,6 @@
 ---
 name: email-and-newsletter-design
-description: Use when designing, building, or debugging HTML email and newsletters across Outlook, Gmail, Apple Mail, dark mode, mobile, image-off, and limited-CSS conditions. Use ux-writing-and-microcopy for subject, preheader, and CTA wording, and responsive layout skills for non-email surfaces.
-  copy).
+description: Use when designing, building, or debugging purpose-specific HTML email and newsletters across Outlook, Gmail, Apple Mail, dark mode, mobile, image-off, and limited-CSS conditions; use ux-writing-and-microcopy for message wording.
 metadata:
   portable: true
   category: 13-presentations-and-documents
@@ -83,6 +82,12 @@ degradation* beats five choices that only render in one client.
 - Light and dark versions of the **logo/key images** (a dark-mode logo swap is often required).
 
 ## Workflow
+0. **Design the message before the markup.** Derive hierarchy from the audience, event, decision,
+   content priority, brand voice, and image-off reading order. Choose one focal message, one primary
+   action where an action exists, supporting proof or transaction detail, and recovery or legal
+   controls. Do not select or imitate a prebuilt layout; compose the structure for this message and
+   record why each retained block earns its space.
+
 1. **Accept the constrained model before writing markup.** Email is built with **HTML tables for
    layout** (not divs/flex/grid), **inline CSS on every element** (a `<style>` head block is a
    progressive *enhancement*, not the foundation, because Gmail and others strip or partially
@@ -90,7 +95,7 @@ degradation* beats five choices that only render in one client.
    attributes (`role="presentation"`, `cellpadding`, `cellspacing`, `border="0"`,
    `align`/`valign`) that Word-engine Outlook still needs. State this constraint, then design
    *within* it — do not design a web layout and hope. See `references/email-bulletproof-patterns.md`
-   §1 (the model) and §2 (the boilerplate document head with the Outlook MSO conditionals and
+   §1 (the model) and §2 (the document foundation pattern with Outlook MSO conditionals and
    meta tags).
 
 2. **Build the responsive layout as fluid or hybrid, not container-query-driven.** Email cannot
@@ -266,18 +271,19 @@ Without client rendering, deliver HTML and a conditional compatibility matrix. S
   responsive approach (fluid vs hybrid/spongy); the type plan **named fallback-first** (web-safe
   stack + optional guarded webfont, no banned primary); the dark-mode treatment (and dark logo
   swap); and the preheader intent.
-- The email HTML itself — table-structured, inline-CSS, bulletproof button(s), hidden preheader,
-  dark-mode media block, image-off alt strategy — see `examples/email-template-spec.md`.
+- The email HTML itself, composed for the approved message rather than selected from a template:
+  table-structured, inline-CSS, bulletproof action where needed, hidden preheader, dark-mode handling,
+  and image-off alt strategy.
 - A completed Email Render Checklist plus the list of clients tested (incl. a real Outlook and a
   real dark-mode pass), consistent with the Mission in `doctrine/design-doctrine.md` §0 and the AA
   floor in `doctrine/references/wcag-2.2-criteria.md`.
 
 ## Examples
-- `examples/email-template-spec.md` — a complete worked spec for a responsive
-  newsletter email: the boilerplate document head (MSO conditionals + meta), a hybrid/spongy
-  two-column-to-stacked body, a bulletproof VML+anchor button, the hidden preheader, the
-  fallback-first type stack with an Outlook-guarded webfont, and the dark-mode block with a logo
-  swap — annotated against the render checklist. No lorem; real newsletter content.
+
+A security-alert email prioritises the affected account, observed event, time, immediate protective
+action, and recovery/support path. It does not inherit the hierarchy of a newsletter or receipt.
+Design its image-off reading order first, then select only the compatibility patterns required by its
+content. This is a decision example, not reusable markup or a layout template.
 
 ## References
 - [`doctrine/design-doctrine.md`](../../../doctrine/design-doctrine.md) — §0 Mission (the authored
@@ -290,8 +296,8 @@ Without client rendering, deliver HTML and a conditional compatibility matrix. S
   typeface (doubly relevant because email usually shows the *fallback*).
 - `doctrine/references/embedding-by-format.md` — webfont loading by format; email's partial
   `@font-face` support and why the fallback is load-bearing here.
-- `references/email-bulletproof-patterns.md` — the full pattern library: constrained model + head
-  boilerplate, hybrid/spongy responsive, hidden preheader, bulletproof VML/anchor button,
+- `references/email-bulletproof-patterns.md` — compatibility patterns selected after the message
+  structure is designed: constrained model + document foundation, hybrid/spongy responsive, hidden preheader, bulletproof VML/anchor button,
   fallback-first type, dark-mode + logo swap, image-off resilience, accessibility.
 - Pairs with `03-layout-grid-and-composition/responsive-and-adaptive-layout` (responsive
   philosophy, constrained to email) and `10-content-design-and-ux-writing/ux-writing-and-microcopy`

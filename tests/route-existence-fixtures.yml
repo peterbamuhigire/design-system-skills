@@ -14,10 +14,10 @@
   source: skills/00-cross-cutting-ops-qa-a11y/design-ethics-and-anti-dark-patterns/SKILL.md
   reference: examples/ethics-audit-filled.md
   target: skills/00-cross-cutting-ops-qa-a11y/design-ethics-and-anti-dark-patterns/examples/ethics-audit-filled.md
-- id: email-worked-example
+- id: email-compatibility-patterns
   source: skills/13-presentations-and-documents/email-and-newsletter-design/SKILL.md
-  reference: examples/email-template-spec.md
-  target: skills/13-presentations-and-documents/email-and-newsletter-design/examples/email-template-spec.md
+  reference: references/email-bulletproof-patterns.md
+  target: skills/13-presentations-and-documents/email-and-newsletter-design/references/email-bulletproof-patterns.md
 - id: ui-craft-route
   source: skills/02-color-brand-and-visual-identity/brand-visual-identity/references/brand-consistency-gate.md
   reference: 04-web-and-ui-design/distinctive-by-design
