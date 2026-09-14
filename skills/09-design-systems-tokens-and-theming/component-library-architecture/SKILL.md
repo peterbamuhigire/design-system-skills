@@ -105,4 +105,7 @@ Without repository access, return a proposed inventory, API, and state matrix ra
 - `references/component-doc-template.md` — the per-component documentation template (anatomy, variant API, state matrix, a11y contract, do/don't).
 - Sibling: `design-tokens-and-naming` (tokens this skill consumes), `dark-mode-and-theming`, `design-handoff-and-dev-spec`, `accessibility-wcag-2-2-compliance`.
 - Practitioner cross-check: [Eleken design-system checklist](https://www.eleken.co/blog-posts/design-system-checklist) and [design-consistency guide](https://www.eleken.co/blog-posts/design-consistency). Use for operating prompts only; do not import outcomes or benchmarks.
+## Book-informed practice route
+
+Use [the 2026-09-14 design-system engineering synthesis](../../../docs/book-study/2026-09-14-design-system-engineering-synthesis.md) for scenario-led component contracts and complete state coverage.
 <!-- dual-compat-end -->

@@ -214,4 +214,7 @@ tests but leave fidelity results unverified.
 - Standards (named for provenance, not in-repo): WCAG 2.2; W3C Design Tokens Format Module (the token
   names referenced); common spec-handoff practice (Figma Dev Mode, redline annotation, Gherkin-style
   acceptance criteria).
+## Book-informed practice route
+
+Use [the 2026-09-14 design-system engineering synthesis](../../../docs/book-study/2026-09-14-design-system-engineering-synthesis.md) to connect visual handoff to behaviour, tokens, accessibility, and acceptance evidence.
 <!-- dual-compat-end -->

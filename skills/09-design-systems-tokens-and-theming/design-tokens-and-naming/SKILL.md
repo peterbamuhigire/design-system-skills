@@ -201,4 +201,7 @@ checks and block release of generated platform packages.
   WCAG-gated pairs) and `09-…/dark-mode-and-theming` (the dark palette remap craft).
 - Standards (named for provenance, not in-repo): W3C Design Tokens Format Module
   (`$value`/`$type`); OKLCH (CSS Color 4); Amazon Style Dictionary.
+## Book-informed practice route
+
+Use [the 2026-09-14 design-system engineering synthesis](../../../docs/book-study/2026-09-14-design-system-engineering-synthesis.md) for source-of-truth, token tiers, transformations, and adoption evidence.
 <!-- dual-compat-end -->
