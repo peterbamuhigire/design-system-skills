@@ -24,6 +24,13 @@ Use it alongside the relevant domain engine so presentation decisions stay expli
 
 ## Latest update: zero-debt skill-contract conformance
 
+## Prompt-generation capability — September 2026
+
+Visual work now receives prompts that separate intent, composition, hierarchy,
+type, colour, interaction, accessibility, references, responsive states, and
+visual acceptance checks through the local [domain prompt
+contract](docs/ai-prompting/domain-prompt-compilation-contract.md).
+
 The current filesystem-backed inventory (2026-08-16) contains 89 active skills, all conforming to
 the engine's portable authoring contract. Each
 skill now declares routing boundaries, inputs, outputs, capabilities, degraded behaviour,

@@ -103,6 +103,10 @@ When the sibling-engine workspace is available, also inspect declared external h
 Missing sibling repositories are reported as `NOT ASSESSED`, not as a pass; the local route gate
 remains independently runnable from this repository.
 
+## DOMAIN PROMPT GENERATION CONTRACT
+
+For a prompt handoff, read the local [domain prompt contract](docs/ai-prompting/domain-prompt-compilation-contract.md). Generate a ready-to-paste visual prompt with audience/job, real content, visual thesis, hierarchy, composition, typeface and reason, colour, states, accessibility, licensing, output, and render checks. **Ready-to-paste prompt:** include assumptions, asset/accessibility risks, and next action. **Failure action:** correct one perceptual defect or rebuild when the visual system is wrong.
+
 ## PORTFOLIO CRAFT CONTRACT
 
 Load `C:\wamp64\www\chwezi-engine-agents\docs\operations\portfolio-craft-standard-2026-09-04.md` when available. Design in perceptible slices: frame the user job and visual thesis, choose one component or flow, inspect the surrounding system and real content, make one purposeful change, render it in context, check hierarchy, states, contrast, motion, input, and responsive behaviour, refine, and record the visual proof. Every typeface, colour, spacing, asset, radius, shadow, and animation needs a product reason; remove decorative defaults. Do not generate a complete polished-looking system without reviewing its actual screens or artefacts. Apply `Observe -> Baseline -> Select -> Experiment -> Check -> Standardise -> Teach -> Re-measure` to kaizen itself. Missing render, device, accessibility, content, or reviewer evidence is `NOT ASSESSED`, never a pass.
