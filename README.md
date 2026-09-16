@@ -24,7 +24,9 @@ Use it alongside the relevant domain engine so presentation decisions stay expli
 
 ## Latest update: zero-debt skill-contract conformance
 
-## Prompt-generation capability — September 2026
+## Prompt-generation capability — 2026-09-17
+
+This release adds evidence-first candidate testing, failure-slice review, and explicit `NOT_ASSESSED` handling for volatile prompt claims.
 
 Visual work now receives prompts that separate intent, composition, hierarchy,
 type, colour, interaction, accessibility, references, responsive states, and
