@@ -50,7 +50,7 @@ The shared control plane is adapted to visual and document work in
 registry is `C:\wamp64\www\skills-web-dev\docs\engine-control-plane.json`.
 
 Cross-cutting design & typography engine. Compatible with Claude Code and Codex-style agents.
-Mirror of the guidance in `CLAUDE.md`, kept for dual-compat tooling.
+Extends the guidance in `CLAUDE.md` with runner-neutral operations and the Codex adapter, kept for dual-compat tooling.
 
 ## Protocol
 
@@ -94,7 +94,7 @@ python -X utf8 scripts/validate_engine.py --baseline tests/quality-baseline.json
 python -X utf8 scripts/routing_smoke_test.py
 ```
 
-The baseline is zero-debt: all 89 active skills currently pass the local contract. The validator
+The baseline is zero-debt: all 91 active skills currently pass the local contract. The validator
 derives the active count from `skills/**/SKILL.md`; any new finding is a CI regression and must be
 fixed before release.
 

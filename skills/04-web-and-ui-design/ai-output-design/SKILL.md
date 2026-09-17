@@ -164,7 +164,7 @@ See `references/verifiability-patterns.md`.
 
 Users trust an output when they know **the lens the model used**. Surface:
 
-- Model + version ("Codex Sonnet 4.6").
+- Model + version (e.g. "Claude Sonnet 4.5" or "GPT-5").
 - Agent / tool used ("Used Web Search").
 - Locale / jurisdiction ("Answer framed for UK law").
 - Mode ("Fast mode vs Thinking mode").

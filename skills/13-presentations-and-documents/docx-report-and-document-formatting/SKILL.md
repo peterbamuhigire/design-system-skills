@@ -30,7 +30,7 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
 
 - The deliverable is a **print-ready/branded PDF** proposal with cover and divider systems —
   use `pdf-proposal-and-bankable-document-design` (group 13).
-- The artifact is a **slide deck** — use `pitch-deck-narrative-and-craft` / `deck-system`.
+- The artifact is a **slide deck** — use `deck-system`.
 - A **spreadsheet** is the primary output — use the `xlsx` document skill.
 - You only need to **load/embed a font**, with no document structure work — use
   `font-embedding-and-licensing` (group 01).

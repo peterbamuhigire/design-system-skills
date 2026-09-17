@@ -323,7 +323,7 @@ for per-archetype asset budgets.
 ```
 # Design Audit Report
 **Date:** [Date]
-**Auditor:** Codex (AI-assisted)
+**Auditor:** [AI runner name] (AI-assisted)
 **Target:** [Screen/feature name]
 **Platform:** [Web/Android/iOS]
 **Context:** [Brief description of purpose and users]

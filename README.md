@@ -33,7 +33,7 @@ type, colour, interaction, accessibility, references, responsive states, and
 visual acceptance checks through the local [domain prompt
 contract](docs/ai-prompting/domain-prompt-compilation-contract.md).
 
-The current filesystem-backed inventory (2026-08-16) contains 89 active skills, all conforming to
+The current filesystem-backed inventory (2026-08-16) contains 91 active skills, all conforming to
 the engine's portable authoring contract. Each
 skill now declares routing boundaries, inputs, outputs, capabilities, degraded behaviour,
 decision rules, stop/recovery conditions, evidence, and acceptance criteria. The repository also
@@ -169,7 +169,7 @@ design-system-skills/
 │   ├── design-doctrine.md         ← always-load charter
 │   ├── references/                ← banned list, font categories, pairing, type scale, embedding, licensing
 │   └── examples/
-├── skills/                        ← 15 domain groups + 1 cross-cutting (co-activates) · 89 active skills
+├── skills/                        ← 15 domain groups + 1 cross-cutting (co-activates) · 91 active skills
 │   ├── 00-cross-cutting-ops-qa-a11y/   (13) ← accessibility, QA, audits, ethics — always-on
 │   ├── 01-typography-and-fonts/        (6)
 │   ├── 02-color-brand-and-visual-identity/ (7)
@@ -248,9 +248,9 @@ python -X utf8 scripts/routing_smoke_test.py
 The 2026-08-16 POS operations addition added a general ERP POS engineering handoff for tenant
 defaults, three operational POS surfaces, product-to-finished-stock identity, stock timing,
 canonical posting, permissions, idempotency, and reconciliation. The filesystem-backed inventory
-now contains 89 active skills.
+now contains 91 active skills.
 
-The baseline records zero contract findings across all 89 active skills. Any new structural or
+The baseline records zero contract findings across all 91 active skills. Any new structural or
 contract finding fails CI. Routing fixtures must continue to achieve 100% precision at the
 top-three acceptance threshold.
 
