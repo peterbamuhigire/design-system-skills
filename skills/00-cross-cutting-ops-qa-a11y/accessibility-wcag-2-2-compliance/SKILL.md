@@ -201,4 +201,6 @@ claim that the experience passes the full gate.
   focus management, visible/unobscured focus, and the manual keyboard-audit checklist.
 - Pairs with `00-cross-cutting-ops-qa-a11y/design-qa-and-pre-launch-review` (final gate) and
   `02-color-brand-and-visual-identity/accessible-color-and-contrast` (palette/contrast).
+- Use `../../../docs/kaizen/phase-1-task-mobile-accessibility-evidence-pack.md` for the
+  task, mobile, state, manual-assistive-technology, and `NOT_ASSESSED` handoff record.
 <!-- dual-compat-end -->

@@ -170,4 +170,9 @@ claims as `NOT_ASSESSED`. Apply the [portfolio Kaizen currentness gate](../../..
   product coverage, and execution without duplicating their domain logic.
 - `../../../doctrine/references/book-driven-brand-story-and-visual-evidence.md` - durable brand/story synthesis with visual evidence and current accessibility gate.
 - [Book-driven Kaizen Wave 3](references/book-driven-kaizen-wave-3-2026-09-02.md) - task-first communication, perceptual integrity, image quality, text alternatives, and current accessibility/performance verification.
+- `../../../docs/kaizen/phase-1-intentional-omission-review.md` - omission rationale,
+  alternatives, accessibility impact, and reviewer decision record.
+- `../../../docs/kaizen/phase-1-candidate-guardrail-evaluation-pack.md` - reversible
+  candidate experiment, guardrails, evidence matrix, and rollback contract.
+- `../../../docs/kaizen/phase-1-design.md` - Phase 1 scope, currentness, and deferred-evidence record.
 <!-- dual-compat-end -->

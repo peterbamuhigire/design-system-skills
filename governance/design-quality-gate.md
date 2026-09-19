@@ -8,6 +8,24 @@ For a meaningful change, record the gate evidence in
 `templates/design-delivery-evidence.md`. A checked box without a linked render, measurement,
 inspection result, or explicit N/A reason is not evidence.
 
+## Phase 1 evidence routing
+
+Use the Phase 1 packs when the change includes a deliberate omission, a
+candidate experiment, or a mobile/accessibility handoff:
+
+- `docs/kaizen/phase-1-intentional-omission-review.md` records the user job,
+  replacement/recovery path, accessibility impact, owner, and decision.
+- `docs/kaizen/phase-1-candidate-guardrail-evaluation-pack.md` records the
+  baseline/candidate comparison, guardrails, rollback, and evidence class.
+- `docs/kaizen/phase-1-task-mobile-accessibility-evidence-pack.md` records the
+  task, state matrix, viewport/device evidence, manual accessibility checks,
+  and `NOT_ASSESSED` gaps.
+
+These records extend the gate; they do not replace a retained render,
+measurement, keyboard/assistive-technology check, or accountable reviewer
+decision. Missing evidence remains `NOT_ASSESSED`, and any applicable AA
+failure blocks a `PASS` decision.
+
 ## Routing and scope
 
 - [ ] The selected skill owns the requested decision; the closest neighbour was considered.

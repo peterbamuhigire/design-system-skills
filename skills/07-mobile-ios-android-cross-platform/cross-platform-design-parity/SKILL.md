@@ -131,4 +131,6 @@ See `references/ios-vs-android-idioms.md` for the element-by-element divergence 
   state, permissions, native APIs, offline/sync, list performance, responsive layout, and
   build/release constraints.
 - Pair with `ios-ui-ux-design` and `android-ui-ux-design` (same group) — this skill decides the split; those two skills perfect each native side.
+- Use `../../../docs/kaizen/phase-1-task-mobile-accessibility-evidence-pack.md` to retain
+  task, viewport, state, touch, keyboard, and accessibility evidence for the parity handoff.
 <!-- dual-compat-end -->

@@ -295,3 +295,10 @@ layout, interaction, narrative, accessibility, readability, performance, handoff
 Route current design research and changing platform claims through the <a href="https://github.com/peterbamuhigire/digital-research-skills" target="_blank" rel="noopener noreferrer">Digital Research Engine</a>.
 See `skills/00-cross-cutting-ops-qa-a11y/design-engine-and-product-improvement/` and
 `docs/continuous-improvement/design-engine-book-upgrade-2026-08.md`.
+
+The Phase 1 governance wave adds the [intentional omission review](docs/kaizen/phase-1-intentional-omission-review.md),
+[candidate/guardrail/evaluation pack](docs/kaizen/phase-1-candidate-guardrail-evaluation-pack.md),
+and [task/mobile/accessibility evidence pack](docs/kaizen/phase-1-task-mobile-accessibility-evidence-pack.md),
+with scope and currentness recorded in [phase-1-design.md](docs/kaizen/phase-1-design.md).
+These packs preserve the design quality gate and keep missing renders, device runs,
+assistive-technology evidence, and reviewer decisions explicitly `NOT_ASSESSED`.
