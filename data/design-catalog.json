@@ -1,0 +1,201 @@
+{
+  "schema_version": "1.0",
+  "catalog_revision": "2026-09-20-books-and-doctrine-v1",
+  "records": [
+    {
+      "id": "product-outcome-first",
+      "domain": "product",
+      "title": "Outcome-first product surface",
+      "tags": ["product", "outcome", "brief", "workflow", "decision"],
+      "status": "active",
+      "content": {
+        "use_when": "A product request is vague or spans multiple screens.",
+        "practice": "State audience, job, desired outcome, constraints, decision authority, and success measure before choosing a visual pattern.",
+        "checks": ["problem is distinct from solution", "primary decision is named", "failure and recovery are in scope"]
+      },
+      "evidence": {"source_type": "original_synthesis", "reviewed": "2026-09-20"}
+    },
+    {
+      "id": "style-legacy-flat",
+      "domain": "style",
+      "title": "Legacy flat interface baseline",
+      "tags": ["style", "legacy", "flat", "baseline"],
+      "status": "deprecated",
+      "content": {
+        "use_when": "Historical comparison only.",
+        "practice": "Do not recommend as a current default; retain only to explain migration decisions.",
+        "checks": ["label as legacy", "record migration path"]
+      },
+      "evidence": {"source_type": "original_synthesis", "reviewed": "2026-09-20"}
+    },
+    {
+      "id": "style-feature-first-hierarchy",
+      "domain": "style",
+      "title": "Feature-first hierarchy and authored restraint",
+      "tags": ["style", "hierarchy", "grayscale", "spacing", "personality", "empty-state"],
+      "status": "active",
+      "content": {
+        "use_when": "A screen feels generic, noisy, or visually unresolved.",
+        "practice": "Establish structure and hierarchy in grayscale, then add type, colour, depth, imagery, and personality as deliberate system choices.",
+        "checks": ["primary action is obvious", "secondary content is de-emphasised", "empty and error states are designed"]
+      },
+      "evidence": {"source_type": "original_synthesis", "reviewed": "2026-09-20"}
+    },
+    {
+      "id": "typography-readable-scale",
+      "domain": "typography",
+      "title": "Readable product type scale",
+      "tags": ["typography", "type-scale", "legibility", "line-height", "numbers", "localization"],
+      "status": "active",
+      "content": {
+        "use_when": "Text density, scanning, or responsive reading is a concern.",
+        "practice": "Choose a contextual scale, then tune weight, line-height, measure, numeric alignment, tracking, and content expansion.",
+        "checks": ["long labels fit", "numbers remain scannable", "body measure supports reading", "font licensing is recorded"]
+      },
+      "evidence": {"source_type": "original_synthesis", "reviewed": "2026-09-20"}
+    },
+    {
+      "id": "color-semantic-state",
+      "domain": "color",
+      "title": "Semantic colour and state system",
+      "tags": ["color", "colour", "semantic", "contrast", "danger", "focus", "theme"],
+      "status": "active",
+      "content": {
+        "use_when": "A palette must support themes, states, and accessible emphasis.",
+        "practice": "Use semantic roles between primitives and components; pair colour with text, shape, position, or icon and verify every theme.",
+        "checks": ["danger is not colour-only", "focus is visible", "dark mode is independently checked", "contrast evidence is dated"]
+      },
+      "evidence": {"source_type": "original_synthesis", "reviewed": "2026-09-20"}
+    },
+    {
+      "id": "landing-trust-action",
+      "domain": "landing",
+      "title": "Landing page trust-to-action sequence",
+      "tags": ["landing", "conversion", "trust", "cta", "proof", "action"],
+      "status": "active",
+      "content": {
+        "use_when": "A landing page must move a visitor toward a clear next action.",
+        "practice": "Sequence promise, relevance, proof, risk reduction, and one dominant next step; remove decorative sections that do not support the decision.",
+        "checks": ["audience is explicit", "proof is attributable", "CTA states verb and outcome", "mobile reading order works"]
+      },
+      "evidence": {"source_type": "original_synthesis", "reviewed": "2026-09-20"}
+    },
+    {
+      "id": "chart-decision-story",
+      "domain": "chart",
+      "title": "Decision-led chart story",
+      "tags": ["chart", "dashboard", "comparison", "story", "big-idea", "declutter"],
+      "status": "active",
+      "content": {
+        "use_when": "A chart is being selected or revised for an operational decision.",
+        "practice": "Name audience, action, comparison, and Big Idea before choosing an encoding; use direct labels and a text alternative.",
+        "checks": ["chart type matches the comparison", "no colour-only meaning", "non-essential marks are removed", "uncertainty is visible"]
+      },
+      "evidence": {"source_type": "original_synthesis", "reviewed": "2026-09-20"}
+    },
+    {
+      "id": "ux-observe-fix-retest",
+      "domain": "ux",
+      "title": "Observe, fix, and retest loop",
+      "tags": ["ux", "usability", "research", "task", "observe", "retest"],
+      "status": "active",
+      "content": {
+        "use_when": "A user-facing decision needs behavioural evidence.",
+        "practice": "Use a realistic neutral task, observe without rescuing, separate fact from interpretation, fix the smallest high-impact issue, and repeat the task.",
+        "checks": ["consent exists", "sample limits are stated", "severity is recorded", "no population claim from a small qualitative sample"]
+      },
+      "evidence": {"source_type": "original_synthesis", "reviewed": "2026-09-20"}
+    },
+    {
+      "id": "icons-semantic-safe",
+      "domain": "icons",
+      "title": "Semantic icon and label pairing",
+      "tags": ["icons", "iconography", "semantic", "label", "decorative", "svg"],
+      "status": "active",
+      "content": {
+        "use_when": "Icons communicate actions, status, or navigation.",
+        "practice": "Validate the import/name, size, stroke and viewBox; classify each icon as labelled or decorative and never hide essential meaning in an icon alone.",
+        "checks": ["accessible name is present where needed", "SVG is sanitized", "touch target is tested", "licence is recorded"]
+      },
+      "evidence": {"source_type": "original_synthesis", "reviewed": "2026-09-20"}
+    },
+    {
+      "id": "react-stateful-components",
+      "domain": "react",
+      "title": "React stateful accessible component",
+      "tags": ["react", "component", "state", "focus", "loading", "error"],
+      "status": "active",
+      "stacks": ["react", "nextjs", "shadcn"],
+      "content": {
+        "use_when": "A React component has multiple interaction states or async work.",
+        "practice": "Model default, hover, focus, active, disabled, loading, selected, error, and recovery states with semantic DOM and preserved input.",
+        "checks": ["state matrix is finite", "focus outcome is specified", "reduced motion is respected", "server/client boundary is explicit"]
+      },
+      "evidence": {"source_type": "original_synthesis", "reviewed": "2026-09-20"}
+    },
+    {
+      "id": "web-progressive-enhancement",
+      "domain": "web",
+      "title": "Web progressive enhancement and responsive resilience",
+      "tags": ["web", "responsive", "semantic", "keyboard", "mobile", "progressive"],
+      "status": "active",
+      "stacks": ["html-tailwind", "astro", "vue", "svelte", "angular", "laravel"],
+      "content": {
+        "use_when": "A web flow must remain usable across widths, input modes, and partial failure.",
+        "practice": "Preserve source order, semantic controls, fallback content, keyboard operation, readable reflow, and content variation before adding custom enhancement.",
+        "checks": ["320px and 200% zoom are tested", "no horizontal scroll", "no essential tooltip-only content", "fallback is meaningful"]
+      },
+      "evidence": {"source_type": "original_synthesis", "reviewed": "2026-09-20"}
+    },
+    {
+      "id": "google-fonts-licensed-pairing",
+      "domain": "google-fonts",
+      "title": "Licensed font pairing with fallback",
+      "tags": ["google-fonts", "typography", "license", "pairing", "fallback", "variable"],
+      "status": "active",
+      "content": {
+        "use_when": "A design requests a web font or a new font pairing.",
+        "practice": "Record source, license, language coverage, variable axes, fallback metrics, loading behavior, and the reason the pairing serves the product.",
+        "checks": ["font is not banned by doctrine", "license is retained", "fallback is legible", "loading does not cause layout failure"]
+      },
+      "evidence": {"source_type": "original_synthesis", "reviewed": "2026-09-20"}
+    },
+    {
+      "id": "gsap-reduced-motion",
+      "domain": "gsap",
+      "title": "Motion with user control and reduced-motion fallback",
+      "tags": ["gsap", "motion", "reduced-motion", "focus", "interaction", "rollback"],
+      "status": "active",
+      "content": {
+        "use_when": "A motion system or interaction transition is being specified.",
+        "practice": "Use tokenised duration/easing, preserve focus and state announcements, provide a static or shortened reduced-motion path, and avoid unsolicited movement.",
+        "checks": ["motion has a purpose", "cancel or control is available", "prefers-reduced-motion is honoured", "failure leaves a recoverable state"]
+      },
+      "evidence": {"source_type": "original_synthesis", "reviewed": "2026-09-20"}
+    }
+  ],
+  "stack_guidance": [
+    {"stack": "html-tailwind", "supported_versions": "HTML living standard; Tailwind version pinned by project", "guidance": "Use semantic HTML first, utility classes second, and retain a token source of truth."},
+    {"stack": "react", "supported_versions": "React version pinned by project", "guidance": "Keep state contracts explicit and pair async states with focus and live-status behavior."},
+    {"stack": "nextjs", "supported_versions": "Next.js version pinned by project", "guidance": "Declare server/client boundaries, loading/error routes, metadata, and responsive rendering evidence."},
+    {"stack": "astro", "supported_versions": "Astro version pinned by project", "guidance": "Prefer progressive enhancement and island boundaries that preserve semantic HTML."},
+    {"stack": "vue", "supported_versions": "Vue version pinned by project", "guidance": "Keep composables and component state finite, typed where available, and keyboard tested."},
+    {"stack": "nuxtjs", "supported_versions": "Nuxt version pinned by project", "guidance": "Verify SSR, hydration, error, loading, route focus, and responsive states."},
+    {"stack": "nuxt-ui", "supported_versions": "Nuxt UI version pinned by project", "guidance": "Inspect inherited tokens and accessibility behavior before extending variants."},
+    {"stack": "svelte", "supported_versions": "Svelte version pinned by project", "guidance": "Keep transitions cancellable and provide reduced-motion equivalents."},
+    {"stack": "swiftui", "supported_versions": "Xcode and SDK versions pinned by project", "guidance": "Test Dynamic Type, VoiceOver, platform navigation, and native state semantics."},
+    {"stack": "react-native", "supported_versions": "React Native and platform SDKs pinned by project", "guidance": "Test touch, screen reader, platform controls, offline states, and release builds."},
+    {"stack": "flutter", "supported_versions": "Flutter channel and SDK pinned by project", "guidance": "Use semantic widgets, text scaling, focus traversal, and platform adaptation."},
+    {"stack": "shadcn", "supported_versions": "Repository package versions pinned by project", "guidance": "Treat generated components as owned source; check tokens, state coverage, and updates."},
+    {"stack": "jetpack-compose", "supported_versions": "Android Studio and Compose BOM pinned by project", "guidance": "Verify semantics, TalkBack, font scaling, touch targets, and recomposition states."},
+    {"stack": "threejs", "supported_versions": "Three.js version pinned by project", "guidance": "Provide non-canvas alternatives, keyboard controls, performance budgets, and reduced motion."},
+    {"stack": "angular", "supported_versions": "Angular version pinned by project", "guidance": "Keep form semantics, change detection states, routing focus, and error recovery explicit."},
+    {"stack": "laravel", "supported_versions": "Laravel and frontend versions pinned by project", "guidance": "Preserve server validation, old-input recovery, CSRF feedback, and progressive enhancement."},
+    {"stack": "javafx", "supported_versions": "JDK and JavaFX versions pinned by project", "guidance": "Test keyboard traversal, high contrast, scaling, and native window behavior."},
+    {"stack": "wpf", "supported_versions": "Target .NET and Windows versions pinned by project", "guidance": "Verify keyboard access, automation peers, scaling, and high-contrast modes."},
+    {"stack": "winui", "supported_versions": "Windows App SDK version pinned by project", "guidance": "Use native focus, scaling, contrast, and window-state patterns."},
+    {"stack": "avalonia", "supported_versions": "Avalonia version pinned by project", "guidance": "Test rendering parity, keyboard navigation, scaling, and platform-specific gaps."},
+    {"stack": "uno", "supported_versions": "Uno Platform version pinned by project", "guidance": "Record platform divergence and test each supported target rather than inferring parity."},
+    {"stack": "uwp", "supported_versions": "Target Windows SDK pinned by project", "guidance": "Preserve native accessibility, scaling, navigation, and lifecycle behavior."}
+  ]
+}

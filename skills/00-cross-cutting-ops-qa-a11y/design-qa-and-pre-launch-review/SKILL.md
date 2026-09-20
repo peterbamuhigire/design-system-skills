@@ -192,6 +192,8 @@ risk. Never convert an unrun check into N/A merely to obtain a passing verdict.
 
 ## References
 
+- docs/book-study/2026-09-20-six-book-actionable-extractions.md — source-backed requirements trace, component state coverage, usability retest, and evidence-release synthesis.
+
 - `doctrine/design-doctrine.md` — the Mission and Anti-Slop Charter; the rule that a slop /
   a11y / perf blocker forces NO-SHIP and that convenience never overrides.
 - `doctrine/references/wcag-2.2-criteria.md` — **canonical** accessibility floor (AA) and the

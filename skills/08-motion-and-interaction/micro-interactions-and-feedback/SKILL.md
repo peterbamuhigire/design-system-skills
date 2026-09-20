@@ -1,6 +1,6 @@
 ---
 name: micro-interactions-and-feedback
-description: Use when designing per-control feedback for presses, toggles, inputs, selections, optimistic actions, haptics, or delight moments. Use motion-design for the product-wide timing, easing, transition, choreography, and reduced-motion system.
+description: Use when designing per-control feedback for presses, toggles, inputs, selections, loading, success, rollback, optimistic actions, haptics, reduced-motion alternatives, or delight moments. Use motion-design for the product-wide timing, easing, transition, choreography, and reduced-motion system.
 metadata:
   portable: true
   category: 08-motion-and-interaction

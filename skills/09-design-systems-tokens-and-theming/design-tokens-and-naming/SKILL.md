@@ -204,4 +204,5 @@ checks and block release of generated platform packages.
 ## Book-informed practice route
 
 Use [the 2026-09-14 design-system engineering synthesis](../../../docs/book-study/2026-09-14-design-system-engineering-synthesis.md) for source-of-truth, token tiers, transformations, and adoption evidence.
+Use docs/book-study/2026-09-20-six-book-actionable-extractions.md for the requirements-to-decision trace, semantic-role discipline, and product-first adoption notes from the supplied books.
 <!-- dual-compat-end -->

@@ -108,4 +108,5 @@ Without repository access, return a proposed inventory, API, and state matrix ra
 ## Book-informed practice route
 
 Use [the 2026-09-14 design-system engineering synthesis](../../../docs/book-study/2026-09-14-design-system-engineering-synthesis.md) for scenario-led component contracts and complete state coverage.
+Use docs/book-study/2026-09-20-six-book-actionable-extractions.md for product-first pilots, variation-led abstraction, governance, and outcome metrics from the supplied design-systems book.
 <!-- dual-compat-end -->

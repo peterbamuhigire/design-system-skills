@@ -39,6 +39,7 @@ metadata:
 - Timeline and constraints (how many participants, moderated vs. unmoderated, remote vs. in-person, regulatory/consent constraints).
 
 ## Workflow
+
 1. **Anchor to a decision.** Write the decision, the question, and the current assumption in one line each. If you cannot name the decision the result will change, stop — you are doing research theatre. This is the research-to-decision spine; everything traces back to it.
 2. **Select the method.** Use `references/research-method-selector.md` to pick on two axes — *generative vs. evaluative* and *attitudinal (what they say) vs. behavioural (what they do)*. Behaviour beats opinion when they disagree. Prefer the cheapest method that actually answers the question; do not run a survey to answer a "why".
 3. **Plan the study.** Write a one-page plan: decision, question, method, participants (number + screener), tasks/topics, success metrics, schedule, and what result would change the decision in each direction. Pre-committing the decision rule prevents post-hoc rationalisation.
@@ -49,6 +50,8 @@ metadata:
 8. **Convert findings to decisions.** For each theme write: the finding → the evidence (participant count + quotes) → the recommended decision → confidence. Close the loop back to step 1. A finding with no recommended action is incomplete.
 9. **Apply the doctrine lens.** Research is also how you defend that the product looks *authored*, not templated (`doctrine/design-doctrine.md` §0). Usability findings that surface "this feels generic / I didn't trust it" are slop signals (`doctrine/references/ai-slop-taxonomy.md`), not just nuisance comments — escalate them.
 10. **Check accessibility coverage.** If the test never included a keyboard-only, screen-reader, low-vision, or motor-impaired participant, state that as a known gap; pair findings with `doctrine/references/wcag-2.2-criteria.md` before claiming the experience "works for users".
+
+11. **Fix and retest.** Choose the smallest high-impact change supported by the observation, repeat the same task, and report directional change without turning a small qualitative sample into a population estimate.
 
 ## Decision Rules
 
@@ -69,6 +72,8 @@ metadata:
 - Without participant access, deliver a validated protocol or secondary-evidence synthesis, not fabricated findings. Recover weak sessions by documenting deviation, excluding compromised evidence where necessary, and revising the protocol.
 
 ## Quality Standards
+
+- A missing participant, task, consent, or retest record is NOT_ASSESSED, not an implied success.
 
 - Findings separate observation, interpretation, prevalence, and limitation; claims do not exceed sample or method.
 - Every recommendation traces to evidence and names the decision, owner, confidence limits, and next validation.
@@ -99,6 +104,8 @@ metadata:
 - See `examples/research-plan-and-synthesis.md` — a real, worked study for an onboarding flow: the plan, the moderated unmoderated mix, the raw observations, the affinity synthesis with severity ratings, and the research-to-decision table that changed the roadmap. Never lorem.
 
 ## References
+
+- docs/book-study/2026-09-20-six-book-actionable-extractions.md — original synthesis of the lightweight observe/fix/retest loop and its evidence limits.
 - `references/research-method-selector.md` — choose the method by generative/evaluative × attitudinal/behavioural; cost vs. answer-fit.
 - `references/usability-test-protocol.md` — a real moderated + unmoderated protocol: tasks, think-aloud script, success criteria, severity rating, SUS.
 - `doctrine/design-doctrine.md` — §0 Mission (the authored-not-templated moat) and the Anti-Slop Charter; usability findings are evidence the product reads as human-made.

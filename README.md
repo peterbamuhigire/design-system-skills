@@ -74,6 +74,21 @@ engine owns presentation-layer guidance.
 
 ---
 
+## Executable offline runtime
+
+The engine includes an independent offline catalog and decision runtime in
+engine/design_engine. It provides deterministic lexical search, typed domain and
+stack routing, current/legacy filtering, abstention, structured JSON/Markdown
+output, constraint-checked design-system assembly, and non-destructive
+project/page persistence. It is intentionally source-backed and evidence-aware:
+generated decisions remain NOT_ASSESSED until render, interaction, review, and
+consumer evidence are retained.
+
+Validate it with:
+
+    python -X utf8 scripts/validate_design_catalog.py data/design-catalog.json
+    python -B -m pytest -q -p no:cacheprovider
+
 ## How to use this engine (router)
 
 These skills are **not** on Claude Code's native discovery path. Read the `SKILL.md` files

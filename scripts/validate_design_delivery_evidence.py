@@ -3,7 +3,9 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
+import re
 from pathlib import Path
 
 ALLOWED_VERDICTS = {"PASS", "CONDITIONAL", "BLOCKED"}
@@ -12,9 +14,25 @@ REQUIRED_CHECKS = {"design-doctrine", "typography", "accessibility", "render-par
 REQUIRED_STAGES = {"generation", "reopen", "render", "visual_qa", "accessibility"}
 ALLOWED_EVIDENCE_TYPES = {"command-log", "retained-artifact", "independent-review"}
 ALLOWED_VERIFICATIONS = {"AUTOMATED", "INDEPENDENT"}
+SHA256_RE = re.compile(r"^[0-9a-fA-F]{64}$")
 
 
-def _validate_stage_evidence(stage: str, value: dict, result: str, findings: list[str]) -> None:
+def _resolve_retained_reference(manifest_path: Path, reference: str) -> tuple[Path | None, str | None]:
+    """Resolve a retained local evidence file without allowing path escape."""
+    if reference.startswith(("http://", "https://")):
+        return None, "URL references are not retained local evidence; store a verified local record"
+    try:
+        root = manifest_path.parent.resolve()
+        path = (root / reference).resolve()
+        path.relative_to(root)
+    except (OSError, ValueError, RuntimeError):
+        return None, "reference escapes the manifest evidence boundary or is invalid"
+    if not path.is_file():
+        return None, f"retained evidence file not found: {reference}"
+    return path, None
+
+
+def _validate_stage_evidence(manifest_path: Path, stage: str, value: dict, result: str, findings: list[str]) -> None:
     evidence = value.get("evidence")
     if result == "PASS":
         if not isinstance(evidence, list) or not evidence:
@@ -30,10 +48,24 @@ def _validate_stage_evidence(stage: str, value: dict, result: str, findings: lis
                 findings.append(f"stage {stage} evidence {index} must have a retained evidence type")
             if not isinstance(record.get("reference"), str) or not record["reference"].strip():
                 findings.append(f"stage {stage} evidence {index} must provide a reference")
+                continue
+            path, reference_error = _resolve_retained_reference(manifest_path, record["reference"])
+            if reference_error:
+                findings.append(f"stage {stage} evidence {index}: {reference_error}")
+            elif path is not None and record.get("sha256") is not None:
+                digest = record.get("sha256")
+                if not isinstance(digest, str) or not SHA256_RE.fullmatch(digest):
+                    findings.append(f"stage {stage} evidence {index} sha256 must be 64 hexadecimal characters")
+                elif hashlib.sha256(path.read_bytes()).hexdigest().casefold() != digest.casefold():
+                    findings.append(f"stage {stage} evidence {index} sha256 does not match retained file")
             if not isinstance(record.get("verification"), str) or record["verification"] not in ALLOWED_VERIFICATIONS:
                 findings.append(
                     f"stage {stage} evidence {index} must state AUTOMATED or INDEPENDENT verification"
                 )
+            if record.get("verification") == "INDEPENDENT" and (
+                not isinstance(record.get("reviewer"), str) or not record["reviewer"].strip()
+            ):
+                findings.append(f"stage {stage} evidence {index} INDEPENDENT verification requires reviewer identity")
         return
     if not isinstance(evidence, str) or not evidence.strip():
         findings.append(f"stage {stage} must state evidence or why it is unavailable")
@@ -90,7 +122,7 @@ def validate_manifest(manifest_path: Path) -> list[str]:
             if not isinstance(result, str) or result not in ALLOWED_RESULTS:
                 findings.append(f"stage {stage} must have a valid result")
             else:
-                _validate_stage_evidence(stage, value, result, findings)
+                _validate_stage_evidence(manifest_path, stage, value, result, findings)
 
     checks = data.get("checks")
     check_results: dict[str, str] = {}
@@ -131,6 +163,16 @@ def validate_manifest(manifest_path: Path) -> list[str]:
                 "PASS is forbidden while required checks are not PASS: "
                 + ", ".join(incomplete_checks)
             )
+        non_pass_stages = sorted(
+            stage for stage, result in stage_results.items() if result != "PASS"
+        )
+        if non_pass_stages:
+            findings.append("PASS is forbidden while any declared delivery stage is not PASS: " + ", ".join(non_pass_stages))
+        non_pass_checks = sorted(
+            check for check, result in check_results.items() if result != "PASS"
+        )
+        if non_pass_checks:
+            findings.append("PASS is forbidden while any declared check is not PASS: " + ", ".join(non_pass_checks))
     if verdict == "PASS" and findings:
         findings.append("PASS is forbidden while findings exist")
     return findings

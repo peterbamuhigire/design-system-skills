@@ -122,6 +122,51 @@ def test_pass_manifest_rejects_self_asserted_stage_evidence():
         temp.unlink()
 
 
+def test_pass_manifest_rejects_missing_retained_evidence_reference():
+    path = ROOT / 'tests/fixtures/design-delivery/manifest.json'
+    data = copy.deepcopy(json.loads(path.read_text(encoding='utf-8')))
+    data['verdict'] = 'PASS'
+    for stage in data['stages'].values():
+        stage['result'] = 'PASS'
+        stage['evidence'] = [{
+            'type': 'retained-artifact',
+            'reference': 'evidence/does-not-exist.json',
+            'verification': 'AUTOMATED',
+        }]
+    for check in data['checks']:
+        check['result'] = 'PASS'
+    temp = ROOT / 'tests/fixtures/design-delivery/missing-retained-evidence.json'
+    temp.write_text(json.dumps(data), encoding='utf-8')
+    try:
+        findings = validate_manifest(temp)
+        assert any('retained evidence file not found' in item for item in findings)
+    finally:
+        temp.unlink()
+
+
+def test_pass_manifest_rejects_extra_failed_check():
+    path = ROOT / 'tests/fixtures/design-delivery/manifest.json'
+    data = copy.deepcopy(json.loads(path.read_text(encoding='utf-8')))
+    data['verdict'] = 'PASS'
+    for stage in data['stages'].values():
+        stage['result'] = 'PASS'
+        stage['evidence'] = [{
+            'type': 'retained-artifact',
+            'reference': 'render-home.svg',
+            'verification': 'AUTOMATED',
+        }]
+    for check in data['checks']:
+        check['result'] = 'PASS'
+    data['checks'].append({'id': 'extra-critical-check', 'result': 'FAIL'})
+    temp = ROOT / 'tests/fixtures/design-delivery/extra-failed-check.json'
+    temp.write_text(json.dumps(data), encoding='utf-8')
+    try:
+        findings = validate_manifest(temp)
+        assert any('any declared check is not PASS' in item for item in findings)
+    finally:
+        temp.unlink()
+
+
 def test_pass_manifest_rejects_unassessed_required_check():
     path = ROOT / "tests" / "fixtures" / "design-delivery" / "manifest.json"
     data = json.loads(path.read_text(encoding="utf-8"))

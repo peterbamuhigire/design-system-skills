@@ -39,10 +39,11 @@ def main() -> int:
     top1 = 0
     for item in fixtures:
         query = tokens(item["prompt"])
+        # The expected answer is evaluator metadata, never a runtime ranking
+        # signal.  A fixture label must not break ties or inflate top-1.
         ranked = sorted(
             catalog,
-            key=lambda name: (len(query & tokens(name + " " + catalog[name])), name == item["expected"]),
-            reverse=True,
+            key=lambda name: (-len(query & tokens(name + " " + catalog[name])), name),
         )
         top = ranked[:3]
         if top and top[0] == item["expected"]:

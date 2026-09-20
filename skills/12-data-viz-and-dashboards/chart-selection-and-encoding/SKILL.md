@@ -157,6 +157,8 @@ Without validated data, produce a conditional chart recommendation using a label
 
 ## References
 
+- docs/book-study/2026-09-20-six-book-actionable-extractions.md — audience/action framing, Big Idea, decluttering, direct labelling, and text-alternative requirements.
+
 - `doctrine/design-doctrine.md` — the Mission (authored, human-made charts) and the Anti-Slop
   Charter; the chart type is a *stated, defensible* choice, never a reflexive default.
 - `doctrine/references/wcag-2.2-criteria.md` — the accessibility floor (contrast, 1.4.1 use of

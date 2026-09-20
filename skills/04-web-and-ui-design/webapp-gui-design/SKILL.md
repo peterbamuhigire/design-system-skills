@@ -1,6 +1,6 @@
 ---
 name: webapp-gui-design
-description: Use when designing or building a SaaS web-app shell, navigation, dashboard, table, form, dialog, auth, upload, or system state in React/Next/Tailwind or Bootstrap/Tabler/PHP. Do not use for marketing websites or backend-only work.
+description: Use when designing or building a SaaS web-app shell, dense desktop UI, sidebars, command surfaces, navigation, dashboard, table, form, dialog, auth, upload, responsive layout, or system state in React/Next/Tailwind or Bootstrap/Tabler/PHP. Do not use for marketing websites or backend-only work.
 metadata:
   portable: true
   category: 04-web-and-ui-design

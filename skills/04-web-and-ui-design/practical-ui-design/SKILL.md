@@ -43,6 +43,9 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 
 ## Workflow
 
+- Start feature-first and hierarchy-first: state the user outcome, establish the information structure in grayscale, then add type, colour, depth, imagery, and personality as deliberate system choices.
+- Treat empty, loading, error, success, and recovery states as part of the visual specification; verify long, short, localised, and missing content before polishing.
+
 - When a product already exists, audit token drift, duplicated components, and inconsistent states before proposing new styling.
 
 ## Decision Rules
@@ -91,6 +94,8 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - Implementation guidance, templates, or generated artifacts for the visual system when the task is creation rather than audit.
 
 ## References
+
+- docs/book-study/2026-09-20-six-book-actionable-extractions.md — book-derived hierarchy, spacing, type, colour, empty-state, and evidence synthesis.
 
 - `doctrine/design-doctrine.md` — the anti-slop charter; this visual system exists to push UI away from the convergent AI mean.
 - `doctrine/references/ai-slop-banned-fonts.md` — banned primary typefaces; pick a deliberate face from `doctrine/references/font-groups-and-usage.md` before applying the type rules below.
