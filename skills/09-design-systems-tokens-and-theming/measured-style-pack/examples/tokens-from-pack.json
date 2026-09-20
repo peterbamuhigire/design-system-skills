@@ -1,0 +1,87 @@
+{
+  "$description": "Worked example: a measured-style-pack built from a signed-off client deck ('Kwera Health', fictitious), and the W3C-aligned primitive token file it seeds for design-tokens-and-naming. Two parts: 'measured_pack' is what this skill produces (grade/scale/spacing statistics, per the Workflow); 'seeded_primitive_tokens' is the downstream artefact design-tokens-and-naming consumes. Numbers are illustrative, not a real client's actual measurements.",
+
+  "measured_pack": {
+    "pack.json": {
+      "name": "kwera-health-deck-2026-08",
+      "reference": {
+        "type": "signed-off client deck export",
+        "captures": ["slide-03.png", "slide-07.png", "slide-11.png", "slide-14.png"],
+        "signed_off_by": "client brand lead, recorded 2026-08-12 approval email",
+        "provenance_confirmed": true
+      },
+      "masked_regions": ["deck footer logo bar (all slides)", "slide-07 placeholder chart axis labels"],
+      "build_date": "2026-09-18"
+    },
+
+    "grade.json": {
+      "$description": "Colour measured per lightness band, OKLCH, median + MAD (not mean/std). Sample counts recorded per band as a confidence signal.",
+      "bands": {
+        "shadow_L0_15":    { "median_L": 8.1,  "median_C": 0.021, "median_H": 255, "MAD_C": 0.006, "samples": 340 },
+        "low_mid_L15_35":  { "median_L": 27.4, "median_C": 0.084, "median_H": 152, "MAD_C": 0.019, "samples": 1120 },
+        "mid_L35_55":      { "median_L": 46.2, "median_C": 0.132, "median_H": 152, "MAD_C": 0.024, "samples": 2870 },
+        "high_mid_L55_75": { "median_L": 63.5, "median_C": 0.061, "median_H": 148, "MAD_C": 0.014, "samples": 980 },
+        "highlight_L75_100": { "median_L": 92.0, "median_C": 0.012, "median_H": 150, "MAD_C": 0.004, "samples": 1560 }
+      },
+      "background_share_below_L10": 0.041,
+      "note": "Signature accent lives in the mid band (L*46, C*0.132, H*152 — a saturated green), not uniform across the deck. Mean chroma across all samples was 0.079 vs this band's median 0.132; using the mean would have understated the accent by ~40%."
+    },
+
+    "scale.json": {
+      "$description": "Type sizes as computed pt values from the deck's text-box properties, converted to a comparable px-equivalent at the deck's export DPI (150).",
+      "measured_sizes_px": [13, 16, 20, 26, 33, 42],
+      "pairwise_ratios": [1.231, 1.25, 1.30, 1.269, 1.273],
+      "median_ratio": 1.269,
+      "doctrine_floor_check": { "floor": 1.25, "median_ratio": 1.269, "pass": true }
+    },
+
+    "spacing.json": {
+      "$description": "Gaps measured from deck element bounding boxes.",
+      "measured_gaps_px": [8, 8, 8, 12, 16, 16, 16, 24, 24, 32, 48, 9, 15],
+      "base_unit_candidates": {
+        "4px": { "share_matching": 0.69 },
+        "8px": { "share_matching": 0.85 }
+      },
+      "winning_base_unit_px": 8,
+      "modal_value_px": 16,
+      "off_grid_share": 0.15,
+      "off_grid_values_px": [9, 15]
+    },
+
+    "spec.json": {
+      "$description": "Grounded description, hedge-word-lint clean (verified: node scripts/hedge-word-lint.js spec.json exits 0).",
+      "text": "Accent colour is a saturated mid-tone green (L*46 C*0.132 H*152), absent from both the shadow band and the highlight band. Background share below near-black is 4.1%. Type scale measures a 1.269 median ratio across six sizes, above the 1.25 doctrine floor. Spacing rhythm is built on an 8px base unit (85% of measured gaps match), with 16px as the single most frequent gap.",
+      "grounding_caveat": "This description is grounded in the measurements above; it is not an independent check on them."
+    }
+  },
+
+  "seeded_primitive_tokens": {
+    "$description": "TIER 1 -- PRIMITIVE. Fed directly from measured_pack.grade/scale/spacing above, matching the OKLCH + W3C $value/$type shape used by design-tokens-and-naming/examples/tokens.json. Semantic and component tiers are built on top of these the normal way -- not shown here.",
+    "color": {
+      "accent": {
+        "500": { "$value": "oklch(0.46 0.132 152)", "$type": "color", "$description": "measured mid-band accent, kwera-health-deck-2026-08" }
+      },
+      "neutral": {
+        "900": { "$value": "oklch(0.081 0.021 255)", "$type": "color", "$description": "measured shadow band" },
+        "0":   { "$value": "oklch(0.92 0.012 150)",  "$type": "color", "$description": "measured highlight band" }
+      }
+    },
+    "font": {
+      "size": {
+        "100": { "$value": "13px", "$type": "dimension" },
+        "200": { "$value": "16px", "$type": "dimension" },
+        "300": { "$value": "20px", "$type": "dimension" },
+        "400": { "$value": "26px", "$type": "dimension" },
+        "500": { "$value": "33px", "$type": "dimension" },
+        "600": { "$value": "42px", "$type": "dimension" }
+      }
+    },
+    "space": {
+      "100": { "$value": "8px",  "$type": "dimension" },
+      "200": { "$value": "16px", "$type": "dimension" },
+      "300": { "$value": "24px", "$type": "dimension" },
+      "400": { "$value": "32px", "$type": "dimension" },
+      "600": { "$value": "48px", "$type": "dimension" }
+    }
+  }
+}

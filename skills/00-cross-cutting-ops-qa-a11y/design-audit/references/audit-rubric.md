@@ -113,3 +113,12 @@ Weighted column = (Score ÷ 4) × Weight. Raw total is the sum; "after caps" app
 *Composes the three cross-cutting references named above. Certify accessibility against the
 WCAG 2.x ratios; design with APCA. Set the CWV thresholds as Lighthouse-CI build gates so the
 perf gate is enforced, not just observed.*
+
+---
+
+## 5. Code-grounded 0–10 supplement (DS-12)
+
+For a source-controlled artefact, `SKILL.md` §2.0 adds a stricter per-dimension 0–10 score with
+a mandatory `file:line` fix citation, adapted from ECC's `skills/design-system/SKILL.md` Mode 2.
+It supplements — does not replace — the 0–4 weighted score and gate caps above; report both when
+both apply. See `SKILL.md` §2.0 for the dimension mapping and the `file:line` requirement.

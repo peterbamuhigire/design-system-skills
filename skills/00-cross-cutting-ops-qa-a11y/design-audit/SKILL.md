@@ -99,6 +99,9 @@ coverage record. Hard-gate failures cap the verdict; missing evidence lowers con
 ## References
 
 - `doctrine/design-doctrine.md` — the anti-slop charter every audit enforces.
+- ECC `skills/design-system/SKILL.md` §"Mode 2: Visual Audit"
+  (`C:\Users\Peter\Downloads\ECC-main\skills\design-system\SKILL.md`) — source of the §2.0
+  code-grounded 0–10-per-dimension scoring with mandatory `file:line` fixes.
 - `doctrine/references/ai-slop-taxonomy.md` — the visual/product slop tells the AI Slop dimension checks against.
 - `doctrine/references/ai-slop-banned-fonts.md` — the banned primary typefaces the Typography dimension flags.
 - `doctrine/references/pairing-principles.md` and `doctrine/references/type-scale-and-spacing.md` — the type-pairing and scale standards the Typography dimension audits against.
@@ -173,6 +176,42 @@ raw severity.
 ---
 
 ## 2. The 10 Audit Dimensions
+
+### 2.0 Code-grounded 0–10 scoring, with a fix at exact file:line (DS-12)
+
+When the artefact under audit is source-controlled (CSS/SCSS, component files, template files —
+not only a live screen or a mockup), score each dimension below **0–10** in addition to the
+`audit-rubric.md` 0–4 weighted score, and require every "Fix" to name the **exact `path:line`**
+it applies to, e.g. `src/components/Card.tsx:42`, not "the card component" or "the hero section."
+An unlocatable finding is not a finding — if the artefact cannot be traced to a specific file and
+line, mark it unverified per the Degraded Mode rule rather than asserting a vague fix.
+
+This addition is adapted from ECC's `skills/design-system/SKILL.md` Mode 2 ("Visual Audit"),
+which scores 10 dimensions 0–10 each and states: *"Each dimension gets a score, specific
+examples, and a fix with exact file:line."* ECC's 10 dimensions map onto this skill's 10 (§2
+below) as follows — use ECC's naming and this skill's checks together, they are not identical
+lists:
+
+| ECC dimension (0–10) | This skill's dimension (0–4, `audit-rubric.md`) |
+|---|---|
+| Colour consistency | Dimension 5: Colour |
+| Typography hierarchy | Dimension 4: Typography (feeds Dimension 2: Visual Hierarchy) |
+| Spacing rhythm | Dimension 6: Layout & Spacing |
+| Component consistency | Dimension 6/7 combined (Layout & Spacing; Interaction States) — see `references/consistency-audit.md` |
+| Responsive behaviour | Dimension 6: Layout & Spacing (breakpoint checks) |
+| Dark mode | Dimension 5: Colour (dark-mode row) |
+| Animation | Dimension 8: Motion & Animation |
+| Accessibility | Dimension 3: Accessibility |
+| Information density | Dimension 2: Visual Hierarchy (whitespace/focal-point rows) |
+| Polish | Dimension 7: Interaction States (hover/loading/empty states) |
+
+ECC's rubric does not run the AI-Slop, WCAG 2.2, or Core Web Vitals hard gates this engine's
+`audit-rubric.md` requires (§1 there) — the 0–10/file:line **addition does not replace** those
+gates or the 0–4 weighted score; it is a stricter, code-grounded supplement for use whenever the
+audited artefact is a real codebase rather than a rendered screen only. Report both scores when
+both apply: the 0–4 weighted total (with gate caps) stays the number of record for the ship
+decision (§4 below); the 0–10 code-grounded scores go in the Findings section, one per dimension,
+each with its `file:line` fix.
 
 ### Dimension 1: AI Slop Detection
 
@@ -358,7 +397,9 @@ for per-archetype asset budgets.
 - **Location:** [Where in the interface]
 - **Issue:** [What's wrong]
 - **Impact:** [Who is affected and how]
-- **Fix:** [Specific actionable fix]
+- **Fix:** [Specific actionable fix] — when the artefact is source-controlled, cite the exact
+  `path:line` (e.g. `src/components/Hero.tsx:118`), per §2.0. A fix that cannot name a
+  `path:line` is a vague instruction, not a finding — mark it unverified instead.
 - **Standard:** [Which standard it violates]
 
 ## High (Fix Within Sprint)

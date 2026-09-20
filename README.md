@@ -1,24 +1,132 @@
 # design-system-skills
 
-Owned by Peter Bamuhigire / Chwezi Core Systems (chwezicore.com), this engine defines the intentional presentation layer for Chwezi outputs: typography, colour, layout, visual identity, interaction, motion, accessibility, and visual proof. It helps teams make and review one screen, component, document, or state at a time, so type, spacing, hierarchy, assets, transitions, and responsive behaviour serve a real user job rather than a template aesthetic.
+`design-system-skills` is the Chwezi cross-cutting design and typography engine — 97 skills
+(`SKILL.md` files) that define the intentional presentation layer for every Chwezi output:
+typography, colour, layout, visual identity, UX process, mobile/web/desktop UI, motion,
+design-systems tokens, content design, imagery, data visualisation, presentations/documents, and
+conversion patterns, all governed by an explicit anti-AI-slop doctrine
+(`doctrine/design-doctrine.md`). It helps teams make and review one screen, component, document,
+or state at a time, so type, spacing, hierarchy, assets, transitions, and responsive behaviour
+serve a real user job rather than a template aesthetic — and it is mechanically enforced: a
+`hooks/banned-font-gate.js` hook blocks a Write/Edit that sets a banned font as a primary
+`font-family`.
 
-Designers, product teams, frontend and mobile engineers, and documentation authors use it when a rendered artefact needs coherent visual decisions and a usable implementation handoff. The catalogue covers work from type and colour through composition, web and app UI, UX, mobile, motion, design systems, content, imagery, data visualisation, conversion patterns, accessibility, performance, and visual QA.
+Designers, product teams, frontend and mobile engineers, and documentation authors use it
+whenever a rendered artefact needs coherent visual decisions and a usable implementation
+handoff — concrete cases include: choosing and pairing typefaces for a new brand
+(`skills/01-typography-and-fonts/`), building a perceptual colour ramp with a hard WCAG contrast
+gate (`skills/02-color-brand-and-visual-identity/`), specifying a Müller-Brockmann-grounded grid
+(`skills/03-layout-grid-and-composition/`), running a design-QA/pre-launch visual review
+(`skills/00-cross-cutting-ops-qa-a11y/`), measuring an approved reference deck into a
+deterministic design-token pack (`skills/09-design-systems-tokens-and-theming/measured-style-pack/`),
+implementing React motion with SSR-safe gesture handling
+(`skills/08-motion-and-interaction/motion-react-implementation/`), or auditing a shipped
+interface for silently-broken interactive state
+(`skills/00-cross-cutting-ops-qa-a11y/click-path-audit/`).
 
-Use it alongside the relevant domain engine so presentation decisions stay explicit without copying design guidance into every repository. It is a referenced companion, not the owner of domain rules or implementation: for example, consult the <a href="https://github.com/peterbamuhigire/chwezi-accounting-doctrine" target="_blank" rel="noopener noreferrer">Chwezi Accounting Doctrine</a> for finance requirements while this engine remains the home for shared design skills.
+This is a **cross-cutting engine**: most other Chwezi engines lean on it as a soft, optional
+enhancement for how their own document, UI, or presentation output looks, rather than owning any
+presentation doctrine themselves. `skills-web-dev`'s own `rules/common/*.md` and cross-engine
+routing table name it explicitly as the route for "typography, visual design, UI appearance,
+design systems, and document/slides/spreadsheet presentation," and `website-skills` routes to it
+for the same reason wherever content ships as a rendered page or downloadable document. Consult
+it *in addition to* whichever domain engine is active — it does not own content, structure, or
+domain rules, only presentation.
 
-## Capability map
+## Install
 
-| Need | Primary route |
-|---|---|
-| Typeface, type scale, and font pairing | `skills/01-typography-and-fonts/` |
-| Colour, brand, identity, and themes | `skills/02-color-brand-and-visual-identity/` |
-| Composition, grid, spacing, responsive layout, and visual hierarchy | `skills/03-layout-grid-and-composition/` |
-| Web, app, desktop, mobile, and sector UX | `skills/04-web-and-ui-design/` through `skills/07-mobile-ios-android-cross-platform/` |
-| Motion, interaction, design systems, tokens, and handoff | `skills/08-motion-and-interaction/` and `skills/09-design-systems-tokens-and-theming/` |
-| Content design, imagery, data visualisation, conversion, accessibility, and visual QA | `skills/10-content-design-and-ux-writing/` through `skills/14-conversion-and-web-page-patterns/` |
-| Game visual experience | `skills/15-game-visual-experience/` |
+```
+# Native Claude Code plugin
+/plugin marketplace add https://github.com/peterbamuhigire/design-system-skills
+/plugin install design-system@chwezi-design-system
 
-> *The anti-AI-slop design engine — typography, colour, layout, and UI that look made by skilled human hands, not a template.*
+# npm-free, from a clone
+git clone https://github.com/peterbamuhigire/design-system-skills
+cd design-system-skills
+./install.sh --scope project      # macOS/Linux/Git Bash
+.\install.ps1 --scope project     # Windows PowerShell
+```
+
+The plugin name (`design-system`) and marketplace name (`chwezi-design-system`) come from this
+engine's own `.claude-plugin/marketplace.json`. Both installers are thin wrappers (their own
+headers cite the same Windows/MSYS2 path-resolution fix documented in ECC's `install.sh`) around
+`scripts/install-engine.js`, which supports `--scope user` (default, `~/.claude`) or
+`--scope project` (`.claude/` in the current repo).
+
+Sister engines that use this one most, each an independent, optional install rather than a hard
+dependency:
+
+- **`skills-web-dev`** (Chwezi Engineering Engine) — for the code, architecture, and SaaS/SDLC
+  structure this engine's presentation layer sits on top of; its own routing table names this
+  engine as the destination for "Typography, visual design, UI appearance, design systems,
+  document/slides/spreadsheet presentation."
+- **`website-skills`** — for the content, SEO, and site-delivery structure this engine's web/UI
+  and conversion-pattern skills style once the content exists.
+- **`chwezi-accounting-doctrine`** — not a design consumer of this engine, but the reciprocal
+  relationship: this engine defers to it for any finance/accounting values that appear inside a
+  visually-designed statement, invoice, or dashboard, rather than inventing them.
+
+## Capabilities
+
+| Category | Skills | What it covers |
+|---|---:|---|
+| `00-cross-cutting-ops-qa-a11y` | 16 | Design QA, accessibility, pre-launch visual review, behavioural-state audits |
+| `04-web-and-ui-design` | 10 | Web and application UI design |
+| `02-color-brand-and-visual-identity` | 7 | Colour systems, brand and visual identity |
+| `05-ux-process-research-and-psychology` | 7 | UX process, research methods, design psychology |
+| `06-sector-and-domain-ux` | 7 | Sector-specific UX (finance, enterprise, etc.) |
+| `01-typography-and-fonts` | 6 | Typeface selection, pairing, type scale, licensing |
+| `13-presentations-and-documents` | 6 | Visual formatting of decks, DOCX/PDF/XLSX outputs |
+| `07-mobile-ios-android-cross-platform` | 5 | Mobile, iOS, Android, and cross-platform UI |
+| `09-design-systems-tokens-and-theming` | 5 | Design tokens, theming, measured style packs |
+| `14-conversion-and-web-page-patterns` | 5 | Conversion-focused web page patterns |
+| `15-game-visual-experience` | 5 | Game visual experience and art direction |
+| `03-layout-grid-and-composition` | 4 | Grid systems, composition, visual hierarchy |
+| `11-imagery-illustration-and-art-direction` | 4 | Imagery, illustration, art direction |
+| `12-data-viz-and-dashboards` | 4 | Data visualisation and dashboard design |
+| `08-motion-and-interaction` | 3 | Motion design and interaction patterns |
+| `10-content-design-and-ux-writing` | 3 | Content design and UX writing |
+
+(97 `SKILL.md` files total under `skills/`, excluding the non-skill `_TEMPLATE/` scaffold.)
+
+## References
+
+- Mustafa, A. et al. *Everything Claude Code (ECC)*. GitHub: `affaan-m/ECC`, 2026. This engine's
+  workflow section is adapted directly from ECC's shorthand, longform, and security guides
+  (accessed 7 September 2026), cited in full in this README's own workflow section below. Four
+  skills carry a specific `Acknowledgement:` adaptation note crediting ECC:
+  `skills/00-cross-cutting-ops-qa-a11y/click-path-audit/SKILL.md` (ECC's community-sourced
+  `click-path-audit`, PR-salvaged and attributed to `linus707`'s original report),
+  `skills/00-cross-cutting-ops-qa-a11y/ui-demo/SKILL.md` (ECC's `ui-demo` Playwright-recording
+  skill), `skills/08-motion-and-interaction/motion-react-implementation/SKILL.md` (ECC's
+  `motion-foundations`/`motion-advanced`, narrowed to the React implementation layer only), and
+  `skills/09-design-systems-tokens-and-theming/measured-style-pack/SKILL.md` (ECC's
+  `taste-distillation`/`taste-application`, re-targeted from video colour-grading to design
+  tokens). `install.sh`'s own header also credits the same Windows/MSYS2 path-resolution fix as
+  documented in ECC's installer.
+- **Human design authority (this engine's core doctrine, `doctrine/references/ai-slop-banned-fonts.md`
+  and `doctrine/references/pairing-principles.md`):** approvals for what typeface, colour, or
+  layout to *use* trace only to named human design authorities, never to an AI vendor's own
+  recommendations —
+  - Douglas N. Bonneville, *The Big Book of Font Combinations* — source of the 29 numbered
+    pairing principles cited throughout `pairing-principles.md` (e.g. "cross categories for
+    contrast," "match x-heights," "two typefaces, many fonts").
+  - Ran Segall, *Complete Guide to Choosing Fonts* (Flux Academy) — corroborating pairing
+    principles cited alongside Bonneville's.
+  - Massimo Vignelli — cited via *The Vignelli Canon* (Lars Müller Publishers, 2010, ISBN
+    9783037782255) for modernist pairing and layout-grid discipline, and via `brand-visual-identity`
+    for identity-system grounding alongside Paul Rand and Marty Neumeier.
+  - Anthropic's own *Claude Cookbook*, "Prompting for frontend aesthetics," is cited in
+    `ai-slop-banned-fonts.md` — but explicitly and only as **ban-evidence** (the vendor's own
+    text naming Inter, Roboto, Open Sans, Lato, and Space Grotesk as convergence tells), never as
+    approval authority for any typeface. The doctrine states this distinction itself: "AI-vendor
+    sources are admissible as evidence ONLY for what to BAN, NEVER as authority for what to
+    APPROVE."
+- Müller-Brockmann, Tschichold, and Lupton are cited in `docs/initial-analysis/` and skill
+  content for grid/layout and typographic canon, corroborating rather than superseding the
+  Bonneville/Vignelli/Segall pairing citations above; these are recorded as the engine's reading
+  list in `docs/initial-analysis/08-reading-list.md` rather than as doctrine-file citations, so
+  they are noted here for completeness but not elevated to the same doctrine status.
 
 ---
 

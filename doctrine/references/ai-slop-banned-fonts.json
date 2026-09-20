@@ -1,0 +1,32 @@
+{
+  "$comment": "Machine-readable mirror of ai-slop-banned-fonts.md, section 1-3. This is the sidecar the banned-font-gate hook actually reads. Keep in sync with the markdown by hand when the doctrine changes (per §6, Living refresh rule) — the markdown is the authored, evidenced source; this file exists only so the hook doesn't parse prose.",
+  "source": "doctrine/references/ai-slop-banned-fonts.md",
+  "lastSynced": "2026-09-20",
+  "hardBan": [
+    { "family": "Inter", "reason": "AI" },
+    { "family": "Geist", "reason": "AI" },
+    { "family": "Roboto", "reason": "POP/AI" },
+    { "family": "Open Sans", "reason": "POP" },
+    { "family": "Lato", "reason": "POP" },
+    { "family": "Arial", "reason": "SYS" }
+  ],
+  "secondaryBan": [
+    { "family": "Space Grotesk", "reason": "AI" },
+    { "family": "Instrument Serif", "reason": "AI" },
+    { "family": "Poppins", "reason": "POP" },
+    { "family": "Montserrat", "reason": "POP" },
+    { "family": "Nunito", "reason": "POP" },
+    { "family": "Nunito Sans", "reason": "POP" }
+  ],
+  "conditionalPrimaryOnly": [
+    { "family": "Source Sans 3", "reason": "overused as standalone; permitted as a paired body face only" },
+    { "family": "Source Sans Pro", "reason": "overused as standalone; permitted as a paired body face only" }
+  ],
+  "bareSystemStackAlone": [
+    "-apple-system", "BlinkMacSystemFont", "Segoe UI", "system-ui"
+  ],
+  "monospaceBanned": [
+    { "family": "Roboto Mono", "reason": "banned as a deliberate design choice; system default use is not checked by this gate" }
+  ],
+  "monospaceApproved": ["JetBrains Mono", "IBM Plex Mono", "Fira Code"]
+}

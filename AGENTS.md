@@ -30,6 +30,13 @@ See `.skills-engine/engine-manifest.yaml` for the declarative contract used by t
 
 The package may read the router, discover skills, inspect Git, and run only declared checks. Missing evidence is NOT ASSESSED; writes, pulls, publication, submissions, ledger/filing changes, deployment, or control changes require explicit approval.
 
+## Rules
+
+Always-on cross-cutting principles live in `rules/` — see `rules/README.md`.
+Load `rules/common/core.md` alongside the routed skill for any non-trivial task;
+it is short and does not replace the skill, only sets the baseline the skill
+operates within.
+
 ## Mandatory Digital Research currentness gate for Kaizen
 
 Every Kaizen audit, skill edit, reference update, validator change, and
