@@ -2,7 +2,7 @@
 
 This is the local conformance contract for every active `skills/**/SKILL.md`. It applies the
 canonical `skill-writing`, `skill-composition-standards`, and `skill-engine-audit` rules from the
-`skills-web-dev` engine without copying their full bodies into this repository.
+`chwezi-dev-engine` engine without copying their full bodies into this repository.
 
 ## Definition of a skill
 

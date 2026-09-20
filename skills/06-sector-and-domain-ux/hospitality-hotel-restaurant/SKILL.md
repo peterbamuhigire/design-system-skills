@@ -143,4 +143,4 @@ low-cost-phone/keyboard review.
 
 - [Design doctrine](../../../doctrine/design-doctrine.md)
 - [Design quality gate](../../../governance/design-quality-gate.md)
-- `C:\wamp64\www\skills-web-dev\docs\source-registers\hospitality-currentness-2026-09.json`
+- `C:\wamp64\www\chwezi-dev-engine\docs\source-registers\hospitality-currentness-2026-09.json`

@@ -54,7 +54,7 @@ primary sources; quarantine stale/ambiguous/unsupported claims and mark them
 
 The shared control plane is adapted to visual and document work in
 [`docs/control-plane-adoption.md`](docs/control-plane-adoption.md); the central
-registry is `C:\wamp64\www\skills-web-dev\docs\engine-control-plane.json`.
+registry is `C:\wamp64\www\chwezi-dev-engine\docs\engine-control-plane.json`.
 
 Cross-cutting design & typography engine. Compatible with Claude Code and Codex-style agents.
 Extends the guidance in `CLAUDE.md` with runner-neutral operations and the Codex adapter, kept for dual-compat tooling.

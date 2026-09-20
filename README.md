@@ -26,7 +26,7 @@ interface for silently-broken interactive state
 
 This is a **cross-cutting engine**: most other Chwezi engines lean on it as a soft, optional
 enhancement for how their own document, UI, or presentation output looks, rather than owning any
-presentation doctrine themselves. `skills-web-dev`'s own `rules/common/*.md` and cross-engine
+presentation doctrine themselves. `chwezi-dev-engine`'s own `rules/common/*.md` and cross-engine
 routing table name it explicitly as the route for "typography, visual design, UI appearance,
 design systems, and document/slides/spreadsheet presentation," and `website-skills` routes to it
 for the same reason wherever content ships as a rendered page or downloadable document. Consult
@@ -56,7 +56,7 @@ headers cite the same Windows/MSYS2 path-resolution fix documented in ECC's `ins
 Sister engines that use this one most, each an independent, optional install rather than a hard
 dependency:
 
-- **`skills-web-dev`** (Chwezi Engineering Engine) — for the code, architecture, and SaaS/SDLC
+- **`chwezi-dev-engine`** (Chwezi Engineering Engine) — for the code, architecture, and SaaS/SDLC
   structure this engine's presentation layer sits on top of; its own routing table names this
   engine as the destination for "Typography, visual design, UI appearance, design systems,
   document/slides/spreadsheet presentation."
@@ -65,6 +65,18 @@ dependency:
 - **`chwezi-accounting-doctrine`** — not a design consumer of this engine, but the reciprocal
   relationship: this engine defers to it for any finance/accounting values that appear inside a
   visually-designed statement, invoice, or dashboard, rather than inventing them.
+
+## Content integrity
+
+This repository contains no client names, client data, or project-specific work product. It is
+a skills library, not a place where client work is carried out — client and project files live
+in separate downstream project repositories, never in this repo. (`.gitignore` here excludes
+build/generated artifacts — unredistributable premium font binaries and OS/editor noise —
+because there are no client or project directories in this repo to begin with.) Users installing
+this engine should still exercise their own due diligence — you can ask Claude Code or Codex to
+run a security scan of this engine, its skills, and its reference files before relying on it in
+a sensitive environment (for example: "scan this repository for hardcoded secrets, personal
+paths, or unexpected network calls").
 
 ## Capabilities
 
