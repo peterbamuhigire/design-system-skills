@@ -1,6 +1,6 @@
 ---
 name: click-path-audit
-description: Use when systematic debugging finds no bugs but users report a button or control that "does nothing," or after any refactor touching shared state (Zustand/Redux/context). Traces every interactive touchpoint through its full state-change sequence to find handlers that silently undo each other, race, or leave the UI in a state that contradicts the control's label. Use design-qa-and-pre-launch-review for the visual/a11y release gate — this skill is a behavioural-state audit, not a visual one.
+description: Use when debugging finds no crash but a button, toggle, or form action does nothing, or after a shared-state refactor. Trace each touchpoint for silent resets, races, stale closures, and final-state mismatches. Use design-qa-and-pre-launch-review for visual/a11y release gating; this is a behavioural-state audit.
 metadata:
   portable: true
   category: 00-cross-cutting-ops-qa-a11y
@@ -120,6 +120,8 @@ Without read access to the actual store/handler source, this skill cannot produc
 finding — report that the audit could not run rather than guessing at a plausible-sounding bug.
 Without the ability to run the flow, mark each finding as a static-trace hypothesis rather than a
 confirmed reproduction, and say so explicitly in the report.
+Stop the audit when the required source or stated control intent is unavailable; record the gap
+and do not infer a failure from an unobserved path.
 
 ## Anti-Patterns
 

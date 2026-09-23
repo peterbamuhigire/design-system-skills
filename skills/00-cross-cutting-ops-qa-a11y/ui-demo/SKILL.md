@@ -1,6 +1,6 @@
 ---
 name: ui-demo
-description: Use when the user asks for a demo video, screen recording, walkthrough, or tutorial video of a web application, produced with Playwright. Produces WebM videos with a visible injected cursor, natural pacing, and a storytelling flow. Use demo-driven-design-process (in 05-ux-process) for the process of deciding WHAT to demo — this skill is the production mechanism.
+description: Use when recording a web-application demo video, screen recording, walkthrough, or tutorial with Playwright. Produces a WebM with an injected cursor, paced story, and discovered/rehearsed selectors. Use demo-driven-design-process to decide what to demo; this skill records it.
 metadata:
   portable: true
   category: 00-cross-cutting-ops-qa-a11y
@@ -43,7 +43,9 @@ correctness is verifiable by running it, which is the discipline this skill itse
 | The flow/story to demonstrate | User, or `demo-driven-design-process` output | yes | Determines the script's step order |
 | Playwright installed in the project | Project | yes | The recording mechanism itself |
 
-## Workflow — three phases, never skip to recording
+## Workflow
+
+Three phases; never skip discovery or rehearsal before recording.
 
 ### Phase 1 — Discover
 Before writing any script, navigate to each page in the flow and dump its actual interactive
@@ -101,6 +103,8 @@ Discovery. Editing is scoped to the demo script itself.
 Without a running target app or Playwright available, produce the script structure and field-map
 template only, explicitly marked as unrehearsed and unrecorded — never claim a recording exists
 without having actually run Phase 3.
+Stop before recording if discovery or rehearsal has not passed; retain the failure log and fix the
+selector or environment before attempting another take.
 
 ## Anti-Patterns
 

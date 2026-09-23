@@ -70,7 +70,6 @@ Stop rather than score when the primary artefact itself cannot be inspected.
 Every finding must be observable, severity-calibrated, routed to an owner, and preserved in the
 coverage record. Hard-gate failures cap the verdict; missing evidence lowers confidence.
 
-
 ## Anti-Patterns
 
 - **Finding without evidence.** Cite the screen, state, measurement, or source line; otherwise
@@ -82,8 +81,7 @@ coverage record. Hard-gate failures cap the verdict; missing evidence lowers con
 - **Audit that silently redesigns.** End with the triaged queue and hand accepted findings to
   `ux-remediation-and-redesign`.
 - **Happy-path-only inspection.** Include empty, error, loading, focus, disabled, responsive, and
-  recovery states or mark them unverified.
-
+recovery states or mark them unverified.
 
 ## Outputs
 
@@ -123,17 +121,11 @@ coverage record. Hard-gate failures cap the verdict; missing evidence lowers con
   landing + signup), showing the three gates, 0–4 dimension scoring, and how a failed gate caps
   the final score.
 <!-- dual-compat-end -->
+
 ## Plugins (Load Alongside)
 
-| Companion Skill | When to Load |
-|---|---|
-| `visual-product-slop-audit` | Detailed visual/product AI slop checklist |
-| `practical-ui-design` | Visual system rules to audit against |
-| `motion-design` | Animation quality standards |
-| `ux-remediation-and-redesign` | **After** the audit — to triage, redesign, re-validate, and measure the fixes for the findings this audit produced (the fix side; this skill is the diagnose side) |
-| `ux-remediation-and-redesign` | **Downstream hand-off** — once findings are triaged into a fix queue, that skill redesigns, re-validates (5-user / A/B / tree test), and measures the uplift. This skill diagnoses + triages; that one executes the fix. |
-
----
+Load `visual-product-slop-audit`, `practical-ui-design`, or `motion-design` for specialist checks;
+hand triaged findings to `ux-remediation-and-redesign` for execution and re-validation.
 
 ## 1. Audit Process
 
@@ -481,25 +473,11 @@ scoring and the weights below. A worked, filled example is in `examples/design-a
 
 ## 5. Quick Audit Checklist (10-Minute Version)
 
-For rapid checks when a full audit isn't needed:
-
-- [ ] **AI Slop**: Does this look machine-generated? (fonts, colours, layout)
-- [ ] **Hierarchy**: Squint test passes — primary element is clear
-- [ ] **Contrast**: Body text >= 4.5:1, UI components >= 3:1
-- [ ] **Touch targets**: >= 44x44px on touch devices
-- [ ] **Keyboard**: Tab through the page — focus visible, logical order
-- [ ] **States**: Hover, focus, active, error, loading all defined
-- [ ] **Buttons**: All use verb + noun labels
-- [ ] **Errors**: All show what, why, how to fix
-- [ ] **Empty states**: No blank screens
-- [ ] **Responsive**: Works on mobile without horizontal scroll
-- [ ] **Performance**: Loads in < 3s on mobile
-- [ ] **Motion**: No bounce easing, reduced motion handled
+For rapid checks when a full audit is not needed, review AI slop, hierarchy, contrast, touch
+targets, keyboard focus, interaction states, button labels, error recovery, empty states,
+responsive behaviour, performance, and reduced motion; record each item as pass, fail, or unverified.
 
 ---
-
----
-
 ## 6. Hand-off — where the audit stops
 
 This skill ends at a **triaged, ordered fix queue** (Workflow Step 3 + the Triage Queue report

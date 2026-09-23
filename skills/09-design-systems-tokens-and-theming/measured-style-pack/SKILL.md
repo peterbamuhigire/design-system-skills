@@ -1,6 +1,6 @@
 ---
 name: measured-style-pack
-description: Use when you have an approved reference (a signed-off deck, an existing brand application, a shipped screen set) and need its colour, type scale, and spacing measured into a deterministic token pack rather than re-described in prose each time. Use design-tokens-and-naming for naming/tiering once values exist, and color-system-and-palette when no reference exists yet and the palette must be designed from scratch.
+description: Use when an approved reference needs its colour, type scale, and spacing measured into a deterministic token pack. Use design-tokens-and-naming for naming/tiering after measurement, and color-system-and-palette when no approved reference exists and the palette must be designed.
 metadata:
   portable: true
   category: 09-design-systems-tokens-and-theming

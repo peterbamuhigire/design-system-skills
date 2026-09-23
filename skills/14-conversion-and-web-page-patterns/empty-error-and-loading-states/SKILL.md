@@ -1,6 +1,6 @@
 ---
 name: empty-error-and-loading-states
-description: Use when designing visual and interaction behaviour for empty, error, loading, offline, permission, partial-failure, success, or confirmation states. Use error-empty-and-system-messaging for the words and onboarding-and-first-run-design for the wider activation journey.
+description: Use when designing visual and interaction behaviour for empty, error, loading, offline, permission, partial-failure, success, confirmation, disabled, or retry states, including table components. Use error-empty-and-system-messaging for words and onboarding-and-first-run-design for activation journeys.
 metadata:
   portable: true
   category: 14-conversion-and-web-page-patterns

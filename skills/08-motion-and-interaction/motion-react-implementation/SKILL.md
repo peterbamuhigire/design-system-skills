@@ -1,6 +1,6 @@
 ---
 name: motion-react-implementation
-description: Use when implementing motion in React or Next.js with the motion/react (Framer Motion) library — SSR/hydration safety, drag and gesture interactions, useAnimate imperative sequences, SVG path drawing, custom motion hooks, and the API decision tree (transition vs spring vs useAnimate vs motion values). Use motion-design for platform-agnostic timing/easing/spring tokens and the reduced-motion contract — this skill implements those decisions in React, it does not redefine them.
+description: Use when implementing approved motion in React or Next.js with motion/react covering SSR/hydration safety, drag and gestures, useAnimate sequences, SVG paths, custom hooks, and API selection. Use motion-design for timing, easing, spring, and reduced-motion decisions; this skill implements them.
 metadata:
   portable: true
   category: 08-motion-and-interaction

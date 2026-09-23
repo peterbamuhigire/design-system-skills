@@ -1,6 +1,6 @@
 ---
 name: interface-craft-micro-details
-description: Use for the small, checkable geometry and rendering details that make nested UI surfaces, icons, numerals, and images read as coherent rather than assembled — concentric corner radius, optical vs geometric alignment, tabular numerals, and image edge treatment. Use component-states-and-interaction-fidelity for the state/token system these details sit inside, and variable-fonts-and-opentype-features for the full OpenType feature set (this skill only cites the one numeral-alignment feature relevant to nested-surface craft).
+description: Use when checking geometry and rendering details in nested UI surfaces, icons, numerals, and images covering concentric radius, optical alignment, tabular numerals, and image edges. Use component-states-and-interaction-fidelity for states/tokens and variable-fonts-and-opentype-features for the wider OpenType set.
 metadata:
   portable: true
   category: 04-web-and-ui-design
@@ -123,6 +123,8 @@ confirm the optical-alignment offset before finalising it.
 Without the actual radius/padding/icon asset values, state the formula and flag the specific
 numbers as needed rather than guessing a plausible-looking radius. Without a way to render the
 result, mark an optical-alignment offset as a proposed value pending visual confirmation.
+Stop when the actual values or a reviewable render are unavailable; retain the proposed change as
+unverified rather than presenting it as a confirmed correction.
 
 ## Anti-Patterns
 

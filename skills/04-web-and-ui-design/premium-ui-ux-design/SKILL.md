@@ -50,6 +50,26 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 8. Produce evidence: screenshots, score, defects, and concrete improvements.
 9. When operating in SRS mode, translate the above into testable non-functional requirements linked to SRS IDs and verification methods (see `premium-ui-ux-specification-rules.md`).
 
+## Premium promise to observable craft (Kaizen adoption)
+
+Treat premium as a delivery claim with visible proof, not as a visual mood (synthesis). For each
+promise, record the user job, service or product behaviour, evidence artifact, owner, and review
+status. The proof loop is:
+
+1. State the promise in the user's language and name the critical task it should improve.
+2. Record the authored design decisions that make the work purpose-fit, with the reason each one
+   serves the audience, context, or business outcome.
+3. Show real or representative content in the critical flow, including loading, empty, error,
+   recovery, responsive, and accessible alternatives.
+4. Run the relevant task, accessibility, and responsive checks; link the result to the promise and
+   mark missing render, user, or device evidence `NOT_ASSESSED`.
+5. If the promise fails, correct the highest-cost comprehension or trust defect and rerun the
+   affected check before adding polish.
+
+Use the [design quality gate](../../../governance/design-quality-gate.md) for the final evidence
+record. The [WCAG 2.2 Recommendation](https://www.w3.org/TR/WCAG22/) is a normative accessibility
+reference (accessed 2026-09-22); it does not by itself prove that a particular artifact conforms.
+
 ## Decision Rules
 
 | Condition | Choice | Wrong-choice failure |

@@ -1,6 +1,6 @@
 ---
 name: plan-canvas-design-review
-description: Use when a design deliverable (a screen, a comp, an HTML preview, a design-audit report, or a pre-launch QA checklist) needs a human reviewer to point at the exact element they mean and deliver an Approve / Request-changes verdict, instead of typing prose feedback like "make the header bigger." Use design-audit or design-qa-and-pre-launch-review to produce the findings; this skill runs the human review/approval loop over them.
+description: Use when a local design artefact needs a human reviewer to point at an exact element and deliver an Approve or Request-changes verdict with anchored feedback. Use design-audit or design-qa-and-pre-launch-review to produce findings; this skill runs the review loop.
 metadata:
   portable: true
   category: 00-cross-cutting-ops-qa-a11y
@@ -241,6 +241,61 @@ the reviewer can point at directly, the same as ECC's original plan review.
   confer design authority.
 - Vendoring a second, independently-maintained copy of the CLI here once one engine already
   has it — reuse that copy (see "Dependency and current status" above).
+
+## Required Inputs
+
+| Artefact | Source | Required? | Missing behaviour |
+|---|---|---|---|
+| Local design artefact and review scope | Project owner or upstream audit | yes | Stop and return a qualified gap note if the artefact is unavailable. |
+| Reviewer identity and decision authority | Named design or release owner | yes | Record the authority gap; do not treat an unassigned verdict as approval. |
+| Reusable plan-canvas CLI | SRS sibling engine or approved local installation | yes | Mark the review mechanism unavailable and do not claim a verdict. |
+
+## Workflow
+
+1. Confirm the local artefact, review scope, reviewer authority, and CLI path before opening a session.
+2. Open the artefact, keep `await` listening, and capture anchored annotations and the verdict as JSON.
+3. Route `approve` to the accountable gate and route `request-changes` items to the owning remediation skill.
+4. Stop release when the verdict, reviewer authority, or artefact identity is unresolved; recover by
+   correcting the missing input and reopening the same review session.
+
+## Outputs
+
+| Artefact | Consumer | Acceptance condition |
+|---|---|---|
+| Anchored annotation and verdict record | Design owner and release reviewer | Each item identifies the artefact, anchor, reviewer, verdict, and next action. |
+| Review handoff | Remediation or release gate owner | Approved work has accountable sign-off; requested changes have named owners and remain open. |
+
+## Evidence Produced
+
+| Evidence | Consumer | Acceptance condition |
+|---|---|---|
+| Canvas session JSON | Reviewer and gate owner | Feedback and verdict are retained from the CLI response, not reconstructed from prose. |
+| Authority and limitation note | Release reviewer | Reviewer identity, local-only boundary, unavailable checks, and unresolved items are explicit. |
+
+## Capability Contract
+
+Read access to the local artefact and execution access to the approved canvas CLI are required.
+The review is local and read-only unless a separately authorised remediation edit is requested.
+Publication, remote URL access, and approval outside the named authority are out of scope.
+
+## Degraded mode
+
+If the CLI, local artefact, reviewer, or authority is unavailable, return the narrowest qualified
+review checklist and mark the verdict `not assessed`. Do not manufacture anchored feedback or
+convert a missing listener into approval.
+
+## Decision Rules
+
+| Choice | Action | Wrong-choice failure or risk |
+|---|---|---|
+| Reviewer has named authority and the artefact is local | Run the canvas review and retain its JSON | Approval cannot be attributed or reproduced. |
+| Reviewer requests changes | Keep the gate open and route each annotation to an owner | Unresolved defects are mistaken for sign-off. |
+| CLI or artefact is unavailable | Stop, record the gap, and recover the dependency | A missing review is presented as a passed gate. |
+
+## Examples
+
+- Open a local HTML preview, await anchored annotations, and record the final verdict before the
+  design QA gate consumes it.
 
 ## References
 
