@@ -150,6 +150,7 @@ real choice), **say so and ask** — never silently ship the convergent default.
 
 | Condition | Choice | Wrong-choice failure |
 |---|---|---|
+| The client has not yet chosen a direction | Run `art-direction-routes` first (three direction boards), then set the signature inside the chosen route | One signature is polished inside a direction nobody agreed |
 | Brand has a strong authentic asset | Make it the singular signature | Adding unrelated novelty dilutes recognition |
 | Category demands trust and restraint | Distinguish through typography, proportion, and detail | Decorative spectacle undermines credibility |
 | No premium asset is licensed | Use the named OFL baseline plus authored layout/motif | Unlicensed embedding creates legal and delivery risk |
@@ -209,6 +210,7 @@ real choice), **say so and ask** — never silently ship the convergent default.
   run against it. Read it to see the discipline applied end to end.
 
 ## References
+- `skills/11-imagery-illustration-and-art-direction/art-direction-routes/` — named routes, three direction boards, style currency check.
 
 - `doctrine/design-doctrine.md` — the Mission ("the moat is looking human-made"), the five
   non-negotiables, and the sourcing-authority asymmetry rule (§2).

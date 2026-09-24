@@ -89,7 +89,7 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
    components/icons/focus rings ≥ **3:1** (WCAG 2.x 1.4.3 / 1.4.11). Any pair that fails is
    rejected and the ramp step is retuned until it passes — no exceptions for "it looks fine."
    **Design with APCA, certify with WCAG:** while tuning mid-tones, judge real legibility with
-   **APCA** (the WCAG 3.0 *draft* algorithm — not yet normative), which models thin/small text
+   **APCA** (a perceptual design aid — not a W3C method and not in the current WCAG 3.0 draft), which models thin/small text
    better; then **verify against the 4.5:1 / 3:1 ratios for conformance** before shipping. See
    `doctrine/references/wcag-2.2-criteria.md` (Contrast method note).
 

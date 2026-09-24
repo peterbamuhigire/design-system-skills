@@ -318,7 +318,7 @@ Clients investing $20k–$50k in a website are buying brand equity. One viral co
 
 ## 8. TIDWELL BEHAVIORAL PATTERNS
 
-Patterns from *Designing Interfaces* (Tidwell, Brewer, Valencia — O'Reilly 2020). Full pattern details in `book-extractions/tidwell-cognition-visual-patterns.md`.
+Patterns from *Designing Interfaces* (Tidwell, Brewer, Valencia — O'Reilly 2020). The patterns below are the working summary this engine keeps.
 
 ### Safe Exploration — "Let me explore without getting into trouble."
 - Every destructive action must be reversible or require confirmation.
@@ -449,7 +449,7 @@ Elements connected by a visible line or border are perceived as more strongly re
 
 ## SECTION 10: KRUG'S THREE FACTS OF REAL WEB USE
 
-Grounded in Krug (2014) *Don't Make Me Think*, 3rd ed. Full reference: `book-extractions/dont-make-me-think-extraction.md`.
+Grounded in Krug (2014) *Don't Make Me Think*, 3rd ed. The facts below are the working summary this engine keeps.
 
 | Fact | Reality | Design Response |
 |------|---------|-----------------|
@@ -478,16 +478,16 @@ Grounded in Krug (2014) *Don't Make Me Think*, 3rd ed. Full reference: `book-ext
 
 ## Working memory and cognitive load (added 2026-05-04 from Branson)
 
-Source: `branson-ux-ui-design-extraction.md` Section 5 (Human Memory Limitations).
+Source: Branson, *UX/UI design* guidance on human memory limitations (paraphrased).
 
-### Capacity rule (Miller, 1956)
-- Working memory: **7 ± 2 chunks**, often less
+### Capacity rule (Cowan, 2001; supersedes the older Miller, 1956 figure)
+- Working memory: about **four chunks** (range three to five) when rehearsal and grouping are prevented; treat that as a ceiling under calm conditions, not a budget to fill. Miller's often-quoted figure described span tasks and the power of chunking, not a UI limit; never cite it as a design rule (see `working-memory-and-interruption-design.md`)
 - Span: ~30 seconds, extendable by repetition; intervening activities ("proactive interference") shrink it fast
 - A "chunk" is one gestalt — a word, not a phoneme; a phrase, not a letter
 
 ### Web design implications
-- Primary navigation: ≤ 7 items (chunk further if more needed)
-- Form fields visible at once: ≤ 7 (split long forms into steps)
+- Primary navigation: no fixed item cap follows from memory research, because visible items are recognised, not recalled; keep the top level short enough to scan, group the rest, and validate with card sorting or tree testing
+- Forms: split long forms into steps with a clear closure point, and never require the user to carry a value from one screen to another
 - Numeric strings (phone, account): chunk at 3-3-4 or 4-3 patterns
 - Avoid stacking: don't ask the user to remember earlier-page values mid-flow
 
@@ -510,7 +510,7 @@ Computers are better at memory; humans at pattern recognition. Let the user **ch
 
 ## Four-stage cognitive affordance discipline (added 2026-05-04 from Branson)
 
-Source: `branson-ux-ui-design-extraction.md` Section 6 (Cognitive Affordance).
+Source: Branson, *UX/UI design* guidance on cognitive affordance (paraphrased).
 
 For every important interactive element, walk through these four stages. Failure at any stage breaks the chain.
 

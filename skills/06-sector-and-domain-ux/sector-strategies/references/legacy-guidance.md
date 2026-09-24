@@ -20,7 +20,7 @@ All sector templates are built on **Universal Design Guidelines** which cover:
 - Purpose-driven design and visual hierarchy
 - User-centered design and UX fundamentals
 - Color theory, typography, spacing standards
-- Accessibility requirements (WCAG 2.1 AA)
+- Accessibility requirements (WCAG 2.2 AA)
 - Mobile-first responsive design
 - Trust and credibility signals
 - Navigation best practices

@@ -1,35 +1,42 @@
-# Phase 3 — Reading-List Extraction Plan
+# Phase 3 — Reading-List Knowledge Plan
 
-Turn the bought books (`docs/initial-analysis/08-reading-list.md`) into canonical depth inside the
-deepest skills. Extract Tier-1 first (highest leverage), then Tier-2/3 as headroom allows. Each
-extraction lands as a `references/*.md` (the distilled principles, attributed) and ideally a
-`examples/*` (an applied artifact). Honours the doctrine's sourcing-authority asymmetry — these are
-*human* design authority.
+**Amended 2026-09-24 (owner rule):** book extractions, book digests and one-file-per-book
+references must never be stored in this repository. Knowledge from the reading list is folded into
+**task-oriented skill references** (procedures, decision rules, checklists, pattern tables and
+original worked examples) that synthesise several sources in the engine's own structure, with a
+brief source line. See the "Never store book extractions" rule in `AGENTS.md` and
+`governance/skill-authoring-standard.md`.
 
-## Tier-1 extraction map (do these first)
+Deepen the most-used skills with durable principles from the bought books
+(`docs/initial-analysis/08-reading-list.md`). Tier-1 first (highest leverage), then Tier-2/3 as
+headroom allows. Each principle lands inside the skill that performs the task, alongside an applied
+`examples/*` artefact. These books are *human* design authority under the doctrine's
+sourcing-authority asymmetry.
 
-| Book | → Skill(s) | Extract into |
+## Tier-1 map (book → skills it should deepen → task the knowledge serves)
+
+| Book | Skills | Fold into (task-oriented, multi-source) |
 |---|---|---|
-| **Bringhurst — The Elements of Typographic Style** | `font-selection-and-pairing`, `variable-fonts-and-opentype-features`, `fluid-responsive-typography` | scale ratios, measure/leading, pairing, OpenType → `references/bringhurst-principles.md` + `examples/applied-type-scale.md` |
-| **Müller-Brockmann — Grid Systems** | `layout-grid-and-spacing`, `composition-and-visual-hierarchy` | grid construction, modular systems → `references/grid-systems-catalog.md` + `examples/grid-template-worked.md` |
-| **Lupton — Thinking with Type** | `font-selection-and-pairing`, `ux-writing-and-microcopy`, `editorial-and-long-form-layout` | type anatomy, text setting → `references/text-setting.md` |
-| **Albers — Interaction of Color** | `color-system-and-palette`, `accessible-color-and-contrast` | colour relativity, contrast → `references/color-interaction.md` + `examples/oklch-palette-worked.md` |
-| **Tufte — The Visual Display of Quantitative Information** | `data-visualization`, `chart-selection-and-encoding`, `analytical-report-and-exhibit-design` | data-ink, integrity, small multiples → `references/tufte-principles.md` + `examples/chart-worked-examples.md` |
-| **Norman — The Design of Everyday Things** | `ux-psychology`, `heuristic-evaluation-and-design-critique` | affordances, signifiers, mapping → `references/norman-principles.md` |
-| **Wathan & Schoger — Refactoring UI** | `practical-ui-design`, `composition-and-visual-hierarchy`, `color-system-and-palette` | practical spacing/hierarchy/colour tactics → `references/refactoring-ui-tactics.md` + worked example |
-| **Kholmatova — Design Systems** | `design-tokens-and-naming`, `component-library-architecture`, `design-system-governance-and-versioning` | pattern libraries, system models → `references/design-systems-models.md` |
+| Bringhurst — *The Elements of Typographic Style* | `font-selection-and-pairing`, `fine-typesetting-and-typesetting-qa`, `fluid-responsive-typography` | Scale, measure, leading and typesetting rules inside the type-scale and typesetting references |
+| Müller-Brockmann — *Grid Systems* | `layout-grid-and-spacing`, `composition-and-visual-hierarchy` | Grid construction procedure and grid catalogue in the layout skill's references |
+| Lupton — *Thinking with Type* | `font-selection-and-pairing`, `editorial-and-long-form-layout` | Text-setting decisions in the editorial and typesetting references |
+| Albers — *Interaction of Color* | `color-system-and-palette`, `accessible-color-and-contrast` | Colour relativity checks in the colour-choice and contrast procedures |
+| Tufte — *The Visual Display of Quantitative Information* | `data-visualization`, `chart-selection-and-encoding` | Integrity and data-ink rules in the chart-fit decision reference |
+| Norman — *The Design of Everyday Things* | `ux-psychology`, `heuristic-evaluation-and-design-critique` | Affordance, signifier and mapping checks in the heuristic catalogue |
+| Wathan & Schoger — *Refactoring UI* | `practical-ui-design`, `composition-and-visual-hierarchy` | Build order and numeric baselines in the practical-UI references |
+| Kholmatova — *Design Systems* | `design-tokens-and-naming`, `component-library-architecture` | The design-system operating model reference |
 
 ## Tier-2/3 (as headroom allows)
-Map per `08-reading-list.md` (e.g. Spiekermann → type rhythm; Reynolds *Presentation Zen* →
-`pitch-deck-narrative-and-craft`; editorial-design bible → `editorial-and-whitepaper-design`;
-Hoffmann/colour, motion, and accessibility titles → their groups). Keep the same pattern: distilled
-`references/*` + an applied `examples/*`, attributed to the source.
+Map per `08-reading-list.md` (for example Spiekermann → type rhythm; Reynolds, *Presentation
+Zen* → `deck-system`; editorial-design texts → `editorial-and-long-form-layout`; colour, motion
+and accessibility titles → their groups). Same pattern: fold into existing task references plus an
+applied example, never a per-book file.
 
 ## Order
-Extract into the **most-used, highest-scoring-leverage** skills first (typography, colour, layout,
-data-viz, design-systems) — these compound across every output type. One book per session is a
-sustainable cadence.
+Most-used, highest-leverage skills first (typography, colour, layout, data-viz, design systems);
+these compound across every output type. One book per session is a sustainable cadence.
 
 ## Acceptance
-Each Tier-1 book has produced at least one `references/*` (attributed) in its mapped skill, and the
-mapped skill has a worked example demonstrating the extracted principle.
+Each Tier-1 book has deepened at least one task reference in its mapped skill (cited in a short
+source line), the mapped skill has a worked example demonstrating the principle, and no reference
+is a single-book digest.

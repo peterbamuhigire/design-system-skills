@@ -40,7 +40,7 @@ Complete, production-ready templates for building stunning nonprofit and charity
 All components include:
 - ✅ Light mode colors (primary palette)
 - ✅ Dark mode colors (adjusted for contrast & readability)
-- ✅ WCAG 2.1 AA accessibility in both modes
+- ✅ WCAG 2.2 AA accessibility in both modes
 - ✅ Smooth transitions between modes
 - ✅ System preference detection + manual toggle
 - ✅ Persistent user choice in localStorage
@@ -112,7 +112,7 @@ The design-system skill reads your sector-brief.md and generates:
 - Years of service
 
 ### Accessibility (Critical for Nonprofits)
-- WCAG 2.1 AA compliance
+- WCAG 2.2 AA compliance
 - Mobile-first (users on slow connections)
 - Screen reader support
 - High contrast mode
@@ -220,7 +220,7 @@ nonprofit/
 ✅ **Donation-Optimized** - Multi-step form, recurring options, matching gifts
 ✅ **Impact-Focused** - Story-led layouts, animated metrics, testimonials
 ✅ **Dark Mode** - 100% support, accessible, beautiful in both modes
-✅ **Accessibility** - WCAG 2.1 AA+, screen reader ready, keyboard nav
+✅ **Accessibility** - WCAG 2.2 AA+, screen reader ready, keyboard nav
 ✅ **Mobile-First** - Works perfectly on slow connections & small screens
 ✅ **Performance** - Lighthouse 95+, images optimized, zero external CDN
 

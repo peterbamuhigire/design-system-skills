@@ -29,3 +29,22 @@ literature.
 ## When unsure whether a choice is slop, treat it as slop
 
 Pick a deliberate alternative rather than defaulting to "probably fine."
+
+## Never store book extractions
+
+Book extractions, book summaries and chapter-by-chapter notes must never be stored in this
+repository (no `book-extractions/` or `docs/book-study/` folder, no `*-extraction.md` files). Keeping them infringes
+copyright. Knowledge from purchased books enters only as paraphrased, task-oriented skill content
+and `references/` files (procedures, checklists, decision rules, templates) with a short citation
+(Author (Year) *Title*, Publisher). Verbatim quotations stay rare and under 25 words. Staging
+notes live outside the repository and are never linked from skills. `scripts/validate_engine.py`
+fails if an extraction folder exists or a file under skills/, doctrine/ or docs/ links to one; plan and audit documents may name books but not store their content.
+
+## References are task guides, not book digests
+
+A `references/` file must be organised around the task it supports (inputs, decision rules,
+procedures, pattern tables, original worked examples) and should synthesise more than one source
+where more than one exists. It must not be a single-book digest: no chapter-numbered headings, no
+catalogue reproduced in a book's own sequence, no book examples or case studies, no "key mantras"
+lists, and no more than one brief attributed quotation. Cite sources in a short line (Author,
+*Title*). Replace book examples with original, preferably localised, examples.

@@ -10,7 +10,7 @@ Mission exists to beat).
 the **Tutorials & Invitations** and **Anti-Patterns** chapters — and Bill Scott & Theresa Neil's
 *Designing Web Interfaces* (2009) **Provide an Invitation** principle, updated to 2026 and aligned to
 WCAG 2.2 and `doctrine/design-doctrine.md`. Cross-referenced with the engine's
-`docs/book-study/02-interaction-patterns.md` and `doctrine/references/interaction-anti-patterns.md`.
+`skills/04-web-and-ui-design/interaction-design-patterns/references/interaction-principles-consistency-and-recoverability.md` and `doctrine/references/interaction-anti-patterns.md`.
 
 The north star: **time-to-value, not time-to-tour.** Every pattern below is judged by whether it
 shortens the path from first open to the user's first real moment of worth.
@@ -104,8 +104,9 @@ relevant.** (Scott & Neil, *Progressive Disclosure*; Neil, *let-the-user-do* > p
   first time the user arrives there, beats a six-slide tour on launch that's forgotten before it's
   relevant.
 - **Learn-by-doing beats watching.** An interactive first task (the user actually sends the invoice,
-  with light guidance) outperforms a passive walkthrough they tap through. Book-study 02: single-CTA
-  transparency and let-user-*do* beat multi-step tours (Intuit Snap Payroll).
+  with light guidance) outperforms a passive walkthrough they tap through. Example: a Kampala
+  payroll app's first screen offers one action, "Run a test payroll for one employee", shows the
+  exact deductions before confirming, and skips the five-slide feature tour entirely.
 
 ---
 
@@ -123,7 +124,7 @@ first, then teach only the genuinely non-obvious remainder.
 - **Always skippable, never trapping** — no forced, unskippable sequence; that is the **Trap / Forced
   Action** anti-pattern (`interaction-anti-patterns.md` §C4). A visible "Skip" / dismiss on every step.
 - **Touch reality** — tooltips on **hover have no touch equivalent** (`interaction-anti-patterns.md`
-  §E3; book-study 02 flags hover as the single biggest desktop-only hazard). Never hide essential
+  §E3; Scott and Neil's hover patterns are the single biggest desktop-only hazard). Never hide essential
   first-run guidance behind hover; use tap-triggered or persistent hints on touch.
 - **Reduced motion** — any spotlight/highlight/coachmark animation honours `prefers-reduced-motion`
   (WCAG 2.3.3); coachmark controls are focusable, ≥24px (2.5.8), and announced (4.1.3).

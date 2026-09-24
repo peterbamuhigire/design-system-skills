@@ -1,6 +1,6 @@
 ---
 name: heuristic-evaluation-and-design-critique
-description: Use when an existing interface or flow needs an expert, no-users inspection against Nielsen/Tognazzini heuristics with screen evidence and 0–4 severity. Do not use for empirical usability testing or a broad 0–100 visual audit; route those to research or design-audit.
+description: Use when an existing interface or flow needs an expert, no-users inspection against Nielsen/Tognazzini heuristics or Norman's signifiers, mapping and feedback, with screen evidence and 0–4 severity. Do not use for empirical usability testing or a broad 0–100 visual audit; route those to research or design-audit.
 metadata:
   portable: true
   category: 05-ux-process-research-and-psychology
@@ -93,6 +93,7 @@ The evaluation is a **structured walkthrough**, not a free-form opinion. Run it 
 | Issue blocks task or risks severe loss | Severity 4 with immediate escalation | Averaging it into a score hides urgent harm |
 | Issue is repeated but recoverable | One systemic finding plus instances | Duplicate findings inflate volume and fragment remediation |
 | Observation depends on user behaviour | Convert to research hypothesis | Expert opinion is misrepresented as user evidence |
+| Users hesitate, mis-tap, or cannot tell if an action worked | Run the action-cycle audit and name the gulf (execution or evaluation) and failed principle | Fix targets the wrong layer: restyling when a signifier, mapping, constraint or feedback change was needed |
 
 ## Capability Contract
 
@@ -149,6 +150,10 @@ The evaluation is a **structured walkthrough**, not a free-form opinion. Run it 
   (full definitions + what each looks like when violated) and **Tognazzini's first principles of
   interaction design** (Anticipation, Autonomy, Consistency, Defaults, Efficiency, Fitts's Law,
   Latency reduction, Learnability, Protect the user's work, Visible navigation, and the rest).
+- `references/action-cycle-and-discoverability-audit.md` — load when a finding needs its cause,
+  not only its heuristic: seven-question walk of the execution and evaluation gulfs, a
+  Pass/Weak/Fail rubric for discoverability, feedback, conceptual model, affordance, signifier,
+  mapping and constraints, memory-burden check, and severity anchors.
 - `references/severity-scoring.md` — the **0–4 severity scale** (0 = not a problem … 4 =
   usability catastrophe) and the **frequency × impact × persistence** rating method, with the
   independent-then-aggregate multi-evaluator protocol and gate floors.

@@ -35,7 +35,7 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 
 ## Workflow
 
-- Read this `SKILL.md` first, then load only the referenced deep-dive files that are necessary for the task.
+- Read the parent [SKILL.md](../SKILL.md) first, then load only the referenced deep-dive files that are necessary for the task.
 - Apply the ordered guidance, checklists, and decision rules in this skill instead of cherry-picking isolated snippets.
 - Produce the deliverable with assumptions, risks, and follow-up work made explicit when they matter.
 
@@ -125,7 +125,7 @@ For enterprise mobile apps, measure success by business impact, not UI novelty:
 
 ## Additional Guidance
 
-Extended guidance for `jetpack-compose-ui` was moved to [references/skill-deep-dive.md](references/skill-deep-dive.md) to keep this entrypoint compact and fast to load.
+Extended guidance for `jetpack-compose-ui` was moved to [jetpack-compose-ui/skill-deep-dive.md](jetpack-compose-ui/skill-deep-dive.md) to keep this entrypoint compact and fast to load.
 
 Use that deep dive for:
 - `Quick Reference`

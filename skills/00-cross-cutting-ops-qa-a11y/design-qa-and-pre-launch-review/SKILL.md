@@ -23,7 +23,7 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - You need to confirm the page **holds up across devices and browsers** — the small-phone /
   tablet / desktop / large-screen breakpoints and the Chromium / WebKit / Firefox engines.
 - You are shipping an Apple-platform surface and need iOS/iPadOS/macOS checks for Liquid Glass,
-  SF Symbols 8, Dynamic Type, VoiceOver, Reduce Transparency, iPhone resizability, iPad
+  current SF Symbols (iOS 27 generation), Dynamic Type, VoiceOver, Reduce Transparency, iPhone resizability, iPad
   multitasking, Mac-designed-for-iPhone, TestFlight screenshots, or Safari/WebKit behavior.
 - You want the **anti-slop, accessibility, and performance gates rolled into a single
   checklist** with a recorded verdict and sign-off, rather than three separate passes that
@@ -109,7 +109,7 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
    **WebKit** (Safari, incl. iOS Safari), and **Firefox/Gecko**. Watch the usual divergences:
    focus-ring rendering, form-control styling, `backdrop-filter`/`gap`/container-query
    support, font rendering/metrics, and date/number input. Record per-engine pass.
-9. **Apple-platform visual QA when in scope.** Verify Liquid Glass chrome, SF Symbols 8, Dynamic
+9. **Apple-platform visual QA when in scope.** Verify Liquid Glass chrome, current SF Symbols (iOS 27 generation), Dynamic
    Type AX sizes, Reduce Transparency, Increase Contrast, Reduce Motion, Dark Mode, appearance
    personalization, app icon variants, iPhone resizability, iPad multitasking, and
    Mac-designed-for-iPhone windows. Record device, OS, SDK, and build evidence.
@@ -123,6 +123,7 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 
 | Condition | Verdict | Wrong-choice failure |
 |---|---|---|
+| Release includes long text, documents or dated surface treatments | Run `fine-typesetting-and-typesetting-qa` and the dated-treatment list in `art-direction-routes` | Amateur typesetting or decade-old treatments ship to the client |
 | Any accessibility, security-relevant deception, critical state, or approved-spec blocker fails | `NO-SHIP` | A known user or compliance defect reaches production |
 | Required browser, device, or render evidence is unavailable | `CONDITIONAL` or `NO-SHIP`, never `SHIP` | Missing evidence is mistaken for passing evidence |
 | Only owned, non-blocking cosmetic findings remain | `SHIP-WITH-FOLLOWUPS` with owner and date | Minor debt either blocks indefinitely or disappears |
@@ -191,8 +192,9 @@ risk. Never convert an unrun check into N/A merely to obtain a passing verdict.
   signed NO-SHIP → (after fixes) SHIP verdict. Not lorem — concrete, with real thresholds.
 
 ## References
+- `fine-typesetting-and-typesetting-qa` (typesetting QA pass) and `art-direction-routes/references/style-currency-vocabulary.md` (dated treatments).
 
-- docs/book-study/2026-09-20-six-book-actionable-extractions.md — source-backed requirements trace, component state coverage, usability retest, and evidence-release synthesis.
+- `skills/09-design-systems-tokens-and-theming/component-library-architecture/references/design-system-operating-model.md` §7 — requirements trace, component state coverage, usability retest, and evidence-release synthesis.
 
 - `doctrine/design-doctrine.md` — the Mission and Anti-Slop Charter; the rule that a slop /
   a11y / perf blocker forces NO-SHIP and that convenience never overrides.

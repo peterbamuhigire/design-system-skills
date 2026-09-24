@@ -1,6 +1,6 @@
 # jetpack-compose-ui Deep Dive
 
-This file contains the extended guidance moved out of [../SKILL.md](../SKILL.md) so the skill entrypoint stays under the repository size limit.
+This file contains the extended guidance moved out of [../jetpack-compose-ui.md](../jetpack-compose-ui.md) so the skill entrypoint stays under the repository size limit.
 
 ## Included Sections
 
@@ -20,17 +20,17 @@ This file contains the extended guidance moved out of [../SKILL.md](../SKILL.md)
 
 ## Quick Reference
 
-| Topic                     | Reference File                             | When to Use                                               |
-| ------------------------- | ------------------------------------------ | --------------------------------------------------------- |
-| **Design Philosophy**     | `references/design-philosophy.md`          | Visual standards, spacing, color, typography              |
-| **Responsive & Adaptive** | `references/responsive-adaptive.md`        | WindowSizeClass, phone/tablet layouts, adaptive nav       |
-| **Composable Patterns**   | `references/composable-patterns.md`        | State hoisting, MVVM, screen templates                    |
-| **Layouts & Components**  | `references/layout-and-components.md`      | Layouts, modifiers, Material components                   |
-| **Data Tables**           | `references/data-tables.md`                | Tables, pagination, responsive table/card layouts, badges |
-| **Animation & Polish**    | `references/animation-and-polish.md`       | Transitions, micro-interactions, loading                  |
-| **Navigation & Perf**     | `references/navigation-and-performance.md` | Nav setup, deep links, optimization                       |
+| Topic                     | Reference File                                                 | When to Use                                               |
+| ------------------------- | -------------------------------------------------------------- | --------------------------------------------------------- |
+| **Design Philosophy**     | [design-philosophy.md](design-philosophy.md)                   | Visual standards, spacing, color, typography              |
+| **Responsive & Adaptive** | [responsive-adaptive.md](responsive-adaptive.md)               | WindowSizeClass, phone/tablet layouts, adaptive nav       |
+| **Composable Patterns**   | [composable-patterns.md](composable-patterns.md)               | State hoisting, MVVM, screen templates                    |
+| **Layouts & Components**  | [layout-and-components.md](layout-and-components.md)           | Layouts, modifiers, Material components                   |
+| **Data Tables**           | [data-tables.md](data-tables.md)                               | Tables, pagination, responsive table/card layouts, badges |
+| **Animation & Polish**    | [animation-and-polish.md](animation-and-polish.md)             | Transitions, micro-interactions, loading                  |
+| **Navigation & Perf**     | [navigation-and-performance.md](navigation-and-performance.md) | Nav setup, deep links, optimization                       |
 
-See [Mobile Design Rules](references/design-philosophy.md) for mobile-specific spacing, navigation, touch targets, typography, and image guidance (Paduraru 2024).
+See [Mobile Design Rules](design-philosophy.md) for mobile-specific spacing, navigation, touch targets, typography, and image guidance (Paduraru 2024).
 
 ## Core Compose Principles
 

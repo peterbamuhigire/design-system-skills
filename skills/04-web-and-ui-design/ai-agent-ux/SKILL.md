@@ -99,6 +99,10 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 For agency, cognitive-privacy, memory, refusal, correction, and exit controls,
 load [human agency and cognitive privacy](references/human-agency-and-cognitive-privacy.md).
 
+For collaboration posture, explanation depth, confidence display, anchoring (judge-first),
+override, handoff, persona dial and reliance-based evaluation, load
+[human-AI collaboration and trust calibration](references/human-ai-collaboration-and-trust-calibration.md).
+
 ## Consolidated Child References
 
 - Load `references/routing.md` to map retired AI child skill slugs to their reference modules.

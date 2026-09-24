@@ -1,6 +1,6 @@
 # swiftui-design Deep Dive
 
-This file contains the extended guidance moved out of [../SKILL.md](../SKILL.md) so the skill entrypoint stays under the repository size limit.
+This file contains the extended guidance moved out of [../swiftui-design.md](../swiftui-design.md) so the skill entrypoint stays under the repository size limit.
 
 ## Included Sections
 

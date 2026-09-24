@@ -104,6 +104,8 @@ chart you picked.
 ## Decision Rules
 | Condition | Encoding choice | Wrong-choice failure |
 |---|---|---|
+| A series of related charts shows the same measure (districts, quarters, products) | Lock the same axis maximum and scale across the whole series | Auto-scaled axes make unequal values look equal and mislead readers |
+| Pictograms or icons stand for quantities | Size or count symbols to the true values, never by area guesswork | Symbol area exaggerates differences |
 | Compare magnitudes | Common-baseline position or sorted bars | Area/angle impairs comparison |
 | Show change over ordered time | Line or aligned small multiples | Categories imply false continuity |
 | Show distribution | Histogram, box, violin, or dot plot | Averages hide spread and outliers |
@@ -157,7 +159,7 @@ Without validated data, produce a conditional chart recommendation using a label
 
 ## References
 
-- docs/book-study/2026-09-20-six-book-actionable-extractions.md — audience/action framing, Big Idea, decluttering, direct labelling, and text-alternative requirements.
+- `skills/09-design-systems-tokens-and-theming/component-library-architecture/references/design-system-operating-model.md` §7 (after Knaflic, *Storytelling with Data*) — audience/action framing, Big Idea, decluttering, direct labelling, and text-alternative requirements.
 
 - `doctrine/design-doctrine.md` — the Mission (authored, human-made charts) and the Anti-Slop
   Charter; the chart type is a *stated, defensible* choice, never a reflexive default.

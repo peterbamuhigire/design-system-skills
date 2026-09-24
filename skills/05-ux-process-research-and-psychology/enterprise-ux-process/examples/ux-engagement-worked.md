@@ -46,7 +46,7 @@ Assessment performed against the 5-level model. Each dimension scored 1–5 (1 =
 | 5–7 | P6 Personas + Journeys + IA | 3 personas (Treasury Manager, AP Clerk, CFO-approver); task-based IA; **Experience Map (L4)** for wire flow | Persona + journey + IA decks | **G6:** Personas pass Branson Mechanics floor; IA card-sort validated |
 | 7–10 | P7 Wireframes + Prototype + Visual | Lo-fi → hi-fi wireframes; clickable prototype of wire-initiation + reconciliation; mockups + **Mood Board (L4)** + token library | Wireframe pack, prototype, mockup set | **G7:** Prototype walks the 3 critical scenarios end-to-end |
 | 10–11 | P8 Heuristic Evaluation | Nielsen 10 review + Branson 4-stage affordance audit on "Initiate Wire" and "Approve" CTAs | Heuristic evaluation report | **G8:** Every flaw has a paired improvement |
-| 11–13 | P9 Usability + Accessibility | 8 moderated sessions (5 remote, 3 in-person); WCAG 2.1 AA audit + remediation | Usability report + accessibility audit | **G9:** Zero unresolved Level-A failures; first-task success ≥ 70% |
+| 11–13 | P9 Usability + Accessibility | 8 moderated sessions (5 remote, 3 in-person); WCAG 2.2 AA audit + remediation | Usability report + accessibility audit | **G9:** Zero unresolved Level-A failures; first-task success ≥ 70% |
 | 14 | Pre-launch declaration | Compile evidence pack; score 5 outcomes | Maturity declaration + 5-outcomes gate | **G10:** 5-of-5 outcomes = Yes |
 
 **Critical-scenario set** (drives prototype, heuristic, and usability scope):
@@ -96,7 +96,7 @@ Premium pricing is defended by tying each phase to a measurable business outcome
 | Easy to use (first-task success, no coaching) | **Yes** | 78% first-task success on S1 in usability testing (P9) |
 | Efficient (task time benchmarked) | **Yes** | Reconcile task time down 43% vs. legacy baseline (P9) |
 | Pleasing (≥ 4/5 first-impression) | **Yes** | Mean first-impression 4.3/5 across 8 participants (P9) |
-| Accessible (WCAG 2.1 AA / ADA / 508) | **Yes** | Zero Level-A/AA failures on final audit (P9) |
+| Accessible (WCAG 2.2 AA / ADA / 508) | **Yes** | Zero Level-A/AA failures on final audit (P9) |
 
 **Result:** 5-of-5 = Yes → launch approved, premium pricing defensible.
 **Rule applied:** 4-of-5 would have disqualified premium pricing; one No = no launch.

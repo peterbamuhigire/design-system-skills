@@ -102,6 +102,11 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
    updates, fields (page numbers, cross-refs) resolve, fonts are embedded+subset (check file
    size), and — if a fixed-fidelity copy is needed — export a PDF whose fonts are embedded.
 
+
+**Typesetting QA pass (required before release):** run `fine-typesetting-and-typesetting-qa` on the
+rendered document: one change per heading level, rag and hyphenation, widows and orphans,
+figures, quotes, dashes and the UK/East African house-style sheet. Build tables as real table
+objects with styles and tabular figures, never tab-spaced text.
 ## Decision Rules
 | Condition | DOCX choice | Wrong-choice failure |
 |---|---|---|

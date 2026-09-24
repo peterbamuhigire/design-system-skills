@@ -34,7 +34,7 @@ Example requirement shape:
 
 ## Accessibility Requirements
 
-- Web products shall meet WCAG 2.1/2.2 AA or the project's stated stricter target.
+- Web products shall meet WCAG 2.2 AA or the project's stated stricter target.
 - Android products shall support TalkBack, font scaling, contrast, reduced motion, and 48 dp touch targets.
 - iOS products shall support VoiceOver, Dynamic Type, Increase Contrast, Reduce Motion, Dark Mode, and 44 pt touch targets.
 - Color shall not be the only carrier of meaning.

@@ -71,6 +71,10 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
 7. **Embed & preflight** (`references/print-ready-pdf-checklist.md`): confirm **all fonts embedded
    and subsetted**, colour space correct (sRGB for screen / CMYK for print), images ≥300 dpi, PDF/A
    or PDF/X where required, accessible tags + reading order, and bleed/crop marks if printing.
+8. **Typeset and hand to print.** Run the `fine-typesetting-and-typesetting-qa` pass on the
+   rendered pages. For commercial litho, special finishes, folding or binding, hand the job to
+   `print-production-and-finishing` for the printer specification, ink limits, proofs and press
+   check; the checklist here covers screen and office-print PDFs.
 
 ## Decision Rules
 | Condition | PDF choice | Wrong-choice failure |
@@ -78,6 +82,7 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
 | Document must remain editable | Produce DOCX source first | PDF-only workflow blocks maintenance |
 | Lender/evaluator scans quickly | Strong section architecture and exhibit hierarchy | Decorative layouts hide bankability evidence |
 | Print and screen both matter | Test crop, margins, links, bookmarks, and contrast | One-medium optimisation fails the other |
+| Job goes to a commercial printer | Route to `print-production-and-finishing` and use the printer's own specification | Book-era ink or bleed numbers cause a failed run |
 
 ## Capability Contract
 Read, edit, PDF generation, inspection, and page rendering are required for production. Execution is required for font, link, bookmark, accessibility, and preflight claims. Submission or publication requires separate authority.

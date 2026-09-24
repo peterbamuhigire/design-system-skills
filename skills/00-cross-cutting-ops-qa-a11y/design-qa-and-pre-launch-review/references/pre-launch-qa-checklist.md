@@ -86,7 +86,7 @@ WCAG 2.2 deltas:
 - [ ] 3.3.8 Accessible Authentication (Min) — no cognitive-function test without alternative.
 
 > Design with **APCA** for real legibility, then **certify with the WCAG 2.x ratios**
-> (APCA is WCAG 3.0 draft, not normative). See `wcag-2.2-criteria.md` §Contrast method.
+> (APCA is a design aid, not a W3C method; the WCAG 3.0 draft has not chosen a contrast measure). See `wcag-2.2-criteria.md` §Contrast method.
 
 **Gate B verdict: PASS / FAIL.** **Any AA failure = NO-SHIP.** (AAA commitments logged separately.)
 

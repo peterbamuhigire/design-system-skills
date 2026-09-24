@@ -6,10 +6,10 @@ competitors and not interchangeable** — they have opposite jobs.
 | | **WCAG 2.x contrast ratio** | **APCA (Accessible Perceptual Contrast Algorithm)** |
 |---|---|---|
 | Role | **Conformance / certification** | **Design / judgement** |
-| Status | Normative (WCAG 2.0/2.1/2.2 Recommendation) | **Draft** — the method in the WCAG 3.0 working draft; **not yet normative** |
+| Status | Normative (WCAG 2.0/2.1/2.2 Recommendation) | **Not a W3C standard** — the WCAG 3.0 Working Draft (10 Sep 2026) does not name it; its contrast measure is still "to be determined" |
 | Output | A ratio, `1:1`–`21:1` | An `Lc` value, roughly `0`–`±108` |
 | Model | Relative luminance (a simple `(L1+0.05)/(L2+0.05)`) | Perceptual: accounts for text size, weight, and polarity (dark-on-light vs light-on-dark) |
-| Known weakness | Over-passes light-on-dark; can *fail* genuinely readable pairs; treats all text size/weight the same beyond one threshold | Not yet legally citable; thresholds still moving between drafts |
+| Known weakness | Over-passes light-on-dark; can *fail* genuinely readable pairs; treats all text size/weight the same beyond one threshold | Not legally citable; thresholds are the author's guidance and may change |
 
 ## The rule (from `doctrine/references/wcag-2.2-criteria.md` §Contrast method note)
 
@@ -21,8 +21,8 @@ competitors and not interchangeable** — they have opposite jobs.
   blind to. Use it to *make* the colour and stroke decisions.
 - **WCAG 2.2 is the gate**, because it is the standard you certify, contract, and litigate
   against today. A pair that an APCA-tuned design produces must still be run through the WCAG
-  ratio and pass the relevant floor. Until WCAG 3.0 is a Recommendation, the WCAG 2.x ratio is
-  what "accessible" legally means.
+  ratio and pass the relevant floor. WCAG 2.2 (ISO/IEC 40500:2025) is what "accessible" means in
+  contracts today; WCAG 3.0 is an early Working Draft and has not chosen a contrast measure.
 
 **Never reverse them.** Certifying against APCA gives you no defensible conformance claim.
 *Designing* against the bare WCAG ratio gives you pairs that test green but read badly (especially
@@ -74,6 +74,8 @@ clears 4.5:1. **Legibility is the goal; the ratio is only the gate.**
 ## Provenance
 
 - WCAG 2.2 SC 1.4.3, 1.4.11 — W3C Recommendation (w3.org/TR/WCAG22/).
-- APCA — Andrew Somers / Myndex; the contrast method in the WCAG 3.0 working draft (draft, not
-  normative). `git.apcacontrast.com`.
+- APCA — Andrew Somers / Myndex; a candidate perceptual method, not part of any W3C
+  Recommendation or of the current WCAG 3.0 Working Draft. `git.apcacontrast.com`.
+- Evidence/currentness (accessed 2026-09-24): w3.org/TR/wcag-3.0/ (WD 10 September 2026, text
+  contrast "to be determined"); w3.org/WAI/standards-guidelines/wcag/ (WCAG 2.2, ISO/IEC 40500:2025).
 - Method note and AA-floor rule: `doctrine/references/wcag-2.2-criteria.md`.

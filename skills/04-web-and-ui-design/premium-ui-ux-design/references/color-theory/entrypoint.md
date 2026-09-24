@@ -10,7 +10,7 @@ metadata:
 
 # Colour Theory — Choosing Colours That Work
 
-Sources: Flux Academy, *The Complete Guide for Choosing Colors* (Ran Segall et al.); WCAG 2.1; CSS Color 4 (OKLCH).
+Sources: Flux Academy, *The Complete Guide for Choosing Colors* (Ran Segall et al.); WCAG 2.2; CSS Color 4 (OKLCH).
 
 ## Use when
 
@@ -37,7 +37,7 @@ Sources: Flux Academy, *The Complete Guide for Choosing Colors* (Ran Segall et a
 - A mood word or three (e.g. "premium / minimal / trustworthy"; "playful / bold / accessible"; "wellness / calm / organic").
 - Audience snapshot (rough demographic + cultural context).
 - Either an existing brand hex code, or hero imagery to sample from, or neither.
-- Accessibility target (WCAG 2.1 AA at minimum; AAA for content-heavy / regulated sites).
+- Accessibility target (WCAG 2.2 AA at minimum; AAA for content-heavy / regulated sites).
 
 ## Outputs
 
@@ -163,5 +163,5 @@ Neutrals: `hsl(265, 8%, L%)` for L = 97, 92, 84, 74, 60, 45, 30, 18, 10 — slig
 - `references/flux-process.md` — the full Flux Academy walkthrough with the worked example (purple-balloons → magenta-accent palette) and the imagery-first algorithm.
 - `references/harmonies.md` — deep notes on each harmony (monochromatic, analogous, complementary, split-complementary, triadic, tetradic) with when-to-use, watch-outs, and HSL examples.
 - `references/scales-and-models.md` — generating 10-step scales in HSL and OKLCH; choosing between RGB, HSL, HSB, OKLCH, LCH, CMYK; programmatic palette generators.
-- `references/wcag-contrast.md` — WCAG 2.1 contrast ratios, the "minimum AA shade" workflow, scrims, focus rings, dark mode flipping.
+- `references/wcag-contrast.md` — WCAG 2.2 contrast (unchanged from 2.1) ratios, the "minimum AA shade" workflow, scrims, focus rings, dark mode flipping.
 - `references/common-mistakes.md` — the Flux mistake list with concrete before/after fixes.

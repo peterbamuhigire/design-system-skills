@@ -176,6 +176,8 @@ Without full flow context, return candidate strings with explicit assumptions ra
   destructive confirmation), so the *why* transfers, not just the wording.
 
 ## References
+- `references/content-strategy-content-first-and-reading-patterns.md` — virtuous-cycle stage map (organisation and person goals), content-first role-play to text bubbles to wireframe, F/Z/ping-pong/lawnmower/bypassing reading patterns, four sources of best practice, working with subject experts.
+- `references/breaking-best-practices.md` (four override triggers) and `references/content-measurement-and-scorecard.md` (UX content scorecard, content measures, dynamic-content quality).
 - [`doctrine/design-doctrine.md`](../../../doctrine/design-doctrine.md) — §0–2: copy is part of
   the "looks authored" moat; state the voice before producing; no convergent default strings.
 - [`doctrine/references/wcag-2.2-criteria.md`](../../../doctrine/references/wcag-2.2-criteria.md)

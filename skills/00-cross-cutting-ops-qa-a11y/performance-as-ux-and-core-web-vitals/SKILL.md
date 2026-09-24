@@ -142,6 +142,7 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 
 | Condition | Decision | Wrong-choice failure |
 |---|---|---|
+| Font, image, route or motion choice is being made for a web surface | Apply the design-level rules for font loading, hero images, facades and compositor-only motion | Design locks in weight and layout shift that engineering cannot remove later |
 | Element is the likely LCP | Prioritise and never lazy-load it | Largest content appears late |
 | Late content has known dimensions | Reserve its final space | Layout shifts after interaction |
 | Wait is predictable and structural | Use a content-shaped skeleton | Spinner provides no spatial continuity |
@@ -160,6 +161,7 @@ Without field data, use lab measurements as a conditional proxy and identify the
   LCP element, the CLS reservations, and the concrete design decisions that hit each number.
 
 ## References
+- `references/performance-aware-design-decisions.md` — font loading, image weight, facades and motion cost for designers, with the hand-off to `website-skills`.
 
 - `doctrine/design-doctrine.md` — the anti-slop charter; font/weight restraint and "state the
   choice" apply to performance decisions too.
@@ -171,6 +173,8 @@ Without field data, use lab measurements as a conditional proxy and identify the
 - `references/perceived-performance-patterns.md` — the skeleton/optimistic/transition-masking,
   LCP/CLS/INP, and image/font-as-design patterns, with the budget thresholds cited from the
   canonical ref.
+- `references/perceived-performance-streaming-and-navigation.md` — load when a surface streams
+  AI output or when next-page, back-button, or route-transition feel must be designed.
 <!-- dual-compat-end -->
 ## Plugins (Load Alongside)
 

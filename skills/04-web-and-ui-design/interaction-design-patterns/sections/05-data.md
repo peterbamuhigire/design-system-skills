@@ -1,159 +1,207 @@
-# Data Display Patterns
+# Data Display Patterns: Helping People Understand and Act on Data
 
-From Tidwell, *Designing Interfaces*, 3rd ed., Chapter 9: Showing Complex Data.
+Parent skill: [interaction-design-patterns](../SKILL.md)
 
-> "The goal of information graphics is not to show data — it is to help users understand and act on data." — Tidwell.
+When to read: when a screen shows charts, tables or dashboards — deciding what the display must answer, how to direct attention, and how people explore, compare and drill into records. For chart colour and mark specifications, pair with the data-visualisation and colour skills.
 
----
+The purpose of a data display is not to show data but to help someone understand it and decide what to do. Work out the question first, encode the most important relationship with position, then add the interactions people need to explore.
 
-## The Basics of Information Graphics
-
-Before choosing a chart type, answer these five questions:
-
-| Question | Design Response |
-|----------|----------------|
-| **How is this data organised?** | Hierarchy → tree/treemap. Time series → line chart. Categories → bar chart. Part of whole → pie/donut (only 2–5 slices). |
-| **What relationships are important?** | Use preattentive variables to show relationships visually, before the user consciously processes the data. |
-| **How can users explore this data?** | Enable navigation: zoom, pan, filter, select. |
-| **Can users rearrange the data?** | Sorting, grouping, and pivoting reveal different patterns in the same dataset. |
-| **Can users filter to see only what they need?** | Dynamic filtering that updates in real time is far more powerful than static views. |
+Each pattern block gives: **Problem**, **Use when**, **Do not use / caveats** (including touch and WCAG 2.2 accessibility), **How**, **Example** (original) and **Pairs with**.
 
 ---
 
-## Preattentive Variables
+## Task A — Decide what the display must answer
 
-The most powerful tool in data visualisation. These attributes are processed by the visual system **before conscious thought** — within 200ms. Use them to direct attention to the most important patterns.
+Answer these five questions before choosing any chart or table.
 
-| Variable | Best For | Avoid When |
-|----------|---------|-----------|
-| **Colour (hue)** | Categorical differences (type A vs type B) | Ordinal data (use lightness/saturation instead) |
-| **Colour (lightness/saturation)** | Ordered quantity (more = darker) | Categorical data |
-| **Size** | Quantity (larger = more) | Comparing multiple dimensions |
-| **Position (x/y)** | Most precise comparison — always primary encoding | Never abandon position for an inferior encoding |
-| **Shape** | Categorical (use sparingly — max 4–5 shapes) | Ordered data |
-| **Orientation** | Direction, angle | Quantitative comparisons |
-| **Motion** | Drawing attention to change | Any decorative use — motion is the strongest attractor |
+| Question | Design response | If skipped |
+|---|---|---|
+| How is the data organised? | Hierarchy → tree or treemap; time series → line chart; categories → bar chart; part of a whole → pie or donut, only with 2–5 slices | The chart shape fights the data and misleads |
+| Which relationships matter most? | Encode them with preattentive variables (Task B) so they are seen before they are read | The key finding is buried among equals |
+| How will people explore it? | Provide zoom, pan, filter and select | People export to a spreadsheet to answer simple questions |
+| Can people rearrange it? | Offer sorting, grouping and pivoting — each reveals different patterns in the same data | One fixed view hides the pattern a given role needs |
+| Can people narrow it to what they need? | Dynamic Queries that update the view immediately | Static views force repeated round trips |
 
-**Design rule:** Always encode the most important relationship with position. Use colour, size, and shape for secondary relationships only.
+**Accessibility baseline for every chart:** a text summary of the main finding and an accessible data table or download (WCAG 1.1.1); chart lines, bars and focus indicators at 3:1 contrast against adjacent colours (WCAG 1.4.11); no meaning carried by colour alone (WCAG 1.4.1).
 
 ---
 
-## Data Display Patterns
+## Task B — Direct attention to what matters
 
-### Datatips
-*"Tell me the exact value when I hover over this data point."*
+### Preattentive variables
 
-Datatips (tooltips on data visualisations) reveal the precise value of a data point on hover — without cluttering the chart with labels on every point.
-- Show: value, label, timestamp, and any relevant context (e.g., comparison to target or previous period)
-- Trigger: hover on desktop, tap on mobile (then dismiss on second tap or tap elsewhere)
-- Position: above or to the right of the cursor, never covering the data point itself
-- Style: clean, minimal — a white or dark card with shadow, never decorative
-- On mobile: datatips should be larger and positioned to not be covered by the user's finger
+Some visual attributes are picked up almost instantly, before conscious reading. Use them to point at the most important pattern.
 
-**Anti-pattern:** No tooltips on data charts — users who need the exact value have no way to get it.
+| Variable | Best for | Avoid when |
+|---|---|---|
+| Colour hue | Categorical differences (type A versus type B) | Ordered data — use lightness or saturation |
+| Colour lightness or saturation | Ordered quantity (more = darker) | Categorical data |
+| Size | Quantity (larger = more) | Comparing several dimensions at once |
+| Position (x / y) | The most precise comparison — the primary encoding | Never trade position for a weaker encoding |
+| Shape | Categories, sparingly (at most 4–5 shapes) | Ordered data |
+| Orientation | Direction, angle | Quantitative comparison |
+| Motion | Drawing attention to a change | Any decorative use — motion is the strongest attractor; respect reduced-motion settings (WCAG 2.3.3) |
 
----
+**Rule:** encode the most important relationship with position; use colour, size and shape only for secondary relationships.
+
+(The commonly quoted timing for preattentive processing is omitted here; it varies by study and does not change the rule.)
 
 ### Data Spotlight
-*"Highlight what matters in context."*
-
-When a dataset has one or more especially significant data points (anomalies, targets, thresholds, milestones), highlight them in place within the visualisation — without requiring users to search for them.
-- Annotate the chart directly: "Target line", "Budget exceeded here", "Record high"
-- Use a distinct visual treatment: a labelled vertical line, a highlighted region, a differently coloured point
-- The annotation text should be short — max 5 words
-- Combine with Datatip: hover reveals detail; annotation gives the story
+- **Problem:** significant points — anomalies, targets, thresholds, milestones — are missed if people must search for them.
+- **Use when:** a dataset has one or more values that carry the story.
+- **Do not use / caveats:** spotlighting everything spotlights nothing; one to three annotations per chart. Annotations must be real text, not baked into an image, and exposed in the text summary.
+- **How:**
+  - Annotate in place: "Target", "Budget exceeded", "Record high".
+  - Use a distinct treatment: a labelled reference line, a shaded region or a differently marked point (shape as well as colour).
+  - Keep annotation text to about five words.
+  - Combine with Datatips: the annotation tells the story, the datatip gives the detail.
+- **Example:** a district malaria dashboard draws a labelled line at the epidemic threshold, and the week that crosses it is marked "Threshold crossed — week 14".
+- **Pairs with:** Datatips, preattentive variables.
 
 ---
+
+## Task C — Reveal exact values on demand
+
+### Datatips
+- **Problem:** labelling every point clutters the chart, but people who need an exact value have no other way to get it.
+- **Use when:** any interactive chart with more points than can be labelled.
+- **Do not use / caveats:** tooltips must appear on keyboard focus as well as hover, stay while the pointer moves onto them, and be dismissible with Escape (WCAG 1.4.13). On touch, the finger hides whatever is beneath it — place the tip above the touch point and make it larger.
+- **How:**
+  - Show the value, label, timestamp and relevant context (comparison with target or previous period).
+  - Trigger on hover or focus on desktop; on touch, tap to show and tap elsewhere to dismiss.
+  - Place it above or to the right of the point, never covering the point.
+  - Keep the styling plain: a light or dark card with a subtle shadow.
+- **Avoid:** charts with no datatips at all.
+- **Example:** tapping a bar in a mobile-money agent's weekly float chart shows "Tue 3 Sep — UGX 1.8 m float, 22 % below Monday".
+- **Pairs with:** Data Spotlight, Overview + Detail.
+
+---
+
+## Task D — Narrow and explore
 
 ### Dynamic Queries
-*"Let me filter the data in real time and see the result immediately."*
-
-Dynamic queries apply filters to a dataset and show the filtered result **instantly** as the user adjusts controls — no "Apply" button, no page reload.
-- Filter controls update the visualisation/list in real time (or within 200ms)
-- Show the number of results: "Showing 47 of 312 customers"
-- Provide a "Clear all filters" button prominently — always visible when any filter is active
-- Persist filter state in the URL so results are shareable
-- Sliders, checkboxes, date ranges, and text search all work as dynamic query controls
-
-**Design rule:** An "Apply" button on a filter panel adds friction and hides the cause-effect relationship between the filter and the result. Remove it.
-
----
+- **Problem:** an "Apply" step hides the link between a filter and its effect and slows exploration.
+- **Use when:** filtering lists, tables and charts where results can be computed quickly.
+- **Do not use / caveats:** where each query is slow or costly (large server-side datasets, poor mobile connections), batch changes behind an explicit "Show results" button and say why. Announce the result count through a status message, not a focus move (WCAG 4.1.3).
+- **How:**
+  - Update the view as controls change, within about 200 ms.
+  - Show the count: "Showing 47 of 312 customers".
+  - Show "Clear all filters" whenever any filter is active.
+  - Keep filter state in the URL so results can be shared and bookmarked.
+  - Use sliders, checkboxes, date ranges and text search as query controls; sliders need a keyboard and a single-pointer alternative such as number inputs (WCAG 2.5.7).
+- **Example:** a Kampala clinic's appointment list narrows as the receptionist ticks "Paediatrics" and drags the date range, showing "18 of 240 appointments".
+- **Pairs with:** Data Brushing, Deep Links (`02-navigation.md`).
 
 ### Data Brushing
-*"When I select data in one chart, highlight it in all the others."*
-
-Data brushing links multiple visualisations on the same screen — selecting a subset of data in one chart highlights the same data in all other related charts simultaneously.
-- Useful in dashboards and analytics tools where users need to see how one group relates to others
-- Selection in one panel propagates to all panels that share the same dataset
-- Provide a "Clear selection" button or click in empty space to reset
-- Visual treatment for the selection: highlighted in the primary chart; faded/greyed in the others
-
----
-
-### Multi-Y Graph
-*"Show two data series that have different scales on the same chart."*
-
-When two related metrics have vastly different scales (e.g., revenue in millions and conversion rate in percentage), plot them on the same chart with two Y-axes — one on the left for the primary metric, one on the right for the secondary.
-- Left Y-axis: primary metric, primary colour
-- Right Y-axis: secondary metric, secondary colour
-- Lines/bars for each metric use the corresponding axis colour as a visual link
-- Label both axes clearly with units
-- Use sparingly — more than two Y-axes creates confusion. Use separate charts for three or more metrics.
+- **Problem:** in a dashboard, people need to see how a subset in one view relates to the others.
+- **Use when:** dashboards and analysis tools where several charts share one dataset.
+- **Do not use / caveats:** brushing by drag must have a click or keyboard alternative (WCAG 2.5.7). On phones, stacked charts rarely fit on one screen — use a shared filter chip instead.
+- **How:**
+  - Selecting a subset in one chart highlights the same records in every linked chart.
+  - Highlight the selection in the source chart; fade the unselected data elsewhere.
+  - Reset with "Clear selection" or a click on empty space.
+- **Example:** selecting the "Masaka" bar in a cooperative's deliveries-by-district chart highlights Masaka farmers in the price-trend and payments charts beside it.
+- **Pairs with:** Dynamic Queries, Small Multiples.
 
 ---
+
+## Task E — Compare series and categories
+
+| Situation | Choose | If chosen wrongly |
+|---|---|---|
+| Fewer than 4 categories | Overlay them on one chart | Needless repetition |
+| 4–20 categories, same metric | Small Multiples | An overlaid chart becomes unreadable |
+| More than 20 categories | Filter first (Dynamic Queries), then compare | A wall of tiny charts nobody reads |
+| Two related metrics on very different scales | Multi-Y Graph | One series is flattened against the axis |
+| Three or more metrics on different scales | Separate charts | Readers cannot tell which axis applies |
 
 ### Small Multiples
-*"Show me the same chart for each category so I can compare them."*
+- **Problem:** comparing the same measure across categories is hard when each lives on a different chart with different scales.
+- **Use when:** one metric across 4–20 products, regions, periods or segments.
+- **Do not use / caveats:** on phones, stack the multiples in one column with the shared scale repeated. Provide the underlying table for screen-reader users.
+- **How:**
+  - Use the same chart type and the same axis scales in every panel — essential for honest comparison.
+  - Order logically: by value (highest first), by time or alphabetically.
+  - Size each panel to fit the grid but still show trend.
+  - Give each panel a clear category label and, if helpful, a colour marker.
+- **Example:** a county health office shows twelve identical monthly-attendance charts, one per sub-county, on a shared 0–4,000 scale.
+- **Pairs with:** Grid of Equals (`03-layout.md`), Data Brushing.
 
-Small multiples are a grid of the same chart type, each showing data for a different dimension value (a different product, region, time period, or user segment). The identical structure makes comparison effortless.
-- All charts in the grid use the same axis scales — this is critical for honest comparison
-- Arrange in a logical order: alphabetical, by value (highest first), by time
-- Keep each chart small enough to fit in a grid but large enough to read trends
-- Add a colour indicator per chart for quick identification
-- Label each chart clearly — the category name above or below
-
-**When to use:** Comparing the same metric across 4–20 categories. If you have fewer than 4, overlay them on one chart. If more than 20, use filtering instead.
+### Multi-Y Graph
+- **Problem:** two related metrics on very different scales (money and a percentage) cannot share one axis.
+- **Use when:** exactly two related series whose relationship matters.
+- **Do not use / caveats:** a second axis invites false correlation; never more than two Y-axes. Differentiate the series by line style or marker as well as colour (WCAG 1.4.1).
+- **How:**
+  - Left axis for the primary metric in the primary colour; right axis for the secondary metric in the secondary colour.
+  - Colour each series to match its axis.
+  - Label both axes with units.
+- **Example:** a SACCO performance chart plots total loans (UGX millions, left) against the default rate (%, right).
+- **Pairs with:** Datatips.
 
 ---
 
-## Data Table Patterns
+## Task F — Work through records
 
 ### Sortable Table
-Every column header in a data table should be clickable to sort by that column.
-- Show sort direction with an arrow icon (↑ ascending, ↓ descending)
-- First click: ascending. Second click: descending. Third click: reset to default.
-- Default sort should match the user's most common use case — usually most recent first for time-series data
-- Multi-column sort: Shift+click on a second column header
+- **Problem:** people need to find extremes and order records their own way.
+- **Use when:** any data table with more than a handful of rows.
+- **Do not use / caveats:** sort controls must be buttons in the header cells with the state exposed through `aria-sort`. On phones, wide tables need a card layout or a horizontal scroll with a frozen first column.
+- **How:**
+  - Every column header sorts by that column; show direction with an arrow (↑ ascending, ↓ descending).
+  - First activation ascending, second descending, third returns to the default.
+  - Default sort matches the commonest need — usually most recent first for time-based data.
+  - Shift+click on a second header adds a secondary sort.
+- **Example:** a stores ledger defaults to "Last movement, newest first"; the storekeeper sorts by "Quantity" to find items running out.
+- **Pairs with:** Dynamic Queries, Overview + Detail.
 
 ### Overview + Detail
-*"Give me the summary; let me expand to see detail."*
+- **Problem:** complex records (invoices, patients, projects) are too large to show in full in a list, but people must triage many of them.
+- **Use when:** browsing and triaging records one after another.
+- **Do not use / caveats:** on phones, the detail replaces the list and Back returns to the same scroll position. Move focus to the detail heading when it opens, and back to the item when it closes.
+- **How:**
+  - Overview: three to five key fields, enough to identify and triage.
+  - Detail: the full record, in a side panel or a dedicated page.
+  - Prefer the Two-Panel Selector (list and detail side by side) when people click through items quickly.
+- **Example:** a clinic's lab-results queue shows patient, test, status and time; selecting a row opens the full result in a right-hand panel while the queue stays visible.
+- **Pairs with:** Two-Panel Selector, Datatips, Sortable Table.
 
-For complex data objects (invoices, patients, projects), show a compact overview (key fields only) in a list or table, and expand to a detail view on selection.
-- Overview: 3–5 key fields sufficient to identify and triage the item
-- Detail: full record; opens in a side panel (Two-Panel Selector) or a dedicated detail page
-- The Two-Panel Selector pattern keeps the list visible while the detail is open — users can click through items rapidly without navigating back and forth
+### Pagination, Infinite Scroll or Load More
 
-### Pagination vs Infinite Scroll
+| Approach | Use when | If misapplied |
+|---|---|---|
+| Pagination | People jump to a position, bookmark it or share a specific page | — |
+| Infinite scroll | Sequential browsing is the main activity (feeds, galleries) | On data tables, people cannot reach "page 50" of an order history or keep their place |
+| Load More button | A middle ground where the user controls loading; lists with a natural end | — |
 
-| Approach | Use When |
-|----------|---------|
-| **Pagination** | Users need to jump to a specific page, bookmark a position, or share a specific page of results |
-| **Infinite Scroll** | Content is sequential and browsing is the primary activity (social feeds, media galleries) |
-| **Load More button** | A middle ground — user controls when new content loads; good for lists with a natural end |
-
-**Anti-pattern:** Infinite scroll on data tables — users can't jump to page 50 of an order history or bookmark their position.
+Infinite scroll must not trap keyboard users before the footer (WCAG 2.1.1); new items should be announced.
 
 ---
 
-## Data Visualisation Anti-Patterns
+## Anti-patterns and their consequences
 
-| Anti-Pattern | Why it Fails |
-|-------------|-------------|
-| 3D charts | Distorts data values; makes precise comparison impossible; purely decorative |
-| Pie charts with > 5 slices | Human perception can't compare angles accurately beyond 5 segments — use a bar chart |
-| Truncated Y-axis starting above 0 | Exaggerates differences; misleads about magnitude |
-| Dual-Y axis with incompatible data | Users can't determine which axis applies to which line |
-| Colour as the only differentiator | 10% of men are colour-blind — always pair with shape, label, or pattern |
-| Chart animations on every load | Decorative animation is noise; reserve animation for transitions that communicate change |
-| No axis labels or units | Users can't interpret a chart with no context — what are these numbers measuring? |
-| Showing all data always | Too much data = too much noise. Filter by default; let users expand if they need more |
+| Anti-pattern | Consequence |
+|---|---|
+| 3D charts | Values are distorted; precise comparison is impossible |
+| Pie chart with more than five slices | Angles cannot be compared — use a bar chart |
+| Y-axis truncated above zero on a bar chart | Differences are exaggerated and magnitude misread |
+| Dual Y-axes for unrelated data | Readers cannot tell which axis applies to which series |
+| Colour as the only differentiator | People with colour-vision deficiency cannot distinguish series — add shape, label or pattern (a prevalence statistic is omitted; cite a current source if needed) |
+| Animation on every load | Decorative motion is noise; reserve it for transitions that communicate change |
+| Missing axis labels or units | The numbers cannot be interpreted |
+| Showing all data at all times | Noise hides the signal — filter by default and let people expand |
+
+## Checks
+
+1. Each chart states the question it answers and its main finding in text.
+2. The most important relationship is encoded by position, with a shared scale wherever charts are compared.
+3. Every value shown on hover is also reachable by keyboard focus and on touch.
+4. Filters show a result count, a visible "Clear all", and survive a page reload via the URL.
+5. An accessible table or download accompanies every chart.
+
+## Related
+
+- `03-layout.md` — Grid of Equals, Center Stage for dashboards.
+- `04-actions.md` — bulk actions and Hover / Pop-Up Tools on table rows.
+- Companion skills: data-visualisation and colour skills in this engine.
+
+Sources: pattern names follow Tidwell, Brewer & Valencia, *Designing Interfaces* (3rd ed.); Tufte, *The Visual Display of Quantitative Information* (small multiples); W3C, WCAG 2.2.

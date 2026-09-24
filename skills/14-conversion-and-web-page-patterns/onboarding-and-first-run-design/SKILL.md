@@ -116,7 +116,7 @@ Do **not** front-load every feature. Reveal capability **as the user reaches the
   dismissable**, and shows real completion state. Cap it at a few high-value steps — a 12-item
   checklist is friction, not guidance. See `references/onboarding-patterns.md` §2–3.
 - Prefer **"let the user *do* it"** (interactive, learn-by-doing) over a **passive tour** they watch
-  and forget. Doing beats watching (book-study 02: single-CTA transparency and let-user-*do* beat
+  and forget. Doing beats watching (Neil, *Mobile Design Pattern Gallery*: single-CTA transparency and let-user-*do* beat
   multi-step tours).
 
 ### 5. Use coachmarks, tooltips, and tours SPARINGLY — and never as a fix for a confusing UI
@@ -129,7 +129,7 @@ defaults).
   **always skippable** — never a forced, unskippable sequence (that is the **Trap / Forced Action**
   anti-pattern, `interaction-anti-patterns.md` §C4).
 - Tooltips on hover are **desktop-only and have no touch equivalent** — never hide essential
-  first-run guidance behind hover (book-study 02; `interaction-anti-patterns.md` §E3). Use tap/
+  first-run guidance behind hover (`interaction-anti-patterns.md` §E3). Use tap/
   persistent hints on touch.
 - Honour `prefers-reduced-motion` for any spotlight/coachmark animation (WCAG 2.3.3).
 - See `references/onboarding-patterns.md` §4 for the sparing-use rules and the tour-vs-just-in-time

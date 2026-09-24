@@ -60,6 +60,7 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 
 | Condition | Choice | Wrong-choice failure |
 |---|---|---|
+| Brief asks for parallax or scroll-linked storytelling | Story pages only; static default; CSS scroll timelines or observer toggles on transform and opacity; never auto-scroll or scroll-jack | Jank, vestibular harm and poor INP on mid-range phones |
 | Short, non-interruptible state change | Tokenised cubic-bezier transition | A spring adds needless oscillation and platform drift |
 | Gesture-driven or interruptible movement | Critically or near-critically damped spring | Fixed easing breaks continuity when redirected |
 | Vestibular trigger or reduced-motion preference | Non-spatial fade, instant swap, or progress change | Disabling nothing exposes users to harmful motion |
@@ -93,6 +94,7 @@ Without runnable builds, deliver a motion specification and mark timing, frame-r
 - A motion spec, implementation guidance, review findings, or generated artifacts when the task is creation or refactoring.
 
 ## References
+- `references/scroll-driven-effects.md` — safe parallax policy, implementation order, budgets and checklist.
 
 - `references/spring-physics-and-easing.md` — easing-vs-spring decision, stiffness/damping/ζ params, platform spring APIs, CSS `linear()`.
 - `references/view-transitions.md` — View Transitions API patterns (same-doc, shared-element morph, cross-doc MPA, directionality).

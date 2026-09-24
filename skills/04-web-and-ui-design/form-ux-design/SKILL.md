@@ -98,6 +98,7 @@ action, preserve entered data after recoverable failures, and specify every asyn
 - A build-ready form spec or implementation guidance when the task is creation or refactoring rather than audit.
 
 ## References
+- `references/payment-forgiveness-and-control-choice.md` — short forms, forgiveness rules, payment and mobile-money fields, control choice, field presentation.
 
 - `doctrine/design-doctrine.md` — the Mission and the Anti-Slop Charter; forms must look authored, not defaulted.
 - `doctrine/references/ai-slop-taxonomy.md` — the convergent-default tells to avoid in form layout and styling.

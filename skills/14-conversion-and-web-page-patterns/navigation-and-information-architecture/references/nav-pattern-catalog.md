@@ -16,7 +16,7 @@ authored structural choice is the doctrine's anti-slop move (Mission §0).
 ## 1. Primary navigation patterns
 
 ### Top horizontal bar
-- **Use when:** a content/marketing site or a shallow app with **≤7±2** primary sections.
+- **Use when:** a content/marketing site or a shallow app with a short, scannable set of primary sections (commonly seven or fewer, validated by tree testing).
 - **Strengths:** instantly visible, conventional, low cognitive cost. **Limits:** runs out of room
   past ~7 items; can't express a deep tree on its own.
 - **Mobile transform:** collapse to a **hamburger drawer** (off-canvas) or, for a focused app with

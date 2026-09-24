@@ -76,7 +76,7 @@ To discover the grouping, **card sort**:
   ones: each extra *level* of depth sheds users who must guess correctly to descend.
 - Target: most content reachable in **≤3 clicks** from home. Flag anything at **depth ≥4** for
   promotion, cross-linking, or a search-first path.
-- But don't over-flatten the *top* level: a primary bar holds about **7±2** comfortable items.
+- But don't over-flatten the *top* level: a primary bar stays short enough to scan in one pass (commonly five to seven items; this is a scanning and layout judgement, not a memory limit, so validate it with tree testing).
   Past that, the answer is a **mega-menu** (reveals a wide second level) or a **sidebar** — *not*
   twelve cramped top links and *not* burying everything under "More".
 - Depth and breadth genuinely trade off. Decide the shape on purpose (and write it in the spec):

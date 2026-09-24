@@ -274,5 +274,5 @@ These components are implemented in detail in:
 
 **Estimated Component Count**: 15–20 reusable components
 **Dark Mode Support**: 100% of components
-**Accessibility Level**: WCAG 2.1 AA+ in both light and dark modes
+**Accessibility Level**: WCAG 2.2 AA+ in both light and dark modes
 **Framework**: Astro + Tailwind CSS v4 + Alpine.js

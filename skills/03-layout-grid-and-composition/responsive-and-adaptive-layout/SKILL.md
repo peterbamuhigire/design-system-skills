@@ -253,4 +253,10 @@ stacking on mobile," treat that as the convergent mean to *avoid* — not as end
 - `03-layout-grid-and-composition/layout-grid-and-spacing` (the grid, spacing unit, focal point,
   and intentional asymmetry this skill carries responsively across sizes).
 - `references/container-queries-and-intrinsic.md` and `references/breakpoint-strategy.md`.
+- `references/modern-css-capability-baseline.md` — load when a spec relies on container/style queries,
+  subgrid, `:has()`, `svh`/`dvh`, view transitions, popover or anchor positioning: dated Baseline
+  status, carry-versus-enhance rules, and replacements for older layout techniques.
+- `references/mobile-web-patterns.md` — load when phones in a browser are the main surface: responsive
+  versus different mobile experience, first-screen rule, sticky actions, tap-to-contact, phone forms,
+  browser-chrome and keyboard constraints.
 <!-- dual-compat-end -->

@@ -94,7 +94,7 @@ it to rank and group. (Lupton, *Thinking with Type*.)
 *Halation* is an optical effect: at a maximum-contrast boundary the two values appear to vibrate or
 bleed into each other, producing an edge-shimmer that fatigues the eye. It is a property of human
 vision, not a style preference (Paduraru, *Fundamentals of Creating a Great UI/UX*; logged in
-`docs/book-study/01-ui-ux-craft.md` as the physical *reason* behind the engine's long-standing
+Paduraru, *Fundamentals of Creating a Great UI/UX* (halation) as the physical *reason* behind the engine's long-standing
 "avoid pure black/white" rule in `type-scale-and-spacing.md`).
 
 The fix — soften the highest-contrast boundary deliberately:

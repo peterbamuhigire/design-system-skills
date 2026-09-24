@@ -27,6 +27,16 @@ Grotesk, Poppins, Montserrat, Nunito, or standalone Source Sans. **State the cho
 and reason before producing any artifact.** If you cannot satisfy the anti-slop checklist, say
 so and ask — never silently fall back to Inter or a system stack.
 
+## Never store book extractions
+
+Book extractions, book summaries and chapter-by-chapter notes must never be stored in this
+repository (no `book-extractions/` or `docs/book-study/` folder, no `*-extraction.md` files). Keeping them infringes
+copyright. Knowledge from purchased books enters only as paraphrased, task-oriented skill content
+and `references/` files (procedures, checklists, decision rules, templates) with a short citation
+(Author (Year) *Title*, Publisher). Verbatim quotations stay rare and under 25 words. Staging
+notes live outside the repository and are never linked from skills. `scripts/validate_engine.py`
+fails if an extraction folder exists or a file under skills/, doctrine/ or docs/ links to one; plan and audit documents may name books but not store their content.
+
 ## Font folder contract
 
 The eight top-level folders under `fonts/` are fixed team taxonomy, not personal preference:
@@ -43,3 +53,8 @@ A domain engine (business-plan, srs, proposal, website, engineering-catalog, soc
 digital-research) should hand off here whenever the work touches how an artifact *looks*: font
 choice, type scale, colour, layout/grid, UI screens, mobile UX, or the visual formatting of a
 DOCX/PPTX/PDF/XLSX. Content and structure stay in the domain engine; presentation comes here.
+
+Advertising and campaign creative arrive from the social-media and digital marketing engine as a
+brief; this engine returns concepts, campaign systems, layouts and placement specifications under
+`skills/11-imagery-illustration-and-art-direction/advertising-creative-art-direction/references/handoff-contract-marketing-engine.md`.
+Strategy, copy, legal release and measurement stay with the marketing engine.

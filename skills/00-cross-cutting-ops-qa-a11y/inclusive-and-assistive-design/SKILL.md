@@ -1,6 +1,6 @@
 ---
 name: inclusive-and-assistive-design
-description: Use when designing beyond the WCAG floor for cognitive, visual, motor, assistive-technology, temporary, or situational ability ranges. Unlike accessibility-wcag-2-2-compliance, this creates inclusive adaptations rather than certifying criteria.
+description: Use when designing beyond the WCAG floor for cognitive, visual, motor, assistive-technology, temporary, or situational ability ranges, including low-literacy users on shared phones in rural or low-bandwidth settings. Unlike accessibility-wcag-2-2-compliance, this creates inclusive adaptations rather than certifying criteria.
 metadata:
   portable: true
   category: 00-cross-cutting-ops-qa-a11y
@@ -228,6 +228,11 @@ Without affected-user access, use documented patterns and assistive-mode simulat
 - `references/inclusive-patterns.md` — the accommodation playbook organised **by ability
   dimension** (cognitive, low vision, motor, assistive-tech, situational), plus the persona
   spectrum and exclusion-audit method.
+- `references/low-literacy-low-bandwidth-and-emerging-market-design.md` — load when users have
+  limited reading ability, costly or intermittent data, entry-level or shared phones, or complete
+  tasks through an intermediary (East African consumer, health, education, agriculture and
+  mobile-money products): channel choice, low-literacy patterns, shared and assisted use,
+  cost-aware offline behaviour, trust, and a heuristic checklist.
 - **Pairs with** `00-cross-cutting-ops-qa-a11y/accessibility-wcag-2-2-compliance` — that skill
   certifies the floor (run it first/alongside); this skill designs the experience above it.
 - Hands off to `02-color-brand-and-visual-identity/accessible-color-and-contrast` (low-vision

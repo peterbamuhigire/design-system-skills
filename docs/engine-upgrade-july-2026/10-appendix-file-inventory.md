@@ -58,7 +58,7 @@ docs/
       02-coverage-and-taxonomy-reaudit.md (5118 bytes)
       03-existing-groups-reaudit.md (6149 bytes)
       05-per-output-type-reaudit.md (5919 bytes)
-  docs/book-study/
+  docs/book study notes (retired 2026-09-24; methods folded into skills)
     00-synthesis.md (4671 bytes)
     01-ui-ux-craft.md (30914 bytes)
     02-interaction-patterns.md (19967 bytes)

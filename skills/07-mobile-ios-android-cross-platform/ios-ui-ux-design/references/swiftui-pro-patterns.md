@@ -31,7 +31,7 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 
 ## Workflow
 
-- Read this `SKILL.md` first, then load only the referenced deep-dive files that are necessary for the task.
+- Read the parent [SKILL.md](../SKILL.md) first, then load only the referenced deep-dive files that are necessary for the task.
 - Apply the ordered guidance, checklists, and decision rules in this skill instead of cherry-picking isolated snippets.
 - Produce the deliverable with assumptions, risks, and follow-up work made explicit when they matter.
 
@@ -124,7 +124,7 @@ Text("Hello")
 
 ## Additional Guidance
 
-Extended guidance for `swiftui-pro-patterns` was moved to [references/skill-deep-dive.md](references/skill-deep-dive.md) to keep this entrypoint compact and fast to load.
+Extended guidance for `swiftui-pro-patterns` was moved to [swiftui-pro-patterns/skill-deep-dive.md](swiftui-pro-patterns/skill-deep-dive.md) to keep this entrypoint compact and fast to load.
 
 Use that deep dive for:
 - `2. View Identity (Critical for Performance)`

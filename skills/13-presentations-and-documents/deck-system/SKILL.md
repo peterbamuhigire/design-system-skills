@@ -45,7 +45,11 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
    grid, builds only where they aid comprehension, no bullet soup.
 5. **Design the data** — route exhibits to `chart-selection-and-encoding` / `data-visualization`.
 6. **Write presenter craft** — speaker notes, transitions, the spoken arc; rehearse-ready.
-7. **Run the gates** — anti-slop (no template look, no stock gradients), accessibility (contrast,
+7. **Plan the room and delivery** for live decks with
+   `references/presentation-structure-room-and-delivery.md`: strategy sheet, storyboard before
+   slides, farthest-seat legibility test on the real display, handout timing, rehearsal scoring.
+   Run `fine-typesetting-and-typesetting-qa` on text-heavy and leave-behind decks.
+8. **Run the gates** — anti-slop (no template look, no stock gradients), accessibility (contrast,
    legibility at room distance), and `design-qa-and-pre-launch-review`.
 
 ## Decision Rules
@@ -54,6 +58,9 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
 | Live presentation | Sparse slides plus presenter notes/builds | Slides become a teleprompter |
 | Stand-alone circulation | More explicit evidence and captions | Readers lack spoken context |
 | One slide contains two claims | Split or subordinate one claim | Competing messages destroy hierarchy |
+| Room, display or aspect ratio unseen | Get the strategy sheet answers and run the farthest-seat test before sign-off | Text unreadable from the back; letterboxed slides |
+| Several related charts compare the same measure | Lock one axis scale across the series | Unequal values look equal and credibility is lost |
+| Power or projection is unreliable at the venue | Carry PDF and native copies offline, printed handouts and a flip-chart fallback | Presentation collapses when the equipment fails |
 
 ## Capability Contract
 Read, edit, and render capabilities are required for production; analysis defaults read-only. Execution is required to claim font embedding, animation, media, or layout fidelity. External publication requires separate authority.
@@ -86,6 +93,11 @@ Without rendering, deliver an outline and slide specification marked unverified.
 
 ## References
 - `references/presentation-frameworks.md`, `references/pitch-psychology.md`, `references/storytelling.md`.
+- `references/presentation-structure-room-and-delivery.md` — strategy sheet, storyboard, slide
+  text rules, room legibility, seating, handouts, rehearsal scoring and claims not to import
+  (source: Kupsh and Graves (1993) *How to Create High-Impact Business Presentations*, NTC
+  Business Books, adapted). Pitch rehearsal content routes to `business-plan-skills`; tender
+  orals to `proposal-skills`.
 - `doctrine/design-doctrine.md` (Mission, charter), `doctrine/references/ai-slop-banned-fonts.md`,
   `pairing-principles.md`, `type-scale-and-spacing.md`, `wcag-2.2-criteria.md` (legibility).
 <!-- dual-compat-end -->

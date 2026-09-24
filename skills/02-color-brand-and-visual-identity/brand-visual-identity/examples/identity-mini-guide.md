@@ -58,7 +58,7 @@ SaaS green and the off-system purple→blue gradient outright (doctrine §2).
 | Surface light | `--surface-0` (Bone) | `oklch(0.97 0.01 95)` | warm off-white, not pure #fff |
 | Surface dark | `--surface-900` | `oklch(0.20 0.02 250)` | dashboard dark mode |
 | Accent | `--accent-500` (Clay) | `oklch(0.63 0.13 55)` | sparing — alerts/thresholds only, never a 2nd brand |
-| State | success/warn/error | semantic ramp | derived in `color-system-and-palette`, APCA-certified there |
+| State | success/warn/error | semantic ramp | derived in `color-system-and-palette`, tuned with APCA and certified against the WCAG 2.2 ratios there |
 
 Construction, the full ramp (light+dark), and contrast certification are deferred to
 `../color-system-and-palette`. Identity only assigns roles and names the owned colour.

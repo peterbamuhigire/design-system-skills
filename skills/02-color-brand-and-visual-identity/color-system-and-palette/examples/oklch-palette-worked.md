@@ -97,6 +97,6 @@ only on primary actions, active nav, and key data marks — colour everywhere is
 
 ## Method note (design with APCA, certify with WCAG)
 The ratios above are the WCAG 2.x **conformance** numbers used to certify. While *designing* the
-mid-tones, judge real legibility with **APCA** (the WCAG 3.0 draft algorithm — still draft, not
+mid-tones, judge real legibility with **APCA** (a perceptual design aid — not a W3C method, not
 normative) since it models thin/small text better, then verify against the 4.5:1 / 3:1 floors here
 before shipping — exactly the protocol in `doctrine/references/wcag-2.2-criteria.md`.

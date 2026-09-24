@@ -35,7 +35,7 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 
 ## Workflow
 
-- Read this `SKILL.md` first, then load only the referenced deep-dive files that are necessary for the task.
+- Read the parent [SKILL.md](../SKILL.md) first, then load only the referenced deep-dive files that are necessary for the task.
 - Apply the ordered guidance, checklists, and decision rules in this skill instead of cherry-picking isolated snippets.
 - Produce the deliverable with assumptions, risks, and follow-up work made explicit when they matter.
 
@@ -79,7 +79,7 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 5. **Speed is UX** — If it feels slow, it's broken regardless of how it looks.
 6. **Content-first hierarchy** — Important information is immediately visible.
 7. **Touch-friendly targets** — Minimum 44pt for all interactive elements (Apple HIG).
-8. **SF Symbols for icons** — Use SF Symbols 8 for system icons unless custom icons are required per `mobile-custom-icons`.
+8. **SF Symbols for icons** — Use current SF Symbols (iOS 27 generation) for system icons unless custom icons are required per `mobile-custom-icons`.
 9. **Current Apple Liquid Glass** — For apps built against current Apple SDKs, adopt Liquid Glass for platform chrome and depth while preserving availability and accessibility fallbacks.
 
 ### Visual Standards
@@ -91,12 +91,12 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 | **Content padding** | 16pt horizontal, 8-16pt vertical between items |
 | **Screen padding** | 16pt compact, 20pt regular |
 | **Touch targets** | Minimum 44pt height/width (Apple HIG) |
-| **Icon size** | SF Symbols 8: 17pt body, 22pt title, 48pt empty states |
+| **Icon size** | current SF Symbols (iOS 27 generation): 17pt body, 22pt title, 48pt empty states |
 | **Typography** | Use system `Font` API exclusively |
 
 ## Additional Guidance
 
-Extended guidance for `swiftui-design` was moved to [references/skill-deep-dive.md](references/skill-deep-dive.md) to keep this entrypoint compact and fast to load.
+Extended guidance for `swiftui-design` was moved to [swiftui-design/skill-deep-dive.md](swiftui-design/skill-deep-dive.md) to keep this entrypoint compact and fast to load.
 
 Use that deep dive for:
 - `Navigation Architecture (iOS 16+)`

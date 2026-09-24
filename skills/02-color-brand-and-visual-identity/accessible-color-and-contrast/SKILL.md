@@ -53,7 +53,7 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
 ## Workflow
 
 1. **Design with APCA, certify with WCAG — keep the two jobs separate.** Use APCA (the
-   perceptual algorithm in the WCAG 3.0 *draft*) while tuning, because it tracks real legibility
+   perceptual algorithm; not part of any W3C standard or the current WCAG 3.0 draft) while tuning, because it tracks real legibility
    across light *and* dark far better than the 2.x ratio, which over-passes light-on-dark and
    can fail perfectly readable pairs. Then run the WCAG 2.2 ratio as the **conformance gate** —
    it is what you legally and contractually certify against
@@ -170,5 +170,5 @@ Without a trusted calculator or rendered states, provide a conditional matrix an
   non-colour-cue rule (WCAG 1.4.1 Use of Colour).
 - Human authority (named for provenance, not citable in-repo): Okabe & Ito colour-blind-safe
   palette; IBM Design colour-blind-safe set; Viridis (Smith & van der Walt) for sequential data;
-  WCAG 2.2 SC 1.4.1 / 1.4.3 / 1.4.11; APCA (Somers, in the WCAG 3.0 draft).
+  WCAG 2.2 SC 1.4.1 / 1.4.3 / 1.4.11; APCA (Somers; design aid, not a W3C method).
 <!-- dual-compat-end -->

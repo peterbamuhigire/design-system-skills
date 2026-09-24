@@ -1,5 +1,8 @@
 # 11 — Imagery, Illustration & Art Direction
 
-Photography direction, illustration, iconography, 3D/immersive, AI-image art direction — the
-biggest "looks human-made vs slop" lever. Skills: `photography-art-direction`,
-`iconography-system-design`. (Illustration + AI-image direction arrive in Phase 2.)
+Photography direction, illustration, iconography, AI-image art direction, art-direction routes
+and advertising creative — the biggest "looks human-made versus slop" lever. Skills (6):
+`photography-art-direction`, `illustration-style-and-systems`, `iconography-system-design`,
+`ai-image-generation-art-direction`, `art-direction-routes` (three direction boards, style
+currency, mood-board policy) and `advertising-creative-art-direction` (copy-image concepts,
+campaign systems, effectiveness screen, hand-off with the marketing engine).

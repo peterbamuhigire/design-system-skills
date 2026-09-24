@@ -16,7 +16,7 @@ the M3 Expressive token set, else fall back to baseline Material 3.
 
 | Element | iOS (HIG / Liquid Glass) | Android (Material 3 Expressive) | Parity call |
 |---|---|---|---|
-| Primary destinations (3–5) | Tab bar, bottom, Liquid Glass material; SF Symbols 8 | Bottom navigation bar (compact) → navigation rail (medium) → navigation drawer/pane (expanded) | **Diverge** — same destinations, native container per platform |
+| Primary destinations (3–5) | Tab bar, bottom, Liquid Glass material; current SF Symbols (iOS 27 generation) | Bottom navigation bar (compact) → navigation rail (medium) → navigation drawer/pane (expanded) | **Diverge** — same destinations, native container per platform |
 | Back navigation | Top-left chevron + **edge-swipe-back** gesture (system) | System **back gesture/button** (OS-owned, predictive back) + up-affordance in top app bar | **Diverge** — never put an iOS chevron on Android as the only back path |
 | Hierarchical drill-in | `NavigationStack` push (slide-in from right) | Navigate within nav host; container-transform or shared-axis transition | **Diverge** (mechanism); **Unify** the hierarchy itself |
 | Modal / focused task | Sheet (detent: medium/large), grabber; full-screen cover only for true takeover | Bottom sheet (modal/standard) or full-screen dialog; FAB may launch create flows | **Diverge** — both modal, different physics & affordances |

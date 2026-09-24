@@ -202,6 +202,7 @@ Without editing, provide the ranked queue and annotated change specification. Wi
   completion 58% → 91%). Real numbers, no lorem, no banned fonts.
 
 ## References
+- `references/bad-ux-pattern-catalogue.md` — bad-UX catalogue by product zone, fix validation, and the hierarchy fix template (worked on a mobile-money confirmation screen).
 
 - `references/remediation-lifecycle.md` — the five phases (diagnose → triage → redesign →
   re-validate → measure) as a loop, with the per-phase entry/exit criteria and the re-validation

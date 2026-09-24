@@ -42,7 +42,7 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 3. Define the primary iOS task, top-level destinations, navigation hierarchy, and device classes.
 4. Choose SwiftUI-native patterns before custom controls.
 5. Model every screen state: loading, content, empty, error, offline, permission denied, and syncing.
-6. Apply the current Apple platform material and feedback standards: **Liquid Glass** chrome, **SF Symbols 8**, **Dynamic Type**, **haptics**, and system appearance/accessibility personalization per `references/hig-liquid-glass.md` and `references/ios-sensory-and-haptics.md`.
+6. Apply the current Apple platform material and feedback standards: **Liquid Glass** chrome, **current SF Symbols (iOS 27 generation)**, **Dynamic Type**, **haptics**, and system appearance/accessibility personalization per `references/hig-liquid-glass.md` and `references/ios-sensory-and-haptics.md`.
 7. Apply the iOS mobile quality gate before implementation or review sign-off.
 
 ## Decision Rules
@@ -70,7 +70,7 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - Preserve swipe-back and native gesture expectations.
 - Support Dynamic Type, VoiceOver, Reduce Motion, Increase Contrast, Dark Mode, and SF Symbols consistency.
 - **Liquid Glass (current Apple SDK era):** apply the Liquid Glass material to the **chrome/navigation layer only** (tab bars, toolbars, nav bars, sheets, controls) — never to content; never glass-on-glass; build on standard SwiftUI/UIKit containers so it adapts and stays accessible. Verify under Reduce Transparency, Increase Contrast, Reduce Motion, Dark Mode, and appearance personalization. See `references/hig-liquid-glass.md`.
-- **SF Symbols 8:** use system (or template-drawn custom) symbols, weight-matched to adjacent Dynamic Type styles; animate as feedback only.
+- **current SF Symbols (iOS 27 generation):** use system (or template-drawn custom) symbols, weight-matched to adjacent Dynamic Type styles; animate as feedback only.
 - **Dynamic Type:** use semantic text styles (`body`, `headline`, …), never hardcoded sizes; layouts must survive the largest accessibility size (**AX5**) — stack at large sizes, never clip critical labels. A branded display face must scale relatively, not freeze.
 - **Haptics:** map feedback to real, discrete events with correct semantics (`.success`/`.warning`/`.error` for outcomes — never `.success` on failure; `.selection` on change). UI stays fully usable with haptics disabled. See `references/ios-sensory-and-haptics.md`.
 - Use sheets for focused tasks; avoid full-screen covers unless the workflow truly requires takeover.
@@ -106,7 +106,7 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - `doctrine/design-doctrine.md` — the always-load anti-slop charter governing typography, colour, and visual identity.
 - `doctrine/references/ai-slop-banned-fonts.md` and `doctrine/references/type-scale-and-spacing.md` for type choices, scale, and spacing.
   - Mobile-platform font caveat: iOS's **San Francisco / SF Pro** is the Apple system face — a platform-native default, allowed (and correct) for native iOS UI; it is not a Chwezi-chosen primary and carries no slop penalty. A deliberate branded display face should still come from the approved font categories (`doctrine/references/font-groups-and-usage.md`) and avoid the banned list.
-- `references/hig-liquid-glass.md` for **Liquid Glass**, **SF Symbols 8**, Dynamic Type, app icon Liquid Glass variants, and Apple-platform appearance/accessibility personalization.
+- `references/hig-liquid-glass.md` for **Liquid Glass**, **current SF Symbols (iOS 27 generation)**, Dynamic Type, app icon Liquid Glass variants, and Apple-platform appearance/accessibility personalization.
 - `references/ios-sensory-and-haptics.md` for **haptics** / sensory feedback semantics (Core Haptics, SwiftUI `sensoryFeedback`) and the accessibility rules around them.
 - `references/swiftui-design.md` for SwiftUI-native layout, navigation, forms, accessibility, and visual polish.
 - `references/swiftui-pro-patterns.md` for advanced SwiftUI layout, identity, animation, and performance patterns.

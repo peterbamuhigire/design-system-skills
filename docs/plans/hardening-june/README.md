@@ -45,7 +45,7 @@ sequence, score-visible at each step.
   tokens/handoff, mobile) addressed. Est. overall ~70→~85 as the layer matures.
 - **`product-design-audit`** skill added (multi-platform product audit). Engine = **53 skills**.
 - **Plan REWRITTEN (book-informed) 2026-06-21:** after a critical study of 20 UI/UX books
-  (`docs/book-study/`, synthesis in `00-synthesis.md`), the live remaining plan is
+  (study notes retired 2026-09-24; methods folded into skills), the live remaining plan is
   **`PLAN-v2-book-informed.md`** — it strips the done work and reframes Phase 2/3 (Track A doctrine
   refs first, Track B 4 new skills incl. `ux-remediation-and-redesign` + `xlsx-...`, Track C
   changes, Track D the confirmed P1 wave, Track E exclusions). `phase-2-p1-wave/` and

@@ -17,7 +17,7 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 ## Use when
 - A design or layout needs grouping/hierarchy diagnosed through Gestalt lenses (proximity, similarity, common region, closure, continuity).
 - You must justify or defend UX quality on a premium $20k+ build, naming the principle a choice rests on rather than asserting taste.
-- A flow feels confusing or high-friction and you need a cognitive-load read: Miller's 7±2, chunking/stacking, Sweller's intrinsic vs. extraneous load.
+- A flow feels confusing or high-friction and you need a cognitive-load read: working-memory capacity (about four chunks, Cowan 2001), chunking/stacking, Sweller's intrinsic vs. extraneous load.
 - An interaction's affordances are unclear and you want the four-stage discipline — Presence, Visibility, Recognizability, Intelligibility — applied to controls and signifiers.
 - You need to map a screen against Nielsen's 10 heuristics or Norman's three levels (visceral/behavioral/reflective) and turn each gap into a concrete change.
 - Aligning stakeholders on which HCI paradigm (Building / HIP / Design Thinking) a decision belongs to, or declaring UX scope (Single Interaction / Journey / Relationship) in a proposal.
@@ -100,4 +100,5 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - `references/legacy-guidance.md` — Gestalt, Nielsen, Norman, Krug; **+ working-memory rules + four-stage cognitive affordance** (added 2026-05-04). Read only the specific files under `references/` that match the task.
 - `references/three-paradigms-of-hci.md` — Building / HIP / Design Thinking; cockpit-voice example for stakeholder alignment
 - `references/three-levels-of-ux-scope.md` — Single Interaction / Journey / Relationship — declare in every proposal
+- `references/working-memory-and-interruption-design.md` — load when a flow relies on users remembering values or is interruption-prone; current capacity position (about four chunks, Cowan 2001) supersedes the older Miller 1956 figure.
 <!-- dual-compat-end -->

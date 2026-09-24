@@ -49,7 +49,7 @@ voice converges, by default, on slop.
   AI-slop detection lives in the digital-research engine's writing-slop skills, NOT here.** The
   boundary is clean: **this skill decides what the product's words *should* be and whether they
   are on-voice; the research engine decides whether a passage *reads as machine-generated slop*.**
-  Cross-reference; never duplicate. (Doctrine note, `docs/book-study/03-ux-writing.md`.)
+  Cross-reference; never duplicate. (Doctrine note: textual-slop detection belongs to the digital-research engine.)
 - You are writing the **actual interface strings** — button/CTA labels, field labels, tooltips,
   confirmation copy → `10-…/ux-writing-and-microcopy` (it *consumes* the voice this skill defines).
 - You are writing **error / empty / system messages** → `10-…/error-empty-and-system-messaging`
@@ -227,5 +227,5 @@ Without ratified principles or audience evidence, produce a clearly labelled pro
   deliverable; references this skill for the operational content voice/tone system, not duplicating it.
 - Provenance (named, not in-repo): Podmajersky, *Strategic Writing for UX* 2nd ed. (Voice Chart,
   voice-vs-tone); Ben-David, *The Fundamentals of UX Writing* (Voice Guide three traps, Tone Maps,
-  casual≠conversational). Distilled in `docs/book-study/03-ux-writing.md`.
+  casual≠conversational). Override rules: `../ux-writing-and-microcopy/references/breaking-best-practices.md`; scorecard: `../ux-writing-and-microcopy/references/content-measurement-and-scorecard.md`.
 <!-- dual-compat-end -->

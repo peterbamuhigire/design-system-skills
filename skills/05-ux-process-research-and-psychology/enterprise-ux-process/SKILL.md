@@ -10,7 +10,7 @@ metadata:
 ---
 
 # Enterprise UX Process Skill
-**Source:** Operationalizes the Synechron enterprise-UX extraction (Synechron, 2018; derived from The Design Ladder + Natalie Hanson's UX Maturity Model). The underlying `book-extractions/*` source files live in the originating engineering catalog, not this design engine.
+**Source:** Operationalises Synechron (2018) enterprise UX guidance (derived from The Design Ladder and Natalie Hanson's UX Maturity Model), with strategy and collaboration methods from Levy (2015) *UX Strategy*, O'Reilly, and Fekeshazi, *Product Managers' Guide to UX Design*, UX Studio. The methods live in this skill and its `references/`; no book extraction is stored in any engine repository.
 
 ---
 
@@ -73,12 +73,12 @@ The process maps directly to Synechron's Activity-by-Level matrix. All 9 phases 
 - Output: user-research report with both data types
 
 ### Phase 5 — Competitor Analysis
-- Use Levy's 19-column competitive matrix (the Levy UX-strategy extraction; the source file lives in the originating engineering catalog, not this design engine)
+- Use Levy's 19-attribute competitive matrix and four-step analysis in `references/strategy-and-collaboration-inputs.md` section 2
 - Minimum: 5 direct + 3 indirect competitors
 - Output: filled matrix + 1-page distilled brief
 
 ### Phase 6 — Personas + User Journeys + Information Architecture
-- Personas: apply Branson's discipline (Essential Persona declared, Mechanics floor — name, demographics, goals, environment, pain points, stress points)
+- Personas: apply Branson's discipline (Essential Persona declared, Mechanics floor — name, demographics, goals, environment, pain points, stress points); keep each persona to one or two pages so teams actually read it
 - User Journeys: chronological touch-point sequence per primary persona
 - Information Architecture: organization, structure, labelling of all content; navigation strategy/flow; site map; content buckets; intuitive labels
 - **Level 4 also requires:** Experience Maps
@@ -108,7 +108,7 @@ The process maps directly to Synechron's Activity-by-Level matrix. All 9 phases 
 ### Phase 9 — Usability Testing + ADA / Section 508 verification (Level 4 + all-levels accessibility)
 - Usability testing: moderated in-person, moderated remote, OR unmoderated remote
 - Test scenarios derived from actual use cases and task flows
-- ADA / Section 508 / WCAG 2.1 AA verification — required at ALL maturity levels
+- ADA / Section 508 / WCAG 2.2 AA verification — required at ALL maturity levels
 - Output: usability test report + accessibility audit
 
 ## Decision Rules
@@ -164,7 +164,7 @@ A complete enterprise-ux-process engagement produces:
    - Easy to use (first-task success without coaching)
    - Efficient (task time benchmarked)
    - Pleasing (≥ 4/5 first-impression rating)
-   - Accessible (ADA/Section 508/WCAG 2.1 AA)
+   - Accessible (ADA/Section 508/WCAG 2.2 AA)
    - **Rule:** 4-of-5 disqualifies premium pricing. One No = no launch.
 
 ## Examples
@@ -179,8 +179,14 @@ Load only the directly relevant process references for the current enterprise ph
 - `doctrine/design-doctrine.md` — the anti-slop charter; Phase 7 visual design and the "Pleasing" pre-launch outcome must satisfy it.
 - `doctrine/references/ai-slop-taxonomy.md` — the product/interface slop tells the heuristic evaluation (Phase 8) and Aesthetic-and-Minimal heuristic should screen for.
 
-### Canonical extractions (source-of-truth — external to this design engine)
-The Synechron, Levy, Branson, Deacon, and Fekeshazi `book-extractions/*` files that this process operationalizes live in the originating engineering catalog, not this engine. They frame strategy (Levy Four Tenets, upstream of Phase 1), persona discipline and the 4-stage affordance audit (Branson, in Phases 6 and 8), the 3 levels of UX scope (Deacon, declared in Phase 1), and PM collaboration rules (Fekeshazi).
+### Source works (cited, not stored)
+Synechron (2018) enterprise UX maturity guidance; Levy, J. (2015) *UX Strategy*, O'Reilly Media
+(four tenets upstream of Phase 1; competitive matrix in Phase 5); Branson (persona discipline and
+the four-stage affordance audit, Phases 6 and 8, held in `ux-psychology/references/legacy-guidance.md`);
+Deacon (three levels of UX scope, declared in Phase 1, held in
+`ux-psychology/references/three-levels-of-ux-scope.md`); Fekeshazi, *Product Managers' Guide to
+UX Design*, UX Studio (PM collaboration rules). The working methods are paraphrased in
+`references/strategy-and-collaboration-inputs.md` and `references/maturity-checklist.md`.
 
 ### Operational skills in other engines
 - `website-skills/skills/quality-gates/design-quality-score/SKILL.md` — Category 8 (UX Maturity) scores the same artifacts independently
@@ -190,4 +196,6 @@ The Synechron, Levy, Branson, Deacon, and Fekeshazi `book-extractions/*` files t
 
 ### Quick-use checklist
 - `references/maturity-checklist.md` — standalone activity-by-level checklist for use in project workspaces
+- `references/strategy-and-collaboration-inputs.md` — Levy four tenets, 19-attribute competitive matrix and analysis steps, and product-manager collaboration practices (paraphrased)
+- `references/innovation-front-end-and-concept-validation.md` — six-stage front-end innovation procedure (landscape audit, deep research, reframe, ideate, validate, prove at small scale), desirability/viability/feasibility/suitability tests, templates, compressed two-week engagement
 <!-- dual-compat-end -->

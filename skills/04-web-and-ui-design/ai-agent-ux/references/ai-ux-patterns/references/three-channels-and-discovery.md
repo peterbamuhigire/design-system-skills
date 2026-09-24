@@ -1,70 +1,83 @@
-# Three Channels of Intent and AI Feature Discovery
+# Capturing Intent and Getting AI Features Found
 
-Source: Macfadyen, *Designing AI Interfaces* (O'Reilly, 2025), Chapters 2 and 3.
+**When to read:** when designing the input side of an AI feature (how people tell it what they
+want) and its entry point (how people find it). The output side lives in `ai-output-design`;
+agentic behaviour in `ai-agentic-ui`.
 
-## Three Channels of Intent
+## 1. Inputs to gather
 
-Every AI interaction carries intent through three simultaneous channels. Each can succeed or fail independently; the best AI UIs use all three.
+- The common operations people perform with the feature, from research or analytics.
+- What the product already knows at the moment of use (selection, open file, page, locale, plan).
+- How often, and how urgently, people need the feature.
 
-| Channel | What it is | Example | Design prescription |
+## 2. Three ways intent reaches the system
+
+| Channel | Carries | Design rule | Failure if ignored |
 |---|---|---|---|
-| Implicit context | What the system knows about the user's situation without asking | Selected text, open document, current URL, device, locale, time of day | Make implicit context **visible** to the user. Show a context chip: "Editing: selected text", "Reading: contract.pdf", "Location: Kampala". Users must be able to confirm or correct what the system has assumed. |
-| Explicit prompting | What the user types or speaks | Typed request, voice command, pasted content | Provide a free-text field but **do not rely on it alone**. Users often do not know what to type. Pair with starter prompts and direct manipulation. |
-| Direct manipulation | UI controls the user operates directly | Tone slider, length selector, format buttons, selection rectangles | Expose the most common parameters as controls. QuillBot's Fluency/Formal sliders outperform a "make it more formal" text prompt for the same task. |
+| Context the product already has | Selection, open document, page, device, locale, time | Show it as visible, editable context chips ("Using: selected paragraph", "Location: Kampala") | The system acts on assumptions the person cannot see or correct |
+| What the person types or says | Free-text or voice requests | Offer it, but never alone; add starter prompts and controls | People stare at an empty box not knowing what to ask |
+| Controls the person operates | Sliders, selectors, format buttons, selection handles | Turn the most common parameters into controls | Every adjustment needs a re-typed prompt |
 
-### Hybrid over conversational-only
+**Decision rule:** when the common operations are known, build a hybrid of controls plus a
+free-text field for the long tail. Keep chat-only interfaces for open-ended exploration. Test the
+choice with your own users; published comparisons favour hybrids but products differ.
 
-The Lehmann/Buschek study cited in the book found users produced better output and reported higher satisfaction when given a toolbar + free-text field compared with a chat-only interface for the same task. The toolbar discharges the common 80% of intents in one click; the free-text handles the long tail. A pure chat UI forces every intent through one channel.
+## 3. Structured request composer
 
-Rule: for any AI feature where the common operations are known, build the hybrid. Reserve chat-only for exploratory or unbounded tasks.
+For tasks where people under-specify requests, replace the blank prompt with four slots:
 
-## Feature Discovery 2×2
-
-Most AI features fail because users never discover them. Map every AI feature on two axes before designing the entry point.
-
-|  | Low user intent | High user intent |
+| Slot | Control | Pre-fill |
 |---|---|---|
-| **Low system initiative** | *Organic discovery.* Rely on social proof, onboarding tours, empty-state hints. Do not interrupt. | *Frictionless activation.* User is looking for the feature; surface it one click away. Command palette, prominent button, keyboard shortcut. |
-| **High system initiative** | *Strong context cues + exit paths.* System suggests because it notices a signal (anomaly, pattern). Always provide an unambiguous "Not now / Never" option. | *Accelerate.* User wants it and system knows they want it. Auto-run with a prominent "Undo" and a summary of what just happened. |
+| Situation | Short text field | From the context the product already has |
+| Action | Verb selector (summarise, draft, translate, compare) | Most common action |
+| Result settings | Length, audience, format, tone as controls | Last used or plan default |
+| Example | Paste or upload "make it like this" | Optional |
 
-### Four discovery pattern families
+## 4. Where to put the entry point
 
-1. **Input-based** — command triggers (`/`, `@`), gestures (swipe, long-press), empty-state prompts ("Start with an idea"). Use when the user knows roughly what they want.
-2. **Context-aware** — surfaces the feature based on current content, behaviour, or location. "You are editing a contract — enable Clause Review?" Use when user intent is inferable.
-3. **Ambient / proactive** — the system initiates without being asked, driven by anomaly detection or predictive signals. Use sparingly; always allow dismissal.
-4. **Progressive** — feature graduation and contextual tutorials. Early sessions hide advanced AI; later sessions unlock it based on usage signals. Use to avoid overwhelming new users while still reaching power-user features.
+Plot each AI feature on two axes before designing its entry point:
 
-## Starter prompts are product positioning
+|  | Person rarely seeks it | Person actively seeks it |
+|---|---|---|
+| **Product rarely offers it** | Let people find it: empty-state hints, onboarding mentions, examples from peers; no interruptions | Make it one step away: visible button, command palette, keyboard shortcut |
+| **Product offers it when it notices a signal** | Offer with a clear reason and an unmistakable "Not now" and "Never" | Run it automatically with a visible summary and a prominent Undo |
 
-Generic starter prompts ("Write a poem about autumn") are a sign the team did not think about the product. Good starter prompts:
+Entry-point families:
+1. **Triggered by input** - slash or @ commands, gestures, empty-state prompts; for people who
+   know roughly what they want.
+2. **Triggered by context** - offered because of the current content or task ("This looks like a
+   tenancy agreement; check the clauses?").
+3. **Proactive** - the system starts, from an anomaly or prediction; use sparingly and always
+   allow dismissal.
+4. **Progressive** - advanced features unlock as usage shows readiness, with short contextual
+   tutorials.
 
-- Reflect the product's specific integrations and tone
-- Are context-aware (Monday vs Friday; document type currently open; user plan tier)
-- Change monthly; they are content, not fixture
+## 5. Starter prompts are positioning
 
-A SaaS CRM's starter should be "Draft a follow-up to my three oldest open deals" — not "Write a professional email."
+Starter prompts show what the product is for. Write them from the product's own data and
+integrations, vary them with context (day, document type, plan), and refresh them like content.
+A school-management system's starter might be "List pupils with fees unpaid after 30 days by
+class", not "Write a professional email".
 
-## CARE framework as UI scaffold
+## 6. Anti-patterns
 
-The NN/g CARE framework (Context, Action, Results, Examples) can be built as a structured input form rather than a free-text prompt:
+- A free-text box as the only way to use a feature with well-known common operations.
+- Hidden context the person cannot see or correct.
+- Proactive suggestions with no dismissal or "never again".
+- Generic starter prompts that could belong to any product.
+- A separate "AI" tab that strips the feature of the context that makes it useful.
 
-- Context field: "What's the situation?" (pre-filled from implicit context where possible)
-- Action field: verb-driven selector ("Summarise", "Draft", "Translate")
-- Results knobs: length, audience, format, tone — as direct-manipulation controls
-- Examples: file upload or paste area for "like this"
+## 7. Example (original)
 
-The form-based CARE composer produces better outputs than the same prompt typed free-text, because it forces the user to fill all four slots and prevents under-specified requests.
-
-## Anti-patterns
-
-- Sole reliance on a free-text prompt box for a feature with known common operations
-- Hidden implicit context — user cannot see or correct what the system assumed
-- Proactive suggestions with no dismissal or "never again" option
-- Generic starter prompts that could appear in any product
-- Separate "AI" tab the user must navigate to (deprives the feature of context-aware discovery)
+A Kenyan logistics dashboard adds AI route summaries. Context chip: "Using: today's 42
+deliveries, Nairobi depot". Controls: summary length, audience (driver or manager), language
+(English or Kiswahili). Free text handles unusual questions. Entry point: dispatch managers seek
+it daily, so it sits as a visible button; a proactive offer appears only when late deliveries pass
+a threshold, with "Not now" and "Stop suggesting".
 
 ## See also
 
-- `skills/ai-ux-patterns/SKILL.md` — core AI UI patterns.
-- `skills/ai-output-design/SKILL.md` — the receiving end: designing the AI output surface.
-- `skills/ai-agentic-ui/SKILL.md` — when the AI feature becomes agentic.
+- `skills/ai-ux-patterns/SKILL.md`, `skills/ai-output-design/SKILL.md`, `skills/ai-agentic-ui/SKILL.md`.
+
+Sources: Macfadyen, *Designing AI Interfaces* (O'Reilly, 2025) for the intent channels and the
+discovery grid; the four-slot composer adapts Nielsen Norman Group's CARE prompt structure.

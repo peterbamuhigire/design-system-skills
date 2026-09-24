@@ -54,6 +54,16 @@ A worked example is one of:
 Never use lorem/placeholder — examples must be specific and reusable. Track backfill in
 `docs/plans/hardening-june/examples-backfill-tracker.md`.
 
+## Never store book extractions
+
+Book extractions, book summaries and chapter-by-chapter notes must never be stored in this
+repository (no `book-extractions/` or `docs/book-study/` folder, no `*-extraction.md` files). Keeping them infringes
+copyright. Knowledge from purchased books enters only as paraphrased, task-oriented skill content
+and `references/` files (procedures, checklists, decision rules, templates) with a short citation
+(Author (Year) *Title*, Publisher). Verbatim quotations stay rare and under 25 words. Staging
+notes live outside the repository and are never linked from skills. `scripts/validate_engine.py`
+fails if an extraction folder exists or a file under skills/, doctrine/ or docs/ links to one; plan and audit documents may name books but not store their content.
+
 ## Rules every skill must follow
 
 - Valid frontmatter (`name` + specific `description` + correct `metadata.category` = its group

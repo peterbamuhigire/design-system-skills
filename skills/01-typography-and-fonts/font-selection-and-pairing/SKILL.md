@@ -61,7 +61,8 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
 7. **Set the type scale** per `doctrine/references/type-scale-and-spacing.md`: ratio >=1.25,
    real jumps, inverse line-height, and weight extremes. For concrete px/rem scales, fluid
    `clamp()` versions, and variable-font axes, use `references/type-scale-recipes.md`.
-8. **Hand off to `font-embedding-and-licensing`** for the format-correct load/embed.
+8. **Hand off to `font-embedding-and-licensing`** for the format-correct load/embed, and to
+   `fine-typesetting-and-typesetting-qa` for hierarchy steps, paragraph shape and punctuation.
 
 ## Decision Rules
 
@@ -92,6 +93,11 @@ block embedding until glyph coverage and metrics are checked.
 4. Licence permits the intended use, including embedding (`licensing-and-embedding.md`).
 5. Loaded/embedded correctly for the format, subsetting on for DOCX/PPTX (`embedding-by-format.md`).
 6. A sensible fallback set after, never instead of, the chosen font.
+7. **Family completeness:** the body family has a true italic, a real bold and every weight the
+   hierarchy needs; no faux (slanted or synthesised) styles will be required.
+8. Face choices come only from this engine's catalogue and doctrine. Era-specific font advice in
+   source books (for example system faces "for screens" or a free service as the default) is
+   never adopted.
 
 If the checklist cannot be satisfied, say so and ask. Never silently fall back to Inter or a
 bare system stack.

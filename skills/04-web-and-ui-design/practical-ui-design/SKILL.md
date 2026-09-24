@@ -16,7 +16,7 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 ## Use When
 
 - You need to build a colour palette: pick a single brand hue and derive a monochromatic 1-hue + 5-variation scale in HSB (or OKLCH for perceptually even brightness), tint all neutrals 2-5% toward the brand hue, and reserve brand colour for interactive elements only.
-- You are deciding light/dark mode tokens, system colours (red/amber/green/blue), or checking WCAG 2.1 AA contrast (4.5:1 small text, 3:1 large text and UI components) or APCA values for a real screen.
+- You are deciding light/dark mode tokens, system colours (red/amber/green/blue), or checking WCAG 2.2 AA contrast (4.5:1 small text, 3:1 large text and UI components) or APCA values for a real screen.
 - You are designing or auditing buttons and forms — states, brand-colour-as-affordance, border rules for low-contrast brand colours — and want them governed by tokens, not ad hoc CSS.
 - You need typography, spacing rhythm, or 12-column layout rules grounded in `doctrine/references/type-scale-and-spacing.md` and a deliberate (non-banned) typeface from `doctrine/references/font-groups-and-usage.md`.
 - An existing UI has token drift, duplicated components, or inconsistent states and you want a system-level fix rather than per-screen patches.
@@ -95,7 +95,7 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 
 ## References
 
-- docs/book-study/2026-09-20-six-book-actionable-extractions.md — book-derived hierarchy, spacing, type, colour, empty-state, and evidence synthesis.
+- `skills/09-design-systems-tokens-and-theming/component-library-architecture/references/design-system-operating-model.md` §3 and `references/ui-numeric-baselines.md` — build order, numeric baselines, CUBI screen check (sources cited in each file).
 
 - `doctrine/design-doctrine.md` — the anti-slop charter; this visual system exists to push UI away from the convergent AI mean.
 - `doctrine/references/ai-slop-banned-fonts.md` — banned primary typefaces; pick a deliberate face from `doctrine/references/font-groups-and-usage.md` before applying the type rules below.
@@ -189,7 +189,7 @@ All you need: **1 brand colour + 5 tonal variations** sharing the same hue.
 - System colour text: >= 4.5:1 contrast. Icons/components only: >= 3:1.
 - Always pair system colour with an icon -- never rely on colour alone (colour-blind users).
 
-### 1.6 Contrast Rules (WCAG 2.1 AA)
+### 1.6 Contrast Rules (WCAG 2.2 AA)
 
 | Element | Min. Ratio |
 |---|---|
@@ -198,7 +198,7 @@ All you need: **1 brand colour + 5 tonal variations** sharing the same hue.
 | UI components (fields, radios, checkboxes) | **3:1** |
 | Decorative-only elements | No requirement |
 
-**APCA (WCAG 3 draft):** 90 preferred body, 75 minimum body, 60 other text, 45 large text + UI, 30 placeholders, 15 non-text.
+**APCA (design aid only; not a W3C method):** 90 preferred body, 75 minimum body, 60 other text, 45 large text + UI, 30 placeholders, 15 non-text.
 
 ---
 

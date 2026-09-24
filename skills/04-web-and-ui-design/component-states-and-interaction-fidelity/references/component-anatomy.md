@@ -1,17 +1,16 @@
-# Reference: Component Anatomy & Numbers (Book 3 baseline)
+# Reference: Component Anatomy & Numbers (component primer baseline)
 
 > Per-component **anatomy parts + measurable numbers** so every state cell names a *real part with
 > a real measure* ("focus: 2px ring offset 2px on the 44px-high container"), not a vague verb.
 > Numbers banked from *How to Design Better UI Components 3.0* (2022, rev. 2024) — the most
-> operationally specific of the engine's six study books (see `docs/book-study/01-ui-ux-craft.md`,
-> Book 3). **Use the numbers; reject the era's look** — Book 3 carries a 2020–21 sensibility
+> operationally specific of the UI primers the engine studied. **Use the numbers; reject the era's look** — that book carries a 2020–21 sensibility
 > (Material 2, residual glassmorphism) the doctrine bans (`doctrine/design-doctrine.md` §2;
 > `doctrine/references/ai-slop-taxonomy.md`). Every number below should be expressed as a **token**,
 > never a literal, when it lands in a component (`design-tokens-and-naming`).
 >
-> **Book 3's gaps this skill fills** (per the study): it has *no* focus-visible spec, *no* keyboard
+> **Gaps this skill fills**: it has *no* focus-visible spec, *no* keyboard
 > model, *no* motion/transition specs, *no* reduced-motion. Those come from
-> `state-matrix-method.md` + `doctrine/references/wcag-2.2-criteria.md`. Book 3 supplies the
+> `state-matrix-method.md` + `doctrine/references/wcag-2.2-criteria.md`. the source book supplies the
 > static anatomy; this skill supplies the **states + transitions** on top.
 
 ---
@@ -73,7 +72,7 @@ loading(async validate), error/invalid, plus compound `focus-visible+error`. N/A
 
 **Book-3 state list:** default / hover / open / selected / disabled — **extended by this skill** to
 add focus-visible (trigger *and* roving focus across options), loading (async options), error, and
-the keyboard model (↑/↓ move, Enter select, Esc close, type-ahead) Book 3 omits.
+the keyboard model (↑/↓ move, Enter select, Esc close, type-ahead) the source book omits.
 
 ---
 
@@ -119,9 +118,9 @@ Mostly inherits Input states (§3) + the listbox states of a Dropdown (§4) for 
 
 ---
 
-## 8. Frameworks Book 3 names (use as scaffolding, not taste)
+## 8. Frameworks the source book names (use as scaffolding, not taste)
 8-pt grid (4-pt refinement) · box model · vertical rhythm · Atomic Design · 60-30-10 · F/Z scan
-patterns. WCAG contrast (3:1 large/UI, 4.5:1 small) is embedded throughout Book 3 — but its a11y
+patterns. WCAG contrast (3:1 large/UI, 4.5:1 small) is embedded throughout the source book — but its a11y
 **stops at contrast**; raise everything to WCAG 2.2 via `doctrine/references/wcag-2.2-criteria.md`.
 
 > Sourcing note (doctrine §2): these numbers are human craft-literature, admissible as guidance.

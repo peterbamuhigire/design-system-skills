@@ -1,177 +1,138 @@
-# Layout Patterns
+# Layout Patterns: Structuring a Screen for Scanning and Focus
 
-From Tidwell, *Designing Interfaces*, 3rd ed., Chapter 4: Layout of Screen Elements — and Chapter 5: Visual Style and Aesthetics.
+Parent skill: [interaction-design-patterns](../SKILL.md)
 
-> "A clean layout follows the principles of visual information hierarchy, visual flow, alignment through a grid, and adherence to Gestalt principles." — Tidwell.
+When to read: when deciding how a screen is divided — what is fixed, what gets the most space, how long or dense content is broken up. For the visual system itself (type scale, colour tokens, spacing), pair with `practical-ui-design` and the typography and colour skills.
 
----
-
-## Visual Hierarchy — What Makes Things Look Important
-
-Visual hierarchy gives users instant clues about importance and what to do next. Five tools create it:
-
-| Tool | How to Use |
-|------|-----------|
-| **Size** | Larger = more important. Headlines bigger than body text. Primary CTA bigger than secondary. |
-| **Position** | Top and left read first (F-pattern). Upper-right draws the eye after the primary focal point. Bottom = footer, least important. |
-| **Density** | Tight grouping signals related content. Generous whitespace signals importance — isolation draws the eye. |
-| **Background/Contrast** | A coloured background or high-contrast treatment draws attention. Same background for everything implies equal importance. |
-| **Rhythm** | Consistent spacing between list items, cards, and grid elements creates an invisible reading metronome that reduces cognitive load. |
-
-**The squint test:** Blur your eyes and look at the layout. Can you still perceive hierarchy? What reads first? What reads last? If everything is equally loud, nothing stands out.
+A clean layout rests on four things: a visible information hierarchy, a clear reading flow, alignment to a grid, and grouping that follows Gestalt proximity and similarity.
 
 ---
 
-## Layout Patterns
+## Task A — Make importance readable at a glance
 
-### Visual Framework
-*"Give me stable landmarks so I always know where I am."*
+### Visual hierarchy tools
 
-The Visual Framework is the persistent structural skeleton of the application: header, sidebar, footer, and primary content area. It appears on every page unchanged.
-- Header contains: logo, global navigation, search, user menu
-- Sidebar contains: section navigation, relevant filters/tools
-- Content area: changes on every page; gets the most space
-- Footer: utility links, legal, secondary navigation
-- The framework must be **visually stable** — users build their spatial memory of the app from it
-- Sidebars: use the same background colour as the main content — separate with a border, not a contrasting colour. Different colours fragment visual space.
+| Tool | How to use it | If misused |
+|---|---|---|
+| **Size** | Larger means more important: headings over body, primary action over secondary | Everything large means nothing stands out |
+| **Position** | Top and left are read first in left-to-right scripts (F-pattern); upper-right draws the eye after the main focal point; the bottom reads as footer | Key actions placed bottom-left are missed |
+| **Density** | Tight grouping signals relatedness; isolation with generous space signals importance | Even spacing everywhere hides the structure |
+| **Background / contrast** | A tinted or high-contrast area draws attention | Same treatment everywhere implies equal importance |
+| **Rhythm** | Consistent spacing between list items, cards and grid cells lowers reading effort | Irregular spacing reads as error |
 
-**Design rule:** Never move the navigation between pages. Users rely on spatial memory. Rearranging controls — even helpfully — forces re-learning.
-
----
+**Squint test:** blur your view of the layout. What reads first, and what last? If everything is equally loud, nothing stands out.
 
 ### Center Stage
-*"Give the most important content the most space."*
-
-The content the user came to see should occupy the dominant visual area of the screen. Navigation, toolbars, and sidebars are supporting cast.
-- Primary content area gets 60–75% of horizontal width on desktop
-- Navigation never competes visually with the main content
-- On mobile: full width, navigation collapses to bottom bar or hamburger
-- The dominant element on every screen should be immediately obvious — one clear focal point
-
-**Anti-pattern:** Navigation that is the same visual weight as the content. When the sidebar and content area look equally important, users don't know where to look first.
+- **Problem:** when navigation and toolbars compete with the content, people do not know where to look.
+- **Use when:** any screen whose main purpose is one piece of content or one task.
+- **Do not use / caveats:** multi-pane tools (inbox, dispatch console) need balanced panes — pick the dominant pane per task. At 400 % zoom content must reflow into one column without horizontal scrolling (WCAG 1.4.10).
+- **How:** primary content gets about 60–75 % of desktop width; navigation never matches the content's visual weight; on mobile the content goes full width and navigation moves to a bottom bar or menu; one obvious focal point per screen.
+- **Example:** a hospital lab-result screen gives the result table centre stage; patient details sit in a slim header and actions in a right rail.
 
 ---
+
+## Task B — Give people stable landmarks
+
+### Visual Framework
+- **Problem:** if the application skeleton changes from page to page, people cannot build spatial memory.
+- **Use when:** every multi-page product.
+- **Do not use / caveats:** a framework that hides content behind a fixed header at high zoom fails WCAG 2.4.11 (focus not obscured); use landmarks (`header`, `nav`, `main`, `footer`) so assistive technology can jump between regions.
+- **How:** header with logo, global navigation, search and account menu; sidebar with section navigation and relevant filters or tools; content area that changes per page and gets most space; footer with utility, legal and secondary links. Keep it visually stable. Give sidebars the same background as the content, separated by a border — contrasting colours fragment the space.
+- **Rule:** never move navigation between pages; even helpful rearrangement forces relearning.
+- **Example:** every screen of a Kenyan county revenue system keeps the county crest top-left, search centre, officer menu top-right and module list on the left.
+
+---
+
+## Task C — Show many items of equal weight
 
 ### Grid of Equals
-*"Show me a collection of items of similar importance."*
-
-When displaying a group of items with no hierarchy between them (products, team members, categories), a regular grid communicates equality.
-- Cards in a grid should be visually identical in treatment: same border, same shadow depth, same padding scale
-- Content *inside* cards can vary, but the container should be consistent
-- Grid spacing: equal gutters horizontally and vertically
-- Responsive: adapt column count (4 → 3 → 2 → 1) as screen width narrows
-- Avoid mixing card sizes unless you're intentionally creating a featured-item hierarchy
-
-**When to use:** Product listings, image galleries, team directories, category menus.
-**When NOT to use:** Items with a clear priority ranking — use a list with visual emphasis on top items instead.
+- **Problem:** a collection with no ranking needs to read as a set of peers.
+- **Use when:** product listings, image galleries, staff directories, category menus.
+- **Do not use / caveats:** not for items with a clear priority — use a list with emphasis on the top items. Not for data people compare field by field — use a table (`05-data.md`). Card grids must keep a logical reading and focus order when columns reflow.
+- **How:** identical container treatment (border, shadow, padding); content inside may vary; equal horizontal and vertical gutters; responsive columns 4 → 3 → 2 → 1; avoid mixed card sizes unless deliberately featuring an item.
+- **Example:** a Mombasa hotel's room-types page shows six room cards of identical size, each with photo, rate and "Check dates".
 
 ---
+
+## Task D — Break a long or dense page into parts
+
+| Pattern | Use when | Do not use when |
+|---|---|---|
+| Titled Sections | One page has several distinct content groups | More than five or six groups — split into tabs or pages |
+| Module Tabs | Several views of the same record or container | People need to compare content across tabs at once |
+| Accordion | Many categories, only one or two needed at a time | Multi-step forms or wizards |
+| Collapsible Panels | Optional or secondary panels on a complex screen | The panel holds information needed for every decision |
 
 ### Titled Sections
-*"Help me understand the structure of this complex page."*
-
-For pages with multiple distinct content groups, use clear section headers to label each group and help users scan to the section they need.
-- Section header: larger, heavier weight, clearly distinct from body text
-- Provide visual separation between sections: whitespace, divider line, or background colour change
-- Sections should be scannable: users should be able to understand the page's structure by reading only the section headers
-- Maximum 5–6 titled sections on a single scroll — more than that, consider splitting into tabs or pages
-
----
+- **Problem:** complex pages are hard to scan without labels on each group.
+- **How:** headings larger and heavier than body text and marked up as real headings (WCAG 1.3.1, 2.4.6); visual separation by space, a divider or a background change; the page's structure should be understandable from the headings alone; at most five or six sections per scroll.
+- **Example:** a loan application summary: Applicant, Business, Collateral, Guarantors, Decision.
 
 ### Module Tabs
-*"Show me different views of the same content."*
-
-Tabs allow users to switch between related views without leaving the page context. Use for: different aspects of the same record (Details / History / Notes), or different content sets in the same container.
-- Only 3–7 tabs per group — more than that, use a dropdown or sidebar navigation
-- Active tab is clearly distinguished (filled, underlined, or colour-contrasted)
-- Tab content loads immediately on click — no page reload
-- The URL should reflect the active tab (deep links)
-- Tabs work horizontally for short labels; use a sidebar list for long labels or many tabs
-- Do NOT use tabs when the user needs to compare content across tabs simultaneously
-
----
+- **Problem:** related views of one thing crowd a single page.
+- **How:** three to seven tabs per group (more → dropdown or side list); a clearly marked active tab; content shown instantly without a page reload; URL reflects the active tab (Deep Links); horizontal for short labels, vertical side list for long labels or many tabs; use the ARIA tabs pattern (arrow keys move between tabs).
+- **Caveats:** horizontal tabs that overflow on phones must scroll visibly or collapse to a select.
+- **Example:** a patient record with Summary / Visits / Prescriptions / Billing.
 
 ### Accordion
-*"Let me expand just the section I need."*
-
-Accordions show a list of section headers; clicking a header expands it to reveal its content, optionally collapsing the previously open section.
-- Best for: FAQ pages, settings pages with many categories, mobile navigation
-- Keep headers short and scannable — they function as a table of contents
-- Show a visual indicator (chevron, +/−) that communicates the expand/collapse action
-- Allow multiple sections open simultaneously unless there's a strong reason to restrict to one
-- Do NOT use for multi-step forms — accordions have known usability issues with wizard-style flows
-
-**Anti-pattern:** An accordion where all sections start open and collapse. Defeats the purpose — users don't see the collapsed state as the default.
-
----
+- **Problem:** long lists of categories overwhelm when all shown open.
+- **How:** short, scannable headers acting as a table of contents; a chevron or +/− showing state, exposed via `aria-expanded`; headers are buttons, keyboard operable; allow several sections open unless there is a strong reason not to.
+- **Avoid:** all sections starting open (defeats the pattern); accordions in multi-step forms (known usability problems).
+- **Example:** a mobile-money help page: "Sending money", "Withdrawing at an agent", "Reversing a wrong transfer".
 
 ### Collapsible Panels
-*"Let me hide this content when I don't need it."*
-
-Similar to accordions but typically used for optional or secondary content panels on complex screens — filter panels, detail panels, configuration panels.
-- Provide a clear toggle: "Show filters" / "Hide filters"
-- Remember the user's preference (collapsed/expanded) between sessions
-- Collapsed state should not break the page layout — other content fills the space gracefully
-- On mobile: collapsible panels help manage limited screen real estate
+- **Problem:** secondary panels (filters, details, configuration) consume space when not needed.
+- **How:** a labelled toggle ("Show filters" / "Hide filters"); remember the collapsed or expanded preference between sessions; the layout reflows gracefully when collapsed; especially useful on mobile.
+- **Example:** a stock-report screen whose filter panel collapses to give the table full width on a laptop.
 
 ---
+
+## Task E — Let experienced people shape their workspace
 
 ### Movable Panels
-*"Let me arrange my workspace the way I work."*
-
-Some applications benefit from letting users customise panel positions — dashboards, data analysis tools, IDEs.
-- Only implement where user customisation genuinely adds value — don't add complexity for its own sake
-- Provide a sensible, well-designed default layout for new users
-- Persist the user's arrangement between sessions
-- Provide a "Reset to default" option
-- On mobile: movable panels are not practical — use fixed layouts
+- **Problem:** in analysis tools and dashboards, one fixed arrangement cannot suit every role.
+- **Use when:** customisation genuinely adds value (dashboards, analysis tools, development environments).
+- **Do not use / caveats:** not on mobile — use fixed layouts. Drag-to-arrange needs a non-drag alternative such as "Move up/Move down" (WCAG 2.5.7), and the reading order must follow the new visual order.
+- **How:** a well-designed default for new users; persist the arrangement between sessions; a "Reset to default" option.
+- **Example:** a cooperative's operations dashboard lets the manager move "Milk intake today" above "Payments due".
 
 ---
 
-## Visual Design Principles (Tidwell Chapter 5)
+## Task F — Visual finish that earns trust
 
-### Visual Credibility
-The Stanford Web Credibility Project (2002) found that **visual design appearance is the #1 factor users use to judge website credibility** — above company reputation, content quality, or customer service. Users do not trust interfaces that look amateurish.
+These rules belong to the visual system but affect layout decisions; the detailed doctrine lives in the colour, typography and composition skills.
 
-**Design rule:** Professional visual quality is not optional. An interface that looks unfinished undermines user trust regardless of functionality.
+- **Credibility:** people judge credibility heavily on visual appearance — an unfinished-looking interface undermines trust whatever its function. Check: show the screen to three target users for five seconds and ask whether they would trust it with their money or data.
+- **Colour:**
+  - Warm (red, orange, yellow, brown) versus cool (blue, green, purple, grey): match temperature to the product's intent.
+  - Light backgrounds are the readable default; dark backgrounds need a deliberate reason.
+  - High contrast conveys strength and tension; low contrast conveys calm — choose deliberately, but text must still meet WCAG 1.4.3 contrast minimums.
+  - Saturated colours attract but tire the eye: one or two saturated accents, muted tones elsewhere.
+  - Avoid complementary text/background pairs that vibrate (blue on red, red on green).
+  - Never use colour as the only signal; pair it with shape, icon or text (WCAG 1.4.1). (A prevalence statistic for colour-vision deficiency is omitted here; cite a current source if needed.)
+- **Typography:**
+  - Body line height about 1.6 × font size (16 px text → about 26 px).
+  - Avoid pure black on white; use a near-black such as #1A1A1A or #333333.
+  - At most three font sizes per page section.
+  - Sentence case for interface labels.
+  - Sans-serif for interface labels; serif or sans for content depending on the product's character (font choice follows the engine's font doctrine).
+  - A four-level text hierarchy — primary, secondary, tertiary, muted — used consistently.
+- **Visual style:** commit to one style across every element; mixing styles signals incoherence.
 
----
+| Style | Character | Use when |
+|---|---|---|
+| Skeuomorphic | Imitates physical objects | People need help mapping digital to physical concepts |
+| Illustrated | Custom illustration, distinct personality | Consumer apps, onboarding, brand-led products |
+| Flat | No shadows or gradients, solid colours | Clean, fast-loading interfaces |
+| Minimal | Generous space, near-invisible structure | Focus-heavy tools, reading apps, premium positioning |
+| Adaptive / parametric | Generated from data or context | Data-heavy and AI-driven interfaces |
 
-### Color Rules
+## Checks
 
-**Warm vs Cool:** Red/orange/yellow/brown = warm. Blue/green/purple/grey = cool. Match colour temperature to the product's emotional intent.
+1. The squint test shows one clear focal point per screen.
+2. The framework (header, navigation, sidebar) is identical in position on every page.
+3. Every long page can be understood from its headings alone.
+4. Collapsed and tabbed content is keyboard operable and announces its state.
+5. Content reflows at 320 CSS px width without horizontal scrolling (WCAG 1.4.10).
 
-**Dark vs Light backgrounds:** Light is standard and readable. Dark feels edgier — use with clear intent, not as a default.
-
-**High vs Low contrast:** High contrast = strength, boldness, tension. Low contrast = calm, relaxed. Use contrast levels deliberately.
-
-**Saturated vs Muted:** Pure/vivid colours draw attention but tire the eye when overused. Use one or two saturated accent colours; muted tones for everything else.
-
-**Complementary colour pairs to avoid as text/background combinations:** Blue on red, red on green — they vibrate and fatigue the eye.
-
-**Colour blindness:** 10% of men, 1% of women have some form of colour vision deficiency. Never use colour as the *only* signal — always pair with shape, icon, or text.
-
----
-
-### Typography Rules
-
-- Body text line height = font-size × 1.6 (e.g., 16px text → 26px line-height)
-- Never pure black (#000000) on white — use #1A1A1A or #333333
-- Maximum 3 font sizes per page section — more creates noise
-- Sentence case for all UI labels — fastest to read, never shouts
-- Sans-serif for interface labels, sans-serif or serif for content depending on the product's character
-- Build a 4-level text hierarchy: primary, secondary, tertiary, muted — use all four consistently
-
----
-
-### Visual Styles Reference
-
-| Style | Character | Use When |
-|-------|-----------|----------|
-| **Skeuomorphic** | Mimics real-world objects (leather, paper, wood) | When users need help mapping digital to physical concepts |
-| **Illustrated** | Custom illustrations, distinctive personality | Consumer apps, onboarding, brand-forward products |
-| **Flat Design** | No shadows/gradients, bright solid colours | Clean, modern, fast-loading interfaces |
-| **Minimalistic** | Extreme whitespace, near-invisible structural elements | Focus-intensive tools, reading apps, premium positioning |
-| **Adaptive/Parametric** | System-generated, responds to data or context | Data-heavy applications, AI-driven interfaces |
-
-**Design rule:** Choose a style and commit to it across every element. Mixed visual styles — some flat, some skeuomorphic — signal design incoherence and erode credibility.
+Sources: pattern names follow Tidwell, Brewer & Valencia, *Designing Interfaces* (3rd ed.); Stanford Web Credibility Project (Fogg et al.); W3C, WCAG 2.2.

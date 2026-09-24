@@ -24,5 +24,6 @@ def test_cross_engine_route_manifest_checks_source_and_target_shape():
 def test_missing_cross_engine_repository_is_not_a_pass():
     with tempfile.TemporaryDirectory() as workspace:
         findings = validate_cross_engine_routes(ROOT, Path(workspace))
-    assert len(findings) == 4
+    fixtures = yaml.safe_load((ROOT / "tests" / "cross-engine-route-fixtures.yml").read_text(encoding="utf-8"))
+    assert len(findings) == len(fixtures)
     assert all("NOT ASSESSED" in finding for finding in findings)

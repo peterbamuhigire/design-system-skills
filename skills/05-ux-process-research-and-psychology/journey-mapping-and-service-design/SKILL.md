@@ -13,7 +13,7 @@ metadata:
 
 <!-- dual-compat-start -->
 ## Use When
-- You need an **evidence-based persona** — a research-grounded archetype with goals, context, and jobs — not a demographic stock photo invented to justify a roadmap.
+- You need an **evidence-based persona** — a research-grounded archetype with goals, context, and jobs — not a demographic stock photo invented to justify a roadmap. Keep each persona to one or two pages so the team actually reads and uses it.
 - You must map a user's or customer's **experience over time** across stages, touchpoints, and channels: a current-state journey map, a future-state map, or a broader **experience map** (organisation-agnostic, before a specific product exists).
 - You are designing or fixing a **service**, not just a UI — you need a **service blueprint** that ties what the customer sees (frontstage) to the staff actions, systems, and processes that deliver it (backstage + support), separated by the **line of visibility**.
 - You need to express what the customer is fundamentally trying to accomplish as **Jobs-To-Be-Done** ("when I ___, I want to ___, so I can ___") so the design serves the job, not the feature.
@@ -100,6 +100,7 @@ metadata:
 
 ## References
 - `references/journey-map-templates.md` — the persona template, the JTBD format, the journey-vs-experience-map decision, the stage × layer map grid, the emotion-curve evidence rule, and the alignment-diagram / opportunity-backlog scoring model.
+- `references/persona-use-and-primary-selection.md` — load when choosing the primary persona for a role, arbitrating "what if a user wants..." debates, or writing honest scenarios.
 - `references/service-blueprint.md` — the blueprint swimlanes (frontstage, line of visibility, backstage, line of internal interaction, support processes), how to find backstage failure points, and how a blueprint differs from and extends a journey map.
 - `doctrine/design-doctrine.md` — §0 Mission (the authored-not-templated moat) and §2 Anti-Slop Charter; an experience that "feels generic / untrustworthy" is a slop signal at journey scale.
 - `doctrine/references/ai-slop-taxonomy.md` — the slop tells; map "felt generic / didn't trust it" troughs here and escalate them as opportunities.

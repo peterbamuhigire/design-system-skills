@@ -53,6 +53,7 @@ metadata:
 
 | Condition | Icon-system choice | Wrong-choice failure |
 |---|---|---|
+| Icons must be understood by low-literacy or multilingual users | Prefer similar (literal) and example (associated object) icons over symbolic or arbitrary ones; one idea per icon; test comprehension | Abstract icons are misread and tasks fail |
 | Glyph is primarily structural UI | Use the shared grid and restrained metaphor | Expressive illustration reduces recognition |
 | Meaning is unfamiliar or critical | Pair icon with visible text | Icon-only control becomes ambiguous |
 | Direction changes meaning in RTL | Mirror only the directional glyph | Mirroring universal objects corrupts semantics |
@@ -95,6 +96,7 @@ Without vector or raster rendering, deliver the grid, stroke, metaphor, naming, 
 - `examples/icon-set-spec.md` — a complete, concrete icon-system spec: a 24px grid with live area + four keyline shapes, a 2px constant-stroke system with per-size hinting table, corner/cap/join language, metaphor & perspective rules, the optical-balance compensation table, and a worked **sample set** (search, settings, play, user, trash, chevron, image, warning) each placed on a keyline with its compensations and `currentColor`/a11y notes. Use it as the pattern for any new set. (See `CONTRIBUTING.md` — examples are mandatory and never lorem.)
 
 ## References
+- Icon types (Adams et al. (2012) *Graphic Design Rules*): similar, example, symbolic, arbitrary; keep each icon to one idea.
 - `doctrine/design-doctrine.md` — the anti-slop charter; §0/§2 "looks human-made" applied to icons: name the style first, make one authored move, and refuse the borrowed-library mean.
 - `references/icon-grid-and-stroke.md` — the real grid (artboard/live-area/padding/keylines), stroke weight + per-size hinting, corner/cap/join language, and the optical-balance correction rules with numbers.
 - `doctrine/references/wcag-2.2-criteria.md` — color-not-alone (1.4.1), target size 24px for the containing control (2.5.8), name/role/value for icon-only controls (4.1.2).

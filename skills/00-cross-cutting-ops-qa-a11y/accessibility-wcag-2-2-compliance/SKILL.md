@@ -109,8 +109,9 @@ Choose the build or audit branch, then record evidence for every applicable requ
     an alternative — allow paste, password managers, email links, passkeys, OAuth.
 11. **Consistent help (3.2.6 new).** If a help mechanism (contact link, chat, FAQ) repeats
     across pages, keep it in a **consistent relative order**.
-12. **Motion + media.** Honour `prefers-reduced-motion`; no parallax/auto-animation that can't
-    be stopped; nothing flashes > 3×/sec (2.3.1, 2.3.3). Captions/transcripts for media.
+12. **Motion + media.** Nothing flashes > 3×/sec (2.3.1, A); auto-moving content over 5 s can be
+    paused (2.2.2, A). Honour `prefers-reduced-motion` as a house floor and report it as SC 2.3.3
+    (AAA), not as an AA item. Captions/transcripts for media.
 13. **Reflow + zoom (1.4.10, 1.4.4).** Usable at **320px** width and **200%** zoom with no loss
     of content or horizontal scroll (except where 2D is intrinsic, e.g. data tables).
 14. **Contrast — design with APCA, certify with the WCAG ratio.** Body ≥ 4.5:1; large text and
@@ -144,6 +145,8 @@ Choose the build or audit branch, then record evidence for every applicable requ
 | Existing interactive build | Run automated checks plus keyboard and screen-reader testing | Tool-only coverage misses interaction failures |
 | Any applicable WCAG 2.2 AA criterion fails | Record evidence and block the release gate | A known barrier ships under a misleading pass label |
 | Legal certification or formal conformance claim is requested | Produce technical evidence and require qualified human/legal sign-off | The skill overstates authority it does not hold |
+| Evidence is designs, specs or screenshots only | Label findings `HEURISTIC` ("likely fails", "risk"); list the measured tests still owed as `NOT_ASSESSED` | A design review is reported as conformance and the client ships an untested barrier |
+| Contrast was tuned with APCA | Certify with the WCAG 2.2 ratios; APCA is a design aid, not a W3C method or part of the current WCAG 3.0 draft | A conformance claim rests on a non-normative metric |
 
 ## Capability Contract
 

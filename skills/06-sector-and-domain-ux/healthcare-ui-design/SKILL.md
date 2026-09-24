@@ -340,7 +340,7 @@ Landscape: Persistent left sidebar (200px) + content area
 
 ## Accessibility (Non-Negotiable)
 
-- **WCAG 2.1 AA minimum** for all healthcare UIs; AAA for patient-facing
+- **WCAG 2.2 AA minimum** for all healthcare UIs; AAA for patient-facing
 - Contrast ratio: 4.5:1 for body text; 3:1 for large text (≥18px)
 - All interactive elements keyboard-navigable; visible focus ring (3px outline, 2px offset)
 - Screen reader: semantic HTML, ARIA labels, `role="alert"` for dynamic clinical updates
@@ -367,7 +367,7 @@ Landscape: Persistent left sidebar (200px) + content area
 |-----------|-------------|-------------------|
 | HIPAA | Session timeout, access logging | Auto-logout after inactivity; audit log on every record access |
 | FDA 21 CFR Part 11 | Electronic signatures | Two-step sign: review screen → sign with credentials |
-| WCAG 2.1 AA | Accessibility | Contrast ratios, keyboard nav, screen reader support |
+| WCAG 2.2 AA | Accessibility | Contrast ratios, keyboard nav, screen reader support |
 | ISO 62366-1 | Usability engineering | Minimum 2 patient identifiers; usability testing documentation |
 | HL7 FHIR | Interoperability | API-first; no direct DB coupling in UI layer |
 
@@ -407,7 +407,7 @@ Landscape: Persistent left sidebar (200px) + content area
 - [ ] Allergies banner visible before any prescribing action
 - [ ] Critical alerts use color + icon + text (three signals)
 - [ ] All touch targets ≥ 48×48px (≥56px for aging/accessibility)
-- [ ] WCAG 2.1 AA contrast ratios verified
+- [ ] WCAG 2.2 AA contrast ratios verified (measured, not inferred)
 - [ ] Keyboard navigation tested (Tab, Enter, Arrow keys only)
 - [ ] Screen reader tested (VoiceOver / TalkBack)
 - [ ] Session timeout configured and warning shown

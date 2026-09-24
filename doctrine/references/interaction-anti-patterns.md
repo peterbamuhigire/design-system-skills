@@ -152,11 +152,11 @@ the citing skill's own triage (red-route / difficulty / persistence) — this fi
   3:1 large/UI); use colour-coding consistently and strategically.
 
 ### D4 — Icon Soup
-- **Looks like:** unlabelled non-standard icons, a mixed-style icon set, more than 7±2 icons in one
+- **Looks like:** unlabelled non-standard icons, a mixed-style icon set, a large unlabelled icon
   group, purely decorative icon load.
 - **Why it's bad:** ~60% vs ~88% comprehension without labels; inconsistent sets read as amateur;
   overload defeats scanning.
-- **Fix:** label non-obvious icons; one consistent icon family; cap a group near 7±2; drop decorative
+- **Fix:** label non-obvious icons; one consistent icon family; keep unlabelled groups small and test recognition; drop decorative
   icons that carry no meaning.
 
 ### D5 — Chart Junk

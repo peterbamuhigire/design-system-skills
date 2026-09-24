@@ -67,11 +67,60 @@ failure blocks a `PASS` decision.
       (PDF), name-reference or PDF-instead (XLSX).
 - [ ] Fallback set *after* — never instead of — the chosen face.
 
+## Evidence classes (heuristic review is not measured conformance)
+
+Label every gate item with its evidence class (see `doctrine/references/wcag-2.2-criteria.md`):
+`HEURISTIC` (expert judgement from designs, specs or screenshots), `MEASURED` (a recorded test on
+the rendered or implemented artefact) or `NOT_ASSESSED` (written `NOT ASSESSED` in the delivery
+manifest). Critique and design review produce `HEURISTIC` findings and may say "likely fails" or
+"risk"; only `MEASURED` evidence may say "passes" or "conforms". Render, device, browser,
+assistive-technology and print proof is `NOT_ASSESSED` unless it was actually performed and the
+artefact (screenshot, log, tool output, proof) is linked.
+
 ## Colour & layout (when present)
 
 - [ ] No generic default gradient / template look; palette intent stated.
-- [ ] Sufficient contrast (text and UI) for accessibility.
+- [ ] Contrast measured on the rendered colours: text ≥ 4.5:1, large text (≥ 24 CSS px, or
+      ≥ 18.66 CSS px bold) ≥ 3:1, UI component boundaries, focus indicators and meaningful
+      graphics ≥ 3:1 against adjacent colours (WCAG 2.2 SC 1.4.3, 1.4.11), in every theme.
+- [ ] Colour is never the only carrier of state or meaning (SC 1.4.1).
 - [ ] Consistent spacing rhythm on a single unit; grid respected.
+
+## Interaction states and feedback (when interactive)
+
+- [ ] A state matrix covers every interactive component: default, hover (pointer only),
+      focus-visible, active/pressed, selected, disabled, loading, empty, error, success and,
+      where relevant, read-only and offline. Each state differs by more than colour alone.
+- [ ] Every user action gives feedback within the expected time: pressed state immediately,
+      progress for waits, and a success or error outcome with a recovery path.
+- [ ] Disabled controls explain why (nearby text or tooltip reachable by keyboard) or are replaced
+      by an enabled control that explains the blocker on use.
+
+## Keyboard and screen reader (when interactive)
+
+- [ ] Every function is operable by keyboard in a logical order with no trap (SC 2.1.1, 2.1.2,
+      2.4.3); focus is always visible and not hidden by sticky headers, footers or sheets
+      (SC 2.4.7, 2.4.11).
+- [ ] Controls expose name, role, state and value; status messages are announced without moving
+      focus (SC 4.1.2, 4.1.3). Dialogs move focus in and return it on close.
+- [ ] Pointer targets ≥ 24×24 CSS px (SC 2.5.8, AA); touch targets meet the platform default
+      (Apple 44×44 pt, Material 48×48 dp). Drag actions have a single-pointer alternative (SC 2.5.7).
+- [ ] A screen-reader pass (VoiceOver, TalkBack or NVDA) on the primary task was performed and
+      logged, or the item is marked `NOT_ASSESSED`.
+
+## Motion (when animated)
+
+- [ ] Nothing flashes more than three times per second (SC 2.3.1); auto-playing motion over five
+      seconds can be paused (SC 2.2.2).
+- [ ] `prefers-reduced-motion` / Reduce Motion replaces non-essential movement with a fade or
+      instant change; no meaning or affordance is carried only by motion (house floor; SC 2.3.3 AAA).
+
+## Responsive and zoom (when rendered on screens)
+
+- [ ] Content reflows without two-dimensional scrolling at 320 CSS px width (SC 1.4.10) and stays
+      usable at 200% text zoom (SC 1.4.4) and with user text-spacing overrides (SC 1.4.12).
+- [ ] Each declared breakpoint and orientation was rendered with real, long and localised content,
+      or is listed as `NOT_ASSESSED`.
 
 ## AI-slop freshness (when applicable)
 
@@ -82,7 +131,10 @@ failure blocks a `PASS` decision.
 ## Mobile (when applicable)
 
 - [ ] Platform conventions honoured (iOS HIG / Android Material), touch targets ≥ the platform
-      minimum, safe areas / notch handled.
+      default, safe areas / notch handled.
+- [ ] Apple platforms: Liquid Glass only on the controls and navigation layer, checked with Reduce
+      Transparency, Increase Contrast, Reduce Motion and the largest Dynamic Type size
+      (`skills/07-mobile-ios-android-cross-platform/ios-ui-ux-design/references/hig-liquid-glass.md`).
 
 ## Escalation
 
@@ -98,3 +150,13 @@ failure blocks a `PASS` decision.
 - [ ] Unverified checks, residual risks, waiver owner, and next action are recorded.
 - [ ] The final verdict is `PASS`, `CONDITIONAL`, or `BLOCKED`; `CONDITIONAL` cannot be described
       as production-ready.
+
+## Handoffs
+
+- [ ] Requirements that the design depends on (contrast, target size, response time, supported
+      breakpoints, assistive technologies, locales) are stated as measurable acceptance criteria
+      and handed to `srs-skills` (for example `03-design-documentation/05-ux-specification`); the
+      design engine does not write the requirement, it supplies the value and the test.
+- [ ] Implementation detail (component code, ARIA wiring, token pipeline, test automation) is
+      handed to `chwezi-dev-engine` with the state matrix, token names and the evidence still
+      `NOT_ASSESSED`; design does not claim the implementation passes until it is measured.

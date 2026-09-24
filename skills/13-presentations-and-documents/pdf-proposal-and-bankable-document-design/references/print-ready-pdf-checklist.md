@@ -29,8 +29,10 @@ Mark each: ✅ pass · ⚠️ fix · n/a.
       RGB hex and a CMYK build of the "same" colour).
 - [ ] If printing **mono**, check the document still reads with colour removed (test grayscale export);
       don't rely on colour alone to carry meaning (`wcag-2.2-criteria.md`: non-colour cues).
-- [ ] Rich black for large solids in print (e.g. C60 M40 Y40 K100), not 100K alone, where the bureau
-      requires it.
+- [ ] Rich black for large solids in print, using **the printer's own recipe** (recipes differ, for
+      example 60/40/40/100 or 50/50/50/100), not 100K alone; small text stays 100K only.
+- [ ] For commercial litho, finishes, folds or binding, complete the specification and preflight in
+      `print-production-and-finishing` as well.
 
 ## 3. Images & exhibits
 

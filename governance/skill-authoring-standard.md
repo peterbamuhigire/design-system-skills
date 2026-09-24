@@ -48,6 +48,32 @@ Keep `SKILL.md` at 500 lines or fewer. Retain routing, decisions, workflow, safe
 contracts in the entrypoint. Move lengthy catalogues, examples, schemas, and implementation
 detail to directly linked `references/` files. References must link back to their parent skill.
 
+## References are task guides, not book digests
+
+A `references/` file must be organised around the task it supports (inputs, decision rules,
+procedures, pattern tables, original worked examples) and should synthesise more than one source
+where more than one exists. It must not be a single-book digest: no chapter-numbered headings, no
+catalogue reproduced in a book's own sequence, no book examples or case studies, no "key mantras"
+lists, and no more than one brief attributed quotation. Cite sources in a short line (Author,
+*Title*). Replace book examples with original, preferably localised, examples.
+
+Book extractions, book summaries and chapter-by-chapter notes are never stored anywhere in the
+repository. `scripts/validate_engine.py` fails the release when it finds an extraction folder
+(`book-extractions/`, `extracted-books/`, `book-study/`, `book-notes/`), a `*-extraction(s).md`
+file, a link to either, a "Book-study NN" citation, or a chapter-numbered heading
+(`tests/test_book_extraction_guard.py` covers the guard).
+
+## Currentness and evidence claims
+
+Books supply durable concepts only. Any standard, platform version, API, metric threshold or tool
+recommendation in a skill or reference is checked against the current primary source (w3.org/WAI,
+developer.apple.com, m3.material.io, web.dev, MDN) and recorded in an "Evidence/currentness" note
+with source, access date and status; anything unverified is marked `NOT_ASSESSED`. Skills must
+keep design intent separate from verified output: a heuristic review may say "likely fails", only
+a recorded measurement may say "passes" or "conforms", and render, device, assistive-technology
+and print proof stays `NOT_ASSESSED` until it is actually performed
+(`doctrine/references/wcag-2.2-criteria.md`, `governance/design-quality-gate.md`).
+
 ## Review and mutation boundaries
 
 Analysis, audit, critique, and planning default to read-only. Editing requires an implementation

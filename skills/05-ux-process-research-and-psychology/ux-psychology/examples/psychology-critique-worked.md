@@ -60,12 +60,12 @@ A single screen, critiqued through five named human authorities. Each finding st
 
 ---
 
-## Lens 4 — Cognitive load and working memory (Miller 7±2; Sweller, via the skill's working-memory section)
+## Lens 4 — Cognitive load and working memory (Cowan 2001, about four chunks; Sweller, via the skill's working-memory section)
 
-**Capacity — finding.** **11 fields are shown at once**, exceeding Miller's 7±2 ceiling for items held in view; the screen presents an undifferentiated load with no closure point.
+**Capacity — finding.** **11 fields are shown at once** as one ungrouped block with no closure point. Visible fields are recognised rather than held in memory, so the count alone is not the defect; the defects are that the block forces repeated re-scanning, and that clearing the form on a failed submit makes the shopper recall and re-enter everything, far beyond the roughly four chunks working memory actively holds (Cowan 2001).
 **Change:** split into chunked steps that each drive a working-memory closure: Step 1 Contact (email), Step 2 Shipping (name + address), Step 3 Payment (card). Plot the load so it returns toward zero between steps.
 
-**Chunking — finding.** The order reference `A1B2C3D4E5F6G` is an ungroupable 13-character string — exactly Miller's "fails capacity" case.
+**Chunking — finding.** The order reference `A1B2C3D4E5F6G` is an ungroupable 13-character string — well beyond the roughly four chunks a person can actively hold while reading it aloud to support (Cowan 2001).
 **Change:** chunk it: `A1B2 C3D4 E5F6 G` (4-4-4-1) so it can be read, repeated, and quoted to support.
 
 **Recognition over recall — finding.** Region and country are free-text; the user must recall exact spelling/format.
@@ -94,8 +94,8 @@ A single screen, critiqued through five named human authorities. Each finding st
 | 5 | Nielsen H8 / Von Restorff | Nielsen / Yablonski | Two equal-weight CTAs, no hierarchy | One primary CTA; demote secondary |
 | 6 | Norman — signifier | Norman | Blue underline that is not a link (false affordance) | Make it a real control or strip link styling |
 | 7 | Norman — convention | Norman | Logo centred; sign-in tiny top-right | Logo top-left; enlarge account affordance |
-| 8 | Cognitive load | Miller / Sweller | 11 fields at once, no closure | Chunk into 3 steps, drive load to zero between |
-| 9 | Chunking | Miller | 13-char ungroupable order ref | Chunk to `A1B2 C3D4 E5F6 G` |
+| 8 | Cognitive load | Cowan / Sweller | 11 fields at once, no closure | Chunk into 3 steps, drive load to zero between |
+| 9 | Chunking | Miller (chunking) / Cowan | 13-char ungroupable order ref | Chunk to `A1B2 C3D4 E5F6 G` |
 | 10 | Recognition over recall | Branson/Miller | Free-text region/country | Selectable list with type-ahead |
 | 11 | Hick's Law | Hick | Two equal end-of-funnel choices | Collapse to one dominant action |
 | 12 | Fitts's Law | Fitts | Small primary target beside equal distractor | Large, separated, ≥44px primary target |

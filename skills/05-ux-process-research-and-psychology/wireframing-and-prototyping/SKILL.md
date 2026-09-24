@@ -147,6 +147,7 @@ metadata:
 - `references/fidelity-ladder.md` — the five rungs (paper sketch → lo-fi → mid-fi greybox →
   hi-fi mockup → clickable/coded prototype): what each is *for*, when it is the right rung, what it
   cannot tell you, and the fidelity-vs-interactivity matrix.
+- `references/value-storyboard-and-solution-prototype.md` — load before any wireframe when a new product or feature must be tested for value: value storyboard and the five-part minimum solution prototype.
 - `doctrine/design-doctrine.md` — §0 (the "looks human-made" moat / no "looks-done" theatre) and
   §2 (the Anti-Slop Charter — deliberate layout choices apply even at wireframe stage).
 - Pairs with `ux-research-and-usability-testing` (this group) — wireframe is the stimulus; that

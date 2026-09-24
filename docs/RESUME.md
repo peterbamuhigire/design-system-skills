@@ -1,14 +1,19 @@
-# RESUME / Status - where to pick up (updated 2026-08-11)
+# RESUME / Status - where to pick up (updated 2026-09-24)
 
 Single source of truth for "what's done / what's next" on design-system-skills.
 (Supersedes `RESUME-2026-06-21.md`, which is historical.)
 
 ## Current state
 
-- **89 active skills across 16 groups (15 domain groups plus cross-cutting), 100% example-complete and 100% contract-compliant.**
-- The zero-debt conformance baseline is enforced in CI. Local and canonical validation pass for
-  all 89 active skills; 54 routing fixtures achieve 100% precision at the top-three threshold
-  (87% precision at top one).
+- **101 active skills across 16 groups (15 domain groups plus cross-cutting), 100% example-complete and 100% contract-compliant** (2026-09-24).
+- The zero-debt conformance baseline is enforced in CI. Local validation passes for all 101 active
+  skills; 65 routing fixtures achieve 100% precision at the top-three threshold (85% at top one).
+- 2026-09-24 Kaizen: book-study notes removed; `scripts/validate_engine.py` now fails on any stored
+  or cited book extraction (guard tested in `tests/test_book_extraction_guard.py`); WCAG and Apple
+  HIG claims re-verified against w3.org and developer.apple.com (APCA is no longer described as the
+  WCAG 3 method; SF Symbols named by iOS 27 generation); the design quality gate now separates
+  `HEURISTIC` from `MEASURED` evidence and covers state, keyboard, screen-reader, motion and reflow
+  checks; design-handoff routes to `srs-skills` and `chwezi-dev-engine` are fixture-checked.
 - The earlier overall design-readiness audit score remains **81/100** (progression: 51 -> about
   67 -> about 73 -> 80 -> 81). That score measures broader output capability, not skill-contract
   conformance.
@@ -26,7 +31,7 @@ Single source of truth for "what's done / what's next" on design-system-skills.
 - `product-design-audit` skill: audits a real product across web, SaaS, iOS/Mac/iPad/iPhone,
   Android, and desktop; routes findings to the skill that fixes each issue.
 - 8-category intent-based font taxonomy reconciled: folders, manifests, and doctrine.
-- Critical study of 20 UI/UX books: `docs/book-study/`, synthesis `00-synthesis.md`.
+- Critical study of 20 UI/UX books: study notes retired 2026-09-24; methods now live in skills and references (see the Kaizen ledger).
 - v2 plan executed: Track A doctrine refs and inoculation notes; Track B new skills; Track C
   changes; Track D full P1 wave.
 - The two cheapest post-v2 fixes landed:

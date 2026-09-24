@@ -21,7 +21,7 @@ Build professional web UIs using commercial templates with established component
 
 ## Interface Design Checklist
 
-Use this for dashboards, admin panels, SaaS apps, tools, settings pages, and data interfaces. Follow [skills/webapp-gui-design/sections/09-interface-design.md](skills/webapp-gui-design/sections/09-interface-design.md) before proposing UI direction or writing UI code:
+Use this for dashboards, admin panels, SaaS apps, tools, settings pages, and data interfaces. Follow [09-interface-design.md](09-interface-design.md) before proposing UI direction or writing UI code:
 
 1. Define human, verb, feel.
 2. Produce Domain, Color world, Signature, Defaults.

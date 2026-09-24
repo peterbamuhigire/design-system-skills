@@ -1,7 +1,7 @@
 {
-  "recorded": "2026-09-11",
-  "skills": 91,
-  "fully_compliant": 91,
+  "recorded": "2026-09-24",
+  "skills": 101,
+  "fully_compliant": 101,
   "failure_counts": {},
-  "note": "Zero-debt conformance baseline after the Pocock Kaizen email and interaction-design update. Any structural or contract finding is a regression and must fail CI."
+  "note": "Zero-debt conformance baseline after the 2026-09-24 book-driven Kaizen (typesetting, print production, art-direction routes, advertising creative). Any structural or contract finding is a regression and must fail CI."
 }

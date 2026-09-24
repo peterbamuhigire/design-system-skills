@@ -92,7 +92,7 @@ metadata:
    suggestions are admissible as *evidence to inform*, never as *authority to decide* —
    `doctrine/design-doctrine.md` §2). Then let what you learned cause the **next** deliberate
    variation. Converge on a demo → diverge on the feedback → converge again. Prefer **subtraction**:
-   the strongest next demo is often the one with something removed ("edit for less", Miller 7±2).
+   the strongest next demo is often the one with something removed ("edit for less"; working memory holds about four chunks, Cowan 2001).
 6. **Repeat until it converges — then stop.** Run rounds until further variation stops improving the
    one thing (taste, not a target number, tells you you're there). Resist both early-stopping (ship
    the first that works) and endless polishing. "We picked one and moved on" is a virtue once the

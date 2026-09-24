@@ -122,7 +122,7 @@ read off immediately. Living-on is the procedure specifically for heuristics.
 The strongest next demo is often the one with something **removed**, not added:
 
 - One keyboard instead of several; the *removed* suggestion bar; one path instead of three.
-- Grounded in Miller's 7±2 — fewer places to look is **measurably faster**, not merely tidier.
+- Grounded in working-memory limits (about four chunks, Cowan 2001) and choice cost — fewer places to look is **measurably faster**, not merely tidier.
 - The discipline: **answer hard questions by removing the need to ask them.** When a round is stuck,
   try a variation that deletes the contested element entirely and live on *that*.
 

@@ -292,7 +292,7 @@ Each directory listing must have:
 
 ## What NOT to Include on a Law Firm Website
 
-From the book's explicit warnings:
+These warnings restate lawyer-advertising and professional-conduct rules (for example the American Bar Association's Model Rules of Professional Conduct 7.1-7.3 in the United States, and the conduct and advertising rules of the Uganda Law Society, Law Society of Kenya or the relevant bar elsewhere). The book this template was originally drawn from is not recorded in the repository history, so the rules themselves are cited. Verify the current rules for the firm's jurisdiction before publishing:
 
 - **No "expert" or "specialist" claims** unless certified by a state bar program (ethics violation in most jurisdictions)
 - **No guarantees of outcomes** ("We win cases" or "Get the maximum settlement" — prohibited advertising in most jurisdictions)

@@ -95,7 +95,7 @@ have red–green colour-vision deficiency. Every chart must pass these, per
 - Adjacent slices/segments/series that touch must be **≥ 3:1 from each other**, not just from the
   background — otherwise the boundary disappears.
 - **Design with APCA** for real perceptual legibility, then **certify with the WCAG ratio** for
-  conformance (it is the conformance test; APCA is the WCAG 3.0 *draft* tool).
+  conformance (it is the conformance test; APCA is a design aid only, not a W3C method).
 
 ### Colour-vision safety
 - Test every palette in a **deuteranopia/protanopia simulator** before shipping.

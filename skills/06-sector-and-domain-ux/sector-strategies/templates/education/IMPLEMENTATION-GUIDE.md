@@ -1124,7 +1124,7 @@ fi
 This guide provides a solid foundation for modern school websites in Uganda. The stack chosen ensures:
 
 ✅ **Fast Loading**: Under 500KB first load, optimized for East African internet speeds
-✅ **Accessibility**: WCAG 2.1 AA compliant, supporting all abilities
+✅ **Accessibility**: WCAG 2.2 AA compliant, supporting all abilities
 ✅ **Mobile-First**: Designed for 375px mobile screens first
 ✅ **Self-Hosted**: No external dependencies, full privacy compliance
 ✅ **Easy Maintenance**: Clear structure, well-documented code

@@ -12,7 +12,7 @@ Suggested acceptance: reject invalid path strings with a render-specific finding
 
 ## Dated disposition — 2026-09-07
 
-The escaped-NUL render-path defect identified here was repaired before resumed verification; the design suite then recorded 80 passing tests. The requested direct render-path and CLI regression breadth, actual rendering, accessibility, evidence authenticity and visual-quality checks remain **NOT ASSESSED**. Retain the residual finding as backlog until directly evidenced. Next review: 2026-09-13 ([log](../../skills-web-dev/docs/audits/2026-09-06-kaizen/resume-2026-09-07/design-system-skills-tests.log)).
+The escaped-NUL render-path defect identified here was repaired before resumed verification; the design suite then recorded 80 passing tests. The requested direct render-path and CLI regression breadth, actual rendering, accessibility, evidence authenticity and visual-quality checks remain **NOT ASSESSED**. Retain the residual finding as backlog until directly evidenced. Next review: 2026-09-13 ([log](../../../chwezi-dev-engine/docs/audits/2026-09-06-kaizen/resume-2026-09-07/design-system-skills-tests.log)).
 
 ## Reproducible checks and primary execution evidence
 

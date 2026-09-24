@@ -8,7 +8,7 @@ are both "correct"; flattening one rubric across both is the mistake this file p
 Each lens ends with the **engine skill that remediates** a finding in it. Skill names are
 glob-verified against the engine.
 
-Current as of 2026: **iOS/iPadOS/macOS Liquid Glass + SF Symbols 8**; **Android Material 3
+Current as of 2026: **iOS/iPadOS/macOS Liquid Glass + current SF Symbols (iOS 27 generation)**; **Android Material 3
 Expressive + dynamic colour + predictive back**.
 
 ---
@@ -50,7 +50,7 @@ Expressive + dynamic colour + predictive back**.
 ## Lens C — iOS / iPadOS / macOS (Apple platforms)
 
 **Idiom owner skill:** `ios-ui-ux-design` (with `cross-platform-design-parity` for parity).
-Standards: Apple HIG, **Liquid Glass**, **SF Symbols 8**, Dynamic Type.
+Standards: Apple HIG, **Liquid Glass**, **current SF Symbols (iOS 27 generation)**, Dynamic Type.
 
 ### Shared Apple checks (all device classes)
 
@@ -58,7 +58,7 @@ Standards: Apple HIG, **Liquid Glass**, **SF Symbols 8**, Dynamic Type.
 |---|---|---|
 | **HIG conformance** | Native navigation (nav stack / tab bar / split view) used idiomatically; not a web layout in a wrapper | `ios-ui-ux-design` |
 | **Liquid Glass** | System materials used per HIG (not faked, not over-applied); legibility preserved over glass; respects **Reduce Transparency** + **Increase Contrast** | `ios-ui-ux-design`, `accessible-color-and-contrast` |
-| **SF Symbols 8** | System symbols (correct weight/scale, hierarchical/multicolor where apt); not random icon sets mixed with SF | `iconography-system-design`, `ios-ui-ux-design` |
+| **current SF Symbols (iOS 27 generation)** | System symbols (correct weight/scale, hierarchical/multicolor where apt); not random icon sets mixed with SF | `iconography-system-design`, `ios-ui-ux-design` |
 | **Dynamic Type** | Layout survives the largest AX text sizes; no clipping/truncation; supports text scaling end-to-end | `ios-ui-ux-design`, `accessibility-wcag-2-2-compliance` |
 | **VoiceOver** | All controls labelled, grouped, ordered; custom controls expose traits | `accessibility-wcag-2-2-compliance` |
 | **Haptics & motion** | Haptics meaningful not gratuitous; respects **Reduce Motion**; system-consistent transitions | `motion-design`, `ios-ui-ux-design` |

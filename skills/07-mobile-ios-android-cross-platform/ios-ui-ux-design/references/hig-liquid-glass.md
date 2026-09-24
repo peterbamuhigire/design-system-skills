@@ -3,7 +3,7 @@
 The current Apple platform-design baseline for native Apple-platform work. Use this alongside
 `doctrine/design-doctrine.md` (the anti-slop charter) and `doctrine/references/wcag-2.2-criteria.md`
 (the accessibility floor). Source: Apple Human Interface Guidelines (developer.apple.com/design/),
-"Adopting Liquid Glass," the WWDC26 Design guide, SF Symbols 8, and 2026 HIG updates.
+"Adopting Liquid Glass," the WWDC26 Design guide, current SF Symbols (iOS 27 generation), and 2026 HIG updates (see Evidence/currentness at the end).
 
 Platform-face note: **SF Pro / SF Compact (San Francisco)** is the Apple **system face** — a
 platform-native default, allowed and correct for native iOS UI, carrying **no slop penalty**. It is
@@ -30,6 +30,9 @@ above content, not a flat translucent fill.
   regions in Liquid Glass — it is for chrome, not canvas. Over-using it flattens the hierarchy and
   destroys the depth cue it exists to provide.
 - **Not** stacked glass-on-glass. Two Liquid Glass surfaces overlapping muddies legibility.
+
+**Content-layer exception (HIG):** a transient control inside content, such as a slider or toggle,
+takes on a Liquid Glass appearance only while a person is actively manipulating it.
 
 **Two variants (pick by context):**
 - **Regular** — the default; more opaque, adapts legibly over any content. Use for most chrome.
@@ -71,7 +74,7 @@ for real legibility, certify with the WCAG ratio.
 
 ---
 
-## 3. SF Symbols 8 (the system icon library)
+## 3. SF Symbols (current release) (the system icon library)
 
 SF Symbols is Apple's iconography system, weight- and size-matched to SF text. Using it is the native,
 non-slop default for iconography in iOS chrome.
@@ -88,7 +91,7 @@ non-slop default for iconography in iOS chrome.
   share an optical rhythm.
 - **Custom symbols** must be drawn on the SF Symbols template so they inherit weights, scales, and
   rendering modes; ad-hoc PNGs break the system and read as slop.
-- **SF Symbols 8 watch item:** use the current app to validate new symbols, annotations, animations,
+- **current SF Symbols (iOS 27 generation) watch item:** use the current app to validate new symbols, annotations, animations,
   and rendering modes before exporting custom symbols.
 
 ---
@@ -110,8 +113,9 @@ Dynamic Type lets users pick their text size; supporting it is a hard iOS access
     relative text style (`.font(.custom("…", size: …, relativeTo: .largeTitle))`) so it tracks the
     user's setting instead of freezing.
   - Don't truncate critical labels; allow wrapping. Test the largest AX size as a release gate.
-- **Minimum tap target stays 44×44 pt** regardless of text size (HIG; WCAG 2.5.8 floor is 24×24 CSS px —
-  iOS aims higher).
+- **Default control size stays 44×44 pt** regardless of text size; the HIG's absolute minimum is
+  28×28 pt (macOS 28×28 default / 20×20 minimum; visionOS 60×60 default; tvOS 66×66). Treat 44×44
+  as the Chwezi floor for touch. WCAG 2.5.8 AA is 24×24 CSS px — iOS aims higher.
 
 ---
 
@@ -124,10 +128,31 @@ Dynamic Type lets users pick their text size; supporting it is a hard iOS access
 4. Text over **Clear** glass or imagery has a scrim and clears **4.5:1 / 3:1**.
 5. Built on **standard system containers** (`TabView`, `.toolbar`, `NavigationStack`) so material,
    scroll-edge, and a11y are automatic — no hand-rolled bars unless unavoidable.
-6. Icons are **SF Symbols 8** (or template-drawn custom symbols), weight-matched to adjacent text.
+6. Icons are **current SF Symbols (iOS 27 generation)** (or template-drawn custom symbols), weight-matched to adjacent text.
 7. All text uses **semantic Dynamic Type styles** and survives **AX5**; branded display type scales
    relatively, body stays on SF.
 8. Branded display face (if any) is from an **approved font category** — not the banned list; SF carries
    the system UI.
 9. App icon variants and appearance personalization are reviewed for Liquid Glass attributes,
    legibility, and brand recognition.
+
+---
+
+## Evidence/currentness (accessed 2026-09-24)
+
+- Apple HIG *Materials* (developer.apple.com/design/human-interface-guidelines/materials, page
+  alert "Updated guidance for Liquid Glass", 2025-09-09): Liquid Glass is the controls and
+  navigation layer; do not use it in the content layer; use effects sparingly; regular variant for
+  text-heavy components, clear variant only over visually rich media; appearance changes with the
+  user's preferred Liquid Glass look and with Reduce Transparency / Increase Contrast. Verified.
+- Apple HIG *Accessibility*: control sizes (iOS/iPadOS 44×44 pt default, 28×28 pt minimum; macOS
+  28×28 / 20×20; tvOS 66×66 / 56×56; visionOS 60×60 / 28×28; watchOS 44×44 / 28×28); contrast table
+  (text up to 17 pt 4.5:1; 18 pt and larger, or bold, 3:1); about 12 pt padding around bezelled
+  controls and 24 pt around unbezelled ones. Verified.
+- iOS 27 / iPadOS 27 released 14 September 2026 with revised Liquid Glass defaults and a
+  user-facing transparency control (secondary: MacRumors, 2026-09-14). The HIG pages read on
+  2026-09-24 had not yet added iOS 27-specific wording: treat per-release tuning values as
+  `NOT_ASSESSED` and re-check the HIG change log before any native release.
+- SF Symbols: developer.apple.com/sf-symbols describes the iOS 27-generation library (download
+  labelled `SF-Symbols-27`); the trade press calls it SF Symbols 8. The engine therefore names it
+  "current SF Symbols (iOS 27 generation)"; the exact version label is context-bound.

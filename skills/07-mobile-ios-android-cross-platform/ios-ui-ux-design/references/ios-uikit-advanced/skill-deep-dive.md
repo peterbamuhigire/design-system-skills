@@ -1,6 +1,6 @@
 # ios-uikit-advanced Deep Dive
 
-This file contains the extended guidance moved out of [../SKILL.md](../SKILL.md) so the skill entrypoint stays under the repository size limit.
+This file contains the extended guidance moved out of [../ios-uikit-advanced.md](../ios-uikit-advanced.md) so the skill entrypoint stays under the repository size limit.
 
 ## Included Sections
 
@@ -423,7 +423,7 @@ private let imageCache: NSCache<NSURL, UIImage> = {
 
 ## SECTION 10: Advanced Interactions Reference
 
-See [references/advanced-interactions.md](references/advanced-interactions.md) for:
+See [advanced-interactions.md](advanced-interactions.md) for:
 
 - **Touch prediction & coalescing** — sub-frame stroke accuracy and latency compensation for drawing apps (Apple Pencil support)
 - **UIKit Dynamics** — physics simulation: `UIGravityBehavior`, `UICollisionBehavior`, `UISnapBehavior`, `UIPushBehavior`, elasticity/friction

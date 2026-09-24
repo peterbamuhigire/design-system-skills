@@ -151,6 +151,7 @@ If any item fails, fix before sign-off — do not ship a half-applied system.
 
 | Condition | Decision | Wrong-choice failure |
 |---|---|---|
+| No agreed visual direction or a request for a mood board | Use `art-direction-routes` for direction boards and its mood-board policy (taste level only, never billed as a concept) | Identity is built on an unagreed taste or a borrowed mood board |
 | Existing asset has recognised equity and remains fit | Evolve with documented continuity | Refresh destroys recognition |
 | Several directions are plausible | Select against differentiation and application proof | Trend or vote decides taste |
 | High-stakes sector needs legitimacy | Apply trust-architecture evidence | Expression weakens credibility |
@@ -182,6 +183,7 @@ A **mini style-guide** (one to three pages) containing:
   values.
 
 ## References
+- `skills/11-imagery-illustration-and-art-direction/art-direction-routes/` — upstream direction boards and mood-board policy.
 
 - `references/identity-system-spec.md` (this folder) — the canonical structure every layer of
   the identity system must fill; read it before producing the mini style-guide.

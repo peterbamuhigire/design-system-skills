@@ -32,7 +32,7 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 
 ## Workflow
 
-- Read this `SKILL.md` first, then load only the referenced deep-dive files that are necessary for the task.
+- Read the parent [SKILL.md](../SKILL.md) first, then load only the referenced deep-dive files that are necessary for the task.
 - Apply the ordered guidance, checklists, and decision rules in this skill instead of cherry-picking isolated snippets.
 - Produce the deliverable with assumptions, risks, and follow-up work made explicit when they matter.
 
@@ -133,7 +133,7 @@ dataSource.apply(snapshot)
 
 ## Additional Guidance
 
-Extended guidance for `ios-uikit-advanced` was moved to [references/skill-deep-dive.md](references/skill-deep-dive.md) to keep this entrypoint compact and fast to load.
+Extended guidance for `ios-uikit-advanced` was moved to [ios-uikit-advanced/skill-deep-dive.md](ios-uikit-advanced/skill-deep-dive.md) to keep this entrypoint compact and fast to load.
 
 Use that deep dive for:
 - `SECTION 2: Compositional Layout — Complex Collection Layouts`

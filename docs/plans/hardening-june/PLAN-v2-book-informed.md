@@ -1,7 +1,7 @@
 # Hardening Plan v2 — Book-Informed (supersedes the Phase 2/3 specs)
 
 This rewrites the remaining plan after the critical study of `Downloads\uiux_markdown` (20 books;
-see `docs/book-study/00-synthesis.md`). It **removes everything now covered** and reframes the rest.
+study notes retired 2026-09-24; methods folded into skills). It **removes everything now covered** and reframes the rest.
 The original `phase-0/` and `phase-1/` folders are retained as a historical record; this doc is the
 live plan for what remains.
 

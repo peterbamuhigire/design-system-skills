@@ -200,6 +200,9 @@ Without translations, use expansion budgets and pseudo-localisation, marking lan
   logical-property mapping, and bidi-isolation recipes.
 - `references/string-expansion-budgets.md` — real per-language, per-length expansion percentages,
   and the locale-formatting (number/date/currency/percent) reference.
+- `references/cultural-adaptation-beyond-translation.md` — load when entering a new culture or
+  community, not only a new language: icon, colour, imagery, name, form, mapping and trust audit,
+  East African CLDR formatting facts (UGX, KES, TZS, RWF), and local-reviewer sign-off.
 - Pairs with `01-typography-and-fonts/font-selection-and-pairing` (script coverage),
   `03-layout-grid-and-composition/responsive-and-adaptive-layout` (overflow is a sibling problem),
   `08-motion-and-interaction` (mirrored motion), and `accessibility-wcag-2-2-compliance`

@@ -1,52 +1,48 @@
-# Three Paradigms of HCI Design
-**Source:** Extracted from `branson-ux-ui-design-extraction.md` (originally Harrison, Tatar, Sengers 2007).
-**Used by:** ux-psychology.
+# Choosing a Design Lens: Efficiency, Cognition or Meaning
 
----
+Parent skill: [`../SKILL.md`](../SKILL.md) (`ux-psychology`).
 
-## Use this file when
+**When to read:** when a review stalls because people mean different things by "good design"
+(one wants speed, another wants fewer errors, another wants the product to feel right), or when
+turning a research source into design guidance for a specific surface.
 
-- Stakeholders disagree about what "good design" means in a review
-- A team is split between "make it efficient" and "make it delightful" without realizing they're working in different paradigms
-- Translating an academic UX-research source into operational guidance
+## 1. Three lenses
 
-## The three paradigms (complementary, not exclusive)
+| Lens | Question it answers | Evidence it trusts | Typical measure |
+|---|---|---|---|
+| Efficiency (engineering and human factors) | Can people get the work done quickly and without error? | Task analysis, error logs, time-on-task | Tasks completed, errors, time |
+| Cognition (human information processing) | Does the design fit how people perceive, remember and decide? | Experiments and cognitive models (for example working-memory limits behind short menus) | Recall, recognition, decision time, load |
+| Meaning (experiential or phenomenological) | What does using it mean to people socially, emotionally and culturally, including those at the margins? | Field study, interviews, observation of situated use | Themes, stories, whose experience is excluded |
 
-### Paradigm 1: Engineering / Building
-- **Roots:** software engineering + human factors
-- **Approach:** inventory the functionality → build interaction with available resources
-- **Goal:** user productivity, eliminate user errors
-- **Success metric:** how much the user could accomplish; summative statistical analyses
-- **When dominant:** systems with complex, well-understood work domains (factory floor, accounting, ERP)
+The lenses are complementary. The meaning lens treats the few people who do not fit the pattern as
+important signals, not noise.
 
-### Paradigm 2: Human Information Processing (HIP)
-- **Roots:** psychology + human factors (cognitive theory)
-- **Approach:** model how information is sensed and transformed in the human mind; mirror those models in computer-side processing requirements
-- **Famous output:** Miller's 7 ± 2 — UI lists shouldn't exceed ~7 items because of working-memory limits
-- **When dominant:** when the goal is to fit the machine to a well-characterized cognitive task
+## 2. Decision rules
 
-### Paradigm 3: Design Thinking / Phenomenological
-- **Roots:** phenomenology, sociology
-- **Approach:** the *experiential* nature of interaction — how users *experience meaning* in the artifact
-- **Focus:** emotional, social, situated, embodied aspects
-- **Distinct trait:** cares about the variety of human practices, not just the predominance — the 2% that don't fit are interesting, not noise
+| Surface or question | Lead lens | Also check with | Failure if the wrong lens leads |
+|---|---|---|---|
+| Back-office forms, ERP screens, POS checkout | Efficiency | Cognition (field grouping, error prevention) | "Delightful" flourishes slow cashiers at peak hours |
+| Menus, navigation depth, dashboards, information density | Cognition | Efficiency | Overloaded menus and hidden options |
+| Brand pages, landing pages, onboarding, moments of delight | Meaning | Cognition (legibility, load) | Efficient but forgettable, or culturally tone-deaf |
+| Voice, avatars, characters, AI personas, imagery of people | Meaning | Efficiency (task success) | Stereotypes or exclusion baked into the product |
+| Safety-critical alerts | Efficiency and cognition | Meaning (who is excluded or unsettled) | Missed alerts, or alerts that alienate some users |
 
-## The cockpit-voice example (the canonical illustration)
+## 3. Procedure for a disputed review
 
-The same problem of pilot-warning voice systems analyzed three ways:
+1. Ask each reviewer which question they are answering (section 1); write the lens beside each
+   comment.
+2. Decide the lead lens for this surface from section 2.
+3. Resolve lead-lens comments first with its evidence; treat the other lenses as constraints.
+4. Record any comment that shows a marginal group is excluded; it is never out of scope.
 
-1. **Engineering paradigm:** "pilots crashing too often → use a female voice to cut through male-dominated cockpit comms → reduce errors." Empirical and basic.
-2. **HIP paradigm:** "female voices effectively differentiate signal from noise; experiments showed that *familiar* voices (wives, girlfriends) further improved performance." Generalizable parameter — signal/noise differentiation.
-3. **Design Thinking paradigm:** "the original female voice was selected for its sultry/charming tone; this reinforced the cockpit-as-male space and became inappropriate as women became pilots." Cares about social meaning and minorities.
+## 4. Example (original)
 
-## The complementarity rule
+A Ugandan health ministry's SMS appointment reminder is reviewed three ways. Efficiency: shorten
+the message and put date and time first; fewer missed appointments. Cognition: use the 12-hour
+clock and the clinic's local name people already know. Meaning: the default voice line used a
+male name and a formal register that some young mothers found intimidating; the team tests a
+neutral sender name and friendlier wording with a small group before rollout. All three changes
+ship; the efficiency measure (attendance) stays the lead success test.
 
-> All three paradigms have a place. Even creative design-thinking projects benefit from HIP-grounded ergonomics. Even building-paradigm projects should have *some* design-thinking ideation.
-
-## Application to a website project
-
-- **Engineering** dominates form-design and back-office tooling
-- **HIP** dominates information density (lists, menus, navigation depth)
-- **Design Thinking** dominates landing pages, brand pages, hero sections, "delight" moments
-
-A premium website typically requires all three paradigms applied to different surfaces.
+Sources: Harrison, Tatar and Sengers (2007), "The Three Paradigms of HCI"; applied practice
+discussed in Branson's UX/UI design guidance.

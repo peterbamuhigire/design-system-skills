@@ -254,6 +254,9 @@ Without a verified cause or recovery action, stop rather than invent specificity
 - `doctrine/references/wcag-2.2-criteria.md` — Error Identification (3.3.1), Error Suggestion
   (3.3.3), Redundant Entry (3.3.7), Use of Colour (1.4.1), and Status Messages (4.1.3): the
   accessibility rules that make these strings stand alone and get announced correctly.
+- `../../04-web-and-ui-design/interaction-design-patterns/references/error-prevention-and-recovery-patterns.md`
+  — load before writing a message for a recurring error: classify it (slip or mistake) and check
+  whether a constraint, sensibility check or undo should prevent it so no message is needed.
 - Pairs with: `04-…/empty-error-and-loading-states` (the **visual** layer — designs the frames
   these words live in; build the two together). Upstream/sibling: `10-…/ux-writing-and-microcopy`
   (the happy-path microcopy and the button-copy rules the action labels follow);

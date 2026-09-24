@@ -507,6 +507,6 @@ HTML/Tailwind patterns inspired by top university websites. Implemented with Ast
 
 ---
 
-These patterns work across all devices and maintain WCAG 2.1 AA accessibility standards.
+These patterns work across all devices and maintain WCAG 2.2 AA accessibility standards.
 
 See **tour-travel/component-patterns.md** for additional Tailwind utility patterns and responsive design techniques.

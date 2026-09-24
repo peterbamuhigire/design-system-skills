@@ -183,9 +183,9 @@ A **guideline, not a strict rule**. Purpose: "vary and balance a page" so no sin
 
 ### WCAG specifics (agent reference)
 
-- **WCAG 2.1 AA — body text:** 4.5:1.
-- **WCAG 2.1 AA — large text (18pt+ or 14pt+ bold):** 3:1.
-- **WCAG 2.1 AAA — body text:** 7:1. Recommended for content-heavy sites and anything legal/medical.
+- **WCAG 2.2 AA (unchanged from 2.1) — body text:** 4.5:1.
+- **WCAG 2.2 AA — large text (18pt+ or 14pt+ bold):** 3:1.
+- **WCAG 2.2 AAA — body text:** 7:1. Recommended for content-heavy sites and anything legal/medical.
 - **Non-text UI (icons, focus rings, form borders):** 3:1 against adjacent colors.
 
 ### Brand color contrast tradeoffs

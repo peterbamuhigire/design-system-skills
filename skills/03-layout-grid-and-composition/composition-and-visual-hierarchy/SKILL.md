@@ -105,7 +105,7 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
 
 7. **Apply the halation rule at every high-contrast edge.** Pure `#000` against pure `#FFF`
    produces *halation* — an optical edge-shimmer where the values vibrate and fatigue the eye
-   (Paduraru, *Fundamentals*; corroborated in `docs/book-study/01-ui-ux-craft.md`). Never compose a
+   (Paduraru, *Fundamentals of Creating a Great UI/UX*). Never compose a
    focal point on a pure-black-on-pure-white edge. Pull the dark to a near-black (e.g. an off-black
    ink) and/or the light to an off-white, so the highest-contrast boundary in your composition is
    *deliberately* softened. This is a physical optics reason, not a style preference. See
@@ -137,6 +137,7 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
 
 | Condition | Choose | Wrong-choice failure |
 |---|---|---|
+| A review needs shared vocabulary rather than taste | Score emphasis, contrast, balance, alignment, repetition and flow with evidence; build headings with one attribute change per level | Feedback turns into personal preference and hierarchy becomes noise |
 | Sparse campaign or hero composition | One dominant focal point on a Z or diagonal path | Equal emphasis makes the page inert and hides the action |
 | Dense comparison or operational screen | F-path with a stable left edge and restrained emphasis | Poster-like asymmetry slows repeated scanning |
 | Background competes with the subject | Simplify, mask, crop, or move the subject before adding effects | More decoration worsens figure-ground ambiguity |
@@ -198,7 +199,7 @@ Grounds **only** in human design authority — never in an AI tool's composition
 - **Rudolf Arnheim — *Art and Visual Perception*** — figure-ground, visual weight, balance, and
   tension as perceptual forces.
 - The **halation** optical rule and the F/Z scanning heuristics are taken from
-  `docs/book-study/01-ui-ux-craft.md` as *heuristics under* the doctrine, not as taste authority.
+  the UI primers (Paduraru; *How to Design Better UI Components 3.0*) as *heuristics under* the doctrine, not as taste authority.
 
 When an AI tool happens to recommend "a centred hero with three equal cards below," treat that as
 evidence of the convergent mean to **avoid**, not as endorsement.
@@ -227,6 +228,7 @@ evidence of the convergent mean to **avoid**, not as endorsement.
   the checklist run against it. Read this to see the workflow turned into shippable composition.
 
 ## References
+- `references/six-principle-composition-rubric.md` — six-principle critique rubric and layout QA additions (McNeil, after Graham; Adams et al.). Typesetting detail routes to `fine-typesetting-and-typesetting-qa`.
 
 - `references/hierarchy-techniques.md` — the operational levers: focal point, the three-level rule,
   scale/weight/space extremes, whitespace-as-rank, and the halation rule (with values).

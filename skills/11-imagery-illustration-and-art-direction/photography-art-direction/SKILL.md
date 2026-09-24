@@ -88,6 +88,7 @@ doctrine Mission demands ("the moat is looking human-made", `doctrine/design-doc
 
 | Condition | Sourcing/direction choice | Wrong-choice failure |
 |---|---|---|
+| Image depicts beneficiaries, patients, children or group power relations | Apply dignity, consent, face-ism and rights rules; record in the rights register | Exploitative or unconsented imagery harms people and the client |
 | Real people, places, outcomes, or testimony are claimed | Commission or license authentic photography | Fabricated imagery becomes deceptive evidence |
 | Distinctive access and sufficient budget exist | Direct an original shoot | Generic stock weakens brand ownership |
 | Stock is necessary | Select for narrative truth, then apply the treatment system | Raw stock looks interchangeable and inconsistent |
@@ -136,6 +137,7 @@ Without image assets, deliver the brief, shot list, crop map, and treatment reci
   and the accept/reject gate. Reusable as a template — not lorem.
 
 ## References
+- `references/image-selection-ethics-and-rights.md` — selection rules, people and power, East African sourcing, cropping etiquette, credits and the rights register. Advertising use routes to `advertising-creative-art-direction`.
 - `references/photo-treatment-system.md` — the concrete treatment + cropping/focal-point system
   (grade, grain, duotone, ratios, safe text zones, weight).
 - `references/anti-stock-direction.md` — the cliché kill-list, the sourcing ladder, how to make

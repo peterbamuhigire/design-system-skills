@@ -4,7 +4,7 @@ The canonical method for this skill: how to build a ratified **Voice Chart**, a 
 **Voice Guide**, and a magnitude-and-lifecycle **Tone Map**, plus terminology governance and the
 casual≠conversational ruling. Sources: Podmajersky, *Strategic Writing for UX* 2nd ed. (Voice
 Chart, voice-vs-tone); Ben-David, *The Fundamentals of UX Writing* (Voice Guide three traps, Tone
-Maps, casual≠conversational). See `docs/book-study/03-ux-writing.md`.
+Maps, casual≠conversational). Sources: Podmajersky, *Strategic Writing for UX*; Ben-David, *The Fundamentals of UX Writing*.
 
 > **Boundary (read first).** This skill defines **what the product's words should be and whether
 > they are on-voice.** It does **not** detect whether a passage reads as generic machine-written

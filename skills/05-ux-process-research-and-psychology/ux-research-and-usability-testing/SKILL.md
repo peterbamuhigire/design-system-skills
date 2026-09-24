@@ -1,6 +1,6 @@
 ---
 name: ux-research-and-usability-testing
-description: Use when planning moderated usability sessions, participant tasks, observation evidence, interviews, surveys, card/tree tests, diary studies, or findings synthesis. Do not use for expert-only heuristic inspection or unsupported personas; route those to heuristic evaluation or journey mapping.
+description: Use when planning moderated usability sessions, field research with users and community stakeholders, participant tasks, observation evidence, interviews, surveys, card/tree tests, diary studies, or findings synthesis. Do not use for expert-only heuristic inspection or unsupported personas; route those to heuristic evaluation or journey mapping.
 metadata:
   portable: true
   category: 05-ux-process-research-and-psychology
@@ -105,9 +105,12 @@ metadata:
 
 ## References
 
-- docs/book-study/2026-09-20-six-book-actionable-extractions.md — original synthesis of the lightweight observe/fix/retest loop and its evidence limits.
+- `references/pre-design-research-and-usability-loop.md` — card sorting, behavioural interviews, competitive heuristic radar, and the lightweight observe/fix/retest loop with its evidence limits.
 - `references/research-method-selector.md` — choose the method by generative/evaluative × attitudinal/behavioural; cost vs. answer-fit.
+- `references/experiment-aware-design-evaluation.md` — load when a design will be judged by an A/B test or holdback: when to experiment, variant design and invariants, variant QA, design guardrails, reading results.
 - `references/usability-test-protocol.md` — a real moderated + unmoderated protocol: tasks, think-aloud script, success criteria, severity rating, SUS.
+- `references/guerrilla-intercept-sessions.md` — load when a quick, low-cost round with real target users in a public or community setting is enough: adequacy table, screener, roles, recruitment, consent, session flow.
+- `references/field-research-in-low-resource-and-cross-cultural-settings.md` — load when research happens in the field with people whose literacy, language, devices, norms or institutions differ from the team's: gatekeepers and consent, non-literate instruments, interpreters, power-aware group facilitation, needs-values-capabilities analysis, community ownership.
 - `doctrine/design-doctrine.md` — §0 Mission (the authored-not-templated moat) and the Anti-Slop Charter; usability findings are evidence the product reads as human-made.
 - `doctrine/references/ai-slop-taxonomy.md` — the interface/product slop tells; "feels generic / didn't trust it" findings map here.
 - `doctrine/references/wcag-2.2-criteria.md` — accessibility coverage gate; a study without disabled participants is incomplete, not done.

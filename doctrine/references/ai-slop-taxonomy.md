@@ -72,7 +72,7 @@ and therefore valuable.
 
 ## Counter-doctrinal "best practices" — taught by the literature, REJECTED here
 
-The UI/UX book canon (see `docs/book-study/`) contains advice that was once standard but
+The UI/UX book canon the engine studied contains advice that was once standard but
 contradicts this engine's doctrine. Skills must **not** adopt these even though respected books
 teach them — inoculate against them explicitly:
 

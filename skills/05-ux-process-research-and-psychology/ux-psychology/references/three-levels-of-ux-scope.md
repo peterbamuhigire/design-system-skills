@@ -1,5 +1,5 @@
 # Three Levels of UX Scope
-**Source:** Extracted from `deacon-ux-ui-strategy-extraction.md`.
+**Source:** Paraphrased from Deacon's UX/UI strategy guidance on levels of UX scope.
 **Used by:** ux-psychology.
 
 ---

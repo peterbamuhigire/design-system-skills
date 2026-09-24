@@ -39,10 +39,27 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - Answers to the four diagnostic questions: any colour constraints? is the guidance complete? what feel? what action?
 
 ## Workflow
-1. Read only the relevant project inputs and preserved guidance before acting.
-2. Choose the smallest set of references needed for the current job.
-3. Produce the implementation, configuration, or guidance this skill owns.
-4. Validate that the result stays compatible with the rest of the repository workflow.
+1. **Ask the client colour questions first** and again after the first feedback round:
+   existing standards, colours to avoid and why (personal, organisational, political or rival
+   history), markets and cultures, audience age, brand longevity, print versus screen split,
+   budget for spot inks. Record answers in the colour brief
+   (`references/colour-choice-procedure.md` section 1).
+2. **Audit competitor colours** in the category and market. Map them and decide deliberately to
+   conform or to stand apart; conformity is a choice, not a default. Check national and political
+   party colours during election periods.
+3. **Decide temperature, then lightness, then hue.** Choose a warm or cool family (or one
+   deliberate injection of the opposite), then the lightness level that sets mood, then the hue.
+   Choose the background (largest area) before the objects on it.
+4. **Source the harmony from brand, imagery, nature or art,** never from software swatches or
+   framework defaults (the Flux imagery-first method below, or sampling a real place or a
+   painter's palette).
+5. **Run the tonal checks:** greyscale test for equal-tone hues that merge; no muddy analogous
+   pairs side by side; no vibrating complements unless vibration is the idea; confident value
+   contrast rather than timid desaturation ("beige creep").
+6. **Check culture and audience:** meanings per market researched with local respondents, not
+   assumed; children versus older audiences; colour-vision deficiency (never colour alone).
+7. **Write a one-line reason per colour** and the competitor map into a colour rationale, then
+   hand the palette to `color-system-and-palette` for ramps, roles and the contrast gate.
 
 ## Quality standards
 - Outputs must be implementation-ready and internally consistent.
@@ -51,11 +68,13 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 - Stop selection when neither a brand/imagery anchor nor an authorised strategic choice exists.
 
 ## Anti-patterns
-- Do not hardcode `.claude/skills` or another single install path.
-- Do not skip validation against upstream or downstream dependencies.
-- Do not generate generic output that ignores the actual project context.
-- Do not copy a fashionable gradient or framework default; anchor the palette in brief or imagery.
-- Do not fix contrast by replacing the brand hue first; move along its tonal scale.
+- Picking colour by personal taste or trend - correct with a written reason per colour and the competitor map.
+- Skipping the client colour questions - correct by asking early; one hated colour can sink a whole presentation.
+- Matching the category leader's colour by accident (for example a telecom yellow or red) - correct with the competitor audit.
+- Timid, desaturated "safe" palettes that read as error - correct with confident value contrast and one bold decision.
+- Copying a fashionable gradient or framework default - correct by anchoring in brief, imagery, nature or art.
+- Fixing contrast by replacing the brand hue - correct by moving along its tonal scale.
+- Importing colour-psychology "rules" or gendered palettes as fact - correct by treating them as hints and testing in market.
 
 ## Outputs
 
@@ -71,6 +90,8 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 
 | Condition | Decision | Wrong-choice failure |
 |---|---|---|
+| Category converges on one colour family | Decide to conform or stand apart and record why | Brand is mistaken for the leader or looks accidental |
+| Client names a colour to avoid | Ask whether it is the shade or the whole family, then exclude | Presentation fails on a colour nobody asked about |
 | Strong brand colour exists | Build harmony around it | Existing equity is discarded |
 | Imagery leads the experience | Extract or tint toward one defensible hue | Photography and UI feel unrelated |
 | Calm field is required | Use monochromatic or analogous harmony | Excess colour competes for attention |
@@ -93,6 +114,8 @@ Without imagery or brand direction, return two differentiated candidates and the
   the sibling's job.
 
 ## References
+- `references/colour-choice-procedure.md` - client colour questions, competitor audit, temperature and lightness order, sourcing, tonal and adjacency checks, culture, colour rationale page, and East African notes.
+- `examples/competitor-colour-audit-worked.md` - a filled competitor audit and colour rationale for a fictional Kampala microfinance brand.
 - `doctrine/design-doctrine.md` — the Mission and Anti-Slop Charter (state the colour choice and its anchor first; the sourcing-authority asymmetry rule — AI picks are evidence of what to avoid, never authority for what to use).
 - `doctrine/references/ai-slop-taxonomy.md` — the convergent colour defaults to reject (indigo/purple→blue gradient, stock Tailwind palette, glassmorphism, neon-on-dark).
 - **Sibling — `02-color-brand-and-visual-identity/color-system-and-palette`.** That skill is the colour *system* (semantic roles, tonal ramps, dark-mode remap, the hard WCAG gate) and the default entry skill for colour. **This skill is palette *generation*** — the imagery-first / brand-hue Flux method for arriving at a starting palette. Generate the palette here, then hand it to `color-system-and-palette` to derive roles, ramps, and the contrast gate. Use them together; do not merge.

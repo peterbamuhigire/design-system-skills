@@ -99,6 +99,7 @@ Without repository access, return a proposed inventory, API, and state matrix ra
 - `examples/button-component-spec.md` — a complete, concrete Button spec: 4 variants × 3 sizes × 9 states, every cell mapped to semantic tokens, the prop/slot API, the focus-ring and target-size a11y contract, and do/don't pairs. Use it as the pattern for any new component. (See `CONTRIBUTING.md` — examples are mandatory and never lorem.)
 
 ## References
+- `references/design-system-operating-model.md` — token source of truth, component contract, inclusive component rules, pilots and governance, adoption scorecard, evidence chain.
 - `doctrine/design-doctrine.md` — the anti-slop charter; §0 "looks human-made" applied to API design (composition over configuration, one authored choice applied systematically).
 - `doctrine/references/wcag-2.2-criteria.md` — the a11y floor cited throughout: focus-visible & contrast (2.4.7, 1.4.11), focus-not-obscured (2.4.11), target size 24px (2.5.8), reduced motion (2.3.3), dragging alternative (2.5.7), name/role/value (4.1.2), color-not-alone (1.4.1).
 - `references/atomic-structure.md` — the atomic ladder, classification rules, and composition (slots/compound) decision guide.
@@ -107,6 +108,6 @@ Without repository access, return a proposed inventory, API, and state matrix ra
 - Practitioner cross-check: [Eleken design-system checklist](https://www.eleken.co/blog-posts/design-system-checklist) and [design-consistency guide](https://www.eleken.co/blog-posts/design-consistency). Use for operating prompts only; do not import outcomes or benchmarks.
 ## Book-informed practice route
 
-Use [the 2026-09-14 design-system engineering synthesis](../../../docs/book-study/2026-09-14-design-system-engineering-synthesis.md) for scenario-led component contracts and complete state coverage.
-Use docs/book-study/2026-09-20-six-book-actionable-extractions.md for product-first pilots, variation-led abstraction, governance, and outcome metrics from the supplied design-systems book.
+Use [the design-system operating model](references/design-system-operating-model.md) for scenario-led component contracts and complete state coverage.
+Use `references/design-system-operating-model.md` §4-5 for product-first pilots, variation-led abstraction, governance, and outcome metrics from the supplied design-systems book.
 <!-- dual-compat-end -->

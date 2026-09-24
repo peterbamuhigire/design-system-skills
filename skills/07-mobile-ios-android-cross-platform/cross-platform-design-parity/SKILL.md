@@ -48,6 +48,7 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 
 | Condition | Choice | Wrong-choice failure |
 |---|---|---|
+| Phone visitors come for different jobs than desktop visitors (call, WhatsApp, directions, pay, check prices) | Draw a mobile job map and reorder the mobile hierarchy around those jobs within one responsive build | Desktop content crammed onto phones buries the main mobile task |
 | Difference expresses brand/content/business meaning | Unify through shared semantic tokens/content | Unnecessary divergence fractures product identity |
 | Difference is a learned platform convention | Diverge idiomatically and document rationale | Pixel cloning feels foreign and harms usability |
 | Shared framework lacks safe native behaviour | Platform branch behind one semantic contract | Lowest-common-denominator UI is native to neither platform |
@@ -84,7 +85,7 @@ See `references/ios-vs-android-idioms.md` for the element-by-element divergence 
 
 1. **Name the source of truth and the brand constants.** State the typeface(s) and palette intent against the anti-slop charter — see `doctrine/design-doctrine.md` and `doctrine/references/ai-slop-banned-fonts.md` — *once*, because brand is the unified layer and must read identically on both platforms. Note the platform-font caveat: SF Pro on iOS and Roboto on Android are allowed *as system UI text*; a branded display face still comes from `doctrine/references/font-groups-and-usage.md`.
 2. **Classify every element** in scope into Unify or Diverge using the table above and `references/ios-vs-android-idioms.md`. Produce this as an explicit list — never leave it implicit.
-3. **For each Diverge element, name both native resolutions** (the iOS HIG component and the Android Material 3 component) and the version gate (for example, current Apple SDK Liquid Glass/SF Symbols 8 availability and Material 3 Expressive token availability).
+3. **For each Diverge element, name both native resolutions** (the iOS HIG component and the Android Material 3 component) and the version gate (for example, current Apple SDK Liquid Glass/current SF Symbols (iOS 27 generation) availability and Material 3 Expressive token availability).
 4. **Map to the build technology** using `references/rn-flutter-mapping.md`: decide per element whether to use a shared component, a platform-adaptive component (`Platform.select` / Flutter `.adaptive` / `Theme.of(context).platform`), or two distinct implementations.
 5. **If the build target is React Native or Expo, run the RN implementation-readiness check**
    (`references/react-native-implementation-readiness.md`). Record navigation shell, platform
@@ -121,11 +122,12 @@ See `references/ios-vs-android-idioms.md` for the element-by-element divergence 
 - `examples/parity-spec-one-screen.md` — the SAME screen (a transactions list + detail in a fintech app) specced for iOS and Android side by side: what stays, what diverges, and why, down to the control level.
 
 ## References
+- Mobile job map (from McNeil (2013) *The Web Designer's Idea Book, Volume 3*, HOW Books): list what phone visitors come to do and let that, not the desktop sitemap, set mobile order; prefer responsive with task-reordered content over separate mobile sites.
 
 - `doctrine/design-doctrine.md` — the always-load anti-slop charter; §0 (looking human-made/authored) is the basis for "idiomatic port, not clone."
 - `doctrine/references/ai-slop-banned-fonts.md`, `doctrine/references/font-groups-and-usage.md`, and `doctrine/references/type-scale-and-spacing.md` for the unified brand type system and the SF Pro / Roboto system-font caveat.
 - `doctrine/references/wcag-2.2-criteria.md` — accessibility floor both platforms must clear (target size, contrast, focus); note iOS minimum touch target is 44 pt and Android 48 dp.
-- `references/ios-vs-android-idioms.md` — element-by-element comparison: navigation, controls, typography, motion, gestures, system chrome (HIG / Liquid Glass / SF Symbols 8 vs Material 3 Expressive).
+- `references/ios-vs-android-idioms.md` — element-by-element comparison: navigation, controls, typography, motion, gestures, system chrome (HIG / Liquid Glass / current SF Symbols (iOS 27 generation) vs Material 3 Expressive).
 - `references/rn-flutter-mapping.md` — how each design element maps to React Native and Flutter components, and when to go shared vs platform-adaptive vs branched.
 - `references/react-native-implementation-readiness.md` - RN/Expo handoff gates for navigation,
   state, permissions, native APIs, offline/sync, list performance, responsive layout, and

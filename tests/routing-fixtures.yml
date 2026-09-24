@@ -106,3 +106,31 @@
   expected: illustration-style-and-systems
 - prompt: Specify one ordinary mobile app toggle's press, loading, success, rollback, haptic, and reduced-motion feedback.
   expected: micro-interactions-and-feedback
+- prompt: Run a typesetting QA pass for rag, widows, orphans, hyphenation, curly quotes, en dashes and UK punctuation in a business plan.
+  expected: fine-typesetting-and-typesetting-qa
+- prompt: Set heading hierarchy with one change per level and fix figures, quotes and dashes before the proposal ships.
+  expected: fine-typesetting-and-typesetting-qa
+- prompt: Choose and pair a display and body typeface for a formal report and check licence constraints.
+  expected: font-selection-and-pairing
+- prompt: Prepare a brochure for commercial print with printer specification, ink limits, overprint, creep, binding and a press check.
+  expected: print-production-and-finishing
+- prompt: Specify spot colours, lamination, foil, folds and hard proofs for a printed leaflet job.
+  expected: print-production-and-finishing
+- prompt: Design a lender proposal PDF with cover, dividers, exhibits, running headers and embedded fonts.
+  expected: pdf-proposal-and-bankable-document-design
+- prompt: Present three direction boards, safe fit, stretch and bold, built from real content with cost and maintenance tiers for a new website.
+  expected: art-direction-routes
+- prompt: Check whether ribbons, wood-grain panels and auto-rotating carousels are timeless, still relevant or dated, and set the mood board policy.
+  expected: art-direction-routes
+- prompt: Art-direct a campaign with copy and image relationships, cover tests, triplets or cousins and a 7-point effectiveness screen for advertising creative.
+  expected: advertising-creative-art-direction
+- prompt: Turn a marketing campaign brief into ad layouts and placement specs across channels and critique the concepts.
+  expected: advertising-creative-art-direction
+- prompt: Commission photography with a shoot brief, crop system, treatment grade, licensing and anti-stock direction.
+  expected: photography-art-direction
+- prompt: Audit signifiers, mapping and feedback on this checkout flow.
+  expected: heuristic-evaluation-and-design-critique
+- prompt: Design for low-literacy users on shared phones in rural Uganda.
+  expected: inclusive-and-assistive-design
+- prompt: Plan field research with farmers and cooperative leaders.
+  expected: ux-research-and-usability-testing

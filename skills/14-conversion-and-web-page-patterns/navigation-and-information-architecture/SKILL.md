@@ -82,7 +82,7 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com.
 4. **Set the hierarchy depth and breadth on purpose.** Favour **breadth over depth** for findable
    content — shallow, wide trees beat deep, narrow ones (every extra click level sheds users).
    Keep most content reachable in **≤3 clicks** from home; flag anything at depth ≥4 for promotion
-   or search-first access. But don't over-flatten a top bar past ~7±2 primary items — past that,
+   or search-first access. But don't over-flatten a top bar past a scannable set of primary items (commonly about seven; a layout judgement, not a memory limit) — past that,
    adopt a mega-menu or a sidebar rather than cramming. Depth and breadth trade off; choose, don't drift.
 
 5. **Build the label system as a system.** Labels must be: *distinct* (no two could hold the same
@@ -197,6 +197,9 @@ Without inventory or research, produce a provisional sitemap with assumptions. S
 - `references/nav-pattern-catalog.md` — the navigation pattern library: when to use each (top bar,
   mega-menu, sidebar/rail, tabs, hamburger, bottom bar, breadcrumb, utility, footer), the responsive
   transforms, active-state and breadcrumb rules, and the per-pattern keyboard/ARIA contract.
+- `references/site-planning-and-page-types.md` — load when planning a website from a brief: outcomes-to-page-inventory
+  procedure, key-fact ranking, and design contracts for home, service, about, contact, FAQ, article,
+  proof, press, search, 404, legal and checkout-step pages.
 - Upstream: `05-ux-process-research-and-psychology/ux-research-and-usability-testing` (runs the card
   sort / tree test this skill specifies). Downstream: `03-layout-grid-and-composition/...` (lays out
   the pages the IA defines), `14-conversion-and-web-page-patterns/empty-error-and-loading-states` (zero-results),

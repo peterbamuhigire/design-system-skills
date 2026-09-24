@@ -214,7 +214,16 @@ tests but leave fidelity results unverified.
 - Standards (named for provenance, not in-repo): WCAG 2.2; W3C Design Tokens Format Module (the token
   names referenced); common spec-handoff practice (Figma Dev Mode, redline annotation, Gherkin-style
   acceptance criteria).
+- Cross-engine handoffs (resolve via the global engine routing table): measurable UX requirements
+  (contrast, target size, response time, breakpoints, assistive technologies) go to
+  `srs-skills/03-design-documentation/05-ux-specification/SKILL.md` and form and content rules to
+  `srs-skills/03-design-documentation/09-ux-content-and-form-specification/SKILL.md`; component
+  code, ARIA wiring and token pipelines go to
+  `chwezi-dev-engine/skills/frontend-ux/frontend-architecture/SKILL.md`, and automated
+  state and accessibility checks to `chwezi-dev-engine/skills/sdlc-meta/advanced-testing-strategy/SKILL.md`.
+  Design supplies values and tests; evidence stays `NOT_ASSESSED` until the build is measured.
+
 ## Book-informed practice route
 
-Use [the 2026-09-14 design-system engineering synthesis](../../../docs/book-study/2026-09-14-design-system-engineering-synthesis.md) to connect visual handoff to behaviour, tokens, accessibility, and acceptance evidence.
+Use [the design-system operating model](../component-library-architecture/references/design-system-operating-model.md) to connect visual handoff to behaviour, tokens, accessibility, and acceptance evidence.
 <!-- dual-compat-end -->

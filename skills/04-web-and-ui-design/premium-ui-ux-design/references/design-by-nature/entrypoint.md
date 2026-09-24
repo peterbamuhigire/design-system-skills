@@ -8,9 +8,11 @@ metadata:
   - codex
 ---
 
-# Design by Nature — Universal Forms in Digital Design
+# Form-to-Message Decisions: Shapes, Patterns, Symmetry and Proportion
 
-Source: Maggie Macnab, *Design by Nature: Using Universal Forms and Principles in Design* (New Riders).
+**When to read:** when a mark, grid, motion system or icon family must express the brief through its
+underlying form, or when a design "feels off" without an obvious technical fault. Sources are listed
+at the end.
 
 ## Use when
 
@@ -44,7 +46,7 @@ Source: Maggie Macnab, *Design by Nature: Using Universal Forms and Principles i
 - A chosen **pattern** (branch / meander / spiral / helix / packing / radial) with the rationale.
 - A chosen **symmetry** (translation / reflection / rotation / asymmetry).
 - A chosen **proportion system** (golden ratio / square / 4:3 / Fibonacci spacing scale).
-- A logo concept that satisfies Macnab's three essentials (works in B&W, balanced negative/positive space, embedded story).
+- A logo concept that passes three essentials: works in black and white, balances positive and negative space, carries one embedded story.
 - For brand systems: the DNA (one shape + one pattern + one symmetry + one ratio) propagated across logo, type, motion, iconography, illustration.
 
 ## Non-negotiables
@@ -54,7 +56,7 @@ Source: Maggie Macnab, *Design by Nature: Using Universal Forms and Principles i
 3. **Negative space is information.** Aim for roughly equal positive and negative space. Empty space carries half the meaning in good marks.
 4. **Repetition is what makes a brand.** Saturate consistently with the core form across every collateral piece. Inconsistent application destroys recognition.
 5. **Story before craft.** Every logo embeds one metaphor that connects mark to mission. A beautiful mark with no story doesn't stick.
-6. **Phi is a sounding board, not a straitjacket.** Use the golden ratio to break ties when proportions feel off, not to force every dimension into compliance.
+6. **The golden ratio is a tie-breaker, not a rule.** Use it to settle proportions that feel off, never to force every dimension into compliance; whole-number ratios often serve product UI better.
 7. **Self-similarity across scale.** The brand DNA must read at favicon, app icon, business card, billboard. If you can't trace the same DNA through every collateral piece, the system isn't designed yet.
 
 ## Decision rules
@@ -107,7 +109,7 @@ Source: Maggie Macnab, *Design by Nature: Using Universal Forms and Principles i
 5. **Pick the symmetry.** Reflection is the safe default for trust; rotation for dynamism; asymmetry for editorial energy.
 6. **Pick the proportion system.** Golden ratio for editorial layouts and type scale; whole-integer ratios (1:1, 4:3, 16:9) for product UI; Fibonacci scale for spacing.
 7. **Sketch B&W thumbnails.** Test the shape + pattern + symmetry combination in pure black on white. Multiple roughs.
-8. **Embed the story.** What metaphor lives inside the mark? Macnab's Agricultura logo: hand silhouette = "hand-grown," palm negative space = leaf, lifeline = stem.
+8. **Embed the story.** Name the one metaphor the mark carries and check it survives in black and white. Original example: a Mbale coffee co-operative's mark uses a cupped hand whose negative space forms a coffee cherry, telling "picked by hand" without words.
 9. **Test scale.** Render at 16px and at 600px. If the form breaks at either end, redesign.
 10. **Propagate the DNA.** Apply the same shape/pattern/symmetry/ratio to type, motion, iconography, illustration. Self-similarity is what makes a brand system, not a brand sticker.
 
@@ -132,6 +134,16 @@ Source: Maggie Macnab, *Design by Nature: Using Universal Forms and Principles i
   gap: clamp(1rem, 2vw, 2rem);
 }
 ```
+
+## Decision rules with consequences
+
+| Brief signal | Form decision | Failure if chosen wrongly |
+|---|---|---|
+| Trust, security, finance, law | Corners, square or packing pattern, reflection symmetry | Soft curves read as unserious for money or law |
+| Care, wellness, hospitality | Curves, circle, meander or spiral | Sharp triangles read as cold |
+| Growth, creativity, regeneration | Spiral pattern, rotation or asymmetry | Static reflection reads as settled, not alive |
+| Network, delivery, dependency | Branching pattern | Radial or packed forms hide the flow |
+| Several patterns proposed for one system | Keep one shape, one pattern, one symmetry, one ratio | The brand reads as noise |
 
 ## Motion archetypes
 
@@ -163,7 +175,7 @@ Choose one stroke style and one corner radius family across the system. Translat
 - **Choosing curves for a financial brand because curves "look modern".** Mismatch — finance demands corners. The mark will feel unserious regardless of execution quality.
 - **Triangle logo for a wellness brand.** Triangle is aspiration/transformation; wellness needs circle/curve. The mark will feel cold.
 - **Multiple unrelated patterns in one brand system** (e.g., spiral logo + hex illustrations + branching motion). The brain reads as noise; the brand is unsigned.
-- **Forcing golden ratio onto every dimension.** Macnab is explicit it's a sounding board. A logo that's 1.618:1 but tells no story is still a bad logo.
+- **Forcing the golden ratio onto every dimension.** It is a tie-breaker; a mark that is 1.618:1 but tells no story is still a weak mark.
 - **Adding colour and effects before B&W works.** If the form fails in black on white, no amount of gradient saves it.
 - **Symmetric logo for a brand whose message is dynamic/editorial.** Reflection reads as settled. Use rotation or asymmetry for "alive".
 - **No metaphor.** A typographic mark with no embedded story is a wordmark, not a logo. Wordmarks are fine — but choose them deliberately, not by default.
@@ -181,6 +193,11 @@ Choose one stroke style and one corner radius family across the system. Translat
 
 - `references/forms-and-shapes.md` — full notes on the six universal patterns and five archetypal shapes, with where they live in nature and where to use them in digital design.
 - `references/symmetry-and-proportion.md` — three symmetries, tessellation, asymmetry, golden ratio, Fibonacci, scale, and self-similarity, with CSS examples.
-- `references/process.md` — Macnab's eight-step linear process, the biomimicry six-step spiral, and her lived heuristics (detective work first, capture energy then refine, B&W scaling test).
+- `references/process.md` — a linear eight-step form process, the six-step biomimicry spiral, and working heuristics (investigate first, capture energy then refine, black-and-white scaling test).
 - `references/logo-checklist.md` — the three essentials checklist + extensions, applied to digital marks (favicon, app icon, social avatar).
 - `references/biophilic-application.md` — applying the framework to motion, iconography, illustration systems, brand DNA propagation.
+
+Sources: shape, pattern, symmetry and proportion vocabulary after Macnab, *Design by Nature*
+(New Riders); form-to-message and logo tests cross-checked with the engine's
+`logo-and-wordmark-design` skill (Rand, Janoff); caution on the golden ratio after Bringhurst,
+*The Elements of Typographic Style*; perceptual grouping after the Gestalt principles.

@@ -62,6 +62,45 @@ def section_body(text: str, heading_pattern: str) -> str:
     return match.group(1).strip() if match else ""
 
 
+# Owner rule (copyright): book extractions, book summaries and chapter-by-chapter notes are
+# never stored in the repository. Plan and audit documents may name books; they may not
+# store, link to or cite extraction material.
+EXTRACTION_DIR_NAMES = {"book-extractions", "extracted-books", "book-study", "book-notes"}
+EXTRACTION_FILE_SUFFIXES = ("-extraction.md", "-extractions.md")
+EXTRACTION_SCAN_TREES = (
+    "skills", "doctrine", "docs", "governance", "templates", "prompts", "integration", "engine", "rules",
+)
+# Files that state the rule itself and therefore must name the forbidden folders.
+EXTRACTION_RULE_FILES = {"rules/common/core.md", "governance/skill-authoring-standard.md"}
+EXTRACTION_TEXT_PATTERNS = (
+    re.compile(r"book-extractions/|extracted-books/|book-study/"),
+    re.compile(r"[\w-]+-extractions?\.md"),
+    re.compile(r"(?i)\bbook[- ]study\s+\d+"),
+    re.compile(r"(?im)^#{1,6}\s+chapter\s+\d+\b"),
+)
+
+
+def scan_book_extractions(root: Path) -> list[str]:
+    violations: list[str] = []
+    for path in root.rglob("*"):
+        rel = path.relative_to(root)
+        if ".git" in rel.parts or "node_modules" in rel.parts:
+            continue
+        if path.is_dir() and path.name.lower() in EXTRACTION_DIR_NAMES:
+            violations.append(f"{rel.as_posix()}/ folder present")
+        elif path.is_file() and path.name.lower().endswith(EXTRACTION_FILE_SUFFIXES):
+            violations.append(f"{rel.as_posix()} extraction file present")
+    for sub in EXTRACTION_SCAN_TREES:
+        for text_path in (root / sub).rglob("*.md"):
+            rel = text_path.relative_to(root).as_posix()
+            if rel in EXTRACTION_RULE_FILES:
+                continue
+            body = text_path.read_text(encoding="utf-8", errors="ignore")
+            if any(pattern.search(body) for pattern in EXTRACTION_TEXT_PATTERNS):
+                violations.append(f"{rel} links to or cites extraction material")
+    return sorted(set(violations))
+
+
 def scan(root: Path) -> dict:
     skill_files = [p for p in root.glob("skills/**/SKILL.md") if "_TEMPLATE" not in p.parts]
     findings: list[dict] = []
@@ -125,6 +164,7 @@ def scan(root: Path) -> dict:
             failed.append("worked_example")
         findings.append({"path": path.relative_to(root).as_posix(), "failed": sorted(set(failed))})
 
+    extraction_violations = scan_book_extractions(root)
     duplicates = sorted(name for name, count in Counter(names).items() if count > 1)
     missing_fonts = [name for name in FONT_CATEGORIES if not (root / "fonts" / name).is_dir()]
     counts = Counter(code for item in findings for code in item["failed"])
@@ -134,6 +174,7 @@ def scan(root: Path) -> dict:
         "failure_counts": dict(sorted(counts.items())),
         "duplicate_names": duplicates,
         "missing_font_categories": missing_fonts,
+        "book_extraction_violations": extraction_violations,
         "findings": [item for item in findings if item["failed"]],
     }
 
@@ -165,7 +206,14 @@ def main() -> int:
             print(f"{key}={count}")
         for key, values in regressions.items():
             print(f"REGRESSION {key}: {values[0]} -> {values[1]}")
-    return 1 if regressions or result["duplicate_names"] or result["missing_font_categories"] else 0
+        for item in result["book_extraction_violations"]:
+            print(f"BOOK-EXTRACTION VIOLATION {item}")
+    return 1 if (
+        regressions
+        or result["duplicate_names"]
+        or result["missing_font_categories"]
+        or result["book_extraction_violations"]
+    ) else 0
 
 
 if __name__ == "__main__":

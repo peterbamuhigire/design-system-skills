@@ -181,6 +181,7 @@ copy yet), **say so and ask** — never quietly ship the coercive or convergent 
 ## Decision Rules
 | Condition | Page choice | Wrong-choice failure |
 |---|---|---|
+| Page structure is being chosen (one page, one-page sales pitch, map-led, tiled) | Choose from the content-driven structures in `art-direction-routes`; repeat the primary action per section on a sales pitch; make the footer a functional next step | Structure chosen for novelty strands visitors |
 | One dominant conversion | One primary CTA repeated with consistent wording | Competing CTAs split intent |
 | Proof is strong and specific | Place it near the matching claim/objection | A detached logo wall fails to substantiate claims |
 | Commitment is high | Add process, risk reversal, and qualification detail | Premature ask suppresses trust |
@@ -232,12 +233,14 @@ Without verified proof or offer detail, deliver a wireframe and evidence-request
   honest-proof treatment, and the WCAG/perf constraints applied.
 
 ## References
+- `skills/11-imagery-illustration-and-art-direction/art-direction-routes/references/direction-board-protocol.md` section 5 — content-driven structures. Functional footer: related content, contact or WhatsApp route, trust details (registration number, landmark address).
 
 - `references/landing-anatomy.md` — the section spine, what each section must answer, above-the-fold
   budget, CTA-placement rules, and the page-length / cold-vs-warm decisions.
 - `references/conversion-credibility.md` — the honest conversion levers, the full dark-pattern
   catalog with an honest-swap table, and the proof-authenticity rules. Ethical, real, no dark
   patterns.
+- `references/demand-test-page-and-funnel-matrix.md` — load when a page is built to test demand before the product exists, or to plan stage-by-stage measurable learning (funnel learning matrix).
 - `doctrine/design-doctrine.md` — the Mission (§0, "the moat is looking human-made"): conversion is
   downstream of an authored, trustworthy artifact.
 - `doctrine/references/wcag-2.2-criteria.md` — CTA focusability, target size (SC 2.5.8), contrast,

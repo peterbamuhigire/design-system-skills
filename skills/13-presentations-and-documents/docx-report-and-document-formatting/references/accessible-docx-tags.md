@@ -37,7 +37,7 @@ work, not a separate pass.
 | White on brand accent (header fill) | **must verify ≥ 4.5:1** | else use Ink text on the accent-tint |
 
 Design with **APCA** for real legibility, **certify with the WCAG 4.5:1 / 3:1 ratios** — APCA is
-the WCAG 3.0 *draft*, not yet normative (`doctrine/references/wcag-2.2-criteria.md`).
+a design aid, not a W3C method (`doctrine/references/wcag-2.2-criteria.md`).
 
 ---
 

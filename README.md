@@ -1,37 +1,41 @@
 # design-system-skills
 
-`design-system-skills` is the Chwezi cross-cutting design and typography engine — 97 skills
-(`SKILL.md` files) that define the intentional presentation layer for every Chwezi output:
-typography, colour, layout, visual identity, UX process, mobile/web/desktop UI, motion,
-design-systems tokens, content design, imagery, data visualisation, presentations/documents, and
-conversion patterns, all governed by an explicit anti-AI-slop doctrine
-(`doctrine/design-doctrine.md`). It helps teams make and review one screen, component, document,
-or state at a time, so type, spacing, hierarchy, assets, transitions, and responsive behaviour
-serve a real user job rather than a template aesthetic — and it is mechanically enforced: a
-`hooks/banned-font-gate.js` hook blocks a Write/Edit that sets a banned font as a primary
-`font-family`.
+`design-system-skills` is the Chwezi cross-cutting design and typography engine. ("Chwezi" refers
+to Chwezi Core Systems, Peter Bamuhigire's studio at chwezicore.com, and to its family of skill
+engines: separate libraries of instructions that AI coding agents such as Claude Code and Codex
+read to produce business plans, proposals, websites, software, marketing, research, accounting
+work and design.) This engine holds 101 skills (`SKILL.md` files) that decide how every Chwezi
+output looks and reads. It covers typography and
+fine typesetting, colour, layout, visual identity, art direction and advertising creative,
+imagery, UX process, web, desktop and mobile interfaces, motion, design tokens, content design,
+data visualisation, presentations, documents and print production. Every skill works under an
+explicit anti-AI-slop doctrine (`doctrine/design-doctrine.md`): choices must be stated, must
+trace to human design authority rather than an AI vendor's taste, and must fit the client and
+audience. The font ban is enforced mechanically: `hooks/banned-font-gate.js` blocks a Write or Edit
+that sets a banned face as a primary `font-family`.
 
-Designers, product teams, frontend and mobile engineers, and documentation authors use it
-whenever a rendered artefact needs coherent visual decisions and a usable implementation
-handoff — concrete cases include: choosing and pairing typefaces for a new brand
-(`skills/01-typography-and-fonts/`), building a perceptual colour ramp with a hard WCAG contrast
-gate (`skills/02-color-brand-and-visual-identity/`), specifying a Müller-Brockmann-grounded grid
-(`skills/03-layout-grid-and-composition/`), running a design-QA/pre-launch visual review
-(`skills/00-cross-cutting-ops-qa-a11y/`), measuring an approved reference deck into a
-deterministic design-token pack (`skills/09-design-systems-tokens-and-theming/measured-style-pack/`),
-implementing React motion with SSR-safe gesture handling
-(`skills/08-motion-and-interaction/motion-react-implementation/`), or auditing a shipped
-interface for silently-broken interactive state
-(`skills/00-cross-cutting-ops-qa-a11y/click-path-audit/`).
+It helps anyone who has to put a rendered artefact in front of a demanding client: agency
+designers and art directors, account leads presenting creative, product teams, frontend and
+mobile engineers, and consultants producing proposals, business plans, reports and decks. It
+helps them in concrete ways: choosing and pairing typefaces and then typesetting the text to a
+professional standard (`skills/01-typography-and-fonts/`); building a colour palette from client
+colour questions and a competitor audit (`skills/02-color-brand-and-visual-identity/color-selection/`);
+presenting three art-direction routes built from real content with cost and maintenance tiers
+(`skills/11-imagery-illustration-and-art-direction/art-direction-routes/`); turning a marketing
+campaign brief into concepts, campaign systems and placement layouts
+(`skills/11-imagery-illustration-and-art-direction/advertising-creative-art-direction/`);
+preparing a brochure or report for commercial print with a printer specification, proofs and a
+press check (`skills/13-presentations-and-documents/print-production-and-finishing/`); planning a
+presentation for the real room and screen (`skills/13-presentations-and-documents/deck-system/`);
+and running design QA, accessibility and pre-launch review (`skills/00-cross-cutting-ops-qa-a11y/`).
 
-This is a **cross-cutting engine**: most other Chwezi engines lean on it as a soft, optional
-enhancement for how their own document, UI, or presentation output looks, rather than owning any
-presentation doctrine themselves. `chwezi-dev-engine`'s own `rules/common/*.md` and cross-engine
-routing table name it explicitly as the route for "typography, visual design, UI appearance,
-design systems, and document/slides/spreadsheet presentation," and `website-skills` routes to it
-for the same reason wherever content ships as a rendered page or downloadable document. Consult
-it *in addition to* whichever domain engine is active — it does not own content, structure, or
-domain rules, only presentation.
+This is a **cross-cutting engine**. Domain engines (business plans, proposals, websites,
+engineering, social media and digital marketing, research, finance) consult it *in addition to*
+their own work whenever an artefact's appearance matters, and hand presentation work here with an
+explicit brief. It owns presentation only; content, strategy, copy, legal release and domain
+rules stay with the domain engine. For example, the digital marketing engine hands an advertising
+brief here and receives concepts, layouts and production specifications back, under the contract
+in `advertising-creative-art-direction/references/handoff-contract-marketing-engine.md`.
 
 ## Install
 
@@ -82,24 +86,24 @@ paths, or unexpected network calls").
 
 | Category | Skills | What it covers |
 |---|---:|---|
-| `00-cross-cutting-ops-qa-a11y` | 16 | Design QA, accessibility, pre-launch visual review, behavioural-state audits |
-| `04-web-and-ui-design` | 10 | Web and application UI design |
-| `02-color-brand-and-visual-identity` | 7 | Colour systems, brand and visual identity |
+| `00-cross-cutting-ops-qa-a11y` | 16 | Design QA, accessibility, performance-aware design, pre-launch visual review, behavioural-state audits |
+| `04-web-and-ui-design` | 10 | Web, desktop and SaaS interface craft: practical UI rules and numeric baselines, component states, forms and payment fields, interaction patterns and recoverability, AI-agent and AI-output interfaces, distinctive visual signatures, premium UI |
+| `01-typography-and-fonts` | 7 | Typeface selection, pairing, type scale, licensing, fine typesetting and typesetting QA |
+| `02-color-brand-and-visual-identity` | 7 | Colour-choice procedure, colour systems, brand and visual identity |
 | `05-ux-process-research-and-psychology` | 7 | UX process, research methods, design psychology |
-| `06-sector-and-domain-ux` | 7 | Sector-specific UX (finance, enterprise, etc.) |
-| `01-typography-and-fonts` | 6 | Typeface selection, pairing, type scale, licensing |
-| `13-presentations-and-documents` | 6 | Visual formatting of decks, DOCX/PDF/XLSX outputs |
+| `06-sector-and-domain-ux` | 7 | Sector-specific UX (finance, healthcare, hospitality, retail, etc.) |
+| `13-presentations-and-documents` | 7 | Decks and room readiness, DOCX/PDF/XLSX, email, storytelling, print production and finishing |
+| `11-imagery-illustration-and-art-direction` | 6 | Photography, illustration, icons, AI imagery, art-direction routes, advertising creative |
 | `07-mobile-ios-android-cross-platform` | 5 | Mobile, iOS, Android, and cross-platform UI |
 | `09-design-systems-tokens-and-theming` | 5 | Design tokens, theming, measured style packs |
 | `14-conversion-and-web-page-patterns` | 5 | Conversion-focused web page patterns |
 | `15-game-visual-experience` | 5 | Game visual experience and art direction |
 | `03-layout-grid-and-composition` | 4 | Grid systems, composition, visual hierarchy |
-| `11-imagery-illustration-and-art-direction` | 4 | Imagery, illustration, art direction |
 | `12-data-viz-and-dashboards` | 4 | Data visualisation and dashboard design |
-| `08-motion-and-interaction` | 3 | Motion design and interaction patterns |
-| `10-content-design-and-ux-writing` | 3 | Content design and UX writing |
+| `08-motion-and-interaction` | 3 | Motion design (including safe scroll-driven effects) and interaction patterns |
+| `10-content-design-and-ux-writing` | 3 | Microcopy and UX text patterns, voice and tone guides, error/empty/system messages, content-first flow design, reading patterns, content scorecards and override rules |
 
-(97 `SKILL.md` files total under `skills/`, excluding the non-skill `_TEMPLATE/` scaffold.)
+(101 `SKILL.md` files total under `skills/`, excluding the non-skill `_TEMPLATE/` scaffold.)
 
 ## References
 
@@ -134,6 +138,54 @@ paths, or unexpected network calls").
     approval authority for any typeface. The doctrine states this distinction itself: "AI-vendor
     sources are admissible as evidence ONLY for what to BAN, NEVER as authority for what to
     APPROVE."
+- **Books used in the 2026-09-24 Kaizen** (paraphrased into skills and references; no book
+  extraction or summary is stored in this repository):
+  - Adams, S., Dawson, P., Foster, J. and Seddon, T. (2012, revised edition) *Graphic Design Rules:
+    365 Essential Design Dos and Don'ts*, Frances Lincoln - `fine-typesetting-and-typesetting-qa`,
+    `print-production-and-finishing`, `color-selection` (colour-choice procedure),
+    `photography-art-direction` (selection ethics and rights), `composition-and-visual-hierarchy`,
+    `iconography-system-design`, and the mood-board policy in `art-direction-routes`. Its
+    era-specific font advice is deliberately not adopted.
+  - Landa, R. (2022) *Strategic Creativity: A Business Field Guide to Advertising, Branding, and
+    Design*, Routledge - `advertising-creative-art-direction` (constructions, campaign systems,
+    effectiveness scale, critique), the mood-board policy and the taste self-check in
+    `doctrine/references/creative-selection-and-taste.md`.
+  - Kupsh, J. and Graves, P. R. (1993) *How to Create High-Impact Business Presentations*, NTC
+    Business Books - `deck-system` structure, room, handout and rehearsal guidance;
+    `chart-selection-and-encoding` series-scale integrity; `color-selection` (background first,
+    lightness before hue). Its dated research claims are listed as claims not to import.
+  - McNeil, P. (2013) *The Web Designer's Idea Book, Volume 3*, HOW Books, and McNeil, P. (2010)
+    *The Web Designer's Idea Book, Volume 2*, HOW Books (supplied under a mobile idea book file
+    name but confirmed as Volume 2) - `art-direction-routes` (route catalogue, direction boards,
+    style currency), `composition-and-visual-hierarchy` (six-principle rubric),
+    `cross-platform-design-parity` (mobile job map), `landing-page-and-conversion-design`.
+  - Osmani, A. (2026) *Web Performance Engineering in the Age of AI*, O'Reilly Media -
+    `performance-as-ux-and-core-web-vitals` (performance-aware design decisions; thresholds come
+    from the dated currentness register, not the book).
+  - LaGrone, B. (2016) *Web Design Blueprints*, Packt - counter-examples behind
+    `motion-design/references/scroll-driven-effects.md` and the dated-treatment list.
+  - Serling, B. (ed.) (2002) *How to Write Million Dollar Ads, Sales Letters and Web Marketing
+    Pieces*, The Internet Marketing Center, and Kelley, L. D. and Sheehan, K. B. (c. 2021)
+    *Advertising Management in a Digital Environment: Text and Cases*, Routledge - ad layout
+    rules, creative brief and creative assessment in `advertising-creative-art-direction`.
+  - Levy, J. (2015) *UX Strategy*, O'Reilly Media, and Fekeshazi, Z. *Product Managers' Guide to UX
+    Design*, UX Studio - `enterprise-ux-process/references/strategy-and-collaboration-inputs.md`.
+  - Plumley, G. (2011) *Website Design and Development: 100 Questions to Ask Before Building a
+    Website*, Wiley - `navigation-and-information-architecture` (site planning and page types) and
+    `responsive-and-adaptive-layout` (mobile web patterns).
+  - Norman, D. (2013) *The Design of Everyday Things*, revised and expanded edition, Basic Books -
+    `heuristic-evaluation-and-design-critique` (action-cycle and discoverability audit),
+    `interaction-design-patterns` (error prevention and recovery), and the field-research,
+    low-literacy and cultural-adaptation references.
+  - Lahiri, Prabhu and Schaffer (eds) (2026) *Innovative Solutions: Advanced User
+    Experience Design*, 2nd edn, CRC Press - `inclusive-and-assistive-design` (low-literacy,
+    low-bandwidth and emerging-market design), `internationalization-and-rtl-design` (cultural
+    adaptation), `ux-research-and-usability-testing` (field research in low-resource settings).
+  - Wu and Liang (eds) (2026) *Human-AI Interaction and Collaboration*, Cambridge University Press
+    - `ai-agent-ux` (human-AI collaboration and trust calibration).
+  - Nassery (2025) *Next-Level A/B Testing* - `ux-research-and-usability-testing`
+    (experiment-aware design evaluation).
+  - LaGrone (2016) *Web Design Blueprints* is listed above.
 - Müller-Brockmann, Tschichold, and Lupton are cited in `docs/initial-analysis/` and skill
   content for grid/layout and typographic canon, corroborating rather than superseding the
   Bonneville/Vignelli/Segall pairing citations above; these are recorded as the engine's reading
@@ -153,7 +205,7 @@ type, colour, interaction, accessibility, references, responsive states, and
 visual acceptance checks through the local [domain prompt
 contract](docs/ai-prompting/domain-prompt-compilation-contract.md).
 
-The current filesystem-backed inventory (2026-08-16) contains 91 active skills, all conforming to
+The 2026-08-16 filesystem-backed inventory contained 91 active skills, all conforming to
 the engine's portable authoring contract. Each
 skill now declares routing boundaries, inputs, outputs, capabilities, degraded behaviour,
 decision rules, stop/recovery conditions, evidence, and acceptance criteria. The repository also
@@ -219,7 +271,7 @@ directly; do not use the `Skill` tool for them.
 
 | You are… | Go to |
 |---|---|
-| Choosing/pairing/embedding fonts | `skills/01-typography-and-fonts/` |
+| Choosing/pairing/embedding fonts, **fine typesetting QA** | `skills/01-typography-and-fonts/` |
 | Choosing colour / building brand & visual identity | `skills/02-color-brand-and-visual-identity/` |
 | Grids, spacing, composition, responsive layout | `skills/03-layout-grid-and-composition/` |
 | Designing web / app / desktop UI (craft) | `skills/04-web-and-ui-design/` |
@@ -229,9 +281,9 @@ directly; do not use the `Skill` tool for them.
 | Motion & interaction | `skills/08-motion-and-interaction/` |
 | Design systems, tokens & handoff | `skills/09-design-systems-tokens-and-theming/` |
 | Content design & UX writing | `skills/10-content-design-and-ux-writing/` |
-| Imagery, illustration & art direction | `skills/11-imagery-illustration-and-art-direction/` |
+| Imagery, illustration, art-direction routes & **advertising creative** | `skills/11-imagery-illustration-and-art-direction/` |
 | Charts, dashboards & data products | `skills/12-data-viz-and-dashboards/` |
-| Presentations & documents (decks, DOCX/PDF/XLSX, **email**, case-studies) | `skills/13-presentations-and-documents/` |
+| Presentations & documents (decks and rooms, DOCX/PDF/XLSX, **email**, case-studies, **print production**) | `skills/13-presentations-and-documents/` |
 | Conversion & web page patterns (landing, nav/IA, onboarding, trust, states) | `skills/14-conversion-and-web-page-patterns/` |
 | Game visual experience (HUD/diegetic UI, art direction, game feel, children/learning) | `skills/15-game-visual-experience/` |
 | Accessibility, QA, ethics, performance (**co-activates with every group**) | `skills/00-cross-cutting-ops-qa-a11y/` |
@@ -304,9 +356,9 @@ design-system-skills/
 │   ├── design-doctrine.md         ← always-load charter
 │   ├── references/                ← banned list, font categories, pairing, type scale, embedding, licensing
 │   └── examples/
-├── skills/                        ← 15 domain groups + 1 cross-cutting (co-activates) · 91 active skills
+├── skills/                        ← 15 domain groups + 1 cross-cutting (co-activates) · 101 active skills
 │   ├── 00-cross-cutting-ops-qa-a11y/   (13) ← accessibility, QA, audits, ethics — always-on
-│   ├── 01-typography-and-fonts/        (6)
+│   ├── 01-typography-and-fonts/        (7)
 │   ├── 02-color-brand-and-visual-identity/ (7)
 │   ├── 03-layout-grid-and-composition/ (4)
 │   ├── 04-web-and-ui-design/           (9)  ← UI craft & foundations
@@ -316,9 +368,9 @@ design-system-skills/
 │   ├── 08-motion-and-interaction/      (2)
 │   ├── 09-design-systems-tokens-and-theming/ (4)
 │   ├── 10-content-design-and-ux-writing/     (3)
-│   ├── 11-imagery-illustration-and-art-direction/ (4)
+│   ├── 11-imagery-illustration-and-art-direction/ (6)
 │   ├── 12-data-viz-and-dashboards/     (3)
-│   ├── 13-presentations-and-documents/ (6: deck-system, docx, pdf, xlsx, email, storytelling)
+│   ├── 13-presentations-and-documents/ (7: deck-system, docx, pdf, xlsx, email, storytelling, print production)
 │   ├── 14-conversion-and-web-page-patterns/ (5: landing, nav/IA, onboarding, trust, states)
 │   └── 15-game-visual-experience/ (5: orchestration, game UI, art direction, game feel, children/learning)
 ├── fonts/                         ← 8 fixed category folders, premium drop-ins gitignored + MANIFESTs
@@ -347,7 +399,7 @@ design-system-skills/
   **P0-ten** existing skills with 2026 standards (Liquid Glass, Material 3 Expressive, OKLCH,
   View Transitions, spring physics, APCA). **Next: Phase 2** — the P1 wave.
 - **v0.5.0 — book-informed v2 plan COMPLETE (2026-06-22).** Critically studied 20 UI/UX books
-  (`docs/book-study/`) and rewrote the plan (`docs/plans/hardening-june/PLAN-v2-book-informed.md`):
+  (the study notes were retired on 2026-09-24 after their methods were folded into skills) and rewrote the plan (`docs/plans/hardening-june/PLAN-v2-book-informed.md`):
   added the `product-design-audit` skill (audits a real product across web/iOS/Android/desktop),
   2 doctrine refs (`creative-selection-and-taste`, `interaction-anti-patterns`) + inoculation
   notes, and the full P1 wave + 4 net-new skills. Then re-authored the 12 boilerplate SKILL.md
@@ -357,6 +409,22 @@ design-system-skills/
   output-readiness **78**, skill-depth **74**. Added a living AI-slop doctrine refresh loop wired
   to the digital-research engine and RN/Expo implementation-readiness gates. **Next:** decide the
   render-pipeline + Flutter-depth ceilings (v3).
+
+## 24 September 2026 book-driven Kaizen
+
+Four new skills (`fine-typesetting-and-typesetting-qa`, `print-production-and-finishing`,
+`art-direction-routes`, `advertising-creative-art-direction`) and upgrades to colour choice,
+deck room readiness, chart integrity, photography ethics, scroll-driven motion,
+performance-aware design, composition critique and the mobile job map. Book extractions are never
+stored here; `scripts/validate_engine.py` now fails if one appears.
+
+The same cycle corrected conformance claims (APCA is a design aid, not a WCAG 3 method; WCAG 2.2
+AA is the certification target; reduced motion is a house rule, SC 2.3.3 being AAA; working
+memory is about four chunks, not "7 ± 2"), split the quality gate into `HEURISTIC`, `MEASURED`
+and `NOT_ASSESSED` evidence, and added references for discoverability audits, error recovery,
+emerging-market and low-literacy design, human-AI trust calibration, experiment-aware
+evaluation, site planning, modern CSS baselines and mobile-web patterns. Record:
+[`docs/continuous-improvement/kaizen-2026-09-24-conformance-and-book-ingestion.md`](docs/continuous-improvement/kaizen-2026-09-24-conformance-and-book-ingestion.md).
 
 ## September 2026 book-driven Kaizen wave
 
@@ -383,9 +451,9 @@ python -X utf8 scripts/routing_smoke_test.py
 The 2026-08-16 POS operations addition added a general ERP POS engineering handoff for tenant
 defaults, three operational POS surfaces, product-to-finished-stock identity, stock timing,
 canonical posting, permissions, idempotency, and reconciliation. The filesystem-backed inventory
-now contains 91 active skills.
+then contained 91 active skills (101 as of 2026-09-24).
 
-The baseline records zero contract findings across all 91 active skills. Any new structural or
+The baseline records zero contract findings across all 101 active skills (2026-09-24). Any new structural or
 contract finding fails CI. Routing fixtures must continue to achieve 100% precision at the
 top-three acceptance threshold.
 

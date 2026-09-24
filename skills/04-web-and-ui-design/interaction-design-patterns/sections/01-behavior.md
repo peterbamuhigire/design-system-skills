@@ -1,238 +1,254 @@
-# 01 - Behaviour Patterns (Designing for People)
+# Behaviour Patterns: Designing Around How People Actually Work
 
-Grounded in Tidwell, Brewer & Valencia (2020) *Designing Interfaces*, 3rd ed., Chapter 1.
+Parent skill: [interaction-design-patterns](../SKILL.md)
 
-These patterns describe how humans actually use software. They shape every other pattern in this skill — pick the right behaviour models first, then the right layout, navigation, action, and data patterns will follow.
+When to read: before choosing any navigation, layout, action or data pattern — name the human behaviour first, then pick the interface pattern that serves it.
 
-Per-pattern format:
-- **What** — one-line description.
-- **When** — triggers that suggest this pattern applies.
-- **Why** — the cognitive or interaction principle.
-- **How** — concrete interface affordances.
-- **Avoid** — anti-patterns and misapplications.
-- **Alternatives** — related patterns for adjacent cases.
+These patterns describe what people do with software whether or not the design allows for it. Identify which behaviours the surface must support, then use the map at the end of this file to reach the structural patterns in the other sections.
+
+Each pattern block gives: **Problem** (what goes wrong if you ignore the behaviour), **Use when**, **Do not use / caveats** (including touch and WCAG 2.2 accessibility), **How** (concrete affordances), **Example** (original) and **Pairs with**.
 
 ---
 
-## Safe Exploration
+## Task A — Let people learn by trying
 
-- **What:** Let users try, back out, undo, and retry without penalty.
-- **When:** First-time users, unfamiliar features, complex workflows, anything with branching choices.
-- **Why:** Users build a mental model by experimenting. Fear of breakage kills learning and engagement.
+### Safe Exploration
+- **Problem:** people build their mental model by experimenting; fear of breaking something stops learning and engagement.
+- **Use when:** first-time users, unfamiliar features, complex or branching workflows.
+- **Do not use / caveats:** "safe" must be real — a reversible action that silently fails on reversal is worse than a warned irreversible one. Undo and cancel controls must be keyboard reachable (WCAG 2.1.1) and at least 24×24 CSS px on touch (WCAG 2.5.8).
 - **How:**
-  - Provide Undo and Redo; keep a history of actions.
-  - Allow cancel at any step in multi-step flows.
-  - Use reversible defaults; irreversible actions get friction (confirmation, typed keyword).
-  - Treat the Back button as sacred — it must restore prior state.
+  - Provide Undo and Redo backed by an action history.
+  - Allow cancel at every step of a multi-step flow.
+  - Make defaults reversible; give irreversible actions deliberate friction (confirmation, typed keyword).
+  - Treat Back as sacred: it must restore the prior state.
   - Preview changes before commit (live preview, draft mode).
-- **Avoid:** Modal dead-ends, destructive actions without warning, state losses on navigation.
-- **Alternatives:** Multi-Level Undo, Cancelability, Preview (all in `04-actions.md`).
+- **Avoid:** modal dead-ends, destructive actions without warning, state lost on navigation.
+- **Example:** a Kampala clinic's appointment scheduler lets the receptionist drag a slot to try a new time; the change is a draft until "Confirm reschedule", and Ctrl+Z restores the original slot.
+- **Pairs with:** Multi-Level Undo, Cancelability, Preview (`04-actions.md`); Escape Hatch (`02-navigation.md`).
 
-## Instant Gratification
-
-- **What:** Reward the user within seconds of arrival with something useful.
-- **When:** Onboarding, landing pages, new-user first session, any acquisition-sensitive surface.
-- **Why:** Users decide if an app is worth their time in the first few interactions. Fast reward creates engagement; slow reveal kills intent.
+### Incremental Construction
+- **Problem:** people who author things think by making — build a piece, look, adjust, repeat. A slow or batched feedback loop breaks concentration.
+- **Use when:** documents, spreadsheets, designs, code, forms, configurations — anything the user authors.
+- **Do not use / caveats:** live re-rendering on every keystroke can starve low-end Android devices; debounce rather than drop the live view. Live regions that announce every change overwhelm screen-reader users — announce on pause or on request.
 - **How:**
-  - Ship value in the empty state (sample content, quick templates, one-click setup).
-  - Defer signup and permissions — let users taste before committing.
-  - Make the first screen a clear "do X now" rather than a tour.
-  - Show progress toward value visually.
-- **Avoid:** 6-step onboarding wizards before anything useful, mandatory signup wall, tutorial videos forced pre-use.
-- **Alternatives:** Progressive Disclosure, Deferred Choices.
-
-## Satisficing
-
-- **What:** Users pick the first acceptable option, not the best option. They scan, they don't analyse.
-- **When:** Every list, menu, search result, dropdown, form field, and decision screen.
-- **Why:** Krug's "Don't Make Me Think" — cognitive effort is expensive. Users satisfice for speed.
-- **How:**
-  - Order items by likelihood, not alphabet (unless the user knows the exact name).
-  - Highlight recommended defaults.
-  - Show plenty of visual noise-reduction: whitespace, typographic hierarchy.
-  - Labels should make the right choice obvious.
-  - Avoid "analysis paralysis" — cap options at 7 in visible menus (Miller's Law).
-- **Avoid:** Long alphabetical dropdowns, unclear default choices, heavy text descriptions that slow scanning.
-- **Alternatives:** Good Defaults, Recommended (in forms), Smart Menu Items.
-
-## Changes in Midstream
-
-- **What:** Users change their goal mid-task. The interface must adapt without forcing restart.
-- **When:** Long wizards, checkout, multi-screen flows, any sequential task of more than 3 steps.
-- **Why:** Real tasks branch and revise; linear wizards assume a static goal.
-- **How:**
-  - Allow edit-in-place on earlier steps without losing later data.
-  - Display progress with all steps visible and clickable.
-  - Save partial state automatically so abandoned flows resume later.
-  - Offer "skip this step" or "come back later" for optional steps.
-- **Avoid:** One-way wizards, lost state on back-nav, forcing completion order when not truly required.
-- **Alternatives:** Deep-linked State, Wizard with Step Editor (in `02-navigation.md`).
-
-## Deferred Choices
-
-- **What:** Let users postpone decisions they are not yet ready to make.
-- **When:** Onboarding, account setup, configuration, long forms, any moment of uncertainty.
-- **Why:** Forcing decisions under incomplete context causes abandonment or wrong choices that must later be fixed.
-- **How:**
-  - "Do this later" or "Skip for now" buttons with a gentle nudge to return.
-  - Save drafts; let users complete work asynchronously.
-  - Default placeholder values (e.g. "Untitled Project") that can be edited later.
-  - Surface deferred items as reminders.
-- **Avoid:** Mandatory fields that demand trivial answers up-front, blocking CTAs that refuse defaults.
-- **Alternatives:** Good Defaults, Drafts, Progressive Signup.
-
-## Incremental Construction
-
-- **What:** Users build artefacts in small iterative steps, reviewing often.
-- **When:** Documents, spreadsheets, designs, code, forms, configurations — anything the user authors.
-- **Why:** Humans think by making, not planning. They need fast feedback loops.
-- **How:**
-  - Live preview / autosave / instant render.
+  - Live preview, autosave, instant render.
   - Granular undo at the step level, not per save.
-  - Branching history (document versions, design variants).
-  - Zero-friction iteration: one-click duplicate, one-click rename, one-click revert.
-- **Avoid:** Save-only commit model for authoring tools; batched re-compilation between changes.
-- **Alternatives:** Preview, Multi-Level Undo, Versioning.
+  - Branching history (versions, design variants).
+  - Zero-friction iteration: one-click duplicate, rename and revert.
+- **Avoid:** a save-only commit model in authoring tools; batched recompilation between changes.
+- **Example:** a SACCO loan-product builder shows the repayment schedule updating as the officer changes rate and term; "Duplicate product" lets them try a 12-month variant beside the 6-month one.
+- **Pairs with:** Preview, Multi-Level Undo, versioning.
 
-## Habituation
-
-- **What:** Frequent users build muscle memory. Changing familiar affordances breaks them.
-- **When:** Product redesigns, feature updates, power-user flows, keyboard shortcuts, toolbar placement.
-- **Why:** Habituated actions are fast and accurate; relearning erases productivity and angers loyal users.
+### Instant Gratification
+- **Problem:** people decide within the first few interactions whether a product is worth their time; a slow reveal kills intent.
+- **Use when:** onboarding, landing pages, a new user's first session, any acquisition-sensitive surface.
+- **Do not use / caveats:** do not defer steps that are legally required (KYC for a mobile-money wallet) — instead let people explore in a clearly labelled demo mode first. Sample content must be marked as sample to avoid confusion for screen-reader users who cannot see the visual "demo" styling.
 - **How:**
-  - Keep high-frequency controls in stable locations across releases.
-  - Preserve keyboard shortcuts across updates; add new ones rather than remaps.
-  - Provide migration toggles ("use old layout") during big redesigns.
-  - Warn users in advance when a habit-forming element will move.
-- **Avoid:** Reshuffling menus in minor releases; changing keyboard shortcuts without a preference toggle.
-- **Alternatives:** Keyboard Only, Spatial Memory.
-
-## Microbreaks
-
-- **What:** Users fit app-use into very short windows (30-90 seconds) between other tasks.
-- **When:** Mobile feeds, quick utilities, notifications, inbox zero flows, bite-sized media.
-- **Why:** Mobile context especially is attention-fragmented. If a session requires more than a minute of focus to produce value, it loses.
-- **How:**
-  - Support one-hand, thumb-zone interaction on mobile.
-  - Make save/resume transparent — user drops the app mid-sentence and returns without loss.
-  - Surface the most common short-session action first.
-  - Provide glanceable summaries on the home screen (counts, badges, digests).
-- **Avoid:** Deep flows on mobile, modal dialogs that trap attention, forcing focus for non-critical tasks.
-- **Alternatives:** Deferred Choices, Spatial Memory (for return users), Progress Indicator.
-
-## Spatial Memory
-
-- **What:** Users remember where things are on-screen, not what they are called.
-- **When:** Toolbars, menus, maps, dashboards, document outlines, any visually consistent interface.
-- **Why:** The brain stores location faster than label. Rearranging UI destroys this memory.
-- **How:**
-  - Keep toolbar button positions stable across sessions, even on context changes.
-  - Respect user-arranged layouts (sidebars, pinned items).
-  - Consistent icon placement across similar screens.
-  - Avoid adaptive menus that re-order based on usage; they destroy spatial memory.
-- **Avoid:** Most-recently-used toolbars, random insertion of new items, ribbon reorganisation between versions.
-- **Alternatives:** Habituation, Stable Navigation.
-
-## Prospective Memory
-
-- **What:** Users remember to do something later, and the app can help them remember.
-- **When:** Follow-ups, scheduled tasks, commitments, drafts, partially-complete actions.
-- **Why:** Humans are bad at remembering future intentions; an interface that supports this reduces friction and anxiety.
-- **How:**
-  - Allow "remind me later" on any item.
-  - Surface drafts, saved items, in-progress work prominently.
-  - Expose unfinished tasks in the home/dashboard.
-  - Integrate with calendars and notifications for deferred actions.
-- **Avoid:** Hidden drafts folder, commitments that expire silently, no way to mark "I'll deal with this later".
-- **Alternatives:** Deferred Choices, Drafts, Reminders.
-
-## Streamlined Repetition
-
-- **What:** Repetitive actions get shortcuts — macro recording, bulk selection, keyboard actions, templates.
-- **When:** Any workflow where the same action runs many times: data entry, email triage, code editing, bulk file operations.
-- **Why:** Repetition magnifies small inefficiencies into frustration and errors.
-- **How:**
-  - Bulk select + bulk action on lists.
-  - Keyboard shortcuts for primary actions.
-  - Templates, snippets, saved searches.
-  - Macro / record-a-sequence (for complex tools).
-  - "Apply to all" or "repeat for next" on modal dialogs.
-- **Avoid:** One-at-a-time action loops, no bulk, no keyboard path for frequent operations.
-- **Alternatives:** Macros, Command History (in `04-actions.md`).
-
-## Keyboard Only
-
-- **What:** Every action reachable from the keyboard, in a logical tab order, with visible focus.
-- **When:** Always, for accessibility; and especially for power-user tools (IDEs, email, spreadsheets, command palettes).
-- **Why:** WCAG 2.1 requires it. Power users are faster with keyboard. Assistive technology depends on it.
-- **How:**
-  - Tab order follows reading order; Shift+Tab reverses.
-  - Visible focus ring on all interactive elements (never `outline: none`).
-  - Shortcuts documented and discoverable (Cmd+K command palette, ? for help).
-  - Escape cancels modals; Enter submits forms; arrows navigate lists.
-  - No mouse-only gestures (hover menus that hide on blur, drag-only reorders).
-- **Avoid:** Mouse-exclusive drag-and-drop, invisible focus, custom widgets that trap focus.
-- **Alternatives:** Screen-reader compatibility patterns (not covered here — see `ux-principles-101`).
-
-## Other People's Advice
-
-- **What:** Users trust peer recommendations more than marketing. Surface what similar users do.
-- **When:** Onboarding, product pages, empty states, decision screens ("choose a plan"), social apps.
-- **Why:** Social proof and expert endorsement reduce decision anxiety.
-- **How:**
-  - Show counts ("2.3M users use this feature"), ratings, reviews.
-  - Peer recommendations ("people like you also chose...").
-  - Expert quotes or testimonials placed near decision points.
-  - Aggregate activity streams ("12 people viewing this now").
-- **Avoid:** Fake social proof, forced testimonials, dark patterns pressuring decisions.
-- **Alternatives:** Personal Recommendations, Editorial Mix (see `07-social.md`).
-
-## Personal Recommendations
-
-- **What:** Personalised suggestions based on the user's own history and preferences.
-- **When:** Content platforms, shopping, search, media, education — any place with a catalogue.
-- **Why:** Relevance converts; generic lists get scrolled past.
-- **How:**
-  - "Because you read X" / "Based on your history" explainers accompany each recommendation.
-  - Allow explicit feedback: thumbs up/down, "not interested", "more like this".
-  - Respect privacy expectations — let users see and edit what drives the recommendations.
-  - Mix recommendations with editorial and random discovery to avoid filter bubbles.
-- **Avoid:** Recommendations without explanation, impossible-to-correct filter bubbles, creepy signals.
-- **Alternatives:** Editorial Mix, Collaborative Filtering (systems-level, not UI).
+  - Put value in the empty state: sample content, quick templates, one-click setup.
+  - Defer sign-up and permission requests until the user has tasted value.
+  - Make the first screen a clear "do this now", not a tour.
+  - Show progress towards value visually.
+- **Avoid:** multi-step onboarding wizards before anything useful, a mandatory sign-up wall, forced tutorial videos.
+- **Example:** a school-fees app for Ugandan parents opens on "Check a balance" using the child's student number; creating an account is offered only after the balance is shown.
+- **Pairs with:** Good Defaults, progressive disclosure, Deferred Choices.
 
 ---
 
-## Behaviour-to-Pattern Map (Quick Reference)
+## Task B — Respect how people decide
 
-When a behavioural trigger appears, consider these interface patterns:
+### Satisficing
+- **Problem:** people pick the first option that looks acceptable, not the best one; they scan rather than analyse, because careful reading is costly (Krug's "don't make me think" argument).
+- **Use when:** every list, menu, search result, dropdown, form field and decision screen.
+- **Do not use / caveats:** ordering by likelihood harms people who know the exact name (a district, a bank) — keep alphabetical or type-ahead there. The cap on visible options is a heuristic, not a law of memory; test rather than cut blindly.
+- **How:**
+  - Order items by likelihood, not alphabet, unless the user knows the exact name.
+  - Highlight a recommended default.
+  - Reduce visual noise with whitespace and a clear typographic hierarchy.
+  - Write labels that make the right choice obvious on first guess.
+  - Keep visible menu options to about seven before grouping or searching (the common reading of Miller's figure).
+- **Avoid:** long alphabetical dropdowns, unclear defaults, heavy descriptions that slow scanning.
+- **Example:** a mobile-money checkout lists the payer's last-used network (MTN MoMo or Airtel Money) first and pre-selected, with "Other method" below.
+- **Pairs with:** Good Defaults, recommended options (forms), Smart Menu Items.
 
-| Behaviour | First-line patterns (from other sections) |
+### Deferred Choices
+- **Problem:** forcing decisions without enough context causes abandonment or wrong answers that must later be fixed.
+- **Use when:** onboarding, account set-up, configuration, long forms, any moment of uncertainty.
+- **Do not use / caveats:** never defer a choice whose default carries legal, financial or safety risk. Do not ask again for information already given in the same process (WCAG 3.3.7 Redundant Entry).
+- **How:**
+  - "Skip for now" / "Do this later" with a gentle nudge to return.
+  - Save drafts so work can be finished asynchronously.
+  - Editable placeholder values ("Untitled project").
+  - Surface deferred items as reminders.
+- **Avoid:** mandatory trivial fields up front; blocking calls to action that refuse a default.
+- **Example:** a chama (savings group) set-up lets the chair create the group with just a name and first contribution date; meeting rules and penalty amounts appear as "Finish set-up" cards on the dashboard.
+- **Pairs with:** Good Defaults, drafts, progressive sign-up.
+
+### Other People's Advice
+- **Problem:** people trust peers more than marketing; decisions without social evidence carry more anxiety.
+- **Use when:** onboarding, product pages, empty states, plan selection, social and marketplace apps.
+- **Do not use / caveats:** never fabricate counts or reviews; live "people viewing now" pressure is a dark pattern. Star ratings need a text equivalent ("4.2 out of 5, 318 reviews") for assistive technology.
+- **How:**
+  - Show counts, ratings and reviews near decision points.
+  - Peer recommendations ("members like you also chose…").
+  - Genuine testimonials or expert endorsement beside the decision.
+  - Aggregate activity streams where they are true and useful.
+- **Avoid:** fake social proof, forced testimonials, pressure tactics.
+- **Example:** a Nairobi hardware marketplace shows "Bought by 42 fundis in Kiambu this month" beside a cement brand, with reviews from verified buyers.
+- **Pairs with:** Personal Recommendations, editorial curation.
+
+### Personal Recommendations
+- **Problem:** generic lists get scrolled past; relevance converts.
+- **Use when:** content, shopping, search, media and learning platforms — any catalogue.
+- **Do not use / caveats:** recommendations built from sensitive data (health, finances) need explicit consent; explanations must be text, not an icon alone.
+- **How:**
+  - Explain each recommendation ("Because you read X").
+  - Offer explicit feedback: more like this, not interested.
+  - Let people see and edit what drives recommendations.
+  - Mix in editorial and random discovery to avoid filter bubbles.
+- **Avoid:** unexplained recommendations, uncorrectable filter bubbles, signals that feel intrusive.
+- **Example:** an agricultural advisory app suggests "Maize stalk-borer control — because you logged maize in Masaka" with a "Not my crop" option.
+- **Pairs with:** editorial mix; collaborative filtering (a systems concern, not UI).
+
+---
+
+## Task C — Let people stop, switch and come back
+
+### Changes in Midstream
+- **Problem:** real tasks branch; people change goal mid-task, and linear flows that assume a fixed goal force a restart.
+- **Use when:** long wizards, checkout, multi-screen flows, any sequence longer than three steps.
+- **Do not use / caveats:** some sequences genuinely must be ordered (identity check before payout) — keep the order but still save state. Session timeouts must warn and allow extension (WCAG 2.2.1).
+- **How:**
+  - Allow editing earlier steps without losing later data.
+  - Show every step, visible and clickable, in the progress display.
+  - Save partial state automatically so abandoned flows resume.
+  - Offer "skip this step" or "come back later" on optional steps.
+- **Avoid:** one-way wizards, lost state on Back, forced completion order that the task does not need.
+- **Example:** a clinic patient-registration flow lets the nurse jump from "Next of kin" back to "Contact details" to fix a phone number without re-entering the insurance card.
+- **Pairs with:** Progress Indicator, Deep Links (`02-navigation.md`), Deferred Choices.
+
+### Microbreaks
+- **Problem:** much mobile use happens in 30–90-second windows — a boda-boda wait, a queue at the bank. A session that needs more than a minute of focus before it gives value loses.
+- **Use when:** mobile feeds, quick utilities, notifications, inbox triage, short media.
+- **Do not use / caveats:** do not compress safety-critical work (drug dosing, large payments) into glanceable shortcuts. One-hand thumb zones must still meet 24×24 px targets with spacing (WCAG 2.5.8); nothing may require a path-based gesture without a single-pointer alternative (WCAG 2.5.1).
+- **How:**
+  - One-hand, thumb-zone interaction on mobile.
+  - Transparent save and resume — leave mid-sentence, return without loss.
+  - Surface the most common short-session action first.
+  - Glanceable summaries on the home screen (counts, badges, digests).
+- **Avoid:** deep flows on mobile, modal dialogs that trap attention, forced focus for non-critical tasks.
+- **Example:** a field-agent app opens on "3 deposits to confirm" with a one-tap Confirm per row, so an agent can clear them between customers.
+- **Pairs with:** Deferred Choices, Spatial Memory, Progress Indicator.
+
+### Prospective Memory
+- **Problem:** people are poor at remembering future intentions; they leave reminders (open tabs, starred items, drafts). An interface that hides or cleans these up destroys their memory system.
+- **Use when:** follow-ups, scheduled tasks, commitments, drafts, partly completed actions.
+- **Do not use / caveats:** reminders sent by SMS or push need an opt-out and quiet hours; do not auto-close tabs or auto-sort user-placed items to "tidy up".
+- **How:**
+  - "Remind me later" on any item.
+  - Put drafts, saved items and in-progress work in plain sight.
+  - Show unfinished tasks on the home or dashboard.
+  - Integrate with calendars and notifications for deferred actions.
+- **Avoid:** a hidden drafts folder, commitments that expire silently, no way to mark "deal with this later".
+- **Example:** a procurement officer flags a supplier quotation "Revisit Friday"; on Friday the dashboard shows it at the top of "Waiting on you".
+- **Pairs with:** Deferred Choices, drafts, reminders.
+
+---
+
+## Task D — Protect skill people have already learned
+
+### Habituation
+- **Problem:** frequent actions become reflex; moving or remapping them breaks muscle memory, costs productivity and angers loyal users.
+- **Use when:** redesigns, feature updates, power-user flows, keyboard shortcuts, toolbar placement.
+- **Do not use / caveats:** habit is no excuse to keep an inaccessible control — fix it and announce the change. Keep repeated help in the same relative place across pages (WCAG 3.2.6) and navigation in the same order (WCAG 3.2.3).
+- **How:**
+  - Keep high-frequency controls in stable places across releases.
+  - Preserve keyboard shortcuts; add new ones rather than remap.
+  - Offer a temporary "use previous layout" toggle during large redesigns.
+  - Warn users in advance when a habitual element will move.
+- **Avoid:** reshuffling menus in minor releases; changing shortcuts without a preference toggle.
+- **Example:** a pharmacy point-of-sale keeps F2 for "New sale" across versions; the new "Returns" command gets F7 rather than taking F2.
+- **Pairs with:** Keyboard Only, Spatial Memory.
+
+### Spatial Memory
+- **Problem:** people remember where things are faster than what they are called; rearranging the interface wipes that memory.
+- **Use when:** toolbars, menus, maps, dashboards, document outlines, any visually consistent interface.
+- **Do not use / caveats:** stable position must survive responsive reflow — the same control should keep the same relative order on phone and desktop. Consistent identification applies to icons as well as labels (WCAG 3.2.4).
+- **How:**
+  - Keep toolbar positions stable across sessions and contexts.
+  - Respect user-arranged layouts (sidebars, pinned items).
+  - Place icons consistently across similar screens.
+  - Avoid adaptive menus that reorder by usage.
+- **Avoid:** most-recently-used toolbars, random insertion of new items, ribbon reorganisation between versions.
+- **Example:** a SACCO teller screen keeps "Deposit", "Withdraw", "Transfer" in the same three positions on every member record, even when a member has no loan.
+- **Pairs with:** Habituation, stable navigation, Visual Framework (`03-layout.md`).
+
+### Keyboard Only
+- **Problem:** people who cannot use a pointer, and experts who will not, need every action from the keyboard; assistive technology depends on it.
+- **Use when:** always for accessibility; especially in power tools (data entry, email, spreadsheets, command palettes).
+- **Do not use / caveats:** single-key shortcuts must be remappable or disableable (WCAG 2.1.4). Sticky headers and chat widgets must not hide the focused element (WCAG 2.4.11).
+- **How:**
+  - Tab order follows reading order; Shift+Tab reverses (WCAG 2.4.3).
+  - Visible focus ring on every interactive element — never `outline: none` without a replacement (WCAG 2.4.7).
+  - Document shortcuts and make them discoverable (Ctrl/Cmd+K palette, "?" for help).
+  - Escape cancels dialogs, Enter submits forms, arrow keys move within lists.
+  - No mouse-only gestures: provide alternatives to hover-only menus and drag-only reordering (WCAG 2.5.7).
+- **Avoid:** mouse-exclusive drag and drop, invisible focus, custom widgets that trap focus (WCAG 2.1.2).
+- **Example:** a hospital records clerk enters 60 lab results an hour using Tab between fields, Enter to save and J/K to move between patients.
+- **Pairs with:** screen-reader patterns (`ux-principles-101`), keyboard conventions table (`04-actions.md`).
+
+---
+
+## Task E — Cut repeated effort
+
+### Streamlined Repetition
+- **Problem:** repetition magnifies small inefficiencies into frustration and errors.
+- **Use when:** the same action runs many times — data entry, triage, editing, bulk file operations.
+- **Do not use / caveats:** bulk destructive actions need a count in the label and an undo or preview; bulk-select checkboxes need accessible names ("Select invoice 1042").
+- **How:**
+  - Bulk select plus bulk action on lists.
+  - Keyboard shortcuts for primary actions.
+  - Templates, snippets and saved searches.
+  - Macro or record-a-sequence for complex tools.
+  - "Apply to all" or "Repeat for next" in dialogs.
+- **Avoid:** one-at-a-time loops, no bulk path, no keyboard path for frequent operations.
+- **Example:** a district health officer marks 40 facility reports "Reviewed" in one action after filtering to "Submitted this week".
+- **Pairs with:** Macros, Command History (`04-actions.md`).
+
+---
+
+## Behaviour-to-pattern map
+
+| Behaviour | First-line interface patterns |
 |---|---|
 | Safe Exploration | Multi-Level Undo, Cancelability, Preview, Escape Hatch |
-| Instant Gratification | Good Defaults, Fill-in-the-Blanks, Sample Content, Progress Indicator |
-| Satisficing | Good Defaults, Dropdown Chooser, Sorted Lists, Smart Menu Items |
-| Changes in Midstream | Progress Indicator, Deep-linked State, Deferred Choices |
-| Deferred Choices | Drafts, "Later" buttons, Placeholder Names |
-| Incremental Construction | Preview, Autosave, Multi-Level Undo |
-| Habituation | Stable Nav, Consistent Toolbar, Preserve Keyboard Shortcuts |
-| Microbreaks | Bottom Navigation, Glanceable Summary, Autosave |
-| Spatial Memory | Stable Toolbar, Avoid Adaptive Menus, Movable Panels (with persistence) |
-| Prospective Memory | Drafts tray, Reminders, "Pinned" items |
-| Streamlined Repetition | Bulk Selection, Macros, Command History, Keyboard Shortcuts |
-| Keyboard Only | Visible focus, Tab order, Shortcuts, Command palette |
-| Other People's Advice | Social Proof counts, Testimonials, Leaderboard |
-| Personal Recommendations | Because-you... explainers, Feedback controls |
+| Instant Gratification | Good Defaults, fill-in-the-blanks, sample content, Progress Indicator |
+| Satisficing | Good Defaults, dropdown chooser, sorted lists, Smart Menu Items |
+| Changes in Midstream | Progress Indicator, Deep Links (state in URL), Deferred Choices |
+| Deferred Choices | Drafts, "Later" buttons, placeholder names |
+| Incremental Construction | Preview, autosave, Multi-Level Undo |
+| Habituation | Stable navigation, consistent toolbar, preserved shortcuts |
+| Microbreaks | Bottom navigation, glanceable summary, autosave |
+| Spatial Memory | Stable toolbar, no adaptive menus, Movable Panels with persistence |
+| Prospective Memory | Drafts tray, reminders, pinned items |
+| Streamlined Repetition | Bulk selection, Macros, Command History, keyboard shortcuts |
+| Keyboard Only | Visible focus, logical tab order, shortcuts, command palette |
+| Other People's Advice | Genuine counts, testimonials, leaderboards |
+| Personal Recommendations | "Because you…" explanations, feedback controls |
 
----
+## Checks
 
-## Companion Patterns
+1. Each surface names at least one behaviour it supports and the pattern chosen for it.
+2. Nothing irreversible happens without a warning before the action.
+3. Partly completed work survives closing the tab, losing signal, or a device restart.
+4. No control moves between pages or releases without a stated reason.
+5. Every action is reachable and visible by keyboard, with touch targets meeting WCAG 2.5.8.
 
-These behaviours flow into the patterns in:
+## Related
 
-- `02-navigation.md` — signposting, wayfinding, escape hatches.
+- `02-navigation.md` — wayfinding, escape hatches, signposting.
 - `03-layout.md` — page structure that supports scanning and satisficing.
-- `04-actions.md` — reversibility, command patterns, undo, shortcuts.
-- `05-data.md` — lists and data displays that respect cognitive limits.
-- `ux-psychology` skill — deeper cognitive foundations.
-- `laws-of-ux` skill — named laws (Miller, Hick, Fitts, Jakob).
-- `habit-forming-products` skill — repeat engagement design.
+- `04-actions.md` — reversibility, commands, undo, shortcuts.
+- `05-data.md` — data displays that respect cognitive limits.
+- Companion skills: `ux-psychology`, `laws-of-ux` (Miller, Hick, Fitts, Jakob), `habit-forming-products`.
+
+Sources: pattern names follow Tidwell, Brewer & Valencia, *Designing Interfaces* (3rd ed.); Krug, *Don't Make Me Think*; W3C, WCAG 2.2.

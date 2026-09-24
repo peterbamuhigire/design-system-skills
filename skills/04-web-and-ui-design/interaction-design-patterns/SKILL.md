@@ -89,18 +89,20 @@ Acknowledgement: Shared by Peter Bamuhigire, techguypeter.com, +256 784 464178.
 | Interaction flow/prototype | Research and QA | Critical path and failure recovery can be exercised against acceptance tasks |
 
 - A named set of interaction patterns per surface, each justified by the user behavior it serves and wired as trigger -> response with full states.
-- A **Tidwell pattern usage register** when multiple surfaces or flows need a durable pattern inventory.
-- Navigation/layout/action/data decisions traceable to Tidwell patterns, with the shared undo, data, and save lifecycle made explicit.
+- A **pattern usage register** when multiple surfaces or flows need a durable pattern inventory.
+- Navigation/layout/action/data decisions traceable to named interaction patterns, with the shared undo, data, and save lifecycle made explicit.
 - The handoff note to the visual/platform companion skill, plus any pattern conflicts or open behavioral assumptions.
 
 ## References
+- `references/interaction-principles-consistency-and-recoverability.md` — six rich-interaction principles (hover caveat), three layers of consistency, pattern classes, obvious/easy/possible, defaults, undo and recoverability, journey signposting, mobile navigation vocabulary.
+- `references/error-prevention-and-recovery-patterns.md` — load when a wrong action costs money, health, records or time, or "user error" keeps recurring: slip/mistake classification, the eliminate-constrain-force-check-preview-undo-confirm-recover ladder, interruption and resume, alarm discipline, layered defences.
 
 - `doctrine/design-doctrine.md` — the anti-slop charter; grounding interaction choices in proven patterns is how this skill avoids the convergent AI-generic interface.
 - `doctrine/references/ai-slop-taxonomy.md` — the product/interface slop tells (e.g. an AI feature where standard navigation was faster) these patterns guard against.
 - Use the `sections/` directory for modular deep dives and load only the parts relevant to the task.
 - [Question-answering visual prototypes](references/question-answering-visual-prototypes.md)
 <!-- dual-compat-end -->
-Grounded in Tidwell, Brewer & Valencia (2020) *Designing Interfaces*, 3rd ed. — the industry's definitive interaction design pattern library. These patterns describe how real humans behave with software and what interface structures consistently work.
+Pattern names follow the established interaction-design literature (principally Tidwell, Brewer and Valencia, *Designing Interfaces*), reorganised here by user task with the engine's own rules, caveats and examples.
 
 ## When to Use
 

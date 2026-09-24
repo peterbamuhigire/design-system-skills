@@ -3,7 +3,7 @@
 How the eye *moves* through a composition, and how to build the tension that makes it read as
 authored. This is the "path and force" companion to `hierarchy-techniques.md` (which owns "what
 wins"). Grounds in the Swiss/asymmetric tradition (Tschichold, Müller-Brockmann), Arnheim's
-perceptual forces, and the F/Z scanning heuristics from `docs/book-study/01-ui-ux-craft.md` —
+perceptual forces, and the F/Z scanning heuristics from *How to Design Better UI Components 3.0* and Paduraru, *Fundamentals of Creating a Great UI/UX* —
 used as *heuristics under* the doctrine, never as laws (`doctrine/design-doctrine.md` §2).
 
 ---
