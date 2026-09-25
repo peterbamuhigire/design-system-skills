@@ -1,5 +1,9 @@
 # Worked example: Co-operative market-day newsletter
 
+> Fictional sample: the co-operative, venue, date, event details, and copy below
+> are invented for design illustration. Replace and verify all organization,
+> location, date, contact, and campaign details before real use.
+
 ## Brief
 
 Send a monthly update to members of a regional growers' co-operative. The email should help members find the next market day and understand what to bring. Assume readers may use a phone, have images disabled, or use an email client that ignores embedded styles.
